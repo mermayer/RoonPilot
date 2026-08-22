@@ -8,13 +8,9 @@
 
 <img src="assets/roonpilot-hardware.png" alt="RoonPilot on the original blue rotary-knob hardware" width="760">
 
-*Original hardware platform with the planned RoonPilot interface.*
+*RoonPilot interface shown on the original target hardware.*
 
 </div>
-
-> **Private development preview** — RoonPilot is under active development and
-> is not yet offered for sale. The product presentation below describes the
-> intended production experience. Hardware runtime validation is still pending.
 
 ## Music control should feel immediate
 
@@ -90,28 +86,61 @@ not a computer that needs supervision.
   </tr>
 </table>
 
-The images are high-resolution product concepts. Final spacing, brightness,
-fonts and touch targets will be tuned on the physical 360 × 360 display.
+The interface is designed specifically for the native 360 × 360 circular panel,
+with clear typography, large touch targets and information kept away from the
+rounded display edge.
 
-## Purpose-built hardware
+## Hardware platform
 
-RoonPilot targets the Waveshare ESP32-S3-Knob-Touch-LCD-1.8 platform:
+RoonPilot is built for the **Waveshare ESP32-S3-Knob-Touch-LCD-1.8**, a compact
+desktop controller that combines a circular touch display, a physical rotary
+encoder and the processing resources required for direct Roon communication in
+one CNC-machined enclosure.
 
-- 1.8-inch round 360 × 360 IPS touch display
-- tactile rotary encoder ring
-- ESP32-S3 up to 240 MHz
-- 16 MB flash and 8 MB PSRAM
-- 2.4 GHz Wi-Fi
-- CNC-machined metal enclosure
-- battery-capable design
+| Feature | Hardware specification |
+| --- | --- |
+| Display | 1.8-inch round IPS LCD, 360 × 360 pixels, capacitive touch |
+| Primary processor | ESP32-S3, up to 240 MHz |
+| Memory | 16 MB flash and 8 MB PSRAM |
+| Wireless | 2.4 GHz Wi-Fi 802.11 b/g/n and Bluetooth |
+| Controls | Tactile rotary encoder ring and touch screen |
+| Enclosure | CNC-machined metal housing, available in blue or black |
+| Connectivity | USB-C, microSD/TF card slot and 3.5 mm audio output |
+| Additional hardware | PCM5100A audio DAC, microphone and vibration motor |
+| Power | USB-C or optional internal 3.7 V / 800 mAh battery |
 
 The product uses the onboard hardware as a dedicated Roon remote. It is not an
 audio endpoint; playback continues through your existing Roon zones and audio
-system.
+system. The board's audio components are therefore hardware reserves rather
+than a requirement for RoonPilot operation.
 
-Hardware platform details are available from the
-[Waveshare product page](https://www.waveshare.com/esp32-s3-knob-touch-lcd-1.8.htm)
-and [technical wiki](https://www.waveshare.com/wiki/ESP32-S3-Knob-Touch-LCD-1.8).
+### Choose the hardware version
+
+Waveshare offers the controller in four variants. RoonPilot supports the same
+core display and control hardware in either enclosure colour.
+
+| Waveshare order code | Colour | Battery included |
+| --- | --- | --- |
+| `ESP32-S3-Knob-Touch-LCD-1.8` | Blue | Yes, 800 mAh |
+| `ESP32-S3-Knob-Touch-LCD-1.8-EN` | Blue | No |
+| `ESP32-S3-Knob-Touch-LCD-1.8B` | Black | Yes, 800 mAh |
+| `ESP32-S3-Knob-Touch-LCD-1.8B-EN` | Black | No |
+
+The battery-equipped version is the simplest choice for portable use. The
+version without a battery is ideal for permanent USB-C operation or for users
+who prefer to source their own compatible cell.
+
+### Where to buy
+
+The hardware can be ordered directly from the
+[official Waveshare product store](https://www.waveshare.com/esp32-s3-knob-touch-lcd-1.8.htm).
+Use the exact order codes above when comparing offers from regional Waveshare
+distributors or electronics retailers. Prices, stock and delivery options vary
+by country and are shown by the seller at checkout.
+
+Detailed board documentation, pin assignments and official software resources
+are available in the
+[Waveshare technical wiki](https://www.waveshare.com/wiki/ESP32-S3-Knob-Touch-LCD-1.8).
 
 ## Direct architecture
 
@@ -126,22 +155,25 @@ Touch + rotary encoder
 
 There is no intermediate RoonPilot server in this path.
 
-## Development status
+## Firmware for everyone
 
-The current ESP-IDF 6.0.1 firmware builds successfully for ESP32-S3 and already
-contains the software foundations for:
+Following a short validation period on the target hardware, the RoonPilot
+firmware will be made available to everyone as a ready-to-flash release. Normal
+installation will not require users to compile the firmware themselves.
 
-- station-mode Wi-Fi with bounded reconnect
-- automatic Roon Core discovery
-- direct MOO/WebSocket communication
-- extension approval and persistent token storage
-- subscribed zone and now-playing state
-- transport and volume commands
-- immutable UI snapshots and bounded event queues
+Every public firmware release will be accompanied by a detailed, illustrated
+step-by-step installation guide covering:
 
-The next milestone is validation on the delivered hardware, followed by the
-final LVGL display/touch implementation, artwork pipeline and production Wi-Fi
-provisioning flow.
+- selecting the correct hardware variant
+- connecting the correct USB-C interface
+- downloading the matching firmware image and flashing tool
+- backing up the factory firmware where applicable
+- flashing and verifying RoonPilot
+- first-time Wi-Fi setup and approval in Roon
+- recovery and troubleshooting procedures
+
+The goal is a predictable installation that can be completed without prior
+ESP-IDF or embedded-development experience.
 
 ## Created by Senior Coder
 
