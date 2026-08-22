@@ -118,6 +118,19 @@ The Roon page shows the connected Core, extension approval state and every
 available zone. One zone is selected as the device's display and control target,
 with live playback, title and volume information shown alongside it.
 
+### Zone visibility management
+
+<img src="assets/web-ui/05-zone-management.png" alt="RoonPilot shown and hidden zone management" width="100%">
+
+Every discovered zone remains accessible in web configuration, while the
+`Available on RoonPilot` switch decides whether it appears on the device itself.
+All, shown and hidden filters keep larger Roon installations manageable. Hidden
+zones remain completely unchanged in Roon and can be enabled again at any time.
+
+The selected control zone must remain shown. If it is hidden, another shown zone
+must be selected in the same saved operation. Newly discovered zones are shown
+by default, preventing new rooms from disappearing without explanation.
+
 ### Display, rotary encoder and touch
 
 <img src="assets/web-ui/03-display-controls.png" alt="RoonPilot display rotary encoder and touch settings" width="100%">
