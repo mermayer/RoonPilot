@@ -90,6 +90,52 @@ The interface is designed specifically for the native 360 × 360 circular panel,
 with clear typography, large touch targets and information kept away from the
 rounded display edge.
 
+## Local web configuration
+
+RoonPilot provides a responsive English-language configuration interface
+directly from the device. Open it in a browser on the local network to manage
+Roon, zones, display behavior and system settings. There is no cloud dashboard,
+external account or companion application involved.
+
+The interface is intentionally a focused device-management tool rather than a
+second music player. It combines useful live information with compact controls
+that work on both desktop and mobile screens.
+
+### Overview
+
+<img src="assets/web-ui/01-overview.png" alt="RoonPilot local web interface overview" width="100%">
+
+The overview brings the most important information together: Roon and Wi-Fi
+connection state, battery level, firmware version, uptime and the selected
+zone's now-playing information. Basic transport and volume controls provide a
+quick functional check without opening another application.
+
+### Roon and zone selection
+
+<img src="assets/web-ui/02-roon-zones.png" alt="RoonPilot Roon Core and zone configuration" width="100%">
+
+The Roon page shows the connected Core, extension approval state and every
+available zone. One zone is selected as the device's display and control target,
+with live playback, title and volume information shown alongside it.
+
+### Display, rotary encoder and touch
+
+<img src="assets/web-ui/03-display-controls.png" alt="RoonPilot display rotary encoder and touch settings" width="100%">
+
+Screen brightness, dimming, display-off timing and the clock-or-black idle mode
+are grouped with rotary-encoder direction, volume step and acceleration.
+Touch orientation and calibration status remain visible on the same page.
+
+### System and configuration backup
+
+<img src="assets/web-ui/04-system.png" alt="RoonPilot system maintenance and configuration backup" width="100%">
+
+The system page exposes firmware, hardware, uptime and memory information,
+along with downloadable diagnostics. Configuration can be exported and
+validated before import without exposing saved Wi-Fi passwords. Restart and
+factory reset remain separate, explicit actions so that restoring settings
+never causes a surprise reboot.
+
 ## Hardware platform
 
 RoonPilot is built for the **Waveshare ESP32-S3-Knob-Touch-LCD-1.8**, a compact
