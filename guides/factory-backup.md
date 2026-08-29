@@ -86,16 +86,15 @@ The file size must be exactly `4,194,304` bytes.
   information.
 - Do not rename the files so vaguely that the chips can later be confused.
 
-## RoonPilot's safer companion scripts
+## Installing the optional companion image
 
-The project repository also contains backup and flash scripts that require chip,
-size and checksum metadata before the companion can be written. Use those when
-building from source. The public merged companion image is intentionally not
-offered in the ESP32-S3 browser installer.
+The public merged companion image is intentionally not offered in the ESP32-S3
+browser installer. Follow the separate
+[companion firmware guide](companion-firmware.md); it repeats the chip, size and
+checksum checks before any write command and also explains restoration.
 
 ## Restoring a backup
 
 Restoration erases current settings and is covered in
 [Firmware updates and recovery](firmware-updates-and-recovery.md). Do not attempt
 it until the correct chip has again been identified.
-

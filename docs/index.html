@@ -200,7 +200,25 @@
       </div>
       <div class="companion-note">
         <div><svg><use href="#icon-chip"></use></svg></div>
-        <div><h3>The companion firmware is optional and separate.</h3><p>It disables the unused DAC path and places the second ESP32 into indefinite deep sleep. Install it manually only after its original 4 MB flash has been backed up and verified. It does not add Roon functionality.</p></div>
+        <div><h3>The companion firmware is optional and separate.</h3><p>It disables the unused DAC path and places the second ESP32 into indefinite deep sleep. It does not add Roon functionality and is never installed by the ESP32-S3 Web Installer.</p></div>
+      </div>
+      <div class="companion-install" id="companion-install">
+        <div class="companion-install-heading">
+          <div>
+            <p class="eyebrow">Manual operation · classic ESP32 only</p>
+            <h3>How is the companion firmware installed?</h3>
+          </div>
+          <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/companion-firmware.md">Open the complete guide <svg><use href="#icon-external"></use></svg></a>
+        </div>
+        <p class="companion-status"><strong>Before you continue:</strong> RoonPilot works without this optional image. Install it only after the original 4 MB companion flash has been read, verified and copied to a second safe location.</p>
+        <ol class="companion-steps">
+          <li><span>1</span><div><strong>Install the flashing tool</strong><p>Use Windows PowerShell with Python 3.10 or newer and Espressif <code>esptool</code>.</p><code class="command">py -m pip install --upgrade esptool</code></div></li>
+          <li><span>2</span><div><strong>Select the companion processor</strong><p>Disconnect USB, rotate the USB-C plug 180 degrees and reconnect. Check the new port.</p><code class="command">py -m esptool --port COM4 chip-id</code><p>Continue only when it reports a classic <b>ESP32</b>, never ESP32-S3.</p></div></li>
+          <li><span>3</span><div><strong>Save all 4 MB first</strong><p>Read the complete original companion flash and keep its SHA-256 checksum in two safe locations.</p><code class="command">py -m esptool --chip esp32 --port COM4 read-flash 0x0 0x400000 companion-original-4mb.bin</code></div></li>
+          <li><span>4</span><div><strong>Verify and write the merged image</strong><p>Check the published checksum, then write the companion file at address <code>0x0</code>. Do not use the S3 Factory or OTA image.</p><code class="command">py -m esptool --chip esp32 --port COM4 --baud 460800 write-flash 0x0 roonpilot-companion-sleep-factory-v1.0.0.bin</code></div></li>
+          <li><span>5</span><div><strong>Return to RoonPilot</strong><p>Disconnect USB, rotate the plug back, reconnect and confirm that <code>chip-id</code> now reports <b>ESP32-S3</b>.</p></div></li>
+        </ol>
+        <p class="companion-footnote">Replace <code>COM4</code> with the port shown by your operating system. Close every serial monitor before running a command. The complete guide also explains download verification, exact backup sizes, recovery and restoring the original 4 MB image.</p>
       </div>
     </section>
 
@@ -306,6 +324,7 @@
           <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/web-interface.md"><span>06</span><strong>Web interface</strong><svg><use href="#icon-arrow"></use></svg></a>
           <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/firmware-updates-and-recovery.md"><span>07</span><strong>Updates &amp; recovery</strong><svg><use href="#icon-arrow"></use></svg></a>
           <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/troubleshooting.md"><span>08</span><strong>Troubleshooting</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/companion-firmware.md"><span>09</span><strong>Companion firmware</strong><svg><use href="#icon-arrow"></use></svg></a>
         </div>
         <div class="recovery-strip">
           <div class="recovery-icon"><svg><use href="#icon-usb"></use></svg></div>

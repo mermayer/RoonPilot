@@ -74,6 +74,10 @@ python -m esptool --chip esp32 --port COM4 write-flash 0x0 D:\RoonPilot-Factory-
 
 Disconnect and rotate back to the ESP32-S3 side afterward.
 
+See [Optional companion ESP32 firmware](companion-firmware.md) for the complete
+tool installation, chip identification, backup, flashing and restoration
+procedure.
+
 ## Factory reset is not firmware recovery
 
 The System-page factory reset erases RoonPilot configuration and pairing but

@@ -62,7 +62,13 @@ bootloader and partition table needed by a blank device.
 
 ## Optional companion installation
 
-This is a separate operation and cannot be performed from the Web Installer.
+This is a separate command-line operation and cannot be performed from the Web
+Installer. Use Windows PowerShell with Python 3.10 or newer and Espressif
+`esptool`. The complete novice procedure, including tool installation,
+download, exact backup checks, write verification and restoration, is in
+[Optional companion ESP32 firmware](companion-firmware.md).
+
+This optional image is not required to use RoonPilot.
 
 1. Complete and verify the original 4 MB companion backup.
 2. Disconnect USB, rotate the plug and reconnect.

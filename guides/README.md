@@ -22,6 +22,7 @@ them part of the installation, not optional background reading.
 | Every display view | [Screen reference](screen-reference.md) |
 | Every local configuration page | [Web interface](web-interface.md) |
 | Factory, local and online updates | [Firmware updates and recovery](firmware-updates-and-recovery.md) |
+| Optional second-ESP low-power image | [Companion firmware](companion-firmware.md) |
 | Settings backup | [Configuration export and import](configuration-backup.md) |
 | Battery limitations and calibration | [Battery and runtime](battery-and-runtime.md) |
 | Deep-sleep behaviour and wake-up | [Deep sleep](deep-sleep.md) |
