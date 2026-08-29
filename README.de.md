@@ -156,6 +156,7 @@ das konkrete Gerät.
 - [Deep Sleep](guides/de/deep-sleep.md)
 - [Fehlerbehebung](guides/de/troubleshooting.md)
 - [Datenschutz und Sicherheit](guides/de/privacy-and-security.md)
+- [Lizenzierung und Weitergabe](guides/de/licensing.md)
 - [Testplan für Einsteiger](guides/de/test-plan.md)
 
 ## Projekt und Marken
@@ -166,5 +167,13 @@ Waveshare verbunden oder von ihnen empfohlen. Roon ist eine Marke von Roon
 Labs. Waveshare-Produktnamen dienen ausschließlich zur Bezeichnung der
 unterstützten Hardware.
 
-Copyright © 2026 Senior Coder. Siehe [LICENSE](LICENSE.md) und
-[Hinweise zu Drittanbietern](THIRD_PARTY_NOTICES.md).
+Für die RoonPilot-eigenen Teile gilt PolyForm Noncommercial 1.0.0: Private und
+andere nicht kommerzielle Nutzung ist erlaubt, kommerzielle Nutzung benötigt
+eine separate schriftliche Erlaubnis, und die Lizenz verlangt keine
+Veröffentlichung geänderten Quellcodes. Bei einer Weitergabe müssen die
+mitgelieferten Lizenz- und Hinweisdateien trotzdem beigefügt werden.
+Drittanbieterbestandteile behalten ihre unabhängigen freizügigen Lizenzen.
+Die genaue Trennung erklärt [Lizenzierung und Weitergabe](guides/de/licensing.md).
+
+Copyright © 2026 Senior Coder. Siehe [LICENSE](LICENSE.md), [NOTICE](NOTICE)
+und [Hinweise zu Drittanbietern](THIRD_PARTY_NOTICES.md).

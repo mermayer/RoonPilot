@@ -31,7 +31,18 @@ zu wiederholen.
   über die lokale Firmwareseite.
 - `roonpilot-companion-sleep-factory-v1.0.0.bin`: ausschließlich klassischer
   Begleit-ESP32; niemals auf den ESP32-S3 schreiben.
+- `roonpilot-complete-v1.0.0.zip`: empfohlenes Komplettpaket mit Firmware,
+  Lizenztexten, Hinweisen und SPDX-Stückliste.
 - `SHA256SUMS.txt`: veröffentlichte Prüfsummen.
+
+## Lizenzierung
+
+Für die RoonPilot-eigenen Teile gilt PolyForm Noncommercial 1.0.0. Private und
+andere nicht kommerzielle Nutzung ist erlaubt; kommerzielle Nutzung benötigt
+eine separate schriftliche Erlaubnis. Eine Veröffentlichung geänderten
+Quellcodes ist nicht vorgeschrieben, bei Weitergabe müssen Lizenz und Hinweise
+jedoch erhalten bleiben. Drittanbieterbestandteile behalten ihre unabhängigen
+Lizenzen.
 
 ## Datenschutz und Vorbereitung
 

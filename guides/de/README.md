@@ -31,6 +31,7 @@ sie Bestandteil der Installation und keine optionale Hintergrundinformation.
 | Deep Sleep und Aufwachen | [Deep Sleep](deep-sleep.md) |
 | Fehler suchen | [Fehlerbehebung](troubleshooting.md) |
 | Gespeicherte und nicht gespeicherte Daten | [Datenschutz und Sicherheit](privacy-and-security.md) |
+| Private/kommerzielle Nutzung und Weitergabe | [Lizenzierung und Weitergabe](licensing.md) |
 
 ## Begriffe
 

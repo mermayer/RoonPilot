@@ -45,14 +45,15 @@ release package also contains:
 - `LICENSE.md` -- terms for RoonPilot-authored portions;
 - `NOTICE` -- the required RoonPilot notice;
 - this `THIRD_PARTY_NOTICES.md` inventory;
-- `roonpilot.spdx` -- the machine-readable SPDX SBOM for the release.
-- `roonpilot-companion.spdx` -- the machine-readable companion ESP32 SBOM.
+- `roonpilot.spdx` -- a machine-readable SPDX SBOM when generated for
+  the release.
+- `roonpilot-companion.spdx` -- the companion ESP32 SBOM when generated for
+  the release.
 
-The complete legal bundle for the published binary is also available under
-[`docs/legal/`](docs/legal/). ESP-IDF contains files under multiple permissive
-licenses. If a source-file header and a summary differ, the source-file header
-takes precedence. The matching ESP-IDF 6.0.1 source is available from
-Espressif at <https://github.com/espressif/esp-idf/tree/v6.0.1>.
+ESP-IDF contains files under multiple permissive licenses. If a source-file
+header and a summary differ, the source-file header takes precedence. The
+full corresponding ESP-IDF 6.0.1 source is available from Espressif at
+<https://github.com/espressif/esp-idf/tree/v6.0.1>.
 
 ## Trademarks
 

@@ -30,6 +30,7 @@ them part of the installation, not optional background reading.
 | Deep-sleep behaviour and wake-up | [Deep sleep](deep-sleep.md) |
 | Fault finding | [Troubleshooting](troubleshooting.md) |
 | What is and is not stored | [Privacy and security](privacy-and-security.md) |
+| Private/commercial use and redistribution | [Licensing and redistribution](licensing.md) |
 
 ## Terminology
 

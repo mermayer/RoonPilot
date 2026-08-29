@@ -35,7 +35,17 @@ recovery and everyday-use test plan can be repeated from a clean device.
   existing RoonPilot through its local firmware page.
 - `roonpilot-companion-sleep-factory-v1.0.0.bin` is the separate image
   for the classic ESP32 companion processor. Never write it to the ESP32-S3.
+- `roonpilot-complete-v1.0.0.zip` is the recommended complete download; it
+  includes the firmware files, license texts, notices and SPDX SBOM.
 - `SHA256SUMS.txt` contains the published file checksums.
+
+## Licensing
+
+RoonPilot-authored portions use PolyForm Noncommercial 1.0.0. Private and
+other noncommercial use is permitted; commercial use requires separate
+written permission. The license does not require publication of modified
+source, but redistribution must retain the supplied license and notices.
+Third-party portions keep their independent licenses.
 
 ## Privacy
 

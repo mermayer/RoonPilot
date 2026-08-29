@@ -210,6 +210,7 @@ not guess a file or flash an image based only on its size.
 - [Deep sleep](guides/deep-sleep.md)
 - [Troubleshooting](guides/troubleshooting.md)
 - [Privacy and security](guides/privacy-and-security.md)
+- [Licensing and redistribution](guides/licensing.md)
 - [Beginner test plan](guides/test-plan.md)
 
 ## Project and trademarks
@@ -219,5 +220,12 @@ non-commercial project and is not affiliated with or endorsed by Roon Labs or
 Waveshare. Roon is a trademark of Roon Labs. Waveshare product names identify
 the supported hardware only.
 
-Copyright © 2026 Senior Coder. See [LICENSE](LICENSE.md) and
+RoonPilot-authored portions use PolyForm Noncommercial 1.0.0: private and
+other noncommercial use is permitted, commercial use requires separate written
+permission, and the license does not require publication of modified source.
+Redistribution still requires the supplied license and notice files.
+Third-party portions retain their independent permissive licenses. See
+[Licensing and redistribution](guides/licensing.md) for the exact distinction.
+
+Copyright © 2026 Senior Coder. See [LICENSE](LICENSE.md), [NOTICE](NOTICE) and
 [third-party notices](THIRD_PARTY_NOTICES.md).
