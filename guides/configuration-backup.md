@@ -17,7 +17,7 @@ The schema includes the user-configurable non-secret state, including:
 - clock face, day/night brightness and schedule;
 - encoder direction, volume step, acceleration and maximum volume;
 - idle clock/black choice;
-- supported power-policy values;
+- deep-sleep enabled state and timeout;
 - accepted battery-calibration reference and metadata.
 
 ## Intentionally excluded secrets
@@ -51,4 +51,3 @@ Display and behaviour settings are portable. Zone IDs, server addresses and a
 battery runtime measured on one physical unit may be inappropriate on another.
 After import, review Roon & Zones and repeat battery calibration on the target
 hardware.
-

@@ -10,6 +10,10 @@ Normal runtime network activity consists of Wi-Fi/DHCP/time services, Roon
 discovery/session traffic, artwork retrieval from Roon and local HTTP requests.
 An online firmware check/download occurs only when that update path is used.
 
+When deep sleep is active, the main ESP32-S3, Wi-Fi connection, Roon session and
+local website are stopped. No network request can wake the device; a local touch
+or ring movement starts a complete boot and reconnects it.
+
 ## Stored locally
 
 - Wi-Fi SSID and password;
@@ -100,4 +104,3 @@ RoonPilot's direct/local design removes a companion cloud service and its data
 flow, but it does not make the LAN, physical flash or Roon installation
 automatically secure. Security depends on network configuration, physical
 access, current firmware and careful handling of backups.
-

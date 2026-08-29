@@ -102,9 +102,20 @@ local website or other Roon remotes.
 - Touch or ring input wakes a black screen; repeat the intended action after it
   wakes.
 
+## Deep sleep
+
+Deep sleep is configured separately on the web **Power** page. It can start
+only after the selected zone has reported paused/stopped for the configured idle
+period. Touch or turn the ring to wake it. Unlike black-screen wake-up, this is a
+full boot: Wi-Fi and Roon reconnect before controls and the website return.
+
+Deep sleep is blocked during Wi-Fi setup, firmware work and battery calibration.
+It is also blocked while playing/loading/buffering or when the selected zone's
+state is unavailable. Network traffic cannot wake it. Read the complete
+[Deep-sleep guide](deep-sleep.md).
+
 ## Rotate 180 degrees
 
 Enable **Rotate display 180°** on Display & Controls if the device orientation
 requires it. Display and touch coordinates rotate together. This is independent
 of encoder direction.
-

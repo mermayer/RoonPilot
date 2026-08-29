@@ -50,6 +50,8 @@ privacy and troubleshooting.
 - **Room selection on the device:** browse shown zones with touch or the ring,
   then select on the display.
 - **Useful idle modes:** black screen, station clock or digital clock with date.
+- **Real deep sleep:** optional ESP32-S3 shutdown while the selected zone is
+  paused/stopped, with touch and ring wake-up.
 - **Local configuration:** responsive web pages are served by RoonPilot itself.
 - **Private by design:** no cloud relay and no password in configuration exports.
 - **Recoverable updates:** signed A/B firmware updates with boot validation and
@@ -82,6 +84,7 @@ in the web interface.
 | Open Quick Settings | — | Swipe up on Now Playing |
 | Lock/unlock controls | — | Long-press the centre of the display |
 | Wake the screen/clock | Turn | Tap |
+| Wake from deep sleep | Turn, then wait for boot | Tap, then wait for boot |
 
 See [Device controls](guides/device-controls.md) for timing, locked-operation
 feedback, screen-off wake-up and settings details.
@@ -124,6 +127,7 @@ The pages cover:
 - rotary direction, step, acceleration and maximum-volume protection;
 - Wi-Fi status and network replacement;
 - battery runtime calibration and result history;
+- guarded deep-sleep timeout and wake policy;
 - firmware updates, diagnostics, safe export/import, restart and factory reset.
 
 View every page in the [web-interface reference](guides/web-interface.md).
@@ -199,6 +203,7 @@ guess a file or flash an image based only on its size.
 - [Firmware updates and recovery](guides/firmware-updates-and-recovery.md)
 - [Configuration export and import](guides/configuration-backup.md)
 - [Battery and runtime](guides/battery-and-runtime.md)
+- [Deep sleep](guides/deep-sleep.md)
 - [Troubleshooting](guides/troubleshooting.md)
 - [Privacy and security](guides/privacy-and-security.md)
 - [Beginner test plan](guides/test-plan.md)

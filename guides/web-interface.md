@@ -106,10 +106,16 @@ If the new details fail, the protected recovery AP starts after approximately
 
 Prepares, tracks and accepts/discards the device-specific battery runtime test.
 It reports the measured system rail honestly and explains that it cannot derive
-a precise cell percentage. Deep-sleep policy remains clearly marked as Preview
-until wake behaviour has completed hardware validation.
+a precise cell percentage.
 
-Read [Battery and runtime](battery-and-runtime.md) before starting a run.
+The Power policy card enables deep sleep and selects its idle timeout. Its live
+badge reads Disabled, Waiting or Armed. Sleep is armed only for an available
+selected zone that reports paused/stopped; Wi-Fi setup, firmware operations and
+battery calibration block it. Touch or ring movement wakes into a normal reboot,
+so Wi-Fi, Roon and this page need a moment to return.
+
+Read [Battery and runtime](battery-and-runtime.md) before starting a run and
+[Deep sleep](deep-sleep.md) before validating the power policy.
 
 ## System
 
@@ -157,4 +163,3 @@ This is a static HTTPS page hosted through GitHub Pages, not a page served by th
 device. It writes the complete Factory image to the main ESP32-S3 only. The
 validation URL is intentionally supplied separately and remains unlinked during
 the first test cycle.
-

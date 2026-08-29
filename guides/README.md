@@ -24,6 +24,7 @@ them part of the installation, not optional background reading.
 | Factory, local and online updates | [Firmware updates and recovery](firmware-updates-and-recovery.md) |
 | Settings backup | [Configuration export and import](configuration-backup.md) |
 | Battery limitations and calibration | [Battery and runtime](battery-and-runtime.md) |
+| Deep-sleep behaviour and wake-up | [Deep sleep](deep-sleep.md) |
 | Fault finding | [Troubleshooting](troubleshooting.md) |
 | What is and is not stored | [Privacy and security](privacy-and-security.md) |
 
@@ -46,4 +47,3 @@ Before opening a GitHub issue, read [Troubleshooting](troubleshooting.md) and
 download diagnostics from **System** if the local page still opens. Remove home
 Wi-Fi names, IP addresses, Roon metadata and any other private information from
 screenshots or logs before making them public.
-

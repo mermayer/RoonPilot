@@ -164,6 +164,34 @@ On the next boot, save the recovered result only if shutdown was the expected
 end of the untouched unplugged run. Discard results caused by reset, accidental
 power loss, update or cancellation.
 
+## Deep sleep does not start
+
+Open **Power** and check its badge. **Armed** means the countdown is running;
+**Waiting** means at least one required condition is missing.
+
+- Save the policy after enabling it and selecting a timeout.
+- Select an available Roon zone and make sure Roon reports paused or stopped.
+- Playing, loading, buffering, an unknown state or a disconnected/missing zone
+  deliberately keeps RoonPilot awake.
+- Finish/cancel Wi-Fi AP setup, firmware operations and battery calibration.
+- Stop touching the display, turning the ring or repeatedly saving settings;
+  these restart the idle countdown.
+- Check serial diagnostics for `Deep sleep postponed`: an active-low touch or
+  encoder pin prevents an immediate sleep/wake loop.
+
+## Deep sleep does not wake
+
+- A browser, Roon command or network packet cannot wake it because Wi-Fi is off.
+- Touch the display once, or turn the ring far enough to create an encoder edge.
+- Allow normal boot and Wi-Fi/Roon reconnection time.
+- If neither local input works, connect USB, capture serial output and restart.
+  The next log should identify an EXT1 wake and its GPIO status when wake works.
+- Do not erase flash; configuration is unrelated to electrical wake detection.
+
+Deep sleep and a black idle display are different. Black-screen wake is nearly
+immediate and consumes the first action. Deep-sleep wake always performs a full
+restart. See [Deep sleep](deep-sleep.md).
+
 ## Update failed
 
 Keep USB power attached, wait for rollback, record the version/partition and
@@ -176,4 +204,3 @@ Include firmware version, exact hardware order code, which processor was active,
 reproduction steps, expected/actual result and sanitized diagnostics. Never post
 Wi-Fi passwords, pairing material, private IP layouts you do not wish to expose,
 factory backups or the signing key.
-

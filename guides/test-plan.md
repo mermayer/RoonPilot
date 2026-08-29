@@ -164,9 +164,24 @@ For Classic, Focus and Orbit:
 - [ ] Accept one valid and discard one deliberately interrupted result.
 - [ ] Complete at least two valid comparable runs; three preferred.
 
+## N. Deep sleep
+
+- [ ] Enable deep sleep and select the shortest timeout.
+- [ ] Confirm the Power badge says Waiting while the selected zone plays.
+- [ ] Pause the selected zone and confirm the badge says Armed.
+- [ ] Confirm the LCD/backlight, website and Roon connection stop after timeout.
+- [ ] Wake by touch; confirm a full boot, Wi-Fi/Roon reconnection and settings.
+- [ ] Enter deep sleep again and wake by turning the ring.
+- [ ] Confirm the wake gesture does not send transport or volume.
+- [ ] Confirm playing/loading/buffering prevents sleep.
+- [ ] Confirm no selected/available zone prevents sleep.
+- [ ] Confirm first-time/recovery AP setup prevents sleep.
+- [ ] Confirm local and online firmware operations prevent sleep.
+- [ ] Confirm battery preparation/running/review prevents sleep.
+- [ ] Repeat one sleep/wake cycle on battery after USB validation.
+
 ## Completion
 
 Version 1.0.0 should leave validation status only when all safety-critical flash,
 recovery, secret-removal and rollback tests pass, and all remaining known issues
 are explicitly documented.
-
