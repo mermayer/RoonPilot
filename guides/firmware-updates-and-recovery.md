@@ -37,8 +37,9 @@ key; losing it would prevent continuity of signed stable updates.
 
 ## Browser Factory installation
 
-Use the unlinked validation Web Installer address supplied separately. It writes
-only the ESP32-S3 Factory image and asks before erasing. See
+Use the [RoonPilot project website](https://mermayer.github.io/RoonPilot/). Its
+Web Installer writes only the ESP32-S3 Factory image and requires the user to
+confirm the processor and backup checks before it can be started. See
 [Installation](installation.md) for the complete novice procedure.
 
 ## Interrupted update
@@ -85,4 +86,3 @@ For version 1.0.0 the build pipeline rejects a stable release when compiled
 bench Wi-Fi credentials or a bench Roon address are non-empty. Published
 metadata reports both checks explicitly and `SHA256SUMS.txt` covers all three
 binary files.
-

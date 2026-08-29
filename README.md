@@ -6,9 +6,11 @@
 
 **Turn the ring. Touch the music. Control the room.**
 
-<img src="assets/roonpilot-hardware.png" alt="RoonPilot on the original Waveshare rotary-knob hardware" width="760">
+<img src="assets/roonpilot-hardware-cutout.png" alt="RoonPilot on the original Waveshare rotary-knob hardware" width="380">
 
 *RoonPilot running on the original Waveshare ESP32-S3-Knob-Touch-LCD-1.8 hardware.*
+
+[Project website and safe browser installation](https://mermayer.github.io/RoonPilot/)
 
 </div>
 
@@ -185,10 +187,11 @@ RoonPilot provides three deliberately separate paths:
 - **OTA image:** upload through an already running RoonPilot.
 - **Companion image:** classic ESP32 only, after a complete 4 MB factory backup.
 
-The browser installer and release package are prepared for the 1.0.0 test cycle.
-The installer entry point is intentionally not linked from this public project
-page yet. Follow the test URL supplied separately by the project owner. Do not
-guess a file or flash an image based only on its size.
+The [RoonPilot project website](https://mermayer.github.io/RoonPilot/) explains
+the two-processor hardware before presenting the ESP32-S3 Web Installer. The
+installer remains locked until the user confirms the factory backups and chip
+identity check. It never writes the classic companion ESP32. Do not guess a
+file or flash an image based only on its size.
 
 ## Documentation
 

@@ -21,8 +21,9 @@ The Web Installer works in a desktop browser with Web Serial support, such as a
 current Chrome or Edge version. It requires an HTTPS page and a direct USB data
 connection; mobile Safari and Firefox are not suitable for this workflow.
 
-The 1.0.0 validation installer address is supplied separately during the test
-period and is intentionally not linked from the project page.
+Open the [RoonPilot project website](https://mermayer.github.io/RoonPilot/).
+Its two-processor warning, backup checklist and chip-confirmation gate appear
+before the ESP32-S3 installer can be started.
 
 1. Close ESP-IDF Monitor, PuTTY, Arduino Serial Monitor and every application
    that may have the COM port open.
@@ -93,4 +94,3 @@ Never proceed after a checksum mismatch. Download the file again.
 ## Next step
 
 Continue with [First-time setup](first-time-setup.md).
-
