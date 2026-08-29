@@ -12,6 +12,8 @@
 
 [Project website and safe browser installation](https://mermayer.github.io/RoonPilot/)
 
+[Deutsch](README.de.md) · **English**
+
 </div>
 
 RoonPilot turns Waveshare's compact round display controller into a fast,
@@ -106,6 +108,9 @@ error views. Every current view is shown and explained in the
   <tr>
     <td align="center"><img src="assets/device-screens/08-clock-digital.png" width="230" alt="Digital clock"><br><b>Digital clock</b></td>
     <td align="center"><img src="assets/device-screens/09-quick-settings.png" width="230" alt="Quick Settings"><br><b>Quick Settings</b></td>
+    <td align="center"><img src="assets/device-screens/09b-quick-system.png" width="230" alt="Quick System information"><br><b>IP &amp; Roon Server</b></td>
+  </tr>
+  <tr>
     <td align="center"><img src="assets/device-screens/16-controls-locked.png" width="230" alt="Controls locked"><br><b>Control lock</b></td>
   </tr>
 </table>

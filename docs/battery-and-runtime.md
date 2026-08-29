@@ -1,5 +1,7 @@
 # Battery status and runtime calibration
 
+**English** · [Deutsch](de/battery-and-runtime.md)
+
 RoonPilot is intentionally transparent about the battery limitations of the
 Waveshare `ESP32-S3-Knob-Touch-LCD-1.8`. The firmware does not turn an
 electrically unsuitable measurement into a precise-looking percentage.

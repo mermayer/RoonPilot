@@ -96,6 +96,9 @@ svg { width: 1.25em; height: 1.25em; fill: none; stroke: currentColor; stroke-wi
 .site-header nav a[aria-current] { color: var(--cyan); }
 .header-link { display: inline-flex; align-items: center; gap: 8px; }
 .header-link svg { width: 19px; height: 19px; }
+.header-actions { display: flex; align-items: center; justify-content: flex-end; gap: 17px; }
+.language-link { color: var(--cyan); font-size: 13px; font-weight: 650; text-decoration: none; }
+.language-link:hover, .language-link:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
 
 .hero {
   min-height: 610px;
@@ -337,6 +340,15 @@ svg { width: 1.25em; height: 1.25em; fill: none; stroke: currentColor; stroke-wi
 .check { color: var(--muted); }
 .check.ok { color: var(--cyan); }
 .check.error { color: var(--danger); }
+.installer-critical {
+  margin: 0 32px 22px;
+  padding: 16px 18px 2px;
+  border: 1px solid rgba(241, 173, 56, 0.5);
+  border-left: 4px solid var(--amber);
+  background: var(--amber-soft);
+}
+.installer-critical p { margin: 0 0 13px; color: var(--muted-strong); font-size: 13px; }
+.installer-critical strong { color: var(--amber); }
 .safety-confirm {
   width: calc(100% - 64px);
   display: grid;
@@ -546,7 +558,7 @@ footer { border-top: 1px solid var(--line); }
   .readiness div:last-child { border-bottom: 0; }
   .readiness dt { margin: 0; }
   .readiness dd { margin: 0; }
-  .browser-note { margin-left: 304px; }
+.browser-note { margin-left: 304px; }
   .setup-flow { grid-template-columns: repeat(3, 1fr); gap: 44px 0; }
   .setup-flow li:nth-child(3)::after, .setup-flow li:last-child::after { display: none; }
   .hardware-layout { gap: 45px; }
@@ -591,6 +603,7 @@ footer { border-top: 1px solid var(--line); }
   .installer-panel { order: 0; }
   .installer-topline { align-items: flex-start; flex-direction: column; padding-block: 17px; }
   .readiness div { align-items: flex-start; }
+  .installer-critical { margin-inline: 18px; }
   .safety-confirm { width: calc(100% - 36px); margin-inline: 18px; }
   .installer-action { padding-inline: 18px; }
   .browser-note { margin-left: 0; }

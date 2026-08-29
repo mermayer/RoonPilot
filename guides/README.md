@@ -1,5 +1,7 @@
 # RoonPilot documentation
 
+**English** · [Deutsch](de/README.md)
+
 This documentation assumes that the reader has never flashed an ESP device,
 never opened a serial port and has just taken the hardware out of its box.
 

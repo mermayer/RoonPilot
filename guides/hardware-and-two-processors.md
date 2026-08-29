@@ -1,5 +1,7 @@
 # Hardware and the two processors
 
+**English** · [Deutsch](de/hardware-and-two-processors.md)
+
 ## Supported device
 
 RoonPilot targets the **Waveshare ESP32-S3-Knob-Touch-LCD-1.8**. Do not assume

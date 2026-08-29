@@ -1,5 +1,7 @@
 # Install RoonPilot
 
+**English** · [Deutsch](de/installation.md)
+
 Read [Hardware and the two processors](hardware-and-two-processors.md) and make
 the two [factory backups](factory-backup.md) first.
 
@@ -17,9 +19,10 @@ Wi-Fi setup access point.
 
 ## Recommended: browser installation of the ESP32-S3
 
-The Web Installer works in a desktop browser with Web Serial support, such as a
-current Chrome or Edge version. It requires an HTTPS page and a direct USB data
-connection; mobile Safari and Firefox are not suitable for this workflow.
+The Web Installer works **only in a current desktop Chromium browser with Web
+Serial support**, for example Google Chrome, Microsoft Edge, Chromium, Brave or
+Opera. Firefox and Safari do not implement the required Web Serial workflow.
+The published HTTPS page and a direct USB data connection are mandatory.
 
 Open the [RoonPilot project website](https://mermayer.github.io/RoonPilot/).
 Its two-processor warning, backup checklist and chip-confirmation gate appear
@@ -45,7 +48,23 @@ before the ESP32-S3 installer can be started.
 
 > [!WARNING]
 > The Web Installer is for the ESP32-S3 only. It never installs the companion
-> image. If the browser connects to a classic ESP32, cancel immediately.
+> image. If the browser connects to a classic ESP32, cancel immediately. A
+> Factory installation erases the complete current ESP32-S3 flash, including
+> Waveshare/RoonPilot firmware, Wi-Fi credentials, Roon authorization and all
+> settings. Make and verify the factory backup before continuing.
+
+## Updates after the Factory installation
+
+The Chromium Web Installer is normally needed only for the first complete
+installation or recovery. Once RoonPilot is running, open its IP address and go
+to **System → Firmware update**. Use **Check for updates** followed by
+**Download and install** for a signed online release. RoonPilot writes the
+inactive A/B slot and normally preserves settings. A local OTA file can be
+uploaded on the same page when recovery or offline installation is required.
+
+Do not return to the Factory installer for an ordinary update: the Factory path
+erases settings, while the device's online/local OTA paths are designed to keep
+them.
 
 ## Manual ESP32-S3 factory installation
 

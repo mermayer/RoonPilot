@@ -1,5 +1,7 @@
 # Back up both factory firmwares
 
+**English** · [Deutsch](de/factory-backup.md)
+
 A complete backup is the safest way back to the state in which the device was
 delivered. Make two backups: 16 MB from the main ESP32-S3 and 4 MB from the
 companion ESP32.

@@ -1,5 +1,7 @@
 # Configuration export and import
 
+**English** · [Deutsch](de/configuration-backup.md)
+
 ## What export is for
 
 Use **System → Export configuration** before experimenting with display, clock,

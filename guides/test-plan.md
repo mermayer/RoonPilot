@@ -1,5 +1,7 @@
 # Beginner validation test plan
 
+**English** · [Deutsch](de/test-plan.md)
+
 Use this plan for a clean version 1.0.0 cycle. Record pass/fail, date, firmware
 checksum and observations for every section. Do not combine unexplained failures
 with later tests.

@@ -1,5 +1,7 @@
 # Troubleshooting
 
+**English** · [Deutsch](de/troubleshooting.md)
+
 Work from the top of the relevant section. Do not erase flash as a first test.
 
 ## No COM port appears

@@ -1,5 +1,7 @@
 # Privacy and security
 
+**English** · [Deutsch](de/privacy-and-security.md)
+
 ## Local architecture
 
 RoonPilot communicates with the chosen Roon Server and browser on the local

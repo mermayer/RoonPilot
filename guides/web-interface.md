@@ -1,5 +1,7 @@
 # Complete web-interface reference
 
+**English** · [Deutsch](de/web-interface.md)
+
 The English web interface is served directly from RoonPilot on the local Wi-Fi
 network. It uses no Internet cloud after page assets have loaded from the device.
 Desktop cards become a compact bottom-navigation layout on phones.

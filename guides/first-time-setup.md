@@ -1,5 +1,7 @@
 # First-time setup
 
+**English** · [Deutsch](de/first-time-setup.md)
+
 After a clean Factory installation, RoonPilot has no Wi-Fi credentials and no
 Roon authorization. Setup therefore happens in two stages: join Wi-Fi, then
 approve RoonPilot in Roon.
@@ -102,4 +104,3 @@ Roon. The selected control zone must remain visible.
 - A browser refresh retains saved settings.
 
 Continue with [Device controls](device-controls.md).
-

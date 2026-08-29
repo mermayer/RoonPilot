@@ -1,5 +1,7 @@
 # Device controls
 
+**English** · [Deutsch](de/device-controls.md)
+
 RoonPilot combines a rotary ring and capacitive touch. A waking gesture is
 consumed deliberately: the first touch or ring movement wakes a black display
 without also changing music or volume.
@@ -56,6 +58,16 @@ On the home page, turning the ring changes the highlighted section; touch opens
 it. On a setting page, touch a row to select it and turn the ring to adjust its
 value. Press **Save & Close** to persist the changes. Leaving without saving
 restores the previous accent colour and settings.
+
+### System
+
+The first entry is read-only and shows:
+
+- the IP address used to open RoonPilot's local website;
+- the connected Roon Server name;
+- **Ready**, **Wi-Fi offline**, **Roon offline** or **Approval needed**.
+
+Use the back control or swipe down to return to the Quick Settings home page.
 
 ### Display
 

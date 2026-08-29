@@ -1,5 +1,7 @@
 # Complete device-screen reference
 
+**English** · [Deutsch](de/screen-reference.md)
+
 The following renders mirror the 360 × 360 LVGL layouts and use fictional data.
 Minor colour differences can occur between a browser render and the physical IPS
 panel.
@@ -70,11 +72,19 @@ Now Playing.
 
 ## Quick Settings screens
 
-| Home | Display | Volume | Clock |
-| --- | --- | --- | --- |
-| <img src="../assets/device-screens/09-quick-settings.png" width="220" alt="Quick Settings"> | <img src="../assets/device-screens/10-quick-display.png" width="220" alt="Quick Display"> | <img src="../assets/device-screens/11-quick-volume.png" width="220" alt="Quick Volume"> | <img src="../assets/device-screens/12-quick-clock.png" width="220" alt="Quick Clock"> |
+| Home | System | Display |
+| --- | --- | --- |
+| <img src="../assets/device-screens/09-quick-settings.png" width="220" alt="Quick Settings"> | <img src="../assets/device-screens/09b-quick-system.png" width="220" alt="Quick System information"> | <img src="../assets/device-screens/10-quick-display.png" width="220" alt="Quick Display"> |
 
-Use touch to open/select and the ring to choose or adjust. Save explicitly.
+| Volume | Clock |
+| --- | --- |
+| <img src="../assets/device-screens/11-quick-volume.png" width="220" alt="Quick Volume"> | <img src="../assets/device-screens/12-quick-clock.png" width="220" alt="Quick Clock"> |
+
+**System** is the first entry and displays the current device IP address, the
+connected Roon Server and an overall connection state. It is deliberately
+read-only and makes the local web address discoverable without consulting the
+router. Use touch to open/select and the ring to choose or adjust. Save changed
+settings explicitly.
 
 ## Battery-calibration screens
 
@@ -103,4 +113,3 @@ for about 1.2 seconds to change state.
 | <img src="../assets/device-screens/26-firmware-update.png" width="250" alt="Firmware update"> | An OTA image is being installed. Do not remove power. |
 | <img src="../assets/device-screens/27-hardware-test.png" width="250" alt="Hardware test"> | Manufacturer-aligned display/ring test view used during hardware diagnosis. |
 | <img src="../assets/device-screens/28-screen-off.png" width="250" alt="Screen off"> | Black idle mode. The first input wakes without issuing a command. |
-

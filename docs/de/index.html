@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="de" data-release-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#07090a">
+  <meta name="description" content="RoonPilot macht aus dem Waveshare ESP32-S3 Knob Touch LCD 1.8 eine schnelle, haptische und eigenständige Roon-Fernbedienung.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../assets/site.css">
+  <title>RoonPilot — haptische Roon-Steuerung für das runde Waveshare-Display</title>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+  <script src="../assets/site.js" defer></script>
+</head>
+<body>
+  <svg class="icon-sprite" aria-hidden="true">
+    <symbol id="icon-alert" viewBox="0 0 24 24"><path d="M12 3 2.8 20h18.4L12 3Z"></path><path d="M12 9v5M12 17h.01"></path></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v17H7.5A3.5 3.5 0 0 0 4 22V5.5ZM20 5.5A3.5 3.5 0 0 0 16.5 2H13v17h3.5A3.5 3.5 0 0 1 20 22V5.5Z"></path></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 2.5 2.5L16 9"></path></symbol>
+    <symbol id="icon-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"></path></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"></path></symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7A5.5 5.5 0 0 0 19.3 3 5.2 5.2 0 0 0 19.1 0S17.9-.4 15 1.5a13.4 13.4 0 0 0-6 0C6.1-.4 4.9 0 4.9 0a5.2 5.2 0 0 0-.2 3A5.5 5.5 0 0 0 3.2 7.5c0 5.4 3.5 6.6 6.8 7A4.8 4.8 0 0 0 9 18v4"></path><path d="M9 19c-3 .9-3-1.5-4.2-2"></path></symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></symbol>
+    <symbol id="icon-rotate" viewBox="0 0 24 24"><path d="M20 7v5h-5"></path><path d="M18.5 9A7 7 0 1 0 19 16"></path></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-4"></path></symbol>
+    <symbol id="icon-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="m7 9 3 3-3 3M13 15h4"></path></symbol>
+    <symbol id="icon-usb" viewBox="0 0 24 24"><path d="M12 3v14M9 6l3-3 3 3M12 11l-4 4M8 15H5M12 14l4 4M16 18h3"></path><circle cx="5" cy="15" r="1"></circle><rect x="18" y="17" width="2" height="2"></rect></symbol>
+    <symbol id="icon-wifi" viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 20h.01"></path><path d="M2 9a14.2 14.2 0 0 1 20 0"></path></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#uebersicht" aria-label="RoonPilot Startseite"><span class="brand-mark" aria-hidden="true"></span><span>RoonPilot</span></a>
+      <nav aria-label="Hauptnavigation">
+        <a href="#uebersicht">Übersicht</a>
+        <a href="#vor-dem-flashen">Vor dem Flashen</a>
+        <a href="#installation">Installation</a>
+        <a href="#funktionen">Funktionen</a>
+        <a href="#dokumentation">Dokumentation</a>
+      </nav>
+      <div class="header-actions">
+        <a class="language-link" href="../" lang="en">English</a>
+        <a class="header-link" href="https://github.com/mermayer/RoonPilot" target="_blank" rel="noopener"><svg><use href="#icon-github"></use></svg><span>GitHub</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="uebersicht" class="hero page-width">
+      <div class="hero-copy">
+        <h1>Roon-Steuerung,<br>direkt bei der Musik.</h1>
+        <p>Eine schnelle, haptische Roon-Fernbedienung für das Waveshare ESP32-S3 Knob Touch LCD 1.8. Keine Bridge, keine Zusatz-App und kein zusätzlicher Dienst erforderlich.</p>
+        <a class="hero-safety" href="#vor-dem-flashen">
+          <svg><use href="#icon-alert"></use></svg>
+          <span><strong>Im Gerät stecken zwei unabhängig programmierbare ESPs.</strong> Vor jedem Löschen oder Flashen muss der ESP32-S3 eindeutig identifiziert werden.</span>
+          <svg><use href="#icon-arrow"></use></svg>
+        </a>
+        <div class="hero-actions">
+          <a class="button primary" href="#installation"><svg><use href="#icon-download"></use></svg>RoonPilot installieren</a>
+          <a class="button secondary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/README.md"><svg><use href="#icon-book"></use></svg>Anleitung lesen</a>
+        </div>
+        <ul class="hero-facts" aria-label="RoonPilot-Vorteile">
+          <li>Direkte lokale Roon-Verbindung</li><li>Touch- und Drehsteuerung</li><li>Signierte A/B-Updates</li>
+        </ul>
+      </div>
+      <div class="hero-product"><div class="product-aura" aria-hidden="true"></div><img src="../assets/roonpilot-hardware-cutout.png" alt="Originales blaues Waveshare ESP32-S3 Knob Touch LCD 1.8 mit RoonPilot"></div>
+    </section>
+
+    <section id="vor-dem-flashen" class="critical-wrap page-width" aria-labelledby="zwei-esps-titel">
+      <div class="critical">
+        <div class="critical-heading"><svg><use href="#icon-alert"></use></svg><div><h2 id="zwei-esps-titel">Stopp: Dieses Board enthält zwei ESPs.</h2><p>Die Orientierung des USB-C-Steckers entscheidet, welcher unabhängige Prozessor verbunden ist. Firmware für den einen Prozessor darf niemals auf den anderen geschrieben werden.</p></div></div>
+        <div class="processor-paths">
+          <article><span class="orientation">USB-Orientierung A</span><h3>ESP32-S3</h3><p>RoonPilot, Display, Touch, Drehring und WLAN. Nur dieser Prozessor wird vom Web Installer beschrieben.</p></article>
+          <div class="rotate-plug" aria-label="USB-C-Stecker abziehen und drehen"><svg><use href="#icon-rotate"></use></svg><strong>Zuerst abziehen</strong><span>USB-C-Stecker um 180° drehen</span></div>
+          <article><span class="orientation">USB-Orientierung B</span><h3>Klassischer ESP32</h3><p>Separater Begleitprozessor. Seine optionale Stromspar-Firmware benötigt eine eigene 4-MB-Sicherung und eine manuelle Installation.</p></article>
+        </div>
+        <div class="critical-rule"><strong>Eine COM-Nummer identifiziert den Prozessor nicht.</strong><span>Vor jedem Löschen oder Flashen <code>esptool chip-id</code> ausführen. Sofort stoppen, wenn der gemeldete Chip nicht zur Datei passt.</span></div>
+        <a class="text-link amber" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/hardware-and-two-processors.md">Die beiden Prozessoren verstehen <svg><use href="#icon-arrow"></use></svg></a>
+      </div>
+    </section>
+
+    <section class="content-section page-width" aria-labelledby="vorbereitung-titel">
+      <div class="section-heading"><p class="section-number">01</p><div><h2 id="vorbereitung-titel">Vor der Installation</h2><p>Vier Prüfungen verhindern fast alle vermeidbaren Flash-Probleme.</p></div></div>
+      <ol class="preflight">
+        <li><span class="step-number">1</span><svg><use href="#icon-usb"></use></svg><div><h3>USB-Datenkabel verwenden</h3><p>Ein reines Ladekabel kann das Display versorgen, aber keine Firmware übertragen.</p></div></li>
+        <li><span class="step-number">2</span><svg><use href="#icon-chip"></use></svg><div><h3>Beide Prozessoren sichern</h3><p>Vor jeder Änderung den vollständigen 16-MB-Flash des ESP32-S3 und den vollständigen 4-MB-Flash des Begleit-ESP32 speichern.</p></div></li>
+        <li><span class="step-number">3</span><svg><use href="#icon-terminal"></use></svg><div><h3>Aktiven Chip erkennen</h3><p>Serielle Programme schließen, Port ermitteln und <code>python -m esptool --port COMx chip-id</code> ausführen.</p></div></li>
+        <li><span class="step-number">4</span><svg><use href="#icon-check"></use></svg><div><h3>Datei und Prozessor abgleichen</h3><p>Factory-, OTA- und Companion-Abbilder haben unterschiedliche Ziele und sind nicht austauschbar.</p></div></li>
+      </ol>
+      <div class="never-rule"><svg><use href="#icon-alert"></use></svg><strong>Niemals löschen oder flashen, nur um auszuprobieren, was passiert.</strong></div>
+      <div class="preflight-links">
+        <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/factory-backup.md">Beide Original-Firmwares sichern <svg><use href="#icon-arrow"></use></svg></a>
+        <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation.md">Vollständige Installationsanleitung öffnen <svg><use href="#icon-arrow"></use></svg></a>
+      </div>
+    </section>
+
+    <section id="installation" class="install-section">
+      <div class="page-width">
+        <div class="section-heading"><p class="section-number">02</p><div><h2>Den Haupt-ESP32-S3 installieren</h2><p>Der Browser-Installer schreibt das vollständige Factory-Abbild auf den Hauptprozessor.</p></div></div>
+        <div class="install-layout">
+          <aside class="install-warning"><svg><use href="#icon-alert"></use></svg><h3>Nur ESP32-S3</h3><p>Der Web Installer beschreibt niemals den klassischen Begleit-ESP32. Meldet der ausgewählte Port einen klassischen ESP32 oder einen Chip-Fehler, sofort abbrechen.</p><p>Die Factory-Installation löscht den gesamten ESP32-S3 samt Einstellungen. Zuerst sichern.</p></aside>
+          <div class="installer-panel">
+            <div class="installer-topline"><div><span class="panel-mark"></span><strong>RoonPilot Web Installer</strong></div><span id="version">Version 1.0.0</span></div>
+            <dl class="readiness" aria-label="Bereitschaft des Installers">
+              <div><dt><svg><use href="#icon-lock"></use></svg>Sicheres HTTPS</dt><dd id="secure-status" class="check waiting">Prüfung</dd></div>
+              <div><dt><svg><use href="#icon-usb"></use></svg>Web Serial</dt><dd id="serial-status" class="check waiting">Prüfung</dd></div>
+              <div><dt><svg><use href="#icon-shield"></use></svg>Signierte Firmware</dt><dd id="firmware-status" class="check waiting">Prüfung</dd></div>
+            </dl>
+            <div class="installer-critical">
+              <p><strong>Chromium-Browser erforderlich.</strong> Nur einen aktuellen Desktop-Browser wie Chrome, Edge, Chromium, Brave oder Opera mit Web Serial verwenden. Firefox und Safari funktionieren nicht.</p>
+              <p><strong>Factory bedeutet vollständiges Löschen.</strong> Die Installation entfernt die aktuelle ESP32-S3-Firmware, WLAN-Zugangsdaten, Roon-Freigabe und alle Einstellungen. Zuerst den originalen 16-MB-Flash sichern.</p>
+              <p><strong>Spätere Updates sind einfacher.</strong> Nach der Erstinstallation die lokale RoonPilot-Seite <b>System → Firmware update → Check for updates</b> verwenden. Signierte Online-A/B-Updates behalten die Einstellungen normalerweise bei.</p>
+            </div>
+            <label class="safety-confirm"><input id="hardware-confirm" type="checkbox"><span><strong>Ich habe den aktiven Prozessor geprüft.</strong> Die gewählte USB-Orientierung meldet <b>ESP32-S3</b>, und beide Original-Firmwares wurden gesichert.</span></label>
+            <div class="installer-action">
+              <esp-web-install-button id="installer" manifest="../manifest.json">
+                <button id="install-button" class="button primary install-button" slot="activate" type="button" disabled><svg><use href="#icon-download"></use></svg>RoonPilot installieren</button>
+                <span slot="unsupported" class="inline-warning">Für die USB-Installation ist ein aktueller Chromium-Desktopbrowser mit Web Serial erforderlich. Firefox und Safari werden nicht unterstützt.</span>
+                <span slot="not-allowed" class="inline-warning">Diese Seite muss über HTTPS geöffnet werden, damit auf das USB-Gerät zugegriffen werden kann.</span>
+              </esp-web-install-button>
+              <button id="pending" class="button disabled install-button" type="button" disabled hidden>Firmware nicht verfügbar</button>
+              <p id="availability" role="status">Die signierte Firmware-Version wird geprüft…</p>
+            </div>
+          </div>
+        </div>
+        <p class="browser-note"><strong>Browser:</strong> nur aktuelles Desktop-Chromium mit Web Serial. <strong>Factory-Installation:</strong> löscht den ESP32-S3 vollständig. Vor dem Start ESP-IDF Monitor, PuTTY, Arduino Serial Monitor und jedes andere Programm schließen, das den COM-Port geöffnet hat.</p>
+      </div>
+    </section>
+
+    <section class="content-section page-width" aria-labelledby="abbilder-titel">
+      <div class="section-heading"><p class="section-number">03</p><div><h2 id="abbilder-titel">Drei Abbilder. Drei verschiedene Aufgaben.</h2><p>Immer Dateiname, Zielchip und veröffentlichten SHA-256-Wert prüfen.</p></div></div>
+      <div class="image-table" role="table" aria-label="Aufgaben der RoonPilot-Firmwareabbilder">
+        <div class="image-row table-head" role="row"><span>Abbild</span><span>Verwendung</span><span>Ziel</span><span>Einstellungen</span></div>
+        <div class="image-row" role="row"><strong>ESP32-S3 Factory</strong><span>Neuinstallation oder vollständige Wiederherstellung</span><code>ESP32-S3 · 0x0</code><span>Gelöscht</span></div>
+        <div class="image-row" role="row"><strong>ESP32-S3 OTA</strong><span>Update eines vorhandenen RoonPilot</span><code>Inaktiver A/B-Slot</code><span>Bleiben erhalten</span></div>
+        <div class="image-row" role="row"><strong>Companion Factory</strong><span>Optionale Stromspar-Firmware</span><code>Klassischer ESP32 · 0x0</code><span>Separater Flash</span></div>
+      </div>
+      <div class="companion-note"><div><svg><use href="#icon-chip"></use></svg></div><div><h3>Die Companion-Firmware ist optional und separat.</h3><p>Sie deaktiviert den ungenutzten DAC-Pfad und versetzt den zweiten ESP32 dauerhaft in Deep Sleep. Sie ergänzt keine Roon-Funktion und wird niemals vom ESP32-S3 Web Installer installiert.</p></div></div>
+      <div class="companion-install" id="companion-install">
+        <div class="companion-install-heading"><div><p class="eyebrow">Manueller Vorgang · nur klassischer ESP32</p><h3>Wie wird die Companion-Firmware installiert?</h3></div><a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/companion-firmware.md">Vollständige Anleitung öffnen <svg><use href="#icon-external"></use></svg></a></div>
+        <p class="companion-status"><strong>Vor dem Fortfahren:</strong> RoonPilot funktioniert ohne dieses optionale Abbild. Erst installieren, nachdem der originale 4-MB-Flash vollständig gelesen, geprüft und an einen zweiten sicheren Ort kopiert wurde.</p>
+        <ol class="companion-steps">
+          <li><span>1</span><div><strong>Flash-Werkzeug installieren</strong><p>Windows PowerShell mit Python 3.10 oder neuer und Espressif <code>esptool</code> verwenden.</p><code class="command">py -m pip install --upgrade esptool</code></div></li>
+          <li><span>2</span><div><strong>Begleitprozessor auswählen</strong><p>USB trennen, USB-C-Stecker um 180° drehen, neu verbinden und den Port prüfen.</p><code class="command">py -m esptool --port COM4 chip-id</code><p>Nur fortfahren, wenn ein klassischer <b>ESP32</b> gemeldet wird, niemals ESP32-S3.</p></div></li>
+          <li><span>3</span><div><strong>Zuerst alle 4 MB sichern</strong><p>Den kompletten Original-Flash lesen und seinen SHA-256-Wert an zwei sicheren Orten aufbewahren.</p><code class="command">py -m esptool --chip esp32 --port COM4 read-flash 0x0 0x400000 companion-original-4mb.bin</code></div></li>
+          <li><span>4</span><div><strong>Prüfen und zusammengeführtes Abbild schreiben</strong><p>Veröffentlichte Prüfsumme vergleichen und die Companion-Datei an Adresse <code>0x0</code> schreiben. Niemals das S3-Factory- oder OTA-Abbild verwenden.</p><code class="command">py -m esptool --chip esp32 --port COM4 --baud 460800 write-flash 0x0 roonpilot-companion-sleep-factory-v1.0.0.bin</code></div></li>
+          <li><span>5</span><div><strong>Zu RoonPilot zurückkehren</strong><p>USB trennen, Stecker zurückdrehen, neu verbinden und prüfen, dass <code>chip-id</code> nun <b>ESP32-S3</b> meldet.</p></div></li>
+        </ol>
+        <p class="companion-footnote"><code>COM4</code> durch den vom Betriebssystem angezeigten Port ersetzen. Vor jedem Befehl alle seriellen Monitore schließen. Die vollständige Anleitung erklärt außerdem Downloadprüfung, exakte Sicherungsgrößen, Wiederherstellung und das Zurückspielen des originalen 4-MB-Abbilds.</p>
+      </div>
+    </section>
+
+    <section class="setup-section"><div class="page-width">
+      <div class="section-heading"><p class="section-number">04</p><div><h2>Vom ersten Start bis zur Roon-Steuerung</h2><p>Ein sauberes Factory-Abbild enthält keine privaten WLAN- oder Roon-Daten.</p></div></div>
+      <ol class="setup-flow">
+        <li><span>1</span><svg><use href="#icon-wifi"></use></svg><h3>Mit dem Setup-AP verbinden</h3><p>Mit <code>RoonPilot-Setup-XXXXXX</code> verbinden. Öffnet sich die Anmeldeseite nicht, <code>192.168.4.1</code> aufrufen.</p></li>
+        <li><span>2</span><svg><use href="#icon-wifi"></use></svg><h3>WLAN verbinden</h3><p>Das 2,4-GHz-Netz auswählen oder eingeben und das Kennwort lokal im Gerät speichern.</p></li>
+        <li><span>3</span><svg><use href="#icon-terminal"></use></svg><h3>Lokale Oberfläche öffnen</h3><p>Die vom Router oder Gerät angezeigte Adresse verwenden. Kein Internetkonto erforderlich.</p></li>
+        <li><span>4</span><svg><use href="#icon-shield"></use></svg><h3>RoonPilot freigeben</h3><p>In Roon Einstellungen → Erweiterungen öffnen und <strong>RoonPilot</strong> von <strong>Senior Coder</strong> aktivieren.</p></li>
+        <li><span>5</span><svg><use href="#icon-chip"></use></svg><h3>Server auswählen</h3><p>Werden mehrere Roon Server gefunden, den gewünschten wählen. Falls Discovery blockiert ist, kann eine feste lokale IP eingetragen werden.</p></li>
+        <li><span>6</span><svg><use href="#icon-check"></use></svg><h3>Zonen auswählen</h3><p>Hauptzone festlegen und Räume ausblenden, die nicht am Gerät erscheinen sollen.</p></li>
+      </ol>
+      <div class="wrong-password"><strong>Falsches WLAN-Kennwort?</strong><span>Nach etwa 45 Sekunden kehrt RoonPilot zu seinem Setup-AP zurück. Die Angaben können ohne Löschen oder erneutes Flashen korrigiert werden.</span></div>
+    </div></section>
+
+    <section id="funktionen" class="features page-width">
+      <div class="section-heading"><p class="section-number">05</p><div><h2>Für die Art entwickelt, wie du Musik hörst</h2><p>Schnelle physische Steuerung, eine sorgfältig gestaltete runde Oberfläche und vollständige lokale Konfiguration.</p></div></div>
+      <article class="feature-band device-feature"><div class="feature-media round-media"><img src="../assets/device-now-playing.png" alt="RoonPilot Classic-Wiedergabebildschirm"></div><div class="feature-copy"><h3>Haptische Steuerung. Schön einfach.</h3><p>Der komplette Außenring regelt die Lautstärke. Tippen, Wischen oder Halten auf dem kapazitiven Display steuert Wiedergabe und Gerät.</p><ul><li>Play/Pause, Zurück und Weiter auf dem Display</li><li>Horizontales Wischen zum Trackwechsel</li><li>Drei auswählbare Player-Layouts</li><li>Zonenwahl, Lautstärke- und Roon-Kopplungsanzeige</li><li>Bahnhofs- und Digitaluhr mit Tag-/Nachthelligkeit</li><li>Schnelleinstellungen, Systeminformationen und optionale Bediensperre</li></ul></div></article>
+      <article class="feature-band web-feature"><div class="feature-copy"><h3>Weboberfläche. Vollständige lokale Kontrolle.</h3><p>Die responsive lokale Oberfläche verwaltet RoonPilot direkt im eigenen Netzwerk.</p><ul><li>Roon-Server- und Zonenverwaltung</li><li>Display-, Drehregler- und Touch-Einstellungen</li><li>Konfigurationsexport/-import ohne Geheimnisse</li><li>Signierte Online- und lokale A/B-Firmwareupdates</li><li>Diagnose und Akku-Laufzeitkalibrierung</li><li>Abgesicherter Deep Sleep mit Aufwachen per Touch und Drehring</li></ul></div><div class="feature-media web-media"><img src="../assets/web-overview.png" alt="RoonPilot-Übersicht der lokalen Weboberfläche"></div></article>
+    </section>
+
+    <section class="direct-band"><div class="page-width"><h2>Keine Bridge. Kein Raspberry Pi. Kein zusätzlicher Dienst.</h2><p>RoonPilot spricht im lokalen Netzwerk direkt mit Roon. Konfiguration, Freigabe und Steuerung bleiben lokal.</p></div></section>
+
+    <section class="hardware-section page-width" aria-labelledby="hardware-titel">
+      <div class="section-heading"><p class="section-number">06</p><div><h2 id="hardware-titel">Ein exakt unterstütztes Modul</h2><p>RoonPilot ist für das Waveshare ESP32-S3-Knob-Touch-LCD-1.8 ausgelegt, nicht für irgendein rundes ESP32-Display.</p></div></div>
+      <div class="hardware-layout">
+        <dl class="spec-list"><div><dt>Hauptprozessor</dt><dd>ESP32-S3R8 · 16 MB Flash · 8 MB PSRAM</dd></div><div><dt>Display</dt><dd>1,8-Zoll rundes IPS-LCD · 360 × 360 · kapazitiver Touch</dd></div><div><dt>Bedienung</dt><dd>Kompletter Drehring plus Touchgesten</dd></div><div><dt>Begleitprozessor</dt><dd>ESP32-U4WDH · unabhängiger 4-MB-Flash</dd></div><div><dt>Weitere Hardware</dt><dd>PCM5100A-DAC, Mikrofon, Vibrationsmotor und microSD</dd></div><div><dt>Stromversorgung</dt><dd>USB-C oder optionaler interner 3,7-V-/800-mAh-Akku</dd></div></dl>
+        <div class="hardware-actions"><p>Blaue und schwarze Gehäusevarianten werden mit oder ohne Akku verkauft. Vor dem Kauf genaue Bestellnummer und regionale Akkubeschränkungen prüfen.</p><a class="button secondary" href="https://www.waveshare.com/esp32-s3-knob-touch-lcd-1.8.htm" target="_blank" rel="noopener">Waveshare-Produktseite <svg><use href="#icon-external"></use></svg></a><a class="text-link" href="https://www.waveshare.com/wiki/ESP32-S3-Knob-Touch-LCD-1.8" target="_blank" rel="noopener">Offizielles technisches Wiki <svg><use href="#icon-external"></use></svg></a></div>
+      </div>
+    </section>
+
+    <section id="dokumentation" class="docs-section"><div class="page-width">
+      <div class="section-heading"><p class="section-number">07</p><div><h2>Alles erklärt, was benötigt wird</h2><p>Vor jeder Installation mit Hardwarebeschreibung und Original-Firmware-Sicherungen beginnen.</p></div></div>
+      <div class="docs-list">
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/hardware-and-two-processors.md"><span>01</span><strong>Hardware &amp; zwei Prozessoren</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/factory-backup.md"><span>02</span><strong>Original-Firmware sichern</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation.md"><span>03</span><strong>Installation</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/first-time-setup.md"><span>04</span><strong>Ersteinrichtung</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/device-controls.md"><span>05</span><strong>Bedienung am Gerät</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/web-interface.md"><span>06</span><strong>Weboberfläche</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/firmware-updates-and-recovery.md"><span>07</span><strong>Updates &amp; Wiederherstellung</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/troubleshooting.md"><span>08</span><strong>Fehlerbehebung</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/companion-firmware.md"><span>09</span><strong>Companion-Firmware</strong><svg><use href="#icon-arrow"></use></svg></a>
+      </div>
+      <div class="recovery-strip"><div class="recovery-icon"><svg><use href="#icon-usb"></use></svg></div><div><h3>USB-Probleme oder Wiederherstellung?</h3><p>BOOT/RESET nur verwenden, wenn die automatische USB-Verbindung scheitert. Niemals den Stecker drehen und den zweiten Prozessor auf Verdacht flashen.</p></div><a class="button secondary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/firmware-updates-and-recovery.md">Wiederherstellungsanleitung öffnen <svg><use href="#icon-external"></use></svg></a></div>
+    </div></section>
+  </main>
+
+  <footer><div class="page-width footer-inner"><div class="footer-brand"><span class="brand-mark" aria-hidden="true"></span><strong>RoonPilot</strong></div><p>Entworfen und entwickelt von <strong>Senior Coder</strong>. Unabhängig, nicht kommerziell und nicht mit Roon Labs oder Waveshare verbunden.</p><nav aria-label="Links in der Fußzeile"><a href="https://github.com/mermayer/RoonPilot">GitHub-Repository</a><a href="https://github.com/mermayer/RoonPilot/blob/main/LICENSE.md">Lizenz</a><a href="https://github.com/mermayer/RoonPilot/blob/main/THIRD_PARTY_NOTICES.md">Hinweise zu Drittanbietern</a></nav></div></footer>
+</body>
+</html>

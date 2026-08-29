@@ -1,5 +1,7 @@
 # Deep sleep
 
+**English** · [Deutsch](de/deep-sleep.md)
+
 Deep sleep is the lowest-power idle state of the main ESP32-S3. It is different
 from dimming, the idle clock and a black display: those modes keep RoonPilot
 running and reachable, while deep sleep stops the processor, Wi-Fi, Roon
@@ -82,4 +84,3 @@ calibration, because calibration deliberately blocks deep sleep.
 See [Troubleshooting](troubleshooting.md#deep-sleep-does-not-start) before
 changing or reflashing firmware. Serial diagnostics identify entry and an EXT1
 touch/encoder wake on the next boot.
-

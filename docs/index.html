@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-release-base="">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,9 +43,12 @@
         <a href="#features">Features</a>
         <a href="#documentation">Documentation</a>
       </nav>
-      <a class="header-link" href="https://github.com/mermayer/RoonPilot" target="_blank" rel="noopener">
-        <svg><use href="#icon-github"></use></svg><span>GitHub</span>
-      </a>
+      <div class="header-actions">
+        <a class="language-link" href="de/" lang="de">Deutsch</a>
+        <a class="header-link" href="https://github.com/mermayer/RoonPilot" target="_blank" rel="noopener">
+          <svg><use href="#icon-github"></use></svg><span>GitHub</span>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -166,6 +169,11 @@
               <div><dt><svg><use href="#icon-usb"></use></svg>Web Serial</dt><dd id="serial-status" class="check waiting">Checking</dd></div>
               <div><dt><svg><use href="#icon-shield"></use></svg>Signed firmware</dt><dd id="firmware-status" class="check waiting">Checking</dd></div>
             </dl>
+            <div class="installer-critical">
+              <p><strong>Chromium browser required.</strong> Use a current desktop Chrome, Edge, Chromium, Brave or Opera with Web Serial. Firefox and Safari cannot run this installer.</p>
+              <p><strong>Factory means complete erase.</strong> Installation removes the current ESP32-S3 firmware, Wi-Fi credentials, Roon authorization and all settings. Back up the original 16 MB flash first.</p>
+              <p><strong>Later updates are easier.</strong> After the first installation, use RoonPilot's local <b>System → Firmware update → Check for updates</b> page. Signed online A/B updates normally preserve settings.</p>
+            </div>
             <label class="safety-confirm">
               <input id="hardware-confirm" type="checkbox">
               <span><strong>I checked the active processor.</strong> The selected USB orientation reports <b>ESP32-S3</b>, and both original factory flashes have been backed up.</span>
@@ -175,7 +183,7 @@
                 <button id="install-button" class="button primary install-button" slot="activate" type="button" disabled>
                   <svg><use href="#icon-download"></use></svg>Install RoonPilot
                 </button>
-                <span slot="unsupported" class="inline-warning">USB installation requires a current desktop version of Chrome or Edge.</span>
+                <span slot="unsupported" class="inline-warning">USB installation requires a current desktop Chromium browser with Web Serial (for example Chrome or Edge). Firefox and Safari are not supported.</span>
                 <span slot="not-allowed" class="inline-warning">Open this page through HTTPS to access the USB device.</span>
               </esp-web-install-button>
               <button id="pending" class="button disabled install-button" type="button" disabled hidden>Firmware unavailable</button>
@@ -183,7 +191,7 @@
             </div>
           </div>
         </div>
-        <p class="browser-note">Use current desktop Chrome or Edge. Close ESP-IDF Monitor, PuTTY, Arduino Serial Monitor and every other program holding the COM port before starting.</p>
+        <p class="browser-note"><strong>Browser:</strong> current desktop Chromium with Web Serial only. <strong>Factory install:</strong> completely erases the ESP32-S3. Close ESP-IDF Monitor, PuTTY, Arduino Serial Monitor and every other program holding the COM port before starting.</p>
       </div>
     </section>
 

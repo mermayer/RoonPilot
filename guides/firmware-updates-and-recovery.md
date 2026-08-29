@@ -1,5 +1,7 @@
 # Firmware updates and recovery
 
+**English** · [Deutsch](de/firmware-updates-and-recovery.md)
+
 ## The three images are not interchangeable
 
 | Image | Processor | Flash address | Preserves settings? |
@@ -31,6 +33,18 @@ The update page can fetch the stable HTTPS manifest, compare version, board,
 size, checksum and signature state, then download the OTA file. This remains a
 user-initiated operation; RoonPilot does not silently replace its firmware.
 
+For normal updates after the first Factory installation:
+
+1. Open RoonPilot's IP address in a browser.
+2. Select **System → Firmware update**.
+3. Select **Check for updates**.
+4. If a newer approved release is shown, select **Download and install**.
+5. Keep stable power connected until RoonPilot restarts and returns online.
+
+This is the preferred update path. It writes the inactive A/B slot and normally
+retains Wi-Fi, Roon authorization and settings. The USB Factory installer is a
+complete erase/install path and is not required for routine updates.
+
 The private RSA signing key is never stored in the repository, public image or
 device web assets. Keep at least two encrypted external backups of the release
 key; losing it would prevent continuity of signed stable updates.
@@ -41,6 +55,11 @@ Use the [RoonPilot project website](https://mermayer.github.io/RoonPilot/). Its
 Web Installer writes only the ESP32-S3 Factory image and requires the user to
 confirm the processor and backup checks before it can be started. See
 [Installation](installation.md) for the complete novice procedure.
+
+It requires a current desktop Chromium browser with Web Serial support (for
+example Chrome or Edge). Firefox and Safari cannot run it. Installing the
+Factory image erases the complete existing ESP32-S3 flash and all device
+configuration.
 
 ## Interrupted update
 

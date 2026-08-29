@@ -1,5 +1,7 @@
 # Optional companion ESP32 firmware
 
+**English** · [Deutsch](de/companion-firmware.md)
+
 This guide explains the separate low-power firmware for the second processor in
 the Waveshare ESP32-S3-Knob-Touch-LCD-1.8. It is written for readers who have
 never used a command-line flashing tool.

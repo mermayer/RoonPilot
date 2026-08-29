@@ -12,13 +12,14 @@
   </style>
 </head>
 <body><main class="wrap">
+  <div class="links"><strong>English</strong><a href="../de/firmware/">Deutsch</a></div>
   <div class="target">Unlinked validation page</div>
   <h1>RoonPilot 1.0.0 files</h1>
   <p>These signed files are public for the documented hardware test cycle but are not yet a general installation recommendation.</p>
-  <div class="warning"><strong>Two processors, three files.</strong> Verify the active chip before every write. The ESP32-S3 and companion images are not interchangeable. Back up the complete 16 MB and 4 MB factory flashes first.</div>
+  <div class="warning"><strong>Two processors, three files.</strong> Verify the active chip before every write. The ESP32-S3 and companion images are not interchangeable. Back up the complete 16 MB and 4 MB factory flashes first. A Factory installation erases the complete target flash and every setting.</div>
   <section class="grid">
     <article class="card"><div class="target">ESP32-S3 · address 0x0</div><h2>Factory image</h2><p>Complete new installation or recovery. This erases existing ESP32-S3 settings.</p><a class="download" id="factoryLink">Download Factory</a><div class="hash" id="factoryHash">Loading checksum…</div></article>
-    <article class="card"><div class="target">Existing RoonPilot only</div><h2>OTA image</h2><p>Upload through the local firmware page or use the signed online update.</p><a class="download" id="otaLink">Download OTA</a><div class="hash" id="otaHash">Loading checksum…</div></article>
+    <article class="card"><div class="target">Existing RoonPilot only</div><h2>OTA image</h2><p>For normal later updates, use System → Firmware update on the device and select the signed online update. Settings are normally preserved.</p><a class="download" id="otaLink">Download OTA</a><div class="hash" id="otaHash">Loading checksum…</div></article>
     <article class="card"><div class="target">Classic ESP32 · address 0x0</div><h2>Companion sleep</h2><p>Optional low-power image. A verified complete 4 MB companion backup is mandatory.</p><a class="download" id="companionLink">Download Companion</a><div class="hash" id="companionHash">Loading checksum…</div></article>
   </section>
   <div class="links"><a href="../SHA256SUMS.txt">SHA256SUMS.txt</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation.md">Installation guide</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/factory-backup.md">Factory-backup guide</a></div>

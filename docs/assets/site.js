@@ -1,4 +1,27 @@
 (() => {
+  const german = document.documentElement.lang.toLowerCase().startsWith('de');
+  const releaseBase = document.documentElement.dataset.releaseBase || '';
+  const copy = german ? {
+    httpsRequired: 'Bitte die veröffentlichte HTTPS-Seite öffnen, bevor das Gerät verbunden wird.',
+    chromiumRequired: 'Für die USB-Installation ist ein aktueller Chromium-Desktopbrowser mit Web Serial erforderlich.',
+    confirmHardware: 'Bitte oben die Prüfung von Prozessor und Sicherung bestätigen, um den Installer freizuschalten.',
+    ready: 'Bereit. Bitte den zuvor als ESP32-S3 geprüften Anschluss auswählen.',
+    secureOk: 'Bereit', secureBad: 'HTTPS erforderlich',
+    serialOk: 'Unterstützt', serialBad: 'Chromium erforderlich',
+    verified: 'Geprüft', unavailable: 'Nicht verfügbar',
+    noRelease: 'Derzeit ist keine signierte Firmware-Version verfügbar.',
+    metadataError: 'Die Versionsinformationen konnten nicht geladen werden: '
+  } : {
+    httpsRequired: 'Open the published HTTPS page before connecting the device.',
+    chromiumRequired: 'Use a current desktop Chromium browser with Web Serial for USB installation.',
+    confirmHardware: 'Confirm the processor and backup check above to unlock the installer.',
+    ready: 'Ready. Select the port that you verified as the ESP32-S3.',
+    secureOk: 'Ready', secureBad: 'HTTPS required',
+    serialOk: 'Supported', serialBad: 'Chromium required',
+    verified: 'Verified', unavailable: 'Unavailable',
+    noRelease: 'No signed firmware release is currently available.',
+    metadataError: 'Release metadata could not be loaded: '
+  };
   const installer = document.getElementById('installer');
   const installButton = document.getElementById('install-button');
   const pendingButton = document.getElementById('pending');
@@ -28,27 +51,27 @@
     if (!state.releaseReady) return;
     if (!state.secure) {
       availability.className = 'error';
-      availability.textContent = 'Open the published HTTPS page before connecting the device.';
+      availability.textContent = copy.httpsRequired;
     } else if (!state.serial) {
       availability.className = 'error';
-      availability.textContent = 'Use a current desktop version of Chrome or Edge for USB installation.';
+      availability.textContent = copy.chromiumRequired;
     } else if (!state.confirmed) {
       availability.className = '';
-      availability.textContent = 'Confirm the processor and backup check above to unlock the installer.';
+      availability.textContent = copy.confirmHardware;
     } else {
       availability.className = '';
-      availability.textContent = 'Ready. Select the port that you verified as the ESP32-S3.';
+      availability.textContent = copy.ready;
     }
   }
 
-  setCheck(secureStatus, state.secure, 'Ready', 'HTTPS required');
-  setCheck(serialStatus, state.serial, 'Supported', 'Chrome or Edge required');
+  setCheck(secureStatus, state.secure, copy.secureOk, copy.secureBad);
+  setCheck(serialStatus, state.serial, copy.serialOk, copy.serialBad);
   confirmation.addEventListener('change', () => {
     state.confirmed = confirmation.checked;
     renderInstallerState();
   });
 
-  fetch('release.json', { cache: 'no-store' })
+  fetch(releaseBase + 'release.json', { cache: 'no-store' })
     .then(response => {
       if (!response.ok) throw new Error('HTTP ' + response.status);
       return response.json();
@@ -61,14 +84,14 @@
         typeof release.manifest === 'string' &&
         release.manifest.length > 0;
 
-      setCheck(firmwareStatus, state.releaseReady, 'Verified', 'Unavailable');
+      setCheck(firmwareStatus, state.releaseReady, copy.verified, copy.unavailable);
       if (state.releaseReady) {
-        installer.setAttribute('manifest', release.manifest);
+        installer.setAttribute('manifest', releaseBase + release.manifest);
       } else {
         installer.hidden = true;
         pendingButton.hidden = false;
         availability.className = 'error';
-        availability.textContent = 'No signed firmware release is currently available.';
+        availability.textContent = copy.noRelease;
       }
       renderInstallerState();
     })
@@ -76,9 +99,9 @@
       state.releaseReady = false;
       installer.hidden = true;
       pendingButton.hidden = false;
-      setCheck(firmwareStatus, false, 'Verified', 'Unavailable');
+      setCheck(firmwareStatus, false, copy.verified, copy.unavailable);
       availability.className = 'error';
-      availability.textContent = 'Release metadata could not be loaded: ' + error.message;
+      availability.textContent = copy.metadataError + error.message;
     });
 
   const navigationLinks = [...document.querySelectorAll('.site-header nav a')];
