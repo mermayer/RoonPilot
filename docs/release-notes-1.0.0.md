@@ -19,6 +19,8 @@ recovery and everyday-use test plan can be repeated from a clean device.
   credentials;
 - local configuration website, safe export/import and diagnostics;
 - device-specific battery runtime calibration with recoverable checkpoints;
+- guarded ESP32-S3 deep sleep while the selected zone is paused/stopped, with
+  touch and rotary-ring wake-up;
 - local A/B OTA, signed online OTA, boot validation and rollback;
 - browser-based factory installation for the primary ESP32-S3;
 - separate low-power firmware for the board's companion ESP32.
@@ -53,6 +55,8 @@ factory firmware.
   45 seconds;
 - Roon authorization, multiple-server selection and zone handling;
 - every display, touch, swipe, encoder and long-press-lock workflow;
+- deep-sleep blocking during playback/setup/update/calibration plus touch and
+  ring wake/reconnection;
 - local OTA in both A/B directions and settings retention;
 - signed online OTA and interrupted-update recovery;
 - automatic rollback after a deliberately invalid boot;
