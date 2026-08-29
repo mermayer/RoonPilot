@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-release-base="">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,6 @@
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="assets/site.css">
   <title>RoonPilot — tactile Roon control for the Waveshare round display</title>
-  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
   <script src="assets/site.js" defer></script>
 </head>
 <body>
@@ -39,7 +38,7 @@
       <nav aria-label="Main navigation">
         <a href="#overview">Overview</a>
         <a href="#before-you-flash">Before you flash</a>
-        <a href="#install">Install</a>
+        <a href="#install">Preparation</a>
         <a href="#features">Features</a>
         <a href="#documentation">Documentation</a>
       </nav>
@@ -63,7 +62,7 @@
           <svg><use href="#icon-arrow"></use></svg>
         </a>
         <div class="hero-actions">
-          <a class="button primary" href="#install"><svg><use href="#icon-download"></use></svg>Install RoonPilot</a>
+          <a class="button primary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation.md"><svg><use href="#icon-book"></use></svg>Prepare the hardware</a>
           <a class="button secondary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/README.md"><svg><use href="#icon-book"></use></svg>Read the guide</a>
         </div>
         <ul class="hero-facts" aria-label="RoonPilot highlights">
@@ -150,44 +149,32 @@
       <div class="page-width">
         <div class="section-heading">
           <p class="section-number">02</p>
-          <div><h2>Install the main ESP32-S3</h2><p>The browser installer writes the complete factory image to the primary processor.</p></div>
+          <div><h2>Prepare the main ESP32-S3</h2><p>Complete the safety-critical steps before starting any installation.</p></div>
         </div>
         <div class="install-layout">
           <aside class="install-warning">
             <svg><use href="#icon-alert"></use></svg>
             <h3>ESP32-S3 only</h3>
-            <p>The Web Installer never writes the classic companion ESP32. If the selected port reports a classic ESP32 or a chip-family mismatch, cancel immediately.</p>
+            <p>The ESP32-S3 Factory image must never be written to the classic companion ESP32. If the selected port reports a classic ESP32 or a chip-family mismatch, cancel immediately.</p>
             <p>Factory installation erases the ESP32-S3 settings. Make the backup first.</p>
           </aside>
           <div class="installer-panel">
             <div class="installer-topline">
-              <div><span class="panel-mark"></span><strong>RoonPilot Web Installer</strong></div>
-              <span id="version">Version 1.0.0</span>
+              <div><span class="panel-mark"></span><strong>Installation checklist</strong></div>
+              <span>ESP32-S3</span>
             </div>
-            <dl class="readiness" aria-label="Installer readiness">
-              <div><dt><svg><use href="#icon-lock"></use></svg>Secure HTTPS</dt><dd id="secure-status" class="check waiting">Checking</dd></div>
-              <div><dt><svg><use href="#icon-usb"></use></svg>Web Serial</dt><dd id="serial-status" class="check waiting">Checking</dd></div>
-              <div><dt><svg><use href="#icon-shield"></use></svg>Signed firmware</dt><dd id="firmware-status" class="check waiting">Checking</dd></div>
+            <dl class="readiness" aria-label="Installation requirements">
+              <div><dt><svg><use href="#icon-lock"></use></svg>Complete backups</dt><dd class="check">Required</dd></div>
+              <div><dt><svg><use href="#icon-usb"></use></svg>Verified chip</dt><dd class="check">ESP32-S3</dd></div>
+              <div><dt><svg><use href="#icon-shield"></use></svg>Stable power</dt><dd class="check">Required</dd></div>
             </dl>
             <div class="installer-critical">
-              <p><strong>Chromium browser required.</strong> Use a current desktop Chrome, Edge, Chromium, Brave or Opera with Web Serial. Firefox and Safari cannot run this installer.</p>
+              <p><strong>Chromium browser required for browser installation.</strong> Use a current desktop Chrome, Edge, Chromium, Brave or Opera with Web Serial. Firefox and Safari cannot run it.</p>
               <p><strong>Factory means complete erase.</strong> Installation removes the current ESP32-S3 firmware, Wi-Fi credentials, Roon authorization and all settings. Back up the original 16 MB flash first.</p>
               <p><strong>Later updates are easier.</strong> After the first installation, use RoonPilot's local <b>System → Firmware update → Check for updates</b> page. Signed online A/B updates normally preserve settings.</p>
             </div>
-            <label class="safety-confirm">
-              <input id="hardware-confirm" type="checkbox">
-              <span><strong>I checked the active processor.</strong> The selected USB orientation reports <b>ESP32-S3</b>, and both original factory flashes have been backed up.</span>
-            </label>
             <div class="installer-action">
-              <esp-web-install-button id="installer" manifest="manifest.json">
-                <button id="install-button" class="button primary install-button" slot="activate" type="button" disabled>
-                  <svg><use href="#icon-download"></use></svg>Install RoonPilot
-                </button>
-                <span slot="unsupported" class="inline-warning">USB installation requires a current desktop Chromium browser with Web Serial (for example Chrome or Edge). Firefox and Safari are not supported.</span>
-                <span slot="not-allowed" class="inline-warning">Open this page through HTTPS to access the USB device.</span>
-              </esp-web-install-button>
-              <button id="pending" class="button disabled install-button" type="button" disabled hidden>Firmware unavailable</button>
-              <p id="availability" role="status">Checking the signed firmware release…</p>
+              <a class="button secondary install-button" href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation.md"><svg><use href="#icon-book"></use></svg>Read the complete procedure</a>
             </div>
           </div>
         </div>

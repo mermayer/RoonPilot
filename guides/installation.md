@@ -24,9 +24,9 @@ Serial support**, for example Google Chrome, Microsoft Edge, Chromium, Brave or
 Opera. Firefox and Safari do not implement the required Web Serial workflow.
 The published HTTPS page and a direct USB data connection are mandatory.
 
-Open the [RoonPilot project website](https://mermayer.github.io/RoonPilot/).
-Its two-processor warning, backup checklist and chip-confirmation gate appear
-before the ESP32-S3 installer can be started.
+Open the supplied browser-installer address. Its two-processor warning, backup
+checklist and chip-confirmation gate appear before the ESP32-S3 installer can
+be started.
 
 1. Close ESP-IDF Monitor, PuTTY, Arduino Serial Monitor and every application
    that may have the COM port open.

@@ -62,9 +62,8 @@ if these commands fail. If Windows has no `py` command but `python` works, use
 
 ## 2. Download the companion file
 
-Download:
-
-[roonpilot-companion-sleep-factory-v1.0.0.bin](https://mermayer.github.io/RoonPilot/firmware/roonpilot-companion-sleep-factory-v1.0.0.bin)
+Download `roonpilot-companion-sleep-factory-v1.0.0.bin` from the supplied
+firmware page.
 
 Place the file in a new working folder. Do not rename it to a vague name such
 as `firmware.bin`; the processor target must remain obvious.

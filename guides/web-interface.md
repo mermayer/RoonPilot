@@ -161,7 +161,7 @@ roll back if the new application does not become healthy. Keep power connected.
 
 <img src="../assets/web-ui/11-usb-web-installer.png" alt="USB Web Installer" width="100%">
 
-This is the [static HTTPS project website](https://mermayer.github.io/RoonPilot/),
-not a page served by the device. It explains the unusual two-processor hardware,
-requires confirmation of the backup and chip checks, and writes the complete
-Factory image to the main ESP32-S3 only.
+This is a separate static HTTPS page, not a page served by the device. It
+explains the unusual two-processor hardware, requires confirmation of the
+backup and chip checks, and writes the complete Factory image to the main
+ESP32-S3 only.

@@ -29,7 +29,7 @@ HTTPS-Seite, ein direkter USB-Anschluss und ein Datenkabel sind erforderlich.
 2. Gerät über USB-C verbinden.
 3. Port mit `py -m esptool --port COM4 chip-id` prüfen.
 4. Nur bei **ESP32-S3** fortfahren.
-5. [Deutschen Web Installer](https://mermayer.github.io/RoonPilot/de/) öffnen.
+5. Die separat bereitgestellte Web-Installer-Adresse öffnen.
 6. Zwei-Prozessor-Warnung lesen und Sicherungs-/Chipprüfung bestätigen.
 7. **RoonPilot installieren** auswählen und den geprüften Port öffnen.
 8. Das vollständige Löschen erst nach geprüfter Original-Sicherung bestätigen.

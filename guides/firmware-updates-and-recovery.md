@@ -51,10 +51,10 @@ key; losing it would prevent continuity of signed stable updates.
 
 ## Browser Factory installation
 
-Use the [RoonPilot project website](https://mermayer.github.io/RoonPilot/). Its
-Web Installer writes only the ESP32-S3 Factory image and requires the user to
-confirm the processor and backup checks before it can be started. See
-[Installation](installation.md) for the complete novice procedure.
+Open the supplied browser-installer address. It writes only the ESP32-S3
+Factory image and requires the user to confirm the processor and backup checks
+before it can be started. See [Installation](installation.md) for the complete
+novice procedure.
 
 It requires a current desktop Chromium browser with Web Serial support (for
 example Chrome or Edge). Firefox and Safari cannot run it. Installing the

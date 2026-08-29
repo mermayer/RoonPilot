@@ -10,8 +10,6 @@
 
 *RoonPilot auf der originalen Waveshare ESP32-S3-Knob-Touch-LCD-1.8-Hardware.*
 
-[Projektseite und sichere Browser-Installation](https://mermayer.github.io/RoonPilot/de/)
-
 **Deutsch** · [English](README.md)
 
 </div>

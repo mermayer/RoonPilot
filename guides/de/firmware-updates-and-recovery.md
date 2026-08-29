@@ -49,8 +49,9 @@ Der private RSA-Signaturschlüssel befindet sich weder im Repository noch im
 
 ## Browser-Factory-Installation
 
-Der [RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/de/) ist nur
-für vollständige Neuinstallation/Wiederherstellung des ESP32-S3 gedacht.
+Die separat bereitgestellte Adresse des Web Installers öffnen. Der Installer
+ist nur für die vollständige Neuinstallation/Wiederherstellung des ESP32-S3
+gedacht.
 
 - Erfordert aktuellen Chromium-Desktopbrowser mit Web Serial, etwa Chrome oder
   Edge; Firefox/Safari funktionieren nicht.

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de" data-release-base="../">
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,6 @@
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="../assets/site.css">
   <title>RoonPilot — haptische Roon-Steuerung für das runde Waveshare-Display</title>
-  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
   <script src="../assets/site.js" defer></script>
 </head>
 <body>
@@ -36,7 +35,7 @@
       <nav aria-label="Hauptnavigation">
         <a href="#uebersicht">Übersicht</a>
         <a href="#vor-dem-flashen">Vor dem Flashen</a>
-        <a href="#installation">Installation</a>
+        <a href="#installation">Vorbereitung</a>
         <a href="#funktionen">Funktionen</a>
         <a href="#dokumentation">Dokumentation</a>
       </nav>
@@ -58,7 +57,7 @@
           <svg><use href="#icon-arrow"></use></svg>
         </a>
         <div class="hero-actions">
-          <a class="button primary" href="#installation"><svg><use href="#icon-download"></use></svg>RoonPilot installieren</a>
+          <a class="button primary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation.md"><svg><use href="#icon-book"></use></svg>Hardware vorbereiten</a>
           <a class="button secondary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/README.md"><svg><use href="#icon-book"></use></svg>Anleitung lesen</a>
         </div>
         <ul class="hero-facts" aria-label="RoonPilot-Vorteile">
@@ -98,30 +97,23 @@
 
     <section id="installation" class="install-section">
       <div class="page-width">
-        <div class="section-heading"><p class="section-number">02</p><div><h2>Den Haupt-ESP32-S3 installieren</h2><p>Der Browser-Installer schreibt das vollständige Factory-Abbild auf den Hauptprozessor.</p></div></div>
+        <div class="section-heading"><p class="section-number">02</p><div><h2>Den Haupt-ESP32-S3 vorbereiten</h2><p>Vor jeder Installation zuerst die sicherheitskritischen Schritte vollständig durchführen.</p></div></div>
         <div class="install-layout">
-          <aside class="install-warning"><svg><use href="#icon-alert"></use></svg><h3>Nur ESP32-S3</h3><p>Der Web Installer beschreibt niemals den klassischen Begleit-ESP32. Meldet der ausgewählte Port einen klassischen ESP32 oder einen Chip-Fehler, sofort abbrechen.</p><p>Die Factory-Installation löscht den gesamten ESP32-S3 samt Einstellungen. Zuerst sichern.</p></aside>
+          <aside class="install-warning"><svg><use href="#icon-alert"></use></svg><h3>Nur ESP32-S3</h3><p>Das ESP32-S3-Factory-Abbild darf niemals auf den klassischen Begleit-ESP32 geschrieben werden. Meldet der ausgewählte Port einen klassischen ESP32 oder einen Chip-Fehler, sofort abbrechen.</p><p>Die Factory-Installation löscht den gesamten ESP32-S3 samt Einstellungen. Zuerst sichern.</p></aside>
           <div class="installer-panel">
-            <div class="installer-topline"><div><span class="panel-mark"></span><strong>RoonPilot Web Installer</strong></div><span id="version">Version 1.0.0</span></div>
-            <dl class="readiness" aria-label="Bereitschaft des Installers">
-              <div><dt><svg><use href="#icon-lock"></use></svg>Sicheres HTTPS</dt><dd id="secure-status" class="check waiting">Prüfung</dd></div>
-              <div><dt><svg><use href="#icon-usb"></use></svg>Web Serial</dt><dd id="serial-status" class="check waiting">Prüfung</dd></div>
-              <div><dt><svg><use href="#icon-shield"></use></svg>Signierte Firmware</dt><dd id="firmware-status" class="check waiting">Prüfung</dd></div>
+            <div class="installer-topline"><div><span class="panel-mark"></span><strong>Installations-Checkliste</strong></div><span>ESP32-S3</span></div>
+            <dl class="readiness" aria-label="Voraussetzungen für die Installation">
+              <div><dt><svg><use href="#icon-lock"></use></svg>Vollständige Sicherungen</dt><dd class="check">Erforderlich</dd></div>
+              <div><dt><svg><use href="#icon-usb"></use></svg>Geprüfter Chip</dt><dd class="check">ESP32-S3</dd></div>
+              <div><dt><svg><use href="#icon-shield"></use></svg>Stabile Stromversorgung</dt><dd class="check">Erforderlich</dd></div>
             </dl>
             <div class="installer-critical">
-              <p><strong>Chromium-Browser erforderlich.</strong> Nur einen aktuellen Desktop-Browser wie Chrome, Edge, Chromium, Brave oder Opera mit Web Serial verwenden. Firefox und Safari funktionieren nicht.</p>
+              <p><strong>Für eine Browser-Installation ist Chromium erforderlich.</strong> Nur einen aktuellen Desktop-Browser wie Chrome, Edge, Chromium, Brave oder Opera mit Web Serial verwenden. Firefox und Safari funktionieren nicht.</p>
               <p><strong>Factory bedeutet vollständiges Löschen.</strong> Die Installation entfernt die aktuelle ESP32-S3-Firmware, WLAN-Zugangsdaten, Roon-Freigabe und alle Einstellungen. Zuerst den originalen 16-MB-Flash sichern.</p>
               <p><strong>Spätere Updates sind einfacher.</strong> Nach der Erstinstallation die lokale RoonPilot-Seite <b>System → Firmware update → Check for updates</b> verwenden. Signierte Online-A/B-Updates behalten die Einstellungen normalerweise bei.</p>
             </div>
-            <label class="safety-confirm"><input id="hardware-confirm" type="checkbox"><span><strong>Ich habe den aktiven Prozessor geprüft.</strong> Die gewählte USB-Orientierung meldet <b>ESP32-S3</b>, und beide Original-Firmwares wurden gesichert.</span></label>
             <div class="installer-action">
-              <esp-web-install-button id="installer" manifest="../manifest.json">
-                <button id="install-button" class="button primary install-button" slot="activate" type="button" disabled><svg><use href="#icon-download"></use></svg>RoonPilot installieren</button>
-                <span slot="unsupported" class="inline-warning">Für die USB-Installation ist ein aktueller Chromium-Desktopbrowser mit Web Serial erforderlich. Firefox und Safari werden nicht unterstützt.</span>
-                <span slot="not-allowed" class="inline-warning">Diese Seite muss über HTTPS geöffnet werden, damit auf das USB-Gerät zugegriffen werden kann.</span>
-              </esp-web-install-button>
-              <button id="pending" class="button disabled install-button" type="button" disabled hidden>Firmware nicht verfügbar</button>
-              <p id="availability" role="status">Die signierte Firmware-Version wird geprüft…</p>
+              <a class="button secondary install-button" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation.md"><svg><use href="#icon-book"></use></svg>Vollständige Anleitung lesen</a>
             </div>
           </div>
         </div>
