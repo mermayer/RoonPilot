@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="data:,">
+  <title>RoonPilot 1.0.0 validation files</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080a0b;--card:#111415;--line:#34393a;--text:#f2ede5;--muted:#aaa9a4;--cyan:#4fe0e2;--amber:#f1ad38}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 Inter,system-ui,sans-serif}.wrap{width:min(960px,calc(100% - 34px));margin:0 auto;padding:60px 0 80px}h1{font-size:clamp(36px,7vw,64px);line-height:1;margin:0 0 15px}h2{font-size:24px;margin:0 0 13px}p{color:var(--muted)}.warning{border-left:4px solid var(--amber);padding:15px 18px;background:#f1ad3810;margin:28px 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);background:var(--card);padding:22px;border-radius:10px}.target{color:var(--cyan);font-size:12px;text-transform:uppercase;letter-spacing:1px}.download{display:inline-flex;margin-top:12px;min-height:46px;align-items:center;padding:0 17px;border-radius:7px;background:var(--cyan);color:#061112;text-decoration:none;font-weight:700}.hash{margin-top:15px;font:12px/1.45 ui-monospace,Consolas,monospace;overflow-wrap:anywhere;color:#8e9795}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}.links a{color:var(--cyan)}@media(max-width:760px){.grid{grid-template-columns:1fr}.wrap{padding-top:35px}}
+  </style>
+</head>
+<body><main class="wrap">
+  <div class="target">Unlinked validation page</div>
+  <h1>RoonPilot 1.0.0 files</h1>
+  <p>These signed files are public for the documented hardware test cycle but are not yet a general installation recommendation.</p>
+  <div class="warning"><strong>Two processors, three files.</strong> Verify the active chip before every write. The ESP32-S3 and companion images are not interchangeable. Back up the complete 16 MB and 4 MB factory flashes first.</div>
+  <section class="grid">
+    <article class="card"><div class="target">ESP32-S3 · address 0x0</div><h2>Factory image</h2><p>Complete new installation or recovery. This erases existing ESP32-S3 settings.</p><a class="download" id="factoryLink">Download Factory</a><div class="hash" id="factoryHash">Loading checksum…</div></article>
+    <article class="card"><div class="target">Existing RoonPilot only</div><h2>OTA image</h2><p>Upload through the local firmware page or use the signed online update.</p><a class="download" id="otaLink">Download OTA</a><div class="hash" id="otaHash">Loading checksum…</div></article>
+    <article class="card"><div class="target">Classic ESP32 · address 0x0</div><h2>Companion sleep</h2><p>Optional low-power image. A verified complete 4 MB companion backup is mandatory.</p><a class="download" id="companionLink">Download Companion</a><div class="hash" id="companionHash">Loading checksum…</div></article>
+  </section>
+  <div class="links"><a href="../SHA256SUMS.txt">SHA256SUMS.txt</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation.md">Installation guide</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/factory-backup.md">Factory-backup guide</a></div>
+</main><script>
+Promise.all([fetch('../release.json',{cache:'no-store'}).then(r=>r.json()),fetch('../companion-release.json',{cache:'no-store'}).then(r=>r.json())]).then(([release,companion])=>{
+  factoryLink.href=release.factory.filename; factoryHash.textContent='SHA-256 '+release.factory.sha256;
+  otaLink.href=release.ota.filename; otaHash.textContent='SHA-256 '+release.ota.sha256;
+  companionLink.href=companion.image.filename; companionHash.textContent='SHA-256 '+companion.image.sha256;
+}).catch(error=>document.querySelector('.grid').insertAdjacentHTML('beforebegin','<div class="warning">Release metadata could not be loaded: '+error.message+'</div>'));
+</script></body></html>

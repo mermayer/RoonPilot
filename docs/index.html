@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#080a0b">
+  <link rel="icon" href="data:,">
+  <title>RoonPilot Firmware Installer</title>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080a0b;
+      --surface: #101314;
+      --line: #323738;
+      --line-soft: #222728;
+      --text: #f2ede5;
+      --muted: #aaa9a4;
+      --cyan: #4fe0e2;
+      --amber: #f1ad38;
+      --danger: #ff6e65;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+
+    html { background: var(--bg); }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    a { color: var(--cyan); }
+
+    header {
+      height: 76px;
+      border-bottom: 1px solid var(--line-soft);
+      display: flex;
+      align-items: center;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .brand {
+      font-size: 27px;
+      font-weight: 730;
+      letter-spacing: -0.04em;
+    }
+
+    main { padding-bottom: 70px; }
+
+    .hero {
+      min-height: 470px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
+      gap: 64px;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0 0 22px;
+      font-size: clamp(46px, 6vw, 72px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      font-weight: 690;
+    }
+
+    .hero h2 {
+      margin: 0 0 8px;
+      font-size: 27px;
+      line-height: 1.25;
+      font-weight: 540;
+    }
+
+    .hero-copy > p {
+      max-width: 570px;
+      margin: 0 0 25px;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    .device {
+      display: block;
+      width: min(100%, 540px);
+      max-height: 440px;
+      margin: 0 auto;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    esp-web-install-button { display: block; }
+
+    .install-fallback,
+    esp-web-install-button [slot="activate"],
+    esp-web-install-button::part(activate) {
+      min-height: 58px;
+      min-width: min(100%, 400px);
+      padding: 0 28px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--cyan);
+      color: #061112;
+      font: 680 18px/1 Inter, ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: -0.01em;
+      cursor: pointer;
+    }
+
+    esp-web-install-button::part(activate):focus-visible,
+    a:focus-visible {
+      outline: 3px solid var(--text);
+      outline-offset: 4px;
+    }
+
+    .install-fallback[hidden] { display: none; }
+    esp-web-install-button [slot="activate"]:hover { filter: brightness(1.07); }
+    .install-fallback:disabled { cursor: not-allowed; opacity: 0.42; }
+
+    .compatibility {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .compatibility span::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 9px;
+      border: 1px solid var(--cyan);
+      vertical-align: 1px;
+    }
+
+    #availability {
+      margin-top: 16px;
+      min-height: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    #availability.error { color: var(--danger); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      padding: 34px 0 30px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      padding: 0 34px;
+      border-right: 1px solid var(--line);
+    }
+
+    .step:first-child { padding-left: 0; }
+    .step:last-child { padding-right: 0; border-right: 0; }
+
+    .step-number {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--cyan);
+      border-radius: 50%;
+      color: var(--cyan);
+      font-size: 19px;
+    }
+
+    .step h3 { margin: 0 0 6px; font-size: 21px; font-weight: 620; }
+    .step p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .safety {
+      margin: 30px 0 0;
+      padding: 22px 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .safety div { padding: 0 28px; border-right: 1px solid var(--line); }
+    .safety div:last-child { border-right: 0; }
+    .safety h3 { margin: 0 0 5px; font-size: 17px; font-weight: 620; }
+    .safety p { margin: 0; color: var(--muted); font-size: 13px; }
+
+    .footer-band {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 24px;
+      padding: 24px 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .recovery strong { display: block; color: var(--amber); font-size: 17px; }
+    .local strong { display: block; color: var(--text); font-size: 17px; }
+    .footer-band p { margin: 4px 0 0; }
+
+    @media (max-width: 820px) {
+      .wrap { width: min(100% - 30px, 610px); }
+      .hero { grid-template-columns: 1fr; gap: 10px; padding: 48px 0 30px; }
+      .hero-copy { order: 0; }
+      .device { order: 1; max-height: 285px; margin-top: 18px; }
+      h1 { font-size: 38px; }
+      .hero h2 { font-size: 23px; }
+      .hero-copy > p { font-size: 16px; }
+      .steps, .safety, .footer-band { grid-template-columns: 1fr; }
+      .step { padding: 22px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .step:last-child { border-bottom: 0; }
+      .safety { padding: 0 22px; }
+      .safety div { padding: 20px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .safety div:last-child { border-bottom: 0; }
+      .footer-band { padding: 24px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header><div class="wrap brand">RoonPilot</div></header>
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>Firmware Installer</h1>
+        <h2>Install RoonPilot</h2>
+        <p>Connect the device by USB. Chrome or Edge will guide you through installation.</p>
+
+        <esp-web-install-button id="installer" manifest="manifest.json">
+          <button slot="activate">Install RoonPilot</button>
+          <span slot="unsupported">This browser does not support USB firmware installation. Use desktop Chrome or Edge.</span>
+          <span slot="not-allowed">Open this installer through HTTPS to access the USB device.</span>
+        </esp-web-install-button>
+        <button id="pending" class="install-fallback" type="button" disabled hidden>Release not yet approved</button>
+
+        <div class="compatibility" aria-label="Release information">
+          <span id="version">Version pending hardware validation</span>
+          <span>ESP32-S3 Knob Touch LCD 1.8</span>
+        </div>
+        <div id="availability" role="status">Checking the firmware release&hellip;</div>
+      </div>
+      <img class="device" src="assets/roonpilot-hardware.png" alt="Original blue RoonPilot ESP32-S3 rotary-knob hardware">
+    </section>
+
+    <section class="steps" aria-label="Installation steps">
+      <article class="step"><span class="step-number">1</span><div><h3>Connect</h3><p>Connect the correct ESP32-S3 USB port to this computer.</p></div></article>
+      <article class="step"><span class="step-number">2</span><div><h3>Install</h3><p>Your browser checks the device before writing firmware.</p></div></article>
+      <article class="step"><span class="step-number">3</span><div><h3>Set up</h3><p>Follow the on-screen steps to complete installation and configure your device.</p></div></article>
+    </section>
+
+    <section class="safety" aria-label="Firmware safety features">
+      <div><h3>A/B firmware slots</h3><p>Updates are written to the inactive application slot first.</p></div>
+      <div><h3>Automatic rollback</h3><p>A failed boot self-test restores the previously working image.</p></div>
+      <div><h3>Signed releases</h3><p>Public OTA images are cryptographically signed and verified.</p></div>
+    </section>
+
+    <section class="footer-band">
+      <div class="recovery"><strong>Need to recover a device?</strong><p>Use the factory image in this installer to restore all firmware partitions.</p></div>
+      <div class="local"><strong>Direct and local</strong><p>No account, cloud service or companion app required.</p></div>
+    </section>
+  </main>
+  <script>
+    const installer = document.getElementById('installer');
+    const pending = document.getElementById('pending');
+    const availability = document.getElementById('availability');
+    const version = document.getElementById('version');
+
+    fetch('release.json', { cache: 'no-store' })
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then(release => {
+        if (release.version) version.textContent = `Version ${release.version}`;
+        if (release.available === true && release.signed === true && release.manifest) {
+          installer.setAttribute('manifest', release.manifest);
+          availability.textContent = release.validation_only === true
+            ? 'Signed validation build ready. Use only for the documented test cycle.'
+            : 'Approved release ready. Settings are configured after installation.';
+          return;
+        }
+        installer.hidden = true;
+        pending.hidden = false;
+        availability.textContent = 'Firmware will be enabled here after validation on the production hardware.';
+      })
+      .catch(error => {
+        installer.hidden = true;
+        pending.hidden = false;
+        availability.className = 'error';
+        availability.textContent = `Release metadata could not be loaded: ${error.message}`;
+      });
+  </script>
+</body>
+</html>

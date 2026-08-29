@@ -1,0 +1,17 @@
+{
+    "name":  "RoonPilot",
+    "version":  "1.0.0",
+    "new_install_prompt_erase":  true,
+    "new_install_improv_wait_time":  30,
+    "builds":  [
+                   {
+                       "chipFamily":  "ESP32-S3",
+                       "parts":  [
+                                     {
+                                         "path":  "firmware/roonpilot-factory-v1.0.0.bin",
+                                         "offset":  0
+                                     }
+                                 ]
+                   }
+               ]
+}

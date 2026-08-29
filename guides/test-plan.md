@@ -1,0 +1,172 @@
+# Beginner validation test plan
+
+Use this plan for a clean version 1.0.0 cycle. Record pass/fail, date, firmware
+checksum and observations for every section. Do not combine unexplained failures
+with later tests.
+
+## Test record
+
+| Field | Value |
+| --- | --- |
+| Hardware order code/colour | |
+| Factory battery or own battery | |
+| Main Factory SHA-256 | |
+| Main OTA SHA-256 | |
+| Companion SHA-256 | |
+| Browser/OS | |
+| Roon Server version/platform | |
+| Wi-Fi/AP model and approximate RSSI | |
+| Test date | |
+
+## A. Arrival and factory preservation
+
+- [ ] Inspect enclosure, LCD, USB-C, ring and battery condition.
+- [ ] Confirm original hardware boots before modification.
+- [ ] Identify ESP32-S3 USB orientation with `chip-id`.
+- [ ] Read exact 16 MB ESP32-S3 factory backup.
+- [ ] Calculate/store SHA-256 and make a second copy.
+- [ ] Rotate USB and identify classic ESP32.
+- [ ] Read exact 4 MB companion backup.
+- [ ] Calculate/store SHA-256 and make a second copy.
+
+## B. Clean browser installation
+
+- [ ] Verify the published Factory checksum.
+- [ ] Connect the ESP32-S3 side.
+- [ ] Open the separately supplied HTTPS validation installer.
+- [ ] Confirm it clearly warns about two processors.
+- [ ] Confirm the browser sees the correct port.
+- [ ] Install and observe erase/write/verify completion.
+- [ ] Confirm boot screen and version 1.0.0.
+- [ ] Confirm the companion was not changed.
+
+## C. First-time Wi-Fi
+
+- [ ] `RoonPilot-Setup-XXXXXX` appears with the documented password.
+- [ ] Captive page opens or `192.168.4.1` works.
+- [ ] Only Wi-Fi fields/actions are exposed.
+- [ ] Enter a deliberately wrong password.
+- [ ] Recovery AP returns after approximately 45 seconds.
+- [ ] Correct credentials and connect successfully.
+- [ ] Restart and confirm automatic reconnection.
+- [ ] Confirm Network page shows changing real RSSI, not always full.
+
+## D. Roon discovery and authorization
+
+- [ ] Single-server automatic discovery works.
+- [ ] RoonPilot appears as `RoonPilot` by `Senior Coder` in Extensions.
+- [ ] Enable and confirm the pairing screen clears.
+- [ ] Restart and confirm pairing persists.
+- [ ] If possible, test two discovered servers and explicit selection.
+- [ ] Test manual fixed server address/port.
+- [ ] Test unavailable server and return to automatic mode.
+
+## E. Zones
+
+- [ ] All Roon zones initially appear.
+- [ ] Select the intended primary zone.
+- [ ] Hide/show several zones and save.
+- [ ] Confirm an unsaved draft survives periodic status refresh.
+- [ ] Confirm the primary cannot be left hidden.
+- [ ] Confirm only shown zones appear on the display.
+- [ ] Use touch and ring/page gestures through the whole list.
+- [ ] Test zone unavailable and no-zone screens.
+
+## F. Player layouts and transport
+
+For Classic, Focus and Orbit:
+
+- [ ] layout matches its website preview;
+- [ ] artwork and background gradient update on track change;
+- [ ] title makes one marquee pass only when too long;
+- [ ] artist Unicode test includes `a-ha` without replacement box;
+- [ ] play/pause icon follows subscribed Roon state;
+- [ ] previous/next buttons work;
+- [ ] swipe left/right maps to next/previous;
+- [ ] progress and time layout stay inside the round edge;
+- [ ] Wi-Fi and battery symbols stay inside the visible circle.
+
+## G. Ring and safety limit
+
+- [ ] Standard and Reversed direction.
+- [ ] All volume steps: 1, 2, 3, 5, 10%.
+- [ ] Acceleration off/on.
+- [ ] Maximum volume prevents ring and web control from crossing the set value.
+- [ ] Volume overlay appears and closes cleanly.
+- [ ] First ring movement from black screen wakes without volume change.
+
+## H. Quick Settings and control lock
+
+- [ ] Swipe up opens Quick Settings.
+- [ ] Touch opens Display/Volume/Clock sections.
+- [ ] Ring changes selected values.
+- [ ] Save & Close persists after restart.
+- [ ] Leaving without save restores previous values.
+- [ ] Centre hold around 1.2 seconds locks.
+- [ ] Touch, swipe and ring are blocked with visible feedback.
+- [ ] Centre hold unlocks.
+
+## I. Display, dim and clocks
+
+- [ ] Active and dim brightness visibly differ.
+- [ ] Dim after each value and Never.
+- [ ] Idle display after each value and Never.
+- [ ] Black idle wakes by touch and ring, suppressing the first command.
+- [ ] Station clock runs forward and with correct orientation.
+- [ ] Digital clock shows correct time/date.
+- [ ] Touch clock returns to player.
+- [ ] Day/night brightness changes at configured times.
+- [ ] Clock remains visible instead of later becoming black.
+- [ ] Entire display/touch rotation 180 degrees works.
+- [ ] Every accent colour is legible.
+
+## J. Local website
+
+- [ ] Desktop and mobile navigation.
+- [ ] Initial values arrive promptly.
+- [ ] Periodic status refresh remains responsive.
+- [ ] All seven pages save and reload correctly.
+- [ ] Buttons have no unintended text underlines.
+- [ ] Player previews are clean, especially Orbit.
+- [ ] Export includes every non-secret setting.
+- [ ] Export omits password/token/secrets.
+- [ ] Import validates and restores all supported settings.
+- [ ] Diagnostics download works.
+- [ ] Restart keeps configuration.
+- [ ] Typed factory reset removes it and returns to AP.
+
+## K. OTA and recovery
+
+- [ ] Local OTA upload from slot A to B.
+- [ ] Confirm settings and pairing persist.
+- [ ] Local/online OTA back to the other slot as planned.
+- [ ] Signed stable manifest, size and checksum accepted.
+- [ ] Interrupted/invalid boot produces rollback.
+- [ ] Factory Web Installer restores a deliberately clean ESP32-S3.
+- [ ] Original 16 MB backup can be restored if required.
+
+## L. Companion low-power firmware
+
+- [ ] Reconfirm original 4 MB backup and metadata.
+- [ ] Rotate USB and verify classic ESP32.
+- [ ] Write companion image only to classic ESP32.
+- [ ] Rotate back; RoonPilot still works.
+- [ ] Confirm DAC path remains silent/unpowered as intended.
+- [ ] Restore original companion backup once as a recovery proof.
+
+## M. Battery calibration
+
+- [ ] Read the full battery document.
+- [ ] Prepare via web and start only after USB removal on device.
+- [ ] Fixed 50% screen, Wi-Fi on, Roon/web stopped.
+- [ ] Let hardware shut down naturally.
+- [ ] Next boot presents recovered result.
+- [ ] Accept one valid and discard one deliberately interrupted result.
+- [ ] Complete at least two valid comparable runs; three preferred.
+
+## Completion
+
+Version 1.0.0 should leave validation status only when all safety-critical flash,
+recovery, secret-removal and rollback tests pass, and all remaining known issues
+are explicitly documented.
+
