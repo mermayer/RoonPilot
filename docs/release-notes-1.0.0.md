@@ -19,6 +19,8 @@ recovery and everyday-use test plan can be repeated from a clean device.
 - long-press device control lock with visible locked-operation feedback;
 - first-start Wi-Fi access point and automatic recovery after invalid
   credentials;
+- guided first setup with automatic single-server discovery, a persistent
+  Roon approval screen and an automatically opened mandatory zone picker;
 - local configuration website, safe export/import and diagnostics;
 - device-specific battery runtime calibration with recoverable checkpoints;
 - guarded ESP32-S3 deep sleep while the selected zone is paused/stopped, with
