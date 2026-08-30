@@ -25,11 +25,30 @@ eine fettere, Unicode-fähige Schrift.
 
 <img src="../../assets/device-screens/04-volume.png" alt="Lautstärkeanzeige" width="360">
 
-Beim Drehen erscheint die große Lautstärkeansicht der aktuellen Zone. Der Wert
-wird durch **Maximum volume** begrenzt, auch bei Beschleunigung. Einstellbar sind
-Richtung, Schrittweite (1, 2, 3, 5 oder 10 Prozent pro Raster), Beschleunigung
-und lokale Maximalgrenze. Andere Roon-Controller können die lokale Grenze
-überschreiten; sie ist keine zertifizierte akustische Schutzfunktion.
+Beim Drehen erscheint die große Lautstärkeansicht der aktuellen Zone. Sie
+beginnt mit dem tatsächlich von Roon gemeldeten Wert, verwendet die native
+Schrittweite des Endpunkts und schließt anschließend automatisch. RoonPilot
+erkennt die Roon-Lautstärketypen `number`, `db` und `incremental` ohne manuelle
+Auswahl:
+
+- `number` wird normalerweise in Prozent angezeigt. Bei älteren Endpunkten
+  ohne gemeldeten Bereich gilt als Rückfall der übliche Bereich 0 bis 100.
+- `db` zeigt den echten Roon-Wert, zum Beispiel `-40 dB`; er wird nicht
+  künstlich in 0 bis 100 umgerechnet.
+- `incremental` verwendet relative Lauter-/Leiser-Befehle, wenn kein absoluter
+  Wert verfügbar ist.
+
+Die Einstellung 1, 2, 3, 5 oder 10 bezeichnet Roon-Schritte pro Raster, nicht
+pauschal Prozent. Bei einem Endpunkt mit nativer Schrittweite 1 dB bedeutet der
+Wert `2` beispielsweise 2 dB pro Raster. Beschleunigung kann die wirksame
+Änderung bei schneller Drehung vervielfachen.
+
+**Maximum volume** begrenzt Ringbefehle nur, wenn der Endpunkt brauchbare
+Minimal- und Maximalwerte meldet. Andere Roon-Controller können die lokale
+Grenze überschreiten; sie ist keine zertifizierte akustische Schutzfunktion.
+Fehlen bei einem dB-Endpunkt die Grenzen, bleiben korrekte dB-Anzeige und
+relative Regelung erhalten, RoonPilot erfindet aber keinen Bereich und wendet
+keine möglicherweise unsichere lokale Obergrenze an.
 
 ## Zonenwahl
 
@@ -68,8 +87,8 @@ Mit Zurück oder Wischen nach unten zum Hauptmenü zurückkehren.
 
 ### Volume Controls
 
-- Lautstärkeschritt;
-- maximale Lautstärke;
+- Multiplikator der nativen Roon-Schrittweite;
+- maximale Lautstärke, sofern der Endpunkt Grenzen meldet;
 - Beschleunigung ein/aus;
 - Standard-/umgekehrte Richtung.
 

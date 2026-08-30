@@ -22,21 +22,33 @@ Short titles stay still. The artist line uses a heavier, Unicode-capable font.
 
 ## Volume
 
-Turning the ring opens a large volume overlay for the current zone. The value is
-limited by **Maximum volume**, even if acceleration is enabled. The overlay
-closes automatically and returns to the player.
+Turning the ring opens a large volume overlay for the current zone. It starts
+from the actual value reported by Roon, applies the endpoint's native step and
+closes automatically before returning to the player. RoonPilot recognizes the
+Roon volume types `number`, `db` and `incremental` without a manual unit setting:
+
+- `number` is normally shown as percent. Older endpoints without an explicit
+  range use the conventional 0-100 fallback.
+- `db` is shown as the real value reported by Roon, for example `-40 dB`; it is
+  not converted to a made-up 0-100 scale.
+- `incremental` supports relative louder/quieter commands when no absolute
+  value is available.
 
 <img src="../assets/device-screens/04-volume.png" alt="Volume overlay" width="360">
 
 Available settings:
 
 - **Direction:** Standard or Reversed.
-- **Volume step:** 1, 2, 3, 5 or 10 percent per detent.
+- **Volume step:** 1, 2, 3, 5 or 10 native Roon steps per detent. For example,
+  `2` means 2 dB on an output reporting a 1 dB native step.
 - **Acceleration:** faster turns multiply the effective change.
-- **Maximum volume:** a local upper limit for ring-driven commands.
+- **Maximum volume:** a local upper limit for ring-driven commands when the
+  endpoint supplies usable minimum and maximum values.
 
 The limit is a convenience safeguard, not an acoustic safety certification.
-Other Roon controllers can still set a higher volume.
+Other Roon controllers can still set a higher volume. If a dB endpoint does not
+report its bounds, RoonPilot keeps correct dB display and relative control but
+does not invent a range or apply a potentially unsafe local cap.
 
 ## Zone picker
 
@@ -78,8 +90,8 @@ Use the back control or swipe down to return to the Quick Settings home page.
 
 ### Volume Controls
 
-- volume step;
-- maximum volume;
+- native Roon-step multiplier;
+- maximum volume where endpoint limits are available;
 - acceleration on/off;
 - standard/reversed direction.
 

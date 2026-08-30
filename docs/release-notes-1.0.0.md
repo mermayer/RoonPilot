@@ -1,6 +1,6 @@
 # RoonPilot firmware 1.0.0
 
-**English** Â· [Deutsch](release-notes-1.0.0.de.md)
+**English** · [Deutsch](release-notes-1.0.0.de.md)
 
 This is the first complete RoonPilot validation build for the Waveshare
 `ESP32-S3-Knob-Touch-LCD-1.8`. It is prepared so the full installation,

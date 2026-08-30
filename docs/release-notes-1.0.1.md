@@ -1,6 +1,6 @@
 # RoonPilot firmware 1.0.1
 
-**English** Â· [Deutsch](release-notes-1.0.1.de.md)
+**English** · [Deutsch](release-notes-1.0.1.de.md)
 
 RoonPilot firmware 1.0.1 adds clear, privacy-conscious update awareness
 without changing the manual installation policy. RoonPilot can report that a
@@ -24,12 +24,27 @@ update without an explicit action by the owner.
 - update-history persistence is performed only after the HTTPS worker has
   stopped, keeping flash/NVS access safe with its PSRAM-backed task stack.
 
+## Native Roon volume handling
+
+- RoonPilot automatically distinguishes Roon `number`, `db` and `incremental`
+  volume outputs; no manual unit selection is required.
+- A dB endpoint is shown using the value reported by Roon, for example
+  `-40 dB`, instead of being relabelled or converted to an invented 0-100 value.
+- Rotary changes start from the endpoint's current value and use its reported
+  native step. A configured value of two Roon steps therefore means 2 dB on an
+  output reporting a 1 dB step.
+- Reported minimum and maximum values are used for the arc, web slider and
+  local maximum-volume limit. If a dB endpoint omits those limits, RoonPilot
+  keeps relative control and the correct dB text but does not invent an unsafe
+  absolute range or percentage.
+
 ## Compatibility and retained features
 
 - direct Roon discovery, authorization and zone control without a companion
   service, bridge or cloud account;
 - Classic, Focus and Orbit player screens with artwork-derived backgrounds;
-- touch transport, horizontal previous/next gestures and rotary volume;
+- touch transport, horizontal previous/next gestures and native percent/dB
+  rotary volume;
 - configurable zone visibility and primary control zone;
 - station and digital clocks with separate day/night brightness schedules;
 - on-device Quick Settings for system information, display, clock, accent

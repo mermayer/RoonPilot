@@ -53,7 +53,9 @@ einem aktuellen Chromium-Desktopbrowser geöffnet.
 
 ## Was RoonPilot besonders macht
 
-- Lautstärkeregelung über den kompletten äußeren Drehring.
+- Lautstärkeregelung über den kompletten äußeren Drehring. RoonPilot erkennt
+  Prozent-, dB- und relative Lautstärkeausgänge automatisch und zeigt echte
+  dB-Werte an, wenn Roon sie liefert.
 - Drei Player-Layouts: Classic, Focus und Orbit mit Vollbild-Cover.
 - Direkte Roon-Verbindung, Freigabe, Zonenstatus und Befehle im ESP32-S3.
 - Zonenwahl direkt am Gerät per Touch oder Ring.

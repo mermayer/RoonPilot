@@ -29,7 +29,8 @@ it never starts an installation.
 
 - current zone, cover, title, artist and play state;
 - previous, play/pause and next test controls;
-- selected-zone volume, capped by Maximum volume;
+- selected-zone volume in the native Roon unit (`%` or `dB`), with a local cap
+  only when the endpoint reports usable limits;
 - Wi-Fi RSSI, free memory, uptime and firmware version;
 - direct Roon and Wi-Fi status in the header.
 
@@ -87,9 +88,21 @@ its own schedule; it is not followed by an unrelated black-screen timeout.
 ### Rotary card
 
 - Standard/Reversed direction;
-- 1, 2, 3, 5 or 10% volume step;
-- Maximum volume in 5% increments;
+- 1, 2, 3, 5 or 10 native Roon steps per detent;
+- Maximum volume where Roon supplies a usable minimum/maximum range;
 - acceleration on/off.
+
+The unit is detected automatically from Roon. A `number` output is normally
+shown as percent, a `db` output uses the actual reported dB value, and an
+`incremental` output receives relative commands. The selected step is a
+multiplier of the endpoint's native step, not always a percentage: setting `2`
+means 2 dB per detent when the output reports a 1 dB step.
+
+An absolute volume slider and the local maximum limit require known bounds.
+Older `number` outputs may use the conventional 0-100 fallback. If a dB output
+does not report minimum and maximum, its correct dB text and ring control remain
+available, but the web slider is disabled and RoonPilot does not invent a
+potentially misleading range.
 
 **Reset page** restores the unsaved form values. **Save changes** persists them
 to the device. Text links and buttons use deliberate button styling without

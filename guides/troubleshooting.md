@@ -137,6 +137,18 @@ Check Direction, Volume step, Acceleration and Maximum volume on Display &
 Controls. The first ring movement after black screen wakes only. While locked,
 ring movement deliberately does not send volume.
 
+RoonPilot detects `number`, `db` and `incremental` volume outputs
+automatically. The step selector means native Roon steps, not always percent.
+For example, setting `2` on an output with a native 1 dB step changes 2 dB per
+detent before acceleration. The overlay must begin at the current value reported
+by Roon, not at zero.
+
+If a dB value is displayed correctly but the absolute web slider, percentage
+arc or Maximum volume protection is unavailable, inspect the zone data. Those
+features require minimum and maximum bounds from the endpoint. RoonPilot keeps
+relative dB control when the bounds are absent and deliberately does not invent
+a 0-100 range. An `incremental` output has no absolute value by definition.
+
 ## Touch or swipe is wrong
 
 Confirm **Rotate entire screen 180°** matches the physical orientation. Touch

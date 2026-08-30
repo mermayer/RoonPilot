@@ -104,6 +104,18 @@ beziehungsweise klassischem ESP32 fortfahren.
   verbraucht.
 - Aktive Bediensperre durch langen Druck in die Mitte lösen.
 
+RoonPilot erkennt `number`, `db` und `incremental` automatisch. Die
+Schrittauswahl bezeichnet native Roon-Schritte und nicht immer Prozent. Der
+Wert `2` ändert bei einem Endpunkt mit nativer 1-dB-Schrittweite vor der
+Beschleunigung beispielsweise 2 dB pro Raster. Die Lautstärkeanzeige muss beim
+aktuellen von Roon gemeldeten Wert beginnen, nicht bei null.
+
+Wird der dB-Wert korrekt angezeigt, aber absoluter Webregler, Prozentbogen oder
+**Maximum volume** fehlen, die Zonendaten prüfen. Diese Funktionen benötigen
+vom Endpunkt gemeldete Minimal- und Maximalwerte. Ohne diese Grenzen erhält
+RoonPilot die relative dB-Regelung und erfindet bewusst keinen Bereich 0 bis
+100. Ein `incremental`-Ausgang besitzt definitionsgemäß keinen absoluten Wert.
+
 ## Uhr erscheint nicht oder wird schwarz
 
 - Ruheanzeige muss Bahnhofsuhr oder Digitaluhr sein.

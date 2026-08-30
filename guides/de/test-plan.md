@@ -82,9 +82,22 @@ fortfahren.
 ## G. Ring und Lautstärkeschutz
 
 - [ ] Standard- und umgekehrte Richtung testen.
-- [ ] Alle Schrittweiten prüfen.
+- [ ] Alle Multiplikatoren der nativen Schrittweite prüfen: 1, 2, 3, 5 und 10.
+- [ ] Ein Roon-Ausgang vom Typ `number` wird automatisch erkannt und in Prozent
+  angezeigt.
+- [ ] Ein Roon-Ausgang vom Typ `db` wird automatisch erkannt und zeigt den
+  echten Wert, einschließlich negativer Werte wie `-40 dB`.
+- [ ] Die erste Drehung am dB-Ausgang beginnt beim aktuellen Roon-Wert und nicht
+  bei null.
+- [ ] Bei nativer Schrittweite 1 dB ändert Multiplikator `2` vor der
+  Beschleunigung 2 dB pro Raster.
+- [ ] Ein `incremental`-Ausgang erhält relative Befehle ohne erfundenen
+  Absolutwert.
+- [ ] Ein dB-Ausgang ohne gemeldete Grenzen behält Text und relative Regelung;
+  absoluter Webregler, Bogen/Bereich und lokale Maximalgrenze bleiben aus.
 - [ ] Beschleunigung bei schneller Drehung prüfen.
-- [ ] Maximum wird durch Ringbefehle nie überschritten.
+- [ ] Bei gemeldeten Grenzen wird das Maximum durch Ring- und Webbefehle nie
+  überschritten.
 - [ ] Lautstärkeansicht schließt automatisch und kehrt zum Player zurück.
 
 ## H. Schnelleinstellungen und Sperre

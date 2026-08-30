@@ -34,8 +34,12 @@ buttons. Text and controls remain inside the circular safe area.
 
 <img src="../assets/device-screens/04-volume.png" width="360" alt="Volume screen">
 
-Appears while the ring is turned. The arc and number represent the pending
-volume for the named zone.
+Appears while the ring is turned and starts from the zone's current value. The
+text automatically follows Roon's native volume type: `number` normally uses
+percent, while `db` shows the actual value such as `-40 dB`. Relative-only
+`incremental` outputs can still be controlled but do not provide an absolute
+value. The arc represents the pending level only when Roon supplies usable
+minimum and maximum bounds; RoonPilot does not fabricate a dB range.
 
 ### Zone picker
 

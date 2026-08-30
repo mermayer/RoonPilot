@@ -24,7 +24,7 @@ Installation.
 <img src="../../assets/web-ui/01-overview.png" alt="Webseite Übersicht" width="100%">
 
 - WLAN, IP, Signalstärke, Roon-Verbindung, Server, Zone und Firmware;
-- Titel, Interpret, Cover, Wiedergabe und Lautstärke;
+- Titel, Interpret, Cover, Wiedergabe und native Lautstärke in Prozent oder dB;
 - schnelle Play/Pause-/Zurück-/Weiter-Befehle;
 - Links zu den wichtigsten Konfigurationsbereichen.
 
@@ -77,9 +77,23 @@ später automatisch schwarz. Touch kehrt zur Playeransicht zurück.
 ### Drehring
 
 - Standard-/umgekehrte Richtung;
-- 1, 2, 3, 5 oder 10 Prozent pro Raster;
+- 1, 2, 3, 5 oder 10 native Roon-Schritte pro Raster;
 - Beschleunigung bei schneller Drehung;
-- maximale Lautstärke für Befehle dieses Geräts.
+- maximale Lautstärke für Befehle dieses Geräts, sofern Roon einen brauchbaren
+  Minimal-/Maximalbereich liefert.
+
+Die Einheit wird automatisch aus den Roon-Daten erkannt. Ein `number`-Ausgang
+erscheint normalerweise in Prozent, ein `db`-Ausgang mit dem tatsächlich
+gemeldeten dB-Wert und ein `incremental`-Ausgang erhält relative Befehle. Die
+gewählte Schrittweite ist ein Multiplikator der nativen Endpunkt-Schrittweite
+und nicht immer ein Prozentwert: Bei 1 dB nativer Schrittweite bedeuten `2`
+beispielsweise 2 dB pro Raster.
+
+Ein absoluter Lautstärkeregler und die lokale Obergrenze benötigen bekannte
+Grenzen. Für ältere `number`-Ausgänge kann der übliche Bereich 0 bis 100 als
+Rückfall dienen. Meldet ein dB-Ausgang kein Minimum und Maximum, bleiben
+korrekte dB-Anzeige und Ringregelung erhalten; der Webregler ist jedoch
+deaktiviert und RoonPilot erfindet keinen irreführenden Bereich.
 
 ## Network
 

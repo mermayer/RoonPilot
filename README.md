@@ -52,6 +52,8 @@ current desktop Chromium browser.
 ## Why it feels different
 
 - **Real volume control:** use the outer rotary ring instead of a small slider.
+  RoonPilot automatically follows the zone's native percent, dB or relative
+  volume model and displays real dB values when Roon supplies them.
 - **Three player layouts:** Classic, Focus and full-artwork Orbit.
 - **Direct Roon connection:** discovery, authorization, zone state and commands
   run on the ESP32-S3 itself.
@@ -143,7 +145,8 @@ The pages cover:
 - Roon Server discovery, manual server address and zone selection;
 - shown and hidden zones;
 - player layout, brightness, dimming, clocks and display rotation;
-- rotary direction, step, acceleration and maximum-volume protection;
+- rotary direction, native Roon-step multiplier, acceleration and
+  maximum-volume protection where the endpoint reports usable limits;
 - Wi-Fi status and network replacement;
 - battery runtime calibration and result history;
 - guarded deep-sleep timeout and wake policy;

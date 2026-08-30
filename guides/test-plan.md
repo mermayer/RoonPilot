@@ -91,9 +91,20 @@ For Classic, Focus and Orbit:
 ## G. Ring and safety limit
 
 - [ ] Standard and Reversed direction.
-- [ ] All volume steps: 1, 2, 3, 5, 10%.
+- [ ] All native-step multipliers: 1, 2, 3, 5 and 10.
+- [ ] A Roon `number` output is detected automatically and shown as percent.
+- [ ] A Roon `db` output is detected automatically and shows the actual value,
+  including a negative value such as `-40 dB`.
+- [ ] First movement on a dB output starts at the current Roon value, not zero.
+- [ ] On a 1 dB native output, multiplier `2` changes 2 dB per detent before
+  acceleration.
+- [ ] An `incremental` output receives relative commands without a fabricated
+  absolute value.
+- [ ] A dB output without reported bounds retains text and relative control but
+  disables the absolute web slider, arc/range and local maximum cap.
 - [ ] Acceleration off/on.
-- [ ] Maximum volume prevents ring and web control from crossing the set value.
+- [ ] With reported bounds, Maximum volume prevents ring and web control from
+  crossing the set value.
 - [ ] Volume overlay appears and closes cleanly.
 - [ ] First ring movement from black screen wakes without volume change.
 

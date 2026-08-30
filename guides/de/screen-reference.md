@@ -36,7 +36,13 @@ Text und Bedienelemente bleiben innerhalb des Rundbereichs.
 | --- | --- |
 | <img src="../../assets/device-screens/04-volume.png" width="320" alt="Lautstärke"> | <img src="../../assets/device-screens/05-zone-picker.png" width="320" alt="Zonenwahl"> |
 
-Die Lautstärke erscheint beim Drehen. In der Zonenwahl kennzeichnen
+Die Lautstärke erscheint beim Drehen und beginnt mit dem aktuellen Zonenwert.
+Die Einheit folgt automatisch dem Roon-Lautstärketyp: `number` erscheint
+normalerweise in Prozent, `db` mit dem echten Wert wie `-40 dB`.
+Nur-relatives `incremental` bleibt bedienbar, liefert aber keinen absoluten
+Anzeigewert. Der Bogen stellt einen Pegel nur dar, wenn Roon brauchbare Minimal-
+und Maximalwerte liefert; für dB wird kein künstlicher Bereich erfunden. In der
+Zonenwahl kennzeichnen
 Akzentrahmen und Haken die aktuelle Auswahl; nur freigegebene Zonen erscheinen.
 
 ## Verbindung und Auswahl
