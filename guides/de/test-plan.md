@@ -122,8 +122,8 @@ fortfahren.
 
 ## K. OTA und Wiederherstellung
 
-- [ ] Lokales OTA wechselt von Slot A nach B und behält Einstellungen.
-- [ ] Zweites OTA wechselt zurück.
+- [ ] Signiertes Online-OTA wechselt von Slot A nach B und behält Einstellungen.
+- [ ] Zweites signiertes Online-OTA wechselt zurück; lokaler Upload ist nicht verfügbar.
 - [ ] Onlineprüfung erreicht signiertes HTTPS-Manifest.
 - [ ] Onlineupdate prüft Projekt, Board, Version, Größe, Signatur und SHA-256.
 - [ ] Startvalidierung bestätigt gesundes Abbild.

@@ -167,13 +167,14 @@ Waveshare verbunden oder von ihnen empfohlen. Roon ist eine Marke von Roon
 Labs. Waveshare-Produktnamen dienen ausschließlich zur Bezeichnung der
 unterstützten Hardware.
 
-Für die RoonPilot-eigenen Teile gilt PolyForm Noncommercial 1.0.0: Private und
-andere nicht kommerzielle Nutzung ist erlaubt, kommerzielle Nutzung benötigt
-eine separate schriftliche Erlaubnis, und die Lizenz verlangt keine
-Veröffentlichung geänderten Quellcodes. Bei einer Weitergabe müssen die
-mitgelieferten Lizenz- und Hinweisdateien trotzdem beigefügt werden.
-Drittanbieterbestandteile behalten ihre unabhängigen freizügigen Lizenzen.
-Die genaue Trennung erklärt [Lizenzierung und Weitergabe](guides/de/licensing.md).
+Für die RoonPilot-eigenen Teile gilt die RoonPilot-Lizenz für private
+Binärnutzung 1.0. Sie erlaubt die Installation der offiziellen unveränderten
+Firmware über den autorisierten Web Installer sowie die private, nicht
+kommerzielle Nutzung. Weitergabe, Veränderung, Reverse Engineering,
+Quellcode-Rückgewinnung, Wettbewerbsanalyse und kommerzielle Nutzung sind
+untersagt, soweit zwingendes Recht keine Ausnahme vorsieht.
+Drittanbieterbestandteile behalten ihre unabhängigen Lizenzen. Die genaue
+Trennung erklärt [Lizenzierung und erlaubte Nutzung](guides/de/licensing.md).
 
 Copyright © 2026 Senior Coder. Siehe [LICENSE](LICENSE.md), [NOTICE](NOTICE)
 und [Hinweise zu Drittanbietern](THIRD_PARTY_NOTICES.md).

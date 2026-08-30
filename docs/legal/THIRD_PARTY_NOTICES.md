@@ -1,10 +1,11 @@
 # RoonPilot third-party notices
 
 This document applies to the RoonPilot firmware 1.0.0 binary distribution.
-RoonPilot-authored code and distribution material are licensed under the
-[PolyForm Noncommercial License 1.0.0](LICENSE.md). Third-party components
-listed below retain their own licenses. PolyForm restrictions do not replace
-or narrow rights granted independently for those components.
+RoonPilot-authored code and distribution material are proprietary and are
+licensed only under the [RoonPilot Personal-Use Binary License 1.0](LICENSE.md)
+([German version](LICENSE.de.md)). Third-party components listed below retain
+their own licenses. RoonPilot restrictions do not replace or narrow rights
+granted independently for those components.
 
 ## Direct project dependencies
 
@@ -16,7 +17,7 @@ or narrow rights granted independently for those components.
 | Espressif SH8601 LCD driver | 2.0.1~1 | Apache-2.0 |
 | LVGL | 9.5.0 | MIT |
 | cJSON | 1.7.x-compatible bundled source | MIT |
-| RoonPilot Companion Sleep firmware | 1.0.0 | PolyForm-Noncommercial-1.0.0 for RoonPilot-authored code; ESP-IDF notices below |
+| RoonPilot Companion Sleep firmware | 1.0.0 | LicenseRef-RoonPilot-Proprietary for RoonPilot-authored code; ESP-IDF notices below |
 
 ## Code and data linked through ESP-IDF and LVGL
 
@@ -36,19 +37,22 @@ official `esp-idf-sbom` tool.
 | LodePNG decoder | bundled with LVGL 9.5.0 | zlib-style license |
 | mpaland/printf | bundled with LVGL 9.5.0 | MIT |
 
-## Complete texts supplied with every binary package
+## Complete texts supplied with the installer and private release archive
 
 The `LICENSES` directory accompanying the binary contains the exact license
 and notice files copied from the dependency versions used for that build. The
-release package also contains:
+private release archive also contains:
 
 - `LICENSE.md` -- terms for RoonPilot-authored portions;
+- `LICENSE.de.md` -- German version of the RoonPilot terms;
 - `NOTICE` -- the required RoonPilot notice;
 - this `THIRD_PARTY_NOTICES.md` inventory;
-- `roonpilot.spdx` -- a machine-readable SPDX SBOM when generated for
-  the release.
-- `roonpilot-companion.spdx` -- the companion ESP32 SBOM when generated for
-  the release.
+- machine-readable SPDX SBOMs when generated for the release.
+
+The SPDX SBOMs are retained for internal compliance verification. They are not
+part of the public installer interface because the public third-party notices
+and exact license texts provide the required recipient information without
+exposing unnecessary build structure.
 
 ESP-IDF contains files under multiple permissive licenses. If a source-file
 header and a summary differ, the source-file header takes precedence. The

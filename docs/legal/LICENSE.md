@@ -1,76 +1,149 @@
-# PolyForm Noncommercial License 1.0.0
+# RoonPilot Personal-Use Binary License 1.0
 
-<https://polyformproject.org/licenses/noncommercial/1.0.0>
+Copyright (c) 2026 Senior Coder. All rights reserved.
 
-## Acceptance
+This license agreement (the **License**) applies to the portions of the
+RoonPilot firmware, companion firmware, installer, user interface, artwork,
+documentation and other distribution material authored by or for Senior Coder
+(the **RoonPilot Software**). It does not replace or restrict the separate
+licenses that apply to third-party components identified in
+`THIRD_PARTY_NOTICES.md` and the accompanying `LICENSES` directory.
 
-In order to get any license under these terms, you must agree to them as both strict obligations and conditions to all your licenses.
+By activating the RoonPilot Web Installer, installing an update, downloading
+the separately offered Companion firmware, or using the RoonPilot Software,
+you accept this License. If you do not accept it, do not install, download or
+use the RoonPilot Software.
 
-## Copyright License
+## 1. Limited permission
 
-The licensor grants you a copyright license for the software to do everything you might do with the software that would otherwise infringe the licensor's copyright in it for any permitted purpose.  However, you may only distribute the software according to [Distribution License](#distribution-license) and make changes or new works based on the software according to [Changes and New Works License](#changes-and-new-works-license).
+Subject to continued compliance with this License, Senior Coder grants you a
+limited, personal, non-exclusive, non-transferable, non-sublicensable,
+royalty-free license to:
 
-## Distribution License
+1. install an official, unmodified RoonPilot firmware image through the
+   installer provided or expressly approved by Senior Coder on a supported
+   Waveshare ESP32-S3-Knob-Touch-LCD-1.8 device;
+2. run that unmodified firmware on the supported device solely for your own
+   private, noncommercial use;
+3. configure the firmware through its documented display and web interfaces;
+4. install official, unmodified updates through RoonPilot's documented online
+   update function; and
+5. download, retain one reasonable installation or backup copy of, and install
+   the official, unmodified RoonPilot Companion firmware solely on the
+   companion ESP32 fitted to the same supported device.
 
-The licensor grants you an additional copyright license to distribute copies of the software.  Your license to distribute covers distributing the software with changes and new works permitted by [Changes and New Works License](#changes-and-new-works-license).
+No ownership interest is transferred. Every right not expressly granted is
+reserved by Senior Coder.
 
-## Notices
+## 2. Prohibited conduct
 
-You must ensure that anyone who gets a copy of any part of the software from you also gets a copy of these terms or the URL for them above, as well as copies of any plain-text lines beginning with `Required Notice:` that the licensor provided with the software.  For example:
+Except where and only to the extent that mandatory applicable law expressly
+permits an act despite this restriction, you must not, and must not enable or
+assist another person or entity to:
 
-> Required Notice: Copyright Yoyodyne, Inc. (http://example.com)
+1. copy, capture, extract, save or obtain a standalone RoonPilot primary
+   firmware image, except for transient copies created automatically by the
+   authorized Web Installer as technically necessary for installation;
+2. publish, upload, mirror, host, transmit, share, sell, rent, lease,
+   sublicense, transfer or otherwise redistribute any RoonPilot Software,
+   firmware image or substantial part of it;
+3. modify, patch, translate, adapt, alter, unlock or create a derivative work
+   from the RoonPilot Software, including binary patches and modified firmware
+   images;
+4. reverse engineer, decompile, disassemble, decode, decrypt, unpack, dump,
+   inspect or otherwise analyse the RoonPilot Software for the purpose of
+   recovering source code, implementation details, data structures, protocols,
+   algorithms or internal design;
+5. use information, implementation details or extracted material obtained from
+   the RoonPilot Software to develop, improve, produce, market or operate
+   another firmware, product, service or commercial offering;
+6. remove, alter or conceal copyright, license, attribution, signature,
+   integrity or provenance information;
+7. bypass the authorized installer, update-signature checks, access controls or
+   other technical protection measures; or
+8. use the RoonPilot Software for any commercial, professional, revenue-
+   generating, product-development, evaluation-for-procurement or competitive
+   analysis purpose without a separate written agreement signed by Senior
+   Coder.
 
-## Changes and New Works License
+The restriction on modification does not prohibit normal configuration through
+documented settings, nor does it prohibit installation of an official,
+unmodified update.
 
-The licensor grants you an additional copyright license to make changes and new works based on the software for any permitted purpose.
+## 3. Mandatory statutory rights
 
-## Patent License
+Nothing in this License excludes a right that cannot lawfully be excluded by
+contract. In particular, where applicable law implements Articles 5 and 6 of
+Directive 2009/24/EC, this License does not prevent:
 
-The licensor grants you a patent license for the software that covers patent claims the licensor can license, or becomes able to license, that you would infringe by using the software.
+- a backup copy that is necessary for the licensed use;
+- observation, study or testing performed while carrying out an authorized act
+  of loading, displaying, running, transmitting or storing the program; or
+- decompilation confined to the portions and conditions strictly necessary to
+  achieve interoperability of an independently created program when the
+  required information was not otherwise readily available.
 
-## Noncommercial Purposes
+Information obtained under a mandatory interoperability exception may be used
+only for that lawful interoperability purpose. It must not be used to create,
+produce or market a program substantially similar in expression to RoonPilot,
+or disclosed beyond what that exception permits.
 
-Any noncommercial purpose is a permitted purpose.
+## 4. Third-party software
 
-## Personal Uses
+RoonPilot contains independently licensed third-party components. Those
+components remain governed by their own license terms. Rights granted by an
+applicable third-party license are not reduced by this License. This License
+applies only to RoonPilot-authored code, assets, integration, selection,
+arrangement and distribution material.
 
-Personal use for research, experiment, and testing for the benefit of public knowledge, personal study, private entertainment, hobby projects, amateur pursuits, or religious observance, without any anticipated commercial application, is use for a permitted purpose.
+The corresponding copyright notices and license texts are available with the
+installer and in `THIRD_PARTY_NOTICES.md` and `LICENSES`.
 
-## Noncommercial Organizations
+## 5. Source code and confidential implementation
 
-Use by any charitable organization, educational institution, public research organization, public safety or health organization, environmental protection organization, or government institution is use for a permitted purpose regardless of the source of funding or obligations resulting from the funding.
+This License does not grant access to source code, build files, signing keys,
+debug symbols, maps or other development material. Such material is
+confidential and is not part of the licensed distribution. Possession or
+disclosure of it does not grant any license or permission to use it.
 
-## Fair Use
+## 6. Updates and signatures
 
-You may have "fair use" rights for the software under the law. These terms do not limit them.
+Senior Coder may provide, change or discontinue updates at any time. Firmware
+signatures establish authenticity and integrity; they do not transfer any
+copyright or grant permission beyond this License. You must not attempt to sign
+or present another image as an official RoonPilot release.
 
-## No Other Rights
+## 7. Termination
 
-These terms do not allow you to sublicense or transfer any of your licenses to anyone else, or prevent the licensor from granting licenses to anyone else.  These terms do not imply any other licenses.
+This License terminates automatically when you breach any of its terms. Upon
+termination you must stop using the RoonPilot Software and remove every copy in
+your possession or control, except to the extent retention is required by law.
+Sections protecting ownership, confidential implementation, limitations of
+liability and enforcement survive termination.
 
-## Patent Defense
+## 8. Disclaimer
 
-If you make any written claim that the software infringes or contributes to infringement of any patent, your patent license for the software granted under these terms ends immediately. If your company makes such a claim, your patent license ends immediately for work on behalf of your company.
+To the maximum extent permitted by applicable law, the RoonPilot Software is
+provided **as is** and **as available**, without warranties or conditions of
+any kind. Mandatory consumer rights remain unaffected.
 
-## Violations
+## 9. Limitation of liability
 
-The first time you are notified in writing that you have violated any of these terms, or done anything with the software not covered by your licenses, your licenses can nonetheless continue if you come into full compliance with these terms, and take practical steps to correct past violations, within 32 days of receiving notice.  Otherwise, all your licenses end immediately.
+To the maximum extent permitted by applicable law, Senior Coder is not liable
+for indirect, incidental, special, consequential or punitive damages, loss of
+data, loss of use, loss of revenue or damage resulting from installation or use
+of the RoonPilot Software. Nothing in this License limits liability where such
+limitation is prohibited by mandatory law.
 
-## No Liability
+## 10. General terms
 
-***As far as the law allows, the software comes as is, without any warranty or condition, and the licensor will not be liable to you for any damages arising out of these terms or the use or nature of the software, under any kind of legal claim.***
+If a provision is unenforceable, it will be enforced to the maximum lawful
+extent and the remaining provisions remain effective. A failure to enforce a
+provision is not a waiver. This License is the complete agreement concerning
+the RoonPilot-authored software supplied under it. Any commercial use,
+redistribution, modification or source-code access requires a separate written
+agreement signed by Senior Coder.
 
-## Definitions
-
-The **licensor** is the individual or entity offering these terms, and the **software** is the software the licensor makes available under these terms.
-
-**You** refers to the individual or entity agreeing to these terms.
-
-**Your company** is any legal entity, sole proprietorship, or other kind of organization that you work for, plus all organizations that have control over, are under the control of, or are under common control with that organization.  **Control** means ownership of substantially all the assets of an entity, or the power to direct its management and policies by vote, contract, or otherwise.  Control can be direct or indirect.
-
-**Your licenses** are all the licenses granted to you for the software under these terms.
-
-**Use** means anything you do with the software requiring one of your licenses.
-
-Required Notice: Copyright (c) 2026 Senior Coder, RoonPilot project.
-
+This License is governed by the laws of the Federal Republic of Germany,
+without prejudice to mandatory consumer-protection rules and conflict-of-law
+rules that cannot lawfully be excluded.

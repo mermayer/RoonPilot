@@ -137,8 +137,7 @@ Kabelereignis oder Wartung verwerfen.
 ## Update fehlgeschlagen
 
 - stabile USB-Stromversorgung nutzen;
-- richtige OTA-Datei für lokales Update, Factory nur im USB-Installer;
-- HTTPS-/Manifest-/Signatur-/Prüfsummenmeldung lesen;
+- HTTPS-/Manifest-/Signatur-/Prüfsummenmeldung des Online-Updates prüfen;
 - nach Neustart Version/Partition und Rollbackstatus prüfen;
 - bei nicht startendem Gerät Recovery-Anleitung verwenden.
 

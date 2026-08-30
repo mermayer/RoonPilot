@@ -7,8 +7,8 @@
     "secure_version":  0,
     "signed":  true,
     "url":  "https://mermayer.github.io/RoonPilot/firmware/roonpilot-ota-v1.0.0.bin",
-    "size":  1970176,
-    "sha256":  "911a5064489e22ea7a662cfba08f2bfcac380e42df213f95829bb6a7d8dfaa82",
+    "size":  1773568,
+    "sha256":  "b167a5ccde35357a8726a06b3736f5c89a6b4d81894493cbd7afb716beac5f69",
     "mandatory":  false,
     "notes_url":  "https://mermayer.github.io/RoonPilot/release-notes-1.0.0.md"
 }

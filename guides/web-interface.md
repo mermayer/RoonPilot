@@ -126,7 +126,7 @@ Read [Battery and runtime](battery-and-runtime.md) before starting a run and
 - firmware, active partition, uptime, internal heap and PSRAM;
 - safe JSON configuration export/import;
 - downloadable diagnostics;
-- local firmware-update page;
+- signed online-update page;
 - restart without changing settings;
 - typed-confirmation factory reset.
 
@@ -149,19 +149,21 @@ Served only in setup/recovery AP mode. It has no Roon, update, reset, import or
 diagnostic functions. This reduces both confusion and the exposed surface before
 the device joins the trusted local network.
 
-## Local firmware update page
+## Signed firmware update page
 
-<img src="../assets/web-ui/10-device-firmware-update.png" alt="Local firmware update" width="100%">
+<img src="../assets/web-ui/10-device-firmware-update.png" alt="Signed online firmware update" width="100%">
 
-Used by an existing RoonPilot for an OTA image or a signed online update. It
-checks metadata, writes the inactive A/B slot, reboots, validates startup and can
-roll back if the new application does not become healthy. Keep power connected.
+Used by an existing RoonPilot to check and install an approved signed online
+update. It checks metadata and integrity, writes the inactive A/B slot, reboots,
+validates startup and can roll back if the new application does not become
+healthy. Manual firmware upload is intentionally unavailable. Keep power
+connected.
 
 ## USB Web Installer
 
 <img src="../assets/web-ui/11-usb-web-installer.png" alt="USB Web Installer" width="100%">
 
-This is a separate static HTTPS page, not a page served by the device. It
-explains the unusual two-processor hardware, requires confirmation of the
-backup and chip checks, and writes the complete Factory image to the main
-ESP32-S3 only.
+This is a separate authorized HTTPS page, not a page served by the device. It
+explains the unusual two-processor hardware, requires confirmation of backups,
+processor and personal-use binary licence, and writes the complete Factory
+image to the main ESP32-S3 only. The primary image is not offered as a download.

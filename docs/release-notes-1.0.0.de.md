@@ -23,26 +23,25 @@ zu wiederholen.
 - Browser-Factory-Installation des ESP32-S3;
 - separate optionale Stromspar-Firmware für den Begleit-ESP32.
 
-## Dateien
+## Bereitstellung
 
-- `roonpilot-factory-v1.0.0.bin`: vollständiges ESP32-S3-Abbild für blankes
-  Gerät, Browserinstallation oder Wiederherstellung; löscht alles.
-- `roonpilot-ota-v1.0.0.bin`: Anwendungsabbild für ein vorhandenes RoonPilot
-  über die lokale Firmwareseite.
-- `roonpilot-companion-sleep-factory-v1.0.0.bin`: ausschließlich klassischer
-  Begleit-ESP32; niemals auf den ESP32-S3 schreiben.
-- `roonpilot-complete-v1.0.0.zip`: empfohlenes Komplettpaket mit Firmware,
-  Lizenztexten, Hinweisen und SPDX-Stückliste.
-- `SHA256SUMS.txt`: veröffentlichte Prüfsummen.
+- Das ESP32-S3-Factory-Abbild wird nur durch den autorisierten Web Installer
+  installiert und nicht als einzelne Datei angeboten.
+- Hauptfirmware-Updates installiert RoonPilot ausschliesslich aus dem
+  freigegebenen signierten Online-Kanal.
+- `roonpilot-companion-sleep-factory-v1.0.0.bin` ist die einzige separat
+  herunterladbare Firmware und ausschliesslich fuer den Begleit-ESP32 bestimmt.
+- Interne Archive, Hauptabbilder, Pruefsummenlisten, SBOMs, ELF- und Map-Dateien
+  gehoeren nicht zur oeffentlichen Downloadflaeche.
 
 ## Lizenzierung
 
-Für die RoonPilot-eigenen Teile gilt PolyForm Noncommercial 1.0.0. Private und
-andere nicht kommerzielle Nutzung ist erlaubt; kommerzielle Nutzung benötigt
-eine separate schriftliche Erlaubnis. Eine Veröffentlichung geänderten
-Quellcodes ist nicht vorgeschrieben, bei Weitergabe müssen Lizenz und Hinweise
-jedoch erhalten bleiben. Drittanbieterbestandteile behalten ihre unabhängigen
-Lizenzen.
+Für die RoonPilot-eigenen Teile gilt die RoonPilot-Lizenz für private
+Binärnutzung 1.0. Offizielle unveränderte Firmware darf privat und nicht
+kommerziell installiert und genutzt werden. Weitergabe, Veränderung, Reverse
+Engineering, Quellcode-Rückgewinnung, Wettbewerbsanalyse und kommerzielle
+Nutzung sind untersagt, soweit zwingendes Recht keine Ausnahme vorsieht.
+Drittanbieterbestandteile behalten ihre unabhängigen Lizenzen.
 
 ## Datenschutz und Vorbereitung
 
@@ -59,7 +58,7 @@ jedem Schreiben den Chip erkennen und zuerst den vollständigen 16-MB- sowie
 - Roon-Freigabe, Mehrfachserver- und Zonenbehandlung;
 - alle Display-, Touch-, Wisch-, Ring- und Sperrabläufe;
 - Deep-Sleep-Blockierung und Wake/Reconnect;
-- lokales und signiertes Online-OTA sowie Rollback;
+- signiertes Online-OTA in beide A/B-Richtungen sowie Rollback;
 - Companion-Sicherung, Stromspar-Firmware und Originalwiederherstellung;
 - mindestens zwei vollständige Akku-Kalibrierläufe.
 

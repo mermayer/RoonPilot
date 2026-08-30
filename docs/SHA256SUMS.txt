@@ -1,3 +1,0 @@
-4d23aeb7072269ddc8a3507eef02d4a1c2bb9c706fe4ccbbb2ad4d59dd5b64f7  firmware/roonpilot-factory-v1.0.0.bin
-911a5064489e22ea7a662cfba08f2bfcac380e42df213f95829bb6a7d8dfaa82  firmware/roonpilot-ota-v1.0.0.bin
-2288e61f9e2a0ed72e2ebf29cf7d7f317800f0623012f2516281e909d499d5a2  firmware/roonpilot-companion-sleep-factory-v1.0.0.bin

@@ -1,68 +1,73 @@
-# Licensing and redistribution
+# Licensing and permitted use
 
-[Documentation index](README.md) · [Deutsch](de/licensing.md)
+[Documentation index](README.md) - [Deutsch](de/licensing.md)
 
-This page is a practical summary. The actual license texts control if this
-summary and a license differ. It is not legal advice.
+This is a practical summary, not legal advice. The complete
+[RoonPilot Personal-Use Binary License 1.0](../LICENSE.md) controls.
 
-## Short answer
+## What the RoonPilot licence permits
 
-For the parts written specifically for RoonPilot:
+For RoonPilot-authored firmware, code, assets and integration, Senior Coder
+grants a narrow right to:
 
-- private and other noncommercial use is permitted without a fee;
-- commercial use requires separate written permission from Senior Coder;
-- the license does not require users to publish their modified source code;
-- anyone redistributing RoonPilot must also provide the PolyForm terms or its
-  URL and the `Required Notice` supplied with the firmware.
+- install the official, unmodified primary firmware through the authorized Web
+  Installer on the supported Waveshare board;
+- run and configure that official firmware privately and noncommercially;
+- install official signed online updates from the device page;
+- download and install the official unmodified Companion Sleep image on the
+  companion processor after making the required backup.
 
-These rules come from the
-[PolyForm Noncommercial License 1.0.0](../LICENSE.md). “Noncommercial” is
-defined by that license, not merely by whether money changes hands. Ask for
-separate permission before a business, paid product, commercial service or
-anticipated commercial application uses RoonPilot.
+No source-code publication is required because no right to modify RoonPilot is
+granted.
 
-## Third-party code is separate
+## What is not permitted
 
-RoonPilot includes ESP-IDF, LVGL, cJSON, fonts and other third-party code.
-Those portions keep their original Apache, MIT, BSD, OFL and other permissive
-terms. RoonPilot's noncommercial condition does not revoke rights which those
-authors granted independently, including commercial rights to their own code.
+Without separate written permission, the licence prohibits:
 
-The full inventory is in
-[Third-party notices](../THIRD_PARTY_NOTICES.md). Exact texts and attribution
-files for firmware 1.0.0 are stored in [`docs/legal/`](../docs/legal/).
+- copying, redistributing, mirroring, selling, sublicensing or otherwise
+  supplying RoonPilot firmware;
+- modifying, patching, translating or creating derivative versions;
+- reverse engineering, decompiling, disassembling, decrypting, unpacking,
+  dumping or analysing RoonPilot to recover source, design or implementation;
+- bypassing installer, signature, update or access controls;
+- using RoonPilot or recovered information in another product, commercial
+  service, product-development effort, procurement evaluation or competitive
+  analysis.
 
-## Source-code publication
+Mandatory statutory rights still apply. In particular, EU software law may
+preserve narrow rights for a lawful user to make a necessary backup, observe
+normal operation, or obtain interoperability information under strict
+conditions. The licence does not attempt to exclude rights that cannot legally
+be waived.
 
-Neither PolyForm Noncommercial 1.0.0 nor the listed MIT, Apache-2.0, BSD and
-OFL dependencies imposes a general requirement to publish a RoonPilot user's
-modified application source. Redistribution still has notice, attribution and
-license-copy obligations. A recipient must not remove third-party notices or
-apply the PolyForm restriction to independently licensed third-party code.
+## Distribution model
 
-## What accompanies a binary
+The ESP32-S3 Factory and OTA images are not offered as standalone downloads.
+Initial installation is available only through the authorized Web Installer;
+later primary updates are installed by RoonPilot itself from the signed online
+channel. The Companion Sleep image is the only separately downloadable
+RoonPilot firmware file.
 
-Every RoonPilot release package contains:
+The installer links the licence, required notice, third-party inventory and
+exact third-party licence texts. Internal build archives, symbol files, maps,
+SBOMs and primary firmware files are not part of the public download surface.
 
-- `LICENSE.md` for RoonPilot-authored portions;
-- `NOTICE` with the mandatory `Required Notice` line;
-- `THIRD_PARTY_NOTICES.md` with the component inventory;
-- `LICENSES/` with exact dependency license and copyright files;
-- `roonpilot.spdx`, the machine-readable SPDX software bill of materials.
-- `roonpilot-companion.spdx`, the SBOM for the optional companion image.
+## Third-party components remain separate
 
-The unlinked validation download page displays these links next to the binary
-downloads. Future public releases will retain the same legal bundle.
+ESP-IDF, LVGL, cJSON, fonts and other dependencies retain their own Apache,
+MIT, BSD, OFL and other licences. RoonPilot's proprietary terms cannot revoke
+rights those authors granted independently. The exact inventory is in
+[Third-party notices](../THIRD_PARTY_NOTICES.md), with licence texts in
+[`docs/legal/LICENSES/`](../docs/legal/LICENSES/).
 
-## Common cases
-
-| Intended use | Practical result |
+| Intended action | Result |
 | --- | --- |
-| Personal Roon remote at home | Permitted noncommercial use |
-| Hobby modification or private experiment | Permitted when there is no anticipated commercial application |
-| Sharing an unmodified or modified build with other hobbyists | Permitted for noncommercial purposes; include all required notices |
-| Selling pre-flashed devices or including RoonPilot in a paid product/service | Requires separate written permission for RoonPilot-authored portions |
-| Reusing an independently licensed MIT/Apache/BSD component | Governed by that component's own license, not PolyForm |
+| Install official firmware at home through the Web Installer | Permitted |
+| Use official firmware privately and noncommercially | Permitted |
+| Install an official signed update on the device | Permitted |
+| Modify, share, mirror or republish RoonPilot firmware | Not permitted |
+| Reverse engineer or recover its internal implementation | Not permitted, except non-waivable statutory rights |
+| Use RoonPilot for a product, service or competitive evaluation | Requires prior written permission |
+| Reuse an independently MIT/Apache/BSD-licensed dependency | Governed by that dependency's licence |
 
-When a planned use does not clearly fit one row, obtain permission before
-distributing or using it commercially.
+Contact Senior Coder before any use not expressly granted by the licence.

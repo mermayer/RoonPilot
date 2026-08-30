@@ -5,37 +5,15 @@
     "board":  "waveshare-esp32-s3-knob-touch-lcd-1.8",
     "channel":  "stable",
     "version":  "1.0.0",
-    "published":  "2026-08-29",
     "signed":  true,
-    "contains_bench_wifi_credentials":  false,
-    "contains_bench_roon_address":  false,
     "manifest":  "manifest.json",
-    "legal":  {
-                  "project_license":  "legal/LICENSE.md",
-                  "required_notice":  "legal/NOTICE",
-                  "third_party_notices":  "legal/THIRD_PARTY_NOTICES.md",
-                  "license_directory":  "legal/LICENSES/",
-                  "sbom":  "legal/roonpilot.spdx",
-                  "companion_sbom":  "legal/roonpilot-companion.spdx"
-              },
-    "factory":  {
-                    "filename":  "roonpilot-factory-v1.0.0.bin",
-                    "size":  2101248,
-                    "sha256":  "4d23aeb7072269ddc8a3507eef02d4a1c2bb9c706fe4ccbbb2ad4d59dd5b64f7"
-                },
-    "ota":  {
-                "filename":  "roonpilot-ota-v1.0.0.bin",
-                "url":  "https://mermayer.github.io/RoonPilot/firmware/roonpilot-ota-v1.0.0.bin",
-                "size":  1970176,
-                "sha256":  "911a5064489e22ea7a662cfba08f2bfcac380e42df213f95829bb6a7d8dfaa82"
-            },
-    "package":  {
-                    "filename":  "roonpilot-complete-v1.0.0.zip",
-                    "size":  2503693,
-                    "sha256":  "5dc76bfb79c2b1f6033aed390e2298a9afa26bda506c48a354b0043e839b5128",
-                    "includes_legal_bundle":  true
-                },
-    "release_notes":  "https://mermayer.github.io/RoonPilot/release-notes-1.0.0.md",
     "validation_only":  true,
-    "hardware_validated":  false
+    "hardware_validated":  false,
+    "distribution":  "authorized-web-installer-only",
+    "legal":  {
+                  "license_en":  "legal/LICENSE.md",
+                  "license_de":  "legal/LICENSE.de.md",
+                  "notice":  "legal/NOTICE",
+                  "third_party_notices":  "legal/THIRD_PARTY_NOTICES.md"
+              }
 }

@@ -139,10 +139,10 @@ For Classic, Focus and Orbit:
 
 ## K. OTA and recovery
 
-- [ ] Local OTA upload from slot A to B.
+- [ ] Signed online OTA changes from slot A to B.
 - [ ] Confirm settings and pairing persist.
-- [ ] Local/online OTA back to the other slot as planned.
-- [ ] Signed stable manifest, size and checksum accepted.
+- [ ] A second signed online OTA changes back to the other slot as planned.
+- [ ] Signed stable manifest, size and checksum accepted; local upload is unavailable.
 - [ ] Interrupted/invalid boot produces rollback.
 - [ ] Factory Web Installer restores a deliberately clean ESP32-S3.
 - [ ] Original 16 MB backup can be restored if required.

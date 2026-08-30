@@ -77,15 +77,30 @@ mode in a public place.
 ## Firmware integrity
 
 - stable OTA images are signed using an RSA-3072 key kept outside the project;
-- manifests use HTTPS and publish size/SHA-256;
+- device update manifests use HTTPS and validate size/SHA-256;
 - A/B boot validation supports rollback;
-- browser Factory installation publishes checksums but is a physical-USB
-  operation and erases current flash;
+- browser Factory installation is a physical-USB operation, is gated by
+  hardware and licence confirmations, and erases current flash;
 - the companion firmware has its own checksum/metadata and is excluded from the
   ESP32-S3 Web Installer.
 
 The private release key requires at least two encrypted external backups. It
 must never be committed, copied into Pages or attached to a release.
+
+### Technical limits
+
+Code signing protects the official online-update path, but it is not source-code
+encryption. A browser installer must deliver the Factory image to the browser;
+a technically skilled user can capture that transfer and inspect or decompile
+the machine code. Likewise, signed-app verification by itself does not stop an
+attacker with physical USB access from replacing the complete flash image.
+
+RoonPilot therefore combines legal restrictions, signed releases, release-binary
+audits and a deliberately minimal public package. Hardware Secure Boot and Flash
+Encryption are not silently enabled because their irreversible eFuse provisioning
+would change the documented backup and recovery workflow. They would require a
+separate controlled-device provisioning model and still would not make the image
+delivered by a public Web Installer confidential.
 
 ## Diagnostics
 

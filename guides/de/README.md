@@ -24,7 +24,7 @@ sie Bestandteil der Installation und keine optionale Hintergrundinformation.
 | --- | --- |
 | Jede Displayansicht | [Bildschirmreferenz](screen-reference.md) |
 | Jede lokale Konfigurationsseite | [Weboberfläche](web-interface.md) |
-| Factory-, lokale und Online-Updates | [Firmwareupdates und Wiederherstellung](firmware-updates-and-recovery.md) |
+| Factory-Installation und signierte Online-Updates | [Firmwareupdates und Wiederherstellung](firmware-updates-and-recovery.md) |
 | Optionale Stromspar-Firmware des zweiten ESP | [Companion-Firmware](companion-firmware.md) |
 | Einstellungen sichern | [Konfiguration exportieren/importieren](configuration-backup.md) |
 | Akku-Grenzen und Kalibrierung | [Akku und Laufzeit](battery-and-runtime.md) |
@@ -41,9 +41,10 @@ sie Bestandteil der Installation und keine optionale Hintergrundinformation.
 - **Haupt-ESP32-S3:** Prozessor für RoonPilot, Display, Touch, WLAN, Roon und
   lokale Webseite.
 - **Begleit-ESP32:** zweiter, unabhängiger klassischer ESP32 im selben Gerät.
-- **Factory-Abbild:** vollständige Installation für Flashadresse `0x0`.
-- **OTA-Abbild:** Anwendungsdatei zum Aktualisieren eines vorhandenen
-  RoonPilot.
+- **Factory-Installation:** vollständiges Löschen/Installieren des ESP32-S3,
+  ausschließlich durch den autorisierten Web Installer.
+- **OTA-Update:** signiertes Anwendungsupdate, das RoonPilot selbst abruft und
+  installiert; eine manuelle Hauptfirmware-Datei wird nicht angeboten.
 - **AP:** temporärer WLAN-Zugangspunkt für die Ersteinrichtung.
 - **NVS:** nichtflüchtiger Einstellungsspeicher des ESP32.
 

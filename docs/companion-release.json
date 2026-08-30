@@ -7,8 +7,8 @@
     "flash_size":  4194304,
     "image":  {
                   "filename":  "roonpilot-companion-sleep-factory-v1.0.0.bin",
-                  "size":  197264,
-                  "sha256":  "2288e61f9e2a0ed72e2ebf29cf7d7f317800f0623012f2516281e909d499d5a2"
+                  "size":  176032,
+                  "sha256":  "4c7b6841c70656bbbb137dad4f915585823be030346c7ae7a5a9a5abfab51b82"
               },
     "browser_installable":  false,
     "backup_required":  true

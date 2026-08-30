@@ -23,7 +23,7 @@ them part of the installation, not optional background reading.
 | --- | --- |
 | Every display view | [Screen reference](screen-reference.md) |
 | Every local configuration page | [Web interface](web-interface.md) |
-| Factory, local and online updates | [Firmware updates and recovery](firmware-updates-and-recovery.md) |
+| Web Installer, signed online updates and recovery | [Firmware updates and recovery](firmware-updates-and-recovery.md) |
 | Optional second-ESP low-power image | [Companion firmware](companion-firmware.md) |
 | Settings backup | [Configuration export and import](configuration-backup.md) |
 | Battery limitations and calibration | [Battery and runtime](battery-and-runtime.md) |
@@ -40,8 +40,10 @@ them part of the installation, not optional background reading.
 - **Main ESP32-S3:** the processor that runs RoonPilot, the display, touch,
   Wi-Fi, Roon and the local website.
 - **Companion ESP32:** a second, independent classic ESP32 on the same board.
-- **Factory image:** one file containing everything needed at flash address 0.
-- **OTA image:** the application file used to update an existing RoonPilot.
+- **Factory installation:** complete ESP32-S3 erase/install performed only by
+  the authorized Web Installer.
+- **OTA update:** signed application update fetched and installed by an
+  existing RoonPilot; no manual firmware file is offered.
 - **AP:** a temporary Wi-Fi access point created by RoonPilot for setup.
 - **NVS:** the ESP32's non-volatile settings storage.
 

@@ -103,7 +103,7 @@ absichtlich deaktiviert, damit das Messprofil reproduzierbar bleibt.
 - Firmwareversion, Partition, Laufzeit und Speicher;
 - Diagnosepaket herunterladen;
 - Konfiguration exportieren/importieren;
-- lokale Firmwareseite öffnen;
+- Seite für signierte Online-Updates öffnen;
 - Neustart;
 - durch Texteingabe geschützter Factory Reset.
 
@@ -125,21 +125,21 @@ Sie ist nur im Setup-AP verfügbar und enthält absichtlich ausschließlich
 WLAN-Auswahl, Kennwort und Speichern. Vollständige Konfiguration wird erst im
 Heimnetz angeboten.
 
-## Lokale Firmwareseite
+## Seite fuer signierte Firmwareupdates
 
-<img src="../../assets/web-ui/10-device-firmware-update.png" alt="Lokales Firmwareupdate" width="100%">
+<img src="../../assets/web-ui/10-device-firmware-update.png" alt="Signiertes Online-Firmwareupdate" width="100%">
 
-Für ein vorhandenes RoonPilot: passendes OTA-Abbild lokal hochladen oder über
-**Check for updates** ein signiertes Online-Update suchen und installieren.
-Settings bleiben beim A/B-OTA normalerweise erhalten. Factory-Abbilder gehören
-nicht auf diese Seite.
+Für ein vorhandenes RoonPilot: mit **Check for updates** ein freigegebenes
+signiertes Online-Update suchen und installieren. Ein manueller Firmwareupload
+ist absichtlich nicht vorhanden. Einstellungen bleiben beim A/B-OTA
+normalerweise erhalten.
 
 ## USB Web Installer
 
 <img src="../../assets/web-ui/11-usb-web-installer.png" alt="USB Web Installer" width="100%">
 
 Nur für vollständige ESP32-S3-Erstinstallation oder Wiederherstellung. Er
-funktioniert ausschließlich mit aktuellem Desktop-Chromium und Web Serial. Das
-Factory-Abbild löscht den kompletten ESP32-S3 einschließlich aller
-Einstellungen. Der Begleit-ESP32 wird niemals durch diesen Installer
-beschrieben.
+funktioniert ausschließlich mit aktuellem Desktop-Chromium und Web Serial,
+verlangt die Sicherungs-, Prozessor- und Lizenzbestätigung und bietet das
+Hauptabbild nicht als Download an. Factory löscht den kompletten ESP32-S3.
+Der Begleit-ESP32 wird niemals durch diesen Installer beschrieben.

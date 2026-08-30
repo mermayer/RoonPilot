@@ -220,12 +220,13 @@ non-commercial project and is not affiliated with or endorsed by Roon Labs or
 Waveshare. Roon is a trademark of Roon Labs. Waveshare product names identify
 the supported hardware only.
 
-RoonPilot-authored portions use PolyForm Noncommercial 1.0.0: private and
-other noncommercial use is permitted, commercial use requires separate written
-permission, and the license does not require publication of modified source.
-Redistribution still requires the supplied license and notice files.
-Third-party portions retain their independent permissive licenses. See
-[Licensing and redistribution](guides/licensing.md) for the exact distinction.
+RoonPilot-authored portions use the RoonPilot Personal-Use Binary License 1.0.
+It permits installation of official unmodified firmware through the authorized
+Web Installer and private noncommercial operation. Redistribution,
+modification, reverse engineering, source recovery, competitive analysis and
+commercial use are prohibited except where mandatory law provides otherwise.
+Third-party portions retain their independent licences. See
+[Licensing and permitted use](guides/licensing.md) for the exact distinction.
 
 Copyright © 2026 Senior Coder. See [LICENSE](LICENSE.md), [NOTICE](NOTICE) and
 [third-party notices](THIRD_PARTY_NOTICES.md).

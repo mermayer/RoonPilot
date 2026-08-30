@@ -5,50 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <link rel="icon" href="data:,">
-  <title>RoonPilot 1.0.0 validation files</title>
+  <title>RoonPilot Firmware Installer</title>
   <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
   <style>
-    :root{color-scheme:dark;--bg:#080a0b;--card:#111415;--line:#34393a;--text:#f2ede5;--muted:#aaa9a4;--cyan:#4fe0e2;--amber:#f1ad38}
-    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 Inter,system-ui,sans-serif}.wrap{width:min(960px,calc(100% - 34px));margin:0 auto;padding:60px 0 80px}h1{font-size:clamp(36px,7vw,64px);line-height:1;margin:0 0 15px}h2{font-size:24px;margin:0 0 13px}p{color:var(--muted)}.warning{border-left:4px solid var(--amber);padding:15px 18px;background:#f1ad3810;margin:28px 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card,.web-installer,.license-panel{border:1px solid var(--line);background:var(--card);padding:22px;border-radius:10px}.web-installer,.license-panel{margin:28px 0}.web-installer label{display:flex;gap:12px;align-items:flex-start;margin:18px 0;color:var(--muted)}.web-installer input{margin-top:5px;accent-color:var(--cyan)}.target{color:var(--cyan);font-size:12px;text-transform:uppercase;letter-spacing:1px}.download,.install-button{display:inline-flex;margin-top:12px;min-height:46px;align-items:center;padding:0 17px;border:0;border-radius:7px;background:var(--cyan);color:#061112;text-decoration:none;font:700 16px/1 Inter,system-ui,sans-serif}.install-button:disabled{cursor:not-allowed;opacity:.42}.hash{margin-top:15px;font:12px/1.45 ui-monospace,Consolas,monospace;overflow-wrap:anywhere;color:#8e9795}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}.links a{color:var(--cyan)}.inline-warning{display:block;margin-top:12px;color:var(--amber)}@media(max-width:760px){.grid{grid-template-columns:1fr}.wrap{padding-top:35px}}
+    :root{color-scheme:dark;--bg:#080a0b;--card:#111415;--line:#34393a;--text:#f2ede5;--muted:#aaa9a4;--cyan:#4fe0e2;--amber:#f1ad38;--danger:#ff6e65}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 Inter,system-ui,sans-serif}.wrap{width:min(900px,calc(100% - 34px));margin:0 auto;padding:60px 0 80px}h1{font-size:clamp(36px,7vw,64px);line-height:1;margin:0 0 15px}h2{font-size:24px;margin:0 0 13px}p{color:var(--muted)}.warning{border-left:4px solid var(--amber);padding:15px 18px;background:#f1ad3810;margin:28px 0}.web-installer,.card,.license-panel{border:1px solid var(--line);background:var(--card);padding:22px;border-radius:10px}.web-installer,.license-panel,.card{margin:24px 0}.confirm{display:flex;gap:12px;align-items:flex-start;margin:17px 0;color:var(--muted)}.confirm input{margin-top:5px;accent-color:var(--cyan)}.target{color:var(--cyan);font-size:12px;text-transform:uppercase;letter-spacing:1px}.download,.install-button{display:inline-flex;margin-top:12px;min-height:46px;align-items:center;padding:0 17px;border:0;border-radius:7px;background:var(--cyan);color:#061112;text-decoration:none;font:700 16px/1 Inter,system-ui,sans-serif}.install-button:disabled{cursor:not-allowed;opacity:.42}.hash{margin-top:15px;font:12px/1.45 ui-monospace,Consolas,monospace;overflow-wrap:anywhere;color:#8e9795}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}.links a,.confirm a{color:var(--cyan)}.inline-warning{display:block;margin-top:12px;color:var(--amber)}.restriction{border-left:3px solid var(--danger);padding-left:14px}.distribution{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}.distribution div{border-top:1px solid var(--line);padding-top:16px}.distribution strong{display:block}.distribution p{margin:5px 0 0;font-size:14px}@media(max-width:700px){.wrap{padding-top:35px}.distribution{grid-template-columns:1fr}}
   </style>
 </head>
 <body><main class="wrap">
   <div class="links" style="margin:0 0 28px"><strong>English</strong><a href="../de/firmware/">Deutsch</a></div>
-  <div class="target">Unlinked validation page</div>
-  <h1>RoonPilot 1.0.0 files</h1>
-  <p>These signed files are public for the documented hardware test cycle but are not yet a general installation recommendation.</p>
-  <div class="warning"><strong>Two processors, three files.</strong> Verify the active chip before every write. The ESP32-S3 and companion images are not interchangeable. Back up the complete 16 MB and 4 MB factory flashes first. A Factory installation erases the complete target flash and every setting.</div>
+  <div class="target">RoonPilot primary firmware</div>
+  <h1>Firmware Installer</h1>
+  <p>The primary ESP32-S3 firmware is installed only through this authorized browser installer. Factory and OTA images are not offered as standalone downloads.</p>
+
+  <div class="warning"><strong>Two independent processors.</strong> Verify the active chip before every write. The Web Installer targets only the ESP32-S3. Back up the complete original 16 MB ESP32-S3 flash and the separate 4 MB companion flash first. A Factory installation erases the complete ESP32-S3 and all of its settings.</div>
+
   <section class="web-installer" aria-labelledby="web-installer-title">
-    <div class="target">ESP32-S3 only · USB Web Serial</div>
-    <h2 id="web-installer-title">Browser installation</h2>
-    <p>Use only a current desktop Chromium browser such as Chrome or Edge. Firefox and Safari do not support the required Web Serial workflow. Close every serial monitor before continuing.</p>
-    <p><strong>Factory installation completely erases the ESP32-S3</strong>, including firmware, Wi-Fi credentials, Roon authorization and settings. Normal later updates belong on the device under <b>System → Firmware update</b>.</p>
-    <label><input id="hardwareConfirm" type="checkbox"><span>I have backed up both original factory flashes and verified that the selected USB orientation reports <strong>ESP32-S3</strong>.</span></label>
+    <div class="target">ESP32-S3 only &middot; USB Web Serial</div>
+    <h2 id="web-installer-title">Install in the browser</h2>
+    <p>Use a current desktop Chromium browser such as Chrome or Edge. Close every serial monitor before continuing. Firefox and Safari do not support this Web Serial workflow.</p>
+    <label class="confirm"><input id="hardwareConfirm" type="checkbox"><span>I have backed up both original factory flashes and verified that the selected USB orientation reports <strong>ESP32-S3</strong>.</span></label>
+    <label class="confirm"><input id="licenseConfirm" type="checkbox"><span>I have read and accept the <a href="../legal/LICENSE.md" target="_blank" rel="noopener">RoonPilot Personal-Use Binary License 1.0</a>. I understand that redistribution, modification, reverse engineering, source recovery, competitive analysis and commercial use of RoonPilot-authored portions are prohibited except where mandatory law provides otherwise.</span></label>
     <esp-web-install-button manifest="../manifest.json">
-      <button id="installButton" class="install-button" slot="activate" type="button" disabled>Install Factory image</button>
+      <button id="installButton" class="install-button" slot="activate" type="button" disabled>Install RoonPilot</button>
       <span class="inline-warning" slot="unsupported">Use a current desktop Chromium browser with Web Serial, for example Chrome or Edge.</span>
       <span class="inline-warning" slot="not-allowed">Open this HTTPS page before connecting the USB device.</span>
     </esp-web-install-button>
   </section>
-  <section class="grid">
-    <article class="card"><div class="target">ESP32-S3 · address 0x0</div><h2>Factory image</h2><p>Complete new installation or recovery. This erases existing ESP32-S3 settings.</p><a class="download" id="factoryLink">Download Factory</a><div class="hash" id="factoryHash">Loading checksum…</div></article>
-    <article class="card"><div class="target">Existing RoonPilot only</div><h2>OTA image</h2><p>For normal later updates, use System → Firmware update on the device and select the signed online update. Settings are normally preserved.</p><a class="download" id="otaLink">Download OTA</a><div class="hash" id="otaHash">Loading checksum…</div></article>
-    <article class="card"><div class="target">Classic ESP32 · address 0x0</div><h2>Companion sleep</h2><p>Optional low-power image. A verified complete 4 MB companion backup is mandatory.</p><a class="download" id="companionLink">Download Companion</a><div class="hash" id="companionHash">Loading checksum…</div></article>
+
+  <section class="distribution" aria-label="Firmware distribution">
+    <div><strong>Factory installation</strong><p>Available only through the Web Installer above. It erases the ESP32-S3 before installing RoonPilot.</p></div>
+    <div><strong>Normal updates</strong><p>Installed directly by RoonPilot under <b>System &rarr; Firmware update</b>. No OTA file download is offered.</p></div>
   </section>
+
+  <section class="card" aria-labelledby="companion-title">
+    <div class="target">Separate classic ESP32 &middot; optional</div>
+    <h2 id="companion-title">Companion Sleep firmware</h2>
+    <p>This is the only separately downloadable RoonPilot firmware image. It releases shared signals, mutes the unused DAC path and puts the board's second ESP32 into deep sleep. A verified complete 4 MB backup is mandatory before installation.</p>
+    <a class="download" id="companionLink">Download Companion firmware</a>
+    <div class="hash" id="companionHash">Loading checksum&hellip;</div>
+  </section>
+
   <section class="license-panel" aria-labelledby="license-title">
-    <div class="target">Accompanies every binary</div>
+    <div class="target">Proprietary RoonPilot portions</div>
     <h2 id="license-title">License and third-party notices</h2>
-    <p>RoonPilot-authored portions permit private and other noncommercial use. Commercial use requires separate written permission. Publication of modified source is not required, but redistribution must preserve the supplied license and notices. Third-party components retain their independent licenses.</p>
-    <a class="download" id="packageLink" hidden>Download complete package with licenses</a><div class="hash" id="packageHash"></div>
-    <div class="links"><a href="../legal/LICENSE.md">Project license</a><a href="../legal/NOTICE">Required notice</a><a href="../legal/THIRD_PARTY_NOTICES.md">Third-party inventory</a><a href="../legal/roonpilot.spdx">ESP32-S3 SPDX SBOM</a><a href="../legal/roonpilot-companion.spdx">Companion SPDX SBOM</a></div>
+    <p class="restriction">Official, unmodified RoonPilot firmware may be installed and used privately on supported hardware. RoonPilot-authored code, assets and integration may not be redistributed, modified, reverse engineered or used in another product. Independently licensed third-party components retain their own rights and licenses.</p>
+    <div class="links"><a href="../legal/LICENSE.md">License (English)</a><a href="../legal/LICENSE.de.md">Lizenz (Deutsch)</a><a href="../legal/NOTICE">Required notice</a><a href="../legal/THIRD_PARTY_NOTICES.md">Third-party notices</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation.md">Installation guide</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/factory-backup.md">Factory-backup guide</a></div>
   </section>
-  <div class="links"><a href="../SHA256SUMS.txt">SHA256SUMS.txt</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation.md">Installation guide</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/factory-backup.md">Factory-backup guide</a></div>
 </main><script>
-Promise.all([fetch('../release.json',{cache:'no-store'}).then(r=>r.json()),fetch('../companion-release.json',{cache:'no-store'}).then(r=>r.json())]).then(([release,companion])=>{
-  factoryLink.href=release.factory.filename; factoryHash.textContent='SHA-256 '+release.factory.sha256;
-  otaLink.href=release.ota.filename; otaHash.textContent='SHA-256 '+release.ota.sha256;
-  if(release.package){packageLink.href=release.package.filename;packageLink.hidden=false;packageHash.textContent='SHA-256 '+release.package.sha256}
-  companionLink.href=companion.image.filename; companionHash.textContent='SHA-256 '+companion.image.sha256;
-}).catch(error=>document.querySelector('.grid').insertAdjacentHTML('beforebegin','<div class="warning">Release metadata could not be loaded: '+error.message+'</div>'));
-hardwareConfirm.addEventListener('change',()=>{installButton.disabled=!hardwareConfirm.checked});
+const hardwareConfirm=document.getElementById('hardwareConfirm');
+const licenseConfirm=document.getElementById('licenseConfirm');
+const installButton=document.getElementById('installButton');
+function updateInstallGate(){installButton.disabled=!(hardwareConfirm.checked&&licenseConfirm.checked)}
+hardwareConfirm.addEventListener('change',updateInstallGate);
+licenseConfirm.addEventListener('change',updateInstallGate);
+fetch('../companion-release.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(companion=>{
+  companionLink.href='../firmware/'+companion.image.filename;
+  companionHash.textContent='SHA-256 '+companion.image.sha256;
+}).catch(error=>{companionLink.removeAttribute('href');companionHash.textContent='Companion metadata could not be loaded: '+error.message});
 </script></body></html>

@@ -57,6 +57,23 @@ Verbindung wird der AP beendet.
 - Factory-Installation bleibt ein absichtlich manueller, vollständig
   löschender Vorgang.
 
+### Technische Grenzen
+
+Die Codesignatur schützt den offiziellen Online-Updatepfad, ist jedoch keine
+Verschlüsselung des Programmcodes. Ein Browser-Installer muss das Factory-Abbild
+an den Browser übertragen. Technisch versierte Personen können diese Übertragung
+mitschneiden und den Maschinencode untersuchen oder dekompilieren. Die Prüfung
+signierter Anwendungen allein verhindert außerdem nicht, dass jemand mit
+physischem USB-Zugriff den gesamten Flash-Inhalt ersetzt.
+
+RoonPilot kombiniert deshalb rechtliche Beschränkungen, signierte Releases,
+Binärprüfungen und ein bewusst minimales öffentliches Paket. Secure Boot und
+Flash Encryption werden nicht stillschweigend aktiviert, weil die unumkehrbare
+eFuse-Provisionierung den dokumentierten Sicherungs- und Wiederherstellungsweg
+verändern würde. Dafür wäre ein eigener kontrollierter Geräte-Prozess nötig;
+auch dieser könnte das über einen öffentlichen Web Installer ausgelieferte
+Abbild nicht geheim halten.
+
 ## Diagnose
 
 Diagnosepakete können IPs, WLAN-Namen, Zonen-/Roon-Namen, Status und

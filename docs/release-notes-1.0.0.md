@@ -1,9 +1,9 @@
 # RoonPilot firmware 1.0.0
 
-**English** · [Deutsch](release-notes-1.0.0.de.md)
+**English** Â· [Deutsch](release-notes-1.0.0.de.md)
 
 This is the first complete RoonPilot validation build for the Waveshare
-`ESP32-S3-Knob-Touch-LCD-1.8`. It is published so the full installation,
+`ESP32-S3-Knob-Touch-LCD-1.8`. It is prepared so the full installation,
 recovery and everyday-use test plan can be repeated from a clean device.
 
 ## Included
@@ -27,25 +27,26 @@ recovery and everyday-use test plan can be repeated from a clean device.
 - browser-based factory installation for the primary ESP32-S3;
 - separate low-power firmware for the board's companion ESP32.
 
-## Files
+## Distribution
 
-- `roonpilot-factory-v1.0.0.bin` is the complete primary ESP32-S3 image
-  for a blank device, browser installation or recovery.
-- `roonpilot-ota-v1.0.0.bin` is the application-only image for an
-  existing RoonPilot through its local firmware page.
-- `roonpilot-companion-sleep-factory-v1.0.0.bin` is the separate image
-  for the classic ESP32 companion processor. Never write it to the ESP32-S3.
-- `roonpilot-complete-v1.0.0.zip` is the recommended complete download; it
-  includes the firmware files, license texts, notices and SPDX SBOM.
-- `SHA256SUMS.txt` contains the published file checksums.
+- The primary ESP32-S3 Factory firmware is installed only through the
+  authorized browser Web Installer. It is not offered as a standalone binary
+  download.
+- Normal later updates are installed by RoonPilot itself through **System ->
+  Firmware update**. The OTA image is not offered as a standalone download.
+- The separate Companion Sleep image is the sole downloadable firmware file.
+  It targets the classic ESP32 and must never be written to the ESP32-S3.
+- Internal release archives, build files, debug symbols, maps and SPDX build
+  inventories are not part of the public distribution.
 
 ## Licensing
 
-RoonPilot-authored portions use PolyForm Noncommercial 1.0.0. Private and
-other noncommercial use is permitted; commercial use requires separate
-written permission. The license does not require publication of modified
-source, but redistribution must retain the supplied license and notices.
-Third-party portions keep their independent licenses.
+RoonPilot-authored portions are proprietary and use the RoonPilot Personal-Use
+Binary License 1.0. It permits installation and private noncommercial use of
+official, unmodified firmware on supported hardware. Redistribution,
+modification, reverse engineering, source-code recovery, competitive analysis
+and commercial use are prohibited except where mandatory law expressly
+provides otherwise. Third-party portions keep their independent licenses.
 
 ## Privacy
 
@@ -69,7 +70,7 @@ factory firmware.
 - every display, touch, swipe, encoder and long-press-lock workflow;
 - deep-sleep blocking during playback/setup/update/calibration plus touch and
   ring wake/reconnection;
-- local OTA in both A/B directions and settings retention;
+- signed online OTA in both A/B directions and settings retention;
 - signed online OTA and interrupted-update recovery;
 - automatic rollback after a deliberately invalid boot;
 - companion backup, low-power firmware and factory restore;

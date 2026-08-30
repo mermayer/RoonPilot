@@ -1,111 +1,72 @@
 # Firmware updates and recovery
 
-**English** · [Deutsch](de/firmware-updates-and-recovery.md)
+**English** - [Deutsch](de/firmware-updates-and-recovery.md)
 
-## The three images are not interchangeable
+## Which path is used?
 
-| Image | Processor | Flash address | Preserves settings? |
+| Purpose | Processor | Method | Settings |
 | --- | --- | --- | --- |
-| ESP32-S3 Factory | ESP32-S3 | `0x0` | No, complete installation/recovery |
-| ESP32-S3 OTA | ESP32-S3 | Managed inactive OTA slot | Yes, normally |
-| Companion Factory | Classic ESP32 | `0x0` | Replaces companion flash |
+| First installation or complete recovery | ESP32-S3 | Authorized Chromium Web Installer | Completely erased |
+| Normal update | ESP32-S3 | Signed online update on RoonPilot | Normally retained |
+| Optional Companion power saving | Classic ESP32 | Separate downloadable Companion image and `esptool` | Replaces Companion flash |
 
-Always verify the filename, SHA-256 and active chip before writing.
+Primary Factory and OTA files are not offered as standalone downloads. The
+methods cannot be interchanged, and the USB orientation must be verified before
+any recovery action.
 
-## Local OTA upload
+## Signed online update - the normal path
 
 1. Connect RoonPilot to stable USB power.
-2. Open **System → Firmware update**.
-3. Select the matching `roonpilot-ota-vX.Y.Z.bin`.
-4. Confirm the version and start the update.
-5. Do not close the page or remove power while writing.
-6. RoonPilot reboots into the other application slot.
+2. Open its IP address in a browser.
+3. Select **System - Firmware update**.
+4. Select **Check for updates**.
+5. If an approved newer version is shown, select **Download and install**.
+6. Do not remove power while downloading, writing or validating.
 7. Wait for the boot screen, Wi-Fi and Roon reconnection.
-8. Reopen System and confirm version and partition.
+8. Reopen System and verify version and active partition.
 
-The application validates major startup milestones. If the new image repeatedly
-fails before becoming healthy, the ESP-IDF bootloader can return to the previous
-valid slot.
+RoonPilot verifies release metadata, target, version, size, SHA-256 and its
+configured RSA signature. It writes the inactive A/B slot. The new image is
+marked valid only after its boot self-test; otherwise the bootloader returns to
+the previous working slot. Updates are always user initiated.
 
-## Signed online update
+The private signing key is never placed in this repository, installer, device
+assets or firmware. Only the public verification material is embedded.
 
-The update page can fetch the stable HTTPS manifest, compare version, board,
-size, checksum and signature state, then download the OTA file. This remains a
-user-initiated operation; RoonPilot does not silently replace its firmware.
+## Browser Factory recovery
 
-For normal updates after the first Factory installation:
+Use the supplied authorized installer page only after making and checking both
+original flash backups. It requires a current desktop Chromium browser with
+Web Serial, such as Chrome or Edge. Firefox and Safari cannot run it.
 
-1. Open RoonPilot's IP address in a browser.
-2. Select **System → Firmware update**.
-3. Select **Check for updates**.
-4. If a newer approved release is shown, select **Download and install**.
-5. Keep stable power connected until RoonPilot restarts and returns online.
-
-This is the preferred update path. It writes the inactive A/B slot and normally
-retains Wi-Fi, Roon authorization and settings. The USB Factory installer is a
-complete erase/install path and is not required for routine updates.
-
-The private RSA signing key is never stored in the repository, public image or
-device web assets. Keep at least two encrypted external backups of the release
-key; losing it would prevent continuity of signed stable updates.
-
-## Browser Factory installation
-
-Open the supplied browser-installer address. It writes only the ESP32-S3
-Factory image and requires the user to confirm the processor and backup checks
-before it can be started. See [Installation](installation.md) for the complete
-novice procedure.
-
-It requires a current desktop Chromium browser with Web Serial support (for
-example Chrome or Edge). Firefox and Safari cannot run it. Installing the
-Factory image erases the complete existing ESP32-S3 flash and all device
-configuration.
+The browser must report ESP32-S3. If it reports a classic ESP32 or a chip-family
+mismatch, cancel immediately and rotate/reconnect USB. Factory installation
+erases all primary-processor firmware and configuration.
 
 ## Interrupted update
 
-- If the local page is still reachable, wait several minutes and check System.
-- If the old version boots, rollback worked; do not immediately retry without
-  collecting diagnostics.
-- If the boot screen repeats, keep USB power stable and capture serial output.
-- If no application boots, use the ESP32-S3 Factory image at address 0.
-- Never rotate USB and flash the second processor as a troubleshooting guess.
+- Keep power stable and wait several minutes; writing and validation take time.
+- If the previous version boots, rollback succeeded. Download diagnostics
+  before trying again.
+- If a boot loop continues, keep USB stable and capture serial output.
+- If no RoonPilot application boots, repeat the authorized ESP32-S3 Web
+  Installer recovery after verifying the processor and backup.
+- Never rotate USB and write the second processor as a troubleshooting guess.
 
-## Restore the original ESP32-S3 backup
+## Restore an original factory backup
 
-This is destructive and returns the exact bytes that were captured:
+Restoring a user-created original backup is different from distributing a
+RoonPilot image. It is destructive and returns the exact bytes previously
+captured from that processor. Follow [Factory backup](factory-backup.md), verify
+chip, exact backup size and SHA-256, then use its documented restore command.
 
-```powershell
-python -m esptool --chip esp32s3 --port COM4 chip-id
-python -m esptool --chip esp32s3 --port COM4 write-flash 0x0 D:\RoonPilot-Factory-Backup\esp32s3-original-16mb.bin
-```
+## Companion recovery
 
-Verify the chip and backup size/checksum first. Existing RoonPilot settings are
-overwritten.
-
-## Restore the original companion backup
-
-Disconnect, rotate USB, identify the classic ESP32, then:
-
-```powershell
-python -m esptool --chip esp32 --port COM4 chip-id
-python -m esptool --chip esp32 --port COM4 write-flash 0x0 D:\RoonPilot-Factory-Backup\companion-original-4mb.bin
-```
-
-Disconnect and rotate back to the ESP32-S3 side afterward.
-
-See [Optional companion ESP32 firmware](companion-firmware.md) for the complete
-tool installation, chip identification, backup, flashing and restoration
-procedure.
+The optional Companion image is the only separately downloadable RoonPilot
+firmware. The complete backup, checksum, write, verification and original-
+restore procedure is in [Optional companion ESP32 firmware](companion-firmware.md).
 
 ## Factory reset is not firmware recovery
 
-The System-page factory reset erases RoonPilot configuration and pairing but
-keeps the installed RoonPilot application. Use it for a clean first-time setup,
-not to restore Waveshare software.
-
-## Release-file checks
-
-For version 1.0.0 the build pipeline rejects a stable release when compiled
-bench Wi-Fi credentials or a bench Roon address are non-empty. Published
-metadata reports both checks explicitly and `SHA256SUMS.txt` covers all three
-binary files.
+The System-page factory reset removes RoonPilot configuration and pairing but
+keeps the installed application. It does not restore Waveshare firmware.
