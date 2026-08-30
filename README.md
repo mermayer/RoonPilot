@@ -76,6 +76,11 @@ in the web interface.
 
 ## Everyday control
 
+[![RoonPilot controls overview showing rotary, tap, swipe, hold and wake gestures](docs/assets/roonpilot-controls-overview.png)](docs/assets/roonpilot-controls-overview.png)
+
+*Click the infographic for the full-resolution view. Detailed explanations are
+available in the [complete device controls guide](guides/device-controls.md).*
+
 | Action | Ring | Touch |
 | --- | --- | --- |
 | Change volume | Turn | — |
