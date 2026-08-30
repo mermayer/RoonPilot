@@ -87,7 +87,7 @@ in the web interface.
 
 ## Everyday control
 
-[![RoonPilot controls overview showing rotary, tap, swipe, hold and wake gestures](docs/assets/roonpilot-controls-overview.png)](docs/assets/roonpilot-controls-overview.png)
+[![RoonPilot controls overview showing rotary, tap, double-tap, swipe, hold, display-off and wake gestures](docs/assets/roonpilot-controls-overview.png)](docs/assets/roonpilot-controls-overview.png)
 
 *Click the infographic for the full-resolution view. Detailed explanations are
 available in the [complete device controls guide](guides/device-controls.md).*
@@ -101,6 +101,7 @@ available in the [complete device controls guide](guides/device-controls.md).*
 | Browse zone/menu pages | Turn | Swipe or tap |
 | Open Quick Settings | — | Swipe up on Now Playing |
 | Lock/unlock controls | — | Long-press the centre of the display |
+| Switch display off immediately | — | Double-tap the centre of the display |
 | Wake the screen/clock | Turn | Tap |
 | Wake from deep sleep | Turn, then wait for boot | Tap, then wait for boot |
 

@@ -91,6 +91,11 @@ Räume, Netzwerknamen und Dokumentationsadressen.
 
 ## Bedienung im Alltag
 
+[![RoonPilot-Bedienübersicht mit Drehen, Tippen, Doppeltipp, Wischen, Halten, Ausschalten und Aufwecken](docs/assets/roonpilot-controls-overview-de.png)](docs/assets/roonpilot-controls-overview-de.png)
+
+*Ein Klick auf die Grafik öffnet die Vollansicht. Ausführliche Erklärungen stehen
+in der [kompletten Gerätebedienung](guides/de/device-controls.md).*
+
 | Aktion | Ring | Touch |
 | --- | --- | --- |
 | Lautstärke ändern | Drehen | – |
@@ -100,6 +105,7 @@ Räume, Netzwerknamen und Dokumentationsadressen.
 | Zonen-/Menüseiten wechseln | Drehen | Wischen oder tippen |
 | Schnelleinstellungen öffnen | – | Auf „Now Playing“ nach oben wischen |
 | Bedienung sperren/entsperren | – | Displaymitte lange drücken |
+| Display sofort ausschalten | – | Doppeltipp in die Displaymitte |
 | Display/Uhr aufwecken | Drehen | Tippen |
 | Aus Deep Sleep aufwecken | Drehen, dann Start abwarten | Tippen, dann Start abwarten |
 

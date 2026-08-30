@@ -13,7 +13,7 @@ Firmware- oder Original-Flash-Sicherung.
 - Gerätename und Roon-Verbindungsmodus/-adresse;
 - sichtbare/ausgeblendete sowie primäre Zone;
 - Displayhelligkeiten, Dimm-/Ruhezeiten und Uhrenmodus;
-- Tag-/Nachthelligkeit und Umschaltzeiten der Uhr;
+- regionale Zeitzone, Tag-/Nachthelligkeit und Umschaltzeiten der Uhr;
 - Hintergrundintensität, Playerlayout, Akzentfarbe und 180°-Drehung;
 - Lautstärkeschritt, Richtung, Beschleunigung und Maximalwert;
 - Deep-Sleep-Einstellung und Wartezeit;

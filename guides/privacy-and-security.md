@@ -38,7 +38,7 @@ These values live in the device's non-volatile storage. Anyone with physical
 flash access should be treated as capable of extracting local secrets unless
 the hardware's security configuration prevents it.
 
-## Public 1.0.1 binaries
+## Public 1.0.2 binaries
 
 The stable release pipeline blocks packaging if either development Wi-Fi
 credential macro or the development Roon host is non-empty. Release metadata

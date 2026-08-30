@@ -69,6 +69,8 @@ als gespeicherte Einstellung verstanden werden.
 
 - Bahnhofsuhr oder Digitaluhr mit Datum;
 - eigene Tag- und Nachthelligkeit nur für den Uhrmodus;
+- regionale Zeitzone, da Roon diese Information nicht verlässlich liefert;
+- automatische Sommer-/Winterzeit nach der ausgewählten regionalen Regel;
 - Uhrzeiten für Tagbeginn und Nachtbeginn.
 
 Wird eine Uhr als Ruheanzeige gewählt, bleibt sie sichtbar und wird nicht

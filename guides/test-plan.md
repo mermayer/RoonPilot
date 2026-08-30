@@ -2,7 +2,7 @@
 
 **English** · [Deutsch](de/test-plan.md)
 
-Use this plan for a clean version 1.0.1 cycle. Record pass/fail, date, firmware
+Use this plan for a clean version 1.0.2 cycle. Record pass/fail, date, firmware
 checksum and observations for every section. Do not combine unexplained failures
 with later tests.
 
@@ -39,7 +39,7 @@ with later tests.
 - [ ] Confirm it clearly warns about two processors.
 - [ ] Confirm the browser sees the correct port.
 - [ ] Install and observe erase/write/verify completion.
-- [ ] Confirm boot screen and version 1.0.1.
+- [ ] Confirm boot screen and version 1.0.2.
 - [ ] Confirm the companion was not changed.
 
 ## C. First-time Wi-Fi
@@ -112,6 +112,7 @@ For Classic, Focus and Orbit:
 
 - [ ] Swipe up opens Quick Settings.
 - [ ] Touch opens Display/Volume/Clock sections.
+- [ ] System shows the actual IP, Roon Server, state and running firmware version.
 - [ ] Ring changes selected values.
 - [ ] Save & Close persists after restart.
 - [ ] Leaving without save restores previous values.
@@ -127,6 +128,9 @@ For Classic, Focus and Orbit:
 - [ ] Black idle wakes by touch and ring, suppressing the first command.
 - [ ] Station clock runs forward and with correct orientation.
 - [ ] Digital clock shows correct time/date.
+- [ ] Select the local regional time zone and verify a known time against an
+  independent clock.
+- [ ] Verify one winter and one summer date use the expected standard/DST rule.
 - [ ] Touch clock returns to player.
 - [ ] Day/night brightness changes at configured times.
 - [ ] Clock remains visible instead of later becoming black.
@@ -207,6 +211,6 @@ For Classic, Focus and Orbit:
 
 ## Completion
 
-Version 1.0.1 should leave validation status only when all safety-critical flash,
+Version 1.0.2 should leave validation status only when all safety-critical flash,
 recovery, secret-removal and rollback tests pass, and all remaining known issues
 are explicitly documented.

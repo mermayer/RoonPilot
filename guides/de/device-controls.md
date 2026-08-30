@@ -16,6 +16,8 @@ schwarzes Display, ohne gleichzeitig Musik oder Lautstärke zu verändern.
 - Außenring drehen, um die Lautstärke zu ändern.
 - Displaymitte etwa 1,2 Sekunden halten, um alle Bedienelemente zu sperren oder
   freizugeben.
+- Zweimal kurz in die Displaymitte tippen, um das Display sofort vollständig
+  auszuschalten.
 
 Lange Titel laufen nach einem Trackwechsel einmal automatisch durch und bleiben
 danach stehen. Kurze Titel bewegen sich nicht. Die Interpretenzeile verwendet
@@ -74,6 +76,7 @@ Der erste, nur lesbare Menüpunkt zeigt:
 
 - IP-Adresse der lokalen RoonPilot-Webseite;
 - Namen des verbundenen Roon Servers;
+- laufenden Firmwarestand;
 - **Ready**, **Wi-Fi offline**, **Roon offline** oder **Approval needed**.
 
 Mit Zurück oder Wischen nach unten zum Hauptmenü zurückkehren.
@@ -95,6 +98,7 @@ Mit Zurück oder Wischen nach unten zum Hauptmenü zurückkehren.
 ### Clock
 
 - Bahnhofs- oder Digitaluhr;
+- regionale Zeitzone mit automatischer Sommer-/Winterzeit;
 - Tag- und Nachthelligkeit;
 - Uhrzeiten für Tag- und Nachtbeginn in 30-Minuten-Schritten.
 
@@ -107,6 +111,21 @@ Displaymitte ungefähr 1,2 Sekunden halten. Bei aktiver Sperre werden Touch,
 Wischgesten und Ringbefehle ignoriert. Jeder Versuch zeigt **Controls locked**,
 statt einen Roon-Befehl zu senden. Zum Entsperren erneut lange in die Mitte
 drücken. Die lokale Webseite und andere Roon-Fernbedienungen bleiben nutzbar.
+
+## Display sofort ausschalten
+
+Zweimal kurz und ohne Wischbewegung in die Mitte eines aktiven Displays tippen.
+RoonPilot schaltet die Hintergrundbeleuchtung vollständig aus und hält sie auch
+bei Wiedergabe-, Titel- oder Webseitenaktivität ausgeschaltet. Nur das Display
+ist aus: Roon, WLAN und die lokale Webseite laufen weiter. Dies ist kein Deep
+Sleep.
+
+Die nächste Berührung oder Ringbewegung weckt das Display. Dieses erste
+Wecksignal wird vollständig verbraucht und betätigt weder die darunterliegende
+Taste noch die Lautstärke. Die gewünschte Aktion danach wiederholen. Der
+Doppeltipp ist klar vom etwa 1,2 Sekunden langen Mitteldruck für die
+Bediensperre getrennt. Während der Akku-Kalibrierung bleibt die Geste gesperrt,
+damit der Kalibrierungsbildschirm nicht unterbrochen wird.
 
 ## Dimmen, Uhr und schwarzer Bildschirm
 

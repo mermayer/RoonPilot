@@ -79,6 +79,8 @@ The primary zone is always kept shown, and new Roon zones start shown by default
 
 - Clock or Black as idle display;
 - Station or Digital + date face;
+- explicit regional time zone, because Roon does not provide a reliable one;
+- automatic daylight-saving changes for the selected regional rule;
 - independent day and night brightness;
 - exact Day starts and Night starts times.
 

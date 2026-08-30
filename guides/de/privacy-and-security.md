@@ -27,7 +27,7 @@ installiert.
 - technische Zähler für Diagnose und Wiederherstellung;
 - Einstellungen und Zeitstempel für Updateprüfung und Displaymeldung.
 
-## Öffentliche 1.0.1-Abbilder
+## Öffentliche 1.0.2-Abbilder
 
 Factory- und OTA-Abbilder enthalten keine Entwicklungs-SSID, kein
 WLAN-Kennwort, keine private Roon-Adresse, kein Kopplungstoken und keinen

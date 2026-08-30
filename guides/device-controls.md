@@ -16,6 +16,7 @@ without also changing music or volume.
 - Turn the outer ring to change volume.
 - Long-press the centre of the display for about 1.2 seconds to lock or unlock
   all controls.
+- Double-tap the centre to switch the display completely off immediately.
 
 Long titles make one automatic marquee pass after a track change and then stop.
 Short titles stay still. The artist line uses a heavier, Unicode-capable font.
@@ -77,6 +78,7 @@ The first entry is read-only and shows:
 
 - the IP address used to open RoonPilot's local website;
 - the connected Roon Server name;
+- the running firmware version;
 - **Ready**, **Wi-Fi offline**, **Roon offline** or **Approval needed**.
 
 Use the back control or swipe down to return to the Quick Settings home page.
@@ -98,6 +100,7 @@ Use the back control or swipe down to return to the Quick Settings home page.
 ### Clock
 
 - Station or Digital face;
+- regional time zone with automatic daylight-saving changes;
 - day and night brightness;
 - day-start and night-start times in 30-minute increments.
 
@@ -113,6 +116,20 @@ unlock.
 
 The lock is useful when moving or cleaning the device. It does not lock the
 local website or other Roon remotes.
+
+## Immediate display-off
+
+Double-tap the centre of an active display with two short, stationary taps.
+RoonPilot switches the backlight fully off and keeps it off even when playback,
+track metadata or the local website changes. This is a display-only state: Roon,
+Wi-Fi and the local website continue running, so it is not deep sleep.
+
+The next touch or ring movement wakes the display. That first wake input is
+consumed and never activates the control below it or changes volume. Repeat the
+intended command after the display is visible. The double-tap is distinct from
+the approximately 1.2-second centre hold for control lock/unlock. Battery
+calibration keeps control of the display, so the shortcut is ignored while a
+calibration screen is active.
 
 ## Dim, idle clock and black screen
 

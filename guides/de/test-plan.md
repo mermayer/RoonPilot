@@ -103,7 +103,7 @@ fortfahren.
 ## H. Schnelleinstellungen und Sperre
 
 - [ ] **System** steht an erster Stelle.
-- [ ] System zeigt richtige IP, richtigen Roon Server und Status.
+- [ ] System zeigt richtige IP, richtigen Roon Server, Status und Firmwarestand.
 - [ ] Ring markiert alle vier Menüpunkte; Touch öffnet sie.
 - [ ] Display-, Lautstärke- und Uhreinstellungen speichern korrekt.
 - [ ] Verlassen ohne Speichern übernimmt Änderungen nicht.
@@ -116,6 +116,8 @@ fortfahren.
 - [ ] **Never** verhindert Dimmen beziehungsweise Ruhewechsel.
 - [ ] Bahnhofsuhr läuft korrekt vorwärts.
 - [ ] Digitaluhr zeigt Uhrzeit und Datum.
+- [ ] Regionale Zeitzone wählen und Uhrzeit mit einer unabhängigen Uhr prüfen.
+- [ ] Je ein Winter- und Sommerdatum folgt der erwarteten Zeitumstellung.
 - [ ] Uhr bleibt als gewählte Ruheansicht sichtbar und wird nicht schwarz.
 - [ ] Tag-/Nachthelligkeit schaltet zu konfigurierten Zeiten.
 - [ ] Touch auf Uhr/Schwarz weckt ohne Zusatzbefehl.

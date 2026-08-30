@@ -16,7 +16,7 @@ The schema includes the user-configurable non-secret state, including:
 - active/dim brightness and timeouts;
 - cover-background intensity and accent colour;
 - player layout and 180-degree rotation;
-- clock face, day/night brightness and schedule;
+- clock face, regional time zone, day/night brightness and schedule;
 - encoder direction, volume step, acceleration and maximum volume;
 - idle clock/black choice;
 - deep-sleep enabled state and timeout;
