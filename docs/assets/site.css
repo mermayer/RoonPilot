@@ -480,6 +480,28 @@ esp-web-install-button::part(activate) {
 .feature-copy > p { margin: 17px 0 22px; color: var(--muted-strong); font-size: 18px; }
 .feature-copy ul { display: grid; gap: 11px; margin: 0; padding: 0; color: var(--muted); list-style: none; }
 .feature-copy li::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 12px; border-radius: 50%; background: var(--cyan); vertical-align: 2px; }
+.controls-showcase {
+  margin: 8px 0 60px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, rgba(16, 22, 23, 0.98), rgba(7, 9, 10, 0.98));
+  box-shadow: var(--shadow);
+}
+.controls-showcase-copy {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 50px;
+  align-items: end;
+  margin-bottom: 25px;
+}
+.controls-showcase .eyebrow { margin: 0 0 7px; color: var(--cyan); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.controls-showcase h3 { margin: 0; font-size: clamp(28px, 3.5vw, 44px); line-height: 1.08; letter-spacing: -0.04em; }
+.controls-showcase-copy > div:last-child > p { margin: 0 0 13px; color: var(--muted-strong); }
+.controls-image-link { display: block; border-radius: 10px; outline-offset: 4px; }
+.controls-image-link img { width: 100%; border: 1px solid var(--line-soft); border-radius: 10px; }
+.controls-image-link:hover img { border-color: rgba(79, 224, 226, 0.55); }
+.controls-image-hint { margin: 9px 0 0; color: var(--muted); font-size: 12px; text-align: right; }
 
 .direct-band { position: relative; overflow: hidden; padding-block: 68px; border-block: 1px solid rgba(79, 224, 226, 0.24); background: linear-gradient(90deg, rgba(79, 224, 226, 0.02), rgba(10, 94, 99, 0.34), rgba(79, 224, 226, 0.02)); text-align: center; }
 .direct-band h2 { margin: 0; color: var(--cyan); font-size: clamp(29px, 4vw, 48px); letter-spacing: -0.04em; }
@@ -629,6 +651,8 @@ footer { border-top: 1px solid var(--line); }
   .web-feature .feature-copy { order: 1; }
   .web-feature .feature-media { order: 0; }
   .feature-copy > p { font-size: 16px; }
+  .controls-showcase { margin-bottom: 46px; padding: 16px; }
+  .controls-showcase-copy { grid-template-columns: 1fr; gap: 14px; margin-bottom: 18px; }
   .direct-band { padding-block: 48px; }
   .hardware-layout { grid-template-columns: 1fr; gap: 35px; }
   .spec-list div { grid-template-columns: 1fr; gap: 3px; }
