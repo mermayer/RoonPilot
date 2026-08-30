@@ -26,6 +26,20 @@ Serial**, such as Chrome, Edge, Chromium, Brave or Opera. Firefox, Safari,
 phones and tablets cannot perform this installation. Open the supplied HTTPS
 installer page and connect the board directly with a USB data cable.
 
+### Which device should be selected on macOS?
+
+After selecting **Install RoonPilot**, Chrome normally identifies the correct
+native ESP32-S3 connection as **USB JTAG/serial debug unit**. Depending on the
+Chrome and macOS versions, it may instead be shown with a serial name beginning
+with `cu.usbmodem`. The definitive USB identity is Espressif vendor ID `303A`
+and product ID `1001`.
+
+Do **not** select an entry named `CH340`, `USB2.0-Serial`, `USB Serial` or
+`cu.wchusbserial`. Those names identify the board's separate companion ESP32
+interface. If Chrome offers only that interface, unplug the cable, rotate the
+USB-C plug at the device by 180 degrees, reconnect it and open the installer
+dialog again.
+
 1. Close ESP-IDF Monitor, PuTTY, Arduino Serial Monitor and every application
    that may have the COM port open.
 2. Connect the board, identify its port and verify **ESP32-S3** with `esptool
@@ -48,6 +62,21 @@ installer page and connect the board directly with a USB data cable.
 > Installer is for the ESP32-S3 only and never installs the Companion image. A
 > Factory installation erases the complete ESP32-S3, including existing
 > firmware, Wi-Fi, Roon authorization, settings and calibration data.
+
+### Is a separate erase required?
+
+No separate erase command or preliminary erase operation is required. For a
+first installation or a complete recovery, select or confirm **Erase device**
+when the Web Installer offers it. The RoonPilot manifest deliberately requests
+this choice. Erasing inside the installer, followed immediately by writing the
+Factory image, is the supported clean-install procedure and prevents old NVS,
+Wi-Fi or configuration data from surviving outside the rewritten image areas.
+
+This erase affects the primary ESP32-S3 only. It does not erase the companion
+ESP32, but it does remove every RoonPilot setting, Wi-Fi credential, Roon
+authorization, zone selection and battery calibration stored on the ESP32-S3.
+For a normal online update under **System - Firmware update**, do not erase and
+do not return to the Factory Web Installer.
 
 ## Later updates
 
