@@ -7,8 +7,8 @@
     "version":  "1.0.0",
     "signed":  true,
     "manifest":  "manifest.json",
-    "validation_only":  true,
-    "hardware_validated":  false,
+    "validation_only":  false,
+    "hardware_validated":  true,
     "distribution":  "authorized-web-installer-only",
     "legal":  {
                   "license_en":  "legal/LICENSE.md",

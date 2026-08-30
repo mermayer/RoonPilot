@@ -8,7 +8,9 @@ both [factory backups](factory-backup.md) before installing anything.
 ## How firmware is provided
 
 - The primary ESP32-S3 firmware is installed only through the authorized Web
-  Installer. Factory and OTA files are not offered as downloads.
+  Installer. Factory and OTA files are not offered as downloads. Open the
+  [public RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/)
+  only after making both backups.
 - Later primary updates are installed directly by RoonPilot from its signed
   online release channel.
 - Only the optional Companion Sleep firmware is a separate downloadable file.
@@ -28,7 +30,8 @@ installer page and connect the board directly with a USB data cable.
    that may have the COM port open.
 2. Connect the board, identify its port and verify **ESP32-S3** with `esptool
    chip-id` if there is any uncertainty about USB orientation.
-3. Open the supplied authorized Web Installer in Chrome or Edge.
+3. Open the [authorized RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/)
+   in Chrome or Edge.
 4. Read the two-processor warning. Confirm that both original flashes have
    been backed up and that the selected processor is ESP32-S3.
 5. Read and accept the RoonPilot Personal-Use Binary License.

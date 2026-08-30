@@ -12,6 +12,8 @@
 
 [Deutsch](README.de.md) · **English**
 
+[Project website](https://mermayer.github.io/RoonPilot/) · [Web Installer](https://mermayer.github.io/RoonPilot/firmware/)
+
 </div>
 
 RoonPilot turns Waveshare's compact round display controller into a fast,
@@ -42,6 +44,10 @@ privacy and troubleshooting.
 > plug can connect Windows to a different processor. Never erase or flash until
 > the chip identity has been checked. The ESP32-S3 Factory image and the classic
 > ESP32 companion image are not interchangeable.
+
+After completing and checking both backups, open the public
+[RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/) in a
+current desktop Chromium browser.
 
 ## Why it feels different
 
@@ -198,6 +204,8 @@ RoonPilot provides three deliberately separate paths:
 The installation guide explains the complete backup and chip-identification
 procedure. The browser installer never writes the classic companion ESP32. Do
 not guess a file or flash an image based only on its size.
+
+**Ready to install:** [Open the authorized RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/).
 
 ## Documentation
 

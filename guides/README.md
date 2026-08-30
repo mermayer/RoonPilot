@@ -14,6 +14,9 @@ never opened a serial port and has just taken the hardware out of its box.
 5. [Device controls](device-controls.md)
 6. [Beginner test plan](test-plan.md)
 
+After the hardware and both backups have been verified, continue with the
+[public RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/).
+
 Do not skip the first two pages. The unusual USB-C processor selection makes
 them part of the installation, not optional background reading.
 

@@ -367,6 +367,7 @@ svg { width: 1.25em; height: 1.25em; fill: none; stroke: currentColor; stroke-wi
 .safety-confirm input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--amber); }
 .safety-confirm strong { display: block; color: var(--amber); font-size: 14px; }
 .installer-action { padding: 0 32px 29px; text-align: center; }
+.installer-guide-link { display: inline-flex; margin-top: 18px; }
 esp-web-install-button { display: block; }
 .install-button { width: min(100%, 430px); min-height: 55px; margin: 0 auto; border: 0; }
 .install-button:disabled { background: #252a2b; color: #777; cursor: not-allowed; transform: none; }

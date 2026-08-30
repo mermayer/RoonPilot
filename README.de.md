@@ -12,6 +12,8 @@
 
 **Deutsch** · [English](README.md)
 
+[Projektseite](https://mermayer.github.io/RoonPilot/de/) · [Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
+
 </div>
 
 RoonPilot macht aus Waveshares kompaktem Controller mit rundem Display eine
@@ -44,6 +46,10 @@ Konfigurationssicherung, Akku-Kalibrierung, Datenschutz und Fehlerbehebung.
 > Vor dem Löschen oder Flashen immer den Chip prüfen. Das ESP32-S3-Factory-
 > Abbild und das Abbild für den klassischen Begleit-ESP32 sind nicht
 > austauschbar.
+
+Nach dem Erstellen und Prüfen beider Sicherungen wird der öffentliche
+[RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/) in
+einem aktuellen Chromium-Desktopbrowser geöffnet.
 
 ## Was RoonPilot besonders macht
 
@@ -120,6 +126,8 @@ Desktopbrowser mit Web Serial, zum Beispiel Chrome oder Edge. Nach der ersten
 Factory-Installation erfolgen normale Updates über **System → Firmware update
 → Check for updates** auf der Geräte-Webseite. Der Web-Installer beschreibt
 niemals den Begleit-ESP32.
+
+**Bereit zur Installation:** [Autorisierten RoonPilot-Webinstaller öffnen](https://mermayer.github.io/RoonPilot/de/firmware/).
 
 ## Hardware
 

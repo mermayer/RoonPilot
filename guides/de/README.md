@@ -14,6 +14,10 @@ Anschlüssen oder Firmware-Installation voraus.
 5. [Bedienung am Gerät](device-controls.md)
 6. [Testplan für Einsteiger](test-plan.md)
 
+Nach der eindeutigen Hardwareprüfung und beiden Sicherungen geht es mit dem
+[öffentlichen RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
+weiter.
+
 Die ersten beiden Seiten dürfen nicht übersprungen werden. Wegen der
 ungewöhnlichen Auswahl des Prozessors durch die USB-C-Steckerorientierung sind
 sie Bestandteil der Installation und keine optionale Hintergrundinformation.
