@@ -107,6 +107,12 @@ for about 1.2 seconds to change state.
 
 ## Boot and maintenance
 
+When an approved newer release has been found, **UPDATE AVAILABLE** shows the
+installed and available versions. It appears only over an idle Now Playing
+screen and at most once per 24 hours. **LATER** dismisses it; turning the ring
+dismisses it and continues with volume control. The notice never installs an
+update. Use the web interface under **System → Firmware update** when ready.
+
 | View | Meaning |
 | --- | --- |
 | <img src="../assets/device-screens/25-boot.png" width="250" alt="Boot screen"> | Firmware is starting; the installed version is shown. |

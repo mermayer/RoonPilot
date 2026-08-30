@@ -88,7 +88,7 @@ complete original 4 MB companion flash has been backed up and verified.
 ## Audio hardware
 
 The PCM5100A makes a future audio-endpoint experiment technically interesting,
-but RoonPilot 1.0.0 is a **remote control**, not a Roon audio endpoint. Music is
+but the current RoonPilot firmware is a **remote control**, not a Roon audio endpoint. Music is
 played by the selected existing Roon zone.
 
 ## Next step

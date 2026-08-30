@@ -72,13 +72,13 @@ fortfahren.
 ## 5. Download prüfen
 
 ```powershell
-Get-FileHash -Algorithm SHA256 .\roonpilot-companion-sleep-factory-v1.0.0.bin
+Get-FileHash -Algorithm SHA256 .\roonpilot-companion-sleep-factory-v1.0.1.bin
 ```
 
-Für Version 1.0.0 muss der Wert lauten:
+Für Version 1.0.1 muss der Wert lauten:
 
 ```text
-2288e61f9e2a0ed72e2ebf29cf7d7f317800f0623012f2516281e909d499d5a2
+4959cec1d9baf769359c21e24dbd63f6951466fd05699eec7d9c37661b92b00f
 ```
 
 Bei jeder Abweichung stoppen und Datei neu laden.
@@ -87,8 +87,8 @@ Bei jeder Abweichung stoppen und Datei neu laden.
 
 ```powershell
 py -m esptool --chip esp32 --port COM4 chip-id
-py -m esptool --chip esp32 --port COM4 --baud 460800 write-flash 0x0 roonpilot-companion-sleep-factory-v1.0.0.bin
-py -m esptool --chip esp32 --port COM4 verify-flash 0x0 roonpilot-companion-sleep-factory-v1.0.0.bin
+py -m esptool --chip esp32 --port COM4 --baud 460800 write-flash 0x0 roonpilot-companion-sleep-factory-v1.0.1.bin
+py -m esptool --chip esp32 --port COM4 verify-flash 0x0 roonpilot-companion-sleep-factory-v1.0.1.bin
 ```
 
 Die S3-Factory- oder OTA-Datei darf hier niemals verwendet werden.

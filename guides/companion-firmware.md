@@ -62,7 +62,7 @@ if these commands fail. If Windows has no `py` command but `python` works, use
 
 ## 2. Download the companion file
 
-Download `roonpilot-companion-sleep-factory-v1.0.0.bin` from the supplied
+Download `roonpilot-companion-sleep-factory-v1.0.1.bin` from the supplied
 firmware page.
 
 Place the file in a new working folder. Do not rename it to a vague name such
@@ -119,13 +119,13 @@ preferably encrypted location. Never publish this original backup.
 In the folder containing the downloaded image, run:
 
 ```powershell
-Get-FileHash -Algorithm SHA256 .\roonpilot-companion-sleep-factory-v1.0.0.bin
+Get-FileHash -Algorithm SHA256 .\roonpilot-companion-sleep-factory-v1.0.1.bin
 ```
 
-For version 1.0.0 the result must be:
+For version 1.0.1 the result must be:
 
 ```text
-2288e61f9e2a0ed72e2ebf29cf7d7f317800f0623012f2516281e909d499d5a2
+4959cec1d9baf769359c21e24dbd63f6951466fd05699eec7d9c37661b92b00f
 ```
 
 The expected file size is `197,264` bytes. Stop after any size or checksum
@@ -143,7 +143,7 @@ Only after it again reports a classic ESP32, write the merged image at address
 `0x0`:
 
 ```powershell
-py -m esptool --chip esp32 --port COM4 --baud 460800 write-flash 0x0 .\roonpilot-companion-sleep-factory-v1.0.0.bin
+py -m esptool --chip esp32 --port COM4 --baud 460800 write-flash 0x0 .\roonpilot-companion-sleep-factory-v1.0.1.bin
 ```
 
 Do not use `erase-flash` as an exploratory step. Do not substitute either of

@@ -10,7 +10,13 @@ Raspberry Pi bridge, Docker container or desktop helper.
 
 Normal runtime network activity consists of Wi-Fi/DHCP/time services, Roon
 discovery/session traffic, artwork retrieval from Roon and local HTTP requests.
-An online firmware check/download occurs only when that update path is used.
+When automatic update checking is enabled, RoonPilot also reads the approved
+HTTPS release manifest after startup and then at most once per 24 hours after a
+successful check (temporary failures are retried later). This sends ordinary
+HTTPS connection metadata to the hosting provider but no Wi-Fi password, Roon
+token, zone list or playback metadata. The setting can be disabled independently
+of the optional device notification. Firmware is never downloaded or installed
+without an explicit user action.
 
 When deep sleep is active, the main ESP32-S3, Wi-Fi connection, Roon session and
 local website are stopped. No network request can wake the device; a local touch
@@ -24,13 +30,15 @@ or ring movement starts a complete boot and reconnects it.
 - shown/hidden-zone preferences;
 - display, clock, ring and power settings;
 - battery-calibration checkpoints/reference;
-- update/boot validation state.
+- update/boot validation state;
+- update-check/display-notice preferences and their last-check/last-notice
+  timestamps.
 
 These values live in the device's non-volatile storage. Anyone with physical
 flash access should be treated as capable of extracting local secrets unless
 the hardware's security configuration prevents it.
 
-## Public 1.0.0 binaries
+## Public 1.0.1 binaries
 
 The stable release pipeline blocks packaging if either development Wi-Fi
 credential macro or the development Roon host is non-empty. Release metadata

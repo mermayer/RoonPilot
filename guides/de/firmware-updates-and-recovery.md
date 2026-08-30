@@ -35,6 +35,33 @@ Der private Signaturschluessel befindet sich weder im Repository noch im
 Installer, in Geraetedateien oder in der Firmware. Eingebettet ist nur das
 oeffentliche Pruefmaterial.
 
+## Updatepruefung und Meldungen
+
+Auf der Systemseite gibt es zwei voneinander unabhaengige Einstellungen:
+
+- **Check automatically for updates** erlaubt eine Manifestpruefung nach einem
+  normalen Start und danach alle 24 Stunden. Nach einem Netzwerkfehler wird
+  spaeter erneut versucht. **Check now** bleibt auch bei ausgeschaltetem
+  Schalter nutzbar.
+- **Show update notice on device** erlaubt die Meldung auf dem Display, sobald
+  eine neuere Version bekannt ist. Das Abschalten veraendert weder den
+  Webstatus noch die manuelle Pruefung.
+
+Alle normalen Webseiten zeigen bei einem gefundenen Update installierte und
+verfuegbare Version in der gemeinsamen Statuszeile. Der Hinweis springt direkt
+zu **System - Firmware update**.
+
+Die Geraetemeldung erscheint hoechstens einmal innerhalb von 24 Stunden, nur
+ueber der aktiven Playeransicht und erst nach einer kurzen Bedienpause. Sie
+stoert niemals WLAN-Setup, Roon-Freigabe, Zonenwahl, Schnelleinstellungen,
+Lautstaerkeanzeige, Uhr/Ruhemodus, Bediensperre, Akku-Kalibrierung oder OTA.
+**LATER** quittiert sie. Eine Drehung quittiert sie ebenfalls und fuehrt danach
+die beabsichtigte Lautstaerkeaenderung aus.
+
+Es gibt keinen automatischen Download und keine automatische Installation.
+**Download and install** auf der signierten Updateseite bleibt immer eine
+eigene, ausdrueckliche Benutzeraktion.
+
 ## Browser-Factory-Wiederherstellung
 
 Die bereitgestellte autorisierte Installerseite erst nach Erstellung und

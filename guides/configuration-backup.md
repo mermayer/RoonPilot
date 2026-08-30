@@ -20,6 +20,7 @@ The schema includes the user-configurable non-secret state, including:
 - encoder direction, volume step, acceleration and maximum volume;
 - idle clock/black choice;
 - deep-sleep enabled state and timeout;
+- automatic update-check and device-notice preferences;
 - accepted battery-calibration reference and metadata.
 
 ## Intentionally excluded secrets

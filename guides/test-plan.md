@@ -2,7 +2,7 @@
 
 **English** · [Deutsch](de/test-plan.md)
 
-Use this plan for a clean version 1.0.0 cycle. Record pass/fail, date, firmware
+Use this plan for a clean version 1.0.1 cycle. Record pass/fail, date, firmware
 checksum and observations for every section. Do not combine unexplained failures
 with later tests.
 
@@ -39,7 +39,7 @@ with later tests.
 - [ ] Confirm it clearly warns about two processors.
 - [ ] Confirm the browser sees the correct port.
 - [ ] Install and observe erase/write/verify completion.
-- [ ] Confirm boot screen and version 1.0.0.
+- [ ] Confirm boot screen and version 1.0.1.
 - [ ] Confirm the companion was not changed.
 
 ## C. First-time Wi-Fi
@@ -139,6 +139,18 @@ For Classic, Focus and Orbit:
 
 ## K. OTA and recovery
 
+- [ ] Automatic check enabled: boot performs one signed-manifest check.
+- [ ] Automatic check disabled: no scheduled check; **Check now** still works.
+- [ ] Device notice enabled/disabled independently of online checking.
+- [ ] Every web page shows the prominent update notice with installed and
+  available versions when a newer release exists.
+- [ ] Clicking the web notice opens **System → Firmware update** directly.
+- [ ] Device notice appears only on an idle Now Playing screen.
+- [ ] It does not interrupt zone picker, Quick Settings, volume, onboarding,
+  pairing, clock/idle, control lock, calibration or OTA.
+- [ ] **LATER** dismisses it; a ring turn dismisses it and still changes volume.
+- [ ] Reboot/dismissal cannot produce a second device notice within 24 hours.
+- [ ] No check or notification downloads/installs firmware automatically.
 - [ ] Signed online OTA changes from slot A to B.
 - [ ] Confirm settings and pairing persist.
 - [ ] A second signed online OTA changes back to the other slot as planned.
@@ -184,6 +196,6 @@ For Classic, Focus and Orbit:
 
 ## Completion
 
-Version 1.0.0 should leave validation status only when all safety-critical flash,
+Version 1.0.1 should leave validation status only when all safety-critical flash,
 recovery, secret-removal and rollback tests pass, and all remaining known issues
 are explicitly documented.

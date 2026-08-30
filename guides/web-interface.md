@@ -18,6 +18,11 @@ device API. Settings load once at startup and after changes, while the smaller
 status/summary endpoints refresh periodically. This avoids the slow repeated
 full-configuration requests used by earlier versions.
 
+When a newer approved release is known, an amber **Update available** notice is
+shown in the status bar on every page. It includes the available version and
+opens **System → Firmware update** directly. The notice is informational only;
+it never starts an installation.
+
 ## Overview
 
 <img src="../assets/web-ui/01-overview.png" alt="Overview page" width="100%">
@@ -123,12 +128,21 @@ Read [Battery and runtime](battery-and-runtime.md) before starting a run and
 
 <img src="../assets/web-ui/07-system.png" alt="System page" width="100%">
 
-- firmware, active partition, uptime, internal heap and PSRAM;
+- installed firmware, active partition, uptime, internal heap and PSRAM;
+- installed and available firmware versions plus the last successful/attempted
+  manifest check;
+- separate switches for automatic online checks and the once-daily device
+  notice;
+- **Check now** and a direct jump to the signed firmware-update page;
 - safe JSON configuration export/import;
 - downloadable diagnostics;
-- signed online-update page;
 - restart without changing settings;
 - typed-confirmation factory reset.
+
+Automatic checking reads only the approved signed-release manifest after boot
+and then daily. A failed automatic check retries later. Checking never installs
+firmware. Installation always requires an explicit action on the separate
+firmware-update page.
 
 Factory reset removes local settings, Wi-Fi and Roon pairing, then returns to
 first-time AP setup. It does not restore Waveshare's original firmware.

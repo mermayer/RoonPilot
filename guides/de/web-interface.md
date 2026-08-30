@@ -14,6 +14,11 @@ Aktuelle Werte werden nach dem ersten Seitenaufbau asynchron geladen; die
 Oberfläche bleibt dabei bedienbar. Bei Erreichbarkeitsproblemen siehe
 [Fehlerbehebung](troubleshooting.md).
 
+Ist eine neuere freigegebene Version bekannt, erscheint auf jeder Seite oben
+ein auffälliger gelber Hinweis mit der verfügbaren Version. Ein Klick springt
+direkt zu **System → Firmware update**. Der Hinweis startet niemals selbst eine
+Installation.
+
 ## Übersicht
 
 <img src="../../assets/web-ui/01-overview.png" alt="Webseite Übersicht" width="100%">
@@ -100,12 +105,20 @@ absichtlich deaktiviert, damit das Messprofil reproduzierbar bleibt.
 
 <img src="../../assets/web-ui/07-system.png" alt="Systemseite" width="100%">
 
-- Firmwareversion, Partition, Laufzeit und Speicher;
+- installierte Firmwareversion, Partition, Laufzeit und Speicher;
+- installierte und verfügbare Version sowie Zeitpunkt der letzten Prüfung;
+- getrennte Schalter für automatische Onlineprüfung und die tägliche Meldung
+  am Gerät;
+- **Check now** und direkter Sprung zur signierten Firmwareupdateseite;
 - Diagnosepaket herunterladen;
 - Konfiguration exportieren/importieren;
-- Seite für signierte Online-Updates öffnen;
 - Neustart;
 - durch Texteingabe geschützter Factory Reset.
+
+Die automatische Prüfung liest nach dem Start und danach täglich nur das
+freigegebene Release-Manifest. Nach einem Fehler wird später erneut versucht.
+Sie installiert nichts; eine Installation muss immer ausdrücklich auf der
+separaten Firmwareupdateseite bestätigt werden.
 
 Der Factory Reset entfernt RoonPilot-Einstellungen und Freigabe, stellt aber
 nicht Waveshares Original-Firmware wieder her.

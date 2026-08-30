@@ -1,6 +1,6 @@
 # RoonPilot third-party notices
 
-This document applies to the RoonPilot firmware 1.0.0 binary distribution.
+This document applies to the RoonPilot firmware 1.0.1 binary distribution.
 RoonPilot-authored code and distribution material are proprietary and are
 licensed only under the [RoonPilot Personal-Use Binary License 1.0](LICENSE.md)
 ([German version](LICENSE.de.md)). Third-party components listed below retain
@@ -9,7 +9,7 @@ granted independently for those components.
 
 ## Direct project dependencies
 
-| Component | Version in firmware 1.0.0 | License |
+| Component | Version in firmware 1.0.1 | License |
 | --- | --- | --- |
 | Espressif ESP-IDF | 6.0.1 | Apache-2.0 plus separately licensed bundled components |
 | Espressif CMake Utilities | 0.5.3 | Apache-2.0 |
@@ -17,7 +17,7 @@ granted independently for those components.
 | Espressif SH8601 LCD driver | 2.0.1~1 | Apache-2.0 |
 | LVGL | 9.5.0 | MIT |
 | cJSON | 1.7.x-compatible bundled source | MIT |
-| RoonPilot Companion Sleep firmware | 1.0.0 | LicenseRef-RoonPilot-Proprietary for RoonPilot-authored code; ESP-IDF notices below |
+| RoonPilot Companion Sleep firmware | 1.0.1 | LicenseRef-RoonPilot-Proprietary for RoonPilot-authored code; ESP-IDF notices below |
 
 ## Code and data linked through ESP-IDF and LVGL
 

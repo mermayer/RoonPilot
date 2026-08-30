@@ -1,14 +1,14 @@
 {
     "schema":  1,
     "project":  "roonpilot-companion-sleep",
-    "version":  "1.0.0",
+    "version":  "1.0.1",
     "chip":  "ESP32",
     "board_processor":  "ESP32-U4WDH companion",
     "flash_size":  4194304,
     "image":  {
-                  "filename":  "roonpilot-companion-sleep-factory-v1.0.0.bin",
+                  "filename":  "roonpilot-companion-sleep-factory-v1.0.1.bin",
                   "size":  176032,
-                  "sha256":  "4c7b6841c70656bbbb137dad4f915585823be030346c7ae7a5a9a5abfab51b82"
+                  "sha256":  "4959cec1d9baf769359c21e24dbd63f6951466fd05699eec7d9c37661b92b00f"
               },
     "browser_installable":  false,
     "backup_required":  true

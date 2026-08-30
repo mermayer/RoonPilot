@@ -100,6 +100,13 @@ etwa 1,2 Sekunden halten.
 
 ## Start und Wartung
 
+Wurde eine freigegebene neuere Version gefunden, zeigt **UPDATE AVAILABLE** die
+installierte und verfügbare Version. Die Anzeige erscheint nur über einer
+unbenutzten Playeransicht und höchstens einmal innerhalb von 24 Stunden.
+**LATER** quittiert sie; eine Drehung quittiert sie und regelt anschließend die
+Lautstärke. Die Meldung installiert nichts. Das Update wird bei Bedarf unter
+**System → Firmware update** ausdrücklich gestartet.
+
 | Ansicht | Bedeutung |
 | --- | --- |
 | <img src="../../assets/device-screens/25-boot.png" width="250" alt="Startbildschirm"> | Firmware startet; installierte Version wird gezeigt. |

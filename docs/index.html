@@ -212,7 +212,7 @@
           <li><span>1</span><div><strong>Install the flashing tool</strong><p>Use Windows PowerShell with Python 3.10 or newer and Espressif <code>esptool</code>.</p><code class="command">py -m pip install --upgrade esptool</code></div></li>
           <li><span>2</span><div><strong>Select the companion processor</strong><p>Disconnect USB, rotate the USB-C plug 180 degrees and reconnect. Check the new port.</p><code class="command">py -m esptool --port COM4 chip-id</code><p>Continue only when it reports a classic <b>ESP32</b>, never ESP32-S3.</p></div></li>
           <li><span>3</span><div><strong>Save all 4 MB first</strong><p>Read the complete original companion flash and keep its SHA-256 checksum in two safe locations.</p><code class="command">py -m esptool --chip esp32 --port COM4 read-flash 0x0 0x400000 companion-original-4mb.bin</code></div></li>
-          <li><span>4</span><div><strong>Verify and write the merged image</strong><p>Check the published checksum, then write the companion file at address <code>0x0</code>. Do not use the S3 Factory or OTA image.</p><code class="command">py -m esptool --chip esp32 --port COM4 --baud 460800 write-flash 0x0 roonpilot-companion-sleep-factory-v1.0.0.bin</code></div></li>
+          <li><span>4</span><div><strong>Verify and write the merged image</strong><p>Check the published checksum, then write the companion file at address <code>0x0</code>. Do not use the S3 Factory or OTA image.</p><code class="command">py -m esptool --chip esp32 --port COM4 --baud 460800 write-flash 0x0 roonpilot-companion-sleep-factory-v1.0.1.bin</code></div></li>
           <li><span>5</span><div><strong>Return to RoonPilot</strong><p>Disconnect USB, rotate the plug back, reconnect and confirm that <code>chip-id</code> now reports <b>ESP32-S3</b>.</p></div></li>
         </ol>
         <p class="companion-footnote">Replace <code>COM4</code> with the port shown by your operating system. Close every serial monitor before running a command. The complete guide also explains download verification, exact backup sizes, recovery and restoring the original 4 MB image.</p>
@@ -285,6 +285,7 @@
             <li>Display, rotary and touch settings</li>
             <li>Configuration export/import without secrets</li>
             <li>Signed online and local A/B firmware updates</li>
+            <li>Visible update status with separate web/device notification controls</li>
             <li>Diagnostics and battery runtime calibration</li>
             <li>Guarded deep sleep with touch and rotary wake</li>
           </ul>

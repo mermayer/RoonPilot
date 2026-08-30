@@ -64,6 +64,9 @@ current desktop Chromium browser.
 - **Private by design:** no cloud relay and no password in configuration exports.
 - **Recoverable updates:** signed A/B firmware updates with boot validation and
   rollback support.
+- **Visible update awareness:** every local web page can announce a newer
+  release, while an optional once-daily device notice remains dismissible and
+  never installs anything automatically.
 - **Independent operation:** after setup, a browser is not needed for normal use.
 
 ## The three player screens

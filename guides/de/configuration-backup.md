@@ -17,6 +17,7 @@ Firmware- oder Original-Flash-Sicherung.
 - Hintergrundintensität, Playerlayout, Akzentfarbe und 180°-Drehung;
 - Lautstärkeschritt, Richtung, Beschleunigung und Maximalwert;
 - Deep-Sleep-Einstellung und Wartezeit;
+- getrennte Einstellungen für automatische Updateprüfung und Displaymeldung;
 - akzeptierte Akku-Referenzdaten, soweit das aktuelle Schema sie unterstützt.
 
 ## Absichtlich ausgeschlossen

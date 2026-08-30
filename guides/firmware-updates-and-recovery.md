@@ -33,6 +33,32 @@ the previous working slot. Updates are always user initiated.
 The private signing key is never placed in this repository, installer, device
 assets or firmware. Only the public verification material is embedded.
 
+## Update checks and notifications
+
+The System page contains two independent settings:
+
+- **Check automatically for updates** allows a signed-manifest check after a
+  normal startup and then once every 24 hours. A network failure is retried
+  later. Turning this off still leaves **Check now** available.
+- **Show update notice on device** allows a full-screen notice only after a
+  newer version has already been found. Turning it off does not disable web
+  status or manual checks.
+
+All normal web pages show the installed and available versions in their common
+status area when an update exists. Selecting the notice jumps directly to
+**System → Firmware update**.
+
+The device notice is deliberately conservative: it appears at most once in any
+24-hour period, only over the active Now Playing screen after the controls have
+been idle, and never during setup, Roon pairing, zone selection, Quick Settings,
+volume adjustment, a clock/idle screen, control lock, battery calibration or an
+OTA operation. Tap **LATER** to dismiss it. Turning the ring also dismisses it
+and continues with the intended volume adjustment. Dismissing is not an update
+installation and does not disable future checks.
+
+No background path downloads or installs firmware. **Download and install** on
+the signed update page always remains a separate, explicit user action.
+
 ## Browser Factory recovery
 
 Use the supplied authorized installer page only after making and checking both

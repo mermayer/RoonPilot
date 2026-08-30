@@ -122,6 +122,17 @@ fortfahren.
 
 ## K. OTA und Wiederherstellung
 
+- [ ] Mit automatischer Prüfung wird nach dem Start das signierte Manifest geprüft.
+- [ ] Ohne automatische Prüfung erfolgt kein Zeitplan; **Check now** funktioniert.
+- [ ] Displaymeldung lässt sich unabhängig von der Onlineprüfung schalten.
+- [ ] Jede Webseite zeigt bei einem Update installierte und verfügbare Version.
+- [ ] Klick auf den Webhinweis springt direkt zu **System → Firmware update**.
+- [ ] Gerätemeldung erscheint nur über einer unbenutzten Playeransicht.
+- [ ] Zonenwahl, Schnelleinstellungen, Lautstärke, Einrichtung, Freigabe, Uhr,
+  Sperre, Kalibrierung und OTA werden nicht unterbrochen.
+- [ ] **LATER** quittiert; eine Drehung quittiert und ändert weiter Lautstärke.
+- [ ] Innerhalb von 24 Stunden erscheint auch nach Neustart keine zweite Meldung.
+- [ ] Prüfung und Meldung laden/installieren Firmware niemals automatisch.
 - [ ] Signiertes Online-OTA wechselt von Slot A nach B und behält Einstellungen.
 - [ ] Zweites signiertes Online-OTA wechselt zurück; lokaler Upload ist nicht verfügbar.
 - [ ] Onlineprüfung erreicht signiertes HTTPS-Manifest.

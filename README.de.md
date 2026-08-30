@@ -63,6 +63,8 @@ einem aktuellen Chromium-Desktopbrowser geöffnet.
 - Responsive Konfigurationsseiten direkt aus dem Gerät, ohne Cloud.
 - Export/Import ohne WLAN-Kennwort und andere Geheimnisse.
 - Signierte A/B-Updates mit Startprüfung und automatischem Rollback.
+- Auffälliger Updatehinweis auf allen lokalen Webseiten und optional höchstens
+  einmal täglich am Gerät; quittierbar und ohne automatische Installation.
 - Nach der Einrichtung ist für den normalen Betrieb kein Browser nötig.
 
 ## Player und Geräteansichten
