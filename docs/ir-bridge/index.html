@@ -6,7 +6,7 @@
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#07090a">
   <meta name="robots" content="noindex,nofollow">
-  <meta name="description" content="RoonPilot IR Bridge adds optional, per-zone infrared volume, mute and power control to RoonPilot.">
+  <meta name="description" content="RoonPilot IR Bridge adds fully RoonPilot-managed, per-zone infrared volume, mute and power control with encrypted BLE pairing and optional authenticated Wi-Fi fallback.">
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="../assets/site.css">
   <link rel="stylesheet" href="../assets/bridge.css">
@@ -106,10 +106,44 @@
       <div class="companion-note"><div><svg><use href="#icon-check"></use></svg></div><div><h3>Completely optional means completely off.</h3><p>When Bridge &amp; Bluetooth is disabled in RoonPilot, Bluetooth, scanning, Bridge update checks and all Bridge background work remain off after restart.</p></div></div>
     </section>
 
+    <section id="management" class="content-section page-width bridge-management">
+      <div class="section-heading"><p class="section-number">03</p><div><h2>RoonPilot is the entire control centre.</h2><p>The Bridge needs no separate app, web interface, cloud account or background service. From the first pairing to a signed firmware update, every normal task is managed from RoonPilot.</p></div></div>
+      <div class="management-lead">
+        <div class="management-copy">
+          <p class="bridge-kicker">Close-range trust. Whole-home reach.</p>
+          <h3>Pair securely over Bluetooth. Add Wi-Fi only when the room demands it.</h3>
+          <p>Initial setup always begins nearby over Bluetooth LE. RoonPilot scans for the factory-generated <code>RPB-…</code> identity, asks you to select the intended unit and establishes an encrypted, bonded connection. That deliberate first contact is the trust anchor for everything that follows.</p>
+          <p><strong>Allow Wi-Fi fallback</strong> is an explicit, optional second step. While the trusted BLE link is active, RoonPilot sends the current 2.4 GHz network details and a newly generated 256-bit application key to the Bridge. BLE stays preferred. If the Bridge is moved outside Bluetooth range, RoonPilot automatically uses the authenticated local Wi-Fi path and returns to BLE when it becomes available again.</p>
+          <p>Nothing is exposed to the internet: transport choice, connection health, signal strength and recovery remain visible and testable from the same RoonPilot page.</p>
+        </div>
+        <figure class="ui-figure"><img src="assets/bridge-status-connectivity.png" alt="RoonPilot Bridge status showing enabled Bluetooth, optional Wi-Fi fallback, encrypted bonding and live transport information" loading="lazy"><figcaption>One status surface shows the master switch, preferred BLE path, optional Wi-Fi fallback, identity, firmware, signal and security state.</figcaption></figure>
+      </div>
+
+      <div class="management-points">
+        <article><span>01</span><h3>Find and pair</h3><p>Scan nearby Bridges, compare the unique identity and complete encrypted bonding without opening the enclosure.</p></article>
+        <article><span>02</span><h3>Learn and verify</h3><p>Create named equipment profiles, record every command twice, inspect recognised protocol data and test the real hardware immediately.</p></article>
+        <article><span>03</span><h3>Route per zone</h3><p>Mix native Roon volume, external IR volume and deliberately disabled control across different zones, each with its own encoder step and optional Power/Mute buttons.</p></article>
+        <article><span>04</span><h3>Protect the work</h3><p>Export learned timings and routes without secrets, restore them after a board replacement and deliver signed A/B updates through whichever encrypted path is available.</p></article>
+      </div>
+
+      <div class="bridge-shot-grid" aria-label="RoonPilot IR Bridge management screens">
+        <figure class="bridge-shot"><img src="assets/bridge-pairing.png" alt="RoonPilot Bluetooth pairing screen with a dummy Bridge identity" loading="lazy"><figcaption><strong>Deliberate BLE pairing.</strong> The factory identity is visible before an encrypted bond is accepted.</figcaption></figure>
+        <figure class="bridge-shot"><img src="assets/bridge-guided-learning.png" alt="RoonPilot guided infrared learning screen using dummy profile data" loading="lazy"><figcaption><strong>Guided IR learning.</strong> Two matching captures verify both the command and its timing behaviour.</figcaption></figure>
+        <figure class="bridge-shot bridge-shot-wide"><img src="assets/bridge-zone-routing.png" alt="RoonPilot per-zone volume routing screen with dummy Roon zones" loading="lazy"><figcaption><strong>Independent routing for every zone.</strong> Roon, external IR or disabled volume can coexist in one RoonPilot installation.</figcaption></figure>
+        <figure class="bridge-shot"><img src="assets/bridge-backup-restore.png" alt="RoonPilot IR profile backup and restore screen" loading="lazy"><figcaption><strong>Portable profiles, no secrets.</strong> Learned pulse data and zone routes are checksummed and can be restored from JSON.</figcaption></figure>
+        <figure class="bridge-shot"><img src="assets/bridge-online-update.png" alt="RoonPilot signed online update management for the IR Bridge" loading="lazy"><figcaption><strong>Bridge updates without another USB session.</strong> RoonPilot finds, verifies, transfers and confirms signed releases; installation remains manual.</figcaption></figure>
+      </div>
+
+      <div class="mobile-management">
+        <figure class="ui-figure"><img src="assets/bridge-mobile-management.png" alt="Responsive RoonPilot Bridge management page on a phone-sized screen" loading="lazy"></figure>
+        <div><p class="bridge-kicker">The same local interface, anywhere at home</p><h3>Configure at the rack or from a phone.</h3><p>The responsive Bridge page is served by RoonPilot itself. It lets you inspect the active transport and manage the complete extension from a desktop, tablet or phone connected to the local network. The Bridge remains an appliance beside the audio hardware—RoonPilot remains the product you operate.</p><a class="text-link" href="guide/">See every management step in the guide <svg><use href="#icon-arrow"></use></svg></a></div>
+      </div>
+    </section>
+
     <section class="direct-band"><div class="page-width"><h2>No cloud. No daemon. No extra computer.</h2><p>Commands remain on the local network. The Bridge is a small hardware companion, not another service to maintain.</p></div></section>
 
     <section id="hardware" class="hardware-section page-width">
-      <div class="section-heading"><p class="section-number">03</p><div><h2>Compact hardware, clearly defined.</h2><p>The target build uses a small ESP32-S3 board, an infrared receiver for learning and a dedicated transmitter for reliable range.</p></div></div>
+      <div class="section-heading"><p class="section-number">04</p><div><h2>Compact hardware, clearly defined.</h2><p>The target build uses a small ESP32-S3 board, an infrared receiver for learning and a dedicated transmitter for reliable range.</p></div></div>
       <div class="hardware-layout">
         <dl class="spec-list">
           <div><dt>Controller</dt><dd>Compact ESP32-S3-Zero-compatible board · USB powered · no battery</dd></div>
@@ -130,7 +164,7 @@
 
     <section class="setup-section">
       <div class="page-width">
-        <div class="section-heading"><p class="section-number">04</p><div><h2>From bare board to a routed zone.</h2><p>Initial USB installation is separate; everyday configuration then happens entirely through RoonPilot.</p></div></div>
+        <div class="section-heading"><p class="section-number">05</p><div><h2>From bare board to a routed zone.</h2><p>Initial USB installation is separate; everyday configuration then happens entirely through RoonPilot.</p></div></div>
         <ol class="setup-flow">
           <li><span>1</span><svg><use href="#icon-chip"></use></svg><h3>Wire and inspect</h3><p>Connect the receiver, sender and a shared ground using the verified pin map.</p></li>
           <li><span>2</span><svg><use href="#icon-usb"></use></svg><h3>Install Factory</h3><p>Use desktop Chrome or Edge. Factory installation erases Bridge identity, pairing and profiles.</p></li>
@@ -144,7 +178,7 @@
     </section>
 
     <section class="content-section page-width" aria-labelledby="updates-title">
-      <div class="section-heading"><p class="section-number">05</p><div><h2 id="updates-title">Updates managed by RoonPilot.</h2><p>Installed and available versions appear on the Bridge page and, when enabled, as a dismissible notice on the device.</p></div></div>
+      <div class="section-heading"><p class="section-number">06</p><div><h2 id="updates-title">Updates managed by RoonPilot.</h2><p>Installed and available versions appear on the Bridge page and, when enabled, as a dismissible notice on the device.</p></div></div>
       <div class="status-strip"><div><span>Discovery</span><strong>Automatic</strong></div><div><span>Installation</span><strong>Always manual</strong></div><div><span>Verification</span><strong>RSA-3072 + SHA-256</strong></div><div><span>Recovery</span><strong>A/B rollback</strong></div></div>
       <div class="companion-install">
         <div class="companion-install-heading"><div><p class="eyebrow">Two independent checks</p><h3>Verified before and after transfer.</h3></div><a class="text-link" href="guide/#updates">Understand Bridge updates <svg><use href="#icon-arrow"></use></svg></a></div>

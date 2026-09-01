@@ -35,6 +35,7 @@
           <h2>1. Aufgabe der Bridge</h2>
           <p>RoonPilot IR Bridge ist eine optionale ESP32-S3-Erweiterung für Geräte, deren Lautstärke oder Stromzustand Roon nicht direkt steuern kann. RoonPilot bleibt die Bedienoberfläche; die Bridge empfängt authentifizierte Lautstärke-, Mute- und Power-Aktionen und sendet die gelernten Befehle der Original-Infrarotfernbedienung.</p>
           <p>Der Steuerweg wird für jede Roon-Zone getrennt gewählt. Eine Zone kann die native Roon-Lautstärke nutzen, eine zweite einen DAC per Infrarot regeln und eine weitere die Lautstärkeregelung bewusst deaktivieren. Wird <strong>Bridge &amp; Bluetooth</strong> abgeschaltet, bleiben nach dem RoonPilot-Neustart Bridge-Scanning, Bluetooth und sämtliche Bridge-Hintergrundaufgaben aus.</p>
+          <div class="guide-management-note"><h3>Es gibt kein zweites Produkt zu verwalten.</h3><p>RoonPilot übernimmt Bridge-Hauptschalter, verschlüsselten BLE-Scan und Pairing, optionale WLAN-Provisionierung, laufenden Transportstatus, IR-Profile, geführtes Lernen, Befehlstests, Zonenrouting, Power-/Mute-Tasten, Profilsicherung und signierte Onlineupdates. Die Bridge selbst benötigt weder Cloudkonto noch eine eigene Alltags-Weboberfläche.</p></div>
           <div class="fact-grid"><div><span>Profile</span><strong>Bis zu 8</strong></div><div><span>Befehle</span><strong>Lautstärke ±, Mute, Power ein/aus</strong></div><div><span>Primärverbindung</span><strong>Verschlüsseltes BLE</strong></div><div><span>Fallback</span><strong>Authentifiziertes lokales WLAN</strong></div></div>
         </section>
 
@@ -78,6 +79,7 @@
             <li>Vor dem Lernen von Profilen <strong>Test connection</strong> ausführen.</li>
           </ol>
           <p>Für das normale Pairing ist kein von außen erreichbarer BOOT-Taster nötig. Hat später nur eine Seite ihre Bond-Daten verloren, die Bridge innerhalb von 15 Sekunden dreimal aus- und einschalten. Sie löscht dabei nur den Bond und öffnet das Pairing für fünf Minuten; Kennung und IR-Profile bleiben erhalten.</p>
+          <figure class="guide-ui-figure"><img src="../../../ir-bridge/assets/bridge-pairing.png" alt="RoonPilot-Suche und verschlüsseltes Pairing mit einer fiktiven Bridge-Kennung" loading="lazy"><figcaption>RoonPilot zeigt die eindeutige Factory-Kennung vor dem Bonding. Das Bild nutzt Dummydaten; die echte Kennung gehört zur frisch installierten Bridge.</figcaption></figure>
         </section>
 
         <section id="wifi">
@@ -85,6 +87,7 @@
           <p>BLE bleibt die bevorzugte Verbindung. Soll die Bridge in einem anderen Zimmer stehen, bei verbundener und gebondeter BLE-Bridge <strong>Allow Wi-Fi fallback</strong> aktivieren. RoonPilot überträgt dann einmalig seine aktuellen 2,4-GHz-Zugangsdaten und einen neuen 256-Bit-Anwendungsschlüssel durch die verschlüsselte BLE-Verbindung.</p>
           <ol><li>Schalter aktivieren und Provisionierung bestätigen.</li><li>Auf <strong>Connected and verified</strong>, Bridge-IP und Signalstärke warten.</li><li>Mit <strong>Test Wi-Fi path</strong> einen authentifizierten WLAN-Befehl erzwingen, obwohl BLE verfügbar ist.</li></ol>
           <p>Die Befehle nutzen AES-256-GCM-Authentifizierung und Wiederholungsschutz. Ein Retry darf nicht unbemerkt einen zweiten IR-Befehl auslösen. Fehlerhafte Zugangsdaten werden nicht behalten, BLE bleibt der Rettungsweg und bei ausgeschaltetem Fallback startet das WLAN-Funkteil der Bridge nach einem Neustart nicht. RoonPilot und Bridge müssen ohne Client-/AP-Isolation im selben lokalen Netz liegen.</p>
+          <figure class="guide-ui-figure"><img src="../../../ir-bridge/assets/bridge-status-connectivity.png" alt="RoonPilot-Bridge-Status mit bevorzugtem BLE und aktiviertem authentifiziertem WLAN-Fallback" loading="lazy"><figcaption>Auch nach der WLAN-Provisionierung bleibt BLE bevorzugt. Die Statuskarte zeigt aktiven Pfad, Bridge-Adresse, Signal und Schutz und ermöglicht einen erzwungenen WLAN-Test.</figcaption></figure>
         </section>
 
         <section id="learning">
@@ -99,6 +102,7 @@
           </ol>
           <p>Bekannte NEC- und Extended-NEC-Signale behalten Protokoll- und Repeat-Informationen; Unbekanntes bleibt als verlustfreies Roh-Timing nutzbar. <strong>Duty</strong> ist der aktive Anteil jedes Trägerzyklus – weder Tastendauer noch Wiederholungszahl. Beim Standardwert 33 % ist die LED eines 38-kHz-Trägers etwa 8,7 µs von jeweils 26,3 µs eingeschaltet.</p>
           <div class="warning"><strong>Power besitzt zwei getrennte Slots.</strong> Ein kurzer Druck auf RoonPilot sendet <em>Power on</em>, ein langer Druck <em>Power off</em>. Beide Slots getrennt lernen oder prüfen, selbst wenn die Originalfernbedienung dieselbe physische Taste nutzt.</div>
+          <div class="guide-ui-pair"><figure class="guide-ui-figure"><img src="../../../ir-bridge/assets/bridge-ir-profiles.png" alt="Vollständiges RME-ADI-2-DAC-Infrarotprofil mit fünf gelernten Befehlen" loading="lazy"><figcaption>Ein vollständiges Profil hält Volume up/down, Mute, Power on und Power off gemeinsam mit Träger, Duty und Revision fest.</figcaption></figure><figure class="guide-ui-figure"><img src="../../../ir-bridge/assets/bridge-guided-learning.png" alt="Zweite Aufnahme im geführten IR-Lernvorgang von RoonPilot" loading="lazy"><figcaption>Das Lernbanner zeigt die erwartete Aktion. RoonPilot übernimmt den Befehl erst, wenn die zweite Aufnahme die erste bestätigt.</figcaption></figure></div>
         </section>
 
         <section id="zones">
@@ -108,12 +112,14 @@
           <p>Die Encoder-Schrittzahl wird pro Zone getrennt eingestellt. <strong>2 Steps</strong> bedeutet zwei vollständige gelernte IR-Tastendrücke pro RoonPilot-Rastung, nicht einen künstlich gehaltenen Befehl. Beim validierten RME-Profil ergeben zwei physische 0,5-dB-Schritte daher exakt eine 1,0-dB-RoonPilot-Rastung.</p>
           <p>Mute und Power lassen sich ebenfalls pro Zone aktivieren. Play/Pause, Previous und Next bleiben native Roon-Aktionen. Da eine inkrementelle IR-Steuerung keinen absoluten Wert zurückmeldet, zeigt das Display einen relativen <strong>+ / −</strong>-Aktionszähler und erfindet keinen Lautstärkewert.</p>
           <div class="rme-guide-card"><div><span>Beispielroute</span><strong>WiiM Ultra → RME ADI-2 DAC</strong></div><p>Der Musiktransport läuft weiterhin über Roon und WiiM. Nur Lautstärke, Mute und Power gehen an die Bridge. Damit führt der RME selbst die Hardware-Lautstärkeänderung aus, seine Auto-Ref-Level-Funktion bleibt erhalten und die digitale Roon-Absenkung ersetzt nicht die RME-Regelung.</p></div>
+          <figure class="guide-ui-figure"><img src="../../../ir-bridge/assets/bridge-zone-routing.png" alt="Zonenrouting mit nativer Roon-Steuerung, externer IR-Regelung und deaktivierter Lautstärke" loading="lazy"><figcaption>Jede Zeile arbeitet unabhängig. Das Beispiel nutzt zwei IR-Zonen, einen nativen Roon-Endpunkt und einen bewusst deaktivierten Lautstärkepfad.</figcaption></figure>
         </section>
 
         <section id="backup">
           <h2>8. Profile sichern und wiederherstellen</h2>
           <p>Nach jeder erfolgreich geprüften Lernrunde <strong>Download JSON backup</strong> verwenden. Die Datei enthält Profilnamen, Träger- und Duty-Werte, Revisionen, gelernte Pulsfolgen mit Prüfsummen, Zonenzuordnungen, zonenbezogene Schrittzahlen und aktivierte Mute-/Power-Bedienelemente.</p>
           <p>WLAN-Zugangsdaten, WLAN-Transportschlüssel, BLE-Bond-Schlüssel und alle anderen Geheimnisse sind ausdrücklich ausgeschlossen. Nach Factory-Reset oder Boardtausch zuerst koppeln, dann das Backup importieren und jede wiederhergestellte Aktion testen. Der WLAN-Fallback wird erneut eingerichtet, damit ein neuer Anwendungsschlüssel an genau diese Bridge gebunden wird.</p>
+          <figure class="guide-ui-figure"><img src="../../../ir-bridge/assets/bridge-backup-restore.png" alt="Werkzeuge zur Sicherung und Wiederherstellung von Bridge-Profilen in RoonPilot" loading="lazy"><figcaption>Sicherung und Wiederherstellung starten in RoonPilot. Das portable JSON bewahrt die aufwendig gelernten IR-Daten; Geheimnisse bleiben an die Geräte gebunden.</figcaption></figure>
         </section>
 
         <section id="updates">
@@ -128,6 +134,7 @@
             <li>Erfolg erscheint erst nach der Wiederverbindung mit exakt der angeforderten Version. ESP-IDF-Rollback bleibt verfügbar, falls die neue Anwendung ihren Start nicht bestätigen kann.</li>
           </ol>
           <p>Ist <strong>Bridge &amp; Bluetooth</strong> deaktiviert, erfolgen weder Bridge-Scan noch Updateanfrage, Webhinweis oder Displaymeldung. Der normale RoonPilot-Updatekanal bleibt davon unabhängig.</p>
+          <figure class="guide-ui-figure"><img src="../../../ir-bridge/assets/bridge-online-update.png" alt="Von RoonPilot verwaltetes signiertes Onlineupdate der IR Bridge" loading="lazy"><figcaption>Installierte und verfügbare Version, tägliche Prüfung, Gerätemeldung und manuelle Installation werden in RoonPilot verwaltet. Der lokale Image-Pfad bleibt ein Wiederherstellungswerkzeug.</figcaption></figure>
         </section>
 
         <section id="troubleshooting">

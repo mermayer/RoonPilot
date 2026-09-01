@@ -3,6 +3,60 @@
   grid-template-columns: minmax(0, 1fr) minmax(430px, 0.86fr);
 }
 
+/* RoonPilot-managed Bridge story and authentic product UI gallery */
+.bridge-management { padding-top: 132px; }
+.management-lead { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(360px, .72fr); align-items: center; gap: clamp(38px, 6vw, 92px); margin-top: 44px; }
+.management-copy h3 { max-width: 760px; margin: 8px 0 22px; font-size: clamp(30px, 3.3vw, 50px); line-height: 1.08; letter-spacing: -.04em; }
+.management-copy > p:not(.bridge-kicker) { color: var(--muted); font-size: 17px; line-height: 1.75; }
+.management-copy strong { color: var(--text); }
+.ui-figure, .bridge-shot { margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: #0d100f; box-shadow: 0 28px 90px #0007; }
+.ui-figure img, .bridge-shot img { display: block; width: 100%; height: auto; }
+.ui-figure figcaption, .bridge-shot figcaption { padding: 17px 19px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; line-height: 1.55; }
+.bridge-shot figcaption strong { color: var(--text); }
+.management-points { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 78px 0 38px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.management-points article { min-width: 0; padding: 30px 27px 32px; border-right: 1px solid var(--line); }
+.management-points article:last-child { border-right: 0; }
+.management-points span { color: var(--amber); font: 700 12px/1 var(--mono); letter-spacing: .12em; }
+.management-points h3 { margin: 14px 0 10px; font-size: 20px; }
+.management-points p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.bridge-shot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 24px; }
+.bridge-shot-wide { grid-column: 1 / -1; }
+.mobile-management { display: grid; grid-template-columns: minmax(260px, 390px) minmax(0, 1fr); align-items: center; gap: clamp(40px, 7vw, 110px); margin-top: 84px; padding: 62px clamp(28px, 6vw, 76px); border: 1px solid var(--line); border-radius: 22px; background: radial-gradient(circle at 11% 32%, rgba(92, 224, 225, .12), transparent 30%), #0d100f; }
+.mobile-management .ui-figure { max-height: 690px; }
+.mobile-management .ui-figure img { margin-top: -1px; }
+.mobile-management h3 { margin: 9px 0 18px; font-size: clamp(30px, 3.2vw, 47px); line-height: 1.08; letter-spacing: -.035em; }
+.mobile-management p:not(.bridge-kicker) { color: var(--muted); font-size: 17px; line-height: 1.72; }
+.mobile-management .text-link { margin-top: 12px; }
+.guide-management-note { margin: 24px 0; padding: 20px 22px; border: 1px solid rgba(92, 224, 225, .32); border-left: 3px solid var(--cyan); border-radius: 10px; background: rgba(92, 224, 225, .055); }
+.guide-management-note h3 { margin: 0 0 7px; font-size: 19px; }
+.guide-management-note p { margin: 0; }
+.guide-ui-figure { margin: 28px 0 8px; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: #0d100f; }
+.guide-ui-figure img { display: block; width: 100%; height: auto; }
+.guide-ui-figure figcaption { padding: 14px 17px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; line-height: 1.55; }
+.guide-ui-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 18px; margin-top: 28px; }
+.guide-ui-pair .guide-ui-figure { margin: 0; }
+
+@media (max-width: 1050px) {
+  .management-lead { grid-template-columns: 1fr; }
+  .management-lead .ui-figure { width: min(100%, 620px); margin-inline: auto; }
+  .management-points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .management-points article:nth-child(2) { border-right: 0; }
+  .management-points article:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+}
+
+@media (max-width: 720px) {
+  .bridge-management { padding-top: 88px; }
+  .management-lead { gap: 34px; margin-top: 32px; }
+  .management-copy > p:not(.bridge-kicker), .mobile-management p:not(.bridge-kicker) { font-size: 15px; }
+  .management-points, .bridge-shot-grid, .guide-ui-pair { grid-template-columns: 1fr; }
+  .management-points { margin-top: 48px; }
+  .management-points article { border-right: 0; border-bottom: 1px solid var(--line); }
+  .management-points article:last-child { border-bottom: 0; }
+  .bridge-shot-wide { grid-column: auto; }
+  .mobile-management { grid-template-columns: 1fr; gap: 34px; margin-top: 52px; padding: 26px 20px 34px; }
+  .mobile-management .ui-figure { width: min(100%, 390px); margin-inline: auto; }
+}
+
 .bridge-hero .hero-copy > p { max-width: 720px; }
 .bridge-kicker {
   display: inline-flex;
