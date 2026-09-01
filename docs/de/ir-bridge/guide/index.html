@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#07090a">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Vollständige Anleitung zu Installation, Pairing, Lernen, Zonenrouting, Sicherung und Update der optionalen RoonPilot IR Bridge.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../../assets/site.css">
+  <link rel="stylesheet" href="../../../assets/bridge.css">
+  <title>RoonPilot IR Bridge — vollständige Anleitung</title>
+  <script src="../../../assets/site.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../"><span class="brand-mark" aria-hidden="true"></span><span>RoonPilot IR Bridge</span></a>
+      <nav aria-label="Anleitungsnavigation"><a href="#hardware">Hardware</a><a href="#factory">Factory-Installation</a><a href="#pairing">Pairing</a><a href="#learning">IR-Lernen</a><a href="#updates">Updates</a></nav>
+      <div class="header-actions"><a class="language-link" href="../../../ir-bridge/guide/" lang="en">English</a><a class="header-link" href="../../../">RoonPilot</a></div>
+    </div>
+  </header>
+
+  <main class="guide-body page-width">
+    <div class="guide-layout">
+      <article class="guide-copy">
+        <p class="bridge-kicker">Einrichtung und Bedienung</p>
+        <h1>Vollständige Bridge-Anleitung</h1>
+        <p class="guide-lead">Diese Anleitung beginnt beim unversorgten, nackten Board und führt bis zu gelernten IR-Profilen, zonenbezogenem Routing, Sicherung und signierten Onlineupdates durch RoonPilot.</p>
+
+        <div class="preview-note"><strong>Nicht angekündigte Vorschau.</strong> Dieser Bereich ist absichtlich nicht auf den öffentlichen RoonPilot-Projektseiten verlinkt. Hardware und Firmware befinden sich noch in der Validierung.</div>
+
+        <section id="start">
+          <h2>1. Aufgabe der Bridge</h2>
+          <p>RoonPilot IR Bridge ist eine optionale ESP32-S3-Erweiterung für Geräte, deren Lautstärke oder Stromzustand Roon nicht direkt steuern kann. RoonPilot bleibt die Bedienoberfläche; die Bridge empfängt authentifizierte Lautstärke-, Mute- und Power-Aktionen und sendet die gelernten Befehle der Original-Infrarotfernbedienung.</p>
+          <p>Der Steuerweg wird für jede Roon-Zone getrennt gewählt. Eine Zone kann die native Roon-Lautstärke nutzen, eine zweite einen DAC per Infrarot regeln und eine weitere die Lautstärkeregelung bewusst deaktivieren. Wird <strong>Bridge &amp; Bluetooth</strong> abgeschaltet, bleiben nach dem RoonPilot-Neustart Bridge-Scanning, Bluetooth und sämtliche Bridge-Hintergrundaufgaben aus.</p>
+          <div class="fact-grid"><div><span>Profile</span><strong>Bis zu 8</strong></div><div><span>Befehle</span><strong>Lautstärke ±, Mute, Power ein/aus</strong></div><div><span>Primärverbindung</span><strong>Verschlüsseltes BLE</strong></div><div><span>Fallback</span><strong>Authentifiziertes lokales WLAN</strong></div></div>
+        </section>
+
+        <section id="hardware">
+          <h2>2. Hardware und sichere Verdrahtung</h2>
+          <p>Der validierte Prototyp nutzt ein ESP32-S3-Zero-kompatibles Board mit 4 MB Flash und 2 MB PSRAM, einen AZ-Delivery-KY-022/CHQ1838-Empfänger und USB-Stromversorgung. Als finale Ausgangsstufe ist der Adafruit High Power IR Emitter 5639 vorgesehen; das kleine AZ-Delivery-KY-005-Sendemodul genügt für kurze Distanzen am Testplatz.</p>
+          <div class="warning"><strong>Vor jeder Änderung USB abziehen.</strong> Die tatsächlichen Beschriftungen <code>S</code>, <code>+</code>, <code>−</code>, <code>V+</code>, <code>GND</code> und <code>SIG</code> auf den gelieferten Modulen ablesen. Kompatible KY-022-Boards besitzen nicht immer dieselbe physische Pinreihenfolge.</div>
+          <figure class="wiring-figure"><img src="../../../ir-bridge/assets/wiring-de.svg" alt="Verdrahtungsplan der RoonPilot IR Bridge"><figcaption>Referenzverdrahtung mit finalem Adafruit-Sender. Der vorläufige AZ-Sender erhält 3,3 V statt der 5-V-Senderschiene.</figcaption></figure>
+          <div class="table-wrap"><table><thead><tr><th>Bridge-Anschluss</th><th>Ziel</th><th>Aufgabe</th></tr></thead><tbody>
+            <tr><td>5 V</td><td>Adafruit 5639 V+</td><td>Versorgung des Hochleistungssenders direkt von USB, nicht vom 3,3-V-Regler</td></tr>
+            <tr><td>3V3</td><td>AZ-Prototyp-Sender VCC</td><td>Nur für das derzeitige kleine AZ-Sendemodul</td></tr>
+            <tr><td>GPIO4</td><td>Sender SIG / S</td><td>3,3-V-IR-Modulationssignal</td></tr>
+            <tr><td>3V3</td><td>KY-022 +</td><td>Hält dessen Digitalausgang im Eingangsbereich des ESP32</td></tr>
+            <tr><td>GPIO5</td><td>KY-022 S / OUT</td><td>Demoduliertes IR-Empfangssignal</td></tr>
+            <tr><td>GND</td><td>Beide Module</td><td>Zwingend gemeinsame Masse</td></tr>
+          </tbody></table></div>
+          <p>Das Adafruit-Board besitzt einen eigenen Transistortreiber und akzeptiert 3–5 V Versorgung sowie ein 3–5-V-Logiksignal. Bei 5 V können die beiden LEDs gepulst zusammen rund 400 mA aufnehmen. Deshalb ist ein stabiles USB-Netzteil mit 5 V / mindestens 1 A nötig; die LEDs dürfen niemals direkt an einem GPIO hängen. Nur kurze Fernbedienungsimpulse senden und den Keramikantennenbereich des ESP32 von Modulen, Kabeln und Metall freihalten.</p>
+        </section>
+
+        <section id="factory">
+          <h2>3. Erste Factory-Installation</h2>
+          <ol>
+            <li>Verdrahtung bei abgezogenem USB vollständig prüfen. Beim allerersten Boardtest die IR-Module abziehen, solange deren Pinbeschriftung nicht zweifelsfrei feststeht.</li>
+            <li>Den <a href="../install/">Bridge-Webinstaller</a> in einem aktuellen Desktop-Chrome oder Edge öffnen. Firefox, Safari, iPhone und iPad besitzen die erforderliche Web-Serial-Schnittstelle nicht.</li>
+            <li>Das Bridge-Board direkt per USB anschließen. Arduino Serial Monitor, ESP-IDF Monitor und alle anderen Programme schließen, die den Port verwenden.</li>
+            <li>Das native serielle USB/JTAG-Gerät des ESP32-S3 wählen. Unter macOS beginnt es üblicherweise mit <code>cu.usbmodem…</code>; unter Windows erscheint meist <strong>USB JTAG/serial debug unit (COM…)</strong>.</li>
+            <li>Beide Sicherheitsbestätigungen akzeptieren und den Installer starten. USB bis zum vollständigen Abschluss von Installation und Neustart verbunden lassen.</li>
+          </ol>
+          <div class="warning"><strong>Eine Factory-Installation löscht die komplette Bridge.</strong> Kennung, BLE-Bond, WLAN-Fallback und alle gelernten IR-Profile gehen verloren. Der Installer fordert das erforderliche Löschen selbst an; vorher keinen separaten Erase ausführen. Vor der Neuinstallation einer vorhandenen Bridge unbedingt die Profile exportieren.</div>
+          <p>Nach erfolgreicher Factory-Installation erzeugt die Bridge eine neue zufällige Kennung im Format <code>RPB-XXXX-XXX</code> und erlaubt die erste verschlüsselte Kopplung. Während des offenen Pairings pulsiert die RGB-LED langsam blau.</p>
+        </section>
+
+        <section id="pairing">
+          <h2>4. Bridge mit RoonPilot koppeln</h2>
+          <ol>
+            <li>Die lokale RoonPilot-Weboberfläche öffnen und <strong>Bridge</strong> auswählen.</li>
+            <li><strong>Bridge &amp; Bluetooth</strong> aktivieren, speichern und RoonPilot neu starten lassen. Bei deaktivierter Funktion wird kein Bridge-Bluetooth-Stack gestartet.</li>
+            <li><strong>Scan for Bridges</strong> wählen und die angezeigte <code>RPB-…</code>-Kennung mit der gewünschten Bridge vergleichen.</li>
+            <li>Diese Kennung auswählen und das Pairing in RoonPilot bestätigen. Kein unbekanntes Gerät in der Nähe koppeln.</li>
+            <li>Auf <strong>Encrypted and bonded</strong>, die installierte Bridge-Version und <strong>Ready</strong> warten. Zwei kurze blaue LED-Signale bestätigen den Erfolg; danach geht die LED aus.</li>
+            <li>Vor dem Lernen von Profilen <strong>Test connection</strong> ausführen.</li>
+          </ol>
+          <p>Für das normale Pairing ist kein von außen erreichbarer BOOT-Taster nötig. Hat später nur eine Seite ihre Bond-Daten verloren, die Bridge innerhalb von 15 Sekunden dreimal aus- und einschalten. Sie löscht dabei nur den Bond und öffnet das Pairing für fünf Minuten; Kennung und IR-Profile bleiben erhalten.</p>
+        </section>
+
+        <section id="wifi">
+          <h2>5. Optionaler WLAN-Fallback</h2>
+          <p>BLE bleibt die bevorzugte Verbindung. Soll die Bridge in einem anderen Zimmer stehen, bei verbundener und gebondeter BLE-Bridge <strong>Allow Wi-Fi fallback</strong> aktivieren. RoonPilot überträgt dann einmalig seine aktuellen 2,4-GHz-Zugangsdaten und einen neuen 256-Bit-Anwendungsschlüssel durch die verschlüsselte BLE-Verbindung.</p>
+          <ol><li>Schalter aktivieren und Provisionierung bestätigen.</li><li>Auf <strong>Connected and verified</strong>, Bridge-IP und Signalstärke warten.</li><li>Mit <strong>Test Wi-Fi path</strong> einen authentifizierten WLAN-Befehl erzwingen, obwohl BLE verfügbar ist.</li></ol>
+          <p>Die Befehle nutzen AES-256-GCM-Authentifizierung und Wiederholungsschutz. Ein Retry darf nicht unbemerkt einen zweiten IR-Befehl auslösen. Fehlerhafte Zugangsdaten werden nicht behalten, BLE bleibt der Rettungsweg und bei ausgeschaltetem Fallback startet das WLAN-Funkteil der Bridge nach einem Neustart nicht. RoonPilot und Bridge müssen ohne Client-/AP-Isolation im selben lokalen Netz liegen.</p>
+        </section>
+
+        <section id="learning">
+          <h2>6. IR-Profil erstellen und lernen</h2>
+          <ol>
+            <li>Ein eindeutig benanntes Profil wie <code>RME ADI-2 DAC — Wohnzimmer</code> anlegen. Üblicherweise 38 kHz Träger und 33 % Duty beibehalten, sofern das Gerät nichts anderes benötigt.</li>
+            <li>Neben <strong>Volume up</strong> auf <strong>Learn</strong> drücken. Während des Wartens pulsiert die Bridge-LED orange.</li>
+            <li>Originalfernbedienung auf den KY-022 richten und die angeforderte Taste einmal kurz und sauber drücken.</li>
+            <li>Bei Aufforderung denselben Druck wiederholen. Nur übereinstimmende Aufnahmen werden akzeptiert.</li>
+            <li>Zwei kurze grüne Signale bedeuten Analyse und Speicherung; zwei rote Signale bedeuten Timeout, Abweichung oder Fehler.</li>
+            <li>Mit <strong>Test</strong> das echte Gerät prüfen und erst danach Volume down, Mute, Power on und Power off lernen.</li>
+          </ol>
+          <p>Bekannte NEC- und Extended-NEC-Signale behalten Protokoll- und Repeat-Informationen; Unbekanntes bleibt als verlustfreies Roh-Timing nutzbar. <strong>Duty</strong> ist der aktive Anteil jedes Trägerzyklus – weder Tastendauer noch Wiederholungszahl. Beim Standardwert 33 % ist die LED eines 38-kHz-Trägers etwa 8,7 µs von jeweils 26,3 µs eingeschaltet.</p>
+          <div class="warning"><strong>Power besitzt zwei getrennte Slots.</strong> Ein kurzer Druck auf RoonPilot sendet <em>Power on</em>, ein langer Druck <em>Power off</em>. Beide Slots getrennt lernen oder prüfen, selbst wenn die Originalfernbedienung dieselbe physische Taste nutzt.</div>
+        </section>
+
+        <section id="zones">
+          <h2>7. Jede Zone zuordnen</h2>
+          <p>In <strong>Zone Management</strong> für jede sichtbare Zone einen Lautstärkeweg auswählen:</p>
+          <ul><li><strong>Roon / endpoint volume</strong> sendet die native absolute oder dB-Lautstärke des Endpunkts.</li><li><strong>External IR Bridge</strong> sendet Volume up/down des ausgewählten Profils.</li><li><strong>Disabled</strong> verwirft Lautstärkeaktionen bewusst.</li></ul>
+          <p>Die Encoder-Schrittzahl wird pro Zone getrennt eingestellt. <strong>2 Steps</strong> bedeutet zwei vollständige gelernte IR-Tastendrücke pro RoonPilot-Rastung, nicht einen künstlich gehaltenen Befehl. Beim validierten RME-Profil ergeben zwei physische 0,5-dB-Schritte daher exakt eine 1,0-dB-RoonPilot-Rastung.</p>
+          <p>Mute und Power lassen sich ebenfalls pro Zone aktivieren. Play/Pause, Previous und Next bleiben native Roon-Aktionen. Da eine inkrementelle IR-Steuerung keinen absoluten Wert zurückmeldet, zeigt das Display einen relativen <strong>+ / −</strong>-Aktionszähler und erfindet keinen Lautstärkewert.</p>
+          <div class="rme-guide-card"><div><span>Beispielroute</span><strong>WiiM Ultra → RME ADI-2 DAC</strong></div><p>Der Musiktransport läuft weiterhin über Roon und WiiM. Nur Lautstärke, Mute und Power gehen an die Bridge. Damit führt der RME selbst die Hardware-Lautstärkeänderung aus, seine Auto-Ref-Level-Funktion bleibt erhalten und die digitale Roon-Absenkung ersetzt nicht die RME-Regelung.</p></div>
+        </section>
+
+        <section id="backup">
+          <h2>8. Profile sichern und wiederherstellen</h2>
+          <p>Nach jeder erfolgreich geprüften Lernrunde <strong>Download JSON backup</strong> verwenden. Die Datei enthält Profilnamen, Träger- und Duty-Werte, Revisionen, gelernte Pulsfolgen mit Prüfsummen, Zonenzuordnungen, zonenbezogene Schrittzahlen und aktivierte Mute-/Power-Bedienelemente.</p>
+          <p>WLAN-Zugangsdaten, WLAN-Transportschlüssel, BLE-Bond-Schlüssel und alle anderen Geheimnisse sind ausdrücklich ausgeschlossen. Nach Factory-Reset oder Boardtausch zuerst koppeln, dann das Backup importieren und jede wiederhergestellte Aktion testen. Der WLAN-Fallback wird erneut eingerichtet, damit ein neuer Anwendungsschlüssel an genau diese Bridge gebunden wird.</p>
+        </section>
+
+        <section id="updates">
+          <h2>9. Signierte Onlineupdates</h2>
+          <p>Nach der ersten Factory-Installation werden normale Bridge-Updates unter <strong>Bridge → Bridge firmware update</strong> von RoonPilot verwaltet. USB-Zugang und lokale BIN-Auswahl sind im Normalfall nicht mehr nötig.</p>
+          <ol>
+            <li>Bei aktivierter Bridge darf RoonPilot das HTTPS-Manifest nach dem Start und danach höchstens alle 24 Stunden prüfen. Updateprüfung und die tägliche Gerätemeldung sind getrennte Einstellungen.</li>
+            <li>Installierte und verfügbare Bridge-Version werden auf der Seite angezeigt. Ein auffälliger Hinweis in der Statuszeile führt direkt zur Updatekarte; die quittierbare Gerätemeldung wartet das Ende wichtiger Bedienvorgänge ab.</li>
+            <li>Die Installation startet niemals automatisch. <strong>Download and install</strong> muss ausdrücklich gewählt und bestätigt werden.</li>
+            <li>RoonPilot prüft Kanal, Projekt, Board, Protokollbereich, erforderliche Controller-Version, Größe, SHA-256, ESP32-S3-Ziel und eingebettete Version vor der Übertragung.</li>
+            <li>Das Image wird über den aktuell verfügbaren verschlüsselten Transport gesendet. Die Bridge prüft Reihenfolge, Größe, SHA-256 und RSA-3072-Signatur unabhängig, bevor sie die inaktive A/B-Partition aktiviert.</li>
+            <li>Erfolg erscheint erst nach der Wiederverbindung mit exakt der angeforderten Version. ESP-IDF-Rollback bleibt verfügbar, falls die neue Anwendung ihren Start nicht bestätigen kann.</li>
+          </ol>
+          <p>Ist <strong>Bridge &amp; Bluetooth</strong> deaktiviert, erfolgen weder Bridge-Scan noch Updateanfrage, Webhinweis oder Displaymeldung. Der normale RoonPilot-Updatekanal bleibt davon unabhängig.</p>
+        </section>
+
+        <section id="troubleshooting">
+          <h2>10. Fehlerbehebung</h2>
+          <div class="trouble-grid">
+            <article><h3>Kein serielles Gerät im Installer</h3><p>Datenfähiges Kabel verwenden, serielle Monitore schließen, ohne Hub verbinden, dann BOOT beim Einstecken halten und nach Erscheinen des Ports loslassen.</p></article>
+            <article><h3>Bridge wird nicht gefunden</h3><p>Bridge &amp; Bluetooth muss aktiviert und gespeichert sein. Bei früher gekoppelter Bridge die Dreifach-Strom-Recovery nutzen und im fünfminütigen blauen Pairingfenster scannen.</p></article>
+            <article><h3>Lernen läuft in einen Timeout</h3><p>KY-022-Pinbeschriftung prüfen, mit 3,3 V versorgen, Sonnenlicht reduzieren, Originalfernbedienung näher halten und zweimal gleich kurz drücken.</p></article>
+            <article><h3>Falscher Lautstärkeschritt</h3><p>Zuerst genau einen gelernten Befehl mit Test prüfen. Danach die zoneneigene Schrittzahl kontrollieren; eine schlechte Aufnahme nicht durch eine größere Zahl kaschieren.</p></article>
+            <article><h3>WLAN-Fallback verbindet nicht</h3><p>Während gebondetem BLE provisionieren, 2,4 GHz verwenden, beide Geräte ins gleiche LAN bringen und AP-/Client-Isolation abschalten. Nach einem fehlgeschlagenen Ersttest muss BLE weiter erreichbar bleiben.</p></article>
+            <article><h3>Kein Update angeboten</h3><p>Bridge-Funktion und Bridge-Updateprüfung aktivieren, danach die manuelle Prüfung der Updatekarte nutzen. Ein älterer unsignierter Teststand kann zunächst eine kabelgebundene Migration benötigen.</p></article>
+          </div>
+        </section>
+
+        <div class="guide-finish"><div><p class="eyebrow">Bereit für den Testplatz</p><h2>Erst nach geprüfter Verdrahtung installieren.</h2></div><a class="button primary" href="../install/">Bridge-Installer öffnen</a></div>
+      </article>
+
+      <aside class="guide-nav" aria-label="Auf dieser Seite"><strong>Auf dieser Seite</strong><a href="#start">Aufgabe und Umfang</a><a href="#hardware">Hardware und Verdrahtung</a><a href="#factory">Factory-Installation</a><a href="#pairing">Pairing</a><a href="#wifi">WLAN-Fallback</a><a href="#learning">IR-Lernen</a><a href="#zones">Zonenrouting</a><a href="#backup">Sicherung</a><a href="#updates">Onlineupdates</a><a href="#troubleshooting">Fehlerbehebung</a><hr><a href="../">Bridge-Übersicht</a><a href="../install/">Browser-Installer</a></aside>
+    </div>
+  </main>
+
+  <footer><div class="page-width footer-inner"><div class="footer-brand"><span class="brand-mark" aria-hidden="true"></span><strong>RoonPilot IR Bridge</strong></div><p>Entworfen und entwickelt von <strong>Senior Coder</strong>.</p><nav aria-label="Links im Seitenfuß"><a href="../">Übersicht</a><a href="../install/">Installer</a><a href="../../../legal/LICENSE.de.md">Lizenz</a><a href="../../../legal/THIRD_PARTY_NOTICES.md">Drittanbieterhinweise</a></nav></div></footer>
+</body>
+</html>

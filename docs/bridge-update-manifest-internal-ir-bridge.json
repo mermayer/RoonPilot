@@ -1,0 +1,17 @@
+{
+    "schema":  1,
+    "project":  "roonpilot-ir-bridge",
+    "board":  "esp32-s3-zero-fh4r2",
+    "channel":  "internal-ir-bridge",
+    "image_type":  "application",
+    "version":  "0.1.0-test.30",
+    "signed":  true,
+    "protocol_min":  3,
+    "protocol_max":  3,
+    "controller_min_version":  "1.0.2-irbridge-test.12",
+    "url":  "https://mermayer.github.io/RoonPilot/ir-bridge/firmware/roonpilot-ir-bridge-ota-v0.1.0-test.30.bin",
+    "size":  1052672,
+    "sha256":  "da5fef49c89b97b295b2bdbcc7bface1be5eb954168837118ee5bc1b49e32654",
+    "mandatory":  false,
+    "notes_url":  "https://mermayer.github.io/RoonPilot/ir-bridge/updates/0.1.0-test.30/"
+}

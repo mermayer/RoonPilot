@@ -1,0 +1,16 @@
+{
+  "name": "RoonPilot IR Bridge",
+  "version": "0.1.0-test.30",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        {
+          "path": "../firmware/roonpilot-ir-bridge-factory-v0.1.0-test.30.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}

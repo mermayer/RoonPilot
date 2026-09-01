@@ -1,5 +1,5 @@
 (() => {
-  const navigationLinks = [...document.querySelectorAll('.site-header nav a')];
+  const navigationLinks = [...document.querySelectorAll('.site-header nav a[href^="#"]')];
   const observedSections = navigationLinks
     .map(link => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);

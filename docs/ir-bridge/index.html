@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#07090a">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="RoonPilot IR Bridge adds optional, per-zone infrared volume, mute and power control to RoonPilot.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="stylesheet" href="../assets/bridge.css">
+  <title>RoonPilot IR Bridge — optional infrared control for every zone</title>
+  <script src="../assets/site.js" defer></script>
+</head>
+<body>
+  <svg class="icon-sprite" aria-hidden="true">
+    <symbol id="icon-alert" viewBox="0 0 24 24"><path d="M12 3 2.8 20h18.4L12 3Z"></path><path d="M12 9v5M12 17h.01"></path></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v17H7.5A3.5 3.5 0 0 0 4 22V5.5ZM20 5.5A3.5 3.5 0 0 0 16.5 2H13v17h3.5A3.5 3.5 0 0 1 20 22V5.5Z"></path></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 2.5 2.5L16 9"></path></symbol>
+    <symbol id="icon-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"></rect><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"></path></symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"></path></symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-4"></path></symbol>
+    <symbol id="icon-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="m7 9 3 3-3 3M13 15h4"></path></symbol>
+    <symbol id="icon-usb" viewBox="0 0 24 24"><path d="M12 3v14M9 6l3-3 3 3M12 11l-4 4M8 15H5M12 14l4 4M16 18h3"></path><circle cx="5" cy="15" r="1"></circle><rect x="18" y="17" width="2" height="2"></rect></symbol>
+    <symbol id="icon-wifi" viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 20h.01"></path><path d="M2 9a14.2 14.2 0 0 1 20 0"></path></symbol>
+    <symbol id="icon-radio" viewBox="0 0 24 24"><path d="M8.5 16a5 5 0 0 1 7 0M5 12.5a10 10 0 0 1 14 0M12 20h.01"></path></symbol>
+    <symbol id="icon-ir" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2"></circle><path d="M10 8a6 6 0 0 1 0 8M14 5a10 10 0 0 1 0 14M18 2a14 14 0 0 1 0 20"></path></symbol>
+    <symbol id="icon-volume" viewBox="0 0 24 24"><path d="M4 10v4h4l5 4V6l-5 4H4ZM17 9a5 5 0 0 1 0 6M19.5 6.5a9 9 0 0 1 0 11"></path></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#overview" aria-label="RoonPilot IR Bridge home"><span class="brand-mark" aria-hidden="true"></span><span>RoonPilot IR Bridge</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#overview">Overview</a>
+        <a href="#why">RME example</a>
+        <a href="#how">How it works</a>
+        <a href="#hardware">Hardware</a>
+        <a href="guide/">Guide</a>
+        <a href="install/">Installer</a>
+      </nav>
+      <div class="header-actions"><a class="language-link" href="../de/ir-bridge/" lang="de">Deutsch</a><a class="header-link" href="../"><span>RoonPilot</span></a></div>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview" class="hero bridge-hero page-width">
+      <div class="hero-copy">
+        <p class="bridge-kicker">Optional hardware extension</p>
+        <h1>Let the knob control the hardware.</h1>
+        <p>RoonPilot IR Bridge adds learned infrared volume, mute and power control to any selected Roon zone—without modifying RoonPilot or installing another service.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="guide/"><svg><use href="#icon-book"></use></svg>Explore the complete guide</a>
+          <a class="button secondary" href="install/"><svg><use href="#icon-usb"></use></svg>Open Bridge installer</a>
+        </div>
+        <ul class="hero-facts" aria-label="Bridge highlights">
+          <li>Per-zone Roon or IR routing</li>
+          <li>Encrypted BLE with Wi-Fi fallback</li>
+          <li>Learned profiles and signed A/B updates</li>
+        </ul>
+      </div>
+      <div class="bridge-visual" aria-label="Stylised RoonPilot IR Bridge board">
+        <div class="bridge-aura" aria-hidden="true"></div>
+        <div class="signal-tag one"><svg><use href="#icon-radio"></use></svg>Encrypted BLE</div>
+        <div class="signal-tag two"><svg><use href="#icon-ir"></use></svg>Learned IR</div>
+        <div class="signal-tag three"><svg><use href="#icon-wifi"></use></svg>Wi-Fi fallback</div>
+        <div class="bridge-board" aria-hidden="true"><div class="bridge-module"><strong>ESP32-S3</strong><span>ROONPILOT IR BRIDGE</span></div><div class="bridge-led"></div><div class="bridge-usb"></div></div>
+      </div>
+    </section>
+
+    <section class="content-section page-width" aria-labelledby="architecture-title">
+      <div class="section-heading"><p class="section-number">01</p><div><h2 id="architecture-title">One turn. The right control path.</h2><p>Each zone decides independently whether Roon or the Bridge receives its commands.</p></div></div>
+      <div class="architecture">
+        <article class="architecture-card"><svg><use href="#icon-volume"></use></svg><h3>RoonPilot</h3><p>The rotary ring, touch controls and zone settings remain the single user interface.</p></article>
+        <div class="architecture-link"><span>secure</span></div>
+        <article class="architecture-card"><svg><use href="#icon-chip"></use></svg><h3>IR Bridge</h3><p>Receives the selected zone action, schedules the learned frames and drives the transmitter.</p></article>
+        <div class="architecture-link"><span>infrared</span></div>
+        <article class="architecture-card"><svg><use href="#icon-ir"></use></svg><h3>Audio hardware</h3><p>Your DAC, amplifier or active speaker sees the same command as from its original remote.</p></article>
+      </div>
+    </section>
+
+    <section id="why" class="setup-section">
+      <div class="page-width rme-case">
+        <div class="rme-panel" aria-label="Illustration of an RME ADI-2 DAC hardware volume display">
+          <div class="rme-display"><div class="rme-top"><span>RME ADI-2 DAC</span><span>VOL</span></div><div class="rme-value">−31.0 dB</div><div class="rme-level">AUTO REF LEVEL ACTIVE</div><div class="rme-meter"><i style="--level:1"></i><i style="--level:2"></i><i style="--level:3"></i><i style="--level:4"></i><i style="--level:5"></i><i style="--level:6"></i><i style="--level:7"></i><i style="--level:8"></i></div></div>
+        </div>
+        <div class="rme-copy">
+          <p class="bridge-kicker">A practical example</p>
+          <h3>Keep RME Auto Ref Level where it belongs: inside the DAC.</h3>
+          <p>For an RME ADI-2 DAC connected to a WiiM zone, RoonPilot can send the original RME infrared volume commands instead of changing Roon’s digital volume. The DAC therefore performs the level change itself and retains its Auto Ref Level behaviour.</p>
+          <ul><li>Two learned 0.5 dB increments can form one precise 1.0 dB encoder step</li><li>Optional mute and separate short/long press power actions</li><li>No guessed absolute value is shown for an IR-only volume path</li><li>Native Roon control remains available for every other zone</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="content-section page-width">
+      <div class="section-heading"><p class="section-number">02</p><div><h2>Modern transport. Familiar infrared.</h2><p>The Bridge stays simple at the equipment rack while RoonPilot manages setup, profiles, routing and updates.</p></div></div>
+      <div class="bridge-cards">
+        <article class="bridge-card"><div class="card-icon"><svg><use href="#icon-lock"></use></svg></div><h3>Pair once</h3><p>Every Factory installation creates a unique <code>RPB-…</code> identity. Select it in RoonPilot and confirm the first encrypted pairing on the round display.</p></article>
+        <article class="bridge-card"><div class="card-icon"><svg><use href="#icon-ir"></use></svg></div><h3>Learn the original remote</h3><p>RoonPilot guides the recording of volume, mute and separate power actions. Known protocols are analysed; unknown signals retain their raw timing.</p></article>
+        <article class="bridge-card"><div class="card-icon"><svg><use href="#icon-wifi"></use></svg></div><h3>Reach another room</h3><p>BLE is preferred nearby. If enabled and BLE becomes unavailable, authenticated local Wi-Fi takes over automatically and returns control to BLE when it recovers.</p></article>
+      </div>
+      <div class="companion-note"><div><svg><use href="#icon-check"></use></svg></div><div><h3>Completely optional means completely off.</h3><p>When Bridge &amp; Bluetooth is disabled in RoonPilot, Bluetooth, scanning, Bridge update checks and all Bridge background work remain off after restart.</p></div></div>
+    </section>
+
+    <section class="direct-band"><div class="page-width"><h2>No cloud. No daemon. No extra computer.</h2><p>Commands remain on the local network. The Bridge is a small hardware companion, not another service to maintain.</p></div></section>
+
+    <section id="hardware" class="hardware-section page-width">
+      <div class="section-heading"><p class="section-number">03</p><div><h2>Compact hardware, clearly defined.</h2><p>The target build uses a small ESP32-S3 board, an infrared receiver for learning and a dedicated transmitter for reliable range.</p></div></div>
+      <div class="hardware-layout">
+        <dl class="spec-list">
+          <div><dt>Controller</dt><dd>Compact ESP32-S3-Zero-compatible board · USB powered · no battery</dd></div>
+          <div><dt>IR receiver</dt><dd>AZ-Delivery KY-022-compatible receiver module · signal on GPIO5</dd></div>
+          <div><dt>Final transmitter</dt><dd>Adafruit High Power Infrared LED Emitter · product 5639 · signal on GPIO4</dd></div>
+          <div><dt>Prototype sender</dt><dd>AZ-Delivery IR transmitter module for short-range bench tests</dd></div>
+          <div><dt>Status light</dt><dd>Onboard RGB LED · blue pairing pulse and guided learning feedback</dd></div>
+          <div><dt>Firmware</dt><dd>ESP-IDF 6.0.1 · signed A/B OTA · persistent identity and profiles</dd></div>
+        </dl>
+        <div class="hardware-actions">
+          <p>The high-power transmitter is the intended final output stage. Its range and thermal behaviour will be validated with the production module before this extension is announced generally.</p>
+          <a class="button secondary" href="https://www.adafruit.com/product/5639" target="_blank" rel="noopener">Adafruit IR transmitter <svg><use href="#icon-external"></use></svg></a>
+          <a class="text-link" href="https://www.az-delivery.de/products/ir-empfanger-modul" target="_blank" rel="noopener">AZ-Delivery IR receiver <svg><use href="#icon-external"></use></svg></a>
+          <a class="text-link" href="https://www.amazon.de/dp/B0F3XKMPMK?th=1" target="_blank" rel="noopener">Controller board listing <svg><use href="#icon-external"></use></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="setup-section">
+      <div class="page-width">
+        <div class="section-heading"><p class="section-number">04</p><div><h2>From bare board to a routed zone.</h2><p>Initial USB installation is separate; everyday configuration then happens entirely through RoonPilot.</p></div></div>
+        <ol class="setup-flow">
+          <li><span>1</span><svg><use href="#icon-chip"></use></svg><h3>Wire and inspect</h3><p>Connect the receiver, sender and a shared ground using the verified pin map.</p></li>
+          <li><span>2</span><svg><use href="#icon-usb"></use></svg><h3>Install Factory</h3><p>Use desktop Chrome or Edge. Factory installation erases Bridge identity, pairing and profiles.</p></li>
+          <li><span>3</span><svg><use href="#icon-radio"></use></svg><h3>Pair by BLE</h3><p>Enable Bridge &amp; Bluetooth, start pairing and confirm the displayed RPB identity.</p></li>
+          <li><span>4</span><svg><use href="#icon-ir"></use></svg><h3>Learn a profile</h3><p>Record and test the original remote commands at the real equipment.</p></li>
+          <li><span>5</span><svg><use href="#icon-volume"></use></svg><h3>Route the zone</h3><p>Select IR in Zone Management and choose its independent encoder step count.</p></li>
+          <li><span>6</span><svg><use href="#icon-shield"></use></svg><h3>Back up and update</h3><p>Export profiles, then install future signed updates directly from RoonPilot.</p></li>
+        </ol>
+        <div class="preflight-links"><a class="text-link" href="guide/">Read the complete Bridge guide <svg><use href="#icon-arrow"></use></svg></a><a class="text-link" href="install/">Open the browser installer <svg><use href="#icon-arrow"></use></svg></a></div>
+      </div>
+    </section>
+
+    <section class="content-section page-width" aria-labelledby="updates-title">
+      <div class="section-heading"><p class="section-number">05</p><div><h2 id="updates-title">Updates managed by RoonPilot.</h2><p>Installed and available versions appear on the Bridge page and, when enabled, as a dismissible notice on the device.</p></div></div>
+      <div class="status-strip"><div><span>Discovery</span><strong>Automatic</strong></div><div><span>Installation</span><strong>Always manual</strong></div><div><span>Verification</span><strong>RSA-3072 + SHA-256</strong></div><div><span>Recovery</span><strong>A/B rollback</strong></div></div>
+      <div class="companion-install">
+        <div class="companion-install-heading"><div><p class="eyebrow">Two independent checks</p><h3>Verified before and after transfer.</h3></div><a class="text-link" href="guide/#updates">Understand Bridge updates <svg><use href="#icon-arrow"></use></svg></a></div>
+        <p class="companion-status"><strong>No unattended installation:</strong> RoonPilot may check for a new Bridge version and show a notice, but download and installation start only after explicit confirmation.</p>
+        <ol class="companion-steps"><li><span>1</span><div><strong>RoonPilot validates</strong><p>HTTPS manifest, project, board, protocol, controller version, file size, embedded version and SHA-256 are checked first.</p></div></li><li><span>2</span><div><strong>Bridge validates again</strong><p>The Bridge verifies block order, size, SHA-256 and the RSA signature before selecting the inactive OTA partition.</p></div></li><li><span>3</span><div><strong>Version confirms success</strong><p>After restart, RoonPilot waits until the Bridge reconnects and reports the exact requested version.</p></div></li></ol>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="page-width footer-inner"><div class="footer-brand"><span class="brand-mark" aria-hidden="true"></span><strong>RoonPilot IR Bridge</strong></div><p>Designed and developed by <strong>Senior Coder</strong>. Optional local extension for RoonPilot.</p><nav aria-label="Footer links"><a href="../">RoonPilot</a><a href="guide/">Bridge guide</a><a href="install/">Bridge installer</a><a href="../legal/LICENSE.md">License</a><a href="../legal/THIRD_PARTY_NOTICES.md">Third-party notices</a></nav></div></footer>
+</body>
+</html>

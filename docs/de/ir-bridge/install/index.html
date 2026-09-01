@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#07090a">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Browserbasierter Factory-Installer für die ESP32-S3-Firmware der RoonPilot IR Bridge.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../../assets/site.css">
+  <link rel="stylesheet" href="../../../assets/bridge.css">
+  <title>RoonPilot IR Bridge — Factory-Installer</title>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+</head>
+<body class="installer-page">
+  <header class="site-header"><div class="header-inner"><a class="brand" href="../"><span class="brand-mark" aria-hidden="true"></span><span>RoonPilot IR Bridge</span></a><nav aria-label="Installernavigation"><a href="../guide/">Vollständige Anleitung</a><a href="../guide/#factory">Factory-Ablauf</a><a href="../guide/#updates">Spätere Updates</a></nav><div class="header-actions"><a class="language-link" href="../../../ir-bridge/install/" lang="en">English</a><a class="header-link" href="../../../">RoonPilot</a></div></div></header>
+
+  <main class="installer-wrap page-width">
+    <div class="installer-heading"><p class="bridge-kicker">ESP32-S3 · Native USB Web Serial</p><h1>Bridge-Factory-Installer</h1><p>Die vollständige signierte RoonPilot-IR-Bridge-Firmware direkt mit einem Chromium-Desktopbrowser installieren. Weder BIN-Download noch Kommandozeile sind nötig.</p></div>
+
+    <div class="preview-note"><strong>Nicht angekündigte Vorschau.</strong> Dieser Installer ist absichtlich nicht auf den öffentlichen RoonPilot-Seiten verlinkt. Nur mit der dokumentierten ESP32-S3-Zero-kompatiblen Bridge-Hardware verwenden.</div>
+
+    <section class="installer-card danger-card" aria-labelledby="erase-title"><div class="card-number">01</div><div><h2 id="erase-title">Factory bedeutet vollständiges Löschen</h2><p>Die Installation entfernt Bridge-Kennung, BLE-Kopplung, eingerichteten WLAN-Fallback und sämtliche gelernten IR-Profile. Vor der Neuinstallation einer vorhandenen Bridge das JSON-Profilbackup in RoonPilot exportieren.</p><p><strong>Ein separater Erase ist nicht nötig.</strong> Der Installer fordert das erforderliche Löschen im Rahmen dieser Factory-Installation selbst an und führt es aus.</p></div></section>
+
+    <section class="installer-card" aria-labelledby="browser-title"><div class="card-number">02</div><div><h2 id="browser-title">Unterstützten Computer und Port verwenden</h2><p>Einen aktuellen Desktop-<strong>Chrome</strong> oder <strong>Edge</strong> verwenden. Firefox, Safari, iPhone und iPad stellen die hier benötigte Web-Serial-Schnittstelle nicht bereit. Arduino Serial Monitor, ESP-IDF Monitor und alle Anwendungen schließen, die den Bridge-Port belegen.</p><div class="port-grid"><div><span>Windows</span><strong>USB JTAG/serial debug unit (COM…)</strong></div><div><span>macOS / Chrome</span><strong>ESP32-S3 oder cu.usbmodem…</strong></div></div><p>Erscheint kein Port, ein datenfähiges Kabel verwenden, beim Einstecken den BOOT-Taster des Boards halten und nach Erscheinen des nativen ESP32-S3-Ports loslassen.</p></div></section>
+
+    <section class="installer-card install-action" aria-labelledby="install-title"><div class="card-number">03</div><div class="install-content"><h2 id="install-title">Bestätigen, verbinden und installieren</h2><p>Version <strong>0.1.0-test.30</strong> · signiertes ESP32-S3-Factory-Image · 1.183.744 Bytes</p>
+      <label class="installer-confirm"><input id="hardwareConfirm" type="checkbox"><span>Ich habe USB während der Verdrahtungsprüfung abgezogen, alle Modulbeschriftungen kontrolliert und die ESP32-S3-Bridge ausgewählt – nicht die RoonPilot-Displayhardware.</span></label>
+      <label class="installer-confirm"><input id="eraseConfirm" type="checkbox"><span>Mir ist bekannt, dass diese Factory-Installation Kennung, Pairing, WLAN-Fallback und sämtliche IR-Profile löscht; falls nötig, habe ich vorher ein Backup erstellt.</span></label>
+      <label class="installer-confirm"><input id="licenseConfirm" type="checkbox"><span>Ich habe die <a href="../../../legal/LICENSE.de.md" target="_blank" rel="noopener">RoonPilot-Lizenz für private Binärnutzung 1.0</a> gelesen und akzeptiere sie.</span></label>
+      <esp-web-install-button manifest="../../../ir-bridge/install/manifest.json">
+        <button id="installButton" class="button primary installer-button" slot="activate" type="button" disabled>Bridge verbinden und installieren</button>
+        <span class="installer-message" slot="unsupported">Dieser Browser unterstützt Web Serial nicht. Die Seite in einem aktuellen Desktop-Chrome oder Edge öffnen.</span>
+        <span class="installer-message" slot="not-allowed">Zuerst diese HTTPS-Seite öffnen und danach die ESP32-S3-Bridge per USB anschließen.</span>
+      </esp-web-install-button>
+      <div class="image-proof"><span>Factory SHA-256</span><code>ad25e05bbb65b0a91642fd998c5d5c35905b909433735a01763a163e3c27b92b</code></div>
+    </div></section>
+
+    <section class="installer-card next-card" aria-labelledby="next-title"><div class="card-number">04</div><div><h2 id="next-title">In RoonPilot fortfahren</h2><p>Nach dem Neustart erzeugt die Bridge eine neue Kennung <code>RPB-XXXX-XXX</code> und pulsiert langsam blau. In RoonPilot die Seite <strong>Bridge</strong> öffnen, <strong>Bridge &amp; Bluetooth</strong> aktivieren, scannen, die Kennung vergleichen und das verschlüsselte Pairing bestätigen.</p><a class="button secondary" href="../guide/#pairing">Mit dem Pairing fortfahren</a></div></section>
+
+    <div class="installer-after"><div><strong>Normale spätere Updates</strong><p>Die RoonPilot-Karte <strong>Bridge → Bridge firmware update</strong> verwenden. Updates werden über die verschlüsselte Bridge-Verbindung geprüft und installiert; USB und Erase sind nicht erforderlich.</p></div><div><strong>Installationsrichtlinie</strong><p>Die Suche nach Updates darf automatisch erfolgen, die Installation bleibt immer manuell. RoonPilot und Bridge prüfen das Image, bevor es aktiv wird.</p></div></div>
+  </main>
+
+  <footer><div class="page-width footer-inner"><div class="footer-brand"><span class="brand-mark" aria-hidden="true"></span><strong>RoonPilot IR Bridge</strong></div><p>Factory-Installer · nur ESP32-S3</p><nav aria-label="Links im Seitenfuß"><a href="../">Übersicht</a><a href="../guide/">Anleitung</a><a href="../../../legal/LICENSE.de.md">Lizenz</a><a href="../../../legal/THIRD_PARTY_NOTICES.md">Drittanbieterhinweise</a></nav></div></footer>
+  <script>const checks=[...document.querySelectorAll('.installer-confirm input')];const installButton=document.getElementById('installButton');function updateGate(){installButton.disabled=!checks.every(check=>check.checked)}checks.forEach(check=>check.addEventListener('change',updateGate));</script>
+</body>
+</html>
