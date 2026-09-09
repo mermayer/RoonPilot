@@ -33,6 +33,11 @@ Hauptprozessors installiert.
 
 ## 1. esptool installieren und prüfen
 
+Falls Python noch fehlt, es ausschließlich von der
+[offiziellen Python-Webseite](https://www.python.org/downloads/windows/)
+installieren. Der folgende `pip`-Befehl lädt `esptool` automatisch aus dem
+Python-Paketindex; eine separate Programmdatei muss dafür nicht gesucht werden.
+
 ```powershell
 py --version
 py -m pip install --upgrade esptool
@@ -40,7 +45,12 @@ py -m esptool version
 ```
 
 Funktioniert `py` nicht, `python` verwenden. Keine zufälligen Flash-Programme
-installieren; die dokumentierten Befehle gelten für Espressifs `esptool`.
+installieren; die dokumentierten Befehle gelten für Espressifs `esptool`. Die
+[offizielle Espressif-Installationsanleitung](https://docs.espressif.com/projects/esptool/en/latest/esp32/installation.html)
+erklärt die Installation und Fehlerbehebung. Dort sind auch die von Espressif
+bereitgestellten
+[Standalone-Downloads](https://github.com/espressif/esptool/releases)
+verlinkt, falls `esptool` ohne Python verwendet werden soll.
 
 ## 2. Datei herunterladen und seriellen Port freigeben
 

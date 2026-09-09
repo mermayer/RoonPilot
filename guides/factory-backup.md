@@ -12,12 +12,18 @@ companion ESP32.
 
 - a Windows, macOS or Linux computer;
 - a data-capable USB-C cable;
-- Python and Espressif `esptool`, or a working ESP-IDF installation;
+- Python and Espressif
+  [`esptool`](https://docs.espressif.com/projects/esptool/en/latest/esp32/installation.html),
+  or a working ESP-IDF installation;
 - enough disk space for both images;
 - a folder that is backed up independently of the RoonPilot project.
 
 The commands below use Windows PowerShell and `COM4`. Change the port if needed.
 They read data only.
+
+The documented `pip` command downloads `esptool` automatically. Espressif also
+offers [official standalone downloads](https://github.com/espressif/esptool/releases)
+for users who do not want to install Python.
 
 ## 1. Create a safe backup folder
 

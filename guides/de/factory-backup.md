@@ -10,8 +10,14 @@ zwei Dateien: 16 MB vom ESP32-S3 und 4 MB vom klassischen Begleit-ESP32.
 
 ## Vorbereitung
 
-1. Python 3.10 oder neuer installieren.
-2. PowerShell öffnen und `py -m pip install --upgrade esptool` ausführen.
+1. Python 3.10 oder neuer von der
+   [offiziellen Python-Webseite](https://www.python.org/downloads/windows/)
+   installieren.
+2. PowerShell öffnen und `py -m pip install --upgrade esptool` ausführen. Der
+   Befehl lädt das Werkzeug automatisch. Weitere Möglichkeiten stehen in der
+   [offiziellen Espressif-Installationsanleitung](https://docs.espressif.com/projects/esptool/en/latest/esp32/installation.html);
+   Espressif bietet außerdem
+   [Standalone-Downloads](https://github.com/espressif/esptool/releases) an.
 3. Einen Ordner auf einem lokalen Laufwerk anlegen, zum Beispiel
    `D:\RoonPilot-Factory-Backup`.
 4. Alle seriellen Monitore schließen.

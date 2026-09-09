@@ -62,7 +62,10 @@ The current Espressif documentation requires Python 3.10 or newer for the
 latest `esptool`. See the official
 [esptool installation instructions](https://docs.espressif.com/projects/esptool/en/latest/esp32/installation.html)
 if these commands fail. If Windows has no `py` command but `python` works, use
-`python -m ...` in every command below.
+`python -m ...` in every command below. The `pip` command downloads `esptool`
+automatically; no separate program download is needed. Espressif also provides
+[standalone binaries through its official releases](https://github.com/espressif/esptool/releases)
+for users who do not want to install Python.
 
 ## 2. Download the companion file
 
