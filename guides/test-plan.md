@@ -20,7 +20,11 @@ with later tests.
 | Wi-Fi/AP model and approximate RSSI | |
 | Test date | |
 
-## A. Arrival and factory preservation
+## A. Arrival and optional factory preservation
+
+The backup checks in this section are optional. Use them only when validating
+the exact manufacturer-firmware restore path; otherwise mark them `N/A`. They
+are not required to install or test RoonPilot.
 
 - [ ] Inspect enclosure, LCD, USB-C, ring and battery condition.
 - [ ] Confirm original hardware boots before modification.
@@ -176,12 +180,13 @@ For Classic, Focus and Orbit:
 
 ## L. Companion low-power firmware
 
-- [ ] Reconfirm original 4 MB backup and metadata.
+- [ ] If the optional restore path is being tested, reconfirm the original
+  4 MB backup and metadata; otherwise mark this item `N/A`.
 - [ ] Rotate USB and verify classic ESP32.
 - [ ] Write companion image only to classic ESP32.
 - [ ] Rotate back; RoonPilot still works.
 - [ ] Confirm DAC path remains silent/unpowered as intended.
-- [ ] Restore original companion backup once as a recovery proof.
+- [ ] Optionally restore the original companion backup once as a recovery proof.
 
 ## M. Battery calibration
 

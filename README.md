@@ -208,7 +208,8 @@ RoonPilot provides three deliberately separate paths:
 
 - **Factory image:** complete ESP32-S3 installation or recovery from address 0.
 - **OTA image:** upload through an already running RoonPilot.
-- **Companion image:** classic ESP32 only, after a complete 4 MB factory backup.
+- **Companion image:** classic ESP32 only; an original 4 MB backup is optional
+  and useful only for restoring the exact manufacturer firmware later.
 
 The installation guide explains chip identification and links to the optional
 full-device backup procedure. The browser installer never writes the classic

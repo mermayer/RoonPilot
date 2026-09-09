@@ -4,9 +4,13 @@
 
 > [!IMPORTANT]
 > Diese Firmware ist optional, getrennt und nicht für den ESP32-S3 bestimmt.
-> RoonPilot funktioniert vollständig ohne sie. Vor der Installation muss der
-> originale 4-MB-Flash des klassischen ESP32 vollständig gesichert und geprüft
-> sein.
+> RoonPilot funktioniert vollständig ohne sie. Eine vollständige Sicherung des
+> originalen 4-MB-Flashs ist freiwillig und keine Installationsvoraussetzung.
+> Sie ist nur dann empfehlenswert, wenn später möglicherweise der exakte
+> Auslieferungszustand des Herstellers wiederhergestellt werden soll. Ohne eine
+> eigene Sicherung ist genau dieser Rückweg mit den RoonPilot-Dateien nicht
+> möglich. Chiperkennung und Prüfung des heruntergeladenen Abbilds bleiben
+> dagegen unbedingt erforderlich.
 
 ## Aufgabe
 
@@ -23,7 +27,8 @@ Hauptprozessors installiert.
 - Python 3.10 oder neuer;
 - Espressif `esptool`;
 - heruntergeladenes Companion-Abbild samt SHA-256;
-- sicherer Speicherort für das originale 4-MB-Abbild;
+- optional ein sicherer Speicherort für das originale 4-MB-Abbild, falls ein
+  exakter Rückweg zur Hersteller-Firmware gewünscht ist;
 - genaue Kenntnis des COM-Ports.
 
 ## 1. esptool installieren und prüfen
@@ -57,7 +62,12 @@ py -m esptool --port COM4 chip-id
 Nur fortfahren, wenn ein klassischer **ESP32** gemeldet wird. Bei **ESP32-S3**
 sofort stoppen, USB trennen und erneut drehen.
 
-## 4. Verpflichtende vollständige 4-MB-Sicherung
+## 4. Optional: vollständige 4-MB-Sicherung
+
+Dieser Abschnitt kann übersprungen werden, wenn die exakte Original-Firmware
+des Begleitprozessors später nicht wiederhergestellt werden muss. Die Sicherung
+ist als freiwilliger Rückweg empfehlenswert, aber keine Voraussetzung für die
+Installation der Companion-Sleep-Firmware.
 
 ```powershell
 py -m esptool --chip esp32 --port COM4 read-flash 0x0 0x400000 companion-original-4mb.bin
@@ -65,9 +75,10 @@ Get-Item .\companion-original-4mb.bin
 Get-FileHash -Algorithm SHA256 .\companion-original-4mb.bin
 ```
 
-Die Datei muss genau **4.194.304 Bytes** groß sein. Prüfsumme notieren und eine
-zweite Kopie an einem sicheren Ort erstellen. Ohne korrekte Sicherung nicht
-fortfahren.
+Wenn eine Sicherung erstellt wird, muss die Datei genau **4.194.304 Bytes** groß
+sein. Prüfsumme notieren und möglichst eine zweite Kopie an einem sicheren Ort
+erstellen. Originalabbilder niemals veröffentlichen; sie können
+gerätespezifische oder private Daten enthalten.
 
 ## 5. Download prüfen
 
@@ -103,8 +114,10 @@ Die S3-Factory- oder OTA-Datei darf hier niemals verwendet werden.
 
 ## Original-Firmware wiederherstellen
 
-Companion-Seite erneut durch Steckerrotation auswählen, klassischen ESP32
-bestätigen und die eigene geprüfte Sicherung schreiben:
+Der exakte Herstellerzustand kann nur wiederhergestellt werden, wenn die
+freiwillige Sicherung aus Schritt 4 erstellt wurde. Dazu die Companion-Seite
+erneut durch Steckerrotation auswählen, den klassischen ESP32 bestätigen und
+die eigene geprüfte Sicherung schreiben:
 
 ```powershell
 py -m esptool --chip esp32 --port COM4 write-flash 0x0 companion-original-4mb.bin

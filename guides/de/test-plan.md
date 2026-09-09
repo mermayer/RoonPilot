@@ -21,7 +21,12 @@ fortfahren.
 | Companion-Originalbackup Größe/SHA-256 | |
 | Roon Server / Testzone | |
 
-## A. Ankunft und Originalzustand
+## A. Ankunft und optionale Sicherung des Originalzustands
+
+Die Sicherungsprüfungen in diesem Abschnitt sind freiwillig. Sie werden nur
+benötigt, wenn ausdrücklich der Rückweg zur exakten Hersteller-Firmware getestet
+werden soll; andernfalls mit `entfällt` markieren. Für Installation und Test von
+RoonPilot sind sie keine Voraussetzung.
 
 - [ ] Gerät äußerlich prüfen, Bestellvariante notieren.
 - [ ] Originalsoftware vor Änderung starten und fotografisch dokumentieren.
@@ -161,11 +166,13 @@ fortfahren.
 ## L. Companion-Stromspar-Firmware
 
 - [ ] Klassischer ESP32 vor Schreiben erneut bestätigt.
-- [ ] Originale 4-MB-Sicherung Größe/SHA-256 geprüft.
+- [ ] Nur beim freiwilligen Test des Rückwegs: originale 4-MB-Sicherung samt
+  Größe/SHA-256 geprüft; andernfalls mit `entfällt` markieren.
 - [ ] Companion-Datei SHA-256 geprüft.
 - [ ] Schreiben und `verify-flash` erfolgreich.
 - [ ] Nach Zurückdrehen startet RoonPilot unverändert.
-- [ ] Wiederherstellung des Original-Companion-Abbilds dokumentiert getestet.
+- [ ] Wiederherstellung des Original-Companion-Abbilds optional als
+  Recovery-Nachweis getestet.
 
 ## M. Akku-Kalibrierung
 

@@ -16,8 +16,9 @@ Integration ausschliesslich:
 - diese offizielle Firmware privat und nicht kommerziell auszufuehren und zu
   konfigurieren;
 - offizielle signierte Online-Updates direkt am Geraet zu installieren;
-- das offizielle unveraenderte Companion-Sleep-Abbild nach der vorgeschriebenen
-  Sicherung auf dem Begleitprozessor zu installieren.
+- das offizielle unveraenderte Companion-Sleep-Abbild auf dem Begleitprozessor
+  zu installieren. Eine Original-Sicherung ist freiwillig und weder
+  Lizenzbedingung noch Installationsvoraussetzung.
 
 Eine Quellcodeveroeffentlichung ist nicht erforderlich, weil kein Recht zur
 Veraenderung von RoonPilot eingeraeumt wird.

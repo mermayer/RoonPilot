@@ -70,8 +70,9 @@ USB-C-Stecker um 180° drehen, neu verbinden und erneut prüfen.
 RoonPilot benötigt den zweiten ESP32 nicht für Roon. Die optionale kleine
 Firmware deaktiviert den ungenutzten DAC-Pfad und versetzt den Prozessor in
 unbegrenzten Deep Sleep, um unnötigen Energieverbrauch zu vermeiden. Sie wird
-separat und ausschließlich manuell installiert. Vorher ist eine geprüfte
-vollständige 4-MB-Sicherung zwingend.
+separat und ausschließlich manuell installiert. Eine geprüfte vollständige
+4-MB-Sicherung ist freiwillig und nur dann sinnvoll, wenn später der exakte
+Herstellerzustand des Begleitprozessors wiederhergestellt werden soll.
 
 ## Nächster Schritt
 

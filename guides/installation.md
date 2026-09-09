@@ -96,9 +96,10 @@ the complete ESP32-S3 configuration.
 ## Optional Companion installation
 
 The Companion Sleep firmware is not required for RoonPilot. It disables the
-unused DAC path and puts the second processor into deep sleep. It must be
-installed separately with `esptool` and only after a verified complete 4 MB
-backup.
+unused DAC path and puts the second processor into deep sleep. It is installed
+separately with `esptool`. A verified complete 4 MB backup is optional and is
+needed only if you want to preserve a way back to the exact original companion
+firmware.
 
 The complete tool installation, download, checksum, chip identification,
 backup, flashing and restoration procedure is in

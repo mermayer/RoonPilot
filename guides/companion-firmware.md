@@ -12,9 +12,12 @@ never used a command-line flashing tool.
 > touches this processor.
 
 > [!CAUTION]
-> Do not install the companion image unless you have made and verified the
-> complete 4 MB factory backup and are prepared to restore that backup. Keep a
-> second copy because the two processor images are not interchangeable.
+> Installing the companion image replaces firmware on the classic ESP32. A
+> complete 4 MB factory backup is optional and is not a prerequisite for this
+> installation. It is recommended only if you may later want to restore the
+> exact manufacturer-delivered state. Without your own backup, that exact
+> restoration is not available from the RoonPilot files. Chip identification
+> and verification of the downloaded image remain essential.
 
 ## What the firmware does
 
@@ -36,7 +39,8 @@ processor.
 - Python 3.10 or newer and Espressif `esptool`, or an existing ESP-IDF
   installation that already provides `esptool`;
 - the companion image and its published SHA-256 checksum;
-- two safe storage locations for the original 4 MB factory backup.
+- optionally, safe storage for an original 4 MB factory backup if you want an
+  exact return path to the manufacturer firmware.
 
 The examples below use Windows PowerShell and `COM4`. Replace `COM4` with the
 port shown on your computer. On macOS or Linux, use `python3` instead of `py`
@@ -89,7 +93,11 @@ a time.
 Continue only if the result identifies a classic **ESP32**. Stop if it reports
 **ESP32-S3**. The COM number alone is not proof because Windows can reuse it.
 
-## 5. Make the mandatory complete 4 MB backup
+## 5. Optional: make a complete 4 MB backup
+
+Skip this section if you do not need to restore the exact original companion
+firmware later. The backup is recommended as a recovery option, but RoonPilot
+does not require it before installing the Companion Sleep image.
 
 Create a backup folder outside the RoonPilot download folder:
 
@@ -110,9 +118,10 @@ Check the exact file size and calculate its checksum:
 Get-FileHash -Algorithm SHA256 D:\RoonPilot-Factory-Backup\companion-original-4mb.bin
 ```
 
-The size must be exactly `4,194,304` bytes. Save the displayed SHA-256 value in
-a text file beside the backup and copy both files to a second independent,
-preferably encrypted location. Never publish this original backup.
+If you choose to create the backup, its size must be exactly `4,194,304` bytes.
+Save the displayed SHA-256 value in a text file beside the backup and preferably
+copy both files to a second independent, encrypted location. Never publish an
+original backup because it may contain device-specific or private data.
 
 ## 6. Verify the downloaded RoonPilot image
 
@@ -169,8 +178,9 @@ is normal; that USB orientation does not address the display processor.
 
 ## Restore the original companion firmware
 
-Restoration replaces the complete 4 MB companion flash with the backup made in
-step 5:
+Restoration of the exact manufacturer-delivered state is possible only if you
+chose to make the optional backup in step 5. It replaces the complete 4 MB
+companion flash:
 
 1. Disconnect USB, rotate to the companion orientation and reconnect.
 2. Confirm the classic ESP32 again with `chip-id`.
@@ -193,8 +203,9 @@ step 5:
   `--baud 460800`;
 - never rotate the plug and issue a write command without repeating `chip-id`.
 
-If writing was interrupted, do not guess. Reconnect to the classic ESP32,
-verify its identity and restore the complete factory backup.
+If writing was interrupted, do not guess. Reconnect to the classic ESP32 and
+verify its identity. Restore your optional factory backup if you made one, or
+write the verified official Companion Sleep image again.
 
 ## Related guides
 

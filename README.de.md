@@ -131,8 +131,9 @@ Konfigurationsexport/-import sowie lokale und signierte Online-Updates.
   Adresse `0x0`; löscht den kompletten ESP32-S3 und alle Einstellungen.
 - **OTA-Abbild:** Update eines bereits laufenden RoonPilot über dessen lokale
   Firmwareseite; Einstellungen bleiben normalerweise erhalten.
-- **Companion-Abbild:** ausschließlich für den klassischen zweiten ESP32 und
-  erst nach vollständiger 4-MB-Sicherung.
+- **Companion-Abbild:** ausschließlich für den klassischen zweiten ESP32; eine
+  Original-Sicherung ist freiwillig und nur für einen späteren Rückweg zum
+  exakten Herstellerzustand nötig.
 
 Der USB-Web-Installer funktioniert nur mit einem aktuellen Chromium-
 Desktopbrowser mit Web Serial, zum Beispiel Chrome oder Edge. Nach der ersten

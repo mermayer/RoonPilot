@@ -101,8 +101,10 @@ die komplette ESP32-S3-Konfiguration loescht.
 
 Die Companion-Sleep-Firmware ist fuer RoonPilot nicht erforderlich. Sie
 deaktiviert den ungenutzten DAC-Pfad und versetzt den zweiten Prozessor in Deep
-Sleep. Sie wird getrennt mit `esptool` installiert und setzt eine gepruefte
-vollstaendige 4-MB-Sicherung voraus.
+Sleep. Sie wird getrennt mit `esptool` installiert. Eine gepruefte
+vollstaendige 4-MB-Sicherung ist freiwillig und nur notwendig, wenn ein
+Rueckweg zur exakten Original-Firmware des Begleitprozessors erhalten bleiben
+soll.
 
 Die vollstaendige Anleitung fuer Werkzeug, Download, Pruefsumme,
 Chiperkennung, Sicherung, Installation und Wiederherstellung steht unter

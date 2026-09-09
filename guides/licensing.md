@@ -15,7 +15,8 @@ grants a narrow right to:
 - run and configure that official firmware privately and noncommercially;
 - install official signed online updates from the device page;
 - download and install the official unmodified Companion Sleep image on the
-  companion processor after making the required backup.
+  companion processor. An original-firmware backup is optional and is not a
+  condition of the licence or installation.
 
 No source-code publication is required because no right to modify RoonPilot is
 granted.

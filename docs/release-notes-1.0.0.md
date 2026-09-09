@@ -59,9 +59,10 @@ installation starts the protected `RoonPilot-Setup-XXXXXX` access point.
 ## Before testing
 
 The USB-C plug orientation selects one of two independent processors. Verify
-the detected chip before every backup or write. Back up the complete 16 MB
-ESP32-S3 flash and the complete 4 MB companion ESP32 flash before replacing
-factory firmware.
+the detected chip before every write. Complete 16 MB ESP32-S3 and 4 MB
+companion ESP32 backups are optional. They are useful only if you want to
+preserve an exact return path to the manufacturer-delivered firmware and are
+not prerequisites for installing RoonPilot.
 
 ## Validation still required
 
