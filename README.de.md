@@ -31,10 +31,9 @@ Cloudkonto oder zusätzlicher ständig laufender RoonPilot-Dienst benötigt.
 Wer das Gerät gerade ausgepackt hat, liest diese Seiten in dieser Reihenfolge:
 
 1. [Hardware und die beiden Prozessoren](guides/de/hardware-and-two-processors.md)
-2. [Beide Original-Firmwares sichern](guides/de/factory-backup.md)
-3. [RoonPilot sicher installieren](guides/de/installation.md)
-4. [WLAN und Roon erstmals einrichten](guides/de/first-time-setup.md)
-5. [Display, Ring, Touch und Gesten kennenlernen](guides/de/device-controls.md)
+2. [RoonPilot sicher installieren](guides/de/installation.md)
+3. [WLAN und Roon erstmals einrichten](guides/de/first-time-setup.md)
+4. [Display, Ring, Touch und Gesten kennenlernen](guides/de/device-controls.md)
 
 Der [vollständige Dokumentationsindex](guides/de/README.md) erklärt außerdem
 jeden Bildschirm, jede Webseite, Updates, Wiederherstellung,
@@ -47,9 +46,13 @@ Konfigurationssicherung, Akku-Kalibrierung, Datenschutz und Fehlerbehebung.
 > Abbild und das Abbild für den klassischen Begleit-ESP32 sind nicht
 > austauschbar.
 
-Nach dem Erstellen und Prüfen beider Sicherungen wird der öffentliche
+Eine [optionale Sicherung der Original-Firmware](guides/de/factory-backup.md)
+ist sinnvoll, wenn später möglicherweise der exakte Auslieferungszustand des
+Herstellers wiederhergestellt werden soll. Sie ist keine Voraussetzung für die
+Installation von RoonPilot. Sobald der ESP32-S3 eindeutig erkannt wurde, kann
+der öffentliche
 [RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/) in
-einem aktuellen Chromium-Desktopbrowser geöffnet.
+einem aktuellen Chromium-Desktopbrowser geöffnet werden.
 
 ## Was RoonPilot besonders macht
 

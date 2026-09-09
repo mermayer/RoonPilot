@@ -21,7 +21,7 @@
   <h1>Firmware-Installer</h1>
   <p>Die primäre ESP32-S3-Firmware wird ausschließlich mit diesem autorisierten Browser-Installer installiert. Factory- und OTA-Abbilder werden nicht als eigenständige Downloads angeboten.</p>
 
-  <div class="warning"><strong>Zwei unabhängige Prozessoren.</strong> Vor jedem Schreiben den aktiven Chip prüfen. Der Webinstaller ist ausschließlich für den ESP32-S3 bestimmt. Zuerst den vollständigen ursprünglichen 16-MB-Flash des ESP32-S3 und den separaten 4-MB-Flash des Companion sichern. Eine Factory-Installation löscht den gesamten ESP32-S3 einschließlich aller Einstellungen.</div>
+  <div class="warning"><strong>Zwei unabhängige Prozessoren.</strong> Vor jedem Schreiben den aktiven Chip prüfen. Der Webinstaller ist ausschließlich für den ESP32-S3 bestimmt. Eine Factory-Installation löscht den gesamten ESP32-S3 einschließlich aller Einstellungen. Eine Sicherung der Original-Firmware ist optional und nur dann sinnvoll, wenn später der exakte Auslieferungszustand des Herstellers wiederhergestellt werden können soll.</div>
 
   <section class="web-installer" aria-labelledby="web-installer-title">
     <div class="target">Nur ESP32-S3 &middot; USB Web Serial</div>
@@ -33,7 +33,7 @@
       <h3>Löschen bei einer Factory-Installation</h3>
       <p>Vorher ist kein separater Löschvorgang erforderlich. Bietet der Installer <strong>Erase device</strong> an, dies bei einer Erstinstallation oder vollständigen Wiederherstellung auswählen beziehungsweise bestätigen. Die saubere Installation löscht alle Einstellungen des ESP32-S3, aber nicht den Companion-ESP32. Spätere Onlineupdates unter <strong>System &rarr; Firmware update</strong> benötigen kein Löschen.</p>
     </div>
-    <label class="confirm"><input id="hardwareConfirm" type="checkbox"><span>Ich habe beide ursprünglichen Factory-Firmwares gesichert und geprüft, dass die gewählte USB-Orientierung <strong>ESP32-S3</strong> meldet.</span></label>
+    <label class="confirm"><input id="hardwareConfirm" type="checkbox"><span>Ich habe geprüft, dass die gewählte USB-Orientierung <strong>ESP32-S3</strong> meldet, und verstanden, dass diese Factory-Installation dessen bisherige Firmware und Einstellungen löscht.</span></label>
     <label class="confirm"><input id="licenseConfirm" type="checkbox"><span>Ich habe die <a href="../../legal/LICENSE.de.md" target="_blank" rel="noopener">RoonPilot-Lizenz für private Binärnutzung 1.0</a> gelesen und akzeptiere sie. Mir ist bekannt, dass Weitergabe, Veränderung, Reverse Engineering, Quellcode-Rückgewinnung, Wettbewerbsanalyse und kommerzielle Nutzung RoonPilot-eigener Teile untersagt sind, soweit nicht zwingendes Recht eine Ausnahme vorsieht.</span></label>
     <esp-web-install-button manifest="../../manifest.json">
       <button id="installButton" class="install-button" slot="activate" type="button" disabled>RoonPilot installieren</button>
@@ -57,7 +57,7 @@
   <section class="card" aria-labelledby="companion-title">
     <div class="target">Separater klassischer ESP32 &middot; optional</div>
     <h2 id="companion-title">Companion-Sleep-Firmware</h2>
-    <p>Dies ist das einzige separat herunterladbare RoonPilot-Firmware-Abbild. Es gibt gemeinsam verwendete Signale frei, schaltet den ungenutzten DAC-Pfad stumm und versetzt den zweiten ESP32 in Deep Sleep. Vor der Installation ist eine geprüfte vollständige 4-MB-Sicherung zwingend.</p>
+    <p>Dies ist das einzige separat herunterladbare RoonPilot-Firmware-Abbild. Es gibt gemeinsam verwendete Signale frei, schaltet den ungenutzten DAC-Pfad stumm und versetzt den zweiten ESP32 in Deep Sleep. Eine geprüfte vollständige 4-MB-Sicherung ist nur dann zwingend, wenn dieses optionale Companion-Abbild installiert werden soll; die primäre RoonPilot-Installation wird dadurch nicht blockiert.</p>
     <a class="download" id="companionLink">Companion-Firmware herunterladen</a>
     <div class="hash" id="companionHash">Prüfsumme wird geladen&hellip;</div>
   </section>

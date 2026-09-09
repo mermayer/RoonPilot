@@ -8,17 +8,19 @@ never opened a serial port and has just taken the hardware out of its box.
 ## First installation path
 
 1. [Hardware and the two processors](hardware-and-two-processors.md)
-2. [Factory backup](factory-backup.md)
-3. [Installation](installation.md)
-4. [First-time setup](first-time-setup.md)
-5. [Device controls](device-controls.md)
-6. [Beginner test plan](test-plan.md)
+2. [Installation](installation.md)
+3. [First-time setup](first-time-setup.md)
+4. [Device controls](device-controls.md)
+5. [Beginner test plan](test-plan.md)
 
-After the hardware and both backups have been verified, continue with the
-[public RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/).
+If returning to the exact manufacturer firmware may matter later, first follow
+the [optional factory-backup guide](factory-backup.md). This backup is not a
+condition for installing RoonPilot. After identifying the ESP32-S3, continue
+with the [public RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/).
 
-Do not skip the first two pages. The unusual USB-C processor selection makes
-them part of the installation, not optional background reading.
+Do not skip the hardware page. The unusual USB-C processor selection makes
+chip identification part of the installation rather than optional background
+reading.
 
 ## Complete reference
 
@@ -28,6 +30,7 @@ them part of the installation, not optional background reading.
 | Every local configuration page | [Web interface](web-interface.md) |
 | Web Installer, signed online updates and recovery | [Firmware updates and recovery](firmware-updates-and-recovery.md) |
 | Optional second-ESP low-power image | [Companion firmware](companion-firmware.md) |
+| Optional original-firmware backup | [Factory backup](factory-backup.md) |
 | Settings backup | [Configuration export and import](configuration-backup.md) |
 | Battery limitations and calibration | [Battery and runtime](battery-and-runtime.md) |
 | Deep-sleep behaviour and wake-up | [Deep sleep](deep-sleep.md) |

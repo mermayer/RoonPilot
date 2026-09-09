@@ -2,15 +2,21 @@
 
 [English](../installation.md) - **Deutsch**
 
-Zuerst [Hardware und beide Prozessoren](hardware-and-two-processors.md) lesen
-und [beide Original-Firmwares sichern](factory-backup.md).
+Zuerst [Hardware und beide Prozessoren](hardware-and-two-processors.md) lesen.
+Eine [Sicherung der Original-Firmware](factory-backup.md) ist optional: Sie ist
+sinnvoll, wenn später möglicherweise der exakte Auslieferungszustand des
+Herstellers wiederhergestellt werden soll, aber RoonPilot setzt sie nicht
+voraus. Wer diesen Rückweg behalten möchte, erstellt die Sicherung vor der
+Factory-Installation, da diese den ESP32-S3 überschreibt.
 
 ## Bereitstellung der Firmware
 
 - Die Hauptfirmware fuer den ESP32-S3 wird nur mit dem autorisierten Web
   Installer installiert. Factory- und OTA-Dateien werden nicht als Downloads
   angeboten. Der [öffentliche RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
-  darf erst nach dem Erstellen beider Sicherungen verwendet werden.
+  kann nach eindeutiger Erkennung des ESP32-S3 verwendet werden. Eine vorherige
+  Original-Firmware-Sicherung ist eine persönliche Entscheidung und keine
+  Installationsvoraussetzung.
 - Spaetere Updates installiert RoonPilot direkt aus dem signierten
   Online-Kanal.
 - Nur die optionale Companion-Sleep-Firmware wird als eigene Datei angeboten.
@@ -46,11 +52,12 @@ den Installationsdialog erneut öffnen.
    eindeutig **ESP32-S3** bestaetigen.
 3. Den [autorisierten RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
    mit Chrome oder Edge oeffnen.
-4. Zwei-Prozessor-Warnung lesen. Bestaetigen, dass beide Original-Flashs
-   gesichert sind und der ausgewaehlte Prozessor ESP32-S3 ist.
+4. Zwei-Prozessor-Warnung lesen. Bestaetigen, dass der ausgewaehlte Prozessor
+   der ESP32-S3 ist und eine Factory-Installation dessen Firmware und
+   Einstellungen loescht.
 5. RoonPilot-Lizenz fuer private Binaernutzung lesen und akzeptieren.
 6. **RoonPilot installieren** waehlen, den geprueften Port oeffnen und das
-   vollstaendige Loeschen erst nach Kontrolle der Sicherung bestaetigen.
+   vollstaendige Loeschen bestaetigen.
 7. USB waehrend Loeschen, Schreiben und Verifizieren nicht trennen.
 8. USB trennen und in derselben ESP32-S3-Orientierung neu verbinden.
 9. RoonPilot-Startbildschirm abwarten und mit dem Einrichtungs-AP fortfahren.

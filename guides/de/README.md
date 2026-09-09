@@ -8,19 +8,23 @@ Anschlüssen oder Firmware-Installation voraus.
 ## Weg zur ersten Installation
 
 1. [Hardware und die beiden Prozessoren](hardware-and-two-processors.md)
-2. [Original-Firmware sichern](factory-backup.md)
-3. [RoonPilot installieren](installation.md)
-4. [Ersteinrichtung](first-time-setup.md)
-5. [Bedienung am Gerät](device-controls.md)
-6. [Testplan für Einsteiger](test-plan.md)
+2. [RoonPilot installieren](installation.md)
+3. [Ersteinrichtung](first-time-setup.md)
+4. [Bedienung am Gerät](device-controls.md)
+5. [Testplan für Einsteiger](test-plan.md)
 
-Nach der eindeutigen Hardwareprüfung und beiden Sicherungen geht es mit dem
+Wenn später möglicherweise der exakte Auslieferungszustand des Herstellers
+wiederhergestellt werden soll, vorher die
+[optionale Original-Firmware-Sicherung](factory-backup.md) erstellen. Sie ist
+keine Voraussetzung für RoonPilot. Nach der eindeutigen Erkennung des ESP32-S3
+geht es mit dem
 [öffentlichen RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
 weiter.
 
-Die ersten beiden Seiten dürfen nicht übersprungen werden. Wegen der
-ungewöhnlichen Auswahl des Prozessors durch die USB-C-Steckerorientierung sind
-sie Bestandteil der Installation und keine optionale Hintergrundinformation.
+Die Hardwareseite sollte nicht übersprungen werden. Wegen der ungewöhnlichen
+Auswahl des Prozessors durch die USB-C-Steckerorientierung ist die
+Chiperkennung Bestandteil der Installation und keine optionale
+Hintergrundinformation.
 
 ## Vollständige Referenz
 
@@ -30,6 +34,7 @@ sie Bestandteil der Installation und keine optionale Hintergrundinformation.
 | Jede lokale Konfigurationsseite | [Weboberfläche](web-interface.md) |
 | Factory-Installation und signierte Online-Updates | [Firmwareupdates und Wiederherstellung](firmware-updates-and-recovery.md) |
 | Optionale Stromspar-Firmware des zweiten ESP | [Companion-Firmware](companion-firmware.md) |
+| Optionale Sicherung der Original-Firmware | [Original-Firmware sichern](factory-backup.md) |
 | Einstellungen sichern | [Konfiguration exportieren/importieren](configuration-backup.md) |
 | Akku-Grenzen und Kalibrierung | [Akku und Laufzeit](battery-and-runtime.md) |
 | Deep Sleep und Aufwachen | [Deep Sleep](deep-sleep.md) |

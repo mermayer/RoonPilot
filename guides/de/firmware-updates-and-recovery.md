@@ -64,10 +64,11 @@ eigene, ausdrueckliche Benutzeraktion.
 
 ## Browser-Factory-Wiederherstellung
 
-Die bereitgestellte autorisierte Installerseite erst nach Erstellung und
-Kontrolle beider Original-Sicherungen verwenden. Erforderlich ist ein aktueller
-Chromium-Desktopbrowser mit Web Serial, etwa Chrome oder Edge. Firefox und
-Safari funktionieren nicht.
+Die bereitgestellte autorisierte Installerseite mit einem aktuellen
+Chromium-Desktopbrowser mit Web Serial verwenden, etwa Chrome oder Edge.
+Firefox und Safari funktionieren nicht. Eine Original-Flash-Sicherung ist
+optional und nur dann sinnvoll, wenn ein Rückweg zum exakten
+Auslieferungszustand des Herstellers gewünscht ist.
 
 Der Browser muss ESP32-S3 melden. Bei klassischem ESP32 oder Chipfehler sofort
 abbrechen und USB drehen/neu verbinden. Factory loescht die gesamte Firmware
@@ -80,7 +81,8 @@ und Konfiguration des Hauptprozessors.
   Versuch Diagnose herunterladen.
 - Bei weiterem Startloop USB stabil lassen und serielles Protokoll erfassen.
 - Startet RoonPilot nicht, den autorisierten ESP32-S3 Web Installer nach
-  Kontrolle von Prozessor und Sicherung erneut verwenden.
+  Kontrolle des Prozessors erneut verwenden. Eine freiwillig erstellte
+  Original-Sicherung vor einer Wiederherstellung separat prüfen.
 - Niemals den zweiten Prozessor auf Verdacht beschreiben.
 
 ## Original-Sicherung wiederherstellen

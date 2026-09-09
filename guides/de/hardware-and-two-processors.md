@@ -75,5 +75,7 @@ vollständige 4-MB-Sicherung zwingend.
 
 ## Nächster Schritt
 
-[Beide Original-Firmwares sichern](factory-backup.md), bevor irgendein Flash
-gelöscht oder beschrieben wird.
+Mit der [Installation](installation.md) fortfahren. Falls der exakte
+Auslieferungszustand des Herstellers später wiederhergestellt werden können
+soll, vorher die [optionale Original-Firmware-Sicherung](factory-backup.md)
+erstellen.

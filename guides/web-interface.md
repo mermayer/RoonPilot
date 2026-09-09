@@ -130,14 +130,16 @@ Prepares, tracks and accepts/discards the device-specific battery runtime test.
 It reports the measured system rail honestly and explains that it cannot derive
 a precise cell percentage.
 
-The Power policy card enables deep sleep and selects its idle timeout. Its live
-badge reads Disabled, Waiting or Armed. Sleep is armed only for an available
-selected zone that reports paused/stopped; Wi-Fi setup, firmware operations and
-battery calibration block it. Touch or ring movement wakes into a normal reboot,
-so Wi-Fi, Roon and this page need a moment to return.
+The **CPU & sleep** card selects the CPU mode, enables deep sleep
+and sets its idle timeout. Its live badge reads **Deep sleep off**, **Waiting
+for idle** or **Sleep armed**, so an intentional off state is not confused with
+the whole power configuration being disabled. Sleep is armed only for an
+available selected zone that reports paused/stopped; Wi-Fi setup, firmware
+operations and battery calibration block it. Touch or ring movement wakes into
+a normal reboot, so Wi-Fi, Roon and this page need a moment to return.
 
 Read [Battery and runtime](battery-and-runtime.md) before starting a run and
-[Deep sleep](deep-sleep.md) before validating the power policy.
+[Deep sleep](deep-sleep.md) before validating the sleep settings.
 
 ## System
 
@@ -193,6 +195,8 @@ connected.
 <img src="../assets/web-ui/11-usb-web-installer.png" alt="USB Web Installer" width="100%">
 
 This is a separate authorized HTTPS page, not a page served by the device. It
-explains the unusual two-processor hardware, requires confirmation of backups,
-processor and personal-use binary licence, and writes the complete Factory
-image to the main ESP32-S3 only. The primary image is not offered as a download.
+explains the unusual two-processor hardware, requires confirmation of the
+ESP32-S3 target, Factory erase and personal-use binary licence, and writes the
+complete Factory image to the main ESP32-S3 only. An original-firmware backup
+is explained as an optional restore path, not an installation requirement. The
+primary image is not offered as a download.

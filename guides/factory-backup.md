@@ -1,9 +1,11 @@
-# Back up both factory firmwares
+# Optional: back up both factory firmwares
 
 **English** · [Deutsch](de/factory-backup.md)
 
-A complete backup is the safest way back to the state in which the device was
-delivered. Make two backups: 16 MB from the main ESP32-S3 and 4 MB from the
+A complete backup is useful if you may later want to return to the exact state
+in which the manufacturer delivered the device. This procedure is optional and
+is not required to install RoonPilot. If you choose it, make two backups before
+the Factory installation: 16 MB from the main ESP32-S3 and 4 MB from the
 companion ESP32.
 
 ## What you need

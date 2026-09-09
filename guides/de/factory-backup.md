@@ -1,10 +1,12 @@
-# Original-Firmware beider Prozessoren sichern
+# Optional: Original-Firmware beider Prozessoren sichern
 
 [English](../factory-backup.md) · **Deutsch**
 
-Die Sicherungen sind der einzige sichere Weg zurück zum exakten
-Auslieferungszustand. Es werden zwei Dateien benötigt: 16 MB vom ESP32-S3 und
-4 MB vom klassischen Begleit-ESP32.
+Eine vollständige Sicherung ist sinnvoll, wenn später möglicherweise der
+exakte Auslieferungszustand des Herstellers wiederhergestellt werden soll.
+Dieser Vorgang ist optional und keine Voraussetzung für die Installation von
+RoonPilot. Wer sich dafür entscheidet, erstellt vor der Factory-Installation
+zwei Dateien: 16 MB vom ESP32-S3 und 4 MB vom klassischen Begleit-ESP32.
 
 ## Vorbereitung
 
@@ -63,5 +65,6 @@ notieren und die Datei doppelt sichern.
 - Sicherungsdateien nicht öffentlich hochladen; sie können gerätespezifische
   oder private Daten enthalten.
 
-Erst wenn beide Sicherungen vollständig und geprüft sind, folgt die
-[Installation](installation.md).
+Nach dem Prüfen der freiwillig erstellten Sicherungen folgt die
+[Installation](installation.md). Wer keinen Rückweg zur Original-Firmware
+benötigt, kann direkt mit der Installation beginnen.

@@ -93,4 +93,6 @@ played by the selected existing Roon zone.
 
 ## Next step
 
-Continue with [Factory backup](factory-backup.md) before installing anything.
+Continue with [Installation](installation.md). If being able to restore the
+exact manufacturer-delivered firmware matters to you, use the
+[optional factory-backup guide](factory-backup.md) before the Factory install.

@@ -61,9 +61,10 @@ the signed update page always remains a separate, explicit user action.
 
 ## Browser Factory recovery
 
-Use the supplied authorized installer page only after making and checking both
-original flash backups. It requires a current desktop Chromium browser with
-Web Serial, such as Chrome or Edge. Firefox and Safari cannot run it.
+Use the supplied authorized installer page with a current desktop Chromium
+browser with Web Serial, such as Chrome or Edge. Firefox and Safari cannot run
+it. An original-flash backup is optional and is useful only if you want a path
+back to the exact manufacturer-delivered state.
 
 The browser must report ESP32-S3. If it reports a classic ESP32 or a chip-family
 mismatch, cancel immediately and rotate/reconnect USB. Factory installation
@@ -76,7 +77,8 @@ erases all primary-processor firmware and configuration.
   before trying again.
 - If a boot loop continues, keep USB stable and capture serial output.
 - If no RoonPilot application boots, repeat the authorized ESP32-S3 Web
-  Installer recovery after verifying the processor and backup.
+  Installer recovery after verifying the processor. If you chose to make an
+  original backup, verify it before using it for a restore.
 - Never rotate USB and write the second processor as a troubleshooting guess.
 
 ## Restore an original factory backup

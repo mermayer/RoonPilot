@@ -2,15 +2,19 @@
 
 **English** - [Deutsch](de/installation.md)
 
-Read [Hardware and the two processors](hardware-and-two-processors.md) and make
-both [factory backups](factory-backup.md) before installing anything.
+Read [Hardware and the two processors](hardware-and-two-processors.md) before
+installing. A [factory backup](factory-backup.md) is optional: it is useful if
+you may later want to restore the exact manufacturer-delivered firmware, but
+RoonPilot does not require it. If you want that restore path, make the backup
+before the Factory installation overwrites the ESP32-S3.
 
 ## How firmware is provided
 
 - The primary ESP32-S3 firmware is installed only through the authorized Web
   Installer. Factory and OTA files are not offered as downloads. Open the
   [public RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/)
-  only after making both backups.
+  after identifying the ESP32-S3. Creating an original-firmware backup first is
+  your choice, not an installation requirement.
 - Later primary updates are installed directly by RoonPilot from its signed
   online release channel.
 - Only the optional Companion Sleep firmware is a separate downloadable file.
@@ -46,11 +50,11 @@ dialog again.
    chip-id` if there is any uncertainty about USB orientation.
 3. Open the [authorized RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/)
    in Chrome or Edge.
-4. Read the two-processor warning. Confirm that both original flashes have
-   been backed up and that the selected processor is ESP32-S3.
+4. Read the two-processor warning. Confirm that the selected processor is the
+   ESP32-S3 and that a Factory installation erases its firmware and settings.
 5. Read and accept the RoonPilot Personal-Use Binary License.
 6. Select **Install RoonPilot**, choose the verified serial port and confirm
-   the complete erase only after the backup has been checked.
+   the complete erase.
 7. Keep USB connected until erase, write and verification are complete.
 8. Disconnect and reconnect in the same ESP32-S3 orientation.
 9. Wait for the RoonPilot boot screen and continue with the setup access point.

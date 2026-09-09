@@ -126,7 +126,7 @@
         <li>
           <span class="step-number">2</span>
           <svg><use href="#icon-chip"></use></svg>
-          <div><h3>Back up both processors</h3><p>Save the complete 16 MB ESP32-S3 flash and the complete 4 MB companion flash before changing either chip.</p></div>
+          <div><h3>Choose your restore path</h3><p>An optional full backup preserves the exact manufacturer-delivered firmware if you may want to restore it later.</p></div>
         </li>
         <li>
           <span class="step-number">3</span>
@@ -141,7 +141,7 @@
       </ol>
       <div class="never-rule"><svg><use href="#icon-alert"></use></svg><strong>Never erase or flash just to see what happens.</strong></div>
       <div class="preflight-links">
-        <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/factory-backup.md">Back up both factory firmwares <svg><use href="#icon-arrow"></use></svg></a>
+        <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/factory-backup.md">Optional factory-backup guide <svg><use href="#icon-arrow"></use></svg></a>
         <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation.md">Open the complete installation guide <svg><use href="#icon-arrow"></use></svg></a>
       </div>
     </section>
@@ -157,7 +157,7 @@
             <svg><use href="#icon-alert"></use></svg>
             <h3>ESP32-S3 only</h3>
             <p>The ESP32-S3 Factory image must never be written to the classic companion ESP32. If the selected port reports a classic ESP32 or a chip-family mismatch, cancel immediately.</p>
-            <p>Factory installation erases the ESP32-S3 settings. Make the backup first.</p>
+            <p>Factory installation erases the ESP32-S3 settings. An original-firmware backup is optional and only needed if you want that exact restore path.</p>
           </aside>
           <div class="installer-panel">
             <div class="installer-topline">
@@ -165,13 +165,13 @@
               <span>ESP32-S3</span>
             </div>
             <dl class="readiness" aria-label="Installation requirements">
-              <div><dt><svg><use href="#icon-lock"></use></svg>Complete backups</dt><dd class="check">Required</dd></div>
+              <div><dt><svg><use href="#icon-lock"></use></svg>Original backup</dt><dd class="check">Optional</dd></div>
               <div><dt><svg><use href="#icon-usb"></use></svg>Verified chip</dt><dd class="check">ESP32-S3</dd></div>
               <div><dt><svg><use href="#icon-shield"></use></svg>Stable power</dt><dd class="check">Required</dd></div>
             </dl>
             <div class="installer-critical">
               <p><strong>Chromium browser required for browser installation.</strong> Use a current desktop Chrome, Edge, Chromium, Brave or Opera with Web Serial. Firefox and Safari cannot run it.</p>
-              <p><strong>Factory means complete erase.</strong> Installation removes the current ESP32-S3 firmware, Wi-Fi credentials, Roon authorization and all settings. Back up the original 16 MB flash first.</p>
+              <p><strong>Factory means complete erase.</strong> Installation removes the current ESP32-S3 firmware, Wi-Fi credentials, Roon authorization and all settings. Back up the original flash first only if you may want to restore that exact manufacturer state later; the backup is not required for RoonPilot.</p>
               <p><strong>Later updates are easier.</strong> After the first installation, use RoonPilot's local <b>System → Firmware update → Check for updates</b> page. Signed online A/B updates normally preserve settings.</p>
             </div>
             <div class="installer-action">
@@ -327,11 +327,11 @@
       <div class="page-width">
         <div class="section-heading">
           <p class="section-number">07</p>
-          <div><h2>Everything you need, explained</h2><p>Start with the hardware guide and factory backups before installing anything.</p></div>
+          <div><h2>Everything you need, explained</h2><p>Start with the hardware guide; the factory-backup guide remains available as an optional restore path.</p></div>
         </div>
         <div class="docs-list">
           <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/hardware-and-two-processors.md"><span>01</span><strong>Hardware &amp; two processors</strong><svg><use href="#icon-arrow"></use></svg></a>
-          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/factory-backup.md"><span>02</span><strong>Factory backup</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/factory-backup.md"><span>02</span><strong>Optional factory backup</strong><svg><use href="#icon-arrow"></use></svg></a>
           <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation.md"><span>03</span><strong>Installation</strong><svg><use href="#icon-arrow"></use></svg></a>
           <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/first-time-setup.md"><span>04</span><strong>First-time setup</strong><svg><use href="#icon-arrow"></use></svg></a>
           <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/device-controls.md"><span>05</span><strong>Device controls</strong><svg><use href="#icon-arrow"></use></svg></a>

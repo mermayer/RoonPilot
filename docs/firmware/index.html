@@ -21,7 +21,7 @@
   <h1>Firmware Installer</h1>
   <p>The primary ESP32-S3 firmware is installed only through this authorized browser installer. Factory and OTA images are not offered as standalone downloads.</p>
 
-  <div class="warning"><strong>Two independent processors.</strong> Verify the active chip before every write. The Web Installer targets only the ESP32-S3. Back up the complete original 16 MB ESP32-S3 flash and the separate 4 MB companion flash first. A Factory installation erases the complete ESP32-S3 and all of its settings.</div>
+  <div class="warning"><strong>Two independent processors.</strong> Verify the active chip before every write. The Web Installer targets only the ESP32-S3. A Factory installation erases the complete ESP32-S3 and all of its settings. An original-firmware backup is optional and useful only if you may want to restore the exact manufacturer-delivered state later.</div>
 
   <section class="web-installer" aria-labelledby="web-installer-title">
     <div class="target">ESP32-S3 only &middot; USB Web Serial</div>
@@ -33,7 +33,7 @@
       <h3>Erase during a Factory installation</h3>
       <p>No separate erase is needed beforehand. When the installer offers <strong>Erase device</strong>, select or confirm it for a first installation or complete recovery. This clean install erases all ESP32-S3 settings, but it does not erase the companion ESP32. Later online updates under <strong>System &rarr; Firmware update</strong> do not require an erase.</p>
     </div>
-    <label class="confirm"><input id="hardwareConfirm" type="checkbox"><span>I have backed up both original factory flashes and verified that the selected USB orientation reports <strong>ESP32-S3</strong>.</span></label>
+    <label class="confirm"><input id="hardwareConfirm" type="checkbox"><span>I have verified that the selected USB orientation reports <strong>ESP32-S3</strong>, and I understand that this Factory installation erases its current firmware and settings.</span></label>
     <label class="confirm"><input id="licenseConfirm" type="checkbox"><span>I have read and accept the <a href="../legal/LICENSE.md" target="_blank" rel="noopener">RoonPilot Personal-Use Binary License 1.0</a>. I understand that redistribution, modification, reverse engineering, source recovery, competitive analysis and commercial use of RoonPilot-authored portions are prohibited except where mandatory law provides otherwise.</span></label>
     <esp-web-install-button manifest="../manifest.json">
       <button id="installButton" class="install-button" slot="activate" type="button" disabled>Install RoonPilot</button>
@@ -57,7 +57,7 @@
   <section class="card" aria-labelledby="companion-title">
     <div class="target">Separate classic ESP32 &middot; optional</div>
     <h2 id="companion-title">Companion Sleep firmware</h2>
-    <p>This is the only separately downloadable RoonPilot firmware image. It releases shared signals, mutes the unused DAC path and puts the board's second ESP32 into deep sleep. A verified complete 4 MB backup is mandatory before installation.</p>
+    <p>This is the only separately downloadable RoonPilot firmware image. It releases shared signals, mutes the unused DAC path and puts the board's second ESP32 into deep sleep. A verified complete 4 MB backup is mandatory only if you choose to install this optional companion image; it does not block the primary RoonPilot installation.</p>
     <a class="download" id="companionLink">Download Companion firmware</a>
     <div class="hash" id="companionHash">Loading checksum&hellip;</div>
   </section>

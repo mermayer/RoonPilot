@@ -85,13 +85,13 @@
       <div class="section-heading"><p class="section-number">01</p><div><h2 id="vorbereitung-titel">Vor der Installation</h2><p>Vier Prüfungen verhindern fast alle vermeidbaren Flash-Probleme.</p></div></div>
       <ol class="preflight">
         <li><span class="step-number">1</span><svg><use href="#icon-usb"></use></svg><div><h3>USB-Datenkabel verwenden</h3><p>Ein reines Ladekabel kann das Display versorgen, aber keine Firmware übertragen.</p></div></li>
-        <li><span class="step-number">2</span><svg><use href="#icon-chip"></use></svg><div><h3>Beide Prozessoren sichern</h3><p>Vor jeder Änderung den vollständigen 16-MB-Flash des ESP32-S3 und den vollständigen 4-MB-Flash des Begleit-ESP32 speichern.</p></div></li>
+        <li><span class="step-number">2</span><svg><use href="#icon-chip"></use></svg><div><h3>Rückweg bewusst wählen</h3><p>Eine optionale vollständige Sicherung bewahrt die Hersteller-Firmware, falls später der exakte Auslieferungszustand wiederhergestellt werden soll.</p></div></li>
         <li><span class="step-number">3</span><svg><use href="#icon-terminal"></use></svg><div><h3>Aktiven Chip erkennen</h3><p>Serielle Programme schließen, Port ermitteln und <code>python -m esptool --port COMx chip-id</code> ausführen.</p></div></li>
         <li><span class="step-number">4</span><svg><use href="#icon-check"></use></svg><div><h3>Datei und Prozessor abgleichen</h3><p>Factory-, OTA- und Companion-Abbilder haben unterschiedliche Ziele und sind nicht austauschbar.</p></div></li>
       </ol>
       <div class="never-rule"><svg><use href="#icon-alert"></use></svg><strong>Niemals löschen oder flashen, nur um auszuprobieren, was passiert.</strong></div>
       <div class="preflight-links">
-        <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/factory-backup.md">Beide Original-Firmwares sichern <svg><use href="#icon-arrow"></use></svg></a>
+        <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/factory-backup.md">Optionale Original-Firmware-Sicherung <svg><use href="#icon-arrow"></use></svg></a>
         <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation.md">Vollständige Installationsanleitung öffnen <svg><use href="#icon-arrow"></use></svg></a>
       </div>
     </section>
@@ -100,17 +100,17 @@
       <div class="page-width">
         <div class="section-heading"><p class="section-number">02</p><div><h2>Den Haupt-ESP32-S3 vorbereiten</h2><p>Vor jeder Installation zuerst die sicherheitskritischen Schritte vollständig durchführen.</p></div></div>
         <div class="install-layout">
-          <aside class="install-warning"><svg><use href="#icon-alert"></use></svg><h3>Nur ESP32-S3</h3><p>Das ESP32-S3-Factory-Abbild darf niemals auf den klassischen Begleit-ESP32 geschrieben werden. Meldet der ausgewählte Port einen klassischen ESP32 oder einen Chip-Fehler, sofort abbrechen.</p><p>Die Factory-Installation löscht den gesamten ESP32-S3 samt Einstellungen. Zuerst sichern.</p></aside>
+          <aside class="install-warning"><svg><use href="#icon-alert"></use></svg><h3>Nur ESP32-S3</h3><p>Das ESP32-S3-Factory-Abbild darf niemals auf den klassischen Begleit-ESP32 geschrieben werden. Meldet der ausgewählte Port einen klassischen ESP32 oder einen Chip-Fehler, sofort abbrechen.</p><p>Die Factory-Installation löscht den gesamten ESP32-S3 samt Einstellungen. Eine Sicherung der Original-Firmware ist optional und nur für einen möglichen Rückweg zum exakten Auslieferungszustand nötig.</p></aside>
           <div class="installer-panel">
             <div class="installer-topline"><div><span class="panel-mark"></span><strong>Installations-Checkliste</strong></div><span>ESP32-S3</span></div>
             <dl class="readiness" aria-label="Voraussetzungen für die Installation">
-              <div><dt><svg><use href="#icon-lock"></use></svg>Vollständige Sicherungen</dt><dd class="check">Erforderlich</dd></div>
+              <div><dt><svg><use href="#icon-lock"></use></svg>Original-Sicherung</dt><dd class="check">Optional</dd></div>
               <div><dt><svg><use href="#icon-usb"></use></svg>Geprüfter Chip</dt><dd class="check">ESP32-S3</dd></div>
               <div><dt><svg><use href="#icon-shield"></use></svg>Stabile Stromversorgung</dt><dd class="check">Erforderlich</dd></div>
             </dl>
             <div class="installer-critical">
               <p><strong>Für eine Browser-Installation ist Chromium erforderlich.</strong> Nur einen aktuellen Desktop-Browser wie Chrome, Edge, Chromium, Brave oder Opera mit Web Serial verwenden. Firefox und Safari funktionieren nicht.</p>
-              <p><strong>Factory bedeutet vollständiges Löschen.</strong> Die Installation entfernt die aktuelle ESP32-S3-Firmware, WLAN-Zugangsdaten, Roon-Freigabe und alle Einstellungen. Zuerst den originalen 16-MB-Flash sichern.</p>
+              <p><strong>Factory bedeutet vollständiges Löschen.</strong> Die Installation entfernt die aktuelle ESP32-S3-Firmware, WLAN-Zugangsdaten, Roon-Freigabe und alle Einstellungen. Den Original-Flash nur dann vorher sichern, wenn später der exakte Herstellerzustand wiederhergestellt werden können soll; für RoonPilot ist die Sicherung keine Voraussetzung.</p>
               <p><strong>Spätere Updates sind einfacher.</strong> Nach der Erstinstallation die lokale RoonPilot-Seite <b>System → Firmware update → Check for updates</b> verwenden. Signierte Online-A/B-Updates behalten die Einstellungen normalerweise bei.</p>
             </div>
             <div class="installer-action">
@@ -186,10 +186,10 @@
     </section>
 
     <section id="dokumentation" class="docs-section"><div class="page-width">
-      <div class="section-heading"><p class="section-number">07</p><div><h2>Alles erklärt, was benötigt wird</h2><p>Vor jeder Installation mit Hardwarebeschreibung und Original-Firmware-Sicherungen beginnen.</p></div></div>
+      <div class="section-heading"><p class="section-number">07</p><div><h2>Alles erklärt, was benötigt wird</h2><p>Mit der Hardwarebeschreibung beginnen; die Original-Firmware-Sicherung bleibt als optionaler Rückweg ausführlich erklärt.</p></div></div>
       <div class="docs-list">
         <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/hardware-and-two-processors.md"><span>01</span><strong>Hardware &amp; zwei Prozessoren</strong><svg><use href="#icon-arrow"></use></svg></a>
-        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/factory-backup.md"><span>02</span><strong>Original-Firmware sichern</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/factory-backup.md"><span>02</span><strong>Optionale Original-Sicherung</strong><svg><use href="#icon-arrow"></use></svg></a>
         <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation.md"><span>03</span><strong>Installation</strong><svg><use href="#icon-arrow"></use></svg></a>
         <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/first-time-setup.md"><span>04</span><strong>Ersteinrichtung</strong><svg><use href="#icon-arrow"></use></svg></a>
         <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/device-controls.md"><span>05</span><strong>Bedienung am Gerät</strong><svg><use href="#icon-arrow"></use></svg></a>

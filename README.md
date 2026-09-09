@@ -30,10 +30,9 @@ always-on RoonPilot service.
 If the device has just arrived, read these pages in order:
 
 1. [Know the hardware and its two processors](guides/hardware-and-two-processors.md)
-2. [Back up both factory firmwares](guides/factory-backup.md)
-3. [Install RoonPilot safely](guides/installation.md)
-4. [Complete Wi-Fi and Roon first-time setup](guides/first-time-setup.md)
-5. [Learn the display, ring, touch and gestures](guides/device-controls.md)
+2. [Install RoonPilot safely](guides/installation.md)
+3. [Complete Wi-Fi and Roon first-time setup](guides/first-time-setup.md)
+4. [Learn the display, ring, touch and gestures](guides/device-controls.md)
 
 The complete [documentation index](guides/README.md) also covers every screen,
 every web page, updates, recovery, configuration backup, battery calibration,
@@ -45,7 +44,10 @@ privacy and troubleshooting.
 > the chip identity has been checked. The ESP32-S3 Factory image and the classic
 > ESP32 companion image are not interchangeable.
 
-After completing and checking both backups, open the public
+An [optional factory backup](guides/factory-backup.md) is useful if you may want
+to restore the exact firmware state in which the manufacturer delivered the
+device. It is not a prerequisite for installing RoonPilot. Once you have
+identified the ESP32-S3, open the public
 [RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/) in a
 current desktop Chromium browser.
 
@@ -208,9 +210,9 @@ RoonPilot provides three deliberately separate paths:
 - **OTA image:** upload through an already running RoonPilot.
 - **Companion image:** classic ESP32 only, after a complete 4 MB factory backup.
 
-The installation guide explains the complete backup and chip-identification
-procedure. The browser installer never writes the classic companion ESP32. Do
-not guess a file or flash an image based only on its size.
+The installation guide explains chip identification and links to the optional
+full-device backup procedure. The browser installer never writes the classic
+companion ESP32. Do not guess a file or flash an image based only on its size.
 
 **Ready to install:** [Open the authorized RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/).
 

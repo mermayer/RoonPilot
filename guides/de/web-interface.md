@@ -111,8 +111,11 @@ automatisch wieder der Setup-AP. Kein erneutes Flashen erforderlich.
 
 - grobe Systemspannungsinformation ohne erfundene Akkuprozentzahl;
 - Vorbereitung, Status, Ergebnis und Löschen der Laufzeitkalibrierung;
+- CPU-Leistungsstufe im Bereich **CPU & sleep**;
 - Deep Sleep ein/aus und Wartezeit;
-- aktueller Zulässigkeits-/Blockierungsgrund.
+- eindeutiger Status **Deep sleep off**, **Waiting for idle** oder **Sleep
+  armed**, der sich nur auf Deep Sleep und nicht auf die gesamte
+  Energieverwaltung bezieht.
 
 Während laufender Akku-Kalibrierung sind Webserver, Roon und Deep Sleep
 absichtlich deaktiviert, damit das Messprofil reproduzierbar bleibt.
@@ -169,6 +172,8 @@ normalerweise erhalten.
 
 Nur für vollständige ESP32-S3-Erstinstallation oder Wiederherstellung. Er
 funktioniert ausschließlich mit aktuellem Desktop-Chromium und Web Serial,
-verlangt die Sicherungs-, Prozessor- und Lizenzbestätigung und bietet das
-Hauptabbild nicht als Download an. Factory löscht den kompletten ESP32-S3.
-Der Begleit-ESP32 wird niemals durch diesen Installer beschrieben.
+verlangt die Bestätigung des ESP32-S3-Ziels, des Factory-Löschens und der
+Lizenz und bietet das Hauptabbild nicht als Download an. Die Sicherung der
+Original-Firmware wird als optionaler Rückweg erklärt und ist keine
+Installationsvoraussetzung. Factory löscht den kompletten ESP32-S3. Der
+Begleit-ESP32 wird niemals durch diesen Installer beschrieben.
