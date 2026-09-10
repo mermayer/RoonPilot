@@ -51,6 +51,24 @@ Der Spannungswandler kann die Systemschiene während der Entladung lange stabil
 halten. Zusätzlich verändern Last, Umwandlungsverluste, ADC-Toleranz und
 USB-Versorgung den Wert. Eine exakte Prozentzahl wäre irreführend.
 
+### Die USB-Quelle ist wichtig
+
+Die auf der Power-Seite angezeigte Systemspannung kann an einem USB-Port des
+Computers niedriger sein als an einem separaten USB-Netzteil oder Ladegerät.
+Der konkrete Wert hängt auch von USB-Port, Kabel und Belastung ab. Das Gerät
+kann am Computer völlig normal laufen, obwohl die am Board ankommende Spannung
+nicht ausreicht, um den Akku wirklich vollständig zu laden.
+
+> **Wichtig für die Akku-Kalibrierung:** Die Volladephase an einem stabilen
+> USB-Netzteil/Ladegerät durchführen, nicht am USB-Port eines Computers. Das
+> Ladeende abwarten, erst danach USB abziehen und die Kalibrierung am Display
+> starten.
+
+Für Flashen, Diagnose und normalen Betrieb kann ein Computer-USB-Port weiterhin
+verwendet werden. Er darf nur nicht als Referenz für **vollständig geladen** vor
+einer Laufzeitkalibrierung dienen. Unterschiedliche Spannungswerte an Computer
+und Netzteil beschreiben den Versorgungsweg und sind keine Akkuprozentanzeige.
+
 ## Bedeutung des Akkusymbols
 
 RoonPilot behält ein gefiltertes vierstufiges Symbol als groben Hinweis auf die
@@ -91,7 +109,8 @@ das Ergebnis nicht verfälschen.
 
 ## Schritt-für-Schritt
 
-1. Gerät mit normaler Hardware/Firmware vollständig laden.
+1. Gerät an einem stabilen USB-Netzteil/Ladegerät – **nicht am USB-Port eines
+   Computers** – vollständig laden und das Ladeende abwarten.
 2. **Power → Battery calibration** auf der lokalen Webseite öffnen.
 3. **Prepare calibration** wählen und bestätigen.
 4. Kalibrier-Vorbereitungsbild am Gerät kontrollieren.

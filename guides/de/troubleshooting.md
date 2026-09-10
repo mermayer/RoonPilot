@@ -133,6 +133,11 @@ Siehe [Akku und Laufzeit](battery-and-runtime.md).
 
 ## Akku-Kalibrierung unterbrochen
 
+Vor dem nächsten Versuch RoonPilot an einem stabilen USB-Netzteil/Ladegerät
+vollständig laden. Den USB-Port eines Computers nicht als Volladungsreferenz
+verwenden: Die Spannung am Board kann dort niedriger sein, sodass das Gerät
+normal läuft, der Akku aber nicht vollständig geladen wird.
+
 Nach erneutem Einschalten Ergebnis prüfen. Nur speichern, wenn der Stromverlust
 das erwartete normale Akkuende des ununterbrochenen Tests war; manuellen Reset,
 Kabelereignis oder Wartung verwerfen.

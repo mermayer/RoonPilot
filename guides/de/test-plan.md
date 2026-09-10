@@ -176,6 +176,8 @@ RoonPilot sind sie keine Voraussetzung.
 
 ## M. Akku-Kalibrierung
 
+- [ ] Vollständig an einem stabilen USB-Netzteil/Ladegerät laden; den
+  Computer-USB-Port nicht als Volladungsreferenz verwenden.
 - [ ] Vorbereitung erzwingt LCD 50 %, WLAN an, Dim/Off aus.
 - [ ] Start ist nur lokal nach Abziehen von USB möglich.
 - [ ] Webserver und Roon stoppen während des Laufs.

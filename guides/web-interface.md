@@ -130,6 +130,11 @@ Prepares, tracks and accepts/discards the device-specific battery runtime test.
 It reports the measured system rail honestly and explains that it cannot derive
 a precise cell percentage.
 
+Before calibration, fully charge RoonPilot from a stable USB power
+supply/charger. A computer USB port can show a lower system voltage and may run
+the device without charging its battery completely; it is therefore not a
+reliable full-charge reference.
+
 The **CPU & sleep** card selects the CPU mode, enables deep sleep
 and sets its idle timeout. Its live badge reads **Deep sleep off**, **Waiting
 for idle** or **Sleep armed**, so an intentional off state is not confused with

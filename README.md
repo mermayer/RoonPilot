@@ -202,6 +202,10 @@ can, however, record how long an individual unit operates with a repeatable
 display/Wi-Fi profile. Read [Battery and runtime](guides/battery-and-runtime.md)
 before interpreting the result.
 
+For a valid full-charge calibration reference, charge RoonPilot from a stable
+USB power supply/charger. A computer USB port can deliver a lower voltage at the
+board and may operate the device without charging its battery completely.
+
 ## Installation, updates and recovery
 
 RoonPilot provides three deliberately separate paths:

@@ -53,6 +53,23 @@ cell discharges. The reading also varies with conversion losses, load, ADC
 tolerance and USB power. Presenting it as an exact battery percentage would be
 misleading.
 
+### The USB source matters
+
+The system voltage shown on the Power page can be lower when RoonPilot is
+connected to a computer USB port than when it is connected to a dedicated USB
+power supply or charger. The actual value also depends on the USB port, cable
+and load. A computer port may run the device normally while providing too little
+voltage at the board for the battery to reach a true full charge.
+
+> **Important for battery calibration:** Perform the full-charge phase with a
+> stable USB power supply/charger, not a computer USB port. Wait until charging
+> has finished, then disconnect USB and start the calibration on the display.
+
+A computer USB port remains suitable for flashing, diagnostics and ordinary
+operation. It must simply not be used as the **fully charged** reference for a
+runtime calibration. A difference between the voltage shown with computer USB
+and with a charger reflects the supply path; it is not a battery percentage.
+
 ## Meaning of the on-screen battery symbol
 
 RoonPilot retains a four-stage, filtered symbol as a coarse indication of the
@@ -93,7 +110,8 @@ polling or configuration changes from altering the test.
 
 ## Step-by-step procedure
 
-1. Fully charge the device using its normal hardware and firmware.
+1. Fully charge the device from a stable USB power supply/charger, **not from a
+   computer USB port**, and wait until charging has finished.
 2. Open **Power > Battery calibration** in the local RoonPilot web interface.
 3. Select **Prepare calibration** and confirm the prompt.
 4. Verify that the preparation screen appears on RoonPilot.

@@ -120,6 +120,11 @@ automatisch wieder der Setup-AP. Kein erneutes Flashen erforderlich.
 Während laufender Akku-Kalibrierung sind Webserver, Roon und Deep Sleep
 absichtlich deaktiviert, damit das Messprofil reproduzierbar bleibt.
 
+Vor einer Kalibrierung RoonPilot an einem stabilen USB-Netzteil/Ladegerät
+vollständig laden. Ein Computer-USB-Port kann eine niedrigere Systemspannung
+liefern und das Gerät betreiben, ohne den Akku vollständig zu laden; er ist
+deshalb keine verlässliche Volladungsreferenz.
+
 ## System
 
 <img src="../../assets/web-ui/07-system.png" alt="Systemseite" width="100%">

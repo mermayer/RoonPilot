@@ -163,6 +163,11 @@ Restlaufzeitanzeige ist daher nicht möglich. Die dokumentierte
 Laufzeitkalibrierung ermittelt stattdessen einen reproduzierbaren Richtwert für
 das konkrete Gerät.
 
+Für eine gültige Kalibrierung RoonPilot vorher an einem stabilen
+USB-Netzteil/Ladegerät vollständig laden. Ein Computer-USB-Port kann am Board
+eine niedrigere Spannung liefern und das Gerät betreiben, ohne den Akku
+vollständig zu laden.
+
 ## Dokumentation
 
 - [Dokumentationsindex](guides/de/README.md)

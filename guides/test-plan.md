@@ -191,6 +191,8 @@ For Classic, Focus and Orbit:
 ## M. Battery calibration
 
 - [ ] Read the full battery document.
+- [ ] Fully charge from a stable USB power supply/charger; do not use a computer
+  USB port as the full-charge reference.
 - [ ] Prepare via web and start only after USB removal on device.
 - [ ] Fixed 50% screen, Wi-Fi on, Roon/web stopped.
 - [ ] Let hardware shut down naturally.

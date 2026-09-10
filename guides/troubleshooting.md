@@ -174,6 +174,11 @@ read [Battery and runtime](battery-and-runtime.md).
 
 ## Battery calibration was interrupted
 
+Before repeating the calibration, fully charge RoonPilot from a stable USB
+power supply/charger. Do not use a computer USB port as the full-charge
+reference: its voltage at the board can be lower, so the device may operate
+normally while the battery remains short of a complete charge.
+
 On the next boot, save the recovered result only if shutdown was the expected
 end of the untouched unplugged run. Discard results caused by reset, accidental
 power loss, update or cancellation.
