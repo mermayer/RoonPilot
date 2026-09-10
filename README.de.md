@@ -12,7 +12,7 @@
 
 **Deutsch** · [English](README.md)
 
-[Projektseite](https://mermayer.github.io/RoonPilot/de/) · [Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
+**[Projektseite →](https://mermayer.github.io/RoonPilot/de/)** · **[Webinstaller →](https://mermayer.github.io/RoonPilot/de/firmware/)** · **[Fehlerbehebung →](guides/de/troubleshooting.md)**
 
 </div>
 

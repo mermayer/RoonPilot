@@ -92,6 +92,28 @@ The current interface fetches configuration at startup/after changes and uses
 smaller parallel status requests afterward. Consistent multi-second delays on a
 strong local network are a defect worth reporting with diagnostics.
 
+## `Invalid settings token` when saving
+
+In RoonPilot's local web interface, this message means the browser tab is still
+using an expired settings session. This normally happens when RoonPilot or its
+web server has restarted while the page remained open. The changing session
+token protects all configuration writes; it is unrelated to the Roon extension
+authorization. The rejected request does **not** change any setting.
+
+1. Do not press **Save** repeatedly.
+2. Reload the complete page, including its scripts:
+   - on Windows, press **Ctrl + F5**;
+   - on macOS, press **Cmd + Shift + R**.
+3. Wait until the Overview status values have appeared.
+4. Return to the setting, make the change again if necessary, and press
+   **Save** once.
+
+On a phone or tablet, close the stale tab and open RoonPilot again at its
+current IP address. If the message returns immediately after a complete reload,
+open **System → Event log** and check whether the device is restarting. A
+Factory reset, firmware reinstallation, new Wi-Fi setup or renewed Roon pairing
+is not required to repair an expired settings session.
+
 ## Roon Server is not found
 
 - Verify Roon is running and usable from the Roon app.

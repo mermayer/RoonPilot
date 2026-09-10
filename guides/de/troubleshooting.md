@@ -71,6 +71,30 @@ beziehungsweise klassischem ESP32 fortfahren.
 - RoonPilot neu starten und Diagnose/serielle Meldungen prüfen, bevor ein Reset
   erfolgt.
 
+## `Invalid settings token` beim Speichern
+
+Diese Meldung bedeutet in der lokalen RoonPilot-Weboberfläche, dass der
+Browser-Tab noch eine abgelaufene Einstellungssitzung verwendet. Das geschieht
+normalerweise, wenn RoonPilot oder sein Webserver neu gestartet wurde, während
+die Seite geöffnet blieb. Das wechselnde Sitzungstoken schützt alle
+Konfigurationsänderungen und hat nichts mit der Roon-Erweiterungsfreigabe zu
+tun. Durch die abgewiesene Anfrage wird **keine** Einstellung verändert.
+
+1. Nicht mehrfach auf **Save** beziehungsweise **Speichern** drücken.
+2. Die Seite einschließlich aller Skripte vollständig neu laden:
+   - unter Windows mit **Strg + F5**;
+   - unter macOS mit **Cmd + Shift + R**.
+3. Warten, bis die Statuswerte auf der Overview-Seite wieder angezeigt werden.
+4. Zur gewünschten Einstellung zurückkehren, die Änderung bei Bedarf erneut
+   vornehmen und genau einmal speichern.
+
+Auf einem Telefon oder Tablet den alten Tab schließen und RoonPilot über seine
+aktuelle IP-Adresse neu öffnen. Erscheint die Meldung unmittelbar nach einem
+vollständigen Neuladen erneut, unter **System → Ereignislog** prüfen, ob das
+Gerät wiederholt neu startet. Ein Factory Reset, erneutes Flashen, neues
+WLAN-Setup oder erneutes Pairing mit Roon ist wegen einer abgelaufenen
+Einstellungssitzung nicht erforderlich.
+
 ## Roon Server wird nicht gefunden
 
 - Roon Server muss laufen und im selben erreichbaren Netz sein.
