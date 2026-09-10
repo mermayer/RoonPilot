@@ -23,15 +23,20 @@ Hauptprozessors installiert.
 
 ## Benötigt
 
-- Windows-PC und USB-Datenkabel;
-- Python 3.10 oder neuer;
-- Espressif `esptool`;
+- Windows-, macOS- oder Linux-Rechner und USB-Datenkabel;
+- Espressif `esptool` als Standalone-Programm oder über Python 3.10 oder neuer;
 - heruntergeladenes Companion-Abbild samt SHA-256;
 - optional ein sicherer Speicherort für das originale 4-MB-Abbild, falls ein
   exakter Rückweg zur Hersteller-Firmware gewünscht ist;
-- genaue Kenntnis des COM-Ports.
+- den vom Betriebssystem angezeigten seriellen Port.
 
-## 1. esptool installieren und prüfen
+Die nachfolgenden Befehle zeigen Windows PowerShell. Unter macOS zuerst die
+vollständige Anleitung [esptool unter macOS verwenden](esptool-macos.md) lesen.
+Sie erklärt Standalone-Betrieb ohne Python, Apple-Silicon-/Intel-Auswahl,
+Prüfsummen, `/dev/cu...`-Ports, die Umsetzung aller Befehle und den bekannten
+Python-3.14-Fehler mit `cryptography`/Cargo.
+
+## 1. esptool unter Windows installieren und prüfen
 
 Falls Python noch fehlt, es ausschließlich von der
 [offiziellen Python-Webseite](https://www.python.org/downloads/windows/)
@@ -50,7 +55,10 @@ installieren; die dokumentierten Befehle gelten für Espressifs `esptool`. Die
 erklärt die Installation und Fehlerbehebung. Dort sind auch die von Espressif
 bereitgestellten
 [Standalone-Downloads](https://github.com/espressif/esptool/releases)
-verlinkt, falls `esptool` ohne Python verwendet werden soll.
+verlinkt, falls `esptool` ohne Python verwendet werden soll. Die
+[macOS-Schritt-für-Schritt-Anleitung](esptool-macos.md) nennt die exakten
+Archivnamen, Prüfsummen und Terminalbefehle; die PowerShell-Beispiele nicht auf
+Verdacht übertragen.
 
 ## 2. Datei herunterladen und seriellen Port freigeben
 

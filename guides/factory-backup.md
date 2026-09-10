@@ -25,6 +25,12 @@ The documented `pip` command downloads `esptool` automatically. Espressif also
 offers [official standalone downloads](https://github.com/espressif/esptool/releases)
 for users who do not want to install Python.
 
+The examples on this page use Windows PowerShell. On a Mac, first follow
+[Using esptool on macOS](esptool-macos.md). That guide gives verified
+Apple-Silicon and Intel standalone downloads, checksums, `/dev/cu...` port
+selection and complete macOS command examples. The backup remains optional on
+every operating system.
+
 ## 1. Create a safe backup folder
 
 Choose a folder that will not be deleted with a source checkout, for example:

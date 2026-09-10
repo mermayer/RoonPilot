@@ -35,6 +35,7 @@ Hintergrundinformation.
 | Factory-Installation und signierte Online-Updates | [Firmwareupdates und Wiederherstellung](firmware-updates-and-recovery.md) |
 | Optionale Stromspar-Firmware des zweiten ESP | [Companion-Firmware](companion-firmware.md) |
 | Optionale Sicherung der Original-Firmware | [Original-Firmware sichern](factory-backup.md) |
+| Standalone-/Python-esptool unter macOS | [esptool unter macOS verwenden](esptool-macos.md) |
 | Einstellungen sichern | [Konfiguration exportieren/importieren](configuration-backup.md) |
 | Akku-Grenzen und Kalibrierung | [Akku und Laufzeit](battery-and-runtime.md) |
 | Deep Sleep und Aufwachen | [Deep Sleep](deep-sleep.md) |

@@ -173,6 +173,7 @@ vollständig zu laden.
 - [Dokumentationsindex](guides/de/README.md)
 - [Hardware und zwei Prozessoren](guides/de/hardware-and-two-processors.md)
 - [Original-Firmware sichern](guides/de/factory-backup.md)
+- [Standalone- oder Python-esptool unter macOS](guides/de/esptool-macos.md)
 - [Installation](guides/de/installation.md)
 - [Ersteinrichtung](guides/de/first-time-setup.md)
 - [Bedienung am Gerät](guides/de/device-controls.md)

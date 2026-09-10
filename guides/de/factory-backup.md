@@ -8,7 +8,13 @@ Dieser Vorgang ist optional und keine Voraussetzung für die Installation von
 RoonPilot. Wer sich dafür entscheidet, erstellt vor der Factory-Installation
 zwei Dateien: 16 MB vom ESP32-S3 und 4 MB vom klassischen Begleit-ESP32.
 
-## Vorbereitung
+Die Befehle dieser Seite verwenden Windows PowerShell. Auf einem Mac zuerst
+[esptool unter macOS verwenden](esptool-macos.md) lesen. Dort stehen geprüfte
+Standalone-Downloads für Apple Silicon und Intel, Prüfsummen, die Auswahl der
+`/dev/cu...`-Ports sowie vollständige macOS-Beispielbefehle. Das Backup bleibt
+unter jedem Betriebssystem freiwillig.
+
+## Vorbereitung unter Windows
 
 1. Python 3.10 oder neuer von der
    [offiziellen Python-Webseite](https://www.python.org/downloads/windows/)

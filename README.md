@@ -226,6 +226,7 @@ companion ESP32. Do not guess a file or flash an image based only on its size.
 - [Documentation index](guides/README.md)
 - [Hardware and two processors](guides/hardware-and-two-processors.md)
 - [Factory backup](guides/factory-backup.md)
+- [Using standalone or Python esptool on macOS](guides/esptool-macos.md)
 - [Installation](guides/installation.md)
 - [First-time setup](guides/first-time-setup.md)
 - [Device controls](guides/device-controls.md)

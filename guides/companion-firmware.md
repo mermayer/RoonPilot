@@ -46,7 +46,13 @@ The examples below use Windows PowerShell and `COM4`. Replace `COM4` with the
 port shown on your computer. On macOS or Linux, use `python3` instead of `py`
 and the matching `/dev/...` serial port.
 
-## 1. Install and check esptool
+macOS users should first follow the complete
+[esptool on macOS guide](esptool-macos.md). It explains the recommended
+standalone release without Python, Apple-Silicon/Intel selection, download
+verification, `/dev/cu...` ports, command translation and the Python 3.14
+`cryptography`/Cargo error.
+
+## 1. Install and check esptool on Windows
 
 Download Python from the
 [official Python Windows page](https://www.python.org/getit/windows/) if it is
@@ -65,7 +71,9 @@ if these commands fail. If Windows has no `py` command but `python` works, use
 `python -m ...` in every command below. The `pip` command downloads `esptool`
 automatically; no separate program download is needed. Espressif also provides
 [standalone binaries through its official releases](https://github.com/espressif/esptool/releases)
-for users who do not want to install Python.
+for users who do not want to install Python. The RoonPilot
+[macOS walkthrough](esptool-macos.md) provides exact archive names, checksums
+and commands; do not try to translate the PowerShell examples by guesswork.
 
 ## 2. Download the companion file
 

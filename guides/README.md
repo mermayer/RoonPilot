@@ -31,6 +31,7 @@ reading.
 | Web Installer, signed online updates and recovery | [Firmware updates and recovery](firmware-updates-and-recovery.md) |
 | Optional second-ESP low-power image | [Companion firmware](companion-firmware.md) |
 | Optional original-firmware backup | [Factory backup](factory-backup.md) |
+| Standalone/Python esptool on macOS | [Using esptool on macOS](esptool-macos.md) |
 | Settings backup | [Configuration export and import](configuration-backup.md) |
 | Battery limitations and calibration | [Battery and runtime](battery-and-runtime.md) |
 | Deep-sleep behaviour and wake-up | [Deep sleep](deep-sleep.md) |
