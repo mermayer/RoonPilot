@@ -28,10 +28,12 @@ are not required to install or test RoonPilot.
 
 - [ ] Inspect enclosure, LCD, USB-C, ring and battery condition.
 - [ ] Confirm original hardware boots before modification.
-- [ ] Identify ESP32-S3 USB orientation with `chip-id`.
+- [ ] Identify the ESP32-S3 with `chip-id`; unplug USB, turn the USB-C plug by
+  180 degrees and reconnect to identify the second processor as well.
 - [ ] Read exact 16 MB ESP32-S3 factory backup.
 - [ ] Calculate/store SHA-256 and make a second copy.
-- [ ] Rotate USB and identify classic ESP32.
+- [ ] Confirm that the processor reached after the 180-degree plug turn is the
+  classic ESP32.
 - [ ] Read exact 4 MB companion backup.
 - [ ] Calculate/store SHA-256 and make a second copy.
 

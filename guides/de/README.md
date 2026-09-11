@@ -21,8 +21,9 @@ geht es mit dem
 [öffentlichen RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
 weiter.
 
-Die Hardwareseite sollte nicht übersprungen werden. Wegen der ungewöhnlichen
-Auswahl des Prozessors durch die USB-C-Steckerorientierung ist die
+Die Hardwareseite sollte nicht übersprungen werden. Der beidseitig passende
+USB-C-Stecker kann zwei unabhängige Prozessoren verbinden; zum Wechsel muss er
+abgezogen, um 180 Grad gedreht und neu eingesteckt werden. Deshalb ist die
 Chiperkennung Bestandteil der Installation und keine optionale
 Hintergrundinformation.
 

@@ -16,7 +16,8 @@ ersten Diagnoseschritt löschen.
 ## `esptool` kann nicht verbinden
 
 - ESP-IDF Monitor, PuTTY, Arduino Monitor und VS-Code-Terminals schließen.
-- COM-Port neu prüfen; Nummer kann nach Steckerrotation wechseln.
+- COM-Port neu prüfen; die Nummer kann sich ändern, nachdem USB abgezogen, der
+  USB-C-Stecker um 180° gedreht und neu verbunden wurde.
 - `py -m esptool --port COMx chip-id` erneut ausführen.
 - Kein `erase-flash` nur zur Diagnose hinzufügen.
 

@@ -70,11 +70,11 @@
 
     <section id="vor-dem-flashen" class="critical-wrap page-width" aria-labelledby="zwei-esps-titel">
       <div class="critical">
-        <div class="critical-heading"><svg><use href="#icon-alert"></use></svg><div><h2 id="zwei-esps-titel">Stopp: Dieses Board enthält zwei ESPs.</h2><p>Die Orientierung des USB-C-Steckers entscheidet, welcher unabhängige Prozessor verbunden ist. Firmware für den einen Prozessor darf niemals auf den anderen geschrieben werden.</p></div></div>
+        <div class="critical-heading"><svg><use href="#icon-alert"></use></svg><div><h2 id="zwei-esps-titel">Stopp: Dieses Board enthält zwei ESPs.</h2><p>Der beidseitig passende USB-C-Stecker kann jeden der beiden unabhängigen Prozessoren verbinden. Für den anderen Prozessor USB abziehen, den Stecker um 180 Grad drehen und neu einstecken. Firmware für den einen Prozessor darf niemals auf den anderen geschrieben werden.</p></div></div>
         <div class="processor-paths">
-          <article><span class="orientation">USB-Orientierung A</span><h3>ESP32-S3</h3><p>RoonPilot, Display, Touch, Drehring und WLAN. Nur dieser Prozessor wird vom Web Installer beschrieben.</p></article>
+          <article><span class="plug-position">Steckerstellung: ESP32-S3 erkannt</span><h3>ESP32-S3</h3><p>RoonPilot, Display, Touch, Drehring und WLAN. Nur dieser Prozessor wird vom Web Installer beschrieben.</p></article>
           <div class="rotate-plug" aria-label="USB-C-Stecker abziehen und drehen"><svg><use href="#icon-rotate"></use></svg><strong>Zuerst abziehen</strong><span>USB-C-Stecker um 180° drehen</span></div>
-          <article><span class="orientation">USB-Orientierung B</span><h3>Klassischer ESP32</h3><p>Separater Begleitprozessor. Seine optionale Stromspar-Firmware wird manuell installiert; eine 4-MB-Originalsicherung ist freiwillig und erhält einen exakten Rückweg zur Hersteller-Firmware.</p></article>
+          <article><span class="plug-position">Nach Drehung des Steckers um 180°</span><h3>Klassischer ESP32</h3><p>Separater Begleitprozessor. Seine optionale Stromspar-Firmware wird manuell installiert; eine 4-MB-Originalsicherung ist freiwillig und erhält einen exakten Rückweg zur Hersteller-Firmware.</p></article>
         </div>
         <div class="critical-rule"><strong>Eine COM-Nummer identifiziert den Prozessor nicht.</strong><span>Vor jedem Löschen oder Flashen <code>esptool chip-id</code> ausführen. Sofort stoppen, wenn der gemeldete Chip nicht zur Datei passt.</span></div>
         <a class="text-link amber" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/hardware-and-two-processors.md">Die beiden Prozessoren verstehen <svg><use href="#icon-arrow"></use></svg></a>
@@ -140,7 +140,7 @@
           <li><span>2</span><div><strong>Begleitprozessor auswählen</strong><p>USB trennen, USB-C-Stecker um 180° drehen, neu verbinden und den Port prüfen.</p><code class="command">py -m esptool --port COM4 chip-id</code><p>Nur fortfahren, wenn ein klassischer <b>ESP32</b> gemeldet wird, niemals ESP32-S3.</p></div></li>
           <li><span>3</span><div><strong>Optional: alle 4 MB sichern</strong><p>Nur für einen exakten Rückweg zur Hersteller-Firmware den kompletten Original-Flash lesen und seinen SHA-256-Wert sicher aufbewahren.</p><code class="command">py -m esptool --chip esp32 --port COM4 read-flash 0x0 0x400000 companion-original-4mb.bin</code></div></li>
           <li><span>4</span><div><strong>Prüfen und zusammengeführtes Abbild schreiben</strong><p>Veröffentlichte Prüfsumme vergleichen und die Companion-Datei an Adresse <code>0x0</code> schreiben. Niemals das S3-Factory- oder OTA-Abbild verwenden.</p><code class="command">py -m esptool --chip esp32 --port COM4 --baud 460800 write-flash 0x0 roonpilot-companion-sleep-factory-v1.0.1.bin</code></div></li>
-          <li><span>5</span><div><strong>Zu RoonPilot zurückkehren</strong><p>USB trennen, Stecker zurückdrehen, neu verbinden und prüfen, dass <code>chip-id</code> nun <b>ESP32-S3</b> meldet.</p></div></li>
+          <li><span>5</span><div><strong>Zu RoonPilot zurückkehren</strong><p>USB abziehen, den USB-C-Stecker um 180° drehen, neu verbinden und prüfen, dass <code>chip-id</code> nun <b>ESP32-S3</b> meldet.</p></div></li>
         </ol>
         <p class="companion-footnote"><code>COM4</code> durch den vom Betriebssystem angezeigten Port ersetzen. Vor jedem Befehl alle seriellen Monitore schließen. Die vollständige Anleitung erklärt außerdem Downloadprüfung, die freiwillige Sicherung, Wiederherstellung und die Grenzen einer Wiederherstellung ohne Originalabbild.</p>
       </div>

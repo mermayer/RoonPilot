@@ -11,8 +11,9 @@
 | Optional Companion power saving | Classic ESP32 | Separate downloadable Companion image and `esptool` | Replaces Companion flash |
 
 Primary Factory and OTA files are not offered as standalone downloads. The
-methods cannot be interchanged, and the USB orientation must be verified before
-any recovery action.
+methods cannot be interchanged. Verify the active chip before any recovery
+action; to reach the other processor, unplug USB, turn the USB-C plug by 180
+degrees and reconnect it.
 
 ## Signed online update - the normal path
 

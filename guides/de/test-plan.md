@@ -30,7 +30,8 @@ RoonPilot sind sie keine Voraussetzung.
 
 - [ ] Gerät äußerlich prüfen, Bestellvariante notieren.
 - [ ] Originalsoftware vor Änderung starten und fotografisch dokumentieren.
-- [ ] Beide USB-C-Orientierungen mit `chip-id` eindeutig zuordnen.
+- [ ] Einen Chip mit `chip-id` prüfen, USB abziehen, den USB-C-Stecker um
+  180 Grad drehen, neu verbinden und auch den zweiten Chip eindeutig zuordnen.
 - [ ] Exakte 16-MB-Sicherung des ESP32-S3 lesen und SHA-256 notieren.
 - [ ] Exakte 4-MB-Sicherung des Begleit-ESP32 lesen und SHA-256 notieren.
 - [ ] Beide Sicherungen an einen zweiten sicheren Ort kopieren.
@@ -170,7 +171,8 @@ RoonPilot sind sie keine Voraussetzung.
   Größe/SHA-256 geprüft; andernfalls mit `entfällt` markieren.
 - [ ] Companion-Datei SHA-256 geprüft.
 - [ ] Schreiben und `verify-flash` erfolgreich.
-- [ ] Nach Zurückdrehen startet RoonPilot unverändert.
+- [ ] Nach Abziehen, erneuter 180-Grad-Drehung und Wiederverbinden meldet
+  `chip-id` wieder ESP32-S3; RoonPilot startet unverändert.
 - [ ] Wiederherstellung des Original-Companion-Abbilds optional als
   Recovery-Nachweis getestet.
 

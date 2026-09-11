@@ -58,8 +58,9 @@ installation starts the protected `RoonPilot-Setup-XXXXXX` access point.
 
 ## Before testing
 
-The USB-C plug orientation selects one of two independent processors. Verify
-the detected chip before every write. Complete 16 MB ESP32-S3 and 4 MB
+The reversible USB-C plug can connect either of two independent processors. To
+reach the other one, unplug USB, turn the plug by 180 degrees and reconnect it.
+Verify the detected chip before every write. Complete 16 MB ESP32-S3 and 4 MB
 companion ESP32 backups are optional. They are useful only if you want to
 preserve an exact return path to the manufacturer-delivered firmware and are
 not prerequisites for installing RoonPilot.

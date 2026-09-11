@@ -59,14 +59,16 @@ den Installationsdialog erneut öffnen.
 6. **RoonPilot installieren** waehlen, den geprueften Port oeffnen und das
    vollstaendige Loeschen bestaetigen.
 7. USB waehrend Loeschen, Schreiben und Verifizieren nicht trennen.
-8. USB trennen und in derselben ESP32-S3-Orientierung neu verbinden.
+8. USB abziehen und den Stecker ohne Drehung wieder einstecken, damit der
+   ESP32-S3 ausgewählt bleibt.
 9. RoonPilot-Startbildschirm abwarten und mit dem Einrichtungs-AP fortfahren.
 
 <img src="../../assets/web-ui/11-usb-web-installer.png" alt="RoonPilot USB Web Installer" width="100%">
 
 > [!WARNING]
-> Die USB-C-Orientierung waehlt einen von zwei unabhaengigen Prozessoren. Der
-> Web Installer ist ausschliesslich fuer den ESP32-S3. Eine Factory-Installation
+> Der beidseitig passende USB-C-Stecker kann einen von zwei unabhängigen
+> Prozessoren verbinden. Zum Wechsel USB abziehen, den Stecker um 180 Grad drehen
+> und neu verbinden. Der Web Installer ist ausschließlich für den ESP32-S3. Eine Factory-Installation
 > loescht dort Firmware, WLAN, Roon-Freigabe, Einstellungen und Kalibrierdaten.
 
 ### Muss vorher separat gelöscht werden?

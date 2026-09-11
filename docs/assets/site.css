@@ -229,7 +229,7 @@ svg { width: 1.25em; height: 1.25em; fill: none; stroke: currentColor; stroke-wi
 }
 .processor-paths article { min-height: 150px; }
 .processor-paths article:last-child { text-align: right; }
-.orientation { color: var(--muted); font-size: 13px; font-weight: 620; text-transform: uppercase; letter-spacing: 0.1em; }
+.plug-position { color: var(--muted); font-size: 13px; font-weight: 620; text-transform: uppercase; letter-spacing: 0.1em; }
 .processor-paths h3 { margin: 4px 0 7px; color: var(--cyan); font-size: 29px; letter-spacing: -0.025em; }
 .processor-paths p { max-width: 420px; margin: 0; color: var(--muted-strong); }
 .processor-paths article:last-child p { margin-left: auto; }

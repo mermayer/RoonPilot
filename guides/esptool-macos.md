@@ -287,9 +287,9 @@ use Path A rather than weakening macOS security or building a toolchain.
 | `command not found: esptool` | With Python use `python -m esptool`; with the standalone release use `"$ESPTOOL_BIN"`. |
 | `No module named esptool` | The virtual environment is not active or installation failed. Activate it and run the install command again. |
 | `Failed building wheel for cryptography` | Use the Python 3.14/x86 procedure above or the standalone release. Do not diagnose the USB cable yet. |
-| No new `/dev/cu.*` entry | Use a data cable, connect directly without a hub, try the other USB-C orientation and compare the list again. |
+| No new `/dev/cu.*` entry | Use a data cable and connect directly without a hub. Then unplug USB, turn the USB-C plug at RoonPilot by 180 degrees, reconnect and compare the list again. |
 | `Could not open …` or `Resource busy` | Close every serial monitor and browser Web Serial dialog using the port. Unplug/reconnect, then retry. |
-| Wrong chip in `chip-id` | Stop. Rotate the USB-C plug at RoonPilot and identify again. Never compensate by forcing `--chip`. |
+| Wrong chip in `chip-id` | Stop. Unplug USB, turn the USB-C plug at RoonPilot by 180 degrees, reconnect and identify again. Never compensate by forcing `--chip`. |
 | Connection dots continue forever | Reconnect, reduce baud if a guide permits it, and ensure the correct port and chip are selected. Do not erase experimentally. |
 
 ## Official references

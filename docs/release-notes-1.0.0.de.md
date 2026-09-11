@@ -47,8 +47,10 @@ Drittanbieterbestandteile behalten ihre unabhängigen Lizenzen.
 
 Die öffentlichen Factory-/OTA-Dateien enthalten keine Entwicklungs-WLAN-Daten,
 private Roon-Adresse, Kopplungstoken oder privaten Signaturschlüssel. Die
-USB-C-Orientierung wählt einen von zwei Prozessoren. Vor jedem Schreiben den
-Chip eindeutig erkennen. Vollständige 16-MB- und 4-MB-Originalsicherungen sind
+Der beidseitig passende USB-C-Stecker kann einen von zwei unabhängigen
+Prozessoren verbinden. Um zum anderen zu wechseln, USB abziehen, den Stecker um
+180 Grad drehen und neu verbinden. Vor jedem Schreiben den Chip eindeutig
+erkennen. Vollständige 16-MB- und 4-MB-Originalsicherungen sind
 freiwillig und nur sinnvoll, wenn ein exakter Rückweg zur Hersteller-Firmware
 erhalten bleiben soll; sie sind keine Voraussetzung für RoonPilot.
 

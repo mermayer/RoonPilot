@@ -33,7 +33,7 @@
       <h3>Erase during a Factory installation</h3>
       <p>No separate erase is needed beforehand. When the installer offers <strong>Erase device</strong>, select or confirm it for a first installation or complete recovery. This clean install erases all ESP32-S3 settings, but it does not erase the companion ESP32. Later online updates under <strong>System &rarr; Firmware update</strong> do not require an erase.</p>
     </div>
-    <label class="confirm"><input id="hardwareConfirm" type="checkbox"><span>I have verified that the selected USB orientation reports <strong>ESP32-S3</strong>, and I understand that this Factory installation erases its current firmware and settings.</span></label>
+    <label class="confirm"><input id="hardwareConfirm" type="checkbox"><span>I checked the active chip. If a classic ESP32 was reported first, I unplugged USB, turned the USB-C plug by 180 degrees and reconnected it. It now reports <strong>ESP32-S3</strong>. I understand that this Factory installation erases its current firmware and settings.</span></label>
     <label class="confirm"><input id="licenseConfirm" type="checkbox"><span>I have read and accept the <a href="../legal/LICENSE.md" target="_blank" rel="noopener">RoonPilot Personal-Use Binary License 1.0</a>. I understand that redistribution, modification, reverse engineering, source recovery, competitive analysis and commercial use of RoonPilot-authored portions are prohibited except where mandatory law provides otherwise.</span></label>
     <esp-web-install-button manifest="../manifest.json">
       <button id="installButton" class="install-button" slot="activate" type="button" disabled>Install RoonPilot</button>

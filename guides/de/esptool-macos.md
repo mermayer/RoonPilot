@@ -292,9 +292,9 @@ schwächen oder eine Buildumgebung einzurichten.
 | `command not found: esptool` | Mit Python `python -m esptool`, mit Standalone `"$ESPTOOL_BIN"` verwenden. |
 | `No module named esptool` | Virtuelle Umgebung ist nicht aktiv oder Installation ist fehlgeschlagen. Aktivieren und erneut installieren. |
 | `Failed building wheel for cryptography` | Python-3.14-/x86-Anleitung oben oder Standalone verwenden. Das USB-Kabel ist hierfür noch nicht verantwortlich. |
-| Kein neuer `/dev/cu.*`-Eintrag | Datenkabel verwenden, direkt ohne Hub verbinden, andere USB-C-Orientierung probieren und Liste erneut vergleichen. |
+| Kein neuer `/dev/cu.*`-Eintrag | Datenkabel verwenden und direkt ohne Hub verbinden. Dann USB abziehen, den USB-C-Stecker am RoonPilot um 180 Grad drehen, neu verbinden und die Liste erneut vergleichen. |
 | `Could not open …` oder `Resource busy` | Alle seriellen Monitore und Web-Serial-Dialoge schließen. USB trennen/verbinden und wiederholen. |
-| Falscher Chip bei `chip-id` | Stoppen, USB-C-Stecker am RoonPilot drehen und erneut identifizieren. Niemals durch erzwungenes `--chip` kompensieren. |
+| Falscher Chip bei `chip-id` | Stoppen, USB abziehen, den USB-C-Stecker am RoonPilot um 180 Grad drehen, neu verbinden und erneut identifizieren. Niemals durch erzwungenes `--chip` kompensieren. |
 | Verbindungspunkte laufen endlos | Neu verbinden, Baudrate nur nach Anleitung reduzieren und Port/Chip prüfen. Nicht versuchsweise löschen. |
 
 ## Offizielle Quellen

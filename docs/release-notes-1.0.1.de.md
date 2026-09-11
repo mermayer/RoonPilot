@@ -90,10 +90,10 @@ und Hinweise.
 ## Wichtiger Waveshare-Hinweis
 
 Das Waveshare-Modul enthält zwei unabhängig programmierbare Prozessoren. Der
-Webinstaller ist **ausschließlich für den ESP32-S3** bestimmt. Die Ausrichtung
-des USB-C-Steckers entscheidet, welcher Prozessor verbunden ist. Vor jedem
-Sichern oder Schreiben den erkannten Chip prüfen und das ESP32-S3-Factory-Image
-niemals auf den Companion-ESP32 schreiben.
+Webinstaller ist **ausschließlich für den ESP32-S3** bestimmt. Um den anderen
+Prozessor zu erreichen, USB abziehen, den USB-C-Stecker um 180 Grad drehen und
+neu verbinden. Vor jedem Sichern oder Schreiben den erkannten Chip prüfen und
+das ESP32-S3-Factory-Image niemals auf den Companion-ESP32 schreiben.
 
 Funktions- oder Dokumentationsfehler bitte über GitHub Issues melden. Vor dem
 Anhängen von Logs oder Screenshots IP-Adressen, WLAN-Namen, Roon-Metadaten und

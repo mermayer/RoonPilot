@@ -124,30 +124,33 @@ Die S3-Factory- oder OTA-Datei darf hier niemals verwendet werden.
 
 ## 7. Zu RoonPilot zurückkehren
 
-1. USB trennen.
-2. Stecker um 180° zurückdrehen.
-3. Neu verbinden.
-4. `chip-id` muss nun **ESP32-S3** melden.
-5. RoonPilot-Start, Display, WLAN und Roon-Verbindung prüfen.
+1. Warten, bis `esptool` die erfolgreiche Prüfung gemeldet hat.
+2. USB abziehen.
+3. Den USB-C-Stecker um 180° drehen.
+4. Neu verbinden.
+5. Mit `chip-id` prüfen, dass wieder **ESP32-S3** erkannt wird.
+6. RoonPilot-Start, Display, WLAN und Roon-Verbindung prüfen.
 
 ## Original-Firmware wiederherstellen
 
 Der exakte Herstellerzustand kann nur wiederhergestellt werden, wenn die
-freiwillige Sicherung aus Schritt 4 erstellt wurde. Dazu die Companion-Seite
-erneut durch Steckerrotation auswählen, den klassischen ESP32 bestätigen und
-die eigene geprüfte Sicherung schreiben:
+freiwillige Sicherung aus Schritt 4 erstellt wurde. Dazu USB abziehen, den
+USB-C-Stecker um 180° drehen und neu verbinden. Mit `chip-id` den klassischen
+ESP32 bestätigen und erst danach die eigene geprüfte Sicherung schreiben:
 
 ```powershell
 py -m esptool --chip esp32 --port COM4 write-flash 0x0 companion-original-4mb.bin
 ```
 
-Danach wieder zur ESP32-S3-Seite drehen.
+Danach USB erneut abziehen, den USB-C-Stecker um 180° drehen, neu verbinden und
+mit `chip-id` prüfen, dass wieder ESP32-S3 erkannt wird.
 
 ## Wenn esptool keine Verbindung erhält
 
 - alle seriellen Programme schließen;
 - Datenkabel und direkten USB-Port verwenden;
-- USB abziehen, Stecker drehen und erneut versuchen;
+- USB abziehen, den USB-C-Stecker um 180° drehen, neu verbinden und erneut
+  versuchen;
 - COM-Port im Geräte-Manager neu prüfen;
 - BOOT/RESET nur nach dokumentierter Recovery-Anweisung verwenden;
 - niemals `erase-flash` als bloßen Verbindungstest ausführen.

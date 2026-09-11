@@ -38,14 +38,17 @@ Bestellnummern können sich ändern.
 ## Die Besonderheit: zwei Computer im Gehäuse
 
 ```text
-USB-C-Orientierung A ──► ESP32-S3R8 ──► Display, Touch, Ring, WLAN, RoonPilot
+Steckerstellung, in der chip-id einen ESP32-S3 meldet
+    └──► ESP32-S3R8 ──► Display, Touch, Ring, WLAN, RoonPilot
 
-USB-C-Orientierung B ──► ESP32-U4WDH ─► separate Companion-Firmware
+USB abziehen, USB-C-Stecker um 180 Grad drehen und neu verbinden
+    └──► ESP32-U4WDH ─► separate Companion-Firmware
 ```
 
 Beide besitzen einen eigenen Flash und benötigen eigene Firmware. Eine
-Sicherung des einen Prozessors kann den anderen nicht wiederherstellen. Die
-COM-Nummer beweist nicht, welcher Chip aktiv ist.
+Sicherung des einen Prozessors kann den anderen nicht wiederherstellen. Um den
+anderen Prozessor zu erreichen, USB abziehen, den USB-C-Stecker um 180 Grad
+drehen und neu verbinden. Die COM-Nummer beweist nicht, welcher Chip aktiv ist.
 
 ## Aktiven Prozessor erkennen
 

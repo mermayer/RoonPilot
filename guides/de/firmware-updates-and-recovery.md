@@ -11,8 +11,9 @@
 | Optionale Companion-Stromersparnis | Klassischer ESP32 | Separate Companion-Datei und `esptool` | Ersetzt Companion-Flash |
 
 Hauptfirmware fuer Factory und OTA wird nicht als einzelner Download angeboten.
-Die Verfahren sind nicht austauschbar. Vor jeder Wiederherstellung muss die
-USB-Orientierung eindeutig geprueft werden.
+Die Verfahren sind nicht austauschbar. Vor jeder Wiederherstellung den aktiven
+Chip eindeutig prüfen. Für den anderen Prozessor USB abziehen, den
+USB-C-Stecker um 180 Grad drehen, neu verbinden und erneut prüfen.
 
 ## Signiertes Online-Update - der normale Weg
 

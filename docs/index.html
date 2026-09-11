@@ -84,12 +84,12 @@
           <svg><use href="#icon-alert"></use></svg>
           <div>
             <h2 id="two-esps-title">Stop: this board contains two ESPs.</h2>
-            <p>The USB-C plug orientation selects which independent processor is connected. Firmware for one processor must never be written to the other.</p>
+            <p>The reversible USB-C plug can connect either independent processor. To reach the other one, unplug USB, turn the plug by 180 degrees and reconnect it. Firmware for one processor must never be written to the other.</p>
           </div>
         </div>
         <div class="processor-paths">
           <article>
-            <span class="orientation">USB orientation A</span>
+            <span class="plug-position">Plug position: ESP32-S3 detected</span>
             <h3>ESP32-S3</h3>
             <p>RoonPilot, display, touch, rotary ring and Wi-Fi. This is the only processor written by the Web Installer.</p>
           </article>
@@ -99,7 +99,7 @@
             <span>Rotate the USB-C plug 180°</span>
           </div>
           <article>
-            <span class="orientation">USB orientation B</span>
+            <span class="plug-position">After turning the plug 180°</span>
             <h3>Classic ESP32</h3>
             <p>Separate companion processor. Its optional low-power firmware is installed manually; a 4 MB original backup is optional and preserves an exact factory restore path.</p>
           </article>
@@ -213,7 +213,7 @@
           <li><span>2</span><div><strong>Select the companion processor</strong><p>Disconnect USB, rotate the USB-C plug 180 degrees and reconnect. Check the new port.</p><code class="command">py -m esptool --port COM4 chip-id</code><p>Continue only when it reports a classic <b>ESP32</b>, never ESP32-S3.</p></div></li>
           <li><span>3</span><div><strong>Optional: save all 4 MB</strong><p>Only if you want an exact factory restore path, read the complete original companion flash and retain its SHA-256 checksum safely.</p><code class="command">py -m esptool --chip esp32 --port COM4 read-flash 0x0 0x400000 companion-original-4mb.bin</code></div></li>
           <li><span>4</span><div><strong>Verify and write the merged image</strong><p>Check the published checksum, then write the companion file at address <code>0x0</code>. Do not use the S3 Factory or OTA image.</p><code class="command">py -m esptool --chip esp32 --port COM4 --baud 460800 write-flash 0x0 roonpilot-companion-sleep-factory-v1.0.1.bin</code></div></li>
-          <li><span>5</span><div><strong>Return to RoonPilot</strong><p>Disconnect USB, rotate the plug back, reconnect and confirm that <code>chip-id</code> now reports <b>ESP32-S3</b>.</p></div></li>
+          <li><span>5</span><div><strong>Return to RoonPilot</strong><p>Disconnect USB, turn the USB-C plug by 180 degrees, reconnect and confirm that <code>chip-id</code> now reports <b>ESP32-S3</b>.</p></div></li>
         </ol>
         <p class="companion-footnote">Replace <code>COM4</code> with the port shown by your operating system. Close every serial monitor before running a command. The complete guide also explains download verification, the optional backup, recovery and the limits of restoring without an original image.</p>
       </div>

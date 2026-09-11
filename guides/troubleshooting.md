@@ -19,13 +19,15 @@ Work from the top of the relevant section. Do not erase flash as a first test.
 - Confirm the correct COM number.
 - Close ESP-IDF Monitor and browser Web Serial sessions.
 - Disconnect/reconnect and retry at a lower baud rate.
-- Make sure the cable orientation selects the intended processor.
+- Run `chip-id`. If it reports the wrong processor, unplug USB, turn the USB-C
+  plug by 180 degrees, reconnect and run `chip-id` again.
 - Never add `erase-flash` merely to diagnose a connection.
 
 ## The wrong chip is reported
 
-Disconnect USB, rotate the plug and reconnect. A classic ESP32 is the companion;
-an ESP32-S3 is the RoonPilot processor. Stop any write until they match the file.
+Disconnect USB, turn the USB-C plug by 180 degrees and reconnect it. A classic
+ESP32 is the companion; an ESP32-S3 is the RoonPilot processor. Stop any write
+until they match the file.
 
 ## Web Installer cannot open the port
 

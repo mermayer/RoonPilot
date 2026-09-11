@@ -77,9 +77,10 @@ Third-party portions retain their independent licences and notices.
 ## Waveshare hardware warning
 
 The Waveshare module contains two independently programmable processors. The
-Web Installer targets **only the ESP32-S3**. USB-C plug orientation determines
-which processor is connected. Verify the detected chip before every backup or
-write and never flash the ESP32-S3 Factory image to the companion ESP32.
+Web Installer targets **only the ESP32-S3**. To reach the other processor,
+unplug USB, turn the USB-C plug by 180 degrees and reconnect it. Verify the
+detected chip before every backup or write and never flash the ESP32-S3 Factory
+image to the companion ESP32.
 
 Report functional or documentation problems through GitHub Issues. Remove IP
 addresses, Wi-Fi names, Roon metadata and other private information from logs

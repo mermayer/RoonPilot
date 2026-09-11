@@ -42,15 +42,18 @@ shipping restrictions and regional product codes can change.
 The enclosure contains two independently programmable processors:
 
 ```text
-USB-C plug orientation A ──► ESP32-S3R8 ──► display, touch, ring, Wi-Fi, RoonPilot
+Plug position in which chip-id reports ESP32-S3
+    └──► ESP32-S3R8 ──► display, touch, ring, Wi-Fi, RoonPilot
 
-USB-C plug orientation B ──► ESP32-U4WDH ─► separate companion firmware
+Unplug USB, turn the USB-C plug 180 degrees and reconnect
+    └──► ESP32-U4WDH ─► separate companion firmware
 ```
 
 They do not share a firmware image. They do not share flash storage. A backup of
-one processor cannot restore the other. Windows may show the same COM number or
-a different one after the plug is rotated, so the COM number is not proof of
-which chip is active.
+one processor cannot restore the other. To reach the other processor, unplug
+USB, turn the USB-C plug by 180 degrees and reconnect it. Windows may then show
+the same COM number or a different one, so the COM number is not proof of which
+chip is active.
 
 ## How to identify the active processor
 

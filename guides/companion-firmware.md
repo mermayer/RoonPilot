@@ -174,9 +174,9 @@ verifies it before resetting the processor.
 
 1. Wait until `esptool` reports that verification completed.
 2. Disconnect USB-C.
-3. Rotate the plug 180 degrees back to the RoonPilot orientation.
+3. Rotate the plug 180 degrees.
 4. Reconnect it.
-5. Run:
+5. Run the following check and continue only when it reports **ESP32-S3**:
 
    ```powershell
    py -m esptool --port COM4 chip-id
@@ -184,8 +184,9 @@ verifies it before resetting the processor.
 
 6. Confirm that this side reports **ESP32-S3** and that RoonPilot starts.
 
-Seeing no RoonPilot screen while the cable is connected to the companion side
-is normal; that USB orientation does not address the display processor.
+Seeing no RoonPilot screen while the cable is connected to the companion
+processor is normal; the display processor is not connected in that plug
+position.
 
 ## Restore the original companion firmware
 
@@ -193,8 +194,9 @@ Restoration of the exact manufacturer-delivered state is possible only if you
 chose to make the optional backup in step 5. It replaces the complete 4 MB
 companion flash:
 
-1. Disconnect USB, rotate to the companion orientation and reconnect.
-2. Confirm the classic ESP32 again with `chip-id`.
+1. Disconnect USB, turn the USB-C plug by 180 degrees and reconnect it.
+2. Confirm the classic ESP32 again with `chip-id`. If it reports ESP32-S3,
+   disconnect USB and repeat the 180-degree turn before continuing.
 3. Confirm the backup is still exactly `4,194,304` bytes and that its stored
    SHA-256 value still matches.
 4. Write the complete backup:
@@ -203,7 +205,8 @@ companion flash:
    py -m esptool --chip esp32 --port COM4 --baud 460800 write-flash 0x0 D:\RoonPilot-Factory-Backup\companion-original-4mb.bin
    ```
 
-5. Rotate the USB plug back to the ESP32-S3 side afterward.
+5. Afterward, unplug USB, turn the USB-C plug by 180 degrees, reconnect it and
+   verify that `chip-id` reports ESP32-S3 again.
 
 ## If esptool cannot connect
 

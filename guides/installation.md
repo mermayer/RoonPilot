@@ -47,7 +47,8 @@ dialog again.
 1. Close ESP-IDF Monitor, PuTTY, Arduino Serial Monitor and every application
    that may have the COM port open.
 2. Connect the board, identify its port and verify **ESP32-S3** with `esptool
-   chip-id` if there is any uncertainty about USB orientation.
+   chip-id`. If another chip is reported, unplug USB, turn the USB-C plug by
+   180 degrees and reconnect before checking again.
 3. Open the [authorized RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/)
    in Chrome or Edge.
 4. Read the two-processor warning. Confirm that the selected processor is the
@@ -56,14 +57,16 @@ dialog again.
 6. Select **Install RoonPilot**, choose the verified serial port and confirm
    the complete erase.
 7. Keep USB connected until erase, write and verification are complete.
-8. Disconnect and reconnect in the same ESP32-S3 orientation.
+8. Disconnect and reconnect without turning the plug, so the ESP32-S3 remains
+   selected.
 9. Wait for the RoonPilot boot screen and continue with the setup access point.
 
 <img src="../assets/web-ui/11-usb-web-installer.png" alt="RoonPilot USB Web Installer" width="100%">
 
 > [!WARNING]
-> The USB-C plug orientation selects one of two independent processors. The Web
-> Installer is for the ESP32-S3 only and never installs the Companion image. A
+> The reversible USB-C plug can connect either of two independent processors.
+> To switch processors, unplug USB, turn the plug by 180 degrees and reconnect.
+> The Web Installer is for the ESP32-S3 only and never installs the Companion image. A
 > Factory installation erases the complete ESP32-S3, including existing
 > firmware, Wi-Fi, Roon authorization, settings and calibration data.
 
