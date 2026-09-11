@@ -5,12 +5,11 @@ signed online-update path. It is not a public RoonPilot release and must not be
 linked from the project website, installer, documentation, or stable update
 channel.
 
-Test.99 contains the same recovery fix validated in Test.98: completed
-asynchronous HTTP sessions are closed in both
-directions. This prevents abandoned browser connections from remaining in
-lwIP's FIN_WAIT_2 state and eventually starving larger web responses after
-heavy or interrupted parallel traffic. It retains the Test.97 selective
-configuration writes, serialized controller/Bridge update work and validated
-main-task stack reserve. The new version number exists solely to validate the
-case where Controller and Bridge updates are available at the same time. This
-build is for internal recovery, update and connection-stability testing only.
+Test.100 corrects native Roon volume labels throughout the device display and
+web interface. Roon `db` outputs are shown with `dB`, including `0 dB`; generic
+Roon `number` outputs remain unitless instead of receiving an invented percent
+sign. A negative endpoint range is also recognized as dB when an endpoint
+supplies absent or generic type metadata, so a Lyngdorf-style range remains
+unambiguous even at zero. It retains the Test.99 update, recovery and
+connection-stability safeguards. This build is for internal compatibility and
+hardware validation only.
