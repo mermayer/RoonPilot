@@ -195,7 +195,7 @@ connected.
 
 ## USB Web Installer
 
-<img src="../assets/web-ui/11-usb-web-installer.png" alt="USB Web Installer" width="100%">
+<img src="../assets/web-ui/11-usb-web-installer.png" alt="RoonPilot and Companion Web Installers" width="100%">
 
 This is a separate authorized HTTPS page, not a page served by the device. It
 explains the unusual two-processor hardware, requires confirmation of the
@@ -203,3 +203,8 @@ ESP32-S3 target, Factory erase and personal-use binary licence, and writes the
 complete Factory image to the main ESP32-S3 only. An original-firmware backup
 is explained as an optional restore path, not an installation requirement. The
 primary image is not offered as a download.
+
+The optional Companion card opens a separate, beginner-friendly Web Installer
+for the classic ESP32-U4WDH. It needs neither Python nor esptool and accepts only
+the Companion processor; the main ESP32-S3 installer never writes that second
+chip.

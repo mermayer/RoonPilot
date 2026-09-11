@@ -170,7 +170,7 @@ normalerweise erhalten.
 
 ## USB Web Installer
 
-<img src="../../assets/web-ui/11-usb-web-installer.png" alt="USB Web Installer" width="100%">
+<img src="../../assets/web-ui/11-usb-web-installer.png" alt="RoonPilot- und Companion-Webinstaller" width="100%">
 
 Nur für vollständige ESP32-S3-Erstinstallation oder Wiederherstellung. Er
 funktioniert ausschließlich mit aktuellem Desktop-Chromium und Web Serial,
@@ -179,3 +179,8 @@ Lizenz und bietet das Hauptabbild nicht als Download an. Die Sicherung der
 Original-Firmware wird als optionaler Rückweg erklärt und ist keine
 Installationsvoraussetzung. Factory löscht den kompletten ESP32-S3. Der
 Begleit-ESP32 wird niemals durch diesen Installer beschrieben.
+
+Die optionale Companion-Tafel öffnet einen getrennten, einsteigerfreundlichen
+Webinstaller für den klassischen ESP32-U4WDH. Dafür werden weder Python noch
+esptool benötigt. Dieser Installer akzeptiert ausschließlich den
+Begleitprozessor; der Hauptinstaller beschreibt ihn niemals.
