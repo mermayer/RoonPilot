@@ -5,3 +5,6 @@ signed online-update path. It is not a public RoonPilot release and must not be
 linked from the project website, installer, documentation, or stable update
 channel.
 
+Test.96 prevents unchanged configuration sections from being written or
+re-applied and serializes controller and Bridge update work. This build is for
+the internal simultaneous-update and connection-stability test only.
