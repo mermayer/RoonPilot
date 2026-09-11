@@ -1,0 +1,24 @@
+{
+    "schema":  1,
+    "project":  "roonpilot-ir-bridge",
+    "board":  "esp32-s3-zero-fh4r2",
+    "channel":  "internal-ir-bridge",
+    "image_type":  "application",
+    "version":  "0.1.0-test.42",
+    "signed":  true,
+    "compatibility":  {
+                          "schema":  1,
+                          "protocol_min":  3,
+                          "protocol_max":  4,
+                          "peer_min_version":  "1.0.2-irbridge-test.66",
+                          "peer_max_version":  ""
+                      },
+    "protocol_min":  3,
+    "protocol_max":  4,
+    "controller_min_version":  "1.0.2-irbridge-test.66",
+    "url":  "https://raw.githubusercontent.com/mermayer/RoonPilot/internal-ota-validation/internal/bridge/firmware/roonpilot-ir-bridge-ota-v0.1.0-test.42.bin",
+    "size":  1052672,
+    "sha256":  "7ac0a6161db9f8ad42e8e3d7cfa49c102cc16cef7eb3cb40b98975c7c6e0c97f",
+    "mandatory":  false,
+    "notes_url":  "https://raw.githubusercontent.com/mermayer/RoonPilot/internal-ota-validation/internal/bridge/notes.md"
+}
