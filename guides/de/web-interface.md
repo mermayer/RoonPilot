@@ -111,11 +111,8 @@ automatisch wieder der Setup-AP. Kein erneutes Flashen erforderlich.
 
 - grobe Systemspannungsinformation ohne erfundene Akkuprozentzahl;
 - Vorbereitung, Status, Ergebnis und Löschen der Laufzeitkalibrierung;
-- CPU-Leistungsstufe im Bereich **CPU & sleep**;
 - Deep Sleep ein/aus und Wartezeit;
-- eindeutiger Status **Deep sleep off**, **Waiting for idle** oder **Sleep
-  armed**, der sich nur auf Deep Sleep und nicht auf die gesamte
-  Energieverwaltung bezieht.
+- aktueller Zulässigkeits-/Blockierungsgrund.
 
 Während laufender Akku-Kalibrierung sind Webserver, Roon und Deep Sleep
 absichtlich deaktiviert, damit das Messprofil reproduzierbar bleibt.

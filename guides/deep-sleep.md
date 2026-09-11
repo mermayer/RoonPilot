@@ -13,13 +13,13 @@ connection and local website. Waking performs a complete, automatic restart.
 2. Select **Power**.
 3. Turn on **Deep sleep**.
 4. Choose **Deep sleep after**.
-5. Press **Save power settings**.
+5. Press **Save power policy**.
 
 The status badge shows:
 
-- **Deep sleep off** when the switch is off;
-- **Waiting for idle** when a safety condition prevents sleep;
-- **Sleep armed** when the selected zone is paused/stopped and the idle countdown is
+- **Disabled** when the switch is off;
+- **Waiting** when a safety condition prevents sleep;
+- **Armed** when the selected zone is paused/stopped and the idle countdown is
   running.
 
 The timeout starts again after touch/ring input, a relevant playback-state

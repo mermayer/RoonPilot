@@ -135,16 +135,14 @@ supply/charger. A computer USB port can show a lower system voltage and may run
 the device without charging its battery completely; it is therefore not a
 reliable full-charge reference.
 
-The **CPU & sleep** card selects the CPU mode, enables deep sleep
-and sets its idle timeout. Its live badge reads **Deep sleep off**, **Waiting
-for idle** or **Sleep armed**, so an intentional off state is not confused with
-the whole power configuration being disabled. Sleep is armed only for an
-available selected zone that reports paused/stopped; Wi-Fi setup, firmware
-operations and battery calibration block it. Touch or ring movement wakes into
-a normal reboot, so Wi-Fi, Roon and this page need a moment to return.
+The Power policy card enables deep sleep and selects its idle timeout. Its live
+badge reads Disabled, Waiting or Armed. Sleep is armed only for an available
+selected zone that reports paused/stopped; Wi-Fi setup, firmware operations and
+battery calibration block it. Touch or ring movement wakes into a normal reboot,
+so Wi-Fi, Roon and this page need a moment to return.
 
 Read [Battery and runtime](battery-and-runtime.md) before starting a run and
-[Deep sleep](deep-sleep.md) before validating the sleep settings.
+[Deep sleep](deep-sleep.md) before validating the power policy.
 
 ## System
 
