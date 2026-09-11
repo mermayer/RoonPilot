@@ -233,6 +233,32 @@ svg { width: 1.25em; height: 1.25em; fill: none; stroke: currentColor; stroke-wi
 .processor-paths h3 { margin: 4px 0 7px; color: var(--cyan); font-size: 29px; letter-spacing: -0.025em; }
 .processor-paths p { max-width: 420px; margin: 0; color: var(--muted-strong); }
 .processor-paths article:last-child p { margin-left: auto; }
+.os-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding: 28px 0;
+}
+.os-choice-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid rgba(79, 224, 226, 0.28);
+  border-radius: 10px;
+  background: rgba(7, 9, 10, 0.46);
+}
+.os-choice-card h3 { margin: 5px 0 14px; color: var(--cyan); font-size: 30px; }
+.os-choice-card .usb-match {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid rgba(79, 224, 226, 0.45);
+  border-radius: 7px;
+  background: var(--cyan-soft);
+  color: var(--text);
+}
+.os-choice-card .usb-match strong { color: var(--cyan); }
+.os-choice-card p { min-height: 44px; margin: 13px 0 18px; color: var(--muted-strong); font-size: 14px; }
+.os-choice-card p strong { color: var(--amber); }
+.os-choice-card .button { min-height: 46px; font-size: 14px; }
 .rotate-plug { display: flex; flex-direction: column; align-items: center; text-align: center; color: var(--amber); }
 .rotate-plug svg { width: 48px; height: 48px; margin-bottom: 8px; }
 .rotate-plug strong { font-size: 14px; }
@@ -607,6 +633,8 @@ footer { border-top: 1px solid var(--line); }
   .critical-heading { grid-template-columns: 40px 1fr; gap: 12px; }
   .critical-heading > svg { width: 36px; height: 36px; }
   .processor-paths { grid-template-columns: 1fr; padding-block: 24px; text-align: left; }
+  .os-choice-grid { grid-template-columns: 1fr; }
+  .os-choice-card p { min-height: 0; }
   .processor-paths article, .processor-paths article:last-child { min-height: 0; text-align: left; }
   .processor-paths article:last-child p { margin-left: 0; }
   .rotate-plug { padding-block: 6px; border-block: 1px solid rgba(241, 173, 56, 0.22); }

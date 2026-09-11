@@ -48,9 +48,20 @@ USB abziehen, USB-C-Stecker um 180 Grad drehen und neu verbinden
 Beide besitzen einen eigenen Flash und benötigen eigene Firmware. Eine
 Sicherung des einen Prozessors kann den anderen nicht wiederherstellen. Um den
 anderen Prozessor zu erreichen, USB abziehen, den USB-C-Stecker um 180 Grad
-drehen und neu verbinden. Die COM-Nummer beweist nicht, welcher Chip aktiv ist.
+drehen und neu verbinden. Die COM-Nummer allein beweist nicht, welcher Chip
+aktiv ist.
 
-## Aktiven Prozessor erkennen
+## Ohne Kommandozeilenwerkzeug erkennen
+
+| Betriebssystem | ESP32-S3 für RoonPilot | ESP32-U4WDH-Begleitprozessor |
+| --- | --- | --- |
+| Windows, Geräte-Manager → Anschlüsse (COM & LPT) | `Serielles USB-Gerät (COMx)` | `USB-SERIAL CH340 (COMx)` |
+| macOS, Systeminformationen → Hardware → USB | `USB JTAG/serial` | `USB serial` |
+
+Die getrennten Anleitungen für [Windows](installation-windows.md) und
+[macOS](installation-macos.md) zeigen anschließend jeden benötigten Klick.
+
+## Erweiterte Erkennung mit esptool
 
 ```powershell
 python -m esptool --port COM4 chip-id
@@ -59,9 +70,11 @@ python -m esptool --port COM4 chip-id
 - RoonPilot-Seite: meldet **ESP32-S3**.
 - Companion-Seite: meldet einen klassischen **ESP32**.
 
-`COM4` durch den Anschluss im Windows-Geräte-Manager ersetzen. Schlägt die
-Verbindung fehl, alle seriellen Programme schließen, USB abziehen, den
-USB-C-Stecker um 180° drehen, neu verbinden und erneut prüfen.
+Dieser Befehl ist nur für eine erweiterte Diagnose gedacht und gehört nicht zur
+normalen Browser-Installation. `COM4` durch den Anschluss im
+Windows-Geräte-Manager ersetzen. Schlägt die Verbindung fehl, alle seriellen
+Programme schließen, USB abziehen, den USB-C-Stecker um 180° drehen, neu
+verbinden und erneut prüfen.
 
 > [!CAUTION]
 > Stoppen, wenn der gemeldete Chip nicht zu der Datei passt, die geschrieben

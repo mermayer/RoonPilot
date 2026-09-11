@@ -28,23 +28,24 @@ Cloudkonto oder zusätzlicher ständig laufender RoonPilot-Dienst benötigt.
 
 ## Hier beginnen
 
-Wer das Gerät gerade ausgepackt hat, liest diese Seiten in dieser Reihenfolge:
+Zuerst den Computer auswählen. Die beiden Einsteigeranleitungen zeigen den
+genauen USB-Namen und jeden Schritt vom Anstecken bis zum Webinstaller:
 
-1. [Hardware und die beiden Prozessoren](guides/de/hardware-and-two-processors.md)
-2. [RoonPilot sicher installieren](guides/de/installation.md)
-3. [WLAN und Roon erstmals einrichten](guides/de/first-time-setup.md)
-4. [Display, Ring, Touch und Gesten kennenlernen](guides/de/device-controls.md)
+- **[Installation unter Windows →](guides/de/installation-windows.md)**
+- **[Installation unter macOS →](guides/de/installation-macos.md)**
+
+Nach dem Flashen [WLAN und Roon erstmals einrichten](guides/de/first-time-setup.md)
+und danach [Display, Ring, Touch und Gesten kennenlernen](guides/de/device-controls.md).
 
 Der [vollständige Dokumentationsindex](guides/de/README.md) erklärt außerdem
 jeden Bildschirm, jede Webseite, Updates, Wiederherstellung,
 Konfigurationssicherung, Akku-Kalibrierung, Datenschutz und Fehlerbehebung.
 
 > [!IMPORTANT]
-> Das Board enthält **zwei unabhängige ESP-Prozessoren**. Durch Drehen des
-> USB-C-Steckers kann Windows mit einem anderen Prozessor verbunden werden.
-> Vor dem Löschen oder Flashen immer den Chip prüfen. Das ESP32-S3-Factory-
-> Abbild und das Abbild für den klassischen Begleit-ESP32 sind nicht
-> austauschbar.
+> Das Board enthält **zwei unabhängige ESP-Prozessoren**. Die Windows- und
+> macOS-Anleitungen zeigen, welcher USB-Name zum ESP32-S3 gehört. Erscheint der
+> andere Prozessor, USB abziehen, den USB-C-Stecker um 180 Grad drehen und neu
+> verbinden.
 
 Eine [optionale Sicherung der Original-Firmware](guides/de/factory-backup.md)
 ist sinnvoll, wenn später möglicherweise der exakte Auslieferungszustand des
@@ -174,7 +175,9 @@ vollständig zu laden.
 - [Hardware und zwei Prozessoren](guides/de/hardware-and-two-processors.md)
 - [Original-Firmware sichern](guides/de/factory-backup.md)
 - [Standalone- oder Python-esptool unter macOS](guides/de/esptool-macos.md)
-- [Installation](guides/de/installation.md)
+- [Windows oder macOS wählen](guides/de/installation.md)
+- [Installation unter Windows](guides/de/installation-windows.md)
+- [Installation unter macOS](guides/de/installation-macos.md)
 - [Ersteinrichtung](guides/de/first-time-setup.md)
 - [Bedienung am Gerät](guides/de/device-controls.md)
 - [Alle Gerätebildschirme](guides/de/screen-reference.md)

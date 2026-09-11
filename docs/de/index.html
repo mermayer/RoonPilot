@@ -34,8 +34,7 @@
       <a class="brand" href="#uebersicht" aria-label="RoonPilot Startseite"><span class="brand-mark" aria-hidden="true"></span><span>RoonPilot</span></a>
       <nav aria-label="Hauptnavigation">
         <a href="#uebersicht">Übersicht</a>
-        <a href="#vor-dem-flashen">Vor dem Flashen</a>
-        <a href="#installation">Vorbereitung</a>
+        <a href="#installation">Installation</a>
         <a href="firmware/">Webinstaller</a>
         <a href="#funktionen">Funktionen</a>
         <a href="#dokumentation">Dokumentation</a>
@@ -52,14 +51,14 @@
       <div class="hero-copy">
         <h1>Roon-Steuerung,<br>direkt bei der Musik.</h1>
         <p>Eine schnelle, haptische Roon-Fernbedienung für das Waveshare ESP32-S3 Knob Touch LCD 1.8. Keine Bridge, keine Zusatz-App und kein zusätzlicher Dienst erforderlich.</p>
-        <a class="hero-safety" href="#vor-dem-flashen">
+        <a class="hero-safety" href="#installation">
           <svg><use href="#icon-alert"></use></svg>
-          <span><strong>Im Gerät stecken zwei unabhängig programmierbare ESPs.</strong> Vor jedem Löschen oder Flashen muss der ESP32-S3 eindeutig identifiziert werden.</span>
+          <span><strong>Die Installation unterscheidet sich unter Windows und macOS.</strong> Wähle deinen Computer und sieh sofort den richtigen USB-Namen und den kurzen Ablauf.</span>
           <svg><use href="#icon-arrow"></use></svg>
         </a>
         <div class="hero-actions">
           <a class="button primary" href="firmware/"><svg><use href="#icon-usb"></use></svg>Webinstaller öffnen</a>
-          <a class="button secondary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation.md"><svg><use href="#icon-book"></use></svg>Installationsanleitung lesen</a>
+          <a class="button secondary" href="#installation"><svg><use href="#icon-book"></use></svg>Windows oder macOS wählen</a>
         </div>
         <ul class="hero-facts" aria-label="RoonPilot-Vorteile">
           <li>Direkte lokale Roon-Verbindung</li><li>Touch- und Drehsteuerung</li><li>Signierte A/B-Updates</li>
@@ -68,82 +67,69 @@
       <div class="hero-product"><div class="product-aura" aria-hidden="true"></div><img src="../assets/roonpilot-hardware-cutout.png" alt="Originales blaues Waveshare ESP32-S3 Knob Touch LCD 1.8 mit RoonPilot"></div>
     </section>
 
-    <section id="vor-dem-flashen" class="critical-wrap page-width" aria-labelledby="zwei-esps-titel">
+    <section id="installation" class="critical-wrap page-width" aria-labelledby="zwei-esps-titel">
       <div class="critical">
-        <div class="critical-heading"><svg><use href="#icon-alert"></use></svg><div><h2 id="zwei-esps-titel">Stopp: Dieses Board enthält zwei ESPs.</h2><p>Der beidseitig passende USB-C-Stecker kann jeden der beiden unabhängigen Prozessoren verbinden. Für den anderen Prozessor USB abziehen, den Stecker um 180 Grad drehen und neu einstecken. Firmware für den einen Prozessor darf niemals auf den anderen geschrieben werden.</p></div></div>
-        <div class="processor-paths">
-          <article><span class="plug-position">Steckerstellung: ESP32-S3 erkannt</span><h3>ESP32-S3</h3><p>RoonPilot, Display, Touch, Drehring und WLAN. Nur dieser Prozessor wird vom Web Installer beschrieben.</p></article>
-          <div class="rotate-plug" aria-label="USB-C-Stecker abziehen und drehen"><svg><use href="#icon-rotate"></use></svg><strong>Zuerst abziehen</strong><span>USB-C-Stecker um 180° drehen</span></div>
-          <article><span class="plug-position">Nach Drehung des Steckers um 180°</span><h3>Klassischer ESP32</h3><p>Separater Begleitprozessor. Seine optionale Stromspar-Firmware wird manuell installiert; eine 4-MB-Originalsicherung ist freiwillig und erhält einen exakten Rückweg zur Hersteller-Firmware.</p></article>
+        <div class="critical-heading"><svg><use href="#icon-alert"></use></svg><div><h2 id="zwei-esps-titel">Windows oder macOS wählen.</h2><p>Der richtige USB-Name unterscheidet sich je nach Betriebssystem. Nutze die passende Kurzanleitung; für die normale Installation wird kein Kommandozeilenwerkzeug benötigt.</p></div></div>
+        <div class="os-choice-grid">
+          <article class="os-choice-card"><span class="plug-position">Geräte-Manager → Anschlüsse (COM &amp; LPT)</span><h3>Windows</h3><span class="usb-match"><strong>Richtig:</strong> Serielles USB-Gerät (COMx)</span><p><strong>Nicht dieser Eintrag:</strong> USB-SERIAL CH340 (COMx)</p><a class="button primary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation-windows.md">Windows-Anleitung <svg><use href="#icon-arrow"></use></svg></a></article>
+          <article class="os-choice-card"><span class="plug-position">Systeminformationen → Hardware → USB</span><h3>macOS</h3><span class="usb-match"><strong>Richtig:</strong> USB JTAG/serial</span><p><strong>Nicht dieser Eintrag:</strong> USB serial</p><a class="button primary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation-macos.md">macOS-Anleitung <svg><use href="#icon-arrow"></use></svg></a></article>
         </div>
-        <div class="critical-rule"><strong>Eine COM-Nummer identifiziert den Prozessor nicht.</strong><span>Vor jedem Löschen oder Flashen <code>esptool chip-id</code> ausführen. Sofort stoppen, wenn der gemeldete Chip nicht zur Datei passt.</span></div>
-        <a class="text-link amber" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/hardware-and-two-processors.md">Die beiden Prozessoren verstehen <svg><use href="#icon-arrow"></use></svg></a>
+        <div class="critical-rule"><strong>Falscher Name?</strong><span>USB abziehen, den USB-C-Stecker am Gerät um 180 Grad drehen und neu verbinden. Danach den Namen erneut prüfen.</span></div>
+        <a class="text-link amber" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/hardware-and-two-processors.md">Optionaler technischer Hintergrund: die beiden Prozessoren <svg><use href="#icon-arrow"></use></svg></a>
       </div>
     </section>
 
     <section class="content-section page-width" aria-labelledby="vorbereitung-titel">
-      <div class="section-heading"><p class="section-number">01</p><div><h2 id="vorbereitung-titel">Vor der Installation</h2><p>Vier Prüfungen verhindern fast alle vermeidbaren Flash-Probleme.</p></div></div>
+      <div class="section-heading"><p class="section-number">01</p><div><h2 id="vorbereitung-titel">Vier einfache Prüfungen</h2><p>Alles, was vor dem Öffnen des Installers benötigt wird.</p></div></div>
       <ol class="preflight">
-        <li><span class="step-number">1</span><svg><use href="#icon-usb"></use></svg><div><h3>USB-Datenkabel verwenden</h3><p>Ein reines Ladekabel kann das Display versorgen, aber keine Firmware übertragen.</p></div></li>
-        <li><span class="step-number">2</span><svg><use href="#icon-chip"></use></svg><div><h3>Rückweg bewusst wählen</h3><p>Eine optionale vollständige Sicherung bewahrt die Hersteller-Firmware, falls später der exakte Auslieferungszustand wiederhergestellt werden soll.</p></div></li>
-        <li><span class="step-number">3</span><svg><use href="#icon-terminal"></use></svg><div><h3>Aktiven Chip erkennen</h3><p>Serielle Programme schließen, Port ermitteln und <code>python -m esptool --port COMx chip-id</code> ausführen.</p></div></li>
-        <li><span class="step-number">4</span><svg><use href="#icon-check"></use></svg><div><h3>Datei und Prozessor abgleichen</h3><p>Factory-, OTA- und Companion-Abbilder haben unterschiedliche Ziele und sind nicht austauschbar.</p></div></li>
+        <li><span class="step-number">1</span><svg><use href="#icon-usb"></use></svg><div><h3>USB-Datenkabel verwenden</h3><p>Ein reines Ladekabel kann das Display versorgen, aber keine Firmware installieren.</p></div></li>
+        <li><span class="step-number">2</span><svg><use href="#icon-chip"></use></svg><div><h3>Computer auswählen</h3><p>Entweder die Windows- oder die macOS-Anleitung vollständig befolgen.</p></div></li>
+        <li><span class="step-number">3</span><svg><use href="#icon-terminal"></use></svg><div><h3>USB-Namen prüfen</h3><p>Nur mit „Serielles USB-Gerät“ unter Windows oder „USB JTAG/serial“ unter macOS fortfahren.</p></div></li>
+        <li><span class="step-number">4</span><svg><use href="#icon-check"></use></svg><div><h3>Webinstaller verwenden</h3><p>In Chrome oder Edge öffnen und USB bis zum Abschluss verbunden lassen.</p></div></li>
       </ol>
-      <div class="never-rule"><svg><use href="#icon-alert"></use></svg><strong>Niemals löschen oder flashen, nur um auszuprobieren, was passiert.</strong></div>
+      <div class="never-rule"><svg><use href="#icon-alert"></use></svg><strong>Ist der USB-Name falsch, USB abziehen, den Stecker um 180 Grad drehen und neu verbinden.</strong></div>
       <div class="preflight-links">
-        <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/factory-backup.md">Optionale Original-Firmware-Sicherung <svg><use href="#icon-arrow"></use></svg></a>
-        <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation.md">Vollständige Installationsanleitung öffnen <svg><use href="#icon-arrow"></use></svg></a>
+        <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation-windows.md">Windows-Anleitung <svg><use href="#icon-arrow"></use></svg></a>
+        <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation-macos.md">macOS-Anleitung <svg><use href="#icon-arrow"></use></svg></a>
       </div>
     </section>
 
-    <section id="installation" class="install-section">
+    <section id="browser-installer" class="install-section">
       <div class="page-width">
-        <div class="section-heading"><p class="section-number">02</p><div><h2>Den Haupt-ESP32-S3 vorbereiten</h2><p>Vor jeder Installation zuerst die sicherheitskritischen Schritte vollständig durchführen.</p></div></div>
+        <div class="section-heading"><p class="section-number">02</p><div><h2>Im Browser installieren</h2><p>Sobald der richtige USB-Name sichtbar ist, fehlen nur noch wenige Klicks.</p></div></div>
         <div class="install-layout">
-          <aside class="install-warning"><svg><use href="#icon-alert"></use></svg><h3>Nur ESP32-S3</h3><p>Das ESP32-S3-Factory-Abbild darf niemals auf den klassischen Begleit-ESP32 geschrieben werden. Meldet der ausgewählte Port einen klassischen ESP32 oder einen Chip-Fehler, sofort abbrechen.</p><p>Die Factory-Installation löscht den gesamten ESP32-S3 samt Einstellungen. Eine Sicherung der Original-Firmware ist optional und nur für einen möglichen Rückweg zum exakten Auslieferungszustand nötig.</p></aside>
+          <aside class="install-warning"><svg><use href="#icon-alert"></use></svg><h3>Factory-Installation</h3><p>Der Installer ersetzt die bisherige ESP32-S3-Firmware und deren Einstellungen durch RoonPilot.</p><p>Eine Original-Sicherung ist freiwillig. Sie ist nur sinnvoll, wenn später der exakte Herstellerzustand wiederhergestellt werden können soll.</p></aside>
           <div class="installer-panel">
-            <div class="installer-topline"><div><span class="panel-mark"></span><strong>Installations-Checkliste</strong></div><span>ESP32-S3</span></div>
+            <div class="installer-topline"><div><span class="panel-mark"></span><strong>Bereit zur Installation</strong></div><span>ESP32-S3</span></div>
             <dl class="readiness" aria-label="Voraussetzungen für die Installation">
-              <div><dt><svg><use href="#icon-lock"></use></svg>Original-Sicherung</dt><dd class="check">Optional</dd></div>
-              <div><dt><svg><use href="#icon-usb"></use></svg>Geprüfter Chip</dt><dd class="check">ESP32-S3</dd></div>
-              <div><dt><svg><use href="#icon-shield"></use></svg>Stabile Stromversorgung</dt><dd class="check">Erforderlich</dd></div>
+              <div><dt><svg><use href="#icon-usb"></use></svg>USB-Kabel</dt><dd class="check">Datenfähig</dd></div>
+              <div><dt><svg><use href="#icon-check"></use></svg>USB-Name</dt><dd class="check">ESP32-S3-Seite</dd></div>
+              <div><dt><svg><use href="#icon-shield"></use></svg>Browser</dt><dd class="check">Chrome oder Edge</dd></div>
             </dl>
             <div class="installer-critical">
-              <p><strong>Für eine Browser-Installation ist Chromium erforderlich.</strong> Nur einen aktuellen Desktop-Browser wie Chrome, Edge, Chromium, Brave oder Opera mit Web Serial verwenden. Firefox und Safari funktionieren nicht.</p>
-              <p><strong>Factory bedeutet vollständiges Löschen.</strong> Die Installation entfernt die aktuelle ESP32-S3-Firmware, WLAN-Zugangsdaten, Roon-Freigabe und alle Einstellungen. Den Original-Flash nur dann vorher sichern, wenn später der exakte Herstellerzustand wiederhergestellt werden können soll; für RoonPilot ist die Sicherung keine Voraussetzung.</p>
-              <p><strong>Spätere Updates sind einfacher.</strong> Nach der Erstinstallation die lokale RoonPilot-Seite <b>System → Firmware update → Check for updates</b> verwenden. Signierte Online-A/B-Updates behalten die Einstellungen normalerweise bei.</p>
+              <p><strong>Bei der Abfrage Erase device bestätigen.</strong> Vorher muss nichts separat gelöscht werden.</p>
+              <p><strong>USB verbunden lassen,</strong> bis Löschen, Schreiben und Prüfen abgeschlossen sind.</p>
+              <p><strong>Spätere Updates</strong> laufen direkt in RoonPilot unter <b>System → Firmware update</b> und behalten die Einstellungen normalerweise bei.</p>
             </div>
             <div class="installer-action">
               <a class="button primary install-button" href="firmware/"><svg><use href="#icon-usb"></use></svg>Webinstaller öffnen</a>
-              <a class="text-link installer-guide-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation.md">Vollständige Anleitung lesen <svg><use href="#icon-arrow"></use></svg></a>
+              <a class="text-link installer-guide-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation.md">Passende Betriebssystem-Anleitung wählen <svg><use href="#icon-arrow"></use></svg></a>
             </div>
           </div>
         </div>
-        <p class="browser-note"><strong>Browser:</strong> nur aktuelles Desktop-Chromium mit Web Serial. <strong>Factory-Installation:</strong> löscht den ESP32-S3 vollständig. Vor dem Start ESP-IDF Monitor, PuTTY, Arduino Serial Monitor und jedes andere Programm schließen, das den COM-Port geöffnet hat.</p>
+        <p class="browser-note">Vor dem Start jeden seriellen Monitor schließen, der die USB-Verbindung verwenden könnte.</p>
       </div>
     </section>
 
     <section class="content-section page-width" aria-labelledby="abbilder-titel">
-      <div class="section-heading"><p class="section-number">03</p><div><h2 id="abbilder-titel">Drei Abbilder. Drei verschiedene Aufgaben.</h2><p>Immer Dateiname, Zielchip und veröffentlichten SHA-256-Wert prüfen.</p></div></div>
-      <div class="image-table" role="table" aria-label="Aufgaben der RoonPilot-Firmwareabbilder">
-        <div class="image-row table-head" role="row"><span>Abbild</span><span>Verwendung</span><span>Ziel</span><span>Einstellungen</span></div>
-        <div class="image-row" role="row"><strong>ESP32-S3 Factory</strong><span>Neuinstallation oder vollständige Wiederherstellung</span><code>ESP32-S3 · 0x0</code><span>Gelöscht</span></div>
-        <div class="image-row" role="row"><strong>ESP32-S3 OTA</strong><span>Update eines vorhandenen RoonPilot</span><code>Inaktiver A/B-Slot</code><span>Bleiben erhalten</span></div>
-        <div class="image-row" role="row"><strong>Companion Factory</strong><span>Optionale Stromspar-Firmware</span><code>Klassischer ESP32 · 0x0</code><span>Separater Flash</span></div>
+      <div class="section-heading"><p class="section-number">03</p><div><h2 id="abbilder-titel">Nach der ersten Installation</h2><p>Normale Updates benötigen kein USB-Kabel mehr.</p></div></div>
+      <div class="image-table simple" role="table" aria-label="RoonPilot-Installation und Updates">
+        <div class="image-row table-head" role="row"><span>Aufgabe</span><span>Wo</span><span>Was passiert</span><span>Nötig?</span></div>
+        <div class="image-row" role="row"><strong>Erstinstallation</strong><span>Webinstaller mit USB</span><span>Installiert RoonPilot auf dem ESP32-S3</span><span>Einmal</span></div>
+        <div class="image-row" role="row"><strong>Spätere Updates</strong><span>RoonPilot → System</span><span>Lädt und installiert das freigegebene Update</span><span>Wenn angeboten</span></div>
+        <div class="image-row" role="row"><strong>Companion-Firmware</strong><span>Getrennte Expertenanleitung</span><span>Versetzt den ungenutzten zweiten Prozessor in Deep Sleep</span><span>Optional</span></div>
       </div>
-      <div class="companion-note"><div><svg><use href="#icon-chip"></use></svg></div><div><h3>Die Companion-Firmware ist optional und separat.</h3><p>Sie deaktiviert den ungenutzten DAC-Pfad und versetzt den zweiten ESP32 dauerhaft in Deep Sleep. Sie ergänzt keine Roon-Funktion und wird niemals vom ESP32-S3 Web Installer installiert.</p></div></div>
-      <div class="companion-install" id="companion-install">
-        <div class="companion-install-heading"><div><p class="eyebrow">Manueller Vorgang · nur klassischer ESP32</p><h3>Wie wird die Companion-Firmware installiert?</h3></div><a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/companion-firmware.md">Vollständige Anleitung öffnen <svg><use href="#icon-external"></use></svg></a></div>
-        <p class="companion-status"><strong>Vor dem Fortfahren:</strong> RoonPilot funktioniert ohne dieses optionale Abbild. Eine vollständige 4-MB-Originalsicherung ist freiwillig und keine Installationsvoraussetzung; sie ist nur für einen möglichen Rückweg zum exakten Herstellerzustand nötig. Den aktiven Chip und das heruntergeladene Abbild immer prüfen.</p>
-        <ol class="companion-steps">
-          <li><span>1</span><div><strong>Flash-Werkzeug installieren</strong><p>Windows PowerShell mit Python 3.10 oder neuer und Espressif <code>esptool</code> verwenden. Der Befehl lädt das Werkzeug automatisch. <a href="https://docs.espressif.com/projects/esptool/en/latest/esp32/installation.html">Offizielle Anleitung</a> · <a href="https://github.com/espressif/esptool/releases">Standalone-Downloads</a></p><code class="command">py -m pip install --upgrade esptool</code></div></li>
-          <li><span>2</span><div><strong>Begleitprozessor auswählen</strong><p>USB trennen, USB-C-Stecker um 180° drehen, neu verbinden und den Port prüfen.</p><code class="command">py -m esptool --port COM4 chip-id</code><p>Nur fortfahren, wenn ein klassischer <b>ESP32</b> gemeldet wird, niemals ESP32-S3.</p></div></li>
-          <li><span>3</span><div><strong>Optional: alle 4 MB sichern</strong><p>Nur für einen exakten Rückweg zur Hersteller-Firmware den kompletten Original-Flash lesen und seinen SHA-256-Wert sicher aufbewahren.</p><code class="command">py -m esptool --chip esp32 --port COM4 read-flash 0x0 0x400000 companion-original-4mb.bin</code></div></li>
-          <li><span>4</span><div><strong>Prüfen und zusammengeführtes Abbild schreiben</strong><p>Veröffentlichte Prüfsumme vergleichen und die Companion-Datei an Adresse <code>0x0</code> schreiben. Niemals das S3-Factory- oder OTA-Abbild verwenden.</p><code class="command">py -m esptool --chip esp32 --port COM4 --baud 460800 write-flash 0x0 roonpilot-companion-sleep-factory-v1.0.1.bin</code></div></li>
-          <li><span>5</span><div><strong>Zu RoonPilot zurückkehren</strong><p>USB abziehen, den USB-C-Stecker um 180° drehen, neu verbinden und prüfen, dass <code>chip-id</code> nun <b>ESP32-S3</b> meldet.</p></div></li>
-        </ol>
-        <p class="companion-footnote"><code>COM4</code> durch den vom Betriebssystem angezeigten Port ersetzen. Vor jedem Befehl alle seriellen Monitore schließen. Die vollständige Anleitung erklärt außerdem Downloadprüfung, die freiwillige Sicherung, Wiederherstellung und die Grenzen einer Wiederherstellung ohne Originalabbild.</p>
-      </div>
+      <div class="companion-note"><div><svg><use href="#icon-chip"></use></svg></div><div><h3>Die Companion-Firmware ist optional.</h3><p>RoonPilot funktioniert vollständig ohne sie. Wer diese zusätzliche Stromsparmaßnahme bewusst nutzen möchte, folgt der <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/companion-firmware.md">getrennten Companion-Anleitung</a>.</p></div></div>
     </section>
 
     <section class="setup-section"><div class="page-width">
@@ -186,17 +172,18 @@
     </section>
 
     <section id="dokumentation" class="docs-section"><div class="page-width">
-      <div class="section-heading"><p class="section-number">07</p><div><h2>Alles erklärt, was benötigt wird</h2><p>Mit der Hardwarebeschreibung beginnen; die Original-Firmware-Sicherung bleibt als optionaler Rückweg ausführlich erklärt.</p></div></div>
+      <div class="section-heading"><p class="section-number">07</p><div><h2>Alles erklärt, was benötigt wird</h2><p>Mit der Anleitung für den eigenen Computer beginnen. Technischer Hintergrund und freiwillige Rückwege bleiben getrennt.</p></div></div>
       <div class="docs-list">
-        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/hardware-and-two-processors.md"><span>01</span><strong>Hardware &amp; zwei Prozessoren</strong><svg><use href="#icon-arrow"></use></svg></a>
-        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/factory-backup.md"><span>02</span><strong>Optionale Original-Sicherung</strong><svg><use href="#icon-arrow"></use></svg></a>
-        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation.md"><span>03</span><strong>Installation</strong><svg><use href="#icon-arrow"></use></svg></a>
-        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/first-time-setup.md"><span>04</span><strong>Ersteinrichtung</strong><svg><use href="#icon-arrow"></use></svg></a>
-        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/device-controls.md"><span>05</span><strong>Bedienung am Gerät</strong><svg><use href="#icon-arrow"></use></svg></a>
-        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/web-interface.md"><span>06</span><strong>Weboberfläche</strong><svg><use href="#icon-arrow"></use></svg></a>
-        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/firmware-updates-and-recovery.md"><span>07</span><strong>Updates &amp; Wiederherstellung</strong><svg><use href="#icon-arrow"></use></svg></a>
-        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/troubleshooting.md"><span>08</span><strong>Fehlerbehebung</strong><svg><use href="#icon-arrow"></use></svg></a>
-        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/companion-firmware.md"><span>09</span><strong>Companion-Firmware</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation-windows.md"><span>01</span><strong>Installation unter Windows</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation-macos.md"><span>02</span><strong>Installation unter macOS</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/first-time-setup.md"><span>03</span><strong>Ersteinrichtung</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/device-controls.md"><span>04</span><strong>Bedienung am Gerät</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/web-interface.md"><span>05</span><strong>Weboberfläche</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/firmware-updates-and-recovery.md"><span>06</span><strong>Updates &amp; Wiederherstellung</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/troubleshooting.md"><span>07</span><strong>Fehlerbehebung</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/hardware-and-two-processors.md"><span>08</span><strong>Hardware &amp; zwei Prozessoren</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/factory-backup.md"><span>09</span><strong>Optionale Original-Sicherung</strong><svg><use href="#icon-arrow"></use></svg></a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/companion-firmware.md"><span>10</span><strong>Optionale Companion-Firmware</strong><svg><use href="#icon-arrow"></use></svg></a>
       </div>
       <div class="recovery-strip"><div class="recovery-icon"><svg><use href="#icon-usb"></use></svg></div><div><h3>USB-Probleme oder Wiederherstellung?</h3><p>BOOT/RESET nur verwenden, wenn die automatische USB-Verbindung scheitert. Niemals den Stecker drehen und den zweiten Prozessor auf Verdacht flashen.</p></div><a class="button secondary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/firmware-updates-and-recovery.md">Wiederherstellungsanleitung öffnen <svg><use href="#icon-external"></use></svg></a></div>
     </div></section>

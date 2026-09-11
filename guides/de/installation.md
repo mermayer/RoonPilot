@@ -1,115 +1,49 @@
 # RoonPilot installieren
 
-[English](../installation.md) - **Deutsch**
+[English](../installation.md) · **Deutsch**
 
-Zuerst [Hardware und beide Prozessoren](hardware-and-two-processors.md) lesen.
-Eine [Sicherung der Original-Firmware](factory-backup.md) ist optional: Sie ist
-sinnvoll, wenn später möglicherweise der exakte Auslieferungszustand des
-Herstellers wiederhergestellt werden soll, aber RoonPilot setzt sie nicht
-voraus. Wer diesen Rückweg behalten möchte, erstellt die Sicherung vor der
-Factory-Installation, da diese den ESP32-S3 überschreibt.
+Wähle zuerst den Computer, mit dem du installieren möchtest. Jede Anleitung
+beginnt beim Anstecken und zeigt genau den Gerätenamen, an dem der ESP32-S3 zu
+erkennen ist.
 
-## Bereitstellung der Firmware
+## Betriebssystem wählen
 
-- Die Hauptfirmware fuer den ESP32-S3 wird nur mit dem autorisierten Web
-  Installer installiert. Factory- und OTA-Dateien werden nicht als Downloads
-  angeboten. Der [öffentliche RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
-  kann nach eindeutiger Erkennung des ESP32-S3 verwendet werden. Eine vorherige
-  Original-Firmware-Sicherung ist eine persönliche Entscheidung und keine
-  Installationsvoraussetzung.
-- Spaetere Updates installiert RoonPilot direkt aus dem signierten
-  Online-Kanal.
-- Nur die optionale Companion-Sleep-Firmware wird als eigene Datei angeboten.
+### [Installation unter Windows →](installation-windows.md)
 
-Offizielle Abbilder enthalten kein WLAN-Kennwort, keine Entwicklungs-SSID,
-keine Roon-Serveradresse, kein Kopplungstoken und keinen privaten
-Signaturschluessel. Eine saubere Installation startet deshalb den WLAN-AP.
+Unter **Geräte-Manager → Anschlüsse (COM & LPT)** nachsehen:
 
-## ESP32-S3 mit dem Browser installieren
+- **Richtig für RoonPilot:** `Serielles USB-Gerät (COMx)`
+- **Andere Steckerstellung:** `USB-SERIAL CH340 (COMx)`
 
-Der Web Installer funktioniert **nur in einem aktuellen Chromium-
-Desktopbrowser mit Web Serial**, etwa Chrome, Edge, Chromium, Brave oder Opera.
-Firefox, Safari, Smartphones und Tablets funktionieren nicht. Die bereitgestellte
-HTTPS-Installerseite und ein direktes USB-Datenkabel sind erforderlich.
+### [Installation unter macOS →](installation-macos.md)
 
-### Welches Gerät muss unter macOS ausgewählt werden?
+Unter **Systeminformationen → Hardware → USB** nachsehen:
 
-Nach **RoonPilot installieren** bezeichnet Chrome die richtige native
-ESP32-S3-Verbindung normalerweise als **USB JTAG/serial debug unit**. Je nach
-Chrome- und macOS-Version kann stattdessen ein serieller Name angezeigt werden,
-der mit `cu.usbmodem` beginnt. Die eindeutige USB-Kennung lautet Espressif
-Vendor-ID `303A` und Product-ID `1001`.
+- **Richtig für RoonPilot:** `USB JTAG/serial`
+- **Andere Steckerstellung:** `USB serial`
 
-Keinen Eintrag namens `CH340`, `USB2.0-Serial`, `USB Serial` oder
-`cu.wchusbserial` auswählen. Diese Namen gehören zur Schnittstelle des
-separaten Companion-ESP32. Bietet Chrome nur diese Schnittstelle an, das Kabel
-abziehen, den USB-C-Stecker am Gerät um 180 Grad drehen, wieder verbinden und
-den Installationsdialog erneut öffnen.
+Erscheint das jeweils andere Gerät, USB abziehen, den USB-C-Stecker am
+RoonPilot-Gerät um 180 Grad drehen und neu verbinden. Den Stecker nicht drehen,
+solange er noch eingesteckt ist.
 
-1. ESP-IDF Monitor, PuTTY, Arduino Serial Monitor und alle Programme schliessen,
-   die den COM-Port geoeffnet haben koennten.
-2. Board anschliessen, Port bestimmen und bei Unsicherheit mit `esptool chip-id`
-   eindeutig **ESP32-S3** bestaetigen.
-3. Den [autorisierten RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
-   mit Chrome oder Edge oeffnen.
-4. Zwei-Prozessor-Warnung lesen. Bestaetigen, dass der ausgewaehlte Prozessor
-   der ESP32-S3 ist und eine Factory-Installation dessen Firmware und
-   Einstellungen loescht.
-5. RoonPilot-Lizenz fuer private Binaernutzung lesen und akzeptieren.
-6. **RoonPilot installieren** waehlen, den geprueften Port oeffnen und das
-   vollstaendige Loeschen bestaetigen.
-7. USB waehrend Loeschen, Schreiben und Verifizieren nicht trennen.
-8. USB abziehen und den Stecker ohne Drehung wieder einstecken, damit der
-   ESP32-S3 ausgewählt bleibt.
-9. RoonPilot-Startbildschirm abwarten und mit dem Einrichtungs-AP fortfahren.
+## Das wird benötigt
 
-<img src="../../assets/web-ui/11-usb-web-installer.png" alt="RoonPilot USB Web Installer" width="100%">
+- das Waveshare ESP32-S3-Knob-Touch-LCD-1.8;
+- ein USB-Datenkabel, kein reines Ladekabel;
+- ein aktueller Desktopbrowser Chrome oder Edge;
+- der [RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/).
 
-> [!WARNING]
-> Der beidseitig passende USB-C-Stecker kann einen von zwei unabhängigen
-> Prozessoren verbinden. Zum Wechsel USB abziehen, den Stecker um 180 Grad drehen
-> und neu verbinden. Der Web Installer ist ausschließlich für den ESP32-S3. Eine Factory-Installation
-> loescht dort Firmware, WLAN, Roon-Freigabe, Einstellungen und Kalibrierdaten.
+Eine Sicherung der Original-Firmware ist **freiwillig**. Sie ist nur sinnvoll,
+wenn später vielleicht der exakte Auslieferungszustand des Herstellers
+wiederhergestellt werden soll. Für Installation und Betrieb von RoonPilot wird
+sie nicht benötigt.
 
-### Muss vorher separat gelöscht werden?
+## Nach der Installation
 
-Nein. Es ist weder ein separates Löschkommando noch ein vorheriger
-Löschvorgang erforderlich. Bei einer Erstinstallation oder vollständigen
-Wiederherstellung im Web Installer **Erase device** auswählen beziehungsweise
-bestätigen. Das RoonPilot-Manifest fordert diese Auswahl absichtlich an. Das
-Löschen im Installer und das unmittelbar anschließende Schreiben des
-Factory-Abbilds bilden zusammen den unterstützten Ablauf für eine saubere
-Installation. So bleiben keine alten NVS-, WLAN- oder Konfigurationsdaten in
-nicht überschriebenen Flashbereichen erhalten.
+Mit der [Ersteinrichtung](first-time-setup.md) fortfahren, um WLAN zu verbinden,
+RoonPilot in Roon freizugeben und eine Zone auszuwählen.
 
-Gelöscht wird nur der primäre ESP32-S3, nicht der Companion-ESP32. Auf dem
-ESP32-S3 gehen dabei jedoch alle WLAN-Daten, die Roon-Freigabe, Zonenwahl,
-Einstellungen und die Akkukalibrierung verloren. Für ein normales Onlineupdate
-unter **System - Firmware update** niemals löschen und nicht zum
-Factory-Webinstaller zurückkehren.
-
-## Spaetere Updates
-
-Die IP-Adresse von RoonPilot oeffnen und **System - Firmware update** waehlen.
-Mit **Check for updates** und danach **Download and install** wird eine
-freigegebene signierte Version installiert. RoonPilot schreibt den inaktiven
-A/B-Slot und behaelt die Konfiguration normalerweise bei. Ein manueller Upload
-der Hauptfirmware ist absichtlich nicht vorhanden.
-
-Fuer normale Updates nicht zum Factory-Installer zurueckkehren, weil er immer
-die komplette ESP32-S3-Konfiguration loescht.
-
-## Optionale Companion-Installation
-
-Die Companion-Sleep-Firmware ist fuer RoonPilot nicht erforderlich. Sie
-deaktiviert den ungenutzten DAC-Pfad und versetzt den zweiten Prozessor in Deep
-Sleep. Sie wird getrennt mit `esptool` installiert. Eine gepruefte
-vollstaendige 4-MB-Sicherung ist freiwillig und nur notwendig, wenn ein
-Rueckweg zur exakten Original-Firmware des Begleitprozessors erhalten bleiben
-soll.
-
-Die vollstaendige Anleitung fuer Werkzeug, Download, Pruefsumme,
-Chiperkennung, Sicherung, Installation und Wiederherstellung steht unter
-[Companion-Firmware](companion-firmware.md).
-
-Danach folgt die [Ersteinrichtung](first-time-setup.md).
+Mehr Details stehen unter [Hardware und die beiden Prozessoren](hardware-and-two-processors.md),
+in der [optionalen Sicherungsanleitung](factory-backup.md) und unter
+[Fehlerbehebung](troubleshooting.md). Kommandozeilenwerkzeuge gehören nicht zur
+normalen Browser-Installation.

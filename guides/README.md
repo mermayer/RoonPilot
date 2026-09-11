@@ -7,25 +7,31 @@ never opened a serial port and has just taken the hardware out of its box.
 
 ## First installation path
 
-1. [Hardware and the two processors](hardware-and-two-processors.md)
-2. [Installation](installation.md)
-3. [First-time setup](first-time-setup.md)
-4. [Device controls](device-controls.md)
-5. [Beginner test plan](test-plan.md)
+Choose your computer first:
+
+- **[Install with Windows →](installation-windows.md)**
+- **[Install with macOS →](installation-macos.md)**
+
+Both guides begin with the cable and the USB name shown by the operating
+system. No command-line tool is required. Afterwards continue with
+[First-time setup](first-time-setup.md), [Device controls](device-controls.md)
+and the [Beginner test plan](test-plan.md).
 
 If returning to the exact manufacturer firmware may matter later, first follow
 the [optional factory-backup guide](factory-backup.md). This backup is not a
 condition for installing RoonPilot. After identifying the ESP32-S3, continue
 with the [public RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/).
 
-Do not skip the hardware page. The unusual USB-C processor selection makes
-chip identification part of the installation rather than optional background
-reading.
+The technical explanation of the two processors is available separately under
+[Hardware and the two processors](hardware-and-two-processors.md).
 
 ## Complete reference
 
 | Topic | Document |
 | --- | --- |
+| Choose an installation operating system | [Windows or macOS](installation.md) |
+| Beginner installation on Windows | [Windows installation](installation-windows.md) |
+| Beginner installation on macOS | [macOS installation](installation-macos.md) |
 | Every display view | [Screen reference](screen-reference.md) |
 | Every local configuration page | [Web interface](web-interface.md) |
 | Web Installer, signed online updates and recovery | [Firmware updates and recovery](firmware-updates-and-recovery.md) |

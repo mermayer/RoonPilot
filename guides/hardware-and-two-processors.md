@@ -52,10 +52,20 @@ Unplug USB, turn the USB-C plug 180 degrees and reconnect
 They do not share a firmware image. They do not share flash storage. A backup of
 one processor cannot restore the other. To reach the other processor, unplug
 USB, turn the USB-C plug by 180 degrees and reconnect it. Windows may then show
-the same COM number or a different one, so the COM number is not proof of which
-chip is active.
+the same COM number or a different one, so the COM number alone is not proof of
+which chip is active.
 
-## How to identify the active processor
+## Identify it without command-line tools
+
+| Operating system | ESP32-S3 for RoonPilot | ESP32-U4WDH companion |
+| --- | --- | --- |
+| Windows, Device Manager → Ports (COM & LPT) | `USB Serial Device (COMx)` | `USB-SERIAL CH340 (COMx)` |
+| macOS, System Information → Hardware → USB | `USB JTAG/serial` | `USB serial` |
+
+The operating-system-specific [Windows](installation-windows.md) and
+[macOS](installation-macos.md) guides show what to click next.
+
+## Advanced identification with esptool
 
 With Espressif's tools installed, use one of these read-only commands:
 
@@ -68,9 +78,10 @@ Expected identities:
 - the RoonPilot side reports an **ESP32-S3**;
 - the companion side reports a classic **ESP32**.
 
-Replace `COM4` with the port shown in Windows Device Manager. If the command
-cannot connect, close every serial terminal, unplug the cable, rotate the USB-C
-plug 180 degrees, reconnect it and try again.
+This command is optional for advanced diagnostics; it is not part of the normal
+browser installation. Replace `COM4` with the port shown in Windows Device
+Manager. If the command cannot connect, close every serial terminal, unplug the
+cable, rotate the USB-C plug 180 degrees, reconnect it and try again.
 
 > [!CAUTION]
 > Stop if the reported chip is not the chip named by the file you intend to

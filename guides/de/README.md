@@ -7,11 +7,15 @@ Anschlüssen oder Firmware-Installation voraus.
 
 ## Weg zur ersten Installation
 
-1. [Hardware und die beiden Prozessoren](hardware-and-two-processors.md)
-2. [RoonPilot installieren](installation.md)
-3. [Ersteinrichtung](first-time-setup.md)
-4. [Bedienung am Gerät](device-controls.md)
-5. [Testplan für Einsteiger](test-plan.md)
+Zuerst den Computer auswählen:
+
+- **[Installation unter Windows →](installation-windows.md)**
+- **[Installation unter macOS →](installation-macos.md)**
+
+Beide Anleitungen beginnen beim Kabel und dem vom Betriebssystem angezeigten
+USB-Namen. Ein Kommandozeilenwerkzeug wird nicht benötigt. Danach folgen
+[Ersteinrichtung](first-time-setup.md), [Bedienung am Gerät](device-controls.md)
+und der [Testplan für Einsteiger](test-plan.md).
 
 Wenn später möglicherweise der exakte Auslieferungszustand des Herstellers
 wiederhergestellt werden soll, vorher die
@@ -21,16 +25,16 @@ geht es mit dem
 [öffentlichen RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
 weiter.
 
-Die Hardwareseite sollte nicht übersprungen werden. Der beidseitig passende
-USB-C-Stecker kann zwei unabhängige Prozessoren verbinden; zum Wechsel muss er
-abgezogen, um 180 Grad gedreht und neu eingesteckt werden. Deshalb ist die
-Chiperkennung Bestandteil der Installation und keine optionale
-Hintergrundinformation.
+Die technische Erklärung der beiden Prozessoren steht getrennt unter
+[Hardware und die beiden Prozessoren](hardware-and-two-processors.md).
 
 ## Vollständige Referenz
 
 | Thema | Dokument |
 | --- | --- |
+| Installations-Betriebssystem wählen | [Windows oder macOS](installation.md) |
+| Einsteigerinstallation unter Windows | [Windows-Installation](installation-windows.md) |
+| Einsteigerinstallation unter macOS | [macOS-Installation](installation-macos.md) |
 | Jede Displayansicht | [Bildschirmreferenz](screen-reference.md) |
 | Jede lokale Konfigurationsseite | [Weboberfläche](web-interface.md) |
 | Factory-Installation und signierte Online-Updates | [Firmwareupdates und Wiederherstellung](firmware-updates-and-recovery.md) |

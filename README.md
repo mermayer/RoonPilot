@@ -27,22 +27,23 @@ always-on RoonPilot service.
 
 ## Start here
 
-If the device has just arrived, read these pages in order:
+Choose the computer you will use. The two beginner guides show the exact USB
+name and every step from connecting the cable to opening the Web Installer:
 
-1. [Know the hardware and its two processors](guides/hardware-and-two-processors.md)
-2. [Install RoonPilot safely](guides/installation.md)
-3. [Complete Wi-Fi and Roon first-time setup](guides/first-time-setup.md)
-4. [Learn the display, ring, touch and gestures](guides/device-controls.md)
+- **[Install with Windows →](guides/installation-windows.md)**
+- **[Install with macOS →](guides/installation-macos.md)**
+
+After flashing, [complete Wi-Fi and Roon first-time setup](guides/first-time-setup.md),
+then [learn the display, ring, touch and gestures](guides/device-controls.md).
 
 The complete [documentation index](guides/README.md) also covers every screen,
 every web page, updates, recovery, configuration backup, battery calibration,
 privacy and troubleshooting.
 
 > [!IMPORTANT]
-> This board contains **two independent ESP processors**. Rotating the USB-C
-> plug can connect Windows to a different processor. Never erase or flash until
-> the chip identity has been checked. The ESP32-S3 Factory image and the classic
-> ESP32 companion image are not interchangeable.
+> This board contains **two independent ESP processors**. The Windows and macOS
+> guides show which USB name belongs to the ESP32-S3. If the other processor is
+> shown, unplug USB, turn the USB-C plug by 180 degrees and reconnect it.
 
 An [optional factory backup](guides/factory-backup.md) is useful if you may want
 to restore the exact firmware state in which the manufacturer delivered the
@@ -227,7 +228,9 @@ companion ESP32. Do not guess a file or flash an image based only on its size.
 - [Hardware and two processors](guides/hardware-and-two-processors.md)
 - [Factory backup](guides/factory-backup.md)
 - [Using standalone or Python esptool on macOS](guides/esptool-macos.md)
-- [Installation](guides/installation.md)
+- [Choose Windows or macOS](guides/installation.md)
+- [Installation with Windows](guides/installation-windows.md)
+- [Installation with macOS](guides/installation-macos.md)
 - [First-time setup](guides/first-time-setup.md)
 - [Device controls](guides/device-controls.md)
 - [All device screens](guides/screen-reference.md)
