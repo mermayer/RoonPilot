@@ -96,9 +96,10 @@ RoonPilot does not use the second ESP32 for Roon. The optional companion image:
 - enters indefinite deep sleep without a wake source.
 
 Its purpose is to remove avoidable background activity and power consumption.
-It is deliberately tiny and deliberately separate. A complete original 4 MB
-backup is optional; make one only if you may later want to restore the exact
-manufacturer-delivered companion firmware.
+It is deliberately tiny and deliberately separate. It has its own
+[Companion Web Installer](companion-firmware.md), restricted to classic ESP32
+hardware. A complete original 4 MB backup is optional; make one only if you may
+later want to restore the exact manufacturer-delivered companion firmware.
 
 ## Audio hardware
 

@@ -35,8 +35,12 @@ The technical explanation of the two processors is available separately under
 | Every display view | [Screen reference](screen-reference.md) |
 | Every local configuration page | [Web interface](web-interface.md) |
 | Web Installer, signed online updates and recovery | [Firmware updates and recovery](firmware-updates-and-recovery.md) |
-| Optional second-ESP low-power image | [Companion firmware](companion-firmware.md) |
-| Optional original-firmware backup | [Factory backup](factory-backup.md) |
+| Optional second-ESP low-power image and Web Installer | [Companion firmware](companion-firmware.md) |
+| Companion installation on Windows | [Windows Companion installation](companion-installation-windows.md) |
+| Companion installation on macOS | [macOS Companion installation](companion-installation-macos.md) |
+| Optional original-firmware backup | [Choose Windows or macOS](factory-backup.md) |
+| Optional backup with Windows | [Windows factory backup](factory-backup-windows.md) |
+| Optional backup with macOS | [macOS factory backup](factory-backup-macos.md) |
 | Standalone/Python esptool on macOS | [Using esptool on macOS](esptool-macos.md) |
 | Settings backup | [Configuration export and import](configuration-backup.md) |
 | Battery limitations and calibration | [Battery and runtime](battery-and-runtime.md) |
@@ -55,6 +59,8 @@ The technical explanation of the two processors is available separately under
 - **Companion ESP32:** a second, independent classic ESP32 on the same board.
 - **Factory installation:** complete ESP32-S3 erase/install performed only by
   the authorized Web Installer.
+- **Companion installation:** optional classic-ESP32 erase/install performed by
+  its separate chip-restricted Web Installer.
 - **OTA update:** signed application update fetched and installed by an
   existing RoonPilot; no manual firmware file is offered.
 - **AP:** a temporary Wi-Fi access point created by RoonPilot for setup.

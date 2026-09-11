@@ -56,6 +56,14 @@ Der andere Prozessor des Boards wird dabei nicht gelöscht.
 2. Den RoonPilot-Startbildschirm abwarten.
 3. Mit der [Ersteinrichtung](first-time-setup.md) fortfahren.
 
+## Optional: zweiten Prozessor in Deep Sleep versetzen
+
+RoonPilot funktioniert vollständig ohne diesen Schritt. Soll der ungenutzte
+Companion-ESP32 in einen definierten Stromsparzustand versetzt werden, folgt
+danach der getrennte
+[Companion-Webinstaller für macOS](companion-installation-macos.md).
+Auch dafür sind keine Terminalbefehle und kein esptool nötig.
+
 ## Wenn der Installer keine Verbindung herstellt
 
 - Prüfen, ob das Kabel Daten übertragen kann.
@@ -64,6 +72,7 @@ Der andere Prozessor des Boards wird dabei nicht gelöscht.
 - Unter [Fehlerbehebung](troubleshooting.md) stehen weitere Schritte.
 
 Die separate [esptool-Anleitung für macOS](esptool-macos.md) ist nur für
-erweiterte Diagnose, Sicherungen und die optionale Companion-Firmware gedacht.
-Sie gehört nicht zur normalen RoonPilot-Installation. Eine
+erweiterte Diagnose, freiwillige Original-Flash-Sicherungen und manuelle
+Wiederherstellung gedacht. Sie gehört zu keiner der beiden normalen
+Browser-Installationen. Eine
 [Sicherung der Original-Firmware](factory-backup.md) ist freiwillig.

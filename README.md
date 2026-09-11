@@ -52,6 +52,10 @@ identified the ESP32-S3, open the public
 [RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/) in a
 current desktop Chromium browser.
 
+The second processor's low-power firmware is also easy to install and remains
+completely optional: use the separate
+[Companion Web Installer](https://mermayer.github.io/RoonPilot/firmware/companion/).
+
 ## Why it feels different
 
 - **Real volume control:** use the outer rotary ring instead of a small slider.
@@ -189,7 +193,8 @@ but no separate RoonPilot process is installed on the server.
 
 The main ESP32-S3 runs RoonPilot. The companion ESP32 receives a small optional
 low-power firmware so it does not waste energy while RoonPilot is in use. It is
-not needed for Roon communication and is never flashed by the main Web Installer.
+not needed for Roon communication. Its separate Web Installer accepts classic
+ESP32 hardware only; the main Web Installer accepts ESP32-S3 hardware only.
 
 Purchase links and exact variants are listed in
 [Hardware and the two processors](guides/hardware-and-two-processors.md).
@@ -213,20 +218,25 @@ RoonPilot provides three deliberately separate paths:
 
 - **Factory image:** complete ESP32-S3 installation or recovery from address 0.
 - **OTA image:** upload through an already running RoonPilot.
-- **Companion image:** classic ESP32 only; an original 4 MB backup is optional
-  and useful only for restoring the exact manufacturer firmware later.
+- **Companion image:** separate browser installation for the classic ESP32
+  only; an original 4 MB backup is optional and useful only for restoring the
+  exact manufacturer firmware later.
 
-The installation guide explains chip identification and links to the optional
-full-device backup procedure. The browser installer never writes the classic
-companion ESP32. Do not guess a file or flash an image based only on its size.
+The installation guides explain the operating system's USB names and link to
+the optional full-device backup procedure. The main and Companion installers
+use separate chip-restricted manifests. Do not guess a file or flash an image
+based only on its size.
 
-**Ready to install:** [Open the authorized RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/).
+**Ready to install:** [Main RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/) · [Optional Companion Web Installer](https://mermayer.github.io/RoonPilot/firmware/companion/)
 
 ## Documentation
 
 - [Documentation index](guides/README.md)
 - [Hardware and two processors](guides/hardware-and-two-processors.md)
 - [Factory backup](guides/factory-backup.md)
+- [Optional Companion firmware](guides/companion-firmware.md)
+- [Companion installation with Windows](guides/companion-installation-windows.md)
+- [Companion installation with macOS](guides/companion-installation-macos.md)
 - [Using standalone or Python esptool on macOS](guides/esptool-macos.md)
 - [Choose Windows or macOS](guides/installation.md)
 - [Installation with Windows](guides/installation-windows.md)

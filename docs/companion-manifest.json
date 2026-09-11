@@ -1,0 +1,16 @@
+{
+  "name": "RoonPilot Companion Sleep",
+  "version": "1.0.1",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "firmware/roonpilot-companion-sleep-factory-v1.0.1.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}

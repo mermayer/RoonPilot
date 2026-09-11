@@ -6,13 +6,13 @@ This guide is for the few RoonPilot procedures that require direct serial flash
 access:
 
 - making an optional backup of the original Waveshare firmware;
-- installing or restoring the optional firmware of RoonPilot's internal
-  Companion ESP32.
+- manually restoring a previously saved original image or performing advanced
+  serial diagnostics.
 
-The normal RoonPilot ESP32-S3 Factory installation uses the browser-based Web
-Installer and does **not** require Python or esptool. Normal later RoonPilot and
-IR Bridge updates are installed online from RoonPilot and also do not require
-esptool.
+The normal RoonPilot ESP32-S3 Factory installation and the optional Companion
+ESP32 installation each use their own browser-based Web Installer. Neither
+requires Python or esptool. Normal later RoonPilot and IR Bridge updates are
+installed online from RoonPilot and also do not require esptool.
 
 ## Recommended choice
 
@@ -302,5 +302,5 @@ use Path A rather than weakening macOS security or building a toolchain.
 ## Continue with the correct procedure
 
 - [Optional original-firmware backup](factory-backup.md)
-- [Optional Companion ESP32 firmware](companion-firmware.md)
+- [Optional Companion ESP32 Web Installer](companion-firmware.md)
 - [Main RoonPilot browser installation](installation.md)

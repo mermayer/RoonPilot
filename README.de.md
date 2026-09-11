@@ -55,6 +55,10 @@ der öffentliche
 [RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/) in
 einem aktuellen Chromium-Desktopbrowser geöffnet werden.
 
+Auch die Stromspar-Firmware des zweiten Prozessors lässt sich einfach
+installieren und bleibt vollständig freiwillig. Dafür gibt es den getrennten
+[Companion-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/companion/).
+
 ## Was RoonPilot besonders macht
 
 - Lautstärkeregelung über den kompletten äußeren Drehring. RoonPilot erkennt
@@ -132,17 +136,17 @@ Konfigurationsexport/-import sowie lokale und signierte Online-Updates.
   Adresse `0x0`; löscht den kompletten ESP32-S3 und alle Einstellungen.
 - **OTA-Abbild:** Update eines bereits laufenden RoonPilot über dessen lokale
   Firmwareseite; Einstellungen bleiben normalerweise erhalten.
-- **Companion-Abbild:** ausschließlich für den klassischen zweiten ESP32; eine
-  Original-Sicherung ist freiwillig und nur für einen späteren Rückweg zum
-  exakten Herstellerzustand nötig.
+- **Companion-Abbild:** getrennte Browser-Installation ausschließlich für den
+  klassischen zweiten ESP32; eine Original-Sicherung ist freiwillig und nur
+  für einen späteren Rückweg zum exakten Herstellerzustand nötig.
 
 Der USB-Web-Installer funktioniert nur mit einem aktuellen Chromium-
 Desktopbrowser mit Web Serial, zum Beispiel Chrome oder Edge. Nach der ersten
 Factory-Installation erfolgen normale Updates über **System → Firmware update
-→ Check for updates** auf der Geräte-Webseite. Der Web-Installer beschreibt
-niemals den Begleit-ESP32.
+→ Check for updates** auf der Geräte-Webseite. Haupt- und Companion-Installer
+verwenden getrennte, auf die jeweilige Prozessorfamilie beschränkte Manifeste.
 
-**Bereit zur Installation:** [Autorisierten RoonPilot-Webinstaller öffnen](https://mermayer.github.io/RoonPilot/de/firmware/).
+**Bereit zur Installation:** [RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/) · [Optionaler Companion-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/companion/)
 
 ## Hardware
 
@@ -157,6 +161,10 @@ niemals den Begleit-ESP32.
 | Begleitprozessor | ESP32-U4WDH mit unabhängigem 4-MB-Flash |
 | Weitere Hardware | PCM5100A-DAC, Mikrofon, Vibrationsmotor, microSD |
 | Stromversorgung | USB-C oder optionaler interner 3,7-V-/800-mAh-Akku |
+
+Der ESP32-S3 führt RoonPilot aus. Für den ungenutzten Begleitprozessor steht
+eine kleine freiwillige Stromspar-Firmware mit eigenem Webinstaller bereit. Sie
+ist für RoonPilot und die Roon-Kommunikation nicht erforderlich.
 
 Die vom ESP32-S3 gemessene Spannung stammt von der geregelten Systemschiene,
 nicht direkt vom Li-Ion-Akku. Eine ehrliche exakte Prozent- oder
@@ -174,6 +182,9 @@ vollständig zu laden.
 - [Dokumentationsindex](guides/de/README.md)
 - [Hardware und zwei Prozessoren](guides/de/hardware-and-two-processors.md)
 - [Original-Firmware sichern](guides/de/factory-backup.md)
+- [Optionale Companion-Firmware](guides/de/companion-firmware.md)
+- [Companion-Installation unter Windows](guides/de/companion-installation-windows.md)
+- [Companion-Installation unter macOS](guides/de/companion-installation-macos.md)
 - [Standalone- oder Python-esptool unter macOS](guides/de/esptool-macos.md)
 - [Windows oder macOS wählen](guides/de/installation.md)
 - [Installation unter Windows](guides/de/installation-windows.md)

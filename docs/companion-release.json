@@ -10,7 +10,7 @@
                   "size":  176032,
                   "sha256":  "4959cec1d9baf769359c21e24dbd63f6951466fd05699eec7d9c37661b92b00f"
               },
-    "browser_installable":  false,
+    "browser_installable":  true,
     "backup_required":  false,
     "backup_recommended_for_factory_restore":  true
 }

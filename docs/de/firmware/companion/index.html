@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="data:,">
+  <title>RoonPilot Companion-Firmware-Installer</title>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+  <style>
+    :root{color-scheme:dark;--bg:#080a0b;--card:#111415;--line:#34393a;--text:#f2ede5;--muted:#aaa9a4;--cyan:#4fe0e2;--amber:#f1ad38;--danger:#ff7169;--green:#65d7a4}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#17303355,transparent 30rem),var(--bg);color:var(--text);font:16px/1.55 Inter,system-ui,sans-serif}.wrap{width:min(920px,calc(100% - 34px));margin:auto;padding:54px 0 80px}h1{font-size:clamp(38px,7vw,64px);line-height:1.02;margin:8px 0 18px;letter-spacing:-.04em}h2{font-size:25px;margin:0 0 12px}h3{margin:0 0 9px}p{color:var(--muted)}a{color:var(--cyan)}code{color:var(--text);font-family:ui-monospace,Consolas,monospace}.top-links,.actions{display:flex;gap:16px;flex-wrap:wrap}.top-links{margin-bottom:30px}.eyebrow{color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.optional{padding:16px 18px;border-left:4px solid var(--green);background:#65d7a40d;margin:26px 0}.optional strong{color:var(--green)}.card{margin:22px 0;padding:24px;border:1px solid var(--line);border-radius:11px;background:var(--card)}.purpose-grid,.os-grid,.after-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.purpose-grid article,.os-card,.after-grid article{padding:17px;border:1px solid #4fe0e233;border-radius:8px;background:#4fe0e208}.purpose-grid strong{display:block;color:var(--cyan);margin-bottom:5px}.purpose-grid p,.os-card p,.after-grid p{margin:0;font-size:14px}.os-grid{grid-template-columns:1fr 1fr}.device-name{display:block;margin:12px 0;padding:11px 13px;border:1px solid #4fe0e255;border-radius:6px;background:var(--bg);font-weight:750}.wrong{color:var(--amber)!important}.backup{padding:19px 22px;background:#ffffff03}.backup .eyebrow{color:var(--muted)}.backup h2{font-size:21px}.button,.install-button{display:inline-flex;min-height:46px;align-items:center;justify-content:center;margin-top:11px;padding:0 17px;border:1px solid var(--cyan);border-radius:7px;background:transparent;color:var(--cyan);font-weight:750;text-decoration:none}.button.primary,.install-button{border:0;background:var(--cyan);color:#061112}.confirm{display:flex;gap:12px;align-items:flex-start;margin:17px 0;color:var(--muted)}.confirm input{margin-top:5px;accent-color:var(--cyan)}.install-button:disabled{cursor:not-allowed;opacity:.4}.inline-warning{display:block;margin-top:12px;color:var(--amber)}.image-info{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);color:#8e9795;font:12px/1.55 ui-monospace,Consolas,monospace;overflow-wrap:anywhere}.after-grid{grid-template-columns:1fr 1fr}.safety{color:var(--amber);font-weight:700}.why{border-color:#4fe0e255;background:linear-gradient(135deg,#4fe0e210,var(--card) 65%)}@media(max-width:700px){.wrap{padding-top:30px}.purpose-grid,.os-grid,.after-grid{grid-template-columns:1fr}h1{font-size:40px}.card{padding:19px}.button{width:100%}}
+  </style>
+</head>
+<body><main class="wrap">
+  <nav class="top-links" aria-label="Seitenlinks"><a href="../">Hauptfirmware-Installer</a><a href="../../">Projektseite</a><a href="../../../firmware/companion/">English</a><strong>Deutsch</strong></nav>
+  <p class="eyebrow">Separater ESP32-U4WDH-Prozessor</p>
+  <h1>Companion-Firmware-Installer</h1>
+  <p>Dieser Installer ist ausschließlich für den zweiten, klassischen ESP32 im Waveshare ESP32-S3-Knob-Touch-LCD-1.8 bestimmt. Er installiert niemals die RoonPilot-Displayfirmware.</p>
+
+  <div class="optional"><strong>Optional.</strong> RoonPilot funktioniert vollständig ohne diese Firmware. Installiere sie nur, wenn der ungenutzte Begleitprozessor in einen definierten Stromsparzustand versetzt werden soll.</div>
+
+  <section class="card" aria-labelledby="purpose-title">
+    <p class="eyebrow">Ihre Aufgabe</p>
+    <h2 id="purpose-title">Eine kleine Firmware, drei gezielte Maßnahmen</h2>
+    <div class="purpose-grid">
+      <article><strong>Ungenutzten DAC stummschalten</strong><p>Hält den PCM5100A über dessen XSMT-Steuerung stumm, während RoonPilot als Controller verwendet wird.</p></article>
+      <article><strong>Gemeinsame Signale freigeben</strong><p>Lässt Audio-, Encoder- und serielle Leitungen als inaktive Eingänge, statt sie anzusteuern.</p></article>
+      <article><strong>Deep Sleep aktivieren</strong><p>Versetzt den ESP32-U4WDH ohne Aufwachquelle dauerhaft in Deep Sleep.</p></article>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="identify-title">
+    <p class="eyebrow">Schritt 1</p>
+    <h2 id="identify-title">Companion-Seite verbinden</h2>
+    <p>Ein USB-Datenkabel verwenden. Der benötigte USB-Name unterscheidet sich je nach Betriebssystem:</p>
+    <div class="os-grid">
+      <article class="os-card">
+        <h3>Windows</h3>
+        <p><strong>Geräte-Manager → Anschlüsse (COM &amp; LPT)</strong> öffnen.</p>
+        <span class="device-name">✓ USB-SERIAL CH340 (COMx)</span>
+        <p class="wrong">Nicht dieser Eintrag: Serielles USB-Gerät (COMx)</p>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/companion-installation-windows.md">Ausführliche Windows-Anleitung →</a>
+      </article>
+      <article class="os-card">
+        <h3>macOS</h3>
+        <p><strong>Systeminformationen → Hardware → USB</strong> öffnen.</p>
+        <span class="device-name">✓ USB serial</span>
+        <p class="wrong">Nicht dieser Eintrag: USB JTAG/serial</p>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/companion-installation-macos.md">Ausführliche macOS-Anleitung →</a>
+      </article>
+    </div>
+    <p class="safety">Erscheint der falsche Name, USB abziehen, den USB-C-Stecker am RoonPilot-Gerät um 180 Grad drehen und neu verbinden.</p>
+  </section>
+
+  <section class="card backup" aria-labelledby="backup-title">
+    <p class="eyebrow">Freiwillige Information</p>
+    <h2 id="backup-title">Sicherung der Original-Firmware</h2>
+    <p>Die meisten Nutzer können diesen Abschnitt überspringen. Eine vollständige Sicherung ist nur nötig, wenn später möglicherweise exakt der Auslieferungszustand wiederhergestellt werden soll. Der getrennte technische Ablauf benötigt <code>esptool</code>, weil ein Browser das vorhandene Flash nicht als Datei sichern kann.</p>
+    <div class="actions"><a class="button" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/factory-backup-windows.md">Backup unter Windows</a><a class="button" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/factory-backup-macos.md">Backup unter macOS</a></div>
+  </section>
+
+  <section class="card" aria-labelledby="install-title">
+    <p class="eyebrow">Schritt 2 · Chrome oder Edge auf einem Desktopcomputer</p>
+    <h2 id="install-title">Companion Sleep installieren</h2>
+    <p>Das Manifest dieser Seite enthält ausschließlich ein Abbild für den klassischen <strong>ESP32</strong>. Ist die ESP32-S3-Seite ausgewählt, besitzt der Installer kein kompatibles Abbild und darf sie nicht beschreiben.</p>
+    <label class="confirm"><input id="hardwareConfirm" type="checkbox"><span>Ich sehe unter Windows <strong>USB-SERIAL CH340</strong> oder unter macOS <strong>USB serial</strong> und weiß, dass diese Installation die Firmware dieses Begleitprozessors ersetzt.</span></label>
+    <label class="confirm"><input id="licenseConfirm" type="checkbox"><span>Ich habe die <a href="../../../legal/LICENSE.de.md" target="_blank" rel="noopener">RoonPilot-Lizenz für private Binärnutzung 1.0</a> gelesen und akzeptiere sie.</span></label>
+    <esp-web-install-button manifest="../../../companion-manifest.json">
+      <button id="installButton" class="install-button" slot="activate" type="button" disabled>Companion-Firmware installieren</button>
+      <span class="inline-warning" slot="unsupported">Einen aktuellen Desktopbrowser Chrome oder Edge mit Web Serial verwenden.</span>
+      <span class="inline-warning" slot="not-allowed">Diese HTTPS-Seite vor dem Verbinden des USB-Gerätes öffnen.</span>
+    </esp-web-install-button>
+    <div class="image-info" id="imageInfo">Firmwareinformationen werden geladen&hellip;</div>
+  </section>
+
+  <section class="card" aria-labelledby="after-title">
+    <p class="eyebrow">Schritt 3</p>
+    <h2 id="after-title">Kabel wieder mit RoonPilot verbinden</h2>
+    <div class="after-grid">
+      <article><h3>1. Abziehen und drehen</h3><p>Nach abgeschlossener Prüfung USB abziehen, den USB-C-Stecker am Gerät um 180 Grad drehen und neu verbinden.</p></article>
+      <article><h3>2. Hauptseite prüfen</h3><p>Windows sollte jetzt <strong>Serielles USB-Gerät</strong>, macOS <strong>USB JTAG/serial</strong> anzeigen. Danach startet RoonPilot normal.</p></article>
+    </div>
+  </section>
+
+  <section class="card why" aria-labelledby="why-title">
+    <p class="eyebrow">Warum ein eigener Installer?</p>
+    <h2 id="why-title">Zwei Prozessoren, zwei abgesicherte Ziele</h2>
+    <p>Der Hauptinstaller akzeptiert nur ESP32-S3-Hardware. Dieser Companion-Installer akzeptiert nur klassische ESP32-Hardware. Getrennte Manifeste lassen den Installer die falsche Prozessorfamilie ablehnen und halten beide Abläufe trotzdem einfach.</p>
+  </section>
+</main>
+<script>
+const hardwareConfirm=document.getElementById('hardwareConfirm');
+const licenseConfirm=document.getElementById('licenseConfirm');
+const installButton=document.getElementById('installButton');
+function updateInstallGate(){installButton.disabled=!(hardwareConfirm.checked&&licenseConfirm.checked)}
+hardwareConfirm.addEventListener('change',updateInstallGate);
+licenseConfirm.addEventListener('change',updateInstallGate);
+fetch('../../../companion-release.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(release=>{
+  imageInfo.textContent=`Version ${release.version} · ${release.image.filename} · ${release.image.size.toLocaleString('de-DE')} Bytes · SHA-256 ${release.image.sha256}`;
+}).catch(error=>{imageInfo.textContent='Firmwareinformationen konnten nicht geladen werden: '+error.message});
+</script></body>
+</html>

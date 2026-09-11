@@ -43,6 +43,10 @@ sie nicht benötigt.
 Mit der [Ersteinrichtung](first-time-setup.md) fortfahren, um WLAN zu verbinden,
 RoonPilot in Roon freizugeben und eine Zone auszuwählen.
 
+Die [Companion-Sleep-Firmware](companion-firmware.md) des zweiten Prozessors ist
+ein getrennter freiwilliger Schritt. Sie besitzt jetzt ebenfalls einen eigenen
+Webinstaller und benötigt kein Kommandozeilenwerkzeug.
+
 Mehr Details stehen unter [Hardware und die beiden Prozessoren](hardware-and-two-processors.md),
 in der [optionalen Sicherungsanleitung](factory-backup.md) und unter
 [Fehlerbehebung](troubleshooting.md). Kommandozeilenwerkzeuge gehören nicht zur

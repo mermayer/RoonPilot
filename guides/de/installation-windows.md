@@ -57,6 +57,14 @@ Der andere Prozessor des Boards wird dabei nicht gelöscht.
 2. Den RoonPilot-Startbildschirm abwarten.
 3. Mit der [Ersteinrichtung](first-time-setup.md) fortfahren.
 
+## Optional: zweiten Prozessor in Deep Sleep versetzen
+
+RoonPilot funktioniert vollständig ohne diesen Schritt. Soll der ungenutzte
+Companion-ESP32 in einen definierten Stromsparzustand versetzt werden, folgt
+danach der getrennte
+[Companion-Webinstaller für Windows](companion-installation-windows.md).
+Auch dafür ist kein Kommandozeilenwerkzeug nötig.
+
 ## Wenn der Installer keine Verbindung herstellt
 
 - Prüfen, ob das Kabel Daten übertragen kann.

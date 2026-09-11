@@ -41,6 +41,10 @@ to install or use RoonPilot.
 Continue with [First-time setup](first-time-setup.md) to connect Wi-Fi, approve
 RoonPilot in Roon and select a zone.
 
+The second processor's [Companion Sleep firmware](companion-firmware.md) is a
+separate optional step. It now has its own browser installer and also needs no
+command-line tool.
+
 Need more detail? Read [Hardware and the two processors](hardware-and-two-processors.md),
 the [optional factory-backup guide](factory-backup.md) or
 [Troubleshooting](troubleshooting.md). Command-line tools are not part of the

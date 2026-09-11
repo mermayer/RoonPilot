@@ -38,8 +38,12 @@ Die technische Erklärung der beiden Prozessoren steht getrennt unter
 | Jede Displayansicht | [Bildschirmreferenz](screen-reference.md) |
 | Jede lokale Konfigurationsseite | [Weboberfläche](web-interface.md) |
 | Factory-Installation und signierte Online-Updates | [Firmwareupdates und Wiederherstellung](firmware-updates-and-recovery.md) |
-| Optionale Stromspar-Firmware des zweiten ESP | [Companion-Firmware](companion-firmware.md) |
-| Optionale Sicherung der Original-Firmware | [Original-Firmware sichern](factory-backup.md) |
+| Optionale Stromspar-Firmware und Webinstaller des zweiten ESP | [Companion-Firmware](companion-firmware.md) |
+| Companion-Installation unter Windows | [Windows-Companion-Installation](companion-installation-windows.md) |
+| Companion-Installation unter macOS | [macOS-Companion-Installation](companion-installation-macos.md) |
+| Optionale Sicherung der Original-Firmware | [Windows oder macOS wählen](factory-backup.md) |
+| Optionales Backup unter Windows | [Windows-Originalsicherung](factory-backup-windows.md) |
+| Optionales Backup unter macOS | [macOS-Originalsicherung](factory-backup-macos.md) |
 | Standalone-/Python-esptool unter macOS | [esptool unter macOS verwenden](esptool-macos.md) |
 | Einstellungen sichern | [Konfiguration exportieren/importieren](configuration-backup.md) |
 | Akku-Grenzen und Kalibrierung | [Akku und Laufzeit](battery-and-runtime.md) |
@@ -58,6 +62,8 @@ Die technische Erklärung der beiden Prozessoren steht getrennt unter
 - **Begleit-ESP32:** zweiter, unabhängiger klassischer ESP32 im selben Gerät.
 - **Factory-Installation:** vollständiges Löschen/Installieren des ESP32-S3,
   ausschließlich durch den autorisierten Web Installer.
+- **Companion-Installation:** freiwilliges Löschen/Installieren des klassischen
+  ESP32 durch dessen getrennten, auf diesen Chip beschränkten Webinstaller.
 - **OTA-Update:** signiertes Anwendungsupdate, das RoonPilot selbst abruft und
   installiert; eine manuelle Hauptfirmware-Datei wird nicht angeboten.
 - **AP:** temporärer WLAN-Zugangspunkt für die Ersteinrichtung.

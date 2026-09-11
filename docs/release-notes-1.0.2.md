@@ -58,8 +58,8 @@ than from zero. No manual unit selection or invented 0-100 conversion is used.
 - New installations use the authorized browser Web Installer. A Factory
   installation erases the complete primary ESP32-S3 before writing the image.
 - The primary Factory and OTA binaries are intentionally not offered as
-  standalone downloads. The Companion Sleep image remains a separate manual
-  download because it targets the board's second, classic ESP32.
+  standalone downloads. The Companion Sleep image uses a separate browser
+  installer because it targets the board's second, classic ESP32.
 - A current Chromium-based desktop browser with Web Serial is required for a
   Factory installation.
 - Firmware installation always remains an explicit owner action; RoonPilot

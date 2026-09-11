@@ -8,7 +8,7 @@
 | --- | --- | --- | --- |
 | Erstinstallation oder vollstaendige Wiederherstellung | ESP32-S3 | Autorisierter Chromium Web Installer | Vollstaendig geloescht |
 | Normales Update | ESP32-S3 | Signiertes Online-Update am Geraet | Normalerweise erhalten |
-| Optionale Companion-Stromersparnis | Klassischer ESP32 | Separate Companion-Datei und `esptool` | Ersetzt Companion-Flash |
+| Optionale Companion-Stromersparnis | Klassischer ESP32 | Getrennter Companion-Webinstaller | Companion-Einstellungen gelöscht |
 
 Hauptfirmware fuer Factory und OTA wird nicht als einzelner Download angeboten.
 Die Verfahren sind nicht austauschbar. Vor jeder Wiederherstellung den aktiven
@@ -96,9 +96,17 @@ und SHA-256 vor dem Restore kontrollieren.
 
 ## Companion-Wiederherstellung
 
-Das optionale Companion-Abbild ist die einzige separat herunterladbare
-RoonPilot-Firmware. Sicherung, Pruefsumme, Schreiben, Verifikation und Restore
-erklaert die [Companion-Anleitung](companion-firmware.md).
+Die optionale Companion-Firmware besitzt einen eigenen Browser-Installer, der
+auf die klassische ESP32-Prozessorfamilie beschränkt ist. Wurde die
+Companion-Installation unterbrochen, die Companion-USB-Seite erneut verbinden
+und denselben Installer wiederholen. Den einfachen Ablauf erklärt die
+[Companion-Anleitung](companion-firmware.md).
+
+Der exakte Herstellerzustand lässt sich nur wiederherstellen, wenn das
+ursprüngliche 4-MB-Flash dieses Prozessors vorher gesichert wurde. Die
+freiwilligen technischen Abläufe sind in getrennte Anleitungen für
+[Windows](factory-backup-windows.md) und [macOS](factory-backup-macos.md)
+aufgeteilt.
 
 Ein Factory Reset auf der Systemseite loescht nur RoonPilot-Konfiguration und
 Kopplung. Er stellt die Waveshare-Firmware nicht wieder her.

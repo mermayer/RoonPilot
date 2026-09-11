@@ -6,13 +6,13 @@ Diese Anleitung gilt für die wenigen RoonPilot-Arbeiten, die direkten seriellen
 Flashzugriff benötigen:
 
 - optionale Sicherung der ursprünglichen Waveshare-Firmware;
-- Installation oder Wiederherstellung der optionalen Firmware des internen
-  RoonPilot-Begleit-ESP32.
+- manuelle Wiederherstellung eines zuvor gesicherten Originalabbilds oder
+  erweiterte serielle Diagnose.
 
 Die normale Factory-Installation der RoonPilot-Hauptfirmware auf dem ESP32-S3
-läuft über den Webinstaller und benötigt weder Python noch esptool. Normale
-spätere Onlineupdates von RoonPilot und IR Bridge benötigen esptool ebenfalls
-nicht.
+und die optionale Installation des Companion-ESP32 besitzen jeweils einen
+eigenen Webinstaller. Beide benötigen weder Python noch esptool. Normale spätere
+Onlineupdates von RoonPilot und IR Bridge benötigen esptool ebenfalls nicht.
 
 ## Empfohlener Weg
 
@@ -307,5 +307,5 @@ schwächen oder eine Buildumgebung einzurichten.
 ## Mit der richtigen Anleitung fortfahren
 
 - [Optionale Sicherung der Original-Firmware](factory-backup.md)
-- [Optionale Companion-ESP32-Firmware](companion-firmware.md)
+- [Optionaler Companion-ESP32-Webinstaller](companion-firmware.md)
 - [RoonPilot-Hauptfirmware per Webinstaller](installation.md)

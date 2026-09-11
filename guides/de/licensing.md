@@ -49,7 +49,8 @@ verzichtet werden kann, schliesst die Lizenz nicht aus.
 ESP32-S3-Factory- und OTA-Abbilder werden nicht als einzelne Downloads
 angeboten. Die Erstinstallation erfolgt nur durch den autorisierten Web
 Installer; spaetere Updates installiert RoonPilot selbst aus dem signierten
-Online-Kanal. Nur die Companion-Sleep-Firmware wird als eigene Firmwaredatei
+Online-Kanal. Die Companion-Sleep-Firmware wird über einen eigenen
+autorisierten und auf ihre Prozessorfamilie beschränkten Webinstaller
 bereitgestellt.
 
 Der Installer verlinkt Lizenz, Pflichthinweis, Drittanbieterverzeichnis und die

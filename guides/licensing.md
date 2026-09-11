@@ -46,8 +46,8 @@ be waived.
 The ESP32-S3 Factory and OTA images are not offered as standalone downloads.
 Initial installation is available only through the authorized Web Installer;
 later primary updates are installed by RoonPilot itself from the signed online
-channel. The Companion Sleep image is the only separately downloadable
-RoonPilot firmware file.
+channel. The Companion Sleep image is delivered through its own authorized,
+chip-family-restricted Web Installer.
 
 The installer links the licence, required notice, third-party inventory and
 exact third-party licence texts. Internal build archives, symbol files, maps,

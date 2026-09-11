@@ -1,156 +1,81 @@
-# Optionale Firmware für den Begleit-ESP32
+# Optionale Firmware für den Companion-ESP32
 
 [English](../companion-firmware.md) · **Deutsch**
 
-> [!IMPORTANT]
-> Diese Firmware ist optional, getrennt und nicht für den ESP32-S3 bestimmt.
-> RoonPilot funktioniert vollständig ohne sie. Eine vollständige Sicherung des
-> originalen 4-MB-Flashs ist freiwillig und keine Installationsvoraussetzung.
-> Sie ist nur dann empfehlenswert, wenn später möglicherweise der exakte
-> Auslieferungszustand des Herstellers wiederhergestellt werden soll. Ohne eine
-> eigene Sicherung ist genau dieser Rückweg mit den RoonPilot-Dateien nicht
-> möglich. Chiperkennung und Prüfung des heruntergeladenen Abbilds bleiben
-> dagegen unbedingt erforderlich.
+Das Waveshare ESP32-S3-Knob-Touch-LCD-1.8 enthält zwei unabhängige
+ESP-Prozessoren. RoonPilot läuft auf dem Hauptprozessor ESP32-S3. Der zweite
+Prozessor ist ein klassischer ESP32-U4WDH und wird von RoonPilot nicht benötigt.
 
-## Aufgabe
+> [!NOTE]
+> Die Companion-Firmware ist freiwillig. RoonPilot, Display, Touchbedienung,
+> Drehring, WLAN und Roon-Verbindung funktionieren vollständig ohne sie.
 
-Das Waveshare-Modul enthält neben dem ESP32-S3 einen unabhängig
-programmierbaren klassischen ESP32. RoonPilot nutzt ihn nicht. Die kleine
-Companion-Firmware deaktiviert den ungenutzten DAC-Pfad und versetzt diesen
-Prozessor dauerhaft in Deep Sleep, um unnötigen Stromverbrauch zu vermeiden.
-Sie fügt keine Roon-Funktion hinzu und wird niemals vom Web Installer des
-Hauptprozessors installiert.
+## Aufgabe der Companion-Firmware
 
-## Benötigt
+Das kleine Companion-Sleep-Abbild versetzt den sonst ungenutzten zweiten
+Prozessor in einen definierten Stromsparzustand. Es:
 
-- Windows-, macOS- oder Linux-Rechner und USB-Datenkabel;
-- Espressif `esptool` als Standalone-Programm oder über Python 3.10 oder neuer;
-- heruntergeladenes Companion-Abbild samt SHA-256;
-- optional ein sicherer Speicherort für das originale 4-MB-Abbild, falls ein
-  exakter Rückweg zur Hersteller-Firmware gewünscht ist;
-- den vom Betriebssystem angezeigten seriellen Port.
+- hält den ungenutzten PCM5100A-DAC über dessen `XSMT`-Steuerung stumm;
+- gibt die gemeinsam genutzten Audio-, Encoder- und seriellen Signale als
+  inaktive Eingänge frei;
+- versetzt den ESP32-U4WDH ohne Aufwachquelle dauerhaft in Deep Sleep.
 
-Die nachfolgenden Befehle zeigen Windows PowerShell. Unter macOS zuerst die
-vollständige Anleitung [esptool unter macOS verwenden](esptool-macos.md) lesen.
-Sie erklärt Standalone-Betrieb ohne Python, Apple-Silicon-/Intel-Auswahl,
-Prüfsummen, `/dev/cu...`-Ports, die Umsetzung aller Befehle und den bekannten
-Python-3.14-Fehler mit `cryptography`/Cargo.
+Es fügt keine Roon-Funktion hinzu, verändert keine RoonPilot-Konfiguration und
+installiert nichts auf dem Hauptprozessor ESP32-S3. Die externe RoonPilot IR
+Bridge ist ein anderes, räumlich getrenntes Gerät.
 
-## 1. esptool unter Windows installieren und prüfen
+## Einfachster Weg: der getrennte Webinstaller
 
-Falls Python noch fehlt, es ausschließlich von der
-[offiziellen Python-Webseite](https://www.python.org/downloads/windows/)
-installieren. Der folgende `pip`-Befehl lädt `esptool` automatisch aus dem
-Python-Paketindex; eine separate Programmdatei muss dafür nicht gesucht werden.
+Für die normale Companion-Installation sind weder Python noch Terminalbefehle
+oder esptool nötig. Wähle die Anleitung für deinen Computer:
 
-```powershell
-py --version
-py -m pip install --upgrade esptool
-py -m esptool version
-```
+- **[Companion-Firmware unter Windows installieren →](companion-installation-windows.md)**
+- **[Companion-Firmware unter macOS installieren →](companion-installation-macos.md)**
 
-Funktioniert `py` nicht, `python` verwenden. Keine zufälligen Flash-Programme
-installieren; die dokumentierten Befehle gelten für Espressifs `esptool`. Die
-[offizielle Espressif-Installationsanleitung](https://docs.espressif.com/projects/esptool/en/latest/esp32/installation.html)
-erklärt die Installation und Fehlerbehebung. Dort sind auch die von Espressif
-bereitgestellten
-[Standalone-Downloads](https://github.com/espressif/esptool/releases)
-verlinkt, falls `esptool` ohne Python verwendet werden soll. Die
-[macOS-Schritt-für-Schritt-Anleitung](esptool-macos.md) nennt die exakten
-Archivnamen, Prüfsummen und Terminalbefehle; die PowerShell-Beispiele nicht auf
-Verdacht übertragen.
+Oder öffne direkt den
+**[Companion-Webinstaller →](https://mermayer.github.io/RoonPilot/de/firmware/companion/)**.
 
-## 2. Datei herunterladen und seriellen Port freigeben
+Der Webinstaller löscht und ersetzt die Firmware des klassischen
+Companion-ESP32. Nach dem Abschluss USB abziehen, den USB-C-Stecker am
+RoonPilot-Gerät um 180 Grad drehen und neu verbinden. Das Kabel ist dann wieder
+mit dem Hauptprozessor ESP32-S3 verbunden.
 
-Das Abbild von der nicht verlinkten Firmwareseite laden und zusammen mit dem
-veröffentlichten SHA-256-Wert aufbewahren. ESP-IDF Monitor, PuTTY, Arduino
-Serial Monitor und alle Programme schließen, die COM verwenden.
+## Richtigen Prozessor erkennen
 
-## 3. Companion-Prozessor auswählen
+| System | Companion-ESP32 — verwenden | Haupt-ESP32-S3 — stoppen |
+| --- | --- | --- |
+| Windows | `USB-SERIAL CH340 (COMx)` | `Serielles USB-Gerät (COMx)` |
+| macOS-Systeminformationen | `USB serial` | `USB JTAG/serial` |
 
-1. USB vollständig abziehen.
-2. USB-C-Stecker um 180° drehen.
-3. Neu verbinden und Port im Geräte-Manager feststellen.
-4. Chip nur lesend prüfen:
+Erscheint der falsche Eintrag, USB abziehen, den USB-C-Stecker am
+RoonPilot-Gerät um 180 Grad drehen und neu verbinden.
 
-```powershell
-py -m esptool --port COM4 chip-id
-```
+Beide Browser-Installer besitzen bewusst getrennte Manifeste:
 
-Nur fortfahren, wenn ein klassischer **ESP32** gemeldet wird. Bei **ESP32-S3**
-sofort stoppen, USB trennen und erneut drehen.
+- der normale RoonPilot-Installer enthält nur ein `ESP32-S3`-Abbild;
+- der Companion-Installer enthält nur ein `ESP32`-Abbild.
 
-## 4. Optional: vollständige 4-MB-Sicherung
+Dadurch prüft der Browser vor dem Schreiben zusätzlich die Prozessorfamilie.
 
-Dieser Abschnitt kann übersprungen werden, wenn die exakte Original-Firmware
-des Begleitprozessors später nicht wiederhergestellt werden muss. Die Sicherung
-ist als freiwilliger Rückweg empfehlenswert, aber keine Voraussetzung für die
-Installation der Companion-Sleep-Firmware.
+## Freiwillige Sicherung der Original-Firmware
 
-```powershell
-py -m esptool --chip esp32 --port COM4 read-flash 0x0 0x400000 companion-original-4mb.bin
-Get-Item .\companion-original-4mb.bin
-Get-FileHash -Algorithm SHA256 .\companion-original-4mb.bin
-```
+Eine Sicherung ist nur dann sinnvoll, wenn später möglicherweise exakt die von
+Waveshare ausgelieferte Firmware dieses Prozessors wiederhergestellt werden
+soll. Für RoonPilot und die Companion-Installation ist sie nicht erforderlich.
 
-Wenn eine Sicherung erstellt wird, muss die Datei genau **4.194.304 Bytes** groß
-sein. Prüfsumme notieren und möglichst eine zweite Kopie an einem sicheren Ort
-erstellen. Originalabbilder niemals veröffentlichen; sie können
-gerätespezifische oder private Daten enthalten.
+Ein Browser kann das vollständige Original-Flash nicht auslesen und als Datei
+sichern. Wer diesen freiwilligen Rückweg erhalten möchte, erstellt das Backup
+vor der Installation mit der ausführlichen technischen Anleitung für das
+eigene Betriebssystem:
 
-## 5. Download prüfen
+- [Optionale Originalsicherung unter Windows](factory-backup-windows.md)
+- [Optionale Originalsicherung unter macOS](factory-backup-macos.md)
 
-```powershell
-Get-FileHash -Algorithm SHA256 .\roonpilot-companion-sleep-factory-v1.0.1.bin
-```
+Nur für diese technische Sicherung wird im normalen Ablauf Espressifs
+`esptool` benötigt.
 
-Für Version 1.0.1 muss der Wert lauten:
+## Weitere Anleitungen
 
-```text
-4959cec1d9baf769359c21e24dbd63f6951466fd05699eec7d9c37661b92b00f
-```
-
-Bei jeder Abweichung stoppen und Datei neu laden.
-
-## 6. Nochmals prüfen und schreiben
-
-```powershell
-py -m esptool --chip esp32 --port COM4 chip-id
-py -m esptool --chip esp32 --port COM4 --baud 460800 write-flash 0x0 roonpilot-companion-sleep-factory-v1.0.1.bin
-py -m esptool --chip esp32 --port COM4 verify-flash 0x0 roonpilot-companion-sleep-factory-v1.0.1.bin
-```
-
-Die S3-Factory- oder OTA-Datei darf hier niemals verwendet werden.
-
-## 7. Zu RoonPilot zurückkehren
-
-1. Warten, bis `esptool` die erfolgreiche Prüfung gemeldet hat.
-2. USB abziehen.
-3. Den USB-C-Stecker um 180° drehen.
-4. Neu verbinden.
-5. Mit `chip-id` prüfen, dass wieder **ESP32-S3** erkannt wird.
-6. RoonPilot-Start, Display, WLAN und Roon-Verbindung prüfen.
-
-## Original-Firmware wiederherstellen
-
-Der exakte Herstellerzustand kann nur wiederhergestellt werden, wenn die
-freiwillige Sicherung aus Schritt 4 erstellt wurde. Dazu USB abziehen, den
-USB-C-Stecker um 180° drehen und neu verbinden. Mit `chip-id` den klassischen
-ESP32 bestätigen und erst danach die eigene geprüfte Sicherung schreiben:
-
-```powershell
-py -m esptool --chip esp32 --port COM4 write-flash 0x0 companion-original-4mb.bin
-```
-
-Danach USB erneut abziehen, den USB-C-Stecker um 180° drehen, neu verbinden und
-mit `chip-id` prüfen, dass wieder ESP32-S3 erkannt wird.
-
-## Wenn esptool keine Verbindung erhält
-
-- alle seriellen Programme schließen;
-- Datenkabel und direkten USB-Port verwenden;
-- USB abziehen, den USB-C-Stecker um 180° drehen, neu verbinden und erneut
-  versuchen;
-- COM-Port im Geräte-Manager neu prüfen;
-- BOOT/RESET nur nach dokumentierter Recovery-Anweisung verwenden;
-- niemals `erase-flash` als bloßen Verbindungstest ausführen.
+- [Hardware und die beiden Prozessoren](hardware-and-two-processors.md)
+- [Normale RoonPilot-Installation](installation.md)
+- [Firmwareupdates und Wiederherstellung](firmware-updates-and-recovery.md)

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -10,13 +10,13 @@
   <style>
     :root{color-scheme:dark;--bg:#080a0b;--card:#111415;--line:#34393a;--text:#f2ede5;--muted:#aaa9a4;--cyan:#4fe0e2;--amber:#f1ad38;--danger:#ff6e65}
     *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 Inter,system-ui,sans-serif}.wrap{width:min(900px,calc(100% - 34px));margin:0 auto;padding:60px 0 80px}h1{font-size:clamp(36px,7vw,64px);line-height:1;margin:0 0 15px}h2{font-size:24px;margin:0 0 13px}p{color:var(--muted)}.warning{border-left:4px solid var(--amber);padding:15px 18px;background:#f1ad3810;margin:28px 0}.web-installer,.card,.license-panel{border:1px solid var(--line);background:var(--card);padding:22px;border-radius:10px}.web-installer,.license-panel,.card{margin:24px 0}.confirm{display:flex;gap:12px;align-items:flex-start;margin:17px 0;color:var(--muted)}.confirm input{margin-top:5px;accent-color:var(--cyan)}.target{color:var(--cyan);font-size:12px;text-transform:uppercase;letter-spacing:1px}.download,.install-button{display:inline-flex;margin-top:12px;min-height:46px;align-items:center;padding:0 17px;border:0;border-radius:7px;background:var(--cyan);color:#061112;text-decoration:none;font:700 16px/1 Inter,system-ui,sans-serif}.install-button:disabled{cursor:not-allowed;opacity:.42}.hash{margin-top:15px;font:12px/1.45 ui-monospace,Consolas,monospace;overflow-wrap:anywhere;color:#8e9795}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}.links a,.confirm a{color:var(--cyan)}.inline-warning{display:block;margin-top:12px;color:var(--amber)}.restriction{border-left:3px solid var(--danger);padding-left:14px}.distribution{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}.distribution div{border-top:1px solid var(--line);padding-top:16px}.distribution strong{display:block}.distribution p{margin:5px 0 0;font-size:14px}@media(max-width:700px){.wrap{padding-top:35px}.distribution{grid-template-columns:1fr}}
-    .next-step{border-color:#4fe0e266;background:linear-gradient(135deg,#4fe0e214,#111415 60%)}
+    .header-links{margin:0 0 28px}.next-step{border-color:#4fe0e266;background:linear-gradient(135deg,#4fe0e214,#111415 60%)}
     .next-step p{margin-bottom:0}
-    .os-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}.os-card{padding:18px;border:1px solid #4fe0e244;border-radius:9px;background:#4fe0e209}.os-card h3{margin:0 0 10px;font-size:20px}.os-card p{margin:8px 0;font-size:14px}.device-name{display:block;margin:10px 0;padding:10px 12px;border:1px solid #4fe0e255;border-radius:6px;background:#080a0b;color:var(--text);font-weight:700}.wrong-device{color:var(--amber)}.os-card a,.advanced a{color:var(--cyan)}.device-note{margin:18px 0;padding:16px 18px;border-left:3px solid var(--amber);background:#f1ad380b}.device-note p{margin:0;font-size:14px}.advanced summary{cursor:pointer;font-weight:700}.advanced summary span{display:block;margin-top:4px;color:var(--muted);font-size:14px;font-weight:400}.advanced-body{margin-top:18px;border-top:1px solid var(--line);padding-top:4px}@media(max-width:700px){.os-grid{grid-template-columns:1fr}}
+    .os-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}.os-card{padding:18px;border:1px solid #4fe0e244;border-radius:9px;background:#4fe0e209}.os-card h3{margin:0 0 10px;font-size:20px}.os-card p{margin:8px 0;font-size:14px}.device-name{display:block;margin:10px 0;padding:10px 12px;border:1px solid #4fe0e255;border-radius:6px;background:#080a0b;color:var(--text);font-weight:700}.wrong-device{color:var(--amber)}.os-card a{color:var(--cyan)}.device-note{margin:18px 0;padding:16px 18px;border-left:3px solid var(--amber);background:#f1ad380b}.device-note p{margin:0;font-size:14px}.companion-card{border-color:#4fe0e266;background:linear-gradient(135deg,#17303366,#111415 62%)}.companion-card .download{margin-right:10px}.companion-card .secondary{border:1px solid var(--cyan);background:transparent;color:var(--cyan)}@media(max-width:700px){.os-grid{grid-template-columns:1fr}.companion-card .download{width:100%;justify-content:center;margin-right:0}}
   </style>
 </head>
 <body><main class="wrap">
-  <div class="links" style="margin:0 0 28px"><a href="../">Projektseite</a><a href="../../firmware/">English</a><strong>Deutsch</strong></div>
+  <div class="links header-links"><a href="../">Projektseite</a><a href="../../firmware/">English</a><strong>Deutsch</strong></div>
   <div class="target">Primäre RoonPilot-Firmware</div>
   <h1>Firmware-Installer</h1>
   <p>Die primäre ESP32-S3-Firmware wird ausschließlich mit diesem autorisierten Browser-Installer installiert. Factory- und OTA-Abbilder werden nicht als eigenständige Downloads angeboten.</p>
@@ -69,15 +69,14 @@
     <div><strong>Normale Updates</strong><p>Direkt durch RoonPilot unter <b>System &rarr; Firmware update</b>. Ein OTA-Dateidownload wird nicht angeboten.</p></div>
   </section>
 
-  <details class="card advanced">
-    <summary>Optional: Companion-Sleep-Firmware<span>Für Installation und Betrieb von RoonPilot nicht erforderlich. Nur öffnen, wenn der zweite Prozessor bewusst verändert werden soll.</span></summary>
-    <div class="advanced-body">
-      <p>Dieses getrennte Abbild versetzt den ungenutzten Begleitprozessor in Deep Sleep. Es hat einen eigenen Installationsablauf und wird nicht vom Webinstaller oben geschrieben.</p>
-      <p><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/companion-firmware.md">Zuerst die getrennte Companion-Anleitung lesen</a></p>
-      <a class="download" id="companionLink">Companion-Firmware herunterladen</a>
-      <div class="hash" id="companionHash">Prüfsumme wird geladen&hellip;</div>
-    </div>
-  </details>
+  <section class="card companion-card" aria-labelledby="companion-title">
+    <div class="target">Optionaler zweiter Prozessor</div>
+    <h2 id="companion-title">Ungenutzten Companion-ESP32 in Deep Sleep versetzen</h2>
+    <p>RoonPilot funktioniert vollständig ohne diesen Schritt. Soll der ESP32-U4WDH-Begleitprozessor in einen definierten Stromsparzustand versetzt werden, steht dafür jetzt ein eigener einsteigerfreundlicher Webinstaller bereit. Für die normale Companion-Installation sind weder Python noch Terminal oder esptool nötig.</p>
+    <p>Die getrennte Seite zeigt die richtigen USB-Namen unter Windows und macOS und akzeptiert nur klassische ESP32-Hardware. Der Hauptinstaller oben bleibt auf ESP32-S3-Hardware beschränkt.</p>
+    <a class="download" href="companion/">Companion-Webinstaller öffnen</a>
+    <a class="download secondary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/companion-firmware.md">Aufgabe der Companion-Firmware nachlesen</a>
+  </section>
 
   <section class="license-panel" aria-labelledby="license-title">
     <div class="target">Proprietäre RoonPilot-Bestandteile</div>
@@ -92,8 +91,4 @@ const installButton=document.getElementById('installButton');
 function updateInstallGate(){installButton.disabled=!(hardwareConfirm.checked&&licenseConfirm.checked)}
 hardwareConfirm.addEventListener('change',updateInstallGate);
 licenseConfirm.addEventListener('change',updateInstallGate);
-fetch('../../companion-release.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(companion=>{
-  companionLink.href='../../firmware/'+companion.image.filename;
-  companionHash.textContent='SHA-256 '+companion.image.sha256;
-}).catch(error=>{companionLink.removeAttribute('href');companionHash.textContent='Companion-Metadaten konnten nicht geladen werden: '+error.message});
 </script></body></html>

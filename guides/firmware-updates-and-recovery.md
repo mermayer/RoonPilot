@@ -8,7 +8,7 @@
 | --- | --- | --- | --- |
 | First installation or complete recovery | ESP32-S3 | Authorized Chromium Web Installer | Completely erased |
 | Normal update | ESP32-S3 | Signed online update on RoonPilot | Normally retained |
-| Optional Companion power saving | Classic ESP32 | Separate downloadable Companion image and `esptool` | Replaces Companion flash |
+| Optional Companion power saving | Classic ESP32 | Separate Companion Web Installer | Companion settings erased |
 
 Primary Factory and OTA files are not offered as standalone downloads. The
 methods cannot be interchanged. Verify the active chip before any recovery
@@ -91,9 +91,15 @@ chip, exact backup size and SHA-256, then use its documented restore command.
 
 ## Companion recovery
 
-The optional Companion image is the only separately downloadable RoonPilot
-firmware. The complete backup, checksum, write, verification and original-
-restore procedure is in [Optional companion ESP32 firmware](companion-firmware.md).
+The optional Companion firmware has its own browser installer, restricted to
+the classic ESP32 chip family. If a Companion installation is interrupted,
+reconnect the Companion USB side and run that installer again. The simple
+procedure is in [Optional Companion ESP32 firmware](companion-firmware.md).
+
+An exact return to the manufacturer-delivered state is possible only if that
+processor's original 4 MB flash was saved beforehand. The optional technical
+procedures are split into [Windows](factory-backup-windows.md) and
+[macOS](factory-backup-macos.md) guides.
 
 ## Factory reset is not firmware recovery
 
