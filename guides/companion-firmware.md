@@ -31,8 +31,8 @@ is needed. Choose the guide for your computer:
 - **[Install the Companion firmware with Windows →](companion-installation-windows.md)**
 - **[Install the Companion firmware with macOS →](companion-installation-macos.md)**
 
-Or open the
-**[Companion Web Installer directly →](https://mermayer.github.io/RoonPilot/firmware/companion/)**.
+Only these operating-system guides link onward to the Companion Web Installer,
+after explaining the correct USB entry and plug position.
 
 The Web Installer erases and replaces the firmware of the classic Companion
 ESP32. After it finishes, unplug USB, turn the USB-C plug at the RoonPilot

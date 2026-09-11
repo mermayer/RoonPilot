@@ -21,9 +21,8 @@ Wenn später möglicherweise der exakte Auslieferungszustand des Herstellers
 wiederhergestellt werden soll, vorher die
 [optionale Original-Firmware-Sicherung](factory-backup.md) erstellen. Sie ist
 keine Voraussetzung für RoonPilot. Nach der eindeutigen Erkennung des ESP32-S3
-geht es mit dem
-[öffentlichen RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
-weiter.
+geht es mit der oben gewählten Windows- oder macOS-Anleitung weiter; sie führt
+erst nach der USB-Prüfung zum öffentlichen Webinstaller.
 
 Die technische Erklärung der beiden Prozessoren steht getrennt unter
 [Hardware und die beiden Prozessoren](hardware-and-two-processors.md).

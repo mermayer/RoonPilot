@@ -12,7 +12,7 @@
 
 [Deutsch](README.de.md) · **English**
 
-**[Project website →](https://mermayer.github.io/RoonPilot/)** · **[Web Installer →](https://mermayer.github.io/RoonPilot/firmware/)** · **[Troubleshooting →](guides/troubleshooting.md)**
+**[Project website →](https://mermayer.github.io/RoonPilot/)** · **[Installation →](#start-here)** · **[Troubleshooting →](guides/troubleshooting.md)**
 
 </div>
 
@@ -48,13 +48,15 @@ privacy and troubleshooting.
 An [optional factory backup](guides/factory-backup.md) is useful if you may want
 to restore the exact firmware state in which the manufacturer delivered the
 device. It is not a prerequisite for installing RoonPilot. Once you have
-identified the ESP32-S3, open the public
-[RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/) in a
-current desktop Chromium browser.
+identified the ESP32-S3, the selected guide for
+[Windows](guides/installation-windows.md) or
+[macOS](guides/installation-macos.md) leads to the public Web Installer after
+the USB check.
 
 The second processor's low-power firmware is also easy to install and remains
-completely optional: use the separate
-[Companion Web Installer](https://mermayer.github.io/RoonPilot/firmware/companion/).
+completely optional. Start with its separate Companion guide for
+[Windows](guides/companion-installation-windows.md) or
+[macOS](guides/companion-installation-macos.md).
 
 ## Why it feels different
 
@@ -227,7 +229,7 @@ the optional full-device backup procedure. The main and Companion installers
 use separate chip-restricted manifests. Do not guess a file or flash an image
 based only on its size.
 
-**Ready to install:** [Main RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/) · [Optional Companion Web Installer](https://mermayer.github.io/RoonPilot/firmware/companion/)
+**Installation guides:** [Windows](guides/installation-windows.md) · [macOS](guides/installation-macos.md) · **Optional Companion:** [Windows](guides/companion-installation-windows.md) · [macOS](guides/companion-installation-macos.md)
 
 ## Documentation
 

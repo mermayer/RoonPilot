@@ -31,7 +31,8 @@ solange er noch eingesteckt ist.
 - das Waveshare ESP32-S3-Knob-Touch-LCD-1.8;
 - ein USB-Datenkabel, kein reines Ladekabel;
 - ein aktueller Desktopbrowser Chrome oder Edge;
-- der [RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/).
+- die oben gewählte Windows- oder macOS-Anleitung. Sie öffnet den autorisierten
+  Webinstaller erst nach den USB-Prüfungen.
 
 Eine Sicherung der Original-Firmware ist **freiwillig**. Sie ist nur sinnvoll,
 wenn später vielleicht der exakte Auslieferungszustand des Herstellers

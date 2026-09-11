@@ -20,7 +20,8 @@ and the [Beginner test plan](test-plan.md).
 If returning to the exact manufacturer firmware may matter later, first follow
 the [optional factory-backup guide](factory-backup.md). This backup is not a
 condition for installing RoonPilot. After identifying the ESP32-S3, continue
-with the [public RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/).
+with the selected Windows or macOS guide above; it links to the public Web
+Installer after the required USB check.
 
 The technical explanation of the two processors is available separately under
 [Hardware and the two processors](hardware-and-two-processors.md).

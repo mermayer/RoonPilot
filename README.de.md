@@ -12,7 +12,7 @@
 
 **Deutsch** · [English](README.md)
 
-**[Projektseite →](https://mermayer.github.io/RoonPilot/de/)** · **[Webinstaller →](https://mermayer.github.io/RoonPilot/de/firmware/)** · **[Fehlerbehebung →](guides/de/troubleshooting.md)**
+**[Projektseite →](https://mermayer.github.io/RoonPilot/de/)** · **[Installation →](#hier-beginnen)** · **[Fehlerbehebung →](guides/de/troubleshooting.md)**
 
 </div>
 
@@ -50,14 +50,16 @@ Konfigurationssicherung, Akku-Kalibrierung, Datenschutz und Fehlerbehebung.
 Eine [optionale Sicherung der Original-Firmware](guides/de/factory-backup.md)
 ist sinnvoll, wenn später möglicherweise der exakte Auslieferungszustand des
 Herstellers wiederhergestellt werden soll. Sie ist keine Voraussetzung für die
-Installation von RoonPilot. Sobald der ESP32-S3 eindeutig erkannt wurde, kann
-der öffentliche
-[RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/) in
-einem aktuellen Chromium-Desktopbrowser geöffnet werden.
+Installation von RoonPilot. Die gewählte Anleitung für
+[Windows](guides/de/installation-windows.md) oder
+[macOS](guides/de/installation-macos.md) führt nach der USB-Prüfung zum
+öffentlichen Webinstaller.
 
 Auch die Stromspar-Firmware des zweiten Prozessors lässt sich einfach
-installieren und bleibt vollständig freiwillig. Dafür gibt es den getrennten
-[Companion-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/companion/).
+installieren und bleibt vollständig freiwillig. Der Zugang erfolgt über die
+getrennte Companion-Anleitung für
+[Windows](guides/de/companion-installation-windows.md) oder
+[macOS](guides/de/companion-installation-macos.md).
 
 ## Was RoonPilot besonders macht
 
@@ -146,7 +148,7 @@ Factory-Installation erfolgen normale Updates über **System → Firmware update
 → Check for updates** auf der Geräte-Webseite. Haupt- und Companion-Installer
 verwenden getrennte, auf die jeweilige Prozessorfamilie beschränkte Manifeste.
 
-**Bereit zur Installation:** [RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/) · [Optionaler Companion-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/companion/)
+**Installationsanleitungen:** [Windows](guides/de/installation-windows.md) · [macOS](guides/de/installation-macos.md) · **Optionaler Companion:** [Windows](guides/de/companion-installation-windows.md) · [macOS](guides/de/companion-installation-macos.md)
 
 ## Hardware
 

@@ -32,8 +32,8 @@ oder esptool nötig. Wähle die Anleitung für deinen Computer:
 - **[Companion-Firmware unter Windows installieren →](companion-installation-windows.md)**
 - **[Companion-Firmware unter macOS installieren →](companion-installation-macos.md)**
 
-Oder öffne direkt den
-**[Companion-Webinstaller →](https://mermayer.github.io/RoonPilot/de/firmware/companion/)**.
+Nur diese Betriebssystem-Anleitungen führen zum Companion-Webinstaller, nachdem
+sie den richtigen USB-Eintrag und die Steckerstellung erklärt haben.
 
 Der Webinstaller löscht und ersetzt die Firmware des klassischen
 Companion-ESP32. Nach dem Abschluss USB abziehen, den USB-C-Stecker am

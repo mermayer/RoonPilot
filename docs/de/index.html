@@ -35,7 +35,6 @@
       <nav aria-label="Hauptnavigation">
         <a href="#uebersicht">Übersicht</a>
         <a href="#installation">Installation</a>
-        <a href="firmware/">Webinstaller</a>
         <a href="#funktionen">Funktionen</a>
         <a href="#dokumentation">Dokumentation</a>
       </nav>
@@ -57,8 +56,8 @@
           <svg><use href="#icon-arrow"></use></svg>
         </a>
         <div class="hero-actions">
-          <a class="button primary" href="firmware/"><svg><use href="#icon-usb"></use></svg>Webinstaller öffnen</a>
-          <a class="button secondary" href="#installation"><svg><use href="#icon-book"></use></svg>Windows oder macOS wählen</a>
+          <a class="button primary" href="#installation"><svg><use href="#icon-book"></use></svg>Windows oder macOS wählen</a>
+          <a class="button secondary" href="#dokumentation"><svg><use href="#icon-book"></use></svg>Dokumentation lesen</a>
         </div>
         <ul class="hero-facts" aria-label="RoonPilot-Vorteile">
           <li>Direkte lokale Roon-Verbindung</li><li>Touch- und Drehsteuerung</li><li>Signierte A/B-Updates</li>
@@ -112,8 +111,8 @@
               <p><strong>Spätere Updates</strong> laufen direkt in RoonPilot unter <b>System → Firmware update</b> und behalten die Einstellungen normalerweise bei.</p>
             </div>
             <div class="installer-action">
-              <a class="button primary install-button" href="firmware/"><svg><use href="#icon-usb"></use></svg>Webinstaller öffnen</a>
-              <a class="text-link installer-guide-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation.md">Passende Betriebssystem-Anleitung wählen <svg><use href="#icon-arrow"></use></svg></a>
+              <a class="button primary install-button" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation-windows.md"><svg><use href="#icon-book"></use></svg>Windows-Installationsanleitung</a>
+              <a class="text-link installer-guide-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/installation-macos.md">macOS-Installationsanleitung <svg><use href="#icon-arrow"></use></svg></a>
             </div>
           </div>
         </div>
@@ -129,7 +128,7 @@
         <div class="image-row" role="row"><strong>Spätere Updates</strong><span>RoonPilot → System</span><span>Lädt und installiert das freigegebene Update</span><span>Wenn angeboten</span></div>
         <div class="image-row" role="row"><strong>Companion-Firmware</strong><span>Getrennter Webinstaller mit USB</span><span>Versetzt den ungenutzten zweiten Prozessor in Deep Sleep</span><span>Optional</span></div>
       </div>
-      <div class="companion-note"><div><svg><use href="#icon-chip"></use></svg></div><div><h3>Die Companion-Firmware ist optional.</h3><p>RoonPilot funktioniert vollständig ohne sie. Ihr <a href="firmware/companion/">getrennter Webinstaller</a> benötigt kein Kommandozeilenwerkzeug und akzeptiert nur den klassischen Companion-ESP32. Die <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/companion-firmware.md">Companion-Anleitung</a> erklärt Aufgabe und USB-Namen unter Windows/macOS.</p></div></div>
+      <div class="companion-note"><div><svg><use href="#icon-chip"></use></svg></div><div><h3>Die Companion-Firmware ist optional.</h3><p>RoonPilot funktioniert vollständig ohne sie. Beginne mit der Companion-Anleitung für <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/companion-installation-windows.md">Windows</a> oder <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/companion-installation-macos.md">macOS</a>. Beide erklären zuerst den richtigen USB-Namen und führen danach zum getrennten, auf den Companion-ESP32 beschränkten Webinstaller.</p></div></div>
     </section>
 
     <section class="setup-section"><div class="page-width">
@@ -189,6 +188,6 @@
     </div></section>
   </main>
 
-  <footer><div class="page-width footer-inner"><div class="footer-brand"><span class="brand-mark" aria-hidden="true"></span><strong>RoonPilot</strong></div><p>Entworfen und entwickelt von <strong>Senior Coder</strong>. Unabhängig, nicht kommerziell und nicht mit Roon Labs oder Waveshare verbunden.</p><nav aria-label="Links in der Fußzeile"><a href="https://github.com/mermayer/RoonPilot">GitHub-Repository</a><a href="firmware/">Webinstaller</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/licensing.md">Lizenzübersicht</a><a href="https://github.com/mermayer/RoonPilot/blob/main/LICENSE.md">Lizenz</a><a href="https://github.com/mermayer/RoonPilot/blob/main/NOTICE">Pflichthinweis</a><a href="https://github.com/mermayer/RoonPilot/blob/main/THIRD_PARTY_NOTICES.md">Hinweise zu Drittanbietern</a></nav></div></footer>
+  <footer><div class="page-width footer-inner"><div class="footer-brand"><span class="brand-mark" aria-hidden="true"></span><strong>RoonPilot</strong></div><p>Entworfen und entwickelt von <strong>Senior Coder</strong>. Unabhängig, nicht kommerziell und nicht mit Roon Labs oder Waveshare verbunden.</p><nav aria-label="Links in der Fußzeile"><a href="https://github.com/mermayer/RoonPilot">GitHub-Repository</a><a href="#installation">Installation</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/licensing.md">Lizenzübersicht</a><a href="https://github.com/mermayer/RoonPilot/blob/main/LICENSE.md">Lizenz</a><a href="https://github.com/mermayer/RoonPilot/blob/main/NOTICE">Pflichthinweis</a><a href="https://github.com/mermayer/RoonPilot/blob/main/THIRD_PARTY_NOTICES.md">Hinweise zu Drittanbietern</a></nav></div></footer>
 </body>
 </html>

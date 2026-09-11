@@ -30,7 +30,8 @@ inserted.
 - the Waveshare ESP32-S3-Knob-Touch-LCD-1.8;
 - a USB data cable, not a charge-only cable;
 - a current Chrome or Edge desktop browser;
-- the [RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/).
+- the matching Windows or macOS guide above. It opens the authorized Web
+  Installer after the USB checks.
 
 A backup of the original firmware is **optional**. It is useful only if you may
 later want to restore the exact manufacturer-delivered state. It is not needed
