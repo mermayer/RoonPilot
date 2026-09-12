@@ -1,78 +1,61 @@
 # RoonPilot unter Windows installieren
 
-[English](../installation-windows.md) · **Deutsch** · [Anderes Betriebssystem wählen](installation.md)
+[English](../installation-windows.md) · **Deutsch** · [macOS](installation-macos.md)
 
-Für die normale Installation wird kein Kommandozeilenwerkzeug benötigt.
+Für die normale Installation werden weder Geräte-Manager noch Python,
+`esptool` oder andere Kommandozeilenwerkzeuge benötigt.
 
-## 1. Computer vorbereiten
+## Benötigt
 
-1. Einen Windows-PC mit einem aktuellen **Chrome**- oder **Edge**-Browser
-   verwenden.
-2. RoonPilot direkt mit einem **USB-Datenkabel** verbinden.
-3. Arduino Serial Monitor, PuTTY, ESP-IDF Monitor und alle anderen Programme
-   schließen, die den seriellen Anschluss bereits verwenden könnten.
+- Windows-PC mit aktuellem **Chrome** oder **Edge**;
+- USB-Datenkabel;
+- RoonPilot-Gerät.
 
-## 2. Steckerstellung prüfen
+## Installation
 
-1. Mit der rechten Maustaste auf das Windows-Startsymbol klicken und den
-   **Geräte-Manager** öffnen.
-2. **Anschlüsse (COM & LPT)** aufklappen.
-3. Den Eintrag suchen, der beim Anstecken von RoonPilot erscheint.
-
-Die richtige Seite mit dem ESP32-S3 wird normalerweise so angezeigt:
-
-> **Serielles USB-Gerät (COMx)**
-
-`COMx` steht für eine von Windows vergebene Nummer, zum Beispiel `COM5`.
-
-Zeigt Windows stattdessen Folgendes an:
-
-> **USB-SERIAL CH340 (COMx)**
-
-ist die USB-Schnittstelle des **ESP32-U4WDH**-Begleitprozessors verbunden, nicht
-der ESP32-S3. USB abziehen, den USB-C-Stecker am RoonPilot-Gerät um **180 Grad
-drehen**, neu verbinden und noch einmal im Geräte-Manager nachsehen. Erst mit
-**Serielles USB-Gerät (COMx)** fortfahren.
-
-## 3. RoonPilot installieren
-
-1. Den [RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
+1. Alle Programme schließen, die eine serielle USB-Verbindung verwenden.
+2. Den [RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
    in Chrome oder Edge öffnen.
-2. Die Hardwarebestätigung markieren und die Lizenz für private Nutzung
-   akzeptieren.
-3. **RoonPilot installieren** auswählen.
-4. Im Browserfenster dieselbe COM-Nummer wählen, die der Geräte-Manager für
-   **Serielles USB-Gerät** gezeigt hat.
-5. **Erase device** bestätigen, wenn danach gefragt wird. Vorher muss nichts
-   separat gelöscht werden.
-6. Das Kabel angeschlossen lassen, bis Löschen, Schreiben und Prüfen vollständig
-   abgeschlossen sind.
+3. Beide Bestätigungen aktivieren und **RoonPilot installieren** wählen. Nun
+   öffnet sich der Geräteauswahldialog des Browsers.
+4. RoonPilot per USB anschließen. Der richtige Eintrag lautet:
+
+   > **USB JTAG/serial debug unit** (`COM…`)
+
+5. Entscheidend ist **USB JTAG/serial debug unit** vor der Klammer. Die
+   COM-Nummer in Klammern wird von Windows vergeben und darf abweichen.
+6. Wird stattdessen **USB serial** (`COM…`) angezeigt, ist der klassische
+   Begleit-ESP32 verbunden. Den Dialog geöffnet lassen, USB abziehen, den
+   USB-C-Stecker am RoonPilot-Gerät um **180 Grad drehen** und neu verbinden.
+   Der Webinstaller erkennt das Gerät sofort wieder. Nun **USB JTAG/serial
+   debug unit** auswählen.
+7. **Erase device** bestätigen und USB verbunden lassen, bis Löschen,
+   Schreiben und Prüfen vollständig abgeschlossen sind.
+8. Den RoonPilot-Startbildschirm abwarten und mit der
+   [Ersteinrichtung](first-time-setup.md) fortfahren.
 
 Die Factory-Installation löscht Firmware und Einstellungen auf dem ESP32-S3.
-Der andere Prozessor des Boards wird dabei nicht gelöscht.
+Der zweite Prozessor des Boards wird dabei nicht verändert.
 
-## 4. RoonPilot starten
+## Optionaler Begleitprozessor
 
-1. USB abziehen und den Stecker **ohne Drehung** wieder einstecken.
-2. Den RoonPilot-Startbildschirm abwarten.
-3. Mit der [Ersteinrichtung](first-time-setup.md) fortfahren.
-
-## Optional: zweiten Prozessor in Deep Sleep versetzen
-
-RoonPilot funktioniert vollständig ohne diesen Schritt. Soll der ungenutzte
-Companion-ESP32 in einen definierten Stromsparzustand versetzt werden, folgt
-danach der getrennte
+RoonPilot funktioniert vollständig ohne dessen Zusatzfirmware. Soll der
+ungenutzte ESP32-U4WDH in einen definierten Stromsparzustand versetzt werden,
+folgt danach der getrennte
 [Companion-Webinstaller für Windows](companion-installation-windows.md).
-Auch dafür ist kein Kommandozeilenwerkzeug nötig.
-
-## Wenn der Installer keine Verbindung herstellt
-
-- Prüfen, ob das Kabel Daten übertragen kann.
-- Prüfen, ob ein anderes Programm den COM-Port geöffnet hat.
-- Den Installer in Chrome oder Edge neu laden und erneut die ESP32-S3-COM-Nummer
-  auswählen.
-- Unter [Fehlerbehebung](troubleshooting.md) stehen Wiederherstellung und
-  erweiterte Chiperkennung.
 
 Eine [Sicherung der Original-Firmware](factory-backup.md) ist freiwillig und
-keine Voraussetzung für die Installation von RoonPilot.
+nur für einen späteren Rückweg zum exakten Herstellerzustand sinnvoll. Erst
+dieser technische Sonderweg benötigt `esptool`.
+
+## Optional: zusätzlich mit Windows prüfen
+
+Diese Prüfung ist **nicht** Teil des normalen Installationsablaufs. Nur wenn
+mehrere USB-Geräte schwer auseinanderzuhalten sind, kann unter
+**Geräte-Manager → Anschlüsse (COM & LPT)** kontrolliert werden:
+
+- **Serielles USB-Gerät (COMx):** ESP32-S3-Seite für RoonPilot;
+- **USB-SERIAL CH340 (COMx):** klassischer Begleit-ESP32.
+
+Für die eigentliche Installation bleibt der Browserdialog maßgeblich: Dort
+**USB JTAG/serial debug unit** auswählen.

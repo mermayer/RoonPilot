@@ -2,42 +2,54 @@
 
 [English](../installation.md) · **Deutsch**
 
-Wähle zuerst den Computer, mit dem du installieren möchtest. Jede Anleitung
-beginnt beim Anstecken und zeigt genau den Gerätenamen, an dem der ESP32-S3 zu
-erkennen ist.
-
-## Betriebssystem wählen
-
-### [Installation unter Windows →](installation-windows.md)
-
-Unter **Geräte-Manager → Anschlüsse (COM & LPT)** nachsehen:
-
-- **Richtig für RoonPilot:** `Serielles USB-Gerät (COMx)`
-- **Andere Steckerstellung:** `USB-SERIAL CH340 (COMx)`
-
-### [Installation unter macOS →](installation-macos.md)
-
-Unter **Systeminformationen → Hardware → USB** nachsehen:
-
-- **Richtig für RoonPilot:** `USB JTAG/serial`
-- **Andere Steckerstellung:** `USB serial`
-
-Erscheint das jeweils andere Gerät, USB abziehen, den USB-C-Stecker am
-RoonPilot-Gerät um 180 Grad drehen und neu verbinden. Den Stecker nicht drehen,
-solange er noch eingesteckt ist.
+Für die normale Installation werden weder Geräte-Manager noch macOS-
+Systembericht, Python, `esptool` oder andere Kommandozeilenwerkzeuge benötigt.
+Der Geräteauswahldialog des Webinstallers zeigt den verbundenen Prozessor
+direkt an.
 
 ## Das wird benötigt
 
 - das Waveshare ESP32-S3-Knob-Touch-LCD-1.8;
 - ein USB-Datenkabel, kein reines Ladekabel;
-- ein aktueller Desktopbrowser Chrome oder Edge;
-- die oben gewählte Windows- oder macOS-Anleitung. Sie öffnet den autorisierten
-  Webinstaller erst nach den USB-Prüfungen.
+- ein aktueller Desktopbrowser Chrome oder Edge.
+
+## Direkt im Webinstaller beginnen
+
+1. Den [RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
+   in Chrome oder Edge öffnen.
+2. Die beiden Bestätigungen aktivieren und **RoonPilot installieren** wählen.
+3. Im Geräteauswahldialog auf den Namen vor der Klammer achten und
+   **USB JTAG/serial debug unit** auswählen.
+4. Wird stattdessen **USB serial** angezeigt, den Dialog geöffnet lassen, USB
+   abziehen, den USB-C-Stecker am RoonPilot-Gerät um **180 Grad drehen** und neu
+   verbinden. Der Browser aktualisiert die Geräteliste sofort.
+5. **Erase device** bestätigen und USB verbunden lassen, bis Löschen,
+   Schreiben und Prüfen abgeschlossen sind.
 
 Eine Sicherung der Original-Firmware ist **freiwillig**. Sie ist nur sinnvoll,
 wenn später vielleicht der exakte Auslieferungszustand des Herstellers
 wiederhergestellt werden soll. Für Installation und Betrieb von RoonPilot wird
 sie nicht benötigt.
+
+## Optional: zusätzlich im Betriebssystem prüfen
+
+Diese Kontrolle ist für den Webinstaller nicht erforderlich. Sie kann helfen,
+wenn mehrere USB-Geräte angeschlossen sind oder die Prozessorseite unabhängig
+vom Browser bestätigt werden soll.
+
+- **Windows:** Unter **Geräte-Manager → Anschlüsse (COM & LPT)** erscheint der
+  RoonPilot-ESP32-S3 als **Serielles USB-Gerät (COMx)**. Der klassische
+  Begleitprozessor erscheint als **USB-SERIAL CH340 (COMx)**.
+- **macOS:** Unter **Systeminformationen → Hardware → USB** erscheint der
+  RoonPilot-ESP32-S3 als **USB JTAG/serial**. Der klassische Begleitprozessor
+  erscheint als **USB serial**.
+
+Die Bezeichnungen im Betriebssystem sind nur eine Zusatzkontrolle. Für die
+Installation ist der Eintrag **USB JTAG/serial debug unit** im Browserdialog
+entscheidend.
+
+Ausführliche Schrittfolgen: [Windows](installation-windows.md) ·
+[macOS](installation-macos.md).
 
 ## Nach der Installation
 

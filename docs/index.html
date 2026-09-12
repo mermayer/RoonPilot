@@ -57,11 +57,11 @@
         <p>A fast, tactile Roon remote for the Waveshare ESP32-S3 Knob Touch LCD 1.8. No bridge, companion app or additional service required.</p>
         <a class="hero-safety" href="#install">
           <svg><use href="#icon-alert"></use></svg>
-          <span><strong>Installing is different on Windows and macOS.</strong> Choose your computer to see the correct USB name and the short procedure.</span>
+          <span><strong>Start directly in the Web Installer.</strong> In the device chooser, the name before the parentheses is what matters; Device Manager and System Information are not required.</span>
           <svg><use href="#icon-arrow"></use></svg>
         </a>
         <div class="hero-actions">
-          <a class="button primary" href="#install"><svg><use href="#icon-book"></use></svg>Choose Windows or macOS</a>
+          <a class="button primary" href="firmware/"><svg><use href="#icon-usb"></use></svg>Open the Web Installer</a>
           <a class="button secondary" href="#documentation"><svg><use href="#icon-book"></use></svg>Read documentation</a>
         </div>
         <ul class="hero-facts" aria-label="RoonPilot highlights">
@@ -96,29 +96,18 @@
         <div class="critical-heading">
           <svg><use href="#icon-alert"></use></svg>
           <div>
-            <h2 id="two-esps-title">Choose Windows or macOS.</h2>
-            <p>The correct USB name is different on each operating system. Use the matching short guide; no command-line tool is needed for a normal installation.</p>
+            <h2 id="two-esps-title">The browser shows the connected processor.</h2>
+            <p>In the Web Installer's device chooser, simply read the name before the parentheses. The additional <code>COM…</code> or <code>cu.usbmodem…</code> value may differ.</p>
           </div>
         </div>
-        <div class="os-choice-grid">
-          <article class="os-choice-card">
-            <span class="plug-position">Device Manager → Ports (COM &amp; LPT)</span>
-            <h3>Windows</h3>
-            <span class="usb-match"><strong>Correct:</strong> USB Serial Device (COMx)</span>
-            <p><strong>Not this one:</strong> USB-SERIAL CH340 (COMx)</p>
-            <a class="button primary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-windows.md">Windows instructions <svg><use href="#icon-arrow"></use></svg></a>
-          </article>
-          <article class="os-choice-card">
-            <span class="plug-position">System Information → Hardware → USB</span>
-            <h3>macOS</h3>
-            <span class="usb-match"><strong>Correct:</strong> USB JTAG/serial</span>
-            <p><strong>Not this one:</strong> USB serial</p>
-            <a class="button primary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-macos.md">macOS instructions <svg><use href="#icon-arrow"></use></svg></a>
-          </article>
+        <div class="processor-paths">
+          <article><span class="orientation">Select for RoonPilot</span><h3>USB JTAG/serial debug unit</h3><p>This is the ESP32-S3 for the display, touch, rotary ring, Wi-Fi and RoonPilot firmware.</p></article>
+          <div class="rotate-plug" aria-label="Unplug and turn the USB-C plug"><svg><use href="#icon-rotate"></use></svg><strong>Unplug first</strong><span>Turn the USB-C plug by 180°</span></div>
+          <article><span class="orientation">Other plug position</span><h3>USB serial</h3><p>This is the separate classic companion processor, not the target of the main RoonPilot installer.</p></article>
         </div>
         <div class="critical-rule">
-          <strong>Wrong name?</strong>
-          <span>Unplug USB, turn the USB-C plug at the device by 180 degrees and reconnect it. Then check the name again.</span>
+          <strong>No preliminary check needed.</strong>
+          <span>If the open chooser shows <b>USB serial</b>, unplug USB, turn the USB-C plug by 180 degrees and reconnect it. The browser detects the device again immediately. Device Manager and System Information remain optional additional checks.</span>
         </div>
         <a class="text-link amber" href="https://github.com/mermayer/RoonPilot/blob/main/guides/hardware-and-two-processors.md">Optional technical background: the two processors <svg><use href="#icon-arrow"></use></svg></a>
       </div>
@@ -127,31 +116,31 @@
     <section class="content-section page-width" aria-labelledby="prepare-title">
       <div class="section-heading">
         <p class="section-number">01</p>
-        <div><h2 id="prepare-title">Four simple checks</h2><p>Everything needed before opening the installer.</p></div>
+        <div><h2 id="prepare-title">Start directly in the Web Installer</h2><p>The browser handles device selection; no operating-system tool is needed beforehand.</p></div>
       </div>
       <ol class="preflight">
         <li>
           <span class="step-number">1</span>
           <svg><use href="#icon-usb"></use></svg>
-          <div><h3>Use a USB data cable</h3><p>A charge-only cable can power the display but cannot install firmware.</p></div>
+          <div><h3>Use a USB data cable</h3><p>A charge-only cable can power the display but cannot transfer firmware.</p></div>
         </li>
         <li>
           <span class="step-number">2</span>
-          <svg><use href="#icon-chip"></use></svg>
-          <div><h3>Choose your computer</h3><p>Follow either the Windows guide or the macOS guide from start to finish.</p></div>
+          <svg><use href="#icon-terminal"></use></svg>
+          <div><h3>Open the Web Installer</h3><p>Use Chrome or Edge, enable the confirmations and start installation. The device chooser then opens.</p></div>
         </li>
         <li>
           <span class="step-number">3</span>
-          <svg><use href="#icon-terminal"></use></svg>
-          <div><h3>Check the USB name</h3><p>Continue only with USB Serial Device on Windows or USB JTAG/serial on macOS.</p></div>
+          <svg><use href="#icon-chip"></use></svg>
+          <div><h3>Read the name before parentheses</h3><p>Select <strong>USB JTAG/serial debug unit</strong> for RoonPilot. <code>COM…</code> or <code>cu.usbmodem…</code> appears only as additional information in parentheses.</p></div>
         </li>
         <li>
           <span class="step-number">4</span>
           <svg><use href="#icon-check"></use></svg>
-          <div><h3>Use the Web Installer</h3><p>Open it in desktop Chrome or Edge and leave USB connected until it finishes.</p></div>
+          <div><h3>Turn the plug if the entry is wrong</h3><p>For <strong>USB serial</strong>, leave the chooser open, unplug USB, turn the USB-C plug by 180 degrees and reconnect it. The browser refreshes the choice immediately.</p></div>
         </li>
       </ol>
-      <div class="never-rule"><svg><use href="#icon-alert"></use></svg><strong>If the USB name is wrong, unplug USB, turn the plug by 180 degrees and reconnect.</strong></div>
+      <div class="never-rule"><svg><use href="#icon-alert"></use></svg><strong>An original-firmware backup is optional and not a prerequisite for RoonPilot.</strong></div>
       <div class="preflight-links">
         <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-windows.md">Windows instructions <svg><use href="#icon-arrow"></use></svg></a>
         <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-macos.md">macOS instructions <svg><use href="#icon-arrow"></use></svg></a>
@@ -162,23 +151,23 @@
       <div class="page-width">
         <div class="section-heading">
           <p class="section-number">02</p>
-          <div><h2>Install in the browser</h2><p>Once the correct USB name is visible, only a few clicks remain.</p></div>
+          <div><h2>Install RoonPilot in the browser</h2><p>The Web Installer shows the correct USB entry directly in its chooser.</p></div>
         </div>
         <div class="install-layout">
           <aside class="install-warning">
             <svg><use href="#icon-alert"></use></svg>
-            <h3>Factory installation</h3>
-            <p>The installer replaces the current ESP32-S3 firmware and settings with RoonPilot.</p>
-            <p>An original-firmware backup is optional. Make one only if returning to the exact manufacturer state may matter to you later.</p>
+            <h3>Select USB JTAG/serial debug unit here</h3>
+            <p>If the browser chooser shows <strong>USB serial</strong> instead, the classic companion ESP32 is connected. Leave the chooser open, unplug USB, turn the USB-C plug by 180 degrees and reconnect it.</p>
+            <p>The Factory installation erases the complete ESP32-S3 and its settings. An original-firmware backup is optional.</p>
           </aside>
           <div class="installer-panel">
             <div class="installer-topline">
-              <div><span class="panel-mark"></span><strong>Ready to install</strong></div>
+              <div><span class="panel-mark"></span><strong>Installation checklist</strong></div>
               <span>ESP32-S3</span>
             </div>
             <dl class="readiness" aria-label="Installation requirements">
               <div><dt><svg><use href="#icon-usb"></use></svg>USB cable</dt><dd class="check">Data capable</dd></div>
-              <div><dt><svg><use href="#icon-check"></use></svg>USB name</dt><dd class="check">ESP32-S3 side</dd></div>
+              <div><dt><svg><use href="#icon-check"></use></svg>Browser entry</dt><dd class="check">USB JTAG/serial debug unit</dd></div>
               <div><dt><svg><use href="#icon-shield"></use></svg>Browser</dt><dd class="check">Chrome or Edge</dd></div>
             </dl>
             <div class="installer-critical">
@@ -187,12 +176,13 @@
               <p><strong>Later updates</strong> run directly from RoonPilot under <b>System → Firmware update</b> and normally preserve settings.</p>
             </div>
             <div class="installer-action">
-              <a class="button primary install-button" href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-windows.md"><svg><use href="#icon-book"></use></svg>Windows installation guide</a>
-              <a class="text-link installer-guide-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-macos.md">macOS installation guide <svg><use href="#icon-arrow"></use></svg></a>
+              <a class="button primary install-button" href="firmware/"><svg><use href="#icon-usb"></use></svg>Open the Web Installer</a>
+              <a class="text-link installer-guide-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-windows.md">Windows <svg><use href="#icon-arrow"></use></svg></a>
+              <a class="text-link installer-guide-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-macos.md">macOS <svg><use href="#icon-arrow"></use></svg></a>
             </div>
           </div>
         </div>
-        <p class="browser-note">Close any serial monitor that may be using the USB connection before starting.</p>
+        <p class="browser-note"><strong>Device choice:</strong> the name before the parentheses is what matters. The chooser can remain open while USB is unplugged, turned and reconnected.</p>
       </div>
     </section>
 
@@ -209,7 +199,7 @@
       </div>
       <div class="companion-note">
         <div><svg><use href="#icon-chip"></use></svg></div>
-        <div><h3>The Companion firmware is optional.</h3><p>RoonPilot works fully without it. Start with the Companion guide for <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/companion-installation-windows.md">Windows</a> or <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/companion-installation-macos.md">macOS</a>. Each explains the correct USB name before linking to the separate, chip-restricted Web Installer.</p></div>
+        <div><h3>The Companion firmware is optional.</h3><p>RoonPilot works fully without it. The separate Companion guide for <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/companion-installation-windows.md">Windows</a> or <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/companion-installation-macos.md">macOS</a> also leads directly to its own Web Installer restricted to the classic companion ESP32.</p></div>
       </div>
     </section>
 

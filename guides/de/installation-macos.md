@@ -1,78 +1,63 @@
 # RoonPilot unter macOS installieren
 
-[English](../installation-macos.md) · **Deutsch** · [Anderes Betriebssystem wählen](installation.md)
+[English](../installation-macos.md) · **Deutsch** · [Windows](installation-windows.md)
 
-Für die normale Installation werden weder Python noch Terminalbefehle oder
-andere Kommandozeilenwerkzeuge benötigt.
+Für die normale Installation werden weder der macOS-Systembericht noch Python,
+Terminalbefehle oder `esptool` benötigt.
 
-## 1. Mac vorbereiten
+## Benötigt
 
-1. Einen aktuellen **Google-Chrome**-Browser installieren oder öffnen. Safari
-   und Firefox unterstützen diese Browser-Installation nicht.
-2. RoonPilot direkt mit einem **USB-Datenkabel** verbinden.
-3. Arduino Serial Monitor, ESP-IDF Monitor und alle anderen Programme schließen,
-   die die serielle Verbindung bereits verwenden könnten.
+- Mac mit aktuellem **Google Chrome**; Safari und Firefox unterstützen diese
+  Web-Serial-Installation nicht;
+- USB-Datenkabel;
+- RoonPilot-Gerät.
 
-## 2. Steckerstellung prüfen
+## Installation
 
-1. Über Spotlight die **Systeminformationen** öffnen. Alternativ:
-   **Apple-Menü → Über diesen Mac → Weitere Infos → Systembericht**.
-2. In der linken Spalte **Hardware → USB** auswählen.
-3. Den Eintrag anklicken, der beim Anstecken von RoonPilot erscheint.
-
-Die richtige Seite mit dem ESP32-S3 wird so angezeigt:
-
-> **USB JTAG/serial**
-
-Zeigt macOS stattdessen Folgendes an:
-
-> **USB serial**
-
-ist die USB-Schnittstelle des **ESP32-U4WDH**-Begleitprozessors verbunden, nicht
-der ESP32-S3. USB abziehen, den USB-C-Stecker am RoonPilot-Gerät um **180 Grad
-drehen**, neu verbinden und noch einmal unter **Hardware → USB** nachsehen. Erst
-mit **USB JTAG/serial** fortfahren.
-
-## 3. RoonPilot installieren
-
-1. Den [RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
+1. Alle Programme schließen, die eine serielle USB-Verbindung verwenden.
+2. Den [RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
    in Chrome öffnen.
-2. Die Hardwarebestätigung markieren und die Lizenz für private Nutzung
-   akzeptieren.
-3. **RoonPilot installieren** auswählen.
-4. Im Gerätefenster von Chrome den Eintrag für **USB JTAG/serial** wählen.
-   Chrome kann ihn als **USB JTAG/serial debug unit** bezeichnen.
-5. **Erase device** bestätigen, wenn danach gefragt wird. Vorher muss nichts
-   separat gelöscht werden.
-6. Das Kabel angeschlossen lassen, bis Löschen, Schreiben und Prüfen vollständig
-   abgeschlossen sind.
+3. Beide Bestätigungen aktivieren und **RoonPilot installieren** wählen. Nun
+   öffnet sich der Geräteauswahldialog von Chrome.
+4. RoonPilot per USB anschließen. Der richtige Eintrag lautet:
+
+   > **USB JTAG/serial debug unit** (`cu.usbmodem…`)
+
+5. Entscheidend ist **USB JTAG/serial debug unit** vor der Klammer.
+   `cu.usbmodem…` steht ergänzend in Klammern und kann eine andere Endnummer
+   erhalten.
+6. Wird stattdessen **USB serial** (`cu.wchusbserial…`) angezeigt, ist der
+   klassische Begleit-ESP32 verbunden. Den Dialog geöffnet lassen, USB
+   abziehen, den USB-C-Stecker am RoonPilot-Gerät um **180 Grad drehen** und
+   neu verbinden. Der Webinstaller erkennt das Gerät sofort wieder. Nun
+   **USB JTAG/serial debug unit** auswählen.
+7. **Erase device** bestätigen und USB verbunden lassen, bis Löschen,
+   Schreiben und Prüfen vollständig abgeschlossen sind.
+8. Den RoonPilot-Startbildschirm abwarten und mit der
+   [Ersteinrichtung](first-time-setup.md) fortfahren.
 
 Die Factory-Installation löscht Firmware und Einstellungen auf dem ESP32-S3.
-Der andere Prozessor des Boards wird dabei nicht gelöscht.
+Der zweite Prozessor des Boards wird dabei nicht verändert.
 
-## 4. RoonPilot starten
+## Optionaler Begleitprozessor
 
-1. USB abziehen und den Stecker **ohne Drehung** wieder einstecken.
-2. Den RoonPilot-Startbildschirm abwarten.
-3. Mit der [Ersteinrichtung](first-time-setup.md) fortfahren.
-
-## Optional: zweiten Prozessor in Deep Sleep versetzen
-
-RoonPilot funktioniert vollständig ohne diesen Schritt. Soll der ungenutzte
-Companion-ESP32 in einen definierten Stromsparzustand versetzt werden, folgt
-danach der getrennte
+RoonPilot funktioniert vollständig ohne dessen Zusatzfirmware. Soll der
+ungenutzte ESP32-U4WDH in einen definierten Stromsparzustand versetzt werden,
+folgt danach der getrennte
 [Companion-Webinstaller für macOS](companion-installation-macos.md).
-Auch dafür sind keine Terminalbefehle und kein esptool nötig.
 
-## Wenn der Installer keine Verbindung herstellt
+Eine [Sicherung der Original-Firmware](factory-backup.md) ist freiwillig. Die
+[technische esptool-Anleitung für macOS](esptool-macos.md) wird nur für diese
+Sicherung, manuelle Wiederherstellung oder erweiterte Diagnose benötigt.
 
-- Prüfen, ob das Kabel Daten übertragen kann.
-- Prüfen, ob ein anderes Programm die serielle USB-Verbindung verwendet.
-- Den Installer in Chrome neu laden und erneut **USB JTAG/serial** auswählen.
-- Unter [Fehlerbehebung](troubleshooting.md) stehen weitere Schritte.
+## Optional: zusätzlich mit macOS prüfen
 
-Die separate [esptool-Anleitung für macOS](esptool-macos.md) ist nur für
-erweiterte Diagnose, freiwillige Original-Flash-Sicherungen und manuelle
-Wiederherstellung gedacht. Sie gehört zu keiner der beiden normalen
-Browser-Installationen. Eine
-[Sicherung der Original-Firmware](factory-backup.md) ist freiwillig.
+Diese Prüfung ist **nicht** Teil des normalen Installationsablaufs. Nur wenn
+mehrere USB-Geräte schwer auseinanderzuhalten sind, kann unter
+**Systeminformationen → Hardware → USB** kontrolliert werden:
+
+- **USB JTAG/serial:** ESP32-S3-Seite für RoonPilot;
+- **USB serial:** klassischer Begleit-ESP32.
+
+Für die eigentliche Installation bleibt der Chrome-Dialog maßgeblich: Dort
+**USB JTAG/serial debug unit** auswählen.

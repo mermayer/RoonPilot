@@ -43,11 +43,21 @@ Cloudkonto oder zusätzlicher ständig laufender RoonPilot-Dienst benötigt.
 
 ## Hier beginnen
 
-Zuerst den Computer auswählen. Die beiden Einsteigeranleitungen zeigen den
-genauen USB-Namen und jeden Schritt vom Anstecken bis zum Webinstaller:
+Für die normale Installation direkt den
+**[RoonPilot-Webinstaller öffnen →](https://mermayer.github.io/RoonPilot/de/firmware/)**.
+Chrome oder Edge zeigt die angeschlossenen Geräte selbst im Auswahldialog an.
+Dort ist der Name **vor der Klammer** entscheidend:
 
-- **[Installation unter Windows →](guides/de/installation-windows.md)**
-- **[Installation unter macOS →](guides/de/installation-macos.md)**
+- **USB JTAG/serial debug unit** ist der richtige ESP32-S3 für RoonPilot.
+- Erscheint **USB serial**, den Dialog geöffnet lassen, USB abziehen, den
+  USB-C-Stecker um 180 Grad drehen und neu verbinden. Der Webinstaller erkennt
+  das Gerät sofort wieder.
+
+Geräte-Manager und macOS-Systembericht sind für die normale Installation nicht
+nötig. Wer die Prozessorseite zusätzlich kontrollieren möchte, findet diese
+freiwillige Prüfung in den ausführlichen Anleitungen für
+[Windows](guides/de/installation-windows.md) und
+[macOS](guides/de/installation-macos.md).
 
 Nach dem Flashen [WLAN und Roon erstmals einrichten](guides/de/first-time-setup.md)
 und danach [Display, Ring, Touch und Gesten kennenlernen](guides/de/device-controls.md).
@@ -57,10 +67,9 @@ jeden Bildschirm, jede Webseite, Updates, Wiederherstellung,
 Konfigurationssicherung, Akku-Kalibrierung, Datenschutz und Fehlerbehebung.
 
 > [!IMPORTANT]
-> Das Board enthält **zwei unabhängige ESP-Prozessoren**. Die Windows- und
-> macOS-Anleitungen zeigen, welcher USB-Name zum ESP32-S3 gehört. Erscheint der
-> andere Prozessor, USB abziehen, den USB-C-Stecker um 180 Grad drehen und neu
-> verbinden.
+> Das Board enthält **zwei unabhängige ESP-Prozessoren**. Für RoonPilot im
+> Geräteauswahldialog des Webinstallers immer **USB JTAG/serial debug unit**
+> wählen. **USB serial** gehört zum getrennten Begleitprozessor.
 
 Eine [optionale Sicherung der Original-Firmware](guides/de/factory-backup.md)
 ist sinnvoll, wenn später möglicherweise der exakte Auslieferungszustand des

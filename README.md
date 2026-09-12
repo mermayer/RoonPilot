@@ -42,11 +42,20 @@ always-on RoonPilot service.
 
 ## Start here
 
-Choose the computer you will use. The two beginner guides show the exact USB
-name and every step from connecting the cable to opening the Web Installer:
+For a normal installation, open the
+**[RoonPilot Web Installer directly →](https://mermayer.github.io/RoonPilot/firmware/)**.
+Chrome or Edge shows connected devices in its own chooser. The name **before
+the parentheses** is what matters:
 
-- **[Install with Windows →](guides/installation-windows.md)**
-- **[Install with macOS →](guides/installation-macos.md)**
+- **USB JTAG/serial debug unit** is the correct ESP32-S3 for RoonPilot.
+- If **USB serial** appears, leave the chooser open, unplug USB, turn the USB-C
+  plug by 180 degrees and reconnect it. The Web Installer detects the device
+  again immediately.
+
+Device Manager and macOS System Information are not needed for a normal
+installation. Anyone who wants an additional processor check can find the
+optional procedure in the detailed [Windows](guides/installation-windows.md)
+and [macOS](guides/installation-macos.md) guides.
 
 After flashing, [complete Wi-Fi and Roon first-time setup](guides/first-time-setup.md),
 then [learn the display, ring, touch and gestures](guides/device-controls.md).
@@ -56,9 +65,9 @@ every web page, updates, recovery, configuration backup, battery calibration,
 privacy and troubleshooting.
 
 > [!IMPORTANT]
-> This board contains **two independent ESP processors**. The Windows and macOS
-> guides show which USB name belongs to the ESP32-S3. If the other processor is
-> shown, unplug USB, turn the USB-C plug by 180 degrees and reconnect it.
+> This board contains **two independent ESP processors**. In the Web Installer
+> device chooser, always select **USB JTAG/serial debug unit** for RoonPilot.
+> **USB serial** belongs to the separate companion processor.
 
 An [optional factory backup](guides/factory-backup.md) is useful if you may want
 to restore the exact firmware state in which the manufacturer delivered the

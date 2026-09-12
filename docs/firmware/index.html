@@ -10,45 +10,32 @@
   <style>
     :root{color-scheme:dark;--bg:#080a0b;--card:#111415;--line:#34393a;--text:#f2ede5;--muted:#aaa9a4;--cyan:#4fe0e2;--amber:#f1ad38;--danger:#ff6e65}
     *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 Inter,system-ui,sans-serif}.wrap{width:min(900px,calc(100% - 34px));margin:0 auto;padding:60px 0 80px}h1{font-size:clamp(36px,7vw,64px);line-height:1;margin:0 0 15px}h2{font-size:24px;margin:0 0 13px}p{color:var(--muted)}.warning{border-left:4px solid var(--amber);padding:15px 18px;background:#f1ad3810;margin:28px 0}.web-installer,.card,.license-panel{border:1px solid var(--line);background:var(--card);padding:22px;border-radius:10px}.web-installer,.license-panel,.card{margin:24px 0}.confirm{display:flex;gap:12px;align-items:flex-start;margin:17px 0;color:var(--muted)}.confirm input{margin-top:5px;accent-color:var(--cyan)}.target{color:var(--cyan);font-size:12px;text-transform:uppercase;letter-spacing:1px}.download,.install-button{display:inline-flex;margin-top:12px;min-height:46px;align-items:center;padding:0 17px;border:0;border-radius:7px;background:var(--cyan);color:#061112;text-decoration:none;font:700 16px/1 Inter,system-ui,sans-serif}.install-button:disabled{cursor:not-allowed;opacity:.42}.hash{margin-top:15px;font:12px/1.45 ui-monospace,Consolas,monospace;overflow-wrap:anywhere;color:#8e9795}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}.links a,.confirm a{color:var(--cyan)}.inline-warning{display:block;margin-top:12px;color:var(--amber)}.restriction{border-left:3px solid var(--danger);padding-left:14px}.distribution{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}.distribution div{border-top:1px solid var(--line);padding-top:16px}.distribution strong{display:block}.distribution p{margin:5px 0 0;font-size:14px}@media(max-width:700px){.wrap{padding-top:35px}.distribution{grid-template-columns:1fr}}
-    .header-links{margin:0 0 28px}.next-step{border-color:#4fe0e266;background:linear-gradient(135deg,#4fe0e214,#111415 60%)}
+    .next-step{border-color:#4fe0e266;background:linear-gradient(135deg,#4fe0e214,#111415 60%)}
     .next-step p{margin-bottom:0}
-    .os-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}.os-card{padding:18px;border:1px solid #4fe0e244;border-radius:9px;background:#4fe0e209}.os-card h3{margin:0 0 10px;font-size:20px}.os-card p{margin:8px 0;font-size:14px}.device-name{display:block;margin:10px 0;padding:10px 12px;border:1px solid #4fe0e255;border-radius:6px;background:#080a0b;color:var(--text);font-weight:700}.wrong-device{color:var(--amber)}.os-card a{color:var(--cyan)}.device-note{margin:18px 0;padding:16px 18px;border-left:3px solid var(--amber);background:#f1ad380b}.device-note p{margin:0;font-size:14px}.companion-card{border-color:#4fe0e266;background:linear-gradient(135deg,#17303366,#111415 62%)}.companion-card .download{margin-right:10px}.companion-card .secondary{border:1px solid var(--cyan);background:transparent;color:var(--cyan)}@media(max-width:700px){.os-grid{grid-template-columns:1fr}.companion-card .download{width:100%;justify-content:center;margin-right:0}}
+    .device-note{margin:18px 0;padding:16px 18px;border:1px solid #4fe0e244;border-radius:8px;background:#4fe0e209}.device-note h3{margin:0 0 5px;font-size:17px}.device-note h3:not(:first-child){margin-top:17px}.device-note p{margin:0;font-size:14px}.device-note code{color:var(--text)}.choice-scroll{overflow-x:auto;margin:12px 0}.choice-table{width:100%;border-collapse:collapse;font-size:14px}.choice-table th,.choice-table td{padding:9px 11px;border:1px solid var(--line);text-align:left;vertical-align:top}.choice-table th{color:var(--text);background:#ffffff08}.choice-table td{color:var(--muted)}.choice-table strong{color:var(--text)}@media(max-width:700px){.choice-scroll{overflow:visible}.choice-table,.choice-table tbody,.choice-table tr,.choice-table td{display:block;width:100%}.choice-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.choice-table tr{margin:0 0 12px;border:1px solid var(--line)}.choice-table td{border:0;border-bottom:1px solid var(--line)}.choice-table td:last-child{border-bottom:0}.choice-table td::before{display:block;margin-bottom:3px;color:var(--cyan);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}.choice-table td:nth-child(1)::before{content:"Target device"}.choice-table td:nth-child(2)::before{content:"Windows"}.choice-table td:nth-child(3)::before{content:"macOS"}}
   </style>
 </head>
 <body><main class="wrap">
-  <div class="links header-links"><a href="../">Project page</a><strong>English</strong><a href="../de/firmware/">Deutsch</a></div>
+  <div class="links" style="margin:0 0 28px"><a href="../">Project page</a><strong>English</strong><a href="../de/firmware/">Deutsch</a></div>
   <div class="target">RoonPilot primary firmware</div>
   <h1>Firmware Installer</h1>
   <p>The primary ESP32-S3 firmware is installed only through this authorized browser installer. Factory and OTA images are not offered as standalone downloads.</p>
 
-  <div class="warning"><strong>Start with your operating system below.</strong> The USB name tells you whether the ESP32-S3 required by RoonPilot is connected. No command-line tool is needed.</div>
+  <div class="warning"><strong>Two independent processors.</strong> Check the name before the parentheses in the device chooser and select <strong>USB JTAG/serial debug unit</strong> for this installer. A Factory installation erases the complete ESP32-S3 and all of its settings. An original-firmware backup is optional and useful only if you may want to restore the exact manufacturer-delivered state later.</div>
 
   <section class="web-installer" aria-labelledby="web-installer-title">
     <div class="target">ESP32-S3 only &middot; USB Web Serial</div>
     <h2 id="web-installer-title">Install in the browser</h2>
-    <p>First identify the correct USB entry for your computer, then install in a current desktop Chrome or Edge browser.</p>
-    <div class="os-grid" role="group" aria-label="Choose installation instructions">
-      <article class="os-card">
-        <h3>Windows</h3>
-        <p>Open <strong>Device Manager → Ports (COM &amp; LPT)</strong>.</p>
-        <span class="device-name">✓ USB Serial Device (COMx)</span>
-        <p class="wrong-device">Not this one: USB-SERIAL CH340 (COMx)</p>
-        <p>If CH340 appears, unplug USB, turn the USB-C plug at the device by 180 degrees and reconnect it.</p>
-        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-windows.md">Windows instructions →</a>
-      </article>
-      <article class="os-card">
-        <h3>macOS</h3>
-        <p>Open <strong>System Information → Hardware → USB</strong>.</p>
-        <span class="device-name">✓ USB JTAG/serial</span>
-        <p class="wrong-device">Not this one: USB serial</p>
-        <p>If USB serial appears, unplug USB, turn the USB-C plug at the device by 180 degrees and reconnect it.</p>
-        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-macos.md">macOS instructions →</a>
-      </article>
-    </div>
+    <p>Use a current desktop Chromium browser such as Chrome or Edge. Close every serial monitor before continuing. Firefox and Safari do not support this Web Serial workflow.</p>
     <div class="device-note">
-      <p><strong>When asked, confirm Erase device.</strong> No separate erase is needed beforehand. Keep USB connected until installation is complete. This erases the ESP32-S3 settings, not the other processor.</p>
+      <h3>Entry in the device chooser</h3>
+      <p>These names appear in the Web Installer dialog itself. The name before the parentheses is what matters:</p>
+      <div class="choice-scroll"><table class="choice-table"><thead><tr><th>Target device</th><th>Windows</th><th>macOS</th></tr></thead><tbody><tr><td>RoonPilot main <strong>ESP32-S3</strong></td><td><strong>USB JTAG/serial debug unit</strong> (<code>COM…</code>)</td><td><strong>USB JTAG/serial debug unit</strong> (<code>cu.usbmodem…</code>)</td></tr><tr><td>RoonPilot companion, classic <strong>ESP32</strong></td><td><strong>USB serial</strong> (<code>COM…</code>)</td><td><strong>USB serial</strong> (<code>cu.wchusbserial…</code>)</td></tr><tr><td>Separate IR Bridge, <strong>ESP32-S3</strong></td><td><strong>USB JTAG/serial debug unit</strong> (<code>COM…</code>)</td><td><strong>USB JTAG/serial debug unit</strong> (<code>cu.usbmodem…</code>)</td></tr></tbody></table></div>
+      <p><strong>Select the first row here.</strong> No preliminary check in Device Manager, macOS System Information or <code>esptool</code> is required. If the open chooser shows <strong>USB serial</strong>, unplug USB, turn the USB-C plug at the round RoonPilot device by 180&deg; and reconnect it. The Web Installer immediately detects the device again and shows <strong>USB JTAG/serial debug unit</strong>. The Bridge row applies only to the separate Bridge Web Installer. If RoonPilot and an IR Bridge are both connected by USB, leave only the intended target device connected during installation.</p>
+      <h3>Erase during a Factory installation</h3>
+      <p>No separate erase is needed beforehand. When the installer offers <strong>Erase device</strong>, select or confirm it for a first installation or complete recovery. This clean install erases all ESP32-S3 settings, but it does not erase the companion ESP32. Later online updates under <strong>System &rarr; Firmware update</strong> do not require an erase.</p>
     </div>
-    <label class="confirm"><input id="hardwareConfirm" type="checkbox"><span>I found the correct ESP32-S3 USB entry shown above and understand that this Factory installation erases its current firmware and settings.</span></label>
+    <label class="confirm"><input id="hardwareConfirm" type="checkbox"><span>In the device chooser that opens next, I will select <strong>USB JTAG/serial debug unit</strong> for the round RoonPilot device. I understand that this Factory installation erases its current firmware and settings.</span></label>
     <label class="confirm"><input id="licenseConfirm" type="checkbox"><span>I have read and accept the <a href="../legal/LICENSE.md" target="_blank" rel="noopener">RoonPilot Personal-Use Binary License 1.0</a>. I understand that redistribution, modification, reverse engineering, source recovery, competitive analysis and commercial use of RoonPilot-authored portions are prohibited except where mandatory law provides otherwise.</span></label>
     <esp-web-install-button manifest="../manifest.json">
       <button id="installButton" class="install-button" slot="activate" type="button" disabled>Install RoonPilot</button>
@@ -69,20 +56,20 @@
     <div><strong>Normal updates</strong><p>Installed directly by RoonPilot under <b>System &rarr; Firmware update</b>. No OTA file download is offered.</p></div>
   </section>
 
-  <section class="card companion-card" aria-labelledby="companion-title">
-    <div class="target">Optional second processor</div>
-    <h2 id="companion-title">Put the unused Companion ESP32 into deep sleep</h2>
-    <p>RoonPilot works fully without this step. If you want the ESP32-U4WDH companion placed into a defined low-power state, use its own beginner-friendly Web Installer. No Python, Terminal or esptool is required for the normal Companion installation.</p>
-    <p>The separate page shows the correct Windows and macOS USB names and accepts classic ESP32 hardware only. The main installer above remains restricted to ESP32-S3 hardware.</p>
+  <section class="card" aria-labelledby="companion-title">
+    <div class="target">Separate classic ESP32 &middot; optional</div>
+    <h2 id="companion-title">Companion Sleep firmware</h2>
+    <p>It releases shared signals, mutes the unused DAC path and puts the board's second ESP32 into deep sleep. RoonPilot also works fully without it.</p>
+    <p>The normal installation also needs no Python or command line and uses its own Web Installer. Select <strong>USB serial</strong> in the browser chooser, not <strong>USB JTAG/serial debug unit</strong>.</p>
     <a class="download" href="companion/">Open Companion Web Installer</a>
-    <a class="download secondary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/companion-firmware.md">Read what the Companion firmware does</a>
+    <p><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/companion-firmware.md">Purpose and separate Windows/macOS instructions</a></p>
   </section>
 
   <section class="license-panel" aria-labelledby="license-title">
     <div class="target">Proprietary RoonPilot portions</div>
     <h2 id="license-title">License and third-party notices</h2>
     <p class="restriction">Official, unmodified RoonPilot firmware may be installed and used privately on supported hardware. RoonPilot-authored code, assets and integration may not be redistributed, modified, reverse engineered or used in another product. Independently licensed third-party components retain their own rights and licenses.</p>
-    <div class="links"><a href="../legal/LICENSE.md">License (English)</a><a href="../legal/LICENSE.de.md">Lizenz (Deutsch)</a><a href="../legal/NOTICE">Required notice</a><a href="../legal/THIRD_PARTY_NOTICES.md">Third-party notices</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-windows.md">Windows installation</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-macos.md">macOS installation</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/factory-backup.md">Optional factory backup</a></div>
+    <div class="links"><a href="../legal/LICENSE.md">License (English)</a><a href="../legal/LICENSE.de.md">Lizenz (Deutsch)</a><a href="../legal/NOTICE">Required notice</a><a href="../legal/THIRD_PARTY_NOTICES.md">Third-party notices</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation.md">Installation guide</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/factory-backup.md">Factory-backup guide</a></div>
   </section>
 </main><script>
 const hardwareConfirm=document.getElementById('hardwareConfirm');
