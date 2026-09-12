@@ -26,6 +26,21 @@ RoonPilot spricht im lokalen Netzwerk direkt mit Roon. Es wird weder ein
 Raspberry Pi noch ein Docker-Container, Node.js-Host, Desktop-Helfer,
 Cloudkonto oder zusätzlicher ständig laufender RoonPilot-Dienst benötigt.
 
+> [!NOTE]
+> **Aus Freude an Musik und Technik**
+>
+> RoonPilot ist ein privates Hobbyprojekt, das aus Spaß an Musik, Technik und
+> eigener Entwicklung entstanden ist – ohne kommerzielle Absichten. Es gibt
+> keine Werbung, keine Abonnements und keine versteckten Kosten. RoonPilot
+> übermittelt weder persönliche Daten noch Nutzungs- oder Telemetriedaten an
+> den Entwickler oder an Dritte. Wer sich freiwillig für die investierte Zeit
+> und Arbeit bedanken möchte, kann dies über
+> [Buy Me a Coffee](https://buymeacoffee.com/mermayer) tun.
+>
+> **Support und Austausch:** im
+> [Roon Community Forum](https://community.roonlabs.com/t/new-big-thing-roonpilot-the-new-era-of-roon-control)
+> oder über [GitHub Issues](https://github.com/mermayer/RoonPilot/issues).
+
 ## Hier beginnen
 
 Zuerst den Computer auswählen. Die beiden Einsteigeranleitungen zeigen den
