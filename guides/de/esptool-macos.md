@@ -32,7 +32,7 @@ anderen verbunden werden:
 | Prozessor | Typischer macOS-Port | Aufgabe |
 | --- | --- | --- |
 | Haupt-ESP32-S3 | `/dev/cu.usbmodem…` | RoonPilot-Displayfirmware |
-| Klassischer Begleit-ESP32 | `/dev/cu.wchusbserial…` oder anderer USB-Seriell-Name | Optionale Companion-Firmware |
+| Klassischer Begleit-ESP32 | `/dev/cu.usbserial…` oder `/dev/cu.wchusbserial…` | Optionale Companion-Firmware |
 
 Portnamen können abweichen und sind nur ein Anhaltspunkt. Das Ergebnis von
 `chip-id` ist die entscheidende Prüfung. Niemals `erase-flash`, `write-flash`

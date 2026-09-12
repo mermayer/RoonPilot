@@ -31,26 +31,26 @@
   </section>
 
   <section class="card" aria-labelledby="identify-title">
-    <p class="eyebrow">Step 1</p>
-    <h2 id="identify-title">Connect the Companion side</h2>
-    <p>Use a USB data cable. The required USB name differs by operating system:</p>
+    <p class="eyebrow">Step 1 &middot; USB data cable</p>
+    <h2 id="identify-title">Start directly in the Web Installer</h2>
+    <p>Connect RoonPilot and continue on this page. No preliminary check in Device Manager or macOS System Information is required. The browser opens its device chooser only after you select <strong>Install Companion firmware</strong>:</p>
     <div class="os-grid">
       <article class="os-card">
         <h3>Windows</h3>
-        <p>Open <strong>Device Manager → Ports (COM &amp; LPT)</strong>.</p>
-        <span class="device-name">✓ USB-SERIAL CH340 (COMx)</span>
-        <p class="wrong">Not this one: USB Serial Device (COMx)</p>
+        <p>Select this in the device chooser:</p>
+        <span class="device-name">✓ USB serial (<code>COM…</code>)</span>
+        <p class="wrong">Do not select: USB JTAG/serial debug unit</p>
         <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/companion-installation-windows.md">Detailed Windows instructions →</a>
       </article>
       <article class="os-card">
         <h3>macOS</h3>
-        <p>Open <strong>System Information → Hardware → USB</strong>.</p>
-        <span class="device-name">✓ USB serial</span>
-        <p class="wrong">Not this one: USB JTAG/serial</p>
+        <p>Select this in the device chooser:</p>
+        <span class="device-name">✓ USB serial (<code>cu.usbserial…</code> or <code>cu.wchusbserial…</code>)</span>
+        <p class="wrong">Do not select: USB JTAG/serial debug unit</p>
         <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/companion-installation-macos.md">Detailed macOS instructions →</a>
       </article>
     </div>
-    <p class="safety">If the wrong name appears, unplug USB, turn the USB-C plug at the RoonPilot device by 180 degrees and reconnect it.</p>
+    <p class="safety">If the open chooser shows USB JTAG/serial debug unit, unplug USB, turn the USB-C plug at the RoonPilot device by 180 degrees and reconnect it. The Web Installer detects the Companion side immediately and shows USB serial.</p>
   </section>
 
   <section class="card backup" aria-labelledby="backup-title">
@@ -64,7 +64,7 @@
     <p class="eyebrow">Step 2 · Chrome or Edge on a desktop computer</p>
     <h2 id="install-title">Install Companion Sleep</h2>
     <p>The manifest on this page contains a build for the classic <strong>ESP32</strong> only. If the ESP32-S3 side is selected, the installer has no compatible build and must not write it.</p>
-    <label class="confirm"><input id="hardwareConfirm" type="checkbox"><span>I see <strong>USB-SERIAL CH340</strong> on Windows or <strong>USB serial</strong> on macOS and understand that this installation replaces the firmware on that companion processor.</span></label>
+    <label class="confirm"><input id="hardwareConfirm" type="checkbox"><span>In the device chooser that opens next, I will select <strong>USB serial</strong> for the classic Companion ESP32 and understand that this installation replaces its firmware.</span></label>
     <label class="confirm"><input id="licenseConfirm" type="checkbox"><span>I have read and accept the <a href="../../legal/LICENSE.md" target="_blank" rel="noopener">RoonPilot Personal-Use Binary License 1.0</a>.</span></label>
     <esp-web-install-button manifest="../../companion-manifest.json">
       <button id="installButton" class="install-button" slot="activate" type="button" disabled>Install Companion firmware</button>
@@ -79,7 +79,7 @@
     <h2 id="after-title">Return the cable to RoonPilot</h2>
     <div class="after-grid">
       <article><h3>1. Disconnect and turn</h3><p>After verification finishes, unplug USB, turn the USB-C plug at the device by 180 degrees and reconnect it.</p></article>
-      <article><h3>2. Check the main side</h3><p>Windows should now show <strong>USB Serial Device</strong>; macOS should show <strong>USB JTAG/serial</strong>. RoonPilot then starts normally.</p></article>
+      <article><h3>2. Wait for RoonPilot to start</h3><p>RoonPilot now starts again from the main processor. There is no need to open Device Manager or System Information.</p></article>
     </div>
   </section>
 

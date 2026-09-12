@@ -31,7 +31,7 @@ Rotating the USB-C plug at the round device can connect macOS to the other one:
 | Processor | Typical macOS port | Purpose |
 | --- | --- | --- |
 | Main ESP32-S3 | `/dev/cu.usbmodem…` | RoonPilot display firmware |
-| Classic Companion ESP32 | `/dev/cu.wchusbserial…` or another USB-serial name | Optional Companion firmware |
+| Classic Companion ESP32 | `/dev/cu.usbserial…` or `/dev/cu.wchusbserial…` | Optional Companion firmware |
 
 Port names can vary. They are only a clue; the result of `chip-id` is the final
 test. Never run `erase-flash`, `write-flash` or `read-flash` until the command

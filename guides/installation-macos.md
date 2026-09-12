@@ -26,8 +26,8 @@ for a normal installation.
 5. **USB JTAG/serial debug unit** before the parentheses is decisive.
    `cu.usbmodem…` appears additionally in parentheses and may have a different
    number.
-6. If **USB serial** (`cu.wchusbserial…`) appears instead, the classic companion
-   ESP32 is connected. Leave the chooser open, unplug USB, turn the USB-C plug
+6. If **USB serial** (`cu.usbserial…` or `cu.wchusbserial…`) appears instead,
+   the classic companion ESP32 is connected. Leave the chooser open, unplug USB, turn the USB-C plug
    at the RoonPilot device by **180 degrees** and reconnect it. The Web
    Installer detects the device again immediately. Select
    **USB JTAG/serial debug unit**.

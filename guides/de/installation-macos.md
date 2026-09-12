@@ -26,7 +26,8 @@ Terminalbefehle oder `esptool` benötigt.
 5. Entscheidend ist **USB JTAG/serial debug unit** vor der Klammer.
    `cu.usbmodem…` steht ergänzend in Klammern und kann eine andere Endnummer
    erhalten.
-6. Wird stattdessen **USB serial** (`cu.wchusbserial…`) angezeigt, ist der
+6. Wird stattdessen **USB serial** (`cu.usbserial…` oder
+   `cu.wchusbserial…`) angezeigt, ist der
    klassische Begleit-ESP32 verbunden. Den Dialog geöffnet lassen, USB
    abziehen, den USB-C-Stecker am RoonPilot-Gerät um **180 Grad drehen** und
    neu verbinden. Der Webinstaller erkennt das Gerät sofort wieder. Nun

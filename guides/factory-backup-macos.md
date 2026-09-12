@@ -107,8 +107,9 @@ file beside the backup.
 2. Turn the USB-C plug at the RoonPilot device by **180 degrees** and reconnect
    it.
 3. Under **System Information → Hardware → USB**, confirm **USB serial**.
-4. Compare `ls /dev/cu.*` again. The Companion commonly creates a
-   `/dev/cu.wchusbserial…` port. Replace the example below with your port.
+4. Compare `ls /dev/cu.*` again. Depending on the Mac and driver, the Companion
+   creates a `/dev/cu.usbserial…` or `/dev/cu.wchusbserial…` port. Replace the
+   example below with your port.
 5. Identify the chip again:
 
    ```bash

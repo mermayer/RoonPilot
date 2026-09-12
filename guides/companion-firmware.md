@@ -20,8 +20,7 @@ into a defined low-power state. It:
 - puts the ESP32-U4WDH into indefinite deep sleep without a wake source.
 
 It does not add Roon features, does not change the RoonPilot configuration and
-does not install anything on the main ESP32-S3. The external RoonPilot IR
-Bridge is a different, physically separate device.
+does not install anything on the main ESP32-S3.
 
 ## Easiest installation: the separate Web Installer
 
@@ -31,23 +30,25 @@ is needed. Choose the guide for your computer:
 - **[Install the Companion firmware with Windows →](companion-installation-windows.md)**
 - **[Install the Companion firmware with macOS →](companion-installation-macos.md)**
 
-Only these operating-system guides link onward to the Companion Web Installer,
-after explaining the correct USB entry and plug position.
+These operating-system guides lead directly to the Companion Web Installer and
+explain its device chooser and the correct plug position.
 
 The Web Installer erases and replaces the firmware of the classic Companion
 ESP32. After it finishes, unplug USB, turn the USB-C plug at the RoonPilot
 device by 180 degrees and reconnect it so the cable is connected to the main
 ESP32-S3 again.
 
-## How to recognise the correct processor
+## Select the correct entry in the browser
 
-| OS | Companion ESP32 — use | Main ESP32-S3 — stop |
+| OS | Companion ESP32 — select | Main ESP32-S3 — do not select |
 | --- | --- | --- |
-| Windows | `USB-SERIAL CH340 (COMx)` | `USB Serial Device (COMx)` |
-| macOS System Information | `USB serial` | `USB JTAG/serial` |
+| Windows | `USB serial (COM…)` | `USB JTAG/serial debug unit (COM…)` |
+| macOS | `USB serial (cu.usbserial…)` or `USB serial (cu.wchusbserial…)` | `USB JTAG/serial debug unit (cu.usbmodem…)` |
 
-If the wrong entry appears, unplug USB, turn the USB-C plug at the RoonPilot
-device by 180 degrees and reconnect it.
+No preliminary Device Manager or System Information check is needed. If the
+open browser chooser shows the wrong entry, unplug USB, turn the USB-C plug at
+the RoonPilot device by 180 degrees and reconnect it. The Web Installer detects
+the device again immediately.
 
 The two browser installers have deliberately separate manifests:
 

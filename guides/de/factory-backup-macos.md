@@ -109,8 +109,9 @@ Textdatei neben dem Backup speichern.
    verbinden.
 3. Unter **Systeminformationen → Hardware → USB** den Eintrag **USB serial**
    bestätigen.
-4. `ls /dev/cu.*` erneut vergleichen. Der Companion erzeugt häufig einen Port
-   `/dev/cu.wchusbserial…`. Den Beispielport unten durch den eigenen ersetzen.
+4. `ls /dev/cu.*` erneut vergleichen. Der Companion erzeugt je nach Mac und
+   Treiber einen Port `/dev/cu.usbserial…` oder `/dev/cu.wchusbserial…`. Den
+   Beispielport unten durch den eigenen ersetzen.
 5. Den Chip erneut identifizieren:
 
    ```bash

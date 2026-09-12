@@ -21,8 +21,7 @@ Prozessor in einen definierten Stromsparzustand. Es:
 - versetzt den ESP32-U4WDH ohne Aufwachquelle dauerhaft in Deep Sleep.
 
 Es fügt keine Roon-Funktion hinzu, verändert keine RoonPilot-Konfiguration und
-installiert nichts auf dem Hauptprozessor ESP32-S3. Die externe RoonPilot IR
-Bridge ist ein anderes, räumlich getrenntes Gerät.
+installiert nichts auf dem Hauptprozessor ESP32-S3.
 
 ## Einfachster Weg: der getrennte Webinstaller
 
@@ -32,23 +31,25 @@ oder esptool nötig. Wähle die Anleitung für deinen Computer:
 - **[Companion-Firmware unter Windows installieren →](companion-installation-windows.md)**
 - **[Companion-Firmware unter macOS installieren →](companion-installation-macos.md)**
 
-Nur diese Betriebssystem-Anleitungen führen zum Companion-Webinstaller, nachdem
-sie den richtigen USB-Eintrag und die Steckerstellung erklärt haben.
+Diese Betriebssystem-Anleitungen führen direkt zum Companion-Webinstaller und
+erklären den Geräteauswahldialog sowie die richtige Steckerstellung.
 
 Der Webinstaller löscht und ersetzt die Firmware des klassischen
 Companion-ESP32. Nach dem Abschluss USB abziehen, den USB-C-Stecker am
 RoonPilot-Gerät um 180 Grad drehen und neu verbinden. Das Kabel ist dann wieder
 mit dem Hauptprozessor ESP32-S3 verbunden.
 
-## Richtigen Prozessor erkennen
+## Richtigen Eintrag im Browser auswählen
 
-| System | Companion-ESP32 — verwenden | Haupt-ESP32-S3 — stoppen |
+| System | Companion-ESP32 — auswählen | Haupt-ESP32-S3 — nicht auswählen |
 | --- | --- | --- |
-| Windows | `USB-SERIAL CH340 (COMx)` | `Serielles USB-Gerät (COMx)` |
-| macOS-Systeminformationen | `USB serial` | `USB JTAG/serial` |
+| Windows | `USB serial (COM…)` | `USB JTAG/serial debug unit (COM…)` |
+| macOS | `USB serial (cu.usbserial…)` oder `USB serial (cu.wchusbserial…)` | `USB JTAG/serial debug unit (cu.usbmodem…)` |
 
-Erscheint der falsche Eintrag, USB abziehen, den USB-C-Stecker am
-RoonPilot-Gerät um 180 Grad drehen und neu verbinden.
+Eine vorherige Prüfung im Geräte-Manager oder Systembericht ist nicht nötig.
+Erscheint im geöffneten Browserdialog der falsche Eintrag, USB abziehen, den
+USB-C-Stecker am RoonPilot-Gerät um 180 Grad drehen und neu verbinden. Der
+Webinstaller erkennt das Gerät sofort wieder.
 
 Beide Browser-Installer besitzen bewusst getrennte Manifeste:
 
