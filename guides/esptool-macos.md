@@ -11,8 +11,8 @@ access:
 
 The normal RoonPilot ESP32-S3 Factory installation and the optional Companion
 ESP32 installation each use their own browser-based Web Installer. Neither
-requires Python or esptool. Normal later RoonPilot and IR Bridge updates are
-installed online from RoonPilot and also do not require esptool.
+requires Python or esptool. Normal later RoonPilot updates are installed online
+from RoonPilot and also do not require esptool.
 
 ## Recommended choice
 
@@ -36,11 +36,6 @@ Rotating the USB-C plug at the round device can connect macOS to the other one:
 Port names can vary. They are only a clue; the result of `chip-id` is the final
 test. Never run `erase-flash`, `write-flash` or `read-flash` until the command
 has identified the expected chip.
-
-> [!IMPORTANT]
-> The external RoonPilot IR Bridge is a third, physically separate ESP32-S3
-> board. Its Factory image must never be written to either processor inside the
-> round RoonPilot device.
 
 ## Path A — official standalone release (recommended)
 

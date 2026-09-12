@@ -12,7 +12,7 @@ Flashzugriff benötigen:
 Die normale Factory-Installation der RoonPilot-Hauptfirmware auf dem ESP32-S3
 und die optionale Installation des Companion-ESP32 besitzen jeweils einen
 eigenen Webinstaller. Beide benötigen weder Python noch esptool. Normale spätere
-Onlineupdates von RoonPilot und IR Bridge benötigen esptool ebenfalls nicht.
+Onlineupdates von RoonPilot benötigen esptool ebenfalls nicht.
 
 ## Empfohlener Weg
 
@@ -37,11 +37,6 @@ anderen verbunden werden:
 Portnamen können abweichen und sind nur ein Anhaltspunkt. Das Ergebnis von
 `chip-id` ist die entscheidende Prüfung. Niemals `erase-flash`, `write-flash`
 oder `read-flash` ausführen, bevor der erwartete Chip identifiziert wurde.
-
-> [!IMPORTANT]
-> Die externe RoonPilot IR Bridge ist ein drittes, räumlich getrenntes
-> ESP32-S3-Board. Ihr Factory-Abbild darf niemals auf einen der beiden
-> Prozessoren im runden RoonPilot geschrieben werden.
 
 ## Weg A – offizielles Standalone-Release (empfohlen)
 
