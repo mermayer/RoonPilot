@@ -1,3 +1,10 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Keep unreleased preview artifacts out of the public Pages tree.
+docs/ir-bridge/
+docs/de/ir-bridge/
+docs/assets/bridge.css
+docs/bridge-update-manifest-internal-ir-bridge.json
+internal/
