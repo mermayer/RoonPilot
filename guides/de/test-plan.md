@@ -105,6 +105,11 @@ RoonPilot sind sie keine Voraussetzung.
 - [ ] Bei gemeldeten Grenzen wird das Maximum durch Ring- und Webbefehle nie
   überschritten.
 - [ ] Lautstärkeansicht schließt automatisch und kehrt zum Player zurück.
+- [ ] **Gruppierte Zone:** Roon-Zone mit zwei (oder mehr) gruppierten Ausgängen;
+  Ring und Web-Lautstärke ändern **jeden** regelbaren Ausgang, nicht nur einen.
+- [ ] **Gruppierte Zone:** `relative_step`-Detents gelten für jeden Ausgang
+  (native Schrittweite kann pro Gerät unterschiedlich sein).
+- [ ] **Gruppierte Zone:** feste Lautstärke-Ausgänge werden übersprungen.
 
 ## H. Schnelleinstellungen und Sperre
 
