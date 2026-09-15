@@ -113,6 +113,11 @@ For Classic, Focus and Orbit:
   crossing the set value.
 - [ ] Volume overlay appears and closes cleanly.
 - [ ] First ring movement from black screen wakes without volume change.
+- [ ] **Grouped zone:** Roon zone with two (or more) grouped outputs; ring and web
+  volume each change **every** mutable output in the zone, not only one endpoint.
+- [ ] **Grouped zone:** `relative_step` ring detents apply the same step count to
+  each output (native dB/% step may differ per device).
+- [ ] **Grouped zone:** fixed-volume outputs in the group are skipped without error.
 
 ## H. Quick Settings and control lock
 
