@@ -35,7 +35,7 @@ Cloudkonto oder zusätzlicher ständig laufender RoonPilot-Dienst benötigt.
 > übermittelt weder persönliche Daten noch Nutzungs- oder Telemetriedaten an
 > den Entwickler oder an Dritte. Wer sich freiwillig für die investierte Zeit
 > und Arbeit bedanken möchte, kann dies über
-> [Buy Me a Coffee](https://buymeacoffee.com/mermayer) tun.
+> [Send Me a Coffee](https://buy.stripe.com/6oU3cw0eV0hC5nbdlX2Fa00) tun.
 >
 > **Support und Austausch:** im
 > [Roon Community Forum](https://community.roonlabs.com/t/new-big-thing-roonpilot-the-new-era-of-roon-control)

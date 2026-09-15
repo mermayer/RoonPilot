@@ -34,7 +34,7 @@ always-on RoonPilot service.
 > transmit personal, usage or telemetry data to the developer or any third
 > party. Anyone who would voluntarily like to say thank you for the time and
 > effort invested can do so through
-> [Buy Me a Coffee](https://buymeacoffee.com/mermayer).
+> [Send Me a Coffee](https://buy.stripe.com/6oU3cw0eV0hC5nbdlX2Fa00).
 >
 > **Support and discussion:** use the
 > [Roon Community Forum thread](https://community.roonlabs.com/t/new-big-thing-roonpilot-the-new-era-of-roon-control)
