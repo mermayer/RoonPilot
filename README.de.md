@@ -14,7 +14,7 @@
 
 **[Projektseite →](https://mermayer.github.io/RoonPilot/de/)** · **[Installation →](#hier-beginnen)** · **[Fehlerbehebung →](guides/de/troubleshooting.md)**
 
-**Hardware gesucht?** [Bezugsquellen: Amazon.de, Amazon.com, EU-Händler oder Waveshare →](guides/de/hardware-and-two-processors.md#bezugsquellen)
+**Hardware gesucht?** [Bezugsquellen: Amazon.de, Amazon.co.uk, Amazon.com, EU-Händler oder Waveshare →](guides/de/hardware-and-two-processors.md#bezugsquellen)
 
 </div>
 
@@ -178,7 +178,7 @@ verwenden getrennte, auf die jeweilige Prozessorfamilie beschränkte Manifeste.
 
 ## Hardware
 
-**Kaufen:** [Amazon.de, Amazon.com, EU-Händler und Waveshare](guides/de/hardware-and-two-processors.md#bezugsquellen) – mit Bestellnummern für die Varianten mit und ohne Akku.
+**Kaufen:** [Amazon.de, Amazon.co.uk, Amazon.com, EU-Händler und Waveshare](guides/de/hardware-and-two-processors.md#bezugsquellen) – mit Bestellnummern für die Varianten mit und ohne Akku.
 
 | Merkmal | Zielhardware |
 | --- | --- |

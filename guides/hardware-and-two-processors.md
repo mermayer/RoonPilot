@@ -31,6 +31,10 @@ These links lead to the supported **Waveshare ESP32-S3-Knob-Touch-LCD-1.8**,
 not to a generic round ESP32 display:
 
 - [Amazon.com: Waveshare listing without battery](https://www.amazon.com/dp/B0FDL4FJ13), or [search all variants on Amazon.com](https://www.amazon.com/s?k=Waveshare+ESP32-S3-Knob-Touch-LCD-1.8).
+- Amazon.co.uk: [with battery](https://www.amazon.co.uk/Waveshare-Development-Multi-Functional-Capacitive-Connection/dp/B0FDKZXBHV),
+  [without battery](https://www.amazon.co.uk/Waveshare-Development-Multi-Functional-Capacitive-Connection/dp/B0FDL4FJ13),
+  [CNC metal case](https://www.amazon.co.uk/Waveshare-Development-Multi-Functional-Capacitive-Secondary/dp/B0H4XNG3RH),
+  or [CNC metal case without battery](https://www.amazon.co.uk/Waveshare-Development-Multi-Functional-Capacitive-Secondary/dp/B0H4XGPR52).
 - [Search the exact model on Amazon.de](https://www.amazon.de/s?k=Waveshare+ESP32-S3-Knob-Touch-LCD-1.8).
 - [EU retailer example: Grobotronics (Greece), blue without battery](https://grobotronics.com/waveshare-esp32-s3-touch-ips-lcd-1-8-round-knob-display.html?sl=en).
 - [Order directly from Waveshare](https://www.waveshare.com/esp32-s3-knob-touch-lcd-1.8.htm).
