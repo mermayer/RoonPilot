@@ -14,6 +14,8 @@
 
 **[Project website →](https://mermayer.github.io/RoonPilot/)** · **[Installation →](#start-here)** · **[Troubleshooting →](guides/troubleshooting.md)**
 
+**Need the hardware?** [Where to buy: Amazon.com, Amazon.de, EU retailer or Waveshare →](guides/hardware-and-two-processors.md#where-to-buy)
+
 </div>
 
 RoonPilot turns Waveshare's compact round display controller into a fast,
@@ -222,8 +224,8 @@ low-power firmware so it does not waste energy while RoonPilot is in use. It is
 not needed for Roon communication. Its separate Web Installer accepts classic
 ESP32 hardware only; the main Web Installer accepts ESP32-S3 hardware only.
 
-Purchase links and exact variants are listed in
-[Hardware and the two processors](guides/hardware-and-two-processors.md).
+Find Amazon.com, Amazon.de, an EU retailer and Waveshare purchase links—plus
+the exact battery and colour variants—in [Where to buy the hardware](guides/hardware-and-two-processors.md#where-to-buy).
 
 ## Battery information without invented precision
 

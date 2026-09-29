@@ -25,6 +25,22 @@ Official sources:
 - [Waveshare product page](https://www.waveshare.com/esp32-s3-knob-touch-lcd-1.8.htm)
 - [Waveshare technical wiki](https://www.waveshare.com/wiki/ESP32-S3-Knob-Touch-LCD-1.8)
 
+## Where to buy
+
+These links lead to the supported **Waveshare ESP32-S3-Knob-Touch-LCD-1.8**,
+not to a generic round ESP32 display:
+
+- [Amazon.com: Waveshare listing without battery](https://www.amazon.com/dp/B0FDL4FJ13), or [search all variants on Amazon.com](https://www.amazon.com/s?k=Waveshare+ESP32-S3-Knob-Touch-LCD-1.8).
+- [Search the exact model on Amazon.de](https://www.amazon.de/s?k=Waveshare+ESP32-S3-Knob-Touch-LCD-1.8).
+- [EU retailer example: Grobotronics (Greece), blue without battery](https://grobotronics.com/waveshare-esp32-s3-touch-ips-lcd-1-8-round-knob-display.html?sl=en).
+- [Order directly from Waveshare](https://www.waveshare.com/esp32-s3-knob-touch-lcd-1.8.htm).
+
+Amazon listings and stock can change. Before ordering, check the **exact model**,
+the battery option, the seller's dispatch country, delivery charges and returns.
+An Amazon Marketplace listing does not necessarily mean local shipping. The
+`-EN` suffix means **without battery**, not an English-only device. USB-C power
+works without the optional battery.
+
 ## Available variants
 
 | Order code | Enclosure | Included battery |

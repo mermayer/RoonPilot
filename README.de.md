@@ -14,6 +14,8 @@
 
 **[Projektseite →](https://mermayer.github.io/RoonPilot/de/)** · **[Installation →](#hier-beginnen)** · **[Fehlerbehebung →](guides/de/troubleshooting.md)**
 
+**Hardware gesucht?** [Bezugsquellen: Amazon.de, Amazon.com, EU-Händler oder Waveshare →](guides/de/hardware-and-two-processors.md#bezugsquellen)
+
 </div>
 
 RoonPilot macht aus Waveshares kompaktem Controller mit rundem Display eine
@@ -175,6 +177,8 @@ verwenden getrennte, auf die jeweilige Prozessorfamilie beschränkte Manifeste.
 **Installationsanleitungen:** [Windows](guides/de/installation-windows.md) · [macOS](guides/de/installation-macos.md) · **Optionaler Companion:** [Windows](guides/de/companion-installation-windows.md) · [macOS](guides/de/companion-installation-macos.md)
 
 ## Hardware
+
+**Kaufen:** [Amazon.de, Amazon.com, EU-Händler und Waveshare](guides/de/hardware-and-two-processors.md#bezugsquellen) – mit Bestellnummern für die Varianten mit und ohne Akku.
 
 | Merkmal | Zielhardware |
 | --- | --- |

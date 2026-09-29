@@ -59,6 +59,7 @@
           <a class="button primary" href="firmware/"><svg><use href="#icon-usb"></use></svg>Webinstaller öffnen</a>
           <a class="button secondary" href="#dokumentation"><svg><use href="#icon-book"></use></svg>Dokumentation lesen</a>
         </div>
+        <div class="hero-buy"><strong>Gerät gesucht?</strong> <a href="#hardware">Bezugsquellen bei Amazon.de, Amazon.com und in der EU →</a></div>
         <ul class="hero-facts" aria-label="RoonPilot-Vorteile">
           <li>Direkte lokale Roon-Verbindung</li><li>Touch- und Drehsteuerung</li><li>Signierte A/B-Updates</li>
         </ul>
@@ -179,11 +180,22 @@
 
     <section class="direct-band"><div class="page-width"><h2>Keine Bridge. Kein Raspberry Pi. Kein zusätzlicher Dienst.</h2><p>RoonPilot spricht im lokalen Netzwerk direkt mit Roon. Konfiguration, Freigabe und Steuerung bleiben lokal.</p></div></section>
 
-    <section class="hardware-section page-width" aria-labelledby="hardware-titel">
+    <section id="hardware" class="hardware-section page-width" aria-labelledby="hardware-titel">
       <div class="section-heading"><p class="section-number">06</p><div><h2 id="hardware-titel">Ein exakt unterstütztes Modul</h2><p>RoonPilot ist für das Waveshare ESP32-S3-Knob-Touch-LCD-1.8 ausgelegt, nicht für irgendein rundes ESP32-Display.</p></div></div>
       <div class="hardware-layout">
         <dl class="spec-list"><div><dt>Hauptprozessor</dt><dd>ESP32-S3R8 · 16 MB Flash · 8 MB PSRAM</dd></div><div><dt>Display</dt><dd>1,8-Zoll rundes IPS-LCD · 360 × 360 · kapazitiver Touch</dd></div><div><dt>Bedienung</dt><dd>Kompletter Drehring plus Touchgesten</dd></div><div><dt>Begleitprozessor</dt><dd>ESP32-U4WDH · unabhängiger 4-MB-Flash</dd></div><div><dt>Weitere Hardware</dt><dd>PCM5100A-DAC, Mikrofon, Vibrationsmotor und microSD</dd></div><div><dt>Stromversorgung</dt><dd>USB-C oder optionaler interner 3,7-V-/800-mAh-Akku</dd></div></dl>
-        <div class="hardware-actions"><p>Blaue und schwarze Gehäusevarianten werden mit oder ohne Akku verkauft. Vor dem Kauf genaue Bestellnummer und regionale Akkubeschränkungen prüfen.</p><a class="button secondary" href="https://www.waveshare.com/esp32-s3-knob-touch-lcd-1.8.htm" target="_blank" rel="noopener">Waveshare-Produktseite <svg><use href="#icon-external"></use></svg></a><a class="text-link" href="https://www.waveshare.com/wiki/ESP32-S3-Knob-Touch-LCD-1.8" target="_blank" rel="noopener">Offizielles technisches Wiki <svg><use href="#icon-external"></use></svg></a></div>
+        <div class="hardware-actions">
+          <p>Gerät gesucht? Auf die genaue Waveshare-Bestellnummer achten. Es gibt blaue und schwarze Varianten mit oder ohne Akku; Marketplace-Angebote bedeuten nicht automatisch lokalen Versand.</p>
+          <div class="purchase-buttons">
+            <a class="button secondary" href="https://www.amazon.de/s?k=Waveshare+ESP32-S3-Knob-Touch-LCD-1.8" target="_blank" rel="noopener">Amazon.de <svg><use href="#icon-external"></use></svg></a>
+            <a class="button secondary" href="https://www.amazon.com/s?k=Waveshare+ESP32-S3-Knob-Touch-LCD-1.8" target="_blank" rel="noopener">Amazon.com <svg><use href="#icon-external"></use></svg></a>
+          </div>
+          <div class="purchase-links">
+            <a class="text-link" href="https://grobotronics.com/waveshare-esp32-s3-touch-ips-lcd-1-8-round-knob-display.html?sl=en" target="_blank" rel="noopener">Beispiel: EU-Händler <svg><use href="#icon-external"></use></svg></a>
+            <a class="text-link" href="https://www.waveshare.com/esp32-s3-knob-touch-lcd-1.8.htm" target="_blank" rel="noopener">Waveshare direkt <svg><use href="#icon-external"></use></svg></a>
+            <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/hardware-and-two-processors.md#bezugsquellen">Kaufhinweise und Varianten <svg><use href="#icon-arrow"></use></svg></a>
+          </div>
+        </div>
       </div>
     </section>
 

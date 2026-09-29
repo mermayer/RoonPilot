@@ -23,6 +23,22 @@ automatisch elektrisch kompatibel, nur weil es dieselbe Auflösung besitzt.
 Offizielle Quellen: [Waveshare-Produktseite](https://www.waveshare.com/esp32-s3-knob-touch-lcd-1.8.htm)
 und [technisches Wiki](https://www.waveshare.com/wiki/ESP32-S3-Knob-Touch-LCD-1.8).
 
+## Bezugsquellen
+
+Diese Links beziehen sich auf das unterstützte **Waveshare
+ESP32-S3-Knob-Touch-LCD-1.8**, nicht auf irgendein rundes ESP32-Display:
+
+- [Amazon.de: nach dem genauen Modell suchen](https://www.amazon.de/s?k=Waveshare+ESP32-S3-Knob-Touch-LCD-1.8).
+- [Amazon.com: Waveshare-Angebotsseite ohne Akku](https://www.amazon.com/dp/B0FDL4FJ13) oder [alle Varianten auf Amazon.com suchen](https://www.amazon.com/s?k=Waveshare+ESP32-S3-Knob-Touch-LCD-1.8).
+- [Beispiel für einen EU-Händler: Grobotronics (Griechenland), blau ohne Akku](https://grobotronics.com/waveshare-esp32-s3-touch-ips-lcd-1-8-round-knob-display.html?sl=en).
+- [Direkt bei Waveshare bestellen](https://www.waveshare.com/esp32-s3-knob-touch-lcd-1.8.htm).
+
+Angebote und Verfügbarkeit ändern sich. Vor dem Kauf **genaue Bestellnummer**,
+Akkuvariante, Versandland, Versandkosten und Rückgabebedingungen prüfen. Ein
+Amazon-Marketplace-Angebot bedeutet nicht automatisch Versand aus Deutschland
+oder den USA. Die Endung `-EN` bedeutet **ohne Akku**, nicht „nur Englisch“.
+Bei dauerhafter USB-C-Versorgung ist kein Akku nötig.
+
 ## Varianten
 
 | Bestellnummer | Gehäuse | Akku |
