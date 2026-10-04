@@ -267,14 +267,14 @@ Außen-/Innenansicht und alle STL-Downloads.
 
 <table>
   <tr>
-    <td align="center"><img src="docs/assets/3d/roonpilot-stand/roonpilot-stand.png" width="280" alt="Blauer 3D-gedruckter RoonPilot-Stand ohne Gerät"><br><b>Dreiteiliger Stand</b></td>
+    <td align="center"><img src="docs/assets/3d/roonpilot-stand/roonpilot-stand.png" width="280" alt="Blauer 3D-gedruckter RoonPilot-Stand ohne Gerät"><br><b>Vierteiliger Stand</b></td>
     <td align="center"><img src="docs/assets/3d/roonpilot-stand/roonpilot-in-stand-demo.png" width="280" alt="RoonPilot im blauen Stand mit der korrekten Classic-Playeransicht"><br><b>RoonPilot eingesetzt</b></td>
   </tr>
 </table>
 
 Der optionale Stand hält RoonPilot schräg und integriert einen USB-C-Halter.
-Die [bebilderte Standanleitung](guides/de/roonpilot-stand.md) bietet alle drei
-STL-Dateien zum Herunterladen an.
+Die [bebilderte Standanleitung](guides/de/roonpilot-stand.md) bietet alle vier
+STL-Dateien einschließlich der Rückwand zum Herunterladen an.
 
 ## Installation und Updates
 

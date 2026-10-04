@@ -296,13 +296,13 @@ exterior/interior photos and all STL downloads.
 
 <table>
   <tr>
-    <td align="center"><img src="docs/assets/3d/roonpilot-stand/roonpilot-stand.png" width="280" alt="Blue 3D-printed RoonPilot stand without device"><br><b>Three-part stand</b></td>
+    <td align="center"><img src="docs/assets/3d/roonpilot-stand/roonpilot-stand.png" width="280" alt="Blue 3D-printed RoonPilot stand without device"><br><b>Four-part stand</b></td>
     <td align="center"><img src="docs/assets/3d/roonpilot-stand/roonpilot-in-stand-demo.png" width="280" alt="RoonPilot in the blue stand with the correct Classic player interface"><br><b>RoonPilot installed</b></td>
   </tr>
 </table>
 
 The optional stand holds RoonPilot at an angle and integrates a USB-C holder.
-See the [illustrated stand guide and download its three STL files](guides/roonpilot-stand.md).
+See the [illustrated stand guide and download its four STL files](guides/roonpilot-stand.md), including the rear panel.
 
 ## No RoonPilot service to install
 

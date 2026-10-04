@@ -2,7 +2,7 @@
 
 [English](../roonpilot-stand.md) · **Deutsch** · [Hardware](hardware-and-two-processors.md)
 
-Der optionale dreiteilige Stand hält den runden RoonPilot in einem angenehmen
+Der optionale vierteilige Stand hält den runden RoonPilot in einem angenehmen
 Betrachtungswinkel und führt einen USB-C-Anschluss in die Aufnahme. Er verändert
 weder Elektronik noch Firmware und ist für RoonPilot nicht erforderlich.
 
@@ -22,6 +22,7 @@ Jedes Teil einmal drucken:
 | <img src="../../docs/assets/3d/roonpilot-stand/dock_body-preview.png" alt="3D-Vorschau des Standkörpers" width="110"> | Standkörper | 93 × 79 × 63,4 mm | [`dock_body.stl` herunterladen](../../docs/assets/3d/roonpilot-stand/dock_body.stl) |
 | <img src="../../docs/assets/3d/roonpilot-stand/dock_bottom_cover-preview.png" alt="3D-Vorschau der Bodenabdeckung" width="110"> | Bodenabdeckung | 83,4 × 73,7 × 7,5 mm | [`dock_bottom_cover.stl` herunterladen](../../docs/assets/3d/roonpilot-stand/dock_bottom_cover.stl) |
 | <img src="../../docs/assets/3d/roonpilot-stand/halter-preview.png" alt="3D-Vorschau des USB-C-Halters" width="110"> | USB-C-Halter | 25 × 25 × 8,5 mm | [`halter.stl` herunterladen](../../docs/assets/3d/roonpilot-stand/halter.stl) |
+| <img src="../../docs/assets/3d/roonpilot-stand/rueckwand-preview.png" alt="3D-Vorschau der Rückwand" width="110"> | Rückwand | 66 × 66 × 5 mm | [`rueckwand.stl` herunterladen](../../docs/assets/3d/roonpilot-stand/rueckwand.stl) |
 
 Die Maße stammen aus den Modelldateien und sind keine garantierten Maße des
 fertigen Drucks. Druckerkalibrierung, Materialschrumpfung und Slicer-Toleranzen
@@ -59,7 +60,7 @@ Funktion übernehmen.
 
 ## Montagereihenfolge
 
-1. Standkörper, Bodenabdeckung und USB-C-Halter jeweils einmal drucken.
+1. Standkörper, Bodenabdeckung, USB-C-Halter und Rückwand jeweils einmal drucken.
 2. Druckreste entfernen und Boden sowie Halter trocken einpassen. Bei zu strammer
    Passung zuerst die Drucktoleranzen korrigieren und nichts erzwingen.
 3. Den Stand wie auf `usb_c_install_01` von unten betrachten und einen dünnen

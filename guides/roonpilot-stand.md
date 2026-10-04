@@ -2,7 +2,7 @@
 
 **English** · [Deutsch](de/roonpilot-stand.md) · [Hardware](hardware-and-two-processors.md)
 
-This optional three-part stand holds the round RoonPilot at a comfortable
+This optional four-part stand holds the round RoonPilot at a comfortable
 viewing angle and brings a USB-C connection into the cradle. It changes no
 electronics or firmware and is not required for RoonPilot.
 
@@ -22,6 +22,7 @@ Print one of every part:
 | <img src="../docs/assets/3d/roonpilot-stand/dock_body-preview.png" alt="3D preview of the main stand" width="110"> | Main stand | 93 × 79 × 63.4 mm | [Download `dock_body.stl`](../docs/assets/3d/roonpilot-stand/dock_body.stl) |
 | <img src="../docs/assets/3d/roonpilot-stand/dock_bottom_cover-preview.png" alt="3D preview of the bottom cover" width="110"> | Bottom cover | 83.4 × 73.7 × 7.5 mm | [Download `dock_bottom_cover.stl`](../docs/assets/3d/roonpilot-stand/dock_bottom_cover.stl) |
 | <img src="../docs/assets/3d/roonpilot-stand/halter-preview.png" alt="3D preview of the USB-C holder" width="110"> | USB-C holder | 25 × 25 × 8.5 mm | [Download `halter.stl`](../docs/assets/3d/roonpilot-stand/halter.stl) |
+| <img src="../docs/assets/3d/roonpilot-stand/rueckwand-preview.png" alt="3D preview of the rear panel" width="110"> | Rear panel | 66 × 66 × 5 mm | [Download `rueckwand.stl`](../docs/assets/3d/roonpilot-stand/rueckwand.stl) |
 
 These dimensions describe the model files, not guaranteed finished print
 dimensions. Printer calibration, material shrinkage and slicer tolerances can
@@ -57,7 +58,7 @@ it or use the device's USB-C socket as a structural support.
 
 ## Assembly sequence
 
-1. Print the main stand, bottom cover and USB-C holder once each.
+1. Print the main stand, bottom cover, USB-C holder and rear panel once each.
 2. Remove print residue and dry-fit the bottom cover and holder. Do not force a
    tight part; correct printer tolerances first.
 3. View the stand from below as in `usb_c_install_01`, then clamp or glue a thin

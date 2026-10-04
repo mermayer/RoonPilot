@@ -52,7 +52,7 @@ Prozessoren wechselt.
 | Fehler suchen | [Fehlerbehebung](troubleshooting.md) |
 | Gespeicherte und nicht gespeicherte Daten | [Datenschutz und Sicherheit](privacy-and-security.md) |
 | Private/kommerzielle Nutzung und Weitergabe | [Lizenzierung und Weitergabe](licensing.md) |
-| Optionaler dreiteiliger 3D-gedruckter Stand | [RoonPilot-Stand und STL-Downloads](roonpilot-stand.md) |
+| Optionaler vierteiliger 3D-gedruckter Stand | [RoonPilot-Stand und STL-Downloads](roonpilot-stand.md) |
 
 ## Optionale RoonPilot IR Bridge
 

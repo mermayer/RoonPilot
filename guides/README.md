@@ -51,7 +51,7 @@ independent processors.
 | Fault finding | [Troubleshooting](troubleshooting.md) |
 | What is and is not stored | [Privacy and security](privacy-and-security.md) |
 | Private/commercial use and redistribution | [Licensing and redistribution](licensing.md) |
-| Optional three-part 3D-printed stand | [RoonPilot stand and STL downloads](roonpilot-stand.md) |
+| Optional four-part 3D-printed stand | [RoonPilot stand and STL downloads](roonpilot-stand.md) |
 
 ## Optional RoonPilot IR Bridge
 
