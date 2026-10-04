@@ -6,6 +6,9 @@
 > 2.0.0 version and IR Bridge. Their firmware and Bridge installer follow with
 > the release.
 
+[What's new in 2.0.0 — detailed release notes](../docs/release-notes-2.0.0.md)
+· [Changelog and earlier versions](../CHANGELOG.md)
+
 This documentation assumes that the reader has never flashed an ESP device,
 never opened a serial port and has just taken the hardware out of its box.
 

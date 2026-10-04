@@ -176,7 +176,7 @@ detent before acceleration. The overlay must begin at the current value reported
 by Roon, not at zero.
 
 If a dB value is displayed correctly but the absolute web slider, level
-arc or Maximum volume protection is unavailable, inspect the zone data. Those
+bar or Maximum volume protection is unavailable, inspect the zone data. Those
 features require minimum and maximum bounds from the endpoint. RoonPilot keeps
 relative dB control when the bounds are absent and deliberately does not invent
 a 0-100 range. An `incremental` output has no absolute value by definition.

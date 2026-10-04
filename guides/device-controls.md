@@ -71,13 +71,14 @@ off by default.
 
 ## Volume
 
-Turning the ring opens a large volume overlay for the current zone. It starts
+Turning the ring shows a compact amber volume panel over the existing player;
+the selected zone, artwork and playback controls remain visible. The panel starts
 from the actual value reported by Roon, applies the endpoint's native step and
-closes automatically before returning to the player. RoonPilot recognizes the
+disappears automatically after the adjustment. RoonPilot recognizes the
 Roon volume types `number`, `db` and `incremental` without a manual unit setting:
 
 - `number` is shown as the dimensionless value supplied by Roon, without an
-  invented percent sign. Reported minimum and maximum values define the arc and
+  invented percent sign. Reported minimum and maximum values define the slim bar and
   web slider; only internally may an older endpoint without bounds use the
   conventional 0-100 fallback.
 - `db` is shown as the real value reported by Roon, for example `-40 dB`; it is
@@ -90,7 +91,7 @@ compact amber overlay with a signed action count such as `+2` or `-1`. The count
 starts at zero for each new adjustment and represents accepted ring steps, not
 an absolute DAC percentage or dB value.
 
-<img src="../assets/device-screens/04-volume.png" alt="Volume overlay" width="360">
+<img src="../assets/device-screens/04-volume.png" alt="Current native Roon volume in a compact amber panel over the Classic player" width="360">
 
 <img src="../assets/device-screens/33-ir-volume-overlay.png" alt="Amber relative IR volume overlay" width="360">
 

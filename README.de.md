@@ -18,6 +18,8 @@
 
 **[3D-Stand: Anleitung & STL-Dateien →](guides/de/roonpilot-stand.md)** · **[IR-Bridge-Gehäuse: Anleitung & STL-Dateien →](guides/de/ir-bridge-enclosure.md)**
 
+**[Release Notes 2.0.0 →](docs/release-notes-2.0.0.de.md)** · **[Änderungsprotokoll →](CHANGELOG.de.md)**
+
 </div>
 
 > [!NOTE]

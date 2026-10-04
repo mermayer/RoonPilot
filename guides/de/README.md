@@ -6,6 +6,9 @@
 > die kommende Version 2.0.0 und die IR Bridge. Firmware und Bridge-Installer
 > folgen mit dem Release.
 
+[Neu in 2.0.0 — ausführliche Release Notes](../../docs/release-notes-2.0.0.de.md)
+· [Änderungsprotokoll und frühere Versionen](../../CHANGELOG.de.md)
+
 Diese Dokumentation setzt keinerlei Erfahrung mit ESP-Geräten, seriellen
 Anschlüssen oder Firmware-Installation voraus.
 

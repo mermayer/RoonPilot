@@ -74,17 +74,18 @@ großer Touchfläche zur Verfügung. Die Option ist standardmäßig ausgeschalte
 
 ## Lautstärke
 
-<img src="../../assets/device-screens/04-volume-de.png" alt="Lautstärkeanzeige" width="360">
+<img src="../../assets/device-screens/04-volume-de.png" alt="Aktuelle native Roon-Lautstärke im kompakten amberfarbenen Popup über dem Classic-Player" width="360">
 
-Beim Drehen erscheint die große Lautstärkeansicht der aktuellen Zone. Sie
-beginnt mit dem tatsächlich von Roon gemeldeten Wert, verwendet die native
-Schrittweite des Endpunkts und schließt anschließend automatisch. RoonPilot
+Beim Drehen erscheint ein kompaktes amberfarbenes Lautstärkefeld über dem
+bestehenden Player. Zonenname, Cover und Wiedergabetasten bleiben sichtbar. Das
+Feld beginnt mit dem tatsächlich von Roon gemeldeten Wert, verwendet die native
+Schrittweite des Endpunkts und verschwindet nach der Bedienung automatisch. RoonPilot
 erkennt die Roon-Lautstärketypen `number`, `db` und `incremental` ohne manuelle
 Auswahl:
 
 - `number` wird als dimensionsloser, von Roon gelieferter Wert ohne erfundenes
   Prozentzeichen angezeigt. Gemeldete Minimal- und Maximalwerte bestimmen den
-  Bogen und den Webregler; nur intern kann bei älteren Endpunkten ohne Bereich
+  schmalen Balken und den Webregler; nur intern kann bei älteren Endpunkten ohne Bereich
   der übliche Bereich 0 bis 100 als Rückfall dienen.
 - `db` zeigt den echten Roon-Wert, zum Beispiel `-40 dB`; er wird nicht
   künstlich in 0 bis 100 umgerechnet.

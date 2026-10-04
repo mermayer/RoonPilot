@@ -65,14 +65,16 @@ diesem Modus nicht zur Verfügung. Standardmäßig ist die Option ausgeschaltet.
 
 | Lautstärke | Zonenwahl |
 | --- | --- |
-| <img src="../../assets/device-screens/04-volume-de.png" width="320" alt="Lautstärke"> | <img src="../../assets/device-screens/05-zone-picker-de.png" width="320" alt="Zonenwahl"> |
+| <img src="../../assets/device-screens/04-volume-de.png" width="320" alt="Aktuelles kompaktes Lautstärke-Popup über dem Classic-Player"> | <img src="../../assets/device-screens/05-zone-picker-de.png" width="320" alt="Zonenwahl"> |
 
-Die Lautstärke erscheint beim Drehen und beginnt mit dem aktuellen Zonenwert.
+Das kompakte amberfarbene Popup erscheint beim Drehen und beginnt mit dem
+aktuellen Zonenwert. Es ersetzt den Player nicht durch einen eigenen Bildschirm:
+Zonenname, Cover und Wiedergabetasten bleiben sichtbar.
 Die Einheit folgt automatisch dem Roon-Lautstärketyp: `number` erscheint als
 dimensionsloser Wert ohne erfundenes Prozentzeichen, `db` mit dem echten Wert
 wie `-40 dB`.
 Nur-relatives `incremental` bleibt bedienbar, liefert aber keinen absoluten
-Anzeigewert. Der Bogen stellt einen Pegel nur dar, wenn Roon brauchbare Minimal-
+Anzeigewert. Der schmale waagerechte Balken stellt einen Pegel nur dar, wenn Roon brauchbare Minimal-
 und Maximalwerte liefert; für dB wird kein künstlicher Bereich erfunden. In der
 Zonenwahl kennzeichnen
 Akzentrahmen und Haken die aktuelle Auswahl; nur freigegebene Zonen erscheinen.

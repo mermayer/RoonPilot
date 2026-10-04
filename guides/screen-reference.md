@@ -62,14 +62,16 @@ display-off is unavailable in this mode. The option is off by default.
 
 ### Volume
 
-<img src="../assets/device-screens/04-volume.png" width="360" alt="Volume screen">
+<img src="../assets/device-screens/04-volume.png" width="360" alt="Current compact native-volume popup over the retained Classic player">
 
-Appears while the ring is turned and starts from the zone's current value. The
+The compact amber popup appears while the ring is turned and starts from the
+zone's current value. It does not replace the player with a separate screen;
+the zone, artwork and playback controls remain visible. The
 text automatically follows Roon's native volume type: `number` is shown as a
 dimensionless value without an invented percent sign, while `db` shows the
 actual value such as `-40 dB`. Relative-only
 `incremental` outputs can still be controlled but do not provide an absolute
-value. The arc represents the pending level only when Roon supplies usable
+value. The slim horizontal bar represents the level only when Roon supplies usable
 minimum and maximum bounds; RoonPilot does not fabricate a dB range.
 
 <img src="../assets/device-screens/33-ir-volume-overlay.png" width="360" alt="Relative infrared volume overlay">

@@ -18,6 +18,8 @@
 
 **[3D stand: guide & STL files →](guides/roonpilot-stand.md)** · **[IR Bridge enclosure: guide & STL files →](guides/ir-bridge-enclosure.md)**
 
+**[2.0.0 Release Notes →](docs/release-notes-2.0.0.md)** · **[Changelog →](CHANGELOG.md)**
+
 </div>
 
 > [!NOTE]
