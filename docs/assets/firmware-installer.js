@@ -12,9 +12,12 @@
   const choices = Array.from(document.querySelectorAll('input[name="firmwareVersion"]'));
   const languageLinks = Array.from(document.querySelectorAll('[data-installer-language]'));
   const german = document.documentElement.lang === 'de';
-  const currentVersion = installer.dataset.currentVersion;
+  // Also tolerate an older HTML page paired with the freshly deployed script.
+  const currentVersion = installer.dataset.currentVersion || '2.0.1';
+  const currentManifest = new URL(installer.getAttribute('manifest'), window.location.href);
+  currentManifest.searchParams.set('v', `${currentVersion}-usb`);
   const manifests = {
-    current: installer.getAttribute('manifest'),
+    current: currentManifest.href,
     '1.0.2': installer.dataset.recoveryManifest,
   };
   const originalLanguageLinks = new Map(languageLinks.map(link => [link, link.href]));
