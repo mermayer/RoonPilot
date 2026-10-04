@@ -1,21 +1,12 @@
 {
-    "schema":  1,
-    "project":  "roonpilot",
-    "board":  "waveshare-esp32-s3-knob-touch-lcd-1.8",
-    "channel":  "stable",
-    "version":  "2.0.1",
-    "secure_version":  0,
-    "signed":  true,
-    "compatibility":  {
-                          "schema":  1,
-                          "protocol_min":  3,
-                          "protocol_max":  4,
-                          "peer_min_version":  "0.1.0-test.39",
-                          "peer_max_version":  ""
-                      },
-    "url":  "https://mermayer.github.io/RoonPilot/firmware/roonpilot-ota-v2.0.1.bin",
-    "size":  3477504,
-    "sha256":  "25f9d5282efbcca0a7db1134a5ef288c06a5d90d8585478626bce86b7e9e0af2",
-    "mandatory":  false,
-    "notes_url":  "https://mermayer.github.io/RoonPilot/release-notes-2.0.1.md"
+    "schema": 1,
+    "project": "roonpilot",
+    "board": "waveshare-esp32-s3-knob-touch-lcd-1.8",
+    "channel": "stable",
+    "status": "paused",
+    "available": false,
+    "reason": "Controller online updates are temporarily suspended. Use the USB Web Installer for a clean RoonPilot 2.0.1 installation. IR Bridge updates are unaffected.",
+    "reason_de": "RoonPilot-Onlineupdates sind vorübergehend gesperrt. Für eine saubere Installation von RoonPilot 2.0.1 bitte den USB-Webinstaller verwenden. IR-Bridge-Updates sind nicht betroffen.",
+    "installer_url": "https://mermayer.github.io/RoonPilot/firmware/?v=2.0.1-usb",
+    "installer_url_de": "https://mermayer.github.io/RoonPilot/de/firmware/?v=2.0.1-usb"
 }
