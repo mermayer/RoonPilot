@@ -3,22 +3,23 @@
 [English](CHANGELOG.md) · **Deutsch**
 
 Dieses Dokument gibt einen anwenderorientierten Überblick über die
-RoonPilot-Versionen. Die ausführliche Beschreibung der nächsten Ausgabe steht
+RoonPilot-Versionen. Die ausführliche Beschreibung der Version 2.0.0 steht
 in den [deutschen Release Notes](docs/release-notes-2.0.0.de.md). Entwicklungsinterne
 Änderungen ohne sichtbare Auswirkung sind bewusst nicht aufgeführt.
 
-**Aktuelle öffentliche Firmware: 1.0.2.** Der Abschnitt zu 2.0.0 beschreibt
-die kommende Ausgabe. Die Veröffentlichung dieser Hinweise gibt die neue
-Firmware noch nicht frei.
+**Aktuelle öffentliche Firmware: 2.0.0**, veröffentlicht am **4. Oktober 2026**
+zusammen mit der optionalen **IR-Bridge-Firmware 1.0.0**.
 
 ## Inhalt
 
-- [2.0.0 — kommende Ausgabe](#200-in-vorbereitung)
+- [2.0.0 — 4. Oktober 2026](#200)
 - [Projektrelease 1.0.5 — Firmware 1.0.2](#projektrelease-105--firmware-102)
 - [Projektrelease 1.0.4 — Firmware 1.0.1](#projektrelease-104--firmware-101)
 - [Firmware 1.0.0](#firmware-100)
 
-## 2.0.0 (in Vorbereitung)
+## 2.0.0
+
+Veröffentlicht am 4. Oktober 2026. Optionale IR-Bridge-Firmware: 1.0.0.
 
 ### Gemeinsame Ausgabe
 

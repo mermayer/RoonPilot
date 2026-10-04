@@ -1,0 +1,21 @@
+{
+    "schema":  1,
+    "available":  true,
+    "project":  "roonpilot-ir-bridge",
+    "board":  "esp32-s3-zero-fh4r2",
+    "channel":  "stable",
+    "version":  "1.0.0",
+    "published":  "2026-10-04",
+    "signed":  true,
+    "manifest":  "../bridge-update-manifest-stable.json",
+    "ota":  {
+                "filename":  "roonpilot-ir-bridge-ota-v1.0.0.bin",
+                "size":  1052672,
+                "sha256":  "c38759c40ac4197ad490653b5539ef90474f1d62c0983a52bc6d8dec1f7177c0"
+            },
+    "factory":  {
+                    "filename":  "roonpilot-ir-bridge-factory-v1.0.0.bin",
+                    "size":  1183744,
+                    "sha256":  "5742d285ecf9f1c65f66f494c3759bfb2830ab5049968894cb72989f51d9ee88"
+                }
+}

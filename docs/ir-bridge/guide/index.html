@@ -22,7 +22,7 @@
   </header>
 
   <main class="guide-body page-width">
-    <p class="documentation-preview-note page-width"><strong>Bridge documentation for the upcoming RoonPilot version.</strong> Public RoonPilot firmware remains 1.0.2. Bridge firmware and its browser installer will be provided with the new release.</p>
+    <p class="documentation-preview-note page-width"><strong>IR Bridge 1.0.0 for RoonPilot 2.0.0.</strong> The official firmware and <a href="../install/">Bridge Web Installer</a> are available. Existing paired Bridges can be updated from RoonPilot; installation is always manual.</p>
     <div class="guide-layout">
       <article class="guide-copy">
         <p class="bridge-kicker">Setup and operation</p>
@@ -93,10 +93,10 @@
           <h2>3. First Factory installation</h2>
           <ol>
             <li>Complete and inspect the wiring with USB disconnected. For the very first board test, disconnect the IR modules if their pin labels are not yet certain.</li>
-            <li>After it is published, open the Bridge browser installer in a current desktop Chrome or Edge. Firefox, Safari, iPhone and iPad cannot use the required Web Serial interface.</li>
+            <li>Open the <a href="../install/">Bridge Web Installer</a> in a current desktop Chrome or Edge. Firefox, Safari, iPhone and iPad cannot use the required Web Serial interface.</li>
             <li>Connect the Bridge board directly by USB. Close Arduino Serial Monitor, ESP-IDF Monitor and every other program using the port.</li>
             <li>In the Web Installer device chooser, select <strong>USB JTAG/serial debug unit</strong> (<code>COM…</code>) on Windows or <strong>USB JTAG/serial debug unit</strong> (<code>cu.usbmodem…</code>) on macOS. The name before the parentheses is what matters. No operating-system lookup is required first; the open chooser immediately detects a device after it is disconnected and reconnected. <strong>USB serial</strong> denotes a classic ESP32 there and is not the Bridge. Keep only the Bridge connected by USB during installation.</li>
-            <li>Accept both safety confirmations and start the installer. Keep USB connected until installation and restart have completed.</li>
+            <li>Confirm the correct hardware, the complete erase and the firmware license, then start the installer. Keep USB connected until installation and restart have completed.</li>
           </ol>
           <div class="warning"><strong>A Factory installation erases the complete Bridge.</strong> Identity, BLE bond, Wi-Fi fallback and all learned IR profiles are removed. The installer requests the required erase itself; do not perform a separate erase first. Before reinstalling an existing Bridge, synchronize its latest profiles to RoonPilot's library and create a complete backup under <strong>System → Configuration backup</strong>. The Bridge need not stay online during export. Pair the newly installed Bridge and select it explicitly as a restore target; see section 8.</div>
           <p>After a successful Factory installation, the Bridge creates a new random identity in the form <code>RPB-XXXX-XXX</code> and permits its first encrypted pairing. The RGB LED slowly pulses blue while pairing is open.</p>
@@ -220,7 +220,7 @@
           </div>
         </section>
 
-        <div class="guide-finish"><div><p class="eyebrow">Build your own Bridge step by step</p><h2>Install only when the wiring has been checked.</h2></div><a class="button primary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/ir-bridge-installation.md">Read flash instructions</a></div>
+        <div class="guide-finish"><div><p class="eyebrow">Build your own Bridge step by step</p><h2>Install only when the wiring has been checked.</h2></div><a class="button primary" href="../install/">Open Bridge Web Installer</a></div>
       </article>
 
       <aside class="guide-nav" aria-label="On this page">

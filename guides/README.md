@@ -2,9 +2,9 @@
 
 **English** · [Deutsch](de/README.md)
 
-> **Current public firmware: 1.0.2.** These guides already describe the upcoming
-> 2.0.0 version and IR Bridge. Their firmware and Bridge installer follow with
-> the release.
+> **Current public firmware: 2.0.0.** These guides cover the released RoonPilot
+> version and optional **IR Bridge 1.0.0**. Both Web Installers are available;
+> online updates are checked automatically when enabled but installed only on request.
 
 [What's new in 2.0.0 — detailed release notes](../docs/release-notes-2.0.0.md)
 · [Changelog and earlier versions](../CHANGELOG.md)

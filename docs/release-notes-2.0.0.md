@@ -8,9 +8,9 @@ keeping the Bridge entirely optional. Display operation, music browsing, zone
 management, power controls, diagnostics and everyday resilience have also
 received substantial improvements.
 
-> **Documentation preview:** the currently published firmware remains **1.0.2**.
-> These notes describe the upcoming **RoonPilot 2.0.0** and optional
-> **IR Bridge 1.0.0**. Their firmware and installers will be released together.
+> **Released 4 October 2026:** **RoonPilot 2.0.0** and optional **IR Bridge 1.0.0**
+> are now available through their Web Installers and signed online update channels.
+> Update checks and notices can be enabled separately; installation is always manual.
 
 ## Contents
 

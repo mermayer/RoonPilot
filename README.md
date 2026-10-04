@@ -23,9 +23,9 @@
 </div>
 
 > [!NOTE]
-> **Current public firmware: 1.0.2.** This documentation already covers the
-> upcoming 2.0.0 features, including the IR Bridge. The new firmware and Bridge
-> installer will become available with the release.
+> **Current public firmware: 2.0.0 — released 4 October 2026.**
+> The optional IR Bridge firmware **1.0.0** is available with this release.
+> Both Web Installers and the signed online update channels are now available.
 
 RoonPilot turns Waveshare's compact round display controller into a fast,
 self-contained remote for Roon. The physical ring controls volume, the touch

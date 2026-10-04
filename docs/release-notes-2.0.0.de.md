@@ -9,10 +9,10 @@ bleibt vollständig optional; gleichzeitig wurden Display, Musiknavigation,
 Zonenverwaltung, Energieoptionen, Diagnose und Alltagssicherheit umfassend
 erweitert.
 
-> **Dokumentationsvorschau:** Die aktuell veröffentlichte Firmware bleibt
-> **1.0.2**. Diese Hinweise beschreiben die kommende **RoonPilot 2.0.0** und
-> die optionale **IR Bridge 1.0.0**. Firmware und Installer werden gemeinsam
-> mit dem Release freigegeben.
+> **Veröffentlicht am 4. Oktober 2026:** **RoonPilot 2.0.0** und die optionale
+> **IR Bridge 1.0.0** sind über ihre Webinstaller und signierten Online-Updatekanäle
+> verfügbar. Updateprüfungen und Meldungen lassen sich getrennt aktivieren;
+> die Installation wird immer von dir gestartet.
 
 ## Inhalt
 

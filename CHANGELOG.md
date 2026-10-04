@@ -3,21 +3,23 @@
 **English** · [Deutsch](CHANGELOG.de.md)
 
 This document provides a user-facing overview of RoonPilot releases. Full
-details for the upcoming release are in the
+details for release 2.0.0 are in the
 [English release notes](docs/release-notes-2.0.0.md). Development-only changes
 without a visible user impact are intentionally omitted.
 
-**Current public firmware: 1.0.2.** The 2.0.0 section describes the upcoming
-release; publishing these notes does not make the new firmware available.
+**Current public firmware: 2.0.0**, released on **4 October 2026** together
+with the optional **IR Bridge firmware 1.0.0**.
 
 ## Contents
 
-- [2.0.0 — upcoming release](#200-in-preparation)
+- [2.0.0 — 4 October 2026](#200)
 - [Project release 1.0.5 — firmware 1.0.2](#project-release-105--firmware-102)
 - [Project release 1.0.4 — firmware 1.0.1](#project-release-104--firmware-101)
 - [Firmware 1.0.0](#firmware-100)
 
-## 2.0.0 (in preparation)
+## 2.0.0
+
+Released 4 October 2026. Optional IR Bridge firmware: 1.0.0.
 
 ### Unified edition
 

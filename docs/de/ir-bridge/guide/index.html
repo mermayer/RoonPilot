@@ -22,7 +22,7 @@
   </header>
 
   <main class="guide-body page-width">
-    <p class="documentation-preview-note page-width"><strong>Bridge-Dokumentation zur kommenden RoonPilot-Version.</strong> Die öffentlich verfügbare RoonPilot-Firmware bleibt 1.0.2. Bridge-Firmware und Browser-Installer werden gemeinsam mit dem neuen Release bereitgestellt.</p>
+    <p class="documentation-preview-note page-width"><strong>IR Bridge 1.0.0 für RoonPilot 2.0.0.</strong> Die offizielle Firmware und der <a href="../install/">Bridge-Webinstaller</a> sind verfügbar. Bereits gekoppelte Bridges lassen sich über RoonPilot aktualisieren; die Installation wird immer von dir gestartet.</p>
     <div class="guide-layout">
       <article class="guide-copy">
         <p class="bridge-kicker">Einrichtung und Bedienung</p>
@@ -83,10 +83,10 @@
           <h2>3. Erste Factory-Installation</h2>
           <ol>
             <li>Verdrahtung bei abgezogenem USB vollständig prüfen. Beim allerersten Boardtest die IR-Module abziehen, solange deren Pinbeschriftung nicht zweifelsfrei feststeht.</li>
-            <li>Den Bridge-Webinstaller nach seiner Veröffentlichung in einem aktuellen Desktop-Chrome oder Edge öffnen. Firefox, Safari, iPhone und iPad besitzen die erforderliche Web-Serial-Schnittstelle nicht.</li>
+            <li>Den <a href="../install/">Bridge-Webinstaller</a> in einem aktuellen Desktop-Chrome oder Edge öffnen. Firefox, Safari, iPhone und iPad besitzen die erforderliche Web-Serial-Schnittstelle nicht.</li>
             <li>Das Bridge-Board direkt per USB anschließen. Arduino Serial Monitor, ESP-IDF Monitor und alle anderen Programme schließen, die den Port verwenden.</li>
             <li>Im Geräteauswahldialog des Webinstallers unter Windows <strong>USB JTAG/serial debug unit</strong> (<code>COM…</code>) beziehungsweise unter macOS <strong>USB JTAG/serial debug unit</strong> (<code>cu.usbmodem…</code>) wählen. Entscheidend ist der Name vor der Klammer. Eine vorherige Suche im Betriebssystem ist nicht nötig; der geöffnete Dialog erkennt ein abgezogenes und wieder angeschlossenes Gerät sofort. <strong>USB serial</strong> bezeichnet dort einen klassischen ESP32 und ist nicht die Bridge. Während der Installation nur die Bridge per USB anschließen.</li>
-            <li>Beide Sicherheitsbestätigungen akzeptieren und den Installer starten. USB bis zum vollständigen Abschluss von Installation und Neustart verbunden lassen.</li>
+            <li>Die richtige Hardware, das vollständige Löschen und die Firmwarelizenz bestätigen, dann den Installer starten. USB bis zum vollständigen Abschluss von Installation und Neustart verbunden lassen.</li>
           </ol>
           <div class="warning"><strong>Eine Factory-Installation löscht die komplette Bridge.</strong> Kennung, BLE-Bond, WLAN-Fallback und alle gelernten IR-Profile gehen verloren. Der Installer fordert das erforderliche Löschen selbst an; vorher keinen separaten Erase ausführen. Vor der Neuinstallation einer vorhandenen Bridge deren neueste Profile mit RoonPilots Bibliothek abgleichen und unter <strong>System → Configuration backup</strong> eine vollständige Sicherung erstellen. Beim Export muss die Bridge nicht mehr online sein. Die neu installierte Bridge erneut koppeln und beim Import ausdrücklich als Ziel auswählen; siehe Abschnitt 8.</div>
           <p>Nach erfolgreicher Factory-Installation erzeugt die Bridge eine neue zufällige Kennung im Format <code>RPB-XXXX-XXX</code> und erlaubt die erste verschlüsselte Kopplung. Während des offenen Pairings pulsiert die RGB-LED langsam blau.</p>
@@ -197,7 +197,7 @@
           </div>
         </section>
 
-        <div class="guide-finish"><div><p class="eyebrow">Schritt für Schritt zur eigenen Bridge</p><h2>Erst nach geprüfter Verdrahtung installieren.</h2></div><a class="button primary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/ir-bridge-installation.md">Flash-Anleitung lesen</a></div>
+        <div class="guide-finish"><div><p class="eyebrow">Schritt für Schritt zur eigenen Bridge</p><h2>Erst nach geprüfter Verdrahtung installieren.</h2></div><a class="button primary" href="../install/">Bridge-Webinstaller öffnen</a></div>
       </article>
 
       <aside class="guide-nav" aria-label="Auf dieser Seite"><strong>Auf dieser Seite</strong><a href="#start">Aufgabe und Umfang</a><a href="#hardware">Hardware und Verdrahtung</a><a href="#gehaeuse">3D-Gehäuse</a><a href="#status-led">Status-LED</a><a href="#factory">Factory-Installation</a><a href="#pairing">Pairing</a><a href="#wifi">WLAN-Fallback</a><a href="#learning">IR-Lernen</a><a href="#zones">Zonenrouting</a><a href="#roon-gruppen">Roon-Gruppen</a><a href="#backup">Sicherung</a><a href="#updates">Onlineupdates</a><a href="#troubleshooting">Fehlerbehebung</a><hr><a href="../">Bridge-Übersicht</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/ir-bridge-installation.md">Flash-Anleitung</a></aside>

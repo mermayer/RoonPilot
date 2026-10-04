@@ -23,9 +23,9 @@
 </div>
 
 > [!NOTE]
-> **Aktuell veröffentlichte Firmware: 1.0.2.** Diese Dokumentation enthält bereits
-> die Funktionen der kommenden Version 2.0.0 einschließlich IR Bridge. Die neue
-> Firmware und der Bridge-Installer werden erst mit dem Release freigegeben.
+> **Aktuell veröffentlichte Firmware: 2.0.0 — erschienen am 4. Oktober 2026.**
+> Die optionale IR-Bridge-Firmware **1.0.0** ist mit dieser Ausgabe verfügbar.
+> Beide Webinstaller und die signierten Online-Updatekanäle sind jetzt freigegeben.
 
 RoonPilot macht aus Waveshares kompaktem Controller mit rundem Display eine
 schnelle, eigenständige Roon-Fernbedienung. Der Außenring regelt die

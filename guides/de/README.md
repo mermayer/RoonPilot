@@ -2,9 +2,10 @@
 
 [English documentation](../README.md) · **Deutsche Dokumentation**
 
-> **Aktuelle öffentliche Firmware: 1.0.2.** Diese Anleitungen beschreiben bereits
-> die kommende Version 2.0.0 und die IR Bridge. Firmware und Bridge-Installer
-> folgen mit dem Release.
+> **Aktuelle öffentliche Firmware: 2.0.0.** Diese Anleitungen beschreiben die
+> veröffentlichte RoonPilot-Version und die optionale **IR Bridge 1.0.0**.
+> Beide Webinstaller sind verfügbar. Aktivierte Updateprüfungen laufen automatisch;
+> die Installation wird ausschließlich von dir gestartet.
 
 [Neu in 2.0.0 — ausführliche Release Notes](../../docs/release-notes-2.0.0.de.md)
 · [Änderungsprotokoll und frühere Versionen](../../CHANGELOG.de.md)
