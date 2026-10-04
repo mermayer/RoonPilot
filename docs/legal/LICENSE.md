@@ -147,3 +147,16 @@ agreement signed by Senior Coder.
 This License is governed by the laws of the Federal Republic of Germany,
 without prejudice to mandatory consumer-protection rules and conflict-of-law
 rules that cannot lawfully be excluded.
+
+## 11. Official RoonPilot IR Bridge firmware
+
+The RoonPilot Software also includes the official RoonPilot IR Bridge firmware.
+The limited permission in section 1 extends to installing an official,
+unmodified Bridge image with the approved Bridge Web Installer on the supported
+ESP32-S3-Zero-compatible hardware described in the Bridge installation guide,
+running it for your own private, noncommercial use, and installing official
+updates through RoonPilot's documented Bridge update function. All other terms
+of this License continue to apply, including the separate rights of third-party
+components and the restrictions on redistribution, modification and source-code
+access. This extension does not grant permission to use unpublished development
+material.

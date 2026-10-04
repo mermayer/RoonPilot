@@ -157,3 +157,16 @@ Verbraucherschutz- und Kollisionsnormen.
 Diese deutsche Fassung und die englische Fassung `LICENSE.md` sollen denselben
 Inhalt wiedergeben. Bei Auslegungszweifeln bleiben zwingende gesetzliche Rechte
 unberuehrt.
+
+## 11. Offizielle RoonPilot-IR-Bridge-Firmware
+
+Zur RoonPilot-Software gehoert auch die offizielle RoonPilot-IR-Bridge-Firmware.
+Die beschraenkte Erlaubnis aus Abschnitt 1 umfasst die Installation eines
+offiziellen, unveraenderten Bridge-Abbildes mit dem freigegebenen
+Bridge-Webinstaller auf der in der Bridge-Installationsanleitung beschriebenen
+unterstuetzten ESP32-S3-Zero-kompatiblen Hardware, deren eigene private, nicht
+kommerzielle Nutzung und offizielle Updates ueber die dokumentierte
+Bridge-Updatefunktion von RoonPilot. Alle uebrigen Bedingungen dieser Lizenz
+gelten weiter, einschliesslich der eigenstaendigen Rechte von Drittanbietern und
+der Beschraenkungen fuer Weitergabe, Veraenderung und Quellcodezugang. Diese
+Erweiterung erlaubt keine Nutzung unveroeffentlichter Entwicklungsmaterialien.

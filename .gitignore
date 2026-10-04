@@ -2,12 +2,8 @@
 Thumbs.db
 desktop.ini
 
-# Publish Bridge documentation independently of firmware and installers.
-docs/ir-bridge/firmware/
-docs/ir-bridge/install/
+# Keep unpublished development update pages and internal material private.
 docs/ir-bridge/updates/
 docs/de/ir-bridge/firmware/
-docs/de/ir-bridge/install/
 docs/de/ir-bridge/updates/
-docs/bridge-update-manifest-*.json
 internal/
