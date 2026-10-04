@@ -1,6 +1,6 @@
 # RoonPilot third-party notices
 
-This document applies to the RoonPilot firmware 2.0.0 and IR Bridge 1.0.0
+This document applies to the RoonPilot firmware 2.0.0/2.0.1 and IR Bridge 1.0.0
 binary distributions. The unchanged Companion 1.0.1 and original 1.0.2 recovery
 image retain their [original dependency notices](THIRD_PARTY_NOTICES-1.0.2.md)
 and the license files already supplied in the root `LICENSES` directory.
@@ -12,7 +12,7 @@ granted independently for those components.
 
 ## Direct project dependencies
 
-| Component | Version in firmware 2.0.0 | License |
+| Component | Version in firmware 2.0.0/2.0.1 | License |
 | --- | --- | --- |
 | Espressif ESP-IDF | 6.0.3 | Apache-2.0 plus separately licensed bundled components |
 | Espressif CMake Utilities | 0.5.3 | Apache-2.0 |
