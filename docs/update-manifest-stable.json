@@ -3,7 +3,7 @@
     "project":  "roonpilot",
     "board":  "waveshare-esp32-s3-knob-touch-lcd-1.8",
     "channel":  "stable",
-    "version":  "2.0.0",
+    "version":  "2.0.1",
     "secure_version":  0,
     "signed":  true,
     "compatibility":  {
@@ -13,9 +13,9 @@
                           "peer_min_version":  "0.1.0-test.39",
                           "peer_max_version":  ""
                       },
-    "url":  "https://mermayer.github.io/RoonPilot/firmware/roonpilot-ota-v2.0.0.bin",
+    "url":  "https://mermayer.github.io/RoonPilot/firmware/roonpilot-ota-v2.0.1.bin",
     "size":  3477504,
-    "sha256":  "99252f1740adbdae82a2653d32b9857c862c097c0f1cc64facb29c2c681b025c",
+    "sha256":  "25f9d5282efbcca0a7db1134a5ef288c06a5d90d8585478626bce86b7e9e0af2",
     "mandatory":  false,
-    "notes_url":  "https://mermayer.github.io/RoonPilot/release-notes-2.0.0.md"
+    "notes_url":  "https://mermayer.github.io/RoonPilot/release-notes-2.0.1.md"
 }
