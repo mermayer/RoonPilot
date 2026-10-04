@@ -2,12 +2,20 @@
 
 **English** - [Deutsch](de/firmware-updates-and-recovery.md)
 
+> [!WARNING]
+> **RoonPilot online updates are temporarily suspended.** Do not use the internal
+> updater until this notice is removed. Use the
+> [USB Web Installer for a clean 2.0.1 installation](https://mermayer.github.io/RoonPilot/firmware/?v=2.0.1-usb).
+> This erases RoonPilot settings, profiles, Wi-Fi and Bridge pairings; set them up again afterwards.
+> An existing device may still show an old update offer or an update-check error.
+> IR Bridge online updates are not affected.
+
 ## Which path is used?
 
 | Purpose | Processor | Method | Settings |
 | --- | --- | --- | --- |
 | First installation or complete recovery | ESP32-S3 | Authorized Chromium Web Installer | Completely erased |
-| Normal update | ESP32-S3 | Signed online update on RoonPilot | Normally retained |
+| RoonPilot update during the suspension | ESP32-S3 | Clean 2.0.1 USB Web Installer installation | Completely erased |
 | Return from 2.0.0 to 1.0.2 | ESP32-S3 | Fixed 1.0.2 recovery choice in the Web Installer | Completely erased |
 | Optional Companion power saving | Classic ESP32 | Separate Companion Web Installer | Replaces Companion flash |
 | First IR Bridge installation or complete Bridge recovery | Separate Bridge ESP32-S3 | Dedicated Chromium Bridge installer | Bridge identity, bond, Wi-Fi and profiles erased |
@@ -18,7 +26,10 @@ methods cannot be interchanged, and the USB orientation must be verified before
 any recovery action. The separate IR Bridge has its own USB connector and
 firmware target; never install its image on the round-display RoonPilot.
 
-## Signed online update - the normal path
+## Signed online update - temporarily suspended
+
+The following describes the normal update workflow for when the channel is
+available again. Do not perform these steps during the suspension.
 
 1. Connect RoonPilot to stable USB power.
 2. Open its IP address in a browser.

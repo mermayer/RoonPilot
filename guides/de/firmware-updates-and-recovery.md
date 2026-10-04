@@ -2,12 +2,20 @@
 
 [English](../firmware-updates-and-recovery.md) - **Deutsch**
 
+> [!WARNING]
+> **RoonPilot-Onlineupdates sind vorübergehend gesperrt.** Bitte den internen
+> Updater nicht verwenden, solange dieser Hinweis angezeigt wird. Für eine saubere
+> [Installation von 2.0.1 den USB-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/?v=2.0.1-usb) nutzen.
+> Dabei werden RoonPilot-Einstellungen, Profile, WLAN und Bridge-Kopplungen gelöscht; anschließend neu einrichten.
+> Das Gerät kann noch ein altes Update-Angebot oder einen Prüffehler anzeigen.
+> IR-Bridge-Onlineupdates sind nicht betroffen.
+
 ## Welcher Weg ist richtig?
 
 | Zweck | Prozessor | Methode | Einstellungen |
 | --- | --- | --- | --- |
 | Erstinstallation oder vollstaendige Wiederherstellung | ESP32-S3 | Autorisierter Chromium Web Installer | Vollstaendig geloescht |
-| Normales Update | ESP32-S3 | Signiertes Online-Update am Geraet | Normalerweise erhalten |
+| RoonPilot-Update während der Sperre | ESP32-S3 | Saubere USB-Installation von 2.0.1 per Webinstaller | Vollständig gelöscht |
 | Rückkehr von 2.0.0 auf 1.0.2 | ESP32-S3 | Feste 1.0.2-Auswahl im Webinstaller | Vollständig gelöscht |
 | Optionale Companion-Stromersparnis | Klassischer ESP32 | Getrennter Companion-Webinstaller | Ersetzt Companion-Flash |
 | Erste IR-Bridge-Installation oder vollständige Bridge-Wiederherstellung | Separater Bridge-ESP32-S3 | Eigener Chromium-Bridge-Installer | Bridge-Kennung, Bond, WLAN und Profile gelöscht |
@@ -20,7 +28,10 @@ USB-C-Stecker um 180 Grad drehen, neu verbinden und erneut prüfen. Die separate
 einen eigenen USB-Anschluss und ein eigenes Firmwareziel; ihr Image niemals auf
 dem RoonPilot mit Runddisplay installieren.
 
-## Signiertes Online-Update - der normale Weg
+## Signiertes Online-Update - vorübergehend gesperrt
+
+Die folgenden Schritte beschreiben den normalen Ablauf nach einer erneuten
+Freigabe des Kanals. Während der Sperre bitte nicht durchführen.
 
 1. RoonPilot mit stabiler USB-Stromversorgung verbinden.
 2. IP-Adresse im Browser oeffnen.

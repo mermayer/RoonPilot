@@ -23,9 +23,17 @@
 </div>
 
 > [!NOTE]
-> **Current public firmware: 2.0.0 — released 4 October 2026.**
+> **Current USB firmware: 2.0.1.**
 > The optional IR Bridge firmware **1.0.0** is available with this release.
-> Both Web Installers and the signed online update channels are now available.
+> Both USB Web Installers remain available; IR Bridge online updates are unaffected.
+
+> [!WARNING]
+> **RoonPilot online updates are temporarily suspended.** Do not use the internal
+> RoonPilot updater. For a clean 2.0.1 installation, use the
+> [USB Web Installer](https://mermayer.github.io/RoonPilot/firmware/?v=2.0.1-usb).
+> This erases RoonPilot settings, profiles, Wi-Fi and Bridge pairings.
+> Existing firmware may still show an old update notice or an update-check error.
+> Separate IR Bridge updates remain available.
 
 RoonPilot turns Waveshare's compact round display controller into a fast,
 self-contained remote for Roon. The physical ring controls volume, the touch
