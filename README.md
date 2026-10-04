@@ -16,7 +16,14 @@
 
 **Need the hardware?** [Where to buy: Amazon.co.uk, Amazon.com, Amazon.de, EU retailer or Waveshare →](guides/hardware-and-two-processors.md#where-to-buy)
 
+**[3D stand: guide & STL files →](guides/roonpilot-stand.md)** · **[IR Bridge enclosure: guide & STL files →](guides/ir-bridge-enclosure.md)**
+
 </div>
+
+> [!NOTE]
+> **Current public firmware: 1.0.2.** This documentation already covers the
+> upcoming 2.0.0 features, including the IR Bridge. The new firmware and Bridge
+> installer will become available with the release.
 
 RoonPilot turns Waveshare's compact round display controller into a fast,
 self-contained remote for Roon. The physical ring controls volume, the touch
@@ -25,7 +32,10 @@ keeps the music visible without reaching for a phone.
 
 RoonPilot talks directly to Roon over the local network. It needs no Raspberry
 Pi, Docker container, Node.js host, desktop helper, cloud account or additional
-always-on RoonPilot service.
+always-on RoonPilot service. The same unified firmware can optionally manage a
+RoonPilot IR Bridge for zones whose DAC, amplifier or streamer cannot expose
+the required hardware controls through Roon. With the Bridge master switch off,
+Bluetooth and all Bridge background activity stay off after restart.
 
 > [!NOTE]
 > **Made for the joy of music and technology**
@@ -87,17 +97,26 @@ completely optional. Start with its separate Companion guide for
 ## Why it feels different
 
 - **Real volume control:** use the outer rotary ring instead of a small slider.
-  RoonPilot automatically follows the zone's native percent, dB or relative
-  volume model and displays real dB values when Roon supplies them.
-- **Three player layouts:** Classic, Focus and full-artwork Orbit.
+  RoonPilot automatically follows the zone's native unitless, dB or relative
+  volume model, preserves the unit supplied by Roon and displays real dB values.
+- **Four player layouts:** Classic, Focus, full-artwork Orbit and cover-colour
+  Aura without artwork.
+- **Easier Play/Pause target:** optionally use the approximately artwork-sized
+  centre of every player layout as one large touch area.
 - **Direct Roon connection:** discovery, authorization, zone state and commands
   run on the ESP32-S3 itself.
 - **Room selection on the device:** browse shown zones with touch or the ring,
   then select on the display.
+- **Roon groups without losing individual control:** turn for the whole group,
+  or tap a large member row and keep turning for only that physical output.
+  Native number, real dB, relative Roon and several IR Bridge routes can coexist.
 - **Useful idle modes:** black screen, station clock or digital clock with date.
 - **Real deep sleep:** optional ESP32-S3 shutdown while the selected zone is
   paused/stopped, with touch and ring wake-up.
 - **Local configuration:** responsive web pages are served by RoonPilot itself.
+- **English or German:** one saved language setting switches the device display,
+  Quick Settings and every local web page; Roon metadata and user-defined names
+  remain untouched.
 - **Private by design:** no cloud relay and no password in configuration exports.
 - **Recoverable updates:** signed A/B firmware updates with boot validation and
   rollback support.
@@ -105,14 +124,17 @@ completely optional. Start with its separate Companion guide for
   release, while an optional once-daily device notice remains dismissible and
   never installs anything automatically.
 - **Independent operation:** after setup, a browser is not needed for normal use.
+- **Optional hardware IR control:** assign individual zones to one of up to four
+  saved IR Bridges while native Roon control remains unchanged for all others.
 
-## The three player screens
+## The four player screens
 
 <table>
   <tr>
-    <td align="center"><img src="assets/device-screens/01-now-playing-classic.png" width="260" alt="Classic player"><br><b>Classic</b><br>Balanced artwork and controls</td>
-    <td align="center"><img src="assets/device-screens/02-now-playing-focus.png" width="260" alt="Focus player"><br><b>Focus</b><br>Large transport controls</td>
-    <td align="center"><img src="assets/device-screens/03-now-playing-orbit.png" width="260" alt="Orbit player"><br><b>Orbit</b><br>Full-screen artwork</td>
+    <td align="center"><img src="assets/device-screens/roonpilot-classic.png" width="220" alt="Current RoonPilot Classic player"><br><b>Classic</b><br>Balanced artwork and controls</td>
+    <td align="center"><img src="assets/device-screens/02-now-playing-focus.png" width="220" alt="Focus player"><br><b>Focus</b><br>Large transport controls</td>
+    <td align="center"><img src="assets/device-screens/03-now-playing-orbit.png" width="220" alt="Orbit player"><br><b>Orbit</b><br>Full-screen artwork</td>
+    <td align="center"><img src="assets/device-screens/34-now-playing-aura.png" width="220" alt="Aura player"><br><b>Aura</b><br>Cover-derived colour without artwork</td>
   </tr>
 </table>
 
@@ -122,23 +144,28 @@ in the web interface.
 
 ## Everyday control
 
-[![RoonPilot controls overview showing rotary, tap, double-tap, swipe, hold, display-off and wake gestures](docs/assets/roonpilot-controls-overview.png)](docs/assets/roonpilot-controls-overview.png)
+[![Diagram of the optional large centre Play/Pause touch area](docs/assets/large-play-pause-touch-en.svg)](docs/assets/large-play-pause-touch-en.svg)
 
-*Click the infographic for the full-resolution view. Detailed explanations are
-available in the [complete device controls guide](guides/device-controls.md).*
+*The optional invisible centre area makes Play/Pause easier to hit without
+changing the player layout. Click the diagram for its full-resolution view;
+every gesture is covered in the [complete device controls guide](guides/device-controls.md).*
 
 | Action | Ring | Touch |
 | --- | --- | --- |
 | Change volume | Turn | — |
-| Play or pause | — | Tap centre transport button |
+| Play or pause | — | Tap centre transport button or optional large centre area |
 | Previous/next | — | Tap a transport button or swipe horizontally |
 | Open zone picker | — | Tap the zone name |
 | Browse zone/menu pages | Turn | Swipe or tap |
 | Open Quick Settings | — | Swipe up on Now Playing |
 | Lock/unlock controls | — | Long-press the centre of the display |
-| Switch display off immediately | — | Double-tap the centre of the display |
+| Switch display off immediately | — | Double-tap centre while the large Play/Pause area is off |
 | Wake the screen/clock | Turn | Tap |
 | Wake from deep sleep | Turn, then wait for boot | Tap, then wait for boot |
+
+For a grouped Roon zone, the first single ring detent opens the large group
+mixer without changing volume. Continue turning for the whole group, or tap one
+of its member rows first. See [Roon groups and the group mixer](guides/roon-groups.md).
 
 See [Device controls](guides/device-controls.md) for timing, locked-operation
 feedback, screen-off wake-up and settings details.
@@ -162,11 +189,29 @@ error views. Every current view is shown and explained in the
   </tr>
   <tr>
     <td align="center"><img src="assets/device-screens/16-controls-locked.png" width="230" alt="Controls locked"><br><b>Control lock</b></td>
+    <td align="center"><img src="assets/device-screens/30-quick-ir-bridges.png" width="230" alt="IR Bridges Quick Settings"><br><b>IR Bridges</b></td>
+    <td align="center"><img src="assets/device-screens/33-ir-volume-overlay.png" width="230" alt="Relative IR volume overlay"><br><b>Quiet IR feedback</b></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="assets/device-screens/31-playlists.png" width="230" alt="Roon playlist picker"><br><b>Playlists</b></td>
+    <td align="center"><img src="assets/device-screens/32-live-radio.png" width="230" alt="Roon Live Radio picker"><br><b>Live Radio</b></td>
+    <td align="center"><img src="assets/device-screens/roonpilot-classic.png" width="230" alt="Current RoonPilot Classic player with its side controls"><br><b>Classic controls</b></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="assets/device-screens/35-group-volume.png" width="230" alt="Whole-group volume mixer"><br><b>Whole group</b></td>
+    <td align="center"><img src="assets/device-screens/36-group-volume-individual.png" width="230" alt="One selected member in the group mixer"><br><b>One group member</b></td>
+    <td align="center"><img src="docs/assets/roon-group-routing-en.svg" width="230" alt="Independent routes inside a Roon group"><br><b>Mixed routes</b></td>
   </tr>
 </table>
 
-All screenshots use fictional music, rooms, network names and documentation-only
-addresses. They contain no private test data.
+Except for the authoritative Classic project reference, illustrative renders use
+fictional music, rooms, network names and documentation-only addresses. They
+contain no private test data.
+
+Roon-supplied metadata remains UTF-8. The embedded display fonts cover extended
+European Latin characters, Greek, Cyrillic, common symbols and a selected set
+of monochrome emoji. Large Asian writing systems are not bundled because of
+their substantial memory cost; the browser interface is unaffected.
 
 ## Local web interface
 
@@ -180,15 +225,84 @@ The pages cover:
 - live status and basic playback control;
 - Roon Server discovery, manual server address and zone selection;
 - shown and hidden zones;
-- player layout, brightness, dimming, clocks and display rotation;
+- per-zone native Roon, IR Bridge or disabled volume routing, independent
+  encoder steps, optional Power/Mute controls and up to three named HTTP
+  on/off action pairs;
+- Roon playlists and saved Live Radio stations with one saved order shared by
+  the web page and device menu;
+- player layout, brightness, dimming, clocks, display rotation and an optional
+  large centre Play/Pause touch area;
+- touch-feedback vibration strength and matching Quick Settings control;
 - rotary direction, native Roon-step multiplier, acceleration and
   maximum-volume protection where the endpoint reports usable limits;
 - Wi-Fi status and network replacement;
-- battery runtime calibration and result history;
+- explicit Automatic/Installed/Not installed battery-hardware selection,
+  conditional battery UI and runtime-calibration history;
 - guarded deep-sleep timeout and wake policy;
 - firmware updates, diagnostics, safe export/import, restart and factory reset.
+- a reboot-persistent event log with download and explicit clear action.
+- one global English/German language choice for the display, Quick Settings and
+  all local pages.
 
 View every page in the [web-interface reference](guides/web-interface.md).
+
+## Optional RoonPilot IR Bridge
+
+<img src="docs/ir-bridge/assets/architecture-en.svg" alt="RoonPilot IR Bridge architecture from the selected Roon zone through BLE or Wi-Fi to learned infrared hardware control" width="100%">
+
+The Bridge is a separate ESP32-S3 module placed where its infrared transmitter
+can see the controlled equipment. Pairing, connection choice, learned profiles,
+zone routing, backup, diagnostics and signed online updates are all managed from
+RoonPilot. No Bridge app, cloud account or additional web server is required.
+
+A practical example is a **WiiM Ultra Roon zone feeding an RME ADI-2 DAC**.
+Transport remains native Roon control, while volume, mute and power can use the
+RME remote commands learned by the Bridge. The RME performs the hardware level
+change itself, preserving its Auto Ref Level behaviour instead of substituting
+Roon digital attenuation.
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/ir-bridge/assets/bridge-zone-routing.png" alt="Per-zone control routing with multiple IR Bridges"></td>
+    <td width="50%"><img src="docs/ir-bridge/assets/bridge-connection-auto.png" alt="Automatic zone control and several saved Bridges"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Every zone chooses its route</b></td>
+    <td align="center"><b>Every required group Bridge remains addressable</b></td>
+  </tr>
+</table>
+
+- up to four paired Bridges can be saved by one RoonPilot;
+- **Automatic zone control** follows the selected zone or group. A single zone
+  uses its assigned Bridge; a group can keep several required Bridges ready
+  through one BLE link and independent authenticated Wi-Fi paths;
+- encrypted BLE is preferred; authenticated local Wi-Fi fallback is optional
+  for a Bridge in another room;
+- each Bridge stores up to eight learned equipment profiles;
+- Volume up/down, Mute, Power on and Power off are learned independently, with
+  recognised protocol/repeat timing or a raw-timing fallback;
+- external IR volume uses a relative amber `+ / −` counter because the Bridge
+  cannot honestly know the DAC’s absolute volume;
+- Bridge online updates are announced but never installed automatically;
+- disabling **Bridge & Bluetooth** preserves pairings and routes but prevents
+  Bluetooth, scans, Bridge traffic and Bridge update checks after restart.
+
+Read the [complete IR Bridge guide](guides/ir-bridge.md), then follow the
+[illustrated hardware and Factory-installation procedure](guides/ir-bridge-installation.md).
+The [3D-printable Bridge enclosure](guides/ir-bridge-enclosure.md) includes
+exterior/interior photos and all STL downloads.
+
+## Optional 3D-printed stand
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/assets/3d/roonpilot-stand/roonpilot-stand.png" width="280" alt="Blue 3D-printed RoonPilot stand without device"><br><b>Three-part stand</b></td>
+    <td align="center"><img src="docs/assets/3d/roonpilot-stand/roonpilot-in-stand-demo.png" width="280" alt="RoonPilot in the blue stand with the correct Classic player interface"><br><b>RoonPilot installed</b></td>
+  </tr>
+</table>
+
+The optional stand holds RoonPilot at an angle and integrates a USB-C holder.
+See the [illustrated stand guide and download its three STL files](guides/roonpilot-stand.md).
 
 ## No RoonPilot service to install
 
@@ -231,8 +345,13 @@ the exact battery and colour variants—in [Where to buy the hardware](guides/ha
 
 The exposed ADC measures the board's regulated rail rather than the Li-ion cell,
 so RoonPilot cannot honestly calculate a precise battery percentage. The battery
-symbol remains a coarse filtered indication. A controlled runtime calibration
-can, however, record how long an individual unit operates with a repeatable
+symbol remains a coarse filtered indication when battery hardware is enabled.
+Because Waveshare sells variants with and without a battery but exposes no
+dedicated battery-present signal, **Power > Installed battery** provides
+Automatic, Installed and Not installed modes. Automatic remembers a positive
+USB-to-battery transition; Not installed removes the battery UI and calibration
+while preserving all power-bank-relevant settings. A controlled runtime
+calibration can record how long an individual unit operates with a repeatable
 display/Wi-Fi profile. Read [Battery and runtime](guides/battery-and-runtime.md)
 before interpreting the result.
 
@@ -257,6 +376,19 @@ based only on its size.
 
 **Installation guides:** [Windows](guides/installation-windows.md) · [macOS](guides/installation-macos.md) · **Optional Companion:** [Windows](guides/companion-installation-windows.md) · [macOS](guides/companion-installation-macos.md)
 
+**Need to return from 2.0.0 to 1.0.2?** Use the separate
+[Return to RoonPilot 1.0.2](guides/return-to-1.0.2.md) instructions and the
+[fixed 1.0.2 Web Installer choice](https://mermayer.github.io/RoonPilot/firmware/?version=1.0.2#web-installer-title).
+This clean USB installation erases RoonPilot's settings and profiles. Keep
+backups from 1.0.2 and 2.0.0 separate, and do not run battery calibration under
+1.0.2.
+
+Simple step-by-step paths: [Windows](guides/installation-windows.md) ·
+[macOS](guides/installation-macos.md) ·
+[optional Companion](guides/companion-firmware.md). The Web Installer device
+chooser is sufficient for identification; Device Manager and System
+Information are not required for the normal installation.
+
 ## Documentation
 
 - [Documentation index](guides/README.md)
@@ -271,16 +403,25 @@ based only on its size.
 - [Installation with macOS](guides/installation-macos.md)
 - [First-time setup](guides/first-time-setup.md)
 - [Device controls](guides/device-controls.md)
+- [Roon groups and the on-device group mixer](guides/roon-groups.md)
 - [All device screens](guides/screen-reference.md)
 - [All web pages](guides/web-interface.md)
 - [Firmware updates and recovery](guides/firmware-updates-and-recovery.md)
+- [Return from 2.0.0 to RoonPilot 1.0.2](guides/return-to-1.0.2.md)
 - [Configuration export and import](guides/configuration-backup.md)
 - [Battery and runtime](guides/battery-and-runtime.md)
 - [Deep sleep](guides/deep-sleep.md)
 - [Troubleshooting](guides/troubleshooting.md)
 - [Privacy and security](guides/privacy-and-security.md)
 - [Licensing and redistribution](guides/licensing.md)
-- [Beginner test plan](guides/test-plan.md)
+- [Optional IR Bridge: overview and documentation path](guides/ir-bridge.md)
+- [IR Bridge hardware and Factory installation](guides/ir-bridge-installation.md)
+- [3D-printable RoonPilot stand](guides/roonpilot-stand.md)
+- [3D-printable IR Bridge enclosure](guides/ir-bridge-enclosure.md)
+- [IR Bridge connectivity and automatic zone control](guides/ir-bridge-connectivity.md)
+- [IR profiles and per-zone routing](guides/ir-bridge-zones-and-profiles.md)
+- [IR Bridge updates and recovery](guides/ir-bridge-updates.md)
+- [IR Bridge troubleshooting](guides/ir-bridge-troubleshooting.md)
 
 ## Project and trademarks
 

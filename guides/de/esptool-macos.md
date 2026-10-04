@@ -6,13 +6,13 @@ Diese Anleitung gilt für die wenigen RoonPilot-Arbeiten, die direkten seriellen
 Flashzugriff benötigen:
 
 - optionale Sicherung der ursprünglichen Waveshare-Firmware;
-- manuelle Wiederherstellung eines zuvor gesicherten Originalabbilds oder
-  erweiterte serielle Diagnose.
+- Installation oder Wiederherstellung der optionalen Firmware des internen
+  RoonPilot-Begleit-ESP32.
 
 Die normale Factory-Installation der RoonPilot-Hauptfirmware auf dem ESP32-S3
-und die optionale Installation des Companion-ESP32 besitzen jeweils einen
-eigenen Webinstaller. Beide benötigen weder Python noch esptool. Normale spätere
-Onlineupdates von RoonPilot benötigen esptool ebenfalls nicht.
+läuft über den Webinstaller und benötigt weder Python noch esptool. Normale
+spätere Onlineupdates von RoonPilot und IR Bridge benötigen esptool ebenfalls
+nicht.
 
 ## Empfohlener Weg
 
@@ -32,11 +32,16 @@ anderen verbunden werden:
 | Prozessor | Typischer macOS-Port | Aufgabe |
 | --- | --- | --- |
 | Haupt-ESP32-S3 | `/dev/cu.usbmodem…` | RoonPilot-Displayfirmware |
-| Klassischer Begleit-ESP32 | `/dev/cu.usbserial…` oder `/dev/cu.wchusbserial…` | Optionale Companion-Firmware |
+| Klassischer Begleit-ESP32 | `/dev/cu.wchusbserial…` oder anderer USB-Seriell-Name | Optionale Companion-Firmware |
 
 Portnamen können abweichen und sind nur ein Anhaltspunkt. Das Ergebnis von
 `chip-id` ist die entscheidende Prüfung. Niemals `erase-flash`, `write-flash`
 oder `read-flash` ausführen, bevor der erwartete Chip identifiziert wurde.
+
+> [!IMPORTANT]
+> Die externe RoonPilot IR Bridge ist ein drittes, räumlich getrenntes
+> ESP32-S3-Board. Ihr Factory-Abbild darf niemals auf einen der beiden
+> Prozessoren im runden RoonPilot geschrieben werden.
 
 ## Weg A – offizielles Standalone-Release (empfohlen)
 
@@ -302,5 +307,5 @@ schwächen oder eine Buildumgebung einzurichten.
 ## Mit der richtigen Anleitung fortfahren
 
 - [Optionale Sicherung der Original-Firmware](factory-backup.md)
-- [Optionaler Companion-ESP32-Webinstaller](companion-firmware.md)
+- [Optionale Companion-ESP32-Firmware](companion-firmware.md)
 - [RoonPilot-Hauptfirmware per Webinstaller](installation.md)

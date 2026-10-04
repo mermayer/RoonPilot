@@ -46,6 +46,14 @@ until they match the file.
 4. Capture serial output from the ESP32-S3 side.
 5. If boot validation cannot recover, reflash the verified Factory image.
 
+## Return to 1.0.2 if 2.0.0 does not work
+
+Use the separate **Return to RoonPilot 1.0.2** choice in the Web Installer. It
+works over USB without needing the local device website and always installs
+the original 1.0.2 release. **It erases all RoonPilot settings and profiles.**
+Do not import a 2.0.0 backup or run battery calibration in 1.0.2. Follow
+[Return to RoonPilot 1.0.2](return-to-1.0.2.md) for the complete procedure.
+
 ## Setup AP is missing
 
 - Wait through the 45-second failed-station window if wrong credentials were
@@ -167,11 +175,18 @@ For example, setting `2` on an output with a native 1 dB step changes 2 dB per
 detent before acceleration. The overlay must begin at the current value reported
 by Roon, not at zero.
 
-If a dB value is displayed correctly but the absolute web slider, percentage
+If a dB value is displayed correctly but the absolute web slider, level
 arc or Maximum volume protection is unavailable, inspect the zone data. Those
 features require minimum and maximum bounds from the endpoint. RoonPilot keeps
 relative dB control when the bounds are absent and deliberately does not invent
 a 0-100 range. An `incremental` output has no absolute value by definition.
+
+## Centre double tap does not switch the display off
+
+Check whether **Large centre Play/Pause area** is enabled under **Display &
+Controls**. In that mode, two short touches are two deliberate playback commands,
+so the immediate display-off double tap is disabled. Turn the large area off if
+that display gesture is preferred.
 
 ## Touch or swipe is wrong
 
@@ -193,8 +208,16 @@ wakes it.
 ## Wi-Fi or battery symbol looks wrong
 
 Wi-Fi uses coarse filtered RSSI levels. Compare the Network page's dBm reading.
-Battery is a filtered system-rail indication, not a percentage or USB detector;
-read [Battery and runtime](battery-and-runtime.md).
+Battery bars are a filtered system-rail indication, not a percentage. The
+lightning bolt is only an estimate of external power and does not prove that
+the battery is charging.
+
+If the unit has no internal battery, choose **Power > Installed battery > Not
+installed**. With **Automatic**, battery UI appears only after RoonPilot has
+seen USB power and then continued running in the lower voltage band after USB
+was removed. Because there is no battery-present pin, Automatic can confirm a
+battery this way but cannot prove that one is absent. Read
+[Battery and runtime](battery-and-runtime.md) for the full explanation.
 
 ## Battery calibration was interrupted
 
@@ -203,9 +226,21 @@ power supply/charger. Do not use a computer USB port as the full-charge
 reference: its voltage at the board can be lower, so the device may operate
 normally while the battery remains short of a complete charge.
 
-On the next boot, save the recovered result only if shutdown was the expected
-end of the untouched unplugged run. Discard results caused by reset, accidental
-power loss, update or cancellation.
+A run is complete only if the voltage-triggered protective stop ends it with
+a valid retained RTC record. After a manual reset, complete power loss, invalid
+measurements or reconnecting USB too early, **Save result** stays disabled.
+Discard the result and repeat from a full charge. The previous saved reference
+is not replaced.
+
+Even a completed run must last at least five minutes. Preparation and saving
+require at least 4.28 V system voltage for three seconds. If a button is
+disabled, check the supply, cable and displayed voltage.
+
+After a calibration protective stop, the display can stay black for about 33 seconds after
+stable USB power is reconnected. Supply checks occur every 30 seconds; touch
+and ring input cannot override the stop. This is not ordinary idle sleep.
+Reconnect power promptly rather than leaving a depleted battery in protective
+sleep for days. See [Battery and runtime](battery-and-runtime.md).
 
 ## Deep sleep does not start
 
@@ -224,6 +259,9 @@ Open **Power** and check its badge. **Armed** means the countdown is running;
 
 ## Deep sleep does not wake
 
+- After a calibration low-voltage protective stop, reconnect stable USB power and allow
+  the supply check to finish. Local input cannot wake this protective state.
+  The remaining steps concern ordinary idle sleep.
 - A browser, Roon command or network packet cannot wake it because Wi-Fi is off.
 - Touch the display once, or turn the ring far enough to create an encoder edge.
 - Allow normal boot and Wi-Fi/Roon reconnection time.

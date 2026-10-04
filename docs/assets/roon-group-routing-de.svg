@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 690" role="img" aria-labelledby="title desc">
+  <title id="title">Unabhängige Lautstärkerouten innerhalb einer Roon-Gruppe</title>
+  <desc id="desc">Eine fiktive Erdgeschoss-Gruppe enthält drei Ausgänge. RoonPilot sendet IR-Lautstärke über die Wohnzimmer-Bridge, native dB-Lautstärke direkt über Roon und native numerische Lautstärke direkt über Roon.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#091113"/><stop offset="1" stop-color="#101719"/></linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#5ce0e1"/></marker>
+    <style>
+      .title{font:700 38px system-ui,sans-serif;fill:#f4f1e9}.subtitle{font:400 20px system-ui,sans-serif;fill:#a8aaa5}.label{font:700 23px system-ui,sans-serif;fill:#f4f1e9}.small{font:400 17px system-ui,sans-serif;fill:#a8aaa5}.value{font:700 24px system-ui,sans-serif;fill:#5ce0e1}.box{fill:#151c1e;stroke:#394648;stroke-width:2}.group{fill:#182527;stroke:#5ce0e1;stroke-width:3}.ir{fill:#2b2011;stroke:#f4ae3f;stroke-width:2}.line{stroke:#5ce0e1;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="690" rx="34" fill="url(#bg)"/>
+  <text x="60" y="70" class="title">Eine Gruppe, unabhängige Wege</text>
+  <text x="60" y="106" class="subtitle">RoonPilot löst vor jedem Ringbefehl jedes physische Ausgabegerät einzeln auf.</text>
+  <rect x="60" y="178" width="280" height="290" rx="28" class="group"/>
+  <text x="94" y="228" class="small">GEWÄHLTE ROON-GRUPPE</text>
+  <text x="94" y="270" class="label">Demo Erdgeschoss</text>
+  <text x="94" y="326" class="small">Ring drehen: alle</text>
+  <text x="94" y="360" class="small">Zeile tippen: eine Zone</text>
+  <rect x="94" y="397" width="188" height="44" rx="22" fill="#5ce0e1"/>
+  <text x="188" y="426" text-anchor="middle" style="font:700 17px system-ui,sans-serif;fill:#081011">RoonPilot</text>
+  <path d="M340 244H430" class="line"/><path d="M340 324H430" class="line"/><path d="M340 404H430" class="line"/>
+  <rect x="440" y="170" width="305" height="130" rx="22" class="ir"/>
+  <text x="472" y="213" class="label">WiiM Ultra</text><text x="472" y="247" class="small">Externe IR-Route</text><text x="472" y="278" class="value" fill="#f4ae3f">IR +2</text>
+  <rect x="440" y="315" width="305" height="130" rx="22" class="box"/>
+  <text x="472" y="358" class="label">Arbeitszimmer</text><text x="472" y="392" class="small">Roon nativ · dB</text><text x="472" y="423" class="value">−35.0 dB</text>
+  <rect x="440" y="460" width="305" height="130" rx="22" class="box"/>
+  <text x="472" y="503" class="label">Küche</text><text x="472" y="537" class="small">Roon nativ · Zahl</text><text x="472" y="568" class="value">48</text>
+  <path d="M745 235H828" class="line"/>
+  <rect x="838" y="170" width="300" height="130" rx="22" class="ir"/>
+  <text x="870" y="213" class="label">Wohnzimmer-Bridge</text><text x="870" y="247" class="small">BLE oder geprüftes WLAN</text><text x="870" y="278" class="small">Gelerntes IR-Profil</text>
+  <path d="M745 380H828" class="line"/><path d="M745 525H828" class="line"/>
+  <rect x="838" y="337" width="300" height="231" rx="22" class="box"/>
+  <text x="870" y="383" class="label">Roon-Endpunkte</text>
+  <text x="870" y="425" class="small">Jeder Ausgang erhält seinen</text><text x="870" y="453" class="small">eigenen Befehl mit eigener Einheit.</text>
+  <line x1="870" y1="482" x2="1104" y2="482" stroke="#394648"/>
+  <text x="870" y="520" class="small">Wiedergabe bleibt bei allen</text><text x="870" y="548" class="small">Gruppenmitgliedern in Roon.</text>
+  <text x="60" y="644" class="subtitle">Ist eine Bridge offline, zeigt ihre Zeile OFFLINE; andere gültige Wege können weiterarbeiten.</text>
+</svg>

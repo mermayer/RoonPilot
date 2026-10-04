@@ -58,30 +58,35 @@ Bestellnummern können sich ändern.
 ## Die Besonderheit: zwei Computer im Gehäuse
 
 ```text
-Steckerstellung, in der chip-id einen ESP32-S3 meldet
+Haupt-Webinstaller: USB JTAG/serial debug unit
     └──► ESP32-S3R8 ──► Display, Touch, Ring, WLAN, RoonPilot
 
 USB abziehen, USB-C-Stecker um 180 Grad drehen und neu verbinden
-    └──► ESP32-U4WDH ─► separate Companion-Firmware
+    └──► USB serial ──► ESP32-U4WDH ─► separate Companion-Firmware
 ```
 
 Beide besitzen einen eigenen Flash und benötigen eigene Firmware. Eine
 Sicherung des einen Prozessors kann den anderen nicht wiederherstellen. Um den
 anderen Prozessor zu erreichen, USB abziehen, den USB-C-Stecker um 180 Grad
-drehen und neu verbinden. Die COM-Nummer allein beweist nicht, welcher Chip
-aktiv ist.
+drehen und neu verbinden. Die COM-Nummer beweist nicht, welcher Chip aktiv ist.
 
-## Ohne Kommandozeilenwerkzeug erkennen
+## Prozessor im Webinstaller erkennen
 
-| Betriebssystem | ESP32-S3 für RoonPilot | ESP32-U4WDH-Begleitprozessor |
+Für die normale Installation genügt der Geräteauswahldialog des Webinstallers:
+
+| Prozessor | Windows | macOS |
 | --- | --- | --- |
-| Windows, Geräte-Manager → Anschlüsse (COM & LPT) | `Serielles USB-Gerät (COMx)` | `USB-SERIAL CH340 (COMx)` |
-| macOS, Systeminformationen → Hardware → USB | `USB JTAG/serial` | `USB serial` |
+| Haupt-ESP32-S3 | **USB JTAG/serial debug unit** (`COM…`) | **USB JTAG/serial debug unit** (`cu.usbmodem…`) |
+| Companion-ESP32 | **USB serial** (`COM…`) | **USB serial** (`cu.wchusbserial…`) |
 
-Die getrennten Anleitungen für [Windows](installation-windows.md) und
-[macOS](installation-macos.md) zeigen anschließend jeden benötigten Klick.
+Entscheidend ist der Name vor der Klammer. Wird der falsche Eintrag angezeigt,
+den Browserdialog geöffnet lassen, USB abziehen, den USB-C-Stecker um 180 Grad
+drehen und neu verbinden. Der Webinstaller erkennt das Gerät sofort wieder.
 
-## Erweiterte Erkennung mit esptool
+### Optionale technische Zusatzkontrolle
+
+Nur wer den Chip zusätzlich technisch prüfen oder eine Original-Firmware-
+Sicherung erstellen möchte, benötigt `esptool`:
 
 ```powershell
 python -m esptool --port COM4 chip-id
@@ -113,7 +118,8 @@ Herstellerzustand des Begleitprozessors wiederhergestellt werden soll.
 
 ## Nächster Schritt
 
-Mit der [Installation](installation.md) fortfahren. Falls der exakte
+Mit der Installation unter [Windows](installation-windows.md) oder
+[macOS](installation-macos.md) fortfahren. Falls der exakte
 Auslieferungszustand des Herstellers später wiederhergestellt werden können
 soll, vorher die [optionale Original-Firmware-Sicherung](factory-backup.md)
 erstellen.

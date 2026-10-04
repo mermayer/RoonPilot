@@ -94,6 +94,7 @@ svg { width: 1.25em; height: 1.25em; fill: none; stroke: currentColor; stroke-wi
 }
 .site-header nav a:hover, .site-header nav a:focus-visible, .header-link:hover, .header-link:focus-visible { color: var(--cyan); }
 .site-header nav a[aria-current] { color: var(--cyan); }
+section[id] { scroll-margin-top: 92px; }
 .header-link { display: inline-flex; align-items: center; gap: 8px; }
 .header-link svg { width: 19px; height: 19px; }
 .header-actions { display: flex; align-items: center; justify-content: flex-end; gap: 17px; }
@@ -556,6 +557,11 @@ esp-web-install-button::part(activate) {
 .controls-image-link img { width: 100%; border: 1px solid var(--line-soft); border-radius: 10px; }
 .controls-image-link:hover img { border-color: rgba(79, 224, 226, 0.55); }
 .controls-image-hint { margin: 9px 0 0; color: var(--muted); font-size: 12px; text-align: right; }
+.controls-classic-reference { width: min(100%, 620px); margin-inline: auto; }
+.controls-classic-reference img { display: block; border: 0; background: transparent; }
+.gesture-table { margin-top: 28px; }
+.gesture-touch-figure { width: min(100%, 760px); margin: 28px auto 0; }
+.gesture-touch-figure a { display: block; }
 
 .direct-band { position: relative; overflow: hidden; padding-block: 68px; border-block: 1px solid rgba(79, 224, 226, 0.24); background: linear-gradient(90deg, rgba(79, 224, 226, 0.02), rgba(10, 94, 99, 0.34), rgba(79, 224, 226, 0.02)); text-align: center; }
 .direct-band h2 { margin: 0; color: var(--cyan); font-size: clamp(29px, 4vw, 48px); letter-spacing: -0.04em; }

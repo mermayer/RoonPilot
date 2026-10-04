@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="510" viewBox="0 0 1280 510" role="img" aria-labelledby="title desc">
+  <title id="title">Transportwechsel zwischen Bluetooth und WLAN mit Stabilitätsprüfung</title>
+  <desc id="desc">Bei stabiler Bluetooth-Verbindung bleibt Bluetooth aktiv. Wiederholte bestätigte Ausfälle können auf das zuvor eingerichtete und authentifizierte WLAN wechseln. Bei Rückkehr in Bluetooth-Reichweite bleibt WLAN zunächst aktiv; erst mehrere erfolgreiche Prüfungen ermöglichen einen Rückwechsel.</desc>
+  <style>.bg{fill:#0b0e0d}.card{fill:#171d1a;stroke:#405149;stroke-width:2}.h{fill:#f7f7f2;font:700 29px Arial,sans-serif}.sub{fill:#b6c2b9;font:18px Arial,sans-serif}.num{fill:#ffc461;font:700 18px Arial,sans-serif}.name{fill:#f7f7f2;font:700 23px Arial,sans-serif}.body{fill:#bac5bc;font:18px Arial,sans-serif}.ble{fill:#83e3e1;font:700 20px Arial,sans-serif}.wifi{fill:#79d99e;font:700 20px Arial,sans-serif}.link{stroke:#ffc461;stroke-width:3;fill:none}.note{fill:#f3e3bb;font:19px Arial,sans-serif}</style>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#ffc461"/></marker></defs>
+  <rect class="bg" width="1280" height="510" rx="20"/>
+  <text class="h" x="36" y="50">BT ↔ WLAN: Ein Wechsel braucht belastbare Hinweise</text>
+  <text class="sub" x="36" y="85">Beispiel: dieselbe Wohnzimmer-Bridge wird erst nahe, dann außerhalb der BT-Reichweite genutzt.</text>
+  <rect class="card" x="36" y="127" width="280" height="248" rx="17"/>
+  <text class="num" x="57" y="160">1 · NORMAL</text><text class="name" x="57" y="202">BT ist stabil</text>
+  <text class="body" x="57" y="241">WLAN ist vorbereitet,</text><text class="body" x="57" y="269">aber nicht nötig.</text>
+  <text class="ble" x="57" y="337">Befehle per BLE</text>
+  <path class="link" d="M319 250 H342" marker-end="url(#arrow)"/>
+  <rect class="card" x="348" y="127" width="280" height="248" rx="17"/>
+  <text class="num" x="369" y="160">2 · AUSFALL</text><text class="name" x="369" y="202">BT fällt wiederholt aus</text>
+  <text class="body" x="369" y="241">Nicht ein einzelner</text><text class="body" x="369" y="269">schwacher Messwert.</text>
+  <text class="wifi" x="369" y="337">WLAN übernimmt</text>
+  <path class="link" d="M631 250 H654" marker-end="url(#arrow)"/>
+  <rect class="card" x="660" y="127" width="280" height="248" rx="17"/>
+  <text class="num" x="681" y="160">3 · RÜCKKEHR</text><text class="name" x="681" y="202">BT wieder in Reichweite</text>
+  <text class="body" x="681" y="241">Kein sofortiger Wechsel</text><text class="body" x="681" y="269">bei einem guten dBm-Wert.</text>
+  <text class="wifi" x="681" y="337">WLAN bleibt aktiv</text>
+  <path class="link" d="M943 250 H966" marker-end="url(#arrow)"/>
+  <rect class="card" x="972" y="127" width="272" height="248" rx="17"/>
+  <text class="num" x="993" y="160">4 · BESTÄTIGT</text><text class="name" x="993" y="202">BT ist wieder stabil</text>
+  <text class="body" x="993" y="241">Erst nach mehreren</text><text class="body" x="993" y="269">erfolgreichen Prüfungen.</text>
+  <text class="ble" x="993" y="337">BLE kann übernehmen</text>
+  <path d="M36 405 H1244" stroke="#405149" stroke-width="2"/>
+  <text class="note" x="36" y="444">Sicherheit: Ein IR-Befehl mit unklarem Ergebnis wird beim Transportwechsel nicht blind wiederholt.</text>
+  <text class="sub" x="36" y="475">Der angezeigte Funkweg beschreibt den aktuellen Befehlspfad – nicht die Kopplung oder die Zonenroute.</text>
+</svg>

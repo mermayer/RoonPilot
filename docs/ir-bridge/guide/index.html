@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#07090a">
+  <meta name="description" content="Complete installation, pairing, learning, routing, backup and update guide for the optional RoonPilot IR Bridge.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <link rel="stylesheet" href="../../assets/bridge.css">
+  <title>RoonPilot IR Bridge — complete guide</title>
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../"><span class="brand-mark" aria-hidden="true"></span><span>RoonPilot IR Bridge</span></a>
+      <nav aria-label="Guide navigation"><a href="#hardware">Hardware</a><a href="#enclosure">3D enclosure</a><a href="#status-led">Status LED</a><a href="#factory">Factory install</a><a href="#pairing">Pairing</a><a href="#learning">IR learning</a><a href="#roon-groups">Roon groups</a><a href="#updates">Updates</a></nav>
+      <div class="header-actions"><a class="language-link" href="../../de/ir-bridge/guide/" lang="de">Deutsch</a><a class="header-link" href="../../">RoonPilot</a></div>
+    </div>
+  </header>
+
+  <main class="guide-body page-width">
+    <p class="documentation-preview-note page-width"><strong>Bridge documentation for the upcoming RoonPilot version.</strong> Public RoonPilot firmware remains 1.0.2. Bridge firmware and its browser installer will be provided with the new release.</p>
+    <div class="guide-layout">
+      <article class="guide-copy">
+        <p class="bridge-kicker">Setup and operation</p>
+        <h1>Complete Bridge guide</h1>
+        <p class="guide-lead">This guide starts with an unpowered bare board and ends with learned infrared profiles, per-zone routing, backup and signed online updates managed by RoonPilot.</p>
+
+        <section id="start">
+          <h2>1. What the Bridge does</h2>
+          <p>RoonPilot IR Bridge is an optional ESP32-S3 companion for equipment that Roon cannot control directly. RoonPilot remains the user interface; the Bridge receives authenticated volume, mute and power actions and emits the learned commands of the original infrared remote.</p>
+          <p>Routing is selected per Roon zone. One zone can use native Roon volume, a second can control a DAC through infrared, and another can deliberately have volume control disabled. Disabling <strong>Bridge &amp; Bluetooth</strong> turns off Bridge scanning, Bluetooth and all Bridge background work after RoonPilot restarts.</p>
+          <p>The complete Bridge interface follows RoonPilot's global English/German setting. Physical identities and user-defined zone, equipment and profile names remain exactly as entered.</p>
+          <div class="guide-management-note"><h3>There is no second product to administer.</h3><p>RoonPilot manages the Bridge master switch, encrypted BLE scan and pairing, optional Wi-Fi provisioning, live transport health, IR profiles, guided learning, command tests, per-zone routing, on-screen Power/Mute controls, a combined setup backup and signed online updates. The Bridge itself has no cloud account or everyday web interface.</p></div>
+          <div class="fact-grid">
+            <div><span>Profiles</span><strong>Up to 8</strong></div>
+            <div><span>Saved Bridges</span><strong>Up to 4</strong></div>
+            <div><span>Active routes</span><strong>Every required group member</strong></div>
+            <div><span>Commands</span><strong>Volume ±, mute, power on/off</strong></div>
+            <div><span>Primary link</span><strong>Encrypted BLE</strong></div>
+            <div><span>Fallback</span><strong>Authenticated local Wi-Fi</strong></div>
+          </div>
+        </section>
+
+        <section id="hardware">
+          <h2>2. Hardware and safe wiring</h2>
+          <p>The validated build uses the <a href="https://docs.waveshare.com/ESP32-S3-Zero" target="_blank" rel="noopener">Waveshare ESP32-S3-Zero</a> with 4 MB flash and 2 MB PSRAM, an AZ-Delivery KY-022/CHQ1838 receiver, the Adafruit High Power Infrared LED Emitter 5639 and USB power.</p>
+          <div class="warning"><strong>Disconnect USB before changing any wire.</strong> Read the actual <code>S</code>, <code>+</code>, <code>−</code>, <code>V+</code>, <code>GND</code> and <code>SIG</code> labels on your delivered modules. Compatible KY-022 boards do not always expose their pins in the same physical order.</div>
+          <figure class="wiring-figure"><img src="../assets/wiring-en.svg" alt="RoonPilot IR Bridge wiring diagram"><figcaption>Reference wiring for the supported Adafruit High Power Infrared LED Emitter 5639.</figcaption></figure>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Bridge connection</th><th>Destination</th><th>Purpose</th></tr></thead>
+            <tbody>
+              <tr><td>5 V</td><td>Adafruit 5639 V+</td><td>High-power emitter supply from USB, not from the 3.3 V regulator</td></tr>
+              <tr><td>GPIO4</td><td>Transmitter SIG / S</td><td>3.3 V IR modulation signal</td></tr>
+              <tr><td>3V3</td><td>KY-022 +</td><td>Keeps its digital output inside the ESP32 input domain</td></tr>
+              <tr><td>GPIO5</td><td>KY-022 S / OUT</td><td>Demodulated IR receive signal</td></tr>
+              <tr><td>GND</td><td>Both modules</td><td>Mandatory common ground</td></tr>
+            </tbody>
+          </table></div>
+          <p>The Adafruit board contains its own transistor driver and accepts 3–5 V power and a 3–5 V logic input. At 5 V its two LEDs can draw roughly 400 mA in total while pulsing, so use a stable 5 V / 1 A or better USB supply and never drive the LEDs directly from a GPIO. Keep its bursts short and keep the ESP32 ceramic antenna clear of modules, wiring and metal.</p>
+          <h3 id="enclosure">Printable Bridge enclosure</h3>
+          <p>The project includes a printable body, lid, IR-emitter cover and two alternative foot lengths. Use one complete set of four equal feet. The photographs show the tested external and internal arrangement; they do not replace electrical inspection.</p>
+          <div class="guide-print-gallery">
+            <figure class="guide-ui-figure"><img src="../assets/3d/enclosure/bridge-case.png" alt="Closed white printed IR Bridge enclosure beside a one-euro coin" loading="lazy"><figcaption>Closed enclosure and size reference. Keep both infrared openings unobstructed.</figcaption></figure>
+            <figure class="guide-ui-figure"><img src="../assets/3d/enclosure/bridge-case-open.png" alt="Inside the assembled IR Bridge enclosure with board and wiring" loading="lazy"><figcaption>Tested arrangement after assembly. USB remains accessible for Factory recovery.</figcaption></figure>
+          </div>
+          <div class="download-grid guide-download-grid" aria-label="IR Bridge enclosure STL downloads">
+            <a class="download-card" href="../assets/3d/enclosure/Bridge_Cube.stl" download><img class="stl-preview" src="../assets/3d/enclosure/Bridge_Cube-preview.png" alt="3D preview of the Bridge enclosure" loading="lazy"><span><strong>Bridge_Cube.stl</strong><small>Main enclosure · print once</small></span></a>
+            <a class="download-card" href="../assets/3d/enclosure/deckel.stl" download><img class="stl-preview" src="../assets/3d/enclosure/deckel-preview.png" alt="3D preview of the lid" loading="lazy"><span><strong>deckel.stl</strong><small>Lid · print once</small></span></a>
+            <a class="download-card" href="../assets/3d/enclosure/ir_sender_kappe.stl" download><img class="stl-preview" src="../assets/3d/enclosure/ir_sender_kappe-preview.png" alt="3D preview of the IR-emitter cover" loading="lazy"><span><strong>ir_sender_kappe.stl</strong><small>Emitter cover · print once</small></span></a>
+            <a class="download-card" href="../assets/3d/enclosure/fuss_1x_drucken_4x.stl" download><img class="stl-preview" src="../assets/3d/enclosure/fuss_1x_drucken_4x-preview.png" alt="3D preview of the longer foot" loading="lazy"><span><strong>fuss_1x_drucken_4x.stl</strong><small>Longer foot for a long USB-C plug · print four</small></span></a>
+            <a class="download-card" href="../assets/3d/enclosure/fuss_1x_drucken_4x_KURZ.stl" download><img class="stl-preview" src="../assets/3d/enclosure/fuss_1x_drucken_4x_KURZ-preview.png" alt="3D preview of the short foot" loading="lazy"><span><strong>fuss_1x_drucken_4x_KURZ.stl</strong><small>Short foot for a compact USB-C plug · print four</small></span></a>
+          </div>
+          <p>Complete the wiring and supervised open-board tests before closing the housing. Use a USB-C cable with a short connector housing whenever possible; if its plug is still too long, install four copies of the longer <code>fuss_1x_drucken_4x.stl</code> foot. Disconnect USB before fitting the lid, align the Adafruit emitter and optional learning receiver with their openings, keep wires free of the antenna and contacts, then repeat IR range and temperature checks on the closed enclosure. The separate <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/ir-bridge-enclosure.md">print and enclosure guide</a> contains the full assembly outline and model dimensions.</p>
+          <h3 id="status-led">Bridge status LED colours</h3>
+          <p>The small RGB LED is on the ESP32-S3-Zero. <strong>It is off during normal operation.</strong> Use RoonPilot's Bridge page for ongoing connection status; a dark LED does not mean the Bridge is powered off or disconnected.</p>
+          <div class="table-wrap led-status-table"><table><thead><tr><th>LED pattern</th><th>Meaning</th></tr></thead><tbody>
+            <tr><td>Slowly pulsing blue</td><td>A pairing window is open.</td></tr>
+            <tr><td>Two short blue flashes</td><td>Encrypted Bluetooth pairing succeeded.</td></tr>
+            <tr><td>Repeated short blue pulses for about 1.5 seconds</td><td>Identify Bridge was requested in RoonPilot.</td></tr>
+            <tr><td>Pulsing orange</td><td>The Bridge is waiting for or recording an IR signal during learning.</td></tr>
+            <tr><td>Two short green flashes</td><td>Two matching IR captures were stored. After pulsing violet: firmware accepted; restart follows.</td></tr>
+            <tr><td>Two short red flashes</td><td>IR learning failed or timed out. After pulsing violet: firmware transfer or verification failed.</td></tr>
+            <tr><td>Pulsing violet</td><td>Firmware is being transferred or verified. <strong>Do not remove power.</strong></td></tr>
+          </tbody></table></div>
+          <p>After a short confirmation the LED turns off again or resumes showing an open pairing window. Cancelling IR learning ends the orange pattern without a red error signal.</p>
+        </section>
+
+        <section id="factory">
+          <h2>3. First Factory installation</h2>
+          <ol>
+            <li>Complete and inspect the wiring with USB disconnected. For the very first board test, disconnect the IR modules if their pin labels are not yet certain.</li>
+            <li>After it is published, open the Bridge browser installer in a current desktop Chrome or Edge. Firefox, Safari, iPhone and iPad cannot use the required Web Serial interface.</li>
+            <li>Connect the Bridge board directly by USB. Close Arduino Serial Monitor, ESP-IDF Monitor and every other program using the port.</li>
+            <li>In the Web Installer device chooser, select <strong>USB JTAG/serial debug unit</strong> (<code>COM…</code>) on Windows or <strong>USB JTAG/serial debug unit</strong> (<code>cu.usbmodem…</code>) on macOS. The name before the parentheses is what matters. No operating-system lookup is required first; the open chooser immediately detects a device after it is disconnected and reconnected. <strong>USB serial</strong> denotes a classic ESP32 there and is not the Bridge. Keep only the Bridge connected by USB during installation.</li>
+            <li>Accept both safety confirmations and start the installer. Keep USB connected until installation and restart have completed.</li>
+          </ol>
+          <div class="warning"><strong>A Factory installation erases the complete Bridge.</strong> Identity, BLE bond, Wi-Fi fallback and all learned IR profiles are removed. The installer requests the required erase itself; do not perform a separate erase first. Before reinstalling an existing Bridge, synchronize its latest profiles to RoonPilot's library and create a complete backup under <strong>System → Configuration backup</strong>. The Bridge need not stay online during export. Pair the newly installed Bridge and select it explicitly as a restore target; see section 8.</div>
+          <p>After a successful Factory installation, the Bridge creates a new random identity in the form <code>RPB-XXXX-XXX</code> and permits its first encrypted pairing. The RGB LED slowly pulses blue while pairing is open.</p>
+        </section>
+
+        <section id="pairing">
+          <h2>4. Pair the Bridge with RoonPilot</h2>
+          <ol>
+            <li>Open RoonPilot’s local web interface and select <strong>IR Bridge</strong>.</li>
+            <li>Enable <strong>Bridge &amp; Bluetooth</strong>, save and allow RoonPilot to restart. When disabled, no Bridge Bluetooth stack is started.</li>
+            <li>Select <strong>Scan for Bridges</strong>. Compare the displayed <code>RPB-…</code> identity with the Bridge you intend to control.</li>
+            <li>Select that identity and confirm pairing in RoonPilot. Do not pair an unknown nearby device.</li>
+            <li>Wait for <strong>Encrypted and bonded</strong>, the installed Bridge version and <strong>Ready</strong>. Two short blue LED flashes confirm success; the LED then switches off.</li>
+            <li>Run <strong>Test connection</strong> before learning profiles.</li>
+          </ol>
+          <p>No accessible BOOT button is required for everyday pairing. If one side later loses its bond, power-cycle the Bridge three times within 15 seconds. The Bridge removes only its bond and opens pairing for five minutes; its identity and IR profiles remain intact.</p>
+          <figure class="guide-ui-figure"><img src="../assets/bridge-pairing.png" alt="RoonPilot scan and encrypted pairing screen with a documentation-only Bridge identity" loading="lazy"><figcaption>RoonPilot shows the unique Factory identity before bonding. The screenshot uses dummy data; the real identity belongs to the freshly installed Bridge.</figcaption></figure>
+          <div class="guide-management-note"><h3>Saved is not the same as found</h3><p><strong>Saved IR Bridges</strong> is the persistent inventory of up to four pairings. <strong>Pair a Bridge</strong> contains only units heard during the last ten-second BLE scan. “1 found” can therefore correctly appear beside “2 / 4” saved. When a unit returns to BLE range, press <strong>Scan for Bridges</strong> again. Absence from the last discovery list erases neither pairing nor Wi-Fi control.</p></div>
+          <figure class="guide-ui-figure"><img src="../assets/bridge-scan-vs-saved-en.svg" alt="Two paired Bridges but only one heard in the last BLE scan" loading="lazy"><figcaption>Example: Living Room continues over Wi-Fi beyond BLE range. A fresh scan is needed to show it in the discovery list after it comes back. <a href="../assets/bridge-scan-vs-saved-en.svg">Open full-size diagram</a>.</figcaption></figure>
+          <div class="guide-management-note"><h3>Automatic zone control and Manage</h3><p>The selected Roon zone <em>always</em> determines the required IR routes. For a group, this includes every assigned Bridge of its physical members. <strong>Manage</strong> opens a different saved Bridge only for maintenance, learning, diagnostics or update; it never changes a zone route. There is at most one BLE link but multiple separately authenticated Wi-Fi paths. Before Manage or Scan takes the BLE link, RoonPilot verifies that active IR routes remain reachable and refuses an unsafe switch. Select <strong>Return to zone control</strong> afterwards; idle maintenance selection expires after five minutes.</p></div>
+          <figure class="guide-ui-figure"><img src="../assets/automatic-zone-control-en.svg" alt="The selected Roon zone determines the target Bridge and IR profile" loading="lazy"><figcaption>The zone route is independent of the temporary maintenance selection and of the current radio path.</figcaption></figure>
+          <figure class="guide-ui-figure"><img src="../assets/bridge-parallel-control-en.svg" alt="Living Room IR travels over Wi-Fi while Office is managed over BLE" loading="lazy"><figcaption>One BLE link, two simultaneous targets: the zone remains controllable through its own verified Wi-Fi path. IR commands never move to the maintenance Bridge. <a href="../assets/bridge-parallel-control-en.svg">Open full-size diagram</a>.</figcaption></figure>
+        </section>
+
+        <section id="wifi">
+          <h2>5. Optional Wi-Fi fallback</h2>
+          <p>BLE remains the preferred link. If the Bridge must sit in another room, enable <strong>Allow Wi-Fi fallback</strong> while BLE is connected and bonded. RoonPilot then transfers its current 2.4 GHz credentials and a fresh 256-bit application key once through the encrypted BLE connection.</p>
+          <ol>
+            <li>Enable the switch and confirm provisioning.</li>
+            <li>Wait for <strong>Connected and verified</strong>, the Bridge IP address and signal level.</li>
+            <li>Use <strong>Test Wi-Fi path</strong> to force an authenticated Wi-Fi command even while BLE is available.</li>
+          </ol>
+          <p>Commands use AES-256-GCM authentication and replay protection. A retry cannot silently produce a second IR action. Failed credentials are not retained, BLE remains the recovery path, and disabling fallback prevents the Bridge Wi-Fi radio from starting after reboot. RoonPilot and Bridge must be on the same local network without client isolation.</p>
+          <figure class="guide-ui-figure"><img src="../assets/bridge-connection-auto.png" alt="RoonPilot Bridge status with preferred BLE and an enabled authenticated Wi-Fi fallback" loading="lazy"><figcaption>BLE remains preferred even after Wi-Fi has been provisioned. This single status card makes the active path, Bridge address, signal and protection visible and provides a forced Wi-Fi test.</figcaption></figure>
+          <p>A fluctuating dBm reading alone does not trigger a handover. RoonPilot keeps a working path stable, changes to provisioned Wi-Fi only after repeatedly confirmed trouble and does not immediately switch back when BLE range returns. An IR command with an uncertain outcome is not blindly replayed.</p>
+          <figure class="guide-ui-figure"><img src="../assets/bridge-transport-timeline-en.svg" alt="Four phases from stable BLE through Wi-Fi fallback to a verified return to BLE" loading="lazy"><figcaption>“Ready via Wi-Fi” describes the current command path. Pairing, profile and Roon-zone assignment remain unchanged. <a href="../assets/bridge-transport-timeline-en.svg">Open full-size diagram</a>.</figcaption></figure>
+        </section>
+
+        <section id="learning">
+          <h2>6. Create and learn an IR profile</h2>
+          <p><strong>With multiple Bridges, only one needs an IR receiver.</strong> This learning Bridge can capture profiles for every zone. RoonPilot stores them independently of that Bridge and deploys them to the chosen target Bridge when you save a zone route, even if the target has no receiver.</p>
+          <ol>
+            <li>Under <strong>IR profiles</strong>, create a uniquely named profile such as <code>RME ADI-2 DAC</code> and <strong>save it on RoonPilot</strong>. No Bridge is needed yet. Keep the usual 38 kHz carrier and 33% duty unless the equipment requires something else.</li>
+            <li>Select that profile and <strong>any learning Bridge with an IR receiver</strong>. It need not be the eventual target Bridge. Learning reserves it so it cannot send normal IR commands until learning ends.</li>
+            <li>Choose <strong>Learn</strong> beside <strong>Volume up</strong>. The learning Bridge LED pulses orange while it waits.</li>
+            <li>Aim the original remote at the KY-022 and press the requested key once, briefly and cleanly.</li>
+            <li>Repeat the same press when requested. The Bridge accepts only matching captures.</li>
+            <li>Two short green flashes mean that the command was analysed and stored; two red flashes mean timeout, mismatch or failure.</li>
+            <li>Learn the remaining required buttons and use <strong>Save on RoonPilot</strong> to commit the confirmed commands to its persistent library. <strong>Discard learning</strong> leaves the library profile unchanged. Test the real equipment only after learning has ended and the zone route has deployed the profile; normal IR sends are blocked during learning. An unfinished learning session expires automatically after at most ten minutes.</li>
+          </ol>
+          <p>Known NEC and Extended NEC signals retain protocol and repeat information; unknown signals remain available as lossless raw timing. <strong>Duty</strong> is the on-time percentage of each carrier cycle—not press duration and not the number of repeats. The 33% default means that a 38 kHz LED carrier is on for roughly 8.7 µs of each 26.3 µs cycle.</p>
+          <div class="warning"><strong>Power has two separate slots.</strong> On RoonPilot, a short press sends <em>Power on</em>; a long press sends <em>Power off</em>. Learn or verify both slots independently, even if the original remote uses the same physical button.</div>
+          <figure class="guide-ui-figure"><img src="../assets/bridge-ir-profiles.png" alt="Named IR profile in RoonPilot's library and a learning Bridge selector" loading="lazy"><figcaption>The library profile remains on RoonPilot; any paired Bridge with an IR receiver may be selected for capture.</figcaption></figure>
+          <figure class="guide-ui-figure"><img src="../assets/bridge-learning-workflow-en.svg" alt="Four steps from creating a profile through learning to deployment on other Bridges" loading="lazy"><figcaption>Only completing learning saves the confirmed captures on RoonPilot. The eventual target Bridge is assigned separately in the zone route. <a href="../assets/bridge-learning-workflow-en.svg">Open full-size diagram</a>.</figcaption></figure>
+        </section>
+
+        <section id="zones">
+          <h2>7. Route each zone</h2>
+          <p>Open <strong>Zone Management</strong> and choose one volume path for every visible zone:</p>
+          <ul>
+            <li><strong>Roon / endpoint volume</strong> sends the endpoint’s native absolute or dB volume command.</li>
+            <li><strong>External IR Bridge</strong> sends Volume up/down from the selected profile.</li>
+            <li><strong>Disabled</strong> deliberately discards volume actions.</li>
+          </ul>
+          <p>Set the encoder step count separately for every zone. <strong>2 Steps</strong> means two complete learned IR button presses for each RoonPilot detent. It does not mean one artificially held command. On the validated RME profile, two physical 0.5 dB increments therefore produce exactly one 1.0 dB RoonPilot detent.</p>
+          <p>Mute and Power can also be enabled per zone. Play/Pause, Previous and Next remain native Roon actions. Because incremental infrared does not report an absolute value, the display shows a relative <strong>+ / −</strong> action counter instead of inventing a volume number.</p>
+          <p>For <strong>External IR Bridge</strong>, select a paired Bridge and a named profile from RoonPilot's library. <strong>Save</strong> automatically transfers and verifies that profile on the target Bridge before activating the route. The same library profile can be assigned to several Bridges; their numeric profile slots are independent.</p>
+
+          <h3 id="roon-groups">Roon groups and several Bridges</h3>
+          <p>A selected Roon group does not replace its members' saved routes. RoonPilot resolves every physical output and may therefore send native numeric volume, native dB volume, relative Roon commands and IR commands through several Bridges during the same ring movement. All Bridges required by the group are monitored; one unreachable Bridge marks only its own member <strong>OFFLINE</strong> and never causes a silent fallback to another profile.</p>
+          <p>The first ring detent opens the on-device group mixer without changing volume. Further turning controls the complete group. Tap one of the large member rows to adjust only that output, or tap the group heading to return to all members. The round display offers up to three individually selectable rows; whole-group turning still processes every eligible output.</p>
+          <figure class="guide-ui-figure"><img src="../../assets/roon-group-routing-en.svg" alt="Roon group combining native numeric volume, dB volume and one infrared Bridge" loading="lazy"><figcaption>There is at most one BLE link, while several authenticated Wi-Fi paths may operate in parallel for the same group. <a href="../../assets/roon-group-routing-en.svg">Open full-size diagram</a>.</figcaption></figure>
+          <div class="guide-ui-pair">
+            <figure class="guide-ui-figure"><img src="../../assets/device-screens/35-group-volume.png" alt="RoonPilot whole-group volume mixer" loading="lazy"><figcaption>Whole-group control keeps the Roon group name and each output's honest unit visible.</figcaption></figure>
+            <figure class="guide-ui-figure"><img src="../../assets/device-screens/36-group-volume-individual.png" alt="RoonPilot group mixer with one output selected" loading="lazy"><figcaption>After a row is tapped, the ring changes only that physical output.</figcaption></figure>
+          </div>
+          <p>When several members use the same physical Bridge, RoonPilot deliberately sends one IR action per detent to that Bridge rather than duplicating it. Use independent Bridges for independent IR targets. See the <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/roon-groups.md">complete Roon group and group-mixer guide</a> for mixed units, display limits, failure handling and a worked example.</p>
+
+          <div class="rme-guide-card">
+            <div><span>Example route</span><strong>WiiM Ultra → RME ADI-2 DAC</strong></div>
+            <p>Music transport still goes through Roon and WiiM. Only volume, mute and power are routed to the Bridge, so the RME performs the analogue/hardware level change itself. This preserves the DAC’s Auto Ref Level behaviour and avoids substituting Roon digital attenuation for the RME volume control.</p>
+          </div>
+          <figure class="guide-ui-figure"><img src="../assets/bridge-zone-routing.png" alt="Per-zone routing table combining native Roon, external IR and disabled volume" loading="lazy"><figcaption>Every row is independent. The example uses two IR-controlled zones, one native Roon endpoint and one deliberately disabled volume path.</figcaption></figure>
+        </section>
+
+        <section id="backup">
+          <h2>8. Back up and restore the setup</h2>
+          <p>After learning and testing IR commands, open <strong>System → Configuration backup</strong> and select <strong>Create Backup</strong>. One JSON file contains RoonPilot settings, zone routes, HTTP Power actions, each named IR profile once and separate assignments to Bridges. The learned pulse data has checksums. Profiles also persist in a RoonPilot-side library.</p>
+          <p>Creating a backup reads the permanent profile library on RoonPilot, not the live Bridges. An offline Bridge therefore neither delays the download nor makes the file partial. Changes that have not yet synchronized from a Bridge may be absent. A known older Bridge copy produces a warning; the library version remains authoritative.</p>
+          <p>Wi-Fi credentials, transport keys, BLE bonds and other secrets are excluded. After Factory installation or board replacement, pair the Bridge again and choose it in the restore dialog. One profile can be transferred to several Bridges, with a new local profile ID on each. Zone routes require an explicit target and never assume the old numeric ID is still valid. See the <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/configuration-backup.md">backup and restore guide</a>.</p>
+          <p><strong>An offline Bridge does not abort restore.</strong> RoonPilot restores its settings and profile library, continues with available Bridges and lists unconfirmed transfers for later completion. An IR route without a verified current assignment stays unchanged. When the Bridge is reachable again, repeat the import or transfer the restored library profile and save the affected route.</p>
+          <figure class="guide-ui-figure"><img src="../assets/system-backup.png" alt="RoonPilot System page with Create Backup and restore controls" loading="lazy"><figcaption>One file contains controller settings, library profiles and Bridge assignments. Offline restore targets are deferred, not treated as a failed controller restore.</figcaption></figure>
+          <figure class="guide-ui-figure"><img src="../assets/unified-backup-en.svg" alt="Diagram showing one backup file with independent profiles and separate Bridge assignments" loading="lazy"><figcaption>Already synchronized profiles stay in the file even if their Bridge is temporarily offline.</figcaption></figure>
+        </section>
+
+        <section id="updates">
+          <h2>9. Signed online updates</h2>
+          <p>After the first Factory installation, normal Bridge updates are managed from RoonPilot’s <strong>IR Bridge → Bridge firmware update</strong> card—no USB access and no local BIN selection are normally required.</p>
+          <ol>
+            <li>When the Bridge feature is enabled, RoonPilot may check the HTTPS manifest after startup and at most once every 24 hours. Update checking and the once-per-day device notice are separate settings.</li>
+            <li>The page shows installed and available Bridge versions. A visible status-bar notice links directly to the update card; the device notice is dismissible and waits until important interaction has finished.</li>
+            <li>Installation never starts automatically. Select <strong>Download and install</strong> and confirm it explicitly.</li>
+            <li>RoonPilot validates channel, project, board, protocol range, required controller version, size, SHA-256, ESP32-S3 target and embedded version before transfer.</li>
+            <li>Authenticated Wi-Fi is preferred for the transfer. If normal Bridge Wi-Fi is off but BLE is bonded, RoonPilot may provision and enable Wi-Fi temporarily, transfer the image and restore the previous off state after the Bridge reconnects. Encrypted BLE remains the slower recovery path when Wi-Fi cannot be used.</li>
+            <li>The Bridge independently checks order, size, SHA-256 and its RSA-3072 signature before activating the inactive A/B partition.</li>
+            <li>Success is reported only after the Bridge reconnects and reports the requested version. ESP-IDF rollback remains available if the new application cannot confirm its start.</li>
+          </ol>
+          <p>If <strong>Bridge &amp; Bluetooth</strong> is disabled, RoonPilot performs no Bridge scan, update request, web notice or display notice. The normal RoonPilot firmware update channel remains independent.</p>
+          <figure class="guide-ui-figure"><img src="../assets/bridge-online-update.png" alt="Signed online Bridge update managed by RoonPilot" loading="lazy"><figcaption>Installed and available versions, daily checks, device notices and manual installation are all controlled from RoonPilot. The local image path remains a recovery tool.</figcaption></figure>
+        </section>
+
+        <section id="troubleshooting">
+          <h2>10. Troubleshooting</h2>
+          <div class="trouble-grid">
+            <article><h3>No serial device in the installer</h3><p>Use a data-capable cable, close serial monitors, connect directly without a hub, then hold BOOT while inserting USB and release it after the port appears.</p></article>
+            <article><h3>Bridge is not found</h3><p>Confirm Bridge &amp; Bluetooth is enabled and saved. For a previously paired Bridge, use the three-power-cycle recovery and scan during the five-minute blue pairing window.</p></article>
+            <article><h3>Learning times out</h3><p>Check KY-022 pin labels, use 3.3 V, reduce sunlight, move the original remote closer and use two clean presses of equal length.</p></article>
+            <article><h3>Wrong volume increment</h3><p>First verify one learned command with Test. Then check the zone’s independent step count; do not compensate for a bad recording with a larger number.</p></article>
+            <article><h3>Wi-Fi fallback does not connect</h3><p>Provision while BLE is bonded, use 2.4 GHz, keep both devices on the same LAN and disable AP/client isolation. BLE must remain available after a failed first test.</p></article>
+            <article><h3>An update is not offered</h3><p>Check that the Bridge feature and Bridge update check are enabled, then use the manual check on the update card. An older unsigned test build may first require a wired migration.</p></article>
+          </div>
+        </section>
+
+        <div class="guide-finish"><div><p class="eyebrow">Build your own Bridge step by step</p><h2>Install only when the wiring has been checked.</h2></div><a class="button primary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/ir-bridge-installation.md">Read flash instructions</a></div>
+      </article>
+
+      <aside class="guide-nav" aria-label="On this page">
+        <strong>On this page</strong>
+        <a href="#start">Purpose and scope</a>
+        <a href="#hardware">Hardware and wiring</a>
+        <a href="#enclosure">3D enclosure</a>
+        <a href="#status-led">Status LED</a>
+        <a href="#factory">Factory installation</a>
+        <a href="#pairing">Pairing</a>
+        <a href="#wifi">Wi-Fi fallback</a>
+        <a href="#learning">IR learning</a>
+        <a href="#zones">Per-zone routing</a>
+        <a href="#roon-groups">Roon groups</a>
+        <a href="#backup">Backup and restore</a>
+        <a href="#updates">Online updates</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+        <hr>
+        <a href="../">Bridge overview</a>
+        <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/ir-bridge-installation.md">Flash instructions</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer><div class="page-width footer-inner"><div class="footer-brand"><span class="brand-mark" aria-hidden="true"></span><strong>RoonPilot IR Bridge</strong></div><p>Designed and developed by <strong>Senior Coder</strong>.</p><nav aria-label="Footer links"><a href="../">Overview</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/ir-bridge-installation.md">Flash instructions</a><a href="https://github.com/mermayer/RoonPilot/blob/main/docs/legal/LICENSE.md">License</a><a href="https://github.com/mermayer/RoonPilot/blob/main/docs/legal/THIRD_PARTY_NOTICES.md">Third-party notices</a></nav></div></footer>
+</body>
+</html>

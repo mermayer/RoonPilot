@@ -8,6 +8,14 @@ RoonPilot verbindet sich direkt im lokalen Netz mit Roon. Displaysteuerung,
 Webkonfiguration und Freigabe laufen im ESP32-S3. Es gibt keinen RoonPilot-
 Clouddienst, keine Relay-Bridge und kein Benutzerkonto.
 
+Auch die optionale IR Bridge arbeitet lokal. Erste Suche, Pairing und
+WLAN-Bereitstellung laufen über verschlüsseltes Bluetooth LE. Ist WLAN für eine
+bestimmte Bridge aktiviert, überträgt der authentifizierte Pfad Befehle und
+Firmware im selben LAN. Die Bridge besitzt weder Cloudkonto noch eine eigene
+Alltags-Weboberfläche; verwaltet wird sie durch RoonPilot. Nach Ausschalten von
+**Bridge & Bluetooth** und Neustart bleiben Bluetooth-Stack, Scan,
+Bridge-Statusverkehr und Bridge-Updateprüfungen aus.
+
 Ist die automatische Updateprüfung eingeschaltet, liest das Gerät nach dem
 Start und danach höchstens alle 24 Stunden nach einer erfolgreichen Prüfung das
 freigegebene HTTPS-Release-Manifest. Temporäre Fehler werden später erneut
@@ -23,11 +31,22 @@ installiert.
 - gewählter/manuell eingetragener Roon Server;
 - Roon-Freigabedaten;
 - Zonen-, Display-, Uhr-, Encoder-, Power- und Deep-Sleep-Einstellungen;
-- Akku-Referenzlaufzeit und Kalibrierstatus;
+- akzeptierte Akku-Referenzlaufzeit und Kennung des vorbereiteten Kalibrierlaufs;
 - technische Zähler für Diagnose und Wiederherstellung;
-- Einstellungen und Zeitstempel für Updateprüfung und Displaymeldung.
+- Einstellungen und Zeitstempel für Updateprüfung und Displaymeldung;
+- optionale gespeicherte Bridge-Kennungen, Bond-Zustand, Zonen-/Profilrouten,
+  WLAN-Erlaubnis und Updateeinstellungen je Bridge;
+- optionale Bezeichnungen, Schaltzustände und URLs der HTTP-Power-Aktionen je Zone.
 
-## Öffentliche 1.0.2-Abbilder
+Die laufende Kalibrierzeit wird dagegen im erhaltenen RTC-Speicher festgehalten,
+nicht periodisch in den Flash geschrieben. Sie übersteht den Schutz-Deep-Sleep,
+ist aber bei vollständigem Stromverlust keine dauerhafte Aufzeichnung. Nach
+einem Kalibrierungs-Schutzstopp können Touch und Drehregler das Gerät nicht
+wecken; für den Wiederanlauf ist stabile USB-Versorgung erforderlich. Diese
+Schutzabschaltung gilt nur während laufender Kalibrierung. Der Flash-Schreibschutz
+bleibt auch im normalen Betrieb aktiv.
+
+## Öffentliche Release-Abbilder
 
 Factory- und OTA-Abbilder enthalten keine Entwicklungs-SSID, kein
 WLAN-Kennwort, keine private Roon-Adresse, kein Kopplungstoken und keinen
@@ -40,6 +59,19 @@ Exporte schließen Kennwörter, Roon-Token, private Schlüssel und kurzlebige
 Webtoken absichtlich aus. Zonen-/Servernamen und lokale Adressen können trotzdem
 privat sein; Datei vor Veröffentlichung prüfen.
 
+**System → Sicherung erstellen** erzeugt eine JSON-Datei mit
+Geräteeinstellungen, allen gespeicherten Zonenrouten, der dauerhaften
+IR-Profilbibliothek und Bridge-Zuordnungen. Dazu wird RoonPilots Bibliothek
+gelesen; eine offline befindliche Bridge hält den Export nicht auf. Noch nicht
+synchronisierte Änderungen auf einer Bridge können fehlen. WLAN-Kennwörter,
+Roon-Freigaben, WLAN-Transportschlüssel und BLE-Bond-Schlüssel fehlen,
+konfigurierte **HTTP-Power-URLs sind enthalten**.
+
+Die Datei ist nicht zur Veröffentlichung gedacht: Zonen- und Gerätenamen,
+Serveradressen, Bridge-Kennungen und lokale URLs können eine private Anlage
+erkennen lassen. Vor dem Teilen prüfen. Näheres unter [Konfiguration sichern
+und wiederherstellen](configuration-backup.md).
+
 ## Sicherheitsgrenze der lokalen Webseite
 
 Die normale Geräteoberfläche ist für ein vertrauenswürdiges Heimnetz gedacht,
@@ -49,6 +81,13 @@ für Roon nötige lokale Kommunikation zu blockieren.
 
 Zustandsändernde API-Aufrufe verwenden Sitzungs-/Update-Token und validieren
 Eingaben. Das ersetzt keine sichere Netzgrenze.
+
+Optionale HTTP-Power-Aktionen senden exakt die konfigurierte URL von RoonPilot
+an ein lokales HTTP-Ziel. Bei `http://` ist diese Übertragung unverschlüsselt;
+URLs können private Hostnamen, Adressen oder Parameter enthalten. Nur im
+vertrauenswürdigen LAN verwenden, keine Zugangsdaten in URLs ablegen und den
+Zieldienst niemals per Router-Portweiterleitung ins Internet öffnen. Eine
+Testtaste führt die echte Aktion aus.
 
 ## Setup-AP
 
@@ -64,7 +103,11 @@ Verbindung wird der AP beendet.
 - A/B-Update schreibt den inaktiven Slot;
 - Bootvalidierung kann bei fehlerhaftem Start zurückrollen;
 - Factory-Installation bleibt ein absichtlich manueller, vollständig
-  löschender Vorgang.
+  löschender Vorgang;
+- IR-Bridge-Updates werden unabhängig signiert und geprüft, schreiben den
+  inaktiven A/B-Slot und dürfen authentifiziertes Bridge-WLAN nur für die
+  bestätigte Übertragung vorübergehend aktivieren, bevor der vorherige Zustand
+  wiederhergestellt wird.
 
 ### Technische Grenzen
 

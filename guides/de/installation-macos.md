@@ -26,8 +26,7 @@ Terminalbefehle oder `esptool` benötigt.
 5. Entscheidend ist **USB JTAG/serial debug unit** vor der Klammer.
    `cu.usbmodem…` steht ergänzend in Klammern und kann eine andere Endnummer
    erhalten.
-6. Wird stattdessen **USB serial** (`cu.usbserial…` oder
-   `cu.wchusbserial…`) angezeigt, ist der
+6. Wird stattdessen **USB serial** (`cu.wchusbserial…`) angezeigt, ist der
    klassische Begleit-ESP32 verbunden. Den Dialog geöffnet lassen, USB
    abziehen, den USB-C-Stecker am RoonPilot-Gerät um **180 Grad drehen** und
    neu verbinden. Der Webinstaller erkennt das Gerät sofort wieder. Nun
@@ -50,15 +49,3 @@ folgt danach der getrennte
 Eine [Sicherung der Original-Firmware](factory-backup.md) ist freiwillig. Die
 [technische esptool-Anleitung für macOS](esptool-macos.md) wird nur für diese
 Sicherung, manuelle Wiederherstellung oder erweiterte Diagnose benötigt.
-
-## Optional: zusätzlich mit macOS prüfen
-
-Diese Prüfung ist **nicht** Teil des normalen Installationsablaufs. Nur wenn
-mehrere USB-Geräte schwer auseinanderzuhalten sind, kann unter
-**Systeminformationen → Hardware → USB** kontrolliert werden:
-
-- **USB JTAG/serial:** ESP32-S3-Seite für RoonPilot;
-- **USB serial:** klassischer Begleit-ESP32.
-
-Für die eigentliche Installation bleibt der Chrome-Dialog maßgeblich: Dort
-**USB JTAG/serial debug unit** auswählen.

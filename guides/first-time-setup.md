@@ -24,14 +24,16 @@ The display shows **Wi-Fi setup** and the temporary access-point name.
 3. Enter the temporary password `roonpilot-setup`.
 4. A captive setup page should open. If it does not, browse to
    `http://192.168.4.1`.
-5. Select or type the home **2.4 GHz** Wi-Fi name.
-6. Enter its password carefully. Passwords are case-sensitive.
-7. Press **Save and connect**.
+5. Select **English** or **Deutsch**. This becomes the shared language for the
+   device display, Quick Settings and all local web pages.
+6. Select or type the home **2.4 GHz** Wi-Fi name.
+7. Enter its password carefully. Passwords are case-sensitive.
+8. Press **Save and connect**.
 
 <img src="../assets/web-ui/09-wifi-first-setup.png" alt="Minimal Wi-Fi first setup page" width="100%">
 
-Only Wi-Fi can be configured on this minimal page. Roon, zones, display,
-firmware and system actions are intentionally absent.
+Only Wi-Fi and the interface language can be configured on this minimal page.
+Roon, zones, display, firmware and system actions are intentionally absent.
 
 ### If the Wi-Fi password is wrong
 
@@ -118,6 +120,15 @@ The local page loads its structure immediately and fills live values after its
 status requests complete. Brief placeholders are normal; multi-second stalls
 are not.
 
+### Change the language later
+
+Open **System → Language**, choose **English** or **Deutsch**, then press
+**Save language**. The round display and Quick Settings change immediately;
+the current browser page reloads in the selected language. The choice is global
+for this RoonPilot. It does not translate or alter Roon titles, artist names,
+playlist names, zone names, Bridge identities, profile names or other text you
+created yourself.
+
 ## 6. Perform a quick functional check
 
 - Artwork, title and artist update for the selected zone.
@@ -126,5 +137,19 @@ are not.
 - Turning the ring changes the selected zone's volume and shows the overlay.
 - Tapping the zone name opens the zone picker again.
 - A browser refresh retains saved settings.
+
+## 7. Optional features come afterwards
+
+Do not enable every option during the first boot. Once normal Roon playback and
+volume are stable, configure display layout, clocks, power policy, playlists or
+Live Radio one group at a time and save after each group. This makes a wrong
+setting easy to recognise and undo.
+
+The RoonPilot IR Bridge is optional and must not be needed to finish this guide.
+If you want infrared hardware control, continue only now with the
+[IR Bridge overview](ir-bridge.md). The Bridge receives its own Factory firmware,
+is paired from RoonPilot over Bluetooth and can later use authenticated Wi-Fi as
+an optional fallback. Disabling **Bridge & Bluetooth** keeps normal RoonPilot
+operation independent of that accessory.
 
 Continue with [Device controls](device-controls.md).

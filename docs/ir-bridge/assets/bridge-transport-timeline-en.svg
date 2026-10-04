@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="510" viewBox="0 0 1280 510" role="img" aria-labelledby="title desc">
+  <title id="title">Bluetooth and Wi-Fi handover with stability checks</title>
+  <desc id="desc">Stable Bluetooth remains active. Repeated confirmed failures can move control to provisioned authenticated Wi-Fi. Returning to Bluetooth range does not immediately switch back; several successful checks can make that possible.</desc>
+  <style>.bg{fill:#0b0e0d}.card{fill:#171d1a;stroke:#405149;stroke-width:2}.h{fill:#f7f7f2;font:700 29px Arial,sans-serif}.sub{fill:#b6c2b9;font:18px Arial,sans-serif}.num{fill:#ffc461;font:700 18px Arial,sans-serif}.name{fill:#f7f7f2;font:700 23px Arial,sans-serif}.body{fill:#bac5bc;font:18px Arial,sans-serif}.ble{fill:#83e3e1;font:700 20px Arial,sans-serif}.wifi{fill:#79d99e;font:700 20px Arial,sans-serif}.link{stroke:#ffc461;stroke-width:3;fill:none}.note{fill:#f3e3bb;font:19px Arial,sans-serif}</style>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#ffc461"/></marker></defs>
+  <rect class="bg" width="1280" height="510" rx="20"/>
+  <text class="h" x="36" y="50">BLE ↔ Wi-Fi: A handover needs reliable evidence</text>
+  <text class="sub" x="36" y="85">Example: the same Living Room Bridge is first nearby, then beyond Bluetooth range.</text>
+  <rect class="card" x="36" y="127" width="280" height="248" rx="17"/>
+  <text class="num" x="57" y="160">1 · NORMAL</text><text class="name" x="57" y="202">Bluetooth is stable</text>
+  <text class="body" x="57" y="241">Wi-Fi is provisioned,</text><text class="body" x="57" y="269">but not needed.</text>
+  <text class="ble" x="57" y="337">Commands via BLE</text>
+  <path class="link" d="M319 250 H342" marker-end="url(#arrow)"/>
+  <rect class="card" x="348" y="127" width="280" height="248" rx="17"/>
+  <text class="num" x="369" y="160">2 · LINK TROUBLE</text><text class="name" x="369" y="202">Repeated BLE failures</text>
+  <text class="body" x="369" y="241">Not just one low</text><text class="body" x="369" y="269">signal reading.</text>
+  <text class="wifi" x="369" y="337">Wi-Fi takes over</text>
+  <path class="link" d="M631 250 H654" marker-end="url(#arrow)"/>
+  <rect class="card" x="660" y="127" width="280" height="248" rx="17"/>
+  <text class="num" x="681" y="160">3 · BACK IN RANGE</text><text class="name" x="681" y="202">BLE signal returns</text>
+  <text class="body" x="681" y="241">No immediate change</text><text class="body" x="681" y="269">after one good dBm value.</text>
+  <text class="wifi" x="681" y="337">Wi-Fi stays active</text>
+  <path class="link" d="M943 250 H966" marker-end="url(#arrow)"/>
+  <rect class="card" x="972" y="127" width="272" height="248" rx="17"/>
+  <text class="num" x="993" y="160">4 · CONFIRMED</text><text class="name" x="993" y="202">BLE stable again</text>
+  <text class="body" x="993" y="241">Only after several</text><text class="body" x="993" y="269">successful checks.</text>
+  <text class="ble" x="993" y="337">BLE may take over</text>
+  <path d="M36 405 H1244" stroke="#405149" stroke-width="2"/>
+  <text class="note" x="36" y="444">Safety: An IR command with an uncertain outcome is not blindly replayed after a handover.</text>
+  <text class="sub" x="36" y="475">The shown transport is the current command path, not the pairing or the zone route.</text>
+</svg>

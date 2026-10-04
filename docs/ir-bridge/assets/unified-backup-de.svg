@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="470" viewBox="0 0 1400 470" role="img" aria-labelledby="title desc">
+  <title id="title">Eine Sicherung für RoonPilot und seine gekoppelten Bridges</title>
+  <desc id="desc">Eine JSON-Datei enthält Geräteeinstellungen, Zonenrouten, jedes benannte IR-Profil einmal und getrennte Bridge-Zuordnungen. Der Export liest RoonPilots Bibliothek ohne Bridge-Abfrage.</desc>
+  <defs><style>
+    .bg{fill:#090b0b}.card{fill:#111614;stroke:#34403c;stroke-width:2}.out{fill:#102020;stroke:#5ce0e1;stroke-width:3}.title{fill:#f7f6f2;font:700 30px Arial,sans-serif}.head{fill:#f7f6f2;font:700 22px Arial,sans-serif}.body{fill:#a9afab;font:17px Arial,sans-serif}.small{fill:#a9afab;font:15px Arial,sans-serif}.cyan{fill:#5ce0e1}.amber{fill:#f6b84a}.line{stroke:#5ce0e1;stroke-width:3;fill:none}.optional{stroke:#f6b84a;stroke-width:3;stroke-dasharray:9 7;fill:none}.pill{fill:#0c1b1a;stroke:#367d7e}.warn{fill:#271d0d;stroke:#9e772d}.pilltext{fill:#e9fbfb;font:700 15px Arial,sans-serif}.warntext{fill:#f6d697;font:700 15px Arial,sans-serif}
+  </style></defs>
+  <rect class="bg" width="1400" height="470" rx="24"/>
+  <text class="title" x="50" y="54">Eine Sicherung für RoonPilot und IR Bridges</text>
+  <text class="body" x="50" y="86">Unter System erstellen. Ein weiterer Backup-Schritt auf der Bridge-Seite entfällt.</text>
+  <g transform="translate(50 122)"><rect class="card" width="400" height="132" rx="16"/><text class="head cyan" x="24" y="43">RoonPilot</text><text class="body" x="24" y="77">Einstellungen und alle Zonenrouten</text><text class="small" x="24" y="105">Auch bei nicht erreichbarer Bridge</text></g>
+  <g transform="translate(500 122)"><rect class="card" width="400" height="132" rx="16"/><text class="head cyan" x="24" y="43">Dauerhafte Profilbibliothek</text><text class="body" x="24" y="77">Jedes IR-Profil nur einmal</text><text class="small" x="24" y="105">Gelernte Impulse mit Prüfsummen</text></g>
+  <g transform="translate(950 122)"><rect class="card" width="400" height="132" rx="16"/><text class="head amber" x="24" y="43">Bridge-Zuordnungen</text><text class="body" x="24" y="77">Ein Profil → mehrere Bridges</text><text class="small" x="24" y="105">Keine Bridge-Abfrage beim Export</text></g>
+  <path class="line" d="M250 254 V288 H700 V306"/><path class="line" d="M700 254 V306"/><path class="optional" d="M1150 254 V288 H700"/>
+  <g transform="translate(286 308)"><rect class="out" width="828" height="128" rx="18"/><text class="head" x="28" y="40">Eine übertragbare JSON-Datei</text><text class="small" x="28" y="70">Ersatz-Bridge erhält die Profile mit eigenen neuen lokalen IDs.</text><rect class="pill" x="28" y="86" width="272" height="29" rx="14"/><text class="pilltext" x="44" y="106">Vollständig: Bibliothek geprüft</text><rect class="warn" x="314" y="86" width="484" height="29" rx="14"/><text class="warntext" x="328" y="106">Warnung: ältere Bridge-Kopie neu übertragen</text></g>
+</svg>

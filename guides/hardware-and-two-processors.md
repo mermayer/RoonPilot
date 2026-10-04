@@ -62,32 +62,36 @@ shipping restrictions and regional product codes can change.
 The enclosure contains two independently programmable processors:
 
 ```text
-Plug position in which chip-id reports ESP32-S3
+Main Web Installer: USB JTAG/serial debug unit
     └──► ESP32-S3R8 ──► display, touch, ring, Wi-Fi, RoonPilot
 
 Unplug USB, turn the USB-C plug 180 degrees and reconnect
-    └──► ESP32-U4WDH ─► separate companion firmware
+    └──► USB serial ──► ESP32-U4WDH ─► separate companion firmware
 ```
 
 They do not share a firmware image. They do not share flash storage. A backup of
 one processor cannot restore the other. To reach the other processor, unplug
 USB, turn the USB-C plug by 180 degrees and reconnect it. Windows may then show
-the same COM number or a different one, so the COM number alone is not proof of
-which chip is active.
+the same COM number or a different one, so the COM number is not proof of which
+chip is active.
 
-## Identify it without command-line tools
+## Identify the processor in the Web Installer
 
-| Operating system | ESP32-S3 for RoonPilot | ESP32-U4WDH companion |
+For a normal installation, the Web Installer device chooser is sufficient:
+
+| Processor | Windows | macOS |
 | --- | --- | --- |
-| Windows, Device Manager → Ports (COM & LPT) | `USB Serial Device (COMx)` | `USB-SERIAL CH340 (COMx)` |
-| macOS, System Information → Hardware → USB | `USB JTAG/serial` | `USB serial` |
+| Main ESP32-S3 | **USB JTAG/serial debug unit** (`COM…`) | **USB JTAG/serial debug unit** (`cu.usbmodem…`) |
+| Companion ESP32 | **USB serial** (`COM…`) | **USB serial** (`cu.wchusbserial…`) |
 
-The operating-system-specific [Windows](installation-windows.md) and
-[macOS](installation-macos.md) guides show what to click next.
+The name before the parentheses is what matters. If the wrong entry appears,
+leave the chooser open, unplug USB, turn the USB-C plug by 180 degrees and
+reconnect it. The Web Installer detects the device immediately.
 
-## Advanced identification with esptool
+### Optional technical extra check
 
-With Espressif's tools installed, use one of these read-only commands:
+Only users who want an additional chip check or an original-firmware backup
+need `esptool`:
 
 ```powershell
 python -m esptool --port COM4 chip-id
@@ -129,6 +133,7 @@ played by the selected existing Roon zone.
 
 ## Next step
 
-Continue with [Installation](installation.md). If being able to restore the
+Continue with installation on [Windows](installation-windows.md) or
+[macOS](installation-macos.md). If being able to restore the
 exact manufacturer-delivered firmware matters to you, use the
 [optional factory-backup guide](factory-backup.md) before the Factory install.

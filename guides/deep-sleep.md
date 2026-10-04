@@ -40,9 +40,24 @@ Playing, loading and buffering prevent deep sleep. A missing zone, disconnected
 Roon Server or unknown playback state also prevents it. This conservative rule
 avoids silently disconnecting a controller whose state cannot be proven idle.
 
+## Protective low-voltage sleep is different
+
+Only a **running battery calibration** uses the low-voltage protective sleep.
+It ends the measurement safely even when ordinary idle sleep is disabled.
+Normal power-source changes do not activate this software shutdown; the
+flash-write guard remains active in every operating mode.
+
+After a retained calibration protective stop, touch or ring input cannot wake
+RoonPilot. Reconnect stable USB power: restart requires at least 4.28 V system
+voltage for three seconds, checked every 30 seconds while asleep. The display
+may therefore stay black for about 33 seconds after reconnection before normal
+boot. This restart condition does not apply to ordinary idle sleep. Deep sleep
+does not electrically disconnect the battery or replace its protection circuit.
+See [Battery and runtime](battery-and-runtime.md).
+
 ## Wake RoonPilot
 
-Either action wakes the main ESP32-S3:
+For ordinary idle sleep, either action wakes the main ESP32-S3:
 
 - touch the display; or
 - turn the outer ring far enough to produce an encoder edge.
@@ -64,23 +79,8 @@ to a power-saving shutdown followed by a normal boot, not a factory reset.
 The separate companion ESP32 has its own low-power firmware and is independent
 of this setting. The main Web Installer never changes the companion processor.
 
-## Safe test procedure
-
-1. Keep USB power connected for the first functional test.
-2. Select a working Roon zone and pause it.
-3. Enable deep sleep and choose the shortest available timeout.
-4. Do not touch the display, turn the ring, open setup or start an update.
-5. Confirm the Power badge becomes **Armed**.
-6. Wait for the LCD/backlight and local website to turn off.
-7. Touch once and confirm a normal boot and Wi-Fi/Roon reconnection.
-8. Repeat, waking with the ring.
-9. Start playback and confirm the device does not sleep after the same interval.
-
-After USB testing, repeat once on battery. Do not combine this with battery
-calibration, because calibration deliberately blocks deep sleep.
-
 ## If it does not sleep or wake
 
 See [Troubleshooting](troubleshooting.md#deep-sleep-does-not-start) before
-changing or reflashing firmware. Serial diagnostics identify entry and an EXT1
-touch/encoder wake on the next boot.
+changing or reflashing firmware. Allow the automatic restart and reconnection
+to finish before opening the website again.

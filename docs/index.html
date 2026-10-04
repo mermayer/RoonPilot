@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#07090a">
-  <meta name="description" content="RoonPilot turns the Waveshare ESP32-S3 Knob Touch LCD 1.8 into a fast, tactile and self-contained Roon remote.">
+  <meta name="description" content="RoonPilot turns the Waveshare ESP32-S3 Knob Touch LCD 1.8 into a tactile, self-contained Roon remote with optional IR Bridge hardware control.">
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/bridge.css">
   <title>RoonPilot — tactile Roon control for the Waveshare round display</title>
   <script src="assets/site.js" defer></script>
 </head>
@@ -39,6 +40,9 @@
         <a href="#overview">Overview</a>
         <a href="#install">Installation</a>
         <a href="#features">Features</a>
+        <a href="#roon-groups">Roon groups</a>
+        <a href="#ir-bridge">IR Bridge</a>
+        <a href="#roonpilot-stand">3D stand</a>
         <a href="#documentation">Documentation</a>
       </nav>
       <div class="header-actions">
@@ -54,7 +58,7 @@
     <section id="overview" class="hero page-width">
       <div class="hero-copy">
         <h1>Roon control,<br>right where the music is.</h1>
-        <p>A fast, tactile Roon remote for the Waveshare ESP32-S3 Knob Touch LCD 1.8. No bridge, companion app or additional service required.</p>
+        <p>A fast, tactile Roon remote for the Waveshare ESP32-S3 Knob Touch LCD 1.8. No server bridge, companion app or additional service is required; optional IR hardware control can be enabled when a zone needs it.</p>
         <a class="hero-safety" href="#install">
           <svg><use href="#icon-alert"></use></svg>
           <span><strong>Start directly in the Web Installer.</strong> In the device chooser, the name before the parentheses is what matters; Device Manager and System Information are not required.</span>
@@ -65,9 +69,11 @@
           <a class="button secondary" href="#documentation"><svg><use href="#icon-book"></use></svg>Read documentation</a>
         </div>
         <div class="hero-buy"><strong>Need the device?</strong> <a href="#hardware">Find it on Amazon.co.uk, Amazon.com, Amazon.de or at an EU retailer →</a></div>
+        <p class="documentation-preview-note"><strong>Current firmware: 1.0.2.</strong> The documentation already covers the upcoming 2.0.0 version and IR Bridge. New firmware and the Bridge installer follow with the release.</p>
         <ul class="hero-facts" aria-label="RoonPilot highlights">
           <li>Direct local Roon connection</li>
           <li>Touch and rotary control</li>
+          <li>Optional per-zone IR Bridge</li>
           <li>Signed A/B updates</li>
         </ul>
       </div>
@@ -143,6 +149,7 @@
       </ol>
       <div class="never-rule"><svg><use href="#icon-alert"></use></svg><strong>An original-firmware backup is optional and not a prerequisite for RoonPilot.</strong></div>
       <div class="preflight-links">
+        <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/factory-backup.md">Optional factory-backup guide <svg><use href="#icon-arrow"></use></svg></a>
         <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-windows.md">Windows instructions <svg><use href="#icon-arrow"></use></svg></a>
         <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-macos.md">macOS instructions <svg><use href="#icon-arrow"></use></svg></a>
       </div>
@@ -183,7 +190,7 @@
             </div>
           </div>
         </div>
-        <p class="browser-note"><strong>Device choice:</strong> the name before the parentheses is what matters. The chooser can remain open while USB is unplugged, turned and reconnected.</p>
+        <p class="browser-note"><strong>Browser:</strong> current desktop Chromium with Web Serial only. <strong>Device choice:</strong> the name before the parentheses is what matters. The chooser can stay open while USB is disconnected, turned and reconnected.</p>
       </div>
     </section>
 
@@ -231,17 +238,21 @@
         <div><h2>Built for the way you listen</h2><p>Fast physical control, a considered round interface and complete local configuration.</p></div>
       </div>
       <article class="feature-band device-feature">
-        <div class="feature-media round-media"><img src="assets/device-now-playing.png" alt="RoonPilot Classic now-playing screen"></div>
+        <div class="feature-media round-media"><img src="assets/device-screens/roonpilot-classic.png" alt="Current RoonPilot Classic player with cover artwork, progress and controls"></div>
         <div class="feature-copy">
           <h3>Tactile control. Beautifully simple.</h3>
-          <p>Turn the full outer ring for volume. RoonPilot automatically follows native percent, dB and relative outputs. Tap, swipe or hold the capacitive display for playback and device controls.</p>
+          <p>Turn the full outer ring for volume. RoonPilot automatically follows dimensionless, dB and relative outputs without inventing a unit. Tap, swipe or hold the capacitive display for playback and device controls.</p>
           <ul>
             <li>Play/pause, previous and next on the display</li>
             <li>Horizontal swipe for track changes</li>
-            <li>Three selectable now-playing layouts</li>
-            <li>Zone picker, native percent/dB volume and Roon-pairing screens</li>
+            <li>Four selectable player layouts, including artwork-free Aura</li>
+            <li>Zone picker, native unitless/dB volume and Roon-pairing screens</li>
             <li>Station and digital clocks with day/night brightness</li>
             <li>Quick settings, optional control lock and centre double-tap display-off</li>
+            <li>Optional artwork-sized centre Play/Pause touch area</li>
+            <li>Optional Roon playlists, Live Radio, Power and Mute shortcuts</li>
+            <li>Adjustable touch vibration without vibration while turning</li>
+            <li>UTF-8 metadata with broad European, Greek, Cyrillic and selected emoji glyph coverage</li>
           </ul>
         </div>
       </article>
@@ -256,39 +267,114 @@
             <a class="text-link" href="https://github.com/mermayer/RoonPilot/blob/main/guides/device-controls.md">Read the complete device controls <svg><use href="#icon-arrow"></use></svg></a>
           </div>
         </div>
-        <a class="controls-image-link" href="assets/roonpilot-controls-overview.png" target="_blank" rel="noopener" aria-label="Open the RoonPilot controls overview at full size">
-          <img src="assets/roonpilot-controls-overview.png" alt="RoonPilot device control overview showing rotary, tap, centre double-tap display-off, swipe, hold and wake gestures" loading="lazy">
+        <a class="controls-image-link controls-classic-reference" href="assets/device-screens/roonpilot-classic.png" target="_blank" rel="noopener" aria-label="Open the current RoonPilot Classic player at full size">
+          <img src="assets/device-screens/roonpilot-classic.png" alt="Authoritative current RoonPilot Classic player" loading="lazy">
         </a>
-        <p class="controls-image-hint">Open image at full size</p>
+        <p class="controls-image-hint">Open the current Classic reference at full size</p>
+        <div class="table-wrap gesture-table"><table>
+          <thead><tr><th>Action</th><th>Starting point</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>Turn the outer ring</td><td>Single zone</td><td>Changes volume through the native Roon or IR route saved for that zone.</td></tr>
+            <tr><td>Turn the first detent</td><td>Roon group</td><td>Opens the group mixer without changing a level. Keep turning to control the whole group, or tap a large member row and then turn to control only that output.</td></tr>
+            <tr><td>Tap a visible button</td><td>Player</td><td>Operates Previous, Play/Pause, Next or an enabled side shortcut for Playlist, Live Radio, Power or Mute.</td></tr>
+            <tr><td>Tap the zone name</td><td>Player</td><td>Opens the zone picker.</td></tr>
+            <tr><td>Swipe left/right</td><td>Player</td><td>Moves to the next/previous track.</td></tr>
+            <tr><td>Swipe up</td><td>Player</td><td>Opens Quick Settings.</td></tr>
+            <tr><td>Hold the centre for about 1.2 s</td><td>Player</td><td>Locks or unlocks all controls.</td></tr>
+            <tr><td>Double-tap the centre</td><td>Large Play/Pause area off</td><td>Switches the display completely off immediately.</td></tr>
+            <tr><td>Short-tap the large centre</td><td>Optional Play/Pause area on</td><td>Toggles playback in all four player layouts. Visible buttons retain priority; the area remains invisible and is off by default.</td></tr>
+            <tr><td>First touch or ring detent</td><td>Black display</td><td>Wakes only the display. Music and volume are left unchanged.</td></tr>
+          </tbody>
+        </table></div>
+        <figure class="ui-figure gesture-touch-figure"><a href="assets/large-play-pause-touch-en.svg" target="_blank" rel="noopener"><img src="assets/large-play-pause-touch-en.svg" alt="Diagram of the optional large centre Play/Pause touch area" loading="lazy"></a><figcaption><strong>Optional easier target:</strong> <em>Display &amp; Controls</em> can enable an invisible, roughly artwork-sized Play/Pause area. One short tap anywhere inside the marked region is enough; open the diagram directly for its full-size view.</figcaption></figure>
       </article>
       <article class="feature-band web-feature">
         <div class="feature-copy">
           <h3>Web interface. Total local control.</h3>
-          <p>The responsive local interface manages RoonPilot directly from the same network.</p>
+          <p>The responsive local interface manages RoonPilot directly from the same network and switches together with the device display between English and German.</p>
           <ul>
             <li>Roon Server and zone management</li>
-            <li>Display, rotary and touch settings</li>
+            <li>Display, rotary, touch, CPU, sleep and USB-power settings</li>
+            <li>Per-zone ring steps, Power/Mute and up to three named HTTP on/off action pairs</li>
+            <li>On-demand Roon playlists and saved Live Radio stations with one order shared by web page and device</li>
             <li>Configuration export/import without secrets</li>
-            <li>Signed online and local A/B firmware updates</li>
+            <li>Signed online A/B firmware updates</li>
             <li>Visible update status with separate web/device notification controls</li>
-            <li>Diagnostics and battery runtime calibration</li>
+            <li>Battery-hardware selector, conditional runtime calibration, persistent event log and diagnostics</li>
+            <li>One English/German setting for the display, Quick Settings and every local page</li>
             <li>Guarded deep sleep with touch and rotary wake</li>
           </ul>
         </div>
-        <div class="feature-media web-media"><img src="assets/web-overview.png" alt="RoonPilot local web interface overview"></div>
+        <div class="feature-media web-media"><img src="assets/web-ui/01-overview.png" alt="Current RoonPilot local web interface overview with fictional data"></div>
       </article>
+    </section>
+
+    <section id="roon-groups" class="content-section page-width" aria-labelledby="roon-groups-title">
+      <div class="section-heading">
+        <p class="section-number">06</p>
+        <div><h2 id="roon-groups-title">One Roon group. Every physical output under control.</h2><p>RoonPilot preserves the volume route of every group member instead of treating unlike devices as one anonymous endpoint.</p></div>
+      </div>
+      <div class="group-showcase-lead">
+        <div class="group-showcase-copy">
+          <p class="bridge-kicker">No extra on-screen button</p>
+          <h3>The first detent opens the mixer. The next movement controls the music.</h3>
+          <p>A Roon group may combine a native numeric endpoint, a real dB endpoint, relative Roon volume and several IR-controlled devices. RoonPilot sends the correct command to each physical output and displays every result in its honest unit—such as <strong>48</strong>, <strong>−35.0 dB</strong> and <strong>IR +2</strong> side by side.</p>
+          <p>Tap a generously sized member row to adjust only that output. Tap the group heading to return to the complete group. The mixer closes automatically after eight seconds of inactivity.</p>
+          <a class="button secondary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/roon-groups.md">Read the complete group guide <svg><use href="#icon-external"></use></svg></a>
+        </div>
+        <div class="group-screen-pair" aria-label="RoonPilot group-volume screens">
+          <figure><img src="assets/device-screens/35-group-volume.png" alt="Group volume overlay showing numeric, dB and infrared routes" loading="lazy"><figcaption><strong>Whole group.</strong> The group name and every visible output keep their own feedback type.</figcaption></figure>
+          <figure><img src="assets/device-screens/36-group-volume-individual.png" alt="Group mixer with one physical output selected for individual control" loading="lazy"><figcaption><strong>One member.</strong> A tap selects the physical output; the ring then changes only that row.</figcaption></figure>
+        </div>
+      </div>
+      <figure class="ui-figure group-diagram"><img src="assets/roon-group-routing-en.svg" alt="Roon group routed to numeric Roon volume, dB volume and an infrared Bridge" loading="lazy"><figcaption><strong>Grouping never overwrites routing.</strong> Native Roon and External IR paths can operate together; an unavailable Bridge marks only its own member offline. <a href="assets/roon-group-routing-en.svg">Open full-size diagram</a>.</figcaption></figure>
+      <div class="group-facts">
+        <article><strong>First detent is safe</strong><p>It opens the mixer without changing volume—even when it also wakes a black display.</p></article>
+        <article><strong>Up to three touch rows</strong><p>The round display shows three selectable members; whole-group control still processes every eligible output.</p></article>
+        <article><strong>Several Bridges at once</strong><p>One BLE path and several authenticated Wi-Fi paths can serve the same active Roon group.</p></article>
+        <article><strong>Failures stay local</strong><p>One offline route does not silently move to another Bridge or stop healthy group members.</p></article>
+      </div>
+    </section>
+
+    <section id="ir-bridge" class="content-section page-width bridge-management" aria-labelledby="bridge-title">
+      <div class="section-heading">
+        <p class="section-number">07</p>
+        <div><h2 id="bridge-title">Optional IR control, assigned zone by zone.</h2><p>RoonPilot remains the only user interface while a small ESP32-S3 Bridge reproduces the original infrared commands beside the audio hardware.</p></div>
+      </div>
+      <div class="management-lead">
+        <div class="management-copy">
+          <p class="bridge-kicker">One firmware, optional hardware</p>
+          <h3>Control the DAC itself when Roon cannot.</h3>
+          <p>Each physical Roon output independently selects native Roon volume, an external IR Bridge/profile or deliberately disabled volume. Up to four Bridge pairings can be saved. <strong>Automatic zone control</strong> follows the selected zone and, for a Roon group, monitors and operates every Bridge required by its members.</p>
+          <p>Pairing and all sensitive provisioning start over encrypted Bluetooth LE. Authenticated local Wi-Fi is optional for another room and is preferred for a confirmed firmware transfer. Pairing, profiles, learning, routing, diagnostics, backup and signed A/B updates are all managed by RoonPilot—there is no separate Bridge app, cloud account or everyday web page.</p>
+          <p><strong>Example: WiiM Ultra and RME ADI-2 DAC.</strong> Playback continues through Roon and WiiM, while the ring sends learned RME volume commands. The DAC performs its own hardware level change and retains Auto Ref Level instead of substituting Roon digital attenuation.</p>
+          <a class="button secondary" href="ir-bridge/">Explore the complete IR Bridge project</a>
+        </div>
+        <figure class="ui-figure"><img src="ir-bridge/assets/bridge-connection-auto.png" alt="RoonPilot IR Bridge connection page showing multiple saved Bridges and automatic zone control with fictional data" loading="lazy"><figcaption>Saved does not mean found in the latest BLE scan. The selected zone—or all required members of a Roon group—determines which Bridges RoonPilot monitors and controls.</figcaption></figure>
+      </div>
+      <div class="management-points">
+        <article><span>01</span><h3>Learn the real remote</h3><p>Record Volume up/down, Mute and separate Power on/off commands twice, then test them on the equipment.</p></article>
+        <article><span>02</span><h3>Route every zone</h3><p>Mix Roon, external IR and disabled volume, each with its own ring step and optional Power/Mute controls.</p></article>
+        <article><span>03</span><h3>BLE nearby, Wi-Fi farther away</h3><p>BLE remains preferred while healthy; authenticated Wi-Fi extends reach and avoids slow firmware transfer.</p></article>
+        <article><span>04</span><h3>Completely optional</h3><p>Switch Bridge &amp; Bluetooth off and restart: no Bluetooth, scans, Bridge traffic or Bridge update checks start.</p></article>
+      </div>
+      <div class="bridge-shot-grid">
+        <figure class="bridge-shot"><img src="ir-bridge/assets/bridge-zone-routing.png" alt="Per-zone Roon, external infrared and disabled volume routing with fictional zones" loading="lazy"><figcaption><strong>Independent per-zone paths.</strong> A single RoonPilot can control native endpoints and different IR devices without pretending that infrared reports an absolute volume.</figcaption></figure>
+        <figure class="bridge-shot"><img src="ir-bridge/assets/bridge-ir-profiles.png" alt="Learned infrared profile with volume, mute and separate power commands" loading="lazy"><figcaption><strong>Reusable equipment profiles.</strong> RoonPilot stores each named profile independently and automatically deploys it to the assigned Bridge when a route is saved.</figcaption></figure>
+        <figure class="bridge-shot bridge-shot-wide"><img src="ir-bridge/assets/bridge-online-update.png" alt="Signed IR Bridge online update managed by RoonPilot" loading="lazy"><figcaption><strong>No second update tool.</strong> RoonPilot announces, verifies and transfers the Bridge release; installation remains manual and the Bridge verifies the image again.</figcaption></figure>
+      </div>
     </section>
 
     <section class="direct-band">
       <div class="page-width">
-        <h2>No bridge. No Raspberry Pi. No additional service.</h2>
-        <p>RoonPilot talks directly to Roon on your local network. Configuration, pairing and control remain local.</p>
+        <h2>No server bridge. No Raspberry Pi. No additional service.</h2>
+        <p>RoonPilot talks directly to Roon on your local network. The optional IR Bridge is hardware control at the equipment—not a required host or cloud service.</p>
       </div>
     </section>
 
     <section id="hardware" class="hardware-section page-width" aria-labelledby="hardware-title">
       <div class="section-heading">
-        <p class="section-number">06</p>
+        <p class="section-number">08</p>
         <div><h2 id="hardware-title">One precisely supported module</h2><p>RoonPilot targets the Waveshare ESP32-S3-Knob-Touch-LCD-1.8, not a generic round ESP32 display.</p></div>
       </div>
       <div class="hardware-layout">
@@ -316,28 +402,68 @@
       </div>
     </section>
 
+    <section id="roonpilot-stand" class="content-section page-width print-showcase" aria-labelledby="stand-title">
+      <div class="section-heading">
+        <p class="section-number">09</p>
+        <div><h2 id="stand-title">A printable stand with an integrated USB-C position.</h2><p>Three supplied STL parts hold RoonPilot at a comfortable angle while the mounting photographs document the connector position inside the cradle.</p></div>
+      </div>
+      <div class="print-layout">
+        <div class="print-gallery" aria-label="RoonPilot stand and assembly photographs">
+          <figure class="print-photo"><img src="assets/3d/roonpilot-stand/roonpilot-in-stand-demo.png" alt="Blue printed stand with RoonPilot showing the Classic player" loading="lazy"><figcaption>RoonPilot in the assembled stand, showing the Classic player.</figcaption></figure>
+          <figure class="print-photo"><img src="assets/3d/roonpilot-stand/roonpilot-stand.png" alt="Blue printed RoonPilot stand without the device" loading="lazy"><figcaption>The printed stand without RoonPilot.</figcaption></figure>
+          <figure class="print-photo"><img src="assets/3d/roonpilot-stand/usb-c-holder-empty.png" alt="Underside of the stand with a thin foam strip" loading="lazy"><figcaption>The foam strip guides the magnetic coupler without locking it rigidly.</figcaption></figure>
+          <figure class="print-photo"><img src="assets/3d/roonpilot-stand/usb-c-holder-installed.png" alt="Right-angle magnetic USB-C coupler below the screwed-on holder" loading="lazy"><figcaption>The holder uses two small screws and remains adjustable.</figcaption></figure>
+        </div>
+        <div class="print-copy">
+          <p class="bridge-kicker">Optional 3D-print project</p>
+          <h3>Print the body, bottom cover and USB-C holder once each.</h3>
+          <p>The model does not change RoonPilot and is not needed for operation. A thin foam strip selected for the firmness of the material guides the right-angle magnetic USB-C coupler from below without locking it rigidly. The holder above it is secured removably with two small screws so the coupler can be aligned without mechanical stress.</p>
+          <div class="download-grid" aria-label="RoonPilot stand STL downloads">
+            <a class="download-card" href="assets/3d/roonpilot-stand/dock_body.stl" download><img class="stl-preview" src="assets/3d/roonpilot-stand/dock_body-preview.png" alt="3D preview of the main stand" loading="lazy"><span><strong>dock_body.stl</strong><small>Main stand · print once</small></span><svg><use href="#icon-download"></use></svg></a>
+            <a class="download-card" href="assets/3d/roonpilot-stand/dock_bottom_cover.stl" download><img class="stl-preview" src="assets/3d/roonpilot-stand/dock_bottom_cover-preview.png" alt="3D preview of the bottom cover" loading="lazy"><span><strong>dock_bottom_cover.stl</strong><small>Bottom cover · print once</small></span><svg><use href="#icon-download"></use></svg></a>
+            <a class="download-card" href="assets/3d/roonpilot-stand/halter.stl" download><img class="stl-preview" src="assets/3d/roonpilot-stand/halter-preview.png" alt="3D preview of the USB-C holder" loading="lazy"><span><strong>halter.stl</strong><small>USB-C holder · print once</small></span><svg><use href="#icon-download"></use></svg></a>
+          </div>
+          <a class="button secondary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/roonpilot-stand.md">Open assembly and printing guide <svg><use href="#icon-external"></use></svg></a>
+          <p class="print-note">Use a USB-C cable with a short connector housing whenever possible. A long or rigid plug can transfer cable tension to the movably supported magnetic coupler. The prototype's <a href="https://www.amazon.de/dp/B0H3C1G3CY?th=1" target="_blank" rel="noopener">right-angle magnetic USB-C coupler</a> is secured in its holder with only two small screws; gluing it is not recommended because later adjustment may be necessary.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="documentation" class="docs-section">
       <div class="page-width">
         <div class="section-heading">
-          <p class="section-number">07</p>
-          <div><h2>Everything you need, explained</h2><p>Start with the guide for your computer. Technical background and optional recovery paths remain separate.</p></div>
+          <p class="section-number">10</p>
+          <div><h2>Everything you need, explained</h2><p>Start with the guide for your computer. Explore groups, Bridges and printable accessories when you need them.</p></div>
         </div>
         <div class="docs-list">
-          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-windows.md"><span>01</span><strong>Install with Windows</strong><svg><use href="#icon-arrow"></use></svg></a>
-          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-macos.md"><span>02</span><strong>Install with macOS</strong><svg><use href="#icon-arrow"></use></svg></a>
-          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/first-time-setup.md"><span>03</span><strong>First-time setup</strong><svg><use href="#icon-arrow"></use></svg></a>
-          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/device-controls.md"><span>04</span><strong>Device controls</strong><svg><use href="#icon-arrow"></use></svg></a>
-          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/web-interface.md"><span>05</span><strong>Web interface</strong><svg><use href="#icon-arrow"></use></svg></a>
-          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/firmware-updates-and-recovery.md"><span>06</span><strong>Updates &amp; recovery</strong><svg><use href="#icon-arrow"></use></svg></a>
-          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/troubleshooting.md"><span>07</span><strong>Troubleshooting</strong><svg><use href="#icon-arrow"></use></svg></a>
-          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/hardware-and-two-processors.md"><span>08</span><strong>Hardware &amp; two processors</strong><svg><use href="#icon-arrow"></use></svg></a>
-          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/factory-backup.md"><span>09</span><strong>Optional factory backup</strong><svg><use href="#icon-arrow"></use></svg></a>
-          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/companion-firmware.md"><span>10</span><strong>Optional Companion firmware</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-windows.md"><span>→</span><strong>Install with Windows</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation-macos.md"><span>→</span><strong>Install with macOS</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/hardware-and-two-processors.md"><span>01</span><strong>Hardware &amp; two processors</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/roonpilot-stand.md"><span>02</span><strong>3D-printable stand</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/factory-backup.md"><span>03</span><strong>Optional factory backup</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/installation.md"><span>04</span><strong>Installation</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/first-time-setup.md"><span>05</span><strong>First-time setup</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/device-controls.md"><span>06</span><strong>Device controls</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/roon-groups.md"><span>07</span><strong>Roon groups &amp; group mixer</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/web-interface.md"><span>08</span><strong>Web interface</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/firmware-updates-and-recovery.md"><span>09</span><strong>Updates &amp; recovery</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/troubleshooting.md"><span>10</span><strong>Troubleshooting</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/companion-firmware.md"><span>11</span><strong>Companion firmware</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/configuration-backup.md"><span>12</span><strong>Configuration backup</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/battery-and-runtime.md"><span>13</span><strong>Battery &amp; power</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/privacy-and-security.md"><span>14</span><strong>Privacy &amp; security</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="ir-bridge/"><span>15</span><strong>Optional IR Bridge</strong><svg><use href="#icon-arrow"></use></svg></a>
+          <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/ir-bridge-enclosure.md"><span>16</span><strong>3D-printable Bridge enclosure</strong><svg><use href="#icon-arrow"></use></svg></a>
         </div>
         <div class="recovery-strip">
           <div class="recovery-icon"><svg><use href="#icon-usb"></use></svg></div>
           <div><h3>USB trouble or recovery?</h3><p>Use BOOT/RESET only when automatic USB connection fails. Never rotate the plug and flash the second processor as a troubleshooting guess.</p></div>
           <a class="button secondary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/firmware-updates-and-recovery.md">Open recovery guide <svg><use href="#icon-external"></use></svg></a>
+        </div>
+        <div class="recovery-strip">
+          <div class="recovery-icon"><svg><use href="#icon-usb"></use></svg></div>
+          <div><h3>Return to RoonPilot 1.0.2</h3><p>If 2.0.0 does not work for you, use the fixed 1.0.2 USB recovery. It erases RoonPilot settings and profiles. Keep backups separate and do not run battery calibration under 1.0.2. <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/return-to-1.0.2.md">Read the full instructions</a>.</p></div>
+          <a class="button secondary" href="https://github.com/mermayer/RoonPilot/blob/main/guides/return-to-1.0.2.md">Read recovery instructions <svg><use href="#icon-arrow"></use></svg></a>
         </div>
       </div>
     </section>

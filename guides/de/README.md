@@ -2,30 +2,32 @@
 
 [English documentation](../README.md) · **Deutsche Dokumentation**
 
+> **Aktuelle öffentliche Firmware: 1.0.2.** Diese Anleitungen beschreiben bereits
+> die kommende Version 2.0.0 und die IR Bridge. Firmware und Bridge-Installer
+> folgen mit dem Release.
+
 Diese Dokumentation setzt keinerlei Erfahrung mit ESP-Geräten, seriellen
 Anschlüssen oder Firmware-Installation voraus.
 
 ## Weg zur ersten Installation
 
-Zuerst den Computer auswählen:
-
-- **[Installation unter Windows →](installation-windows.md)**
-- **[Installation unter macOS →](installation-macos.md)**
-
-Beide Anleitungen beginnen beim Kabel und dem vom Betriebssystem angezeigten
-USB-Namen. Ein Kommandozeilenwerkzeug wird nicht benötigt. Danach folgen
-[Ersteinrichtung](first-time-setup.md), [Bedienung am Gerät](device-controls.md)
-und der [Testplan für Einsteiger](test-plan.md).
+1. Betriebssystem wählen: [Windows](installation-windows.md) oder
+   [macOS](installation-macos.md)
+2. [Ersteinrichtung](first-time-setup.md)
+3. [Bedienung am Gerät](device-controls.md)
+4. [Die erste Konfigurationssicherung erstellen](configuration-backup.md)
 
 Wenn später möglicherweise der exakte Auslieferungszustand des Herstellers
 wiederhergestellt werden soll, vorher die
 [optionale Original-Firmware-Sicherung](factory-backup.md) erstellen. Sie ist
-keine Voraussetzung für RoonPilot. Nach der eindeutigen Erkennung des ESP32-S3
-geht es mit der oben gewählten Windows- oder macOS-Anleitung weiter; sie führt
-erst nach der USB-Prüfung zum öffentlichen Webinstaller.
+keine Voraussetzung für RoonPilot. Im normalen Ablauf wird zuerst der
+[öffentliche RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
+geöffnet. Sein Geräteauswahldialog zeigt selbst, welche USB-Seite verbunden ist.
+Eine vorherige Prüfung im Geräte-Manager oder Systembericht ist nicht nötig.
 
-Die technische Erklärung der beiden Prozessoren steht getrennt unter
-[Hardware und die beiden Prozessoren](hardware-and-two-processors.md).
+Die [Hardwareseite](hardware-and-two-processors.md) erklärt bei Interesse,
+warum das Drehen des USB-C-Steckers um 180 Grad zwischen zwei unabhängigen
+Prozessoren wechselt.
 
 ## Vollständige Referenz
 
@@ -35,21 +37,49 @@ Die technische Erklärung der beiden Prozessoren steht getrennt unter
 | Einsteigerinstallation unter Windows | [Windows-Installation](installation-windows.md) |
 | Einsteigerinstallation unter macOS | [macOS-Installation](installation-macos.md) |
 | Jede Displayansicht | [Bildschirmreferenz](screen-reference.md) |
+| Roon-Gruppen, gemischte Lautstärkewege und Einzelsteuerung | [Roon-Gruppen und Gruppenmixer](roon-groups.md) |
 | Jede lokale Konfigurationsseite | [Weboberfläche](web-interface.md) |
 | Factory-Installation und signierte Online-Updates | [Firmwareupdates und Wiederherstellung](firmware-updates-and-recovery.md) |
-| Optionale Stromspar-Firmware und Webinstaller des zweiten ESP | [Companion-Firmware](companion-firmware.md) |
-| Companion-Installation unter Windows | [Windows-Companion-Installation](companion-installation-windows.md) |
-| Companion-Installation unter macOS | [macOS-Companion-Installation](companion-installation-macos.md) |
-| Optionale Sicherung der Original-Firmware | [Windows oder macOS wählen](factory-backup.md) |
-| Optionales Backup unter Windows | [Windows-Originalsicherung](factory-backup-windows.md) |
-| Optionales Backup unter macOS | [macOS-Originalsicherung](factory-backup-macos.md) |
+| Sauberer USB-Rückweg von 2.0.0 zur originalen Version 1.0.2 | [Zurück zu RoonPilot 1.0.2](return-to-1.0.2.md) |
+| Optionale Stromspar-Firmware des zweiten ESP | [Companion-Firmware](companion-firmware.md) |
+| RoonPilot unter Windows/macOS installieren | [Windows](installation-windows.md) · [macOS](installation-macos.md) |
+| Companion unter Windows/macOS installieren | [Windows](companion-installation-windows.md) · [macOS](companion-installation-macos.md) |
+| Optionale Sicherung der Original-Firmware | [Original-Firmware sichern](factory-backup.md) |
 | Standalone-/Python-esptool unter macOS | [esptool unter macOS verwenden](esptool-macos.md) |
-| Einstellungen sichern | [Konfiguration exportieren/importieren](configuration-backup.md) |
+| RoonPilot und Bridges gemeinsam sichern | [Eine Sicherung erstellen und wiederherstellen](configuration-backup.md) |
 | Akku-Grenzen und Kalibrierung | [Akku und Laufzeit](battery-and-runtime.md) |
 | Deep Sleep und Aufwachen | [Deep Sleep](deep-sleep.md) |
 | Fehler suchen | [Fehlerbehebung](troubleshooting.md) |
 | Gespeicherte und nicht gespeicherte Daten | [Datenschutz und Sicherheit](privacy-and-security.md) |
 | Private/kommerzielle Nutzung und Weitergabe | [Lizenzierung und Weitergabe](licensing.md) |
+| Optionaler dreiteiliger 3D-gedruckter Stand | [RoonPilot-Stand und STL-Downloads](roonpilot-stand.md) |
+
+## Optionale RoonPilot IR Bridge
+
+Die einheitliche RoonPilot-Firmware kann einzelne Roon-Zonen um eine
+Infrarotsteuerung erweitern. Die Funktion bleibt optional: Ist **Bridge &
+Bluetooth** ausgeschaltet und der angeforderte Neustart abgeschlossen, bleiben
+Bluetooth, Scans, Bridge-Verbindungen, Statusverkehr und Bridge-Updateprüfungen
+ausgeschaltet. Gespeicherte Kopplungen und Routen bleiben für eine spätere
+Reaktivierung erhalten.
+
+| Bridge-Thema | Dokument |
+| --- | --- |
+| Nutzen und Zusammenspiel aller Komponenten | [IR-Bridge-Übersicht](ir-bridge.md) |
+| Teile, Verdrahtung und erste Factory-Installation | [Hardware und Installation](ir-bridge-installation.md) |
+| Gedrucktes Gehäuse, Montagebilder und STL-Dateien | [IR-Bridge-Gehäuse](ir-bridge-enclosure.md) |
+| Kopplung, mehrere gespeicherte Bridges, BLE/WLAN und automatische Zonensteuerung | [Verbindungen und automatische Zonensteuerung](ir-bridge-connectivity.md) |
+| Befehle lernen, Profile, Zonenrouten, Power, Mute und HTTP-Aktionen | [IR-Profile und Zonenrouting](ir-bridge-zones-and-profiles.md) |
+| Signierte Onlineupdates, Backup, Wiederherstellung und Rettung | [Updates und Wiederherstellung](ir-bridge-updates.md) |
+| Fehler systematisch eingrenzen | [IR-Bridge-Fehlerbehebung](ir-bridge-troubleshooting.md) |
+
+Auch bei bereits aufgebauter Hardware mit der Übersicht beginnen. Vor allem
+**gespeichert**, **verbunden**, **automatische Zonensteuerung** und
+**Wartungsauswahl** bezeichnen unterschiedliche Zustände. Die Schaubilder und
+Renderbilder mit fiktiven Daten zeigen, wie bis zu vier gespeicherte Bridges
+physischen Ausgängen zugewiesen werden. Eine Einzelzone verwendet ihre benötigte
+Route; eine Roon-Gruppe kann mehrere Bridges über einen BLE-Link und getrennte
+authentifizierte WLAN-Wege gleichzeitig ansprechbar halten.
 
 ## Begriffe
 
@@ -59,6 +89,12 @@ Die technische Erklärung der beiden Prozessoren steht getrennt unter
 - **Haupt-ESP32-S3:** Prozessor für RoonPilot, Display, Touch, WLAN, Roon und
   lokale Webseite.
 - **Begleit-ESP32:** zweiter, unabhängiger klassischer ESP32 im selben Gerät.
+- **IR Bridge:** optionales, getrenntes ESP32-S3-Gerät, das gelernte
+  Infrarotbefehle wiedergibt. Es ist nicht der Begleit-ESP32 im RoonPilot.
+- **Automatische Zonensteuerung:** normaler Bridge-Modus, in dem die gewählte
+  Roon-Zone oder Gruppe alle benötigten Bridge-Routen und Funkwege bestimmt.
+- **Wartungsauswahl:** vorübergehende Verbindung zu einer bestimmten Bridge für
+  Lernen, Diagnose oder Firmwarewartung.
 - **Factory-Installation:** vollständiges Löschen/Installieren des ESP32-S3,
   ausschließlich durch den autorisierten Web Installer.
 - **Companion-Installation:** freiwilliges Löschen/Installieren des klassischen

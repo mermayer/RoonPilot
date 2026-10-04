@@ -16,7 +16,10 @@ grants a narrow right to:
 - install official signed online updates from the device page;
 - download and install the official unmodified Companion Sleep image on the
   companion processor. An original-firmware backup is optional and is not a
-  condition of the licence or installation.
+  condition of the licence or installation;
+- install and run the official, unmodified IR Bridge firmware on the documented
+  supported Bridge hardware through its authorized installer and signed update
+  path, for the same private and noncommercial use.
 
 No source-code publication is required because no right to modify RoonPilot is
 granted.
@@ -43,11 +46,11 @@ be waived.
 
 ## Distribution model
 
-The ESP32-S3 Factory and OTA images are not offered as standalone downloads.
-Initial installation is available only through the authorized Web Installer;
-later primary updates are installed by RoonPilot itself from the signed online
-channel. The Companion Sleep image is delivered through its own authorized,
-chip-family-restricted Web Installer.
+The RoonPilot and IR Bridge ESP32-S3 Factory/OTA images are not offered as
+standalone downloads. Initial installation uses the corresponding authorized
+Web Installer; later primary and Bridge updates use their signed online
+channels. The Companion Sleep image is delivered through its own authorized
+Web Installer, restricted to the classic ESP32 chip family.
 
 The installer links the licence, required notice, third-party inventory and
 exact third-party licence texts. Internal build archives, symbol files, maps,
@@ -66,6 +69,7 @@ rights those authors granted independently. The exact inventory is in
 | Install official firmware at home through the Web Installer | Permitted |
 | Use official firmware privately and noncommercially | Permitted |
 | Install an official signed update on the device | Permitted |
+| Install the official IR Bridge firmware privately on supported hardware | Permitted |
 | Modify, share, mirror or republish RoonPilot firmware | Not permitted |
 | Reverse engineer or recover its internal implementation | Not permitted, except non-waivable statutory rights |
 | Use RoonPilot for a product, service or competitive evaluation | Requires prior written permission |

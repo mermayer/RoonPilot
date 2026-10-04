@@ -18,7 +18,11 @@ Integration ausschliesslich:
 - offizielle signierte Online-Updates direkt am Geraet zu installieren;
 - das offizielle unveraenderte Companion-Sleep-Abbild auf dem Begleitprozessor
   zu installieren. Eine Original-Sicherung ist freiwillig und weder
-  Lizenzbedingung noch Installationsvoraussetzung.
+  Lizenzbedingung noch Installationsvoraussetzung;
+- die offizielle, unveränderte IR-Bridge-Firmware über den autorisierten
+  Installer und signierten Updatepfad auf der dokumentierten unterstützten
+  Bridge-Hardware für dieselbe private und nicht kommerzielle Nutzung zu
+  installieren und auszuführen.
 
 Eine Quellcodeveroeffentlichung ist nicht erforderlich, weil kein Recht zur
 Veraenderung von RoonPilot eingeraeumt wird.
@@ -46,12 +50,12 @@ verzichtet werden kann, schliesst die Lizenz nicht aus.
 
 ## Bereitstellungsmodell
 
-ESP32-S3-Factory- und OTA-Abbilder werden nicht als einzelne Downloads
-angeboten. Die Erstinstallation erfolgt nur durch den autorisierten Web
-Installer; spaetere Updates installiert RoonPilot selbst aus dem signierten
-Online-Kanal. Die Companion-Sleep-Firmware wird über einen eigenen
-autorisierten und auf ihre Prozessorfamilie beschränkten Webinstaller
-bereitgestellt.
+ESP32-S3-Factory- und OTA-Abbilder von RoonPilot und IR Bridge werden nicht als
+einzelne Downloads angeboten. Die Erstinstallation erfolgt durch den
+jeweiligen autorisierten Webinstaller; spätere Haupt- und Bridge-Updates werden
+aus ihren signierten Online-Kanälen installiert. Die Companion-Sleep-Firmware
+wird über einen eigenen, auf die klassische ESP32-Prozessorfamilie beschränkten
+Webinstaller bereitgestellt.
 
 Der Installer verlinkt Lizenz, Pflichthinweis, Drittanbieterverzeichnis und die
 exakten Drittanbieterlizenzen. Interne Buildarchive, Symboldateien, Maps, SBOMs
@@ -71,6 +75,7 @@ unabhaengig gewaehrt haben. Das Verzeichnis steht in den
 | Offizielle Firmware zu Hause ueber den Web Installer installieren | Erlaubt |
 | Offizielle Firmware privat und nicht kommerziell nutzen | Erlaubt |
 | Offizielles signiertes Update am Geraet installieren | Erlaubt |
+| Offizielle IR-Bridge-Firmware privat auf unterstützter Hardware installieren | Erlaubt |
 | RoonPilot veraendern, teilen, spiegeln oder neu veroeffentlichen | Nicht erlaubt |
 | Interne Implementierung durch Reverse Engineering zurueckgewinnen | Nicht erlaubt, ausser bei zwingenden gesetzlichen Rechten |
 | RoonPilot fuer Produkt, Dienst oder Wettbewerbspruefung verwenden | Vorherige schriftliche Erlaubnis erforderlich |

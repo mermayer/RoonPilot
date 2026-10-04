@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">Optional large centre Play/Pause touch area</title>
+  <desc id="desc">A diagram shows the invisible 194-pixel touch area in the centre of the round RoonPilot display and its short-tap and long-hold behaviour.</desc>
+  <defs>
+    <radialGradient id="screen" cx="50%" cy="38%" r="68%">
+      <stop offset="0" stop-color="#4b3a28"/>
+      <stop offset="0.52" stop-color="#171b1c"/>
+      <stop offset="1" stop-color="#080a0b"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="960" height="520" rx="30" fill="#0b0e0f"/>
+  <rect x="1" y="1" width="958" height="518" rx="29" fill="none" stroke="#2c3434"/>
+
+  <g transform="translate(54 52)">
+    <circle cx="208" cy="208" r="205" fill="#050607" stroke="#394242" stroke-width="3"/>
+    <circle cx="208" cy="208" r="184" fill="url(#screen)"/>
+    <text x="208" y="77" fill="#f1f2ef" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle">Now Playing</text>
+    <text x="208" y="107" fill="#aab0ad" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">The visible player remains unchanged</text>
+    <circle cx="208" cy="223" r="97" fill="#f4b640" fill-opacity=".075" stroke="#f4b640" stroke-width="3" stroke-dasharray="10 8" filter="url(#glow)"/>
+    <path d="M184 187v72l59-36z" fill="#f4b640"/>
+    <rect x="250" y="188" width="12" height="70" rx="5" fill="#f4b640" opacity=".92"/>
+    <text x="208" y="346" fill="#f4b640" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">Ø 194 px · invisible touch area</text>
+    <text x="208" y="376" fill="#868f8d" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">The outline appears only in this diagram.</text>
+  </g>
+
+  <g transform="translate(514 78)" font-family="Arial, sans-serif">
+    <text x="0" y="0" fill="#63dfe1" font-size="13" font-weight="700" letter-spacing="1.5">OPTIONAL · OFF BY DEFAULT</text>
+    <text x="0" y="48" fill="#f1f2ef" font-size="30" font-weight="700">Easier to reach.</text>
+    <text x="0" y="83" fill="#f1f2ef" font-size="30" font-weight="700">The same calm player.</text>
+
+    <g transform="translate(0 132)">
+      <circle cx="22" cy="22" r="21" fill="#f4b640" fill-opacity=".13" stroke="#f4b640"/>
+      <text x="22" y="28" fill="#f4b640" font-size="17" font-weight="700" text-anchor="middle">1×</text>
+      <text x="60" y="17" fill="#f1f2ef" font-size="18" font-weight="700">Short tap</text>
+      <text x="60" y="42" fill="#9aa2a0" font-size="15">Play or pause</text>
+    </g>
+    <g transform="translate(0 211)">
+      <circle cx="22" cy="22" r="21" fill="#63dfe1" fill-opacity=".11" stroke="#63dfe1"/>
+      <text x="22" y="27" fill="#63dfe1" font-size="13" font-weight="700" text-anchor="middle">1.2 s</text>
+      <text x="60" y="17" fill="#f1f2ef" font-size="18" font-weight="700">Press and hold</text>
+      <text x="60" y="42" fill="#9aa2a0" font-size="15">Lock or unlock all controls</text>
+    </g>
+    <g transform="translate(0 290)">
+      <circle cx="22" cy="22" r="21" fill="#909795" fill-opacity=".09" stroke="#626967"/>
+      <path d="M12 12l20 20m0-20L12 32" stroke="#a9afad" stroke-width="3" stroke-linecap="round"/>
+      <text x="60" y="17" fill="#f1f2ef" font-size="18" font-weight="700">Double tap</text>
+      <text x="60" y="42" fill="#9aa2a0" font-size="15">Display-off is unavailable in this mode</text>
+    </g>
+  </g>
+</svg>

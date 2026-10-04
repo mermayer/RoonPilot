@@ -8,12 +8,17 @@
 | --- | --- | --- | --- |
 | Erstinstallation oder vollstaendige Wiederherstellung | ESP32-S3 | Autorisierter Chromium Web Installer | Vollstaendig geloescht |
 | Normales Update | ESP32-S3 | Signiertes Online-Update am Geraet | Normalerweise erhalten |
-| Optionale Companion-Stromersparnis | Klassischer ESP32 | Getrennter Companion-Webinstaller | Companion-Einstellungen gelöscht |
+| Rückkehr von 2.0.0 auf 1.0.2 | ESP32-S3 | Feste 1.0.2-Auswahl im Webinstaller | Vollständig gelöscht |
+| Optionale Companion-Stromersparnis | Klassischer ESP32 | Getrennter Companion-Webinstaller | Ersetzt Companion-Flash |
+| Erste IR-Bridge-Installation oder vollständige Bridge-Wiederherstellung | Separater Bridge-ESP32-S3 | Eigener Chromium-Bridge-Installer | Bridge-Kennung, Bond, WLAN und Profile gelöscht |
+| Normales IR-Bridge-Update | Separater Bridge-ESP32-S3 | **IR Bridge → Bridge firmware update** in RoonPilot | Bridge-Kennung, Bond, WLAN und Profile erhalten |
 
 Hauptfirmware fuer Factory und OTA wird nicht als einzelner Download angeboten.
 Die Verfahren sind nicht austauschbar. Vor jeder Wiederherstellung den aktiven
-Chip eindeutig prüfen. Für den anderen Prozessor USB abziehen, den
-USB-C-Stecker um 180 Grad drehen, neu verbinden und erneut prüfen.
+Chip eindeutig prüfen. Wird der falsche Prozessor gemeldet, USB abziehen, den
+USB-C-Stecker um 180 Grad drehen, neu verbinden und erneut prüfen. Die separate IR Bridge besitzt
+einen eigenen USB-Anschluss und ein eigenes Firmwareziel; ihr Image niemals auf
+dem RoonPilot mit Runddisplay installieren.
 
 ## Signiertes Online-Update - der normale Weg
 
@@ -63,6 +68,43 @@ Es gibt keinen automatischen Download und keine automatische Installation.
 **Download and install** auf der signierten Updateseite bleibt immer eine
 eigene, ausdrueckliche Benutzeraktion.
 
+## Optionales IR-Bridge-Update — ebenfalls durch RoonPilot verwaltet
+
+Bei aktiviertem **Bridge & Bluetooth** stehen installierte und verfügbare
+Bridge-Version unter **IR Bridge → Bridge firmware update**. Bridge-Prüfung und
+ihre höchstens tägliche Displaymeldung sind von den RoonPilot-Updateeinstellungen
+getrennt. Bei vollständig deaktivierter Bridge-Funktion scannt, prüft, meldet
+und überträgt RoonPilot nichts für eine Bridge.
+
+Nach Bestätigung bevorzugt RoonPilot das authentifizierte lokale WLAN, weil es
+deutlich schneller als BLE ist. Ist das normale Bridge-WLAN aus, die Bridge
+aber per BLE gebondet und erreichbar, darf RoonPilot WLAN vorübergehend
+bereitstellen und einschalten, das Image übertragen und nach der
+Wiederverbindung den vorherigen Aus-Zustand wiederherstellen. Verschlüsseltes
+BLE bleibt der langsamere Rückfallweg, wenn WLAN nicht genutzt werden kann.
+
+Vor der Übertragung prüft RoonPilot Manifest, Projekt, Board,
+Protokollkompatibilität, minimale Controller-Version, Dateigröße, eingebettete
+Version und SHA-256. Die Bridge prüft unabhängig Blockreihenfolge, Gesamtgröße,
+SHA-256 und RSA-3072-Signatur, bevor sie ihre inaktive A/B-Partition auswählt.
+Erfolg wird erst nach der Wiederverbindung mit der angeforderten Version
+gemeldet. Währenddessen warnen RoonPilot-Display und Bridge-LED davor, den Strom
+zu trennen.
+
+### Wenn beide Geräte ein Update anbieten
+
+Beide Updates bleiben unabhängige Vorgänge und keines startet automatisch. Die
+Kompatibilitätsbereiche der Manifeste entscheiden, ob der aktuelle Controller
+das Bridge-Image sicher installieren kann und ob eine Controller-Version ein
+bestimmtes Bridge-Protokoll oder eine Mindestversion erwartet. Einen angezeigten
+Hinweis **RoonPilot zuerst aktualisieren** oder **Bridge zuerst aktualisieren**
+befolgen; ohne solchen Hinweis ist jede Reihenfolge erlaubt. Immer erst ein
+Update abschließen, Wiederverbindung und Version prüfen und danach das zweite
+starten. Eine Kompatibilitätsablehnung ist ein Sicherheitsstopp und kein Grund,
+ein Image zu erzwingen oder eines der Geräte zu löschen.
+
+Der vollständige Ablauf steht unter [IR-Bridge-Updates](ir-bridge-updates.md).
+
 ## Browser-Factory-Wiederherstellung
 
 Die bereitgestellte autorisierte Installerseite mit einem aktuellen
@@ -74,6 +116,27 @@ Auslieferungszustand des Herstellers gewünscht ist.
 Der Browser muss ESP32-S3 melden. Bei klassischem ESP32 oder Chipfehler sofort
 abbrechen und USB drehen/neu verbinden. Factory loescht die gesamte Firmware
 und Konfiguration des Hauptprozessors.
+
+## Zurück zu RoonPilot 1.0.2
+
+Wenn 2.0.0 bei dir nicht funktioniert, im
+[Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/?version=1.0.2#web-installer-title)
+**Zurück zu RoonPilot 1.0.2** auswählen. Dieser USB-Rückweg installiert immer
+die originale Version 1.0.2 und enthält einen verbindlichen Löschvorgang. Eine
+funktionierende Geräte-Webseite ist nicht nötig. Der Companion-Prozessor und
+separate IR Bridges werden nicht geflasht.
+
+Alle Einstellungen und die Profilbibliothek auf RoonPilot gehen verloren.
+Vor dem Upgrade ein unter 1.0.2 erstelltes Backup aufbewahren; kein 2.0.0-Backup
+in 1.0.2 einspielen. Nach der Installation WLAN und Roon neu einrichten. Die
+Bridge-Funktionen und erweiterten Gruppenbedienungen aus 2.0.0 stehen dort
+nicht zur Verfügung. **Unter 1.0.2 keine Akkukalibrierung durchführen**: Die
+neuen Schutzmaßnahmen für die Kalibrierung sind dort nicht enthalten.
+
+Die vollständige Einsteigeranleitung steht unter
+[Zurück zu RoonPilot 1.0.2](return-to-1.0.2.md). Die automatische
+A/B-Wiederherstellung beim Start kehrt zum vorherigen nutzbaren
+Anwendungs-Slot zurück, nicht zwingend zu genau dieser Version.
 
 ## Unterbrochenes Update
 
@@ -107,6 +170,25 @@ ursprüngliche 4-MB-Flash dieses Prozessors vorher gesichert wurde. Die
 freiwilligen technischen Abläufe sind in getrennte Anleitungen für
 [Windows](factory-backup-windows.md) und [macOS](factory-backup-macos.md)
 aufgeteilt.
+
+## Factory-Wiederherstellung der IR Bridge
+
+Den separaten Bridge-Webinstaller nur verwenden, wenn keine gültige
+Bridge-Anwendung mehr startet oder bewusst eine saubere Bridge benötigt wird.
+Factory führt den erforderlichen Erase selbst aus; vorher nicht separat löschen.
+Dabei gehen Bridge-Kennung, Bond, WLAN-Fallback und gelernte Profile verloren.
+Vor einer geplanten Neuinstallation die neuesten Profile mit RoonPilots
+Bibliothek abgleichen. Danach unter **System → Sicherung erstellen** eine
+vollständige JSON-Datei anlegen und privat aufbewahren; die Bridges müssen beim
+Export nicht erreichbar sein. Siehe [Konfiguration sichern und
+wiederherstellen](configuration-backup.md).
+
+Nach Factory-Recovery die Bridge mit ihrer neuen `RPB-…`-Kennung koppeln und
+beim Wiederherstellen ausdrücklich als Ziel der benannten IR-Profile auswählen.
+Die Profilbibliothek liegt dauerhaft auf RoonPilot und in der gemeinsamen
+Sicherung; die neue Bridge erhält eigene lokale Profil-IDs. Solange die Bridge
+funktioniert, signierte Anwendungsupdates bevorzugen, weil Kopplung und
+WLAN-Einrichtung dabei erhalten bleiben.
 
 Ein Factory Reset auf der Systemseite loescht nur RoonPilot-Konfiguration und
 Kopplung. Er stellt die Waveshare-Firmware nicht wieder her.

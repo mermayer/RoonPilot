@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title description">
+  <title id="title">RoonPilot IR Bridge – wiring</title>
+  <desc id="description">Wiring diagram for ESP32-S3-Zero, Adafruit High Power IR Emitter 5639 and KY-022 IR receiver.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1016"/>
+      <stop offset="1" stop-color="#111a22"/>
+    </linearGradient>
+    <linearGradient id="board" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#173b42"/>
+      <stop offset="1" stop-color="#102a30"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.42"/>
+    </filter>
+    <style>
+      .title { font: 700 45px 'Segoe UI', Arial, sans-serif; fill: #f4f7f8; }
+      .subtitle { font: 400 21px 'Segoe UI', Arial, sans-serif; fill: #aab8c2; }
+      .component-title { font: 700 25px 'Segoe UI', Arial, sans-serif; fill: #f4f7f8; }
+      .component-subtitle { font: 400 17px 'Segoe UI', Arial, sans-serif; fill: #aab8c2; }
+      .pin { font: 700 18px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .pin-note { font: 500 16px 'Segoe UI', Arial, sans-serif; fill: #c6d0d7; }
+      .small { font: 500 15px 'Segoe UI', Arial, sans-serif; fill: #aab8c2; }
+      .warning { font: 600 17px 'Segoe UI', Arial, sans-serif; fill: #ffd978; }
+      .wire { fill: none; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+      .terminal { stroke: #0b1016; stroke-width: 4; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#background)"/>
+  <circle cx="1410" cy="-30" r="360" fill="#3fe0dc" opacity="0.035"/>
+  <circle cx="100" cy="1020" r="420" fill="#ffca62" opacity="0.03"/>
+
+  <text x="70" y="82" class="title">RoonPilot IR Bridge – wiring</text>
+  <text x="70" y="119" class="subtitle">ESP32-S3-Zero · Adafruit High Power IR Emitter 5639 · KY-022 IR receiver</text>
+
+  <!-- USB power -->
+  <g filter="url(#shadow)">
+    <rect x="70" y="355" width="320" height="220" rx="28" fill="#151d25" stroke="#33434e" stroke-width="2"/>
+    <text x="230" y="407" text-anchor="middle" class="component-title">USB power supply</text>
+    <text x="230" y="438" text-anchor="middle" class="component-subtitle">5 V · at least 1 A</text>
+    <rect x="139" y="473" width="182" height="54" rx="17" fill="#0b1117" stroke="#788892" stroke-width="3"/>
+    <rect x="195" y="488" width="70" height="24" rx="10" fill="#c7d2d8"/>
+    <text x="230" y="555" text-anchor="middle" class="small">Powers board and IR emitter</text>
+  </g>
+
+  <!-- Controller board -->
+  <g filter="url(#shadow)">
+    <rect x="565" y="170" width="455" height="665" rx="40" fill="url(#board)" stroke="#58d8d5" stroke-width="3"/>
+    <rect x="708" y="188" width="168" height="68" rx="18" fill="#c5ccd0" stroke="#eef2f3" stroke-width="2"/>
+    <rect x="747" y="205" width="90" height="34" rx="12" fill="#343d43"/>
+    <text x="792" y="290" text-anchor="middle" class="component-title">ESP32-S3-Zero</text>
+    <text x="792" y="320" text-anchor="middle" class="component-subtitle">RoonPilot IR Bridge</text>
+
+    <rect x="665" y="359" width="255" height="246" rx="28" fill="#0d2025" stroke="#2a555b" stroke-width="2"/>
+    <text x="792" y="410" text-anchor="middle" class="pin-note">Bluetooth LE</text>
+    <text x="792" y="445" text-anchor="middle" class="pin-note">Learn and transmit IR</text>
+    <text x="792" y="480" text-anchor="middle" class="pin-note">Profiles and OTA</text>
+    <path d="M735 545 C758 513 778 513 799 545 C819 577 839 577 861 545" fill="none" stroke="#58d8d5" stroke-width="7" stroke-linecap="round"/>
+
+    <text x="792" y="675" text-anchor="middle" class="component-subtitle">Native USB-C</text>
+    <text x="792" y="708" text-anchor="middle" class="small">Factory install and power</text>
+
+    <!-- labeled connection rail -->
+    <g>
+      <circle cx="1018" cy="300" r="12" fill="#ff5b62" class="terminal"/>
+      <text x="986" y="306" text-anchor="end" class="pin">5V</text>
+      <circle cx="1018" cy="390" r="12" fill="#bac4ca" class="terminal"/>
+      <text x="986" y="396" text-anchor="end" class="pin">GND</text>
+      <circle cx="1018" cy="480" r="12" fill="#ff9f43" class="terminal"/>
+      <text x="986" y="486" text-anchor="end" class="pin">3V3</text>
+      <circle cx="1018" cy="570" r="12" fill="#ffd84c" class="terminal"/>
+      <text x="986" y="576" text-anchor="end" class="pin">GPIO4</text>
+      <circle cx="1018" cy="660" r="12" fill="#43d5ff" class="terminal"/>
+      <text x="986" y="666" text-anchor="end" class="pin">GPIO5</text>
+    </g>
+  </g>
+
+  <!-- USB cable -->
+  <path d="M390 500 C465 500 480 665 565 665" class="wire" stroke="#778792"/>
+  <circle cx="390" cy="500" r="9" fill="#778792"/>
+
+  <!-- Emitter module -->
+  <g filter="url(#shadow)">
+    <rect x="1210" y="165" width="320" height="305" rx="30" fill="#171d25" stroke="#43505a" stroke-width="2"/>
+    <text x="1370" y="213" text-anchor="middle" class="component-title">IR emitter</text>
+    <text x="1370" y="243" text-anchor="middle" class="component-subtitle">Adafruit 5639</text>
+    <circle cx="1360" cy="305" r="33" fill="#401617" stroke="#d64b4c" stroke-width="3"/>
+    <circle cx="1430" cy="305" r="33" fill="#401617" stroke="#d64b4c" stroke-width="3"/>
+    <path d="M1348 306 q12 -22 24 0 q12 22 24 0" fill="none" stroke="#ff6470" stroke-width="4" opacity="0.8"/>
+    <path d="M1418 306 q12 -22 24 0 q12 22 24 0" fill="none" stroke="#ff6470" stroke-width="4" opacity="0.8"/>
+
+    <circle cx="1210" cy="275" r="12" fill="#ff5b62" class="terminal"/>
+    <text x="1242" y="281" class="pin">V+</text>
+    <text x="1290" y="281" class="pin-note">5 V</text>
+    <circle cx="1210" cy="350" r="12" fill="#bac4ca" class="terminal"/>
+    <text x="1242" y="356" class="pin">GND</text>
+    <circle cx="1210" cy="425" r="12" fill="#ffd84c" class="terminal"/>
+    <text x="1242" y="431" class="pin">SIG / IN</text>
+    <text x="1347" y="431" class="pin-note">GPIO4</text>
+  </g>
+
+  <!-- Receiver module -->
+  <g filter="url(#shadow)">
+    <rect x="1210" y="565" width="320" height="300" rx="30" fill="#171d25" stroke="#43505a" stroke-width="2"/>
+    <text x="1370" y="613" text-anchor="middle" class="component-title">IR receiver</text>
+    <text x="1370" y="643" text-anchor="middle" class="component-subtitle">KY-022 / CHQ1838 · 38 kHz</text>
+    <rect x="1364" y="682" width="88" height="62" rx="28" fill="#191b1f" stroke="#6c7479" stroke-width="3"/>
+    <circle cx="1391" cy="711" r="7" fill="#441e2c"/>
+    <circle cx="1425" cy="711" r="7" fill="#441e2c"/>
+
+    <circle cx="1210" cy="680" r="12" fill="#ff9f43" class="terminal"/>
+    <text x="1242" y="686" class="pin">+</text>
+    <text x="1272" y="686" class="pin-note">3,3 V</text>
+    <circle cx="1210" cy="755" r="12" fill="#bac4ca" class="terminal"/>
+    <text x="1242" y="761" class="pin">−</text>
+    <text x="1272" y="761" class="pin-note">GND</text>
+    <circle cx="1210" cy="830" r="12" fill="#43d5ff" class="terminal"/>
+    <text x="1242" y="836" class="pin">S / OUT</text>
+    <text x="1340" y="836" class="pin-note">GPIO5</text>
+  </g>
+
+  <!-- Signal and power wiring -->
+  <path d="M1018 300 H1085 V275 H1210" class="wire" stroke="#ff5b62"/>
+  <path d="M1018 390 H1118 V350 H1210" class="wire" stroke="#bac4ca"/>
+  <path d="M1118 390 V755 H1210" class="wire" stroke="#bac4ca"/>
+  <circle cx="1118" cy="390" r="10" fill="#bac4ca" class="terminal"/>
+  <path d="M1018 480 H1068 V680 H1210" class="wire" stroke="#ff9f43"/>
+  <path d="M1018 570 H1090 V425 H1210" class="wire" stroke="#ffd84c"/>
+  <path d="M1018 660 H1150 V830 H1210" class="wire" stroke="#43d5ff"/>
+
+  <!-- Safety footer -->
+  <g>
+    <rect x="70" y="900" width="1460" height="64" rx="20" fill="#2a2313" stroke="#8d6d28" stroke-width="2"/>
+    <circle cx="105" cy="932" r="16" fill="#ffd978"/>
+    <text x="105" y="939" text-anchor="middle" style="font:700 20px 'Segoe UI',Arial,sans-serif;fill:#2a2313">!</text>
+    <text x="139" y="938" class="warning">Wire only with power removed. Before power-up, verify the actual S / + / − and V+ / GND / SIG labels on both modules.</text>
+  </g>
+
+  <text x="70" y="870" class="small">All grounds are common. GPIO21 remains reserved for the onboard RGB LED. Keep the ESP32 antenna area clear.</text>
+</svg>

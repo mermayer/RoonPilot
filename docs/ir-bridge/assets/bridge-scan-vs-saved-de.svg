@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="510" viewBox="0 0 1200 510" role="img" aria-labelledby="title desc">
+  <title id="title">Gespeicherte Bridges und letzter Bluetooth-Scan sind zwei verschiedene Listen</title>
+  <desc id="desc">Zwei Bridges bleiben gekoppelt. Der letzte Scan fand nur Arbeitszimmer; Wohnzimmer ist weiterhin gespeichert und kann über WLAN erreichbar sein. Nach Rückkehr in Bluetooth-Reichweite muss ein neuer Scan gestartet werden.</desc>
+  <style>.bg{fill:#0b0e0d}.card{fill:#161b19;stroke:#42504a;stroke-width:2}.row{fill:#1e2521;stroke:#36443c}.h{fill:#f7f7f2;font:700 30px Arial,sans-serif}.sub{fill:#aeb9b2;font:18px Arial,sans-serif}.label{fill:#86e1de;font:700 17px Arial,sans-serif}.name{fill:#f7f7f2;font:700 22px Arial,sans-serif}.detail{fill:#b8c3bc;font:17px Arial,sans-serif}.accent{fill:#ffc461;font:700 19px Arial,sans-serif}.ok{fill:#78d79d}.line{stroke:#ffc461;stroke-width:3;fill:none}.foot{fill:#f2e3be;font:19px Arial,sans-serif}</style>
+  <rect class="bg" width="1200" height="510" rx="20"/>
+  <text class="h" x="38" y="51">Zwei Listen – nicht dieselbe Bedeutung</text>
+  <text class="sub" x="38" y="85">Beispiel: Wohnzimmer ist vorübergehend außer Bluetooth-Reichweite, aber über WLAN erreichbar.</text>
+  <rect class="card" x="38" y="113" width="546" height="286" rx="17"/>
+  <text class="label" x="62" y="149">GESPEICHERTE IR BRIDGES</text><text class="accent" x="500" y="149">2 / 4</text>
+  <rect class="row" x="61" y="169" width="500" height="87" rx="12"/>
+  <circle class="ok" cx="84" cy="199" r="7"/><text class="name" x="103" y="206">Arbeitszimmer</text><text class="detail" x="103" y="233">Gekoppelt · BLE bereit</text>
+  <rect class="row" x="61" y="269" width="500" height="87" rx="12"/>
+  <circle class="ok" cx="84" cy="299" r="7"/><text class="name" x="103" y="306">Wohnzimmer</text><text class="detail" x="103" y="333">Gekoppelt · WLAN möglich</text>
+  <rect class="card" x="616" y="113" width="546" height="286" rx="17"/>
+  <text class="label" x="640" y="149">BRIDGE KOPPELN · LETZTER BLE-SCAN</text>
+  <rect class="row" x="639" y="169" width="500" height="87" rx="12"/>
+  <circle class="ok" cx="662" cy="199" r="7"/><text class="name" x="681" y="206">Arbeitszimmer</text><text class="detail" x="681" y="233">1 gefunden · gekoppelt</text>
+  <text class="detail" x="641" y="298">Wohnzimmer fehlt hier nur im letzten Scan.</text>
+  <text class="detail" x="641" y="326">Das löscht weder Pairing noch WLAN-Zugang.</text>
+  <path class="line" d="M38 422 H1162"/>
+  <text class="foot" x="38" y="456">Zurück in Reichweite? „Scan for Bridges“ erneut drücken.</text>
+  <text class="sub" x="38" y="484">Die Fundliste ist eine Momentaufnahme, keine laufend aktualisierte Bestandsanzeige.</text>
+</svg>

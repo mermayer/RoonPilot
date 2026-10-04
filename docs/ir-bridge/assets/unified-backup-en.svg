@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="470" viewBox="0 0 1400 470" role="img" aria-labelledby="title desc">
+  <title id="title">One backup for RoonPilot and its paired Bridges</title>
+  <desc id="desc">One JSON file contains controller settings, zone routes, every named IR profile once, and separate Bridge assignments. Export reads RoonPilot's library without contacting the Bridges.</desc>
+  <defs><style>
+    .bg{fill:#090b0b}.card{fill:#111614;stroke:#34403c;stroke-width:2}.out{fill:#102020;stroke:#5ce0e1;stroke-width:3}.title{fill:#f7f6f2;font:700 30px Arial,sans-serif}.head{fill:#f7f6f2;font:700 22px Arial,sans-serif}.body{fill:#a9afab;font:17px Arial,sans-serif}.small{fill:#a9afab;font:15px Arial,sans-serif}.cyan{fill:#5ce0e1}.amber{fill:#f6b84a}.line{stroke:#5ce0e1;stroke-width:3;fill:none}.optional{stroke:#f6b84a;stroke-width:3;stroke-dasharray:9 7;fill:none}.pill{fill:#0c1b1a;stroke:#367d7e}.warn{fill:#271d0d;stroke:#9e772d}.pilltext{fill:#e9fbfb;font:700 15px Arial,sans-serif}.warntext{fill:#f6d697;font:700 15px Arial,sans-serif}
+  </style></defs>
+  <rect class="bg" width="1400" height="470" rx="24"/>
+  <text class="title" x="50" y="54">One backup for RoonPilot and IR Bridges</text>
+  <text class="body" x="50" y="86">Create it on System. There is no separate Bridge backup step.</text>
+  <g transform="translate(50 122)"><rect class="card" width="400" height="132" rx="16"/><text class="head cyan" x="24" y="43">RoonPilot</text><text class="body" x="24" y="77">Settings and all saved zone routes</text><text class="small" x="24" y="105">Included even if a Bridge is offline</text></g>
+  <g transform="translate(500 122)"><rect class="card" width="400" height="132" rx="16"/><text class="head cyan" x="24" y="43">Permanent profile library</text><text class="body" x="24" y="77">Each named IR profile once</text><text class="small" x="24" y="105">Learned pulses with checksums</text></g>
+  <g transform="translate(950 122)"><rect class="card" width="400" height="132" rx="16"/><text class="head amber" x="24" y="43">Bridge assignments</text><text class="body" x="24" y="77">One profile → several Bridges</text><text class="small" x="24" y="105">No live Bridge query for export</text></g>
+  <path class="line" d="M250 254 V288 H700 V306"/><path class="line" d="M700 254 V306"/><path class="optional" d="M1150 254 V288 H700"/>
+  <g transform="translate(286 308)"><rect class="out" width="828" height="128" rx="18"/><text class="head" x="28" y="40">One portable JSON file</text><text class="small" x="28" y="70">Restore to a replacement Bridge with its new local profile IDs.</text><rect class="pill" x="28" y="86" width="251" height="29" rx="14"/><text class="pilltext" x="45" y="106">Complete: library verified</text><rect class="warn" x="295" y="86" width="503" height="29" rx="14"/><text class="warntext" x="310" y="106">Warning: older Bridge copy may need transfer</text></g>
+</svg>

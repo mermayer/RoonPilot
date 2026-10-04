@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="510" viewBox="0 0 1200 510" role="img" aria-labelledby="title desc">
+  <title id="title">Saved Bridges and the last Bluetooth scan are different lists</title>
+  <desc id="desc">Two Bridges remain paired. The last scan found only Office; Living Room is still saved and may be reachable over Wi-Fi. A new scan is needed after it returns to Bluetooth range.</desc>
+  <style>.bg{fill:#0b0e0d}.card{fill:#161b19;stroke:#42504a;stroke-width:2}.row{fill:#1e2521;stroke:#36443c}.h{fill:#f7f7f2;font:700 30px Arial,sans-serif}.sub{fill:#aeb9b2;font:18px Arial,sans-serif}.label{fill:#86e1de;font:700 17px Arial,sans-serif}.name{fill:#f7f7f2;font:700 22px Arial,sans-serif}.detail{fill:#b8c3bc;font:17px Arial,sans-serif}.accent{fill:#ffc461;font:700 19px Arial,sans-serif}.ok{fill:#78d79d}.line{stroke:#ffc461;stroke-width:3;fill:none}.foot{fill:#f2e3be;font:19px Arial,sans-serif}</style>
+  <rect class="bg" width="1200" height="510" rx="20"/>
+  <text class="h" x="38" y="51">Two lists – two different meanings</text>
+  <text class="sub" x="38" y="85">Example: Living Room is outside Bluetooth range but still reachable over Wi-Fi.</text>
+  <rect class="card" x="38" y="113" width="546" height="286" rx="17"/>
+  <text class="label" x="62" y="149">SAVED IR BRIDGES</text><text class="accent" x="500" y="149">2 / 4</text>
+  <rect class="row" x="61" y="169" width="500" height="87" rx="12"/>
+  <circle class="ok" cx="84" cy="199" r="7"/><text class="name" x="103" y="206">Office</text><text class="detail" x="103" y="233">Paired · BLE ready</text>
+  <rect class="row" x="61" y="269" width="500" height="87" rx="12"/>
+  <circle class="ok" cx="84" cy="299" r="7"/><text class="name" x="103" y="306">Living Room</text><text class="detail" x="103" y="333">Paired · Wi-Fi available</text>
+  <rect class="card" x="616" y="113" width="546" height="286" rx="17"/>
+  <text class="label" x="640" y="149">PAIR A BRIDGE · LAST BLE SCAN</text>
+  <rect class="row" x="639" y="169" width="500" height="87" rx="12"/>
+  <circle class="ok" cx="662" cy="199" r="7"/><text class="name" x="681" y="206">Office</text><text class="detail" x="681" y="233">1 found · paired</text>
+  <text class="detail" x="641" y="298">Living Room is absent only from this scan.</text>
+  <text class="detail" x="641" y="326">Neither pairing nor Wi-Fi access is erased.</text>
+  <path class="line" d="M38 422 H1162"/>
+  <text class="foot" x="38" y="456">Back in range? Press “Scan for Bridges” again.</text>
+  <text class="sub" x="38" y="484">Discovery is a snapshot, not a continuously updated inventory.</text>
+</svg>

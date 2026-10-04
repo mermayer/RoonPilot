@@ -19,7 +19,7 @@ Weboberfläche für die Ersteinrichtung nicht erforderlich.
 Auf dem Display werden **Wi-Fi setup** und der Name des temporären
 Zugangspunkts angezeigt.
 
-<img src="../../assets/device-screens/18-wifi-setup.png" alt="WLAN-Einrichtungsanzeige" width="360">
+<img src="../../assets/device-screens/18-wifi-setup-de.png" alt="WLAN-Einrichtungsanzeige" width="360">
 
 1. Auf Telefon, Tablet oder Notebook die WLAN-Liste öffnen.
 2. Mit `RoonPilot-Setup-XXXXXX` verbinden. Die letzten sechs Zeichen
@@ -27,12 +27,14 @@ Zugangspunkts angezeigt.
 3. Das vorläufige Kennwort `roonpilot-setup` eingeben.
 4. Öffnet sich die minimale Einrichtungsseite nicht automatisch,
    `http://192.168.4.1` im Browser aufrufen.
-5. Das gewünschte **2,4-GHz-WLAN** auswählen oder den Namen exakt eingeben.
-6. Das WLAN-Kennwort sorgfältig eingeben und **Save and connect** wählen.
+5. **Deutsch** oder **English** wählen. Diese Auswahl gilt gemeinsam für
+   Gerätedisplay, Schnelleinstellungen und alle lokalen Webseiten.
+6. Das gewünschte **2,4-GHz-WLAN** auswählen oder den Namen exakt eingeben.
+7. Das WLAN-Kennwort sorgfältig eingeben und **Speichern und verbinden** wählen.
 
-<img src="../../assets/web-ui/09-wifi-first-setup.png" alt="Minimale WLAN-Ersteinrichtung" width="100%">
+<img src="../../assets/web-ui/09-wifi-first-setup-de.png" alt="Minimale WLAN-Ersteinrichtung mit Sprachwahl" width="100%">
 
-Auf dieser absichtlich kleinen Seite wird ausschließlich WLAN eingerichtet.
+Auf dieser absichtlich kleinen Seite werden nur WLAN und Sprache eingerichtet.
 Roon, Zonen, Display, Firmware und Systemfunktionen erscheinen erst in der
 vollständigen lokalen Oberfläche.
 
@@ -64,7 +66,7 @@ Werden mehrere Server gefunden und kann keiner früheren Auswahl zugeordnet
 werden, fordert das Display zur Serverwahl auf. Auf der lokalen Seite **Roon &
 zones** die Suche starten, den richtigen Server auswählen und speichern.
 
-<img src="../../assets/device-screens/22-select-roon-server.png" alt="Auswahl eines Roon Servers" width="360">
+<img src="../../assets/device-screens/22-select-roon-server-de.png" alt="Auswahl eines Roon Servers" width="360">
 
 ### Kein Roon Server wird gefunden
 
@@ -88,7 +90,7 @@ Das Display bleibt nun dauerhaft auf **Waiting for approval** und nennt den
 notwendigen Menüpfad. Dim-, Uhr- und Deep-Sleep-Timer sind bis zum Abschluss
 dieses Einrichtungsschritts ausgesetzt.
 
-<img src="../../assets/device-screens/06-roon-pairing.png" alt="Roon-Freigabeanzeige" width="360">
+<img src="../../assets/device-screens/06-roon-pairing-de.png" alt="Roon-Freigabeanzeige" width="360">
 
 1. Roon öffnen.
 2. **Einstellungen → Erweiterungen** wählen.
@@ -126,6 +128,15 @@ Die Seitenstruktur erscheint sofort; Livewerte werden mit den anschließenden
 Statusabfragen gefüllt. Kurze Platzhalter sind normal, Wartezeiten von mehreren
 Sekunden nicht.
 
+### Sprache später ändern
+
+Unter **System → Sprache** zwischen **Deutsch** und **English** wählen und
+**Sprache speichern** drücken. Gerätedisplay und Schnelleinstellungen wechseln
+sofort; die aktuelle Browserseite wird anschließend in der gewählten Sprache
+neu geladen. Die Einstellung gilt für dieses RoonPilot insgesamt. Titel,
+Interpreten, Playlisten, Zonennamen, Bridge-Kennungen, Profilnamen und andere
+selbst vergebene Texte werden weder übersetzt noch verändert.
+
 ## 6. Funktionsprüfung
 
 1. Zone, Cover, Titel, Interpret und Wiedergabestatus werden angezeigt.
@@ -135,5 +146,21 @@ Sekunden nicht.
 5. Zonennamen antippen und die Zonenwahl erneut öffnen.
 6. Weboberfläche neu laden und kontrollieren, dass Einstellungen erhalten
    bleiben.
+
+## 7. Optionale Funktionen erst danach
+
+Beim ersten Start nicht sofort jede Option aktivieren. Sobald normale
+Roon-Wiedergabe und Lautstärke stabil funktionieren, Displaylayout, Uhren,
+Energieoptionen, Playlisten oder Live Radio jeweils gruppenweise einstellen und
+danach speichern. So lässt sich eine unpassende Einstellung leicht erkennen und
+rückgängig machen.
+
+Die RoonPilot IR Bridge ist optional und darf für den Abschluss dieser Anleitung
+nicht erforderlich sein. Wer Infrarot-Hardwaresteuerung möchte, fährt erst jetzt
+mit der [IR-Bridge-Übersicht](ir-bridge.md) fort. Die Bridge erhält eine eigene
+Factory-Firmware, wird über Bluetooth von RoonPilot aus gekoppelt und kann später
+optional einen authentifizierten WLAN-Rückfall verwenden. Bei ausgeschaltetem
+**Bridge & Bluetooth** bleibt der normale RoonPilot-Betrieb vom Zubehör
+unabhängig.
 
 Danach [Bedienung am Gerät](device-controls.md) lesen.

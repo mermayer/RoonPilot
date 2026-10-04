@@ -6,13 +6,13 @@ This guide is for the few RoonPilot procedures that require direct serial flash
 access:
 
 - making an optional backup of the original Waveshare firmware;
-- manually restoring a previously saved original image or performing advanced
-  serial diagnostics.
+- installing or restoring the optional firmware of RoonPilot's internal
+  Companion ESP32.
 
-The normal RoonPilot ESP32-S3 Factory installation and the optional Companion
-ESP32 installation each use their own browser-based Web Installer. Neither
-requires Python or esptool. Normal later RoonPilot updates are installed online
-from RoonPilot and also do not require esptool.
+The normal RoonPilot ESP32-S3 Factory installation uses the browser-based Web
+Installer and does **not** require Python or esptool. Normal later RoonPilot and
+IR Bridge updates are installed online from RoonPilot and also do not require
+esptool.
 
 ## Recommended choice
 
@@ -31,11 +31,16 @@ Rotating the USB-C plug at the round device can connect macOS to the other one:
 | Processor | Typical macOS port | Purpose |
 | --- | --- | --- |
 | Main ESP32-S3 | `/dev/cu.usbmodem…` | RoonPilot display firmware |
-| Classic Companion ESP32 | `/dev/cu.usbserial…` or `/dev/cu.wchusbserial…` | Optional Companion firmware |
+| Classic Companion ESP32 | `/dev/cu.wchusbserial…` or another USB-serial name | Optional Companion firmware |
 
 Port names can vary. They are only a clue; the result of `chip-id` is the final
 test. Never run `erase-flash`, `write-flash` or `read-flash` until the command
 has identified the expected chip.
+
+> [!IMPORTANT]
+> The external RoonPilot IR Bridge is a third, physically separate ESP32-S3
+> board. Its Factory image must never be written to either processor inside the
+> round RoonPilot device.
 
 ## Path A — official standalone release (recommended)
 
@@ -297,5 +302,5 @@ use Path A rather than weakening macOS security or building a toolchain.
 ## Continue with the correct procedure
 
 - [Optional original-firmware backup](factory-backup.md)
-- [Optional Companion ESP32 Web Installer](companion-firmware.md)
+- [Optional Companion ESP32 firmware](companion-firmware.md)
 - [Main RoonPilot browser installation](installation.md)

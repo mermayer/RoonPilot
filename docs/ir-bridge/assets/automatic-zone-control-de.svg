@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="535" viewBox="0 0 1280 535" role="img" aria-labelledby="title desc">
+  <title id="title">Automatische Zonensteuerung wählt das IR-Ziel, nicht alle Verbindungen</title>
+  <desc id="desc">Die ausgewählte Wohnzimmer-Zone benutzt ihr gespeichertes IR-Profil auf der Wohnzimmer-Bridge. Andere Zonen behalten ihre Routen. Ein BLE-Link und mehrere unabhängige WLAN-Wege sind möglich; Manage ändert die Zonenroute nicht.</desc>
+  <style>.bg{fill:#0b0e0d}.card{fill:#171d1a;stroke:#415148;stroke-width:2}.active{stroke:#80e0a1;stroke-width:3}.h{fill:#f7f7f2;font:700 29px Arial,sans-serif}.sub{fill:#b8c4bb;font:18px Arial,sans-serif}.label{fill:#8de0de;font:700 17px Arial,sans-serif}.name{fill:#f7f7f2;font:700 22px Arial,sans-serif}.body{fill:#b8c4bb;font:18px Arial,sans-serif}.green{fill:#80e0a1;font:700 18px Arial,sans-serif}.amber{fill:#ffc461;font:700 18px Arial,sans-serif}.line{stroke:#80e0a1;stroke-width:4;fill:none}</style>
+  <defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto"><path d="M0 0 L11 5 L0 10 z" fill="#80e0a1"/></marker></defs>
+  <rect class="bg" width="1280" height="535" rx="20"/>
+  <text class="h" x="36" y="49">Automatische Zonensteuerung: Die Zone bestimmt das IR-Ziel</text>
+  <text class="sub" x="36" y="83">Bis zu vier Bridges können gespeichert sein. Ein Zonenwechsel ändert die Route, nicht die Kopplungen.</text>
+  <rect class="card active" x="36" y="121" width="395" height="274" rx="18"/>
+  <text class="label" x="60" y="158">AUSGEWÄHLTE ROON-ZONE</text><text class="name" x="60" y="203">Wohnzimmer</text>
+  <text class="body" x="60" y="247">Lautstärke: Externe IR Bridge</text>
+  <text class="body" x="60" y="280">Ziel: Wohnzimmer-Bridge</text>
+  <text class="body" x="60" y="313">Profil: Verstärker</text>
+  <text class="green" x="60" y="361">Nur dieses Ziel erhält IR-Befehle</text>
+  <path class="line" d="M435 254 H508" marker-end="url(#arrow)"/>
+  <rect class="card active" x="523" y="121" width="350" height="274" rx="18"/>
+  <text class="label" x="547" y="158">ZONENROUTE</text><text class="name" x="547" y="203">Profil auf Ziel-Bridge</text>
+  <text class="body" x="547" y="247">IR-Befehle gehen nur an</text><text class="body" x="547" y="280">die gespeicherte Kennung.</text>
+  <text class="green" x="547" y="361">BLE oder geprüftes WLAN</text>
+  <path class="line" d="M877 254 H950" marker-end="url(#arrow)"/>
+  <rect class="card active" x="965" y="121" width="279" height="274" rx="18"/>
+  <text class="label" x="989" y="158">IR-BRIDGE</text><text class="name" x="989" y="203">Wohnzimmer</text>
+  <text class="body" x="989" y="247">Spielt gelernte IR-</text><text class="body" x="989" y="280">Befehle ab.</text>
+  <text class="green" x="989" y="361">Ziel bleibt eindeutig</text>
+  <path d="M36 426 H1244" stroke="#415148" stroke-width="2"/>
+  <text class="amber" x="36" y="462">Manage verwaltet eine andere Bridge, ändert aber diese Zonenroute nicht.</text>
+  <text class="sub" x="36" y="495">Es gibt höchstens einen BLE-Link; die Zonen-Bridge kann parallel über ihr eigenes WLAN bedienbar bleiben.</text>
+</svg>

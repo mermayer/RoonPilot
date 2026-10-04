@@ -47,15 +47,3 @@ folgt danach der getrennte
 Eine [Sicherung der Original-Firmware](factory-backup.md) ist freiwillig und
 nur für einen späteren Rückweg zum exakten Herstellerzustand sinnvoll. Erst
 dieser technische Sonderweg benötigt `esptool`.
-
-## Optional: zusätzlich mit Windows prüfen
-
-Diese Prüfung ist **nicht** Teil des normalen Installationsablaufs. Nur wenn
-mehrere USB-Geräte schwer auseinanderzuhalten sind, kann unter
-**Geräte-Manager → Anschlüsse (COM & LPT)** kontrolliert werden:
-
-- **Serielles USB-Gerät (COMx):** ESP32-S3-Seite für RoonPilot;
-- **USB-SERIAL CH340 (COMx):** klassischer Begleit-ESP32.
-
-Für die eigentliche Installation bleibt der Browserdialog maßgeblich: Dort
-**USB JTAG/serial debug unit** auswählen.

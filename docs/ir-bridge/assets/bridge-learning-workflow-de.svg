@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="465" viewBox="0 0 1320 465" role="img" aria-labelledby="title desc">
+  <title id="title">Ein IR-Profil unabhängig von der späteren Ziel-Bridge lernen</title>
+  <desc id="desc">Das Profil entsteht zuerst in RoonPilots Bibliothek. Eine beliebige gekoppelte Bridge mit Empfänger nimmt zweimal pro Taste auf. Speichern übernimmt die Aufnahmen auf RoonPilot. Bei der Zonenroute wird das Profil automatisch auf die gewählte, möglicherweise andere Ziel-Bridge übertragen.</desc>
+  <style>.bg{fill:#0b0e0d}.card{fill:#171d1a;stroke:#405148;stroke-width:2}.h{fill:#f7f7f2;font:700 28px Arial,sans-serif}.sub{fill:#b8c5ba;font:18px Arial,sans-serif}.step{fill:#ffc461;font:700 17px Arial,sans-serif}.name{fill:#f7f7f2;font:700 21px Arial,sans-serif}.body{fill:#bbc7bd;font:17px Arial,sans-serif}.cyan{fill:#88e0df;font:700 18px Arial,sans-serif}.green{fill:#80dfa2;font:700 18px Arial,sans-serif}.line{stroke:#ffc461;stroke-width:3;fill:none}.note{fill:#f1dfb6;font:18px Arial,sans-serif}</style>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#ffc461"/></marker></defs>
+  <rect class="bg" width="1320" height="465" rx="20"/>
+  <text class="h" x="36" y="49">Ein Profil lernen – später auf beliebige Ziel-Bridges übertragen</text>
+  <text class="sub" x="36" y="84">Nur eine Bridge braucht einen IR-Empfänger; sie lernt die Profile für alle Ziel-Bridges.</text>
+  <rect class="card" x="36" y="120" width="290" height="243" rx="17"/>
+  <text class="step" x="57" y="155">1 · BIBLIOTHEK</text><text class="name" x="57" y="197">Profil benennen</text>
+  <text class="body" x="57" y="235">Auf RoonPilot speichern.</text><text class="body" x="57" y="264">Noch keine Bridge nötig.</text>
+  <text class="cyan" x="57" y="329">Ein eindeutiger Name</text>
+  <path class="line" d="M330 239 H356" marker-end="url(#arrow)"/>
+  <rect class="card" x="364" y="120" width="290" height="243" rx="17"/>
+  <text class="step" x="385" y="155">2 · LERN-BRIDGE</text><text class="name" x="385" y="197">Empfänger wählen</text>
+  <text class="body" x="385" y="235">Irgendeine gekoppelte</text><text class="body" x="385" y="264">Bridge mit IR-Empfänger.</text>
+  <text class="cyan" x="385" y="329">Normales Senden gesperrt</text>
+  <path class="line" d="M658 239 H684" marker-end="url(#arrow)"/>
+  <rect class="card" x="692" y="120" width="290" height="243" rx="17"/>
+  <text class="step" x="713" y="155">3 · AUFNAHME</text><text class="name" x="713" y="197">Taste zweimal lernen</text>
+  <text class="body" x="713" y="235">Aufnahmen vergleichen.</text><text class="body" x="713" y="264">Danach auf RoonPilot sichern.</text>
+  <text class="cyan" x="713" y="329">Nach 10 Min. Auto-Ende</text>
+  <path class="line" d="M986 239 H1012" marker-end="url(#arrow)"/>
+  <rect class="card" x="1020" y="120" width="264" height="243" rx="17"/>
+  <text class="step" x="1041" y="155">4 · ZONENROUTE</text><text class="name" x="1041" y="197">Ziel-Bridge wählen</text>
+  <text class="body" x="1041" y="235">Save überträgt und prüft</text><text class="body" x="1041" y="264">das Bibliotheksprofil.</text>
+  <text class="green" x="1041" y="329">Mehrfach nutzbar</text>
+  <path d="M36 393 H1284" stroke="#405148" stroke-width="2"/>
+  <text class="note" x="36" y="429">Beispiel: Arbeitszimmer lernt per IR-Empfänger; Wohnzimmer sendet später mit demselben Profil.</text>
+</svg>

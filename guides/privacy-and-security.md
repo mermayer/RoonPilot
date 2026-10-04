@@ -8,6 +8,13 @@ RoonPilot communicates with the chosen Roon Server and browser on the local
 network. It does not require a RoonPilot cloud account, telemetry service,
 Raspberry Pi bridge, Docker container or desktop helper.
 
+The optional IR Bridge is also local. Initial discovery, pairing and Wi-Fi
+provisioning use encrypted Bluetooth LE. If enabled for a specific Bridge,
+authenticated Wi-Fi carries commands and firmware on the same LAN. The Bridge
+has no cloud account or everyday web interface; RoonPilot remains its management
+surface. Disabling **Bridge & Bluetooth** and restarting prevents the Bluetooth
+stack, scanning, Bridge status traffic and Bridge update checks from starting.
+
 Normal runtime network activity consists of Wi-Fi/DHCP/time services, Roon
 discovery/session traffic, artwork retrieval from Roon and local HTTP requests.
 When automatic update checking is enabled, RoonPilot also reads the approved
@@ -29,25 +36,27 @@ or ring movement starts a complete boot and reconnects it.
 - selected server and zone identifiers;
 - shown/hidden-zone preferences;
 - display, clock, ring and power settings;
-- battery-calibration checkpoints/reference;
+- battery-calibration session marker and accepted runtime reference;
 - update/boot validation state;
 - update-check/display-notice preferences and their last-check/last-notice
-  timestamps.
+  timestamps;
+- optional saved Bridge identities, encrypted-bond state, zone/profile routes,
+  per-Bridge Wi-Fi permission and update preferences;
+- optional per-zone HTTP Power labels, enable states and URLs.
 
 These values live in the device's non-volatile storage. Anyone with physical
 flash access should be treated as capable of extracting local secrets unless
 the hardware's security configuration prevents it.
 
-## Public 1.0.2 binaries
+During battery calibration, the changing runtime is recorded in retained RTC
+memory, not periodically written to flash. It survives protective deep sleep
+but is not a permanent record after complete power loss. After a calibration
+low-voltage protective stop, touch/ring input cannot wake the device; stable
+USB power is required before the normal boot resumes. This protective shutdown
+is used only during a running calibration; flash-write protection remains
+active in normal operation as well.
 
-The stable release pipeline blocks packaging if either development Wi-Fi
-credential macro or the development Roon host is non-empty. Release metadata
-also records:
-
-```json
-"contains_bench_wifi_credentials": false,
-"contains_bench_roon_address": false
-```
+## Public release binaries
 
 Factory and OTA images contain no test SSID/password, test Roon address, pairing
 token or private signing key. Example screenshots use fictional content and the
@@ -59,12 +68,29 @@ Exports deliberately omit the Wi-Fi password, Roon token, temporary web
 mutation token and signing material. They may contain an SSID, zone names,
 server address and preferences, so review them before public sharing.
 
+**System → Create Backup** makes one JSON file with controller settings, every
+saved zone route, the permanent IR profile library and Bridge assignments. It
+reads the library on RoonPilot, so an offline Bridge does not block export.
+Unsynchronized changes on a Bridge may be absent. The file excludes Wi-Fi
+passwords, Roon authorization, Wi-Fi transport keys and BLE bond keys, but
+**includes configured HTTP Power URLs**.
+
+The file is not a publication artifact: zone names, equipment labels, server
+addresses, Bridge identities and local URLs can identify a home installation.
+Review it before sharing. See [Configuration backup and restore](configuration-backup.md).
+
 ## Local web security boundary
 
 The normal device site is HTTP on the trusted LAN. State-changing API requests
 require a session mutation token obtained by the loaded page. This reduces
 accidental/cross-site modification but does not turn an untrusted shared Wi-Fi
 network into a safe management network.
+
+Optional HTTP Power actions send exactly the configured URL from RoonPilot to a
+local HTTP endpoint. They are unencrypted when the URL begins with `http://` and
+may contain private host names, addresses or query parameters. Use them only on
+a trusted LAN, avoid credentials in URLs, and never expose the target service
+through router port forwarding. A Test button performs the real action.
 
 Recommendations:
 
@@ -89,6 +115,9 @@ mode in a public place.
 - A/B boot validation supports rollback;
 - browser Factory installation is a physical-USB operation, is gated by
   hardware and licence confirmations, and erases current flash;
+- IR Bridge updates are independently signed and verified, use the inactive A/B
+  slot, and may temporarily enable authenticated Bridge Wi-Fi only for the
+  confirmed transfer before restoring its previous state;
 - the companion firmware has its own checksum/metadata and is excluded from the
   ESP32-S3 Web Installer.
 

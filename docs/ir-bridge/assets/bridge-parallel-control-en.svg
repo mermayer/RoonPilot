@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="580" viewBox="0 0 1280 580" role="img" aria-labelledby="title desc">
+  <title id="title">Two Bridges at once: zone control over Wi-Fi and maintenance over Bluetooth</title>
+  <desc id="desc">RoonPilot continues controlling the selected Living Room zone over authenticated Wi-Fi to its Bridge while managing the Office Bridge over the single Bluetooth link. Commands are not sent to the wrong Bridge.</desc>
+  <style>.bg{fill:#0b0e0d}.panel{fill:#161b19;stroke:#435149;stroke-width:2}.zone{stroke:#75dca1;stroke-width:3}.maint{stroke:#ffc461;stroke-width:3}.h{fill:#f7f7f2;font:700 29px Arial,sans-serif}.label{fill:#91a99c;font:700 16px Arial,sans-serif}.name{fill:#f7f7f2;font:700 25px Arial,sans-serif}.body{fill:#bdc8bf;font:18px Arial,sans-serif}.green{fill:#75dca1;font:700 19px Arial,sans-serif}.amber{fill:#ffc461;font:700 19px Arial,sans-serif}.gl{stroke:#75dca1;stroke-width:5;fill:none}.al{stroke:#ffc461;stroke-width:5;fill:none}.warn{fill:#f3e4c2;font:18px Arial,sans-serif}</style>
+  <defs><marker id="ga" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto"><path d="M0 0 L11 5 L0 10 z" fill="#75dca1"/></marker><marker id="aa" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto"><path d="M0 0 L11 5 L0 10 z" fill="#ffc461"/></marker></defs>
+  <rect class="bg" width="1280" height="580" rx="20"/>
+  <text class="h" x="38" y="50">Two Bridges reachable – only one Bluetooth link</text>
+  <text class="body" x="38" y="84">Example: Living Room is the active IR zone; Office is being managed.</text>
+  <rect class="panel" x="38" y="136" width="352" height="295" rx="18"/>
+  <text class="label" x="64" y="172">ROONPILOT</text><text class="name" x="64" y="211">Selected zone:</text><text class="green" x="64" y="247">Living Room</text>
+  <text class="body" x="64" y="287">Route: Living Room Bridge</text><text class="body" x="64" y="320">Profile: amplifier</text>
+  <text class="amber" x="64" y="378">Manage: Office</text>
+  <rect class="panel maint" x="849" y="113" width="392" height="179" rx="18"/>
+  <text class="label" x="874" y="147">MAINTENANCE TARGET</text><text class="name" x="874" y="184">Office Bridge</text>
+  <text class="body" x="874" y="219">Learning · Settings · Update</text>
+  <text class="amber" x="874" y="258">Bluetooth LE · sole link</text>
+  <rect class="panel zone" x="849" y="320" width="392" height="179" rx="18"/>
+  <text class="label" x="874" y="354">ZONE TARGET</text><text class="name" x="874" y="391">Living Room Bridge</text>
+  <text class="body" x="874" y="426">Receives Living Room IR only</text>
+  <text class="green" x="874" y="465">Authenticated Wi-Fi</text>
+  <path class="al" d="M392 205 H675 V203 H833" marker-end="url(#aa)"/>
+  <text class="amber" x="458" y="185">BLE for Manage</text>
+  <path class="gl" d="M392 354 H675 V409 H833" marker-end="url(#ga)"/>
+  <text class="green" x="432" y="385">Wi-Fi for zone commands</text>
+  <path d="M38 524 H1242" stroke="#435149" stroke-width="2"/>
+  <text class="warn" x="38" y="555">Before Manage/Scan, RoonPilot checks zone Wi-Fi. Without a response, the previous connection stays.</text>
+</svg>

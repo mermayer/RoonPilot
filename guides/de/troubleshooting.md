@@ -44,6 +44,15 @@ beziehungsweise klassischem ESP32 fortfahren.
 4. Serielles Startprotokoll erfassen.
 5. Nicht den zweiten ESP32 auf Verdacht überschreiben.
 
+## Zurück zu 1.0.2 wenn 2.0.0 nicht funktioniert
+
+Im Webinstaller die getrennte Auswahl **Zurück zu RoonPilot 1.0.2** verwenden.
+Sie funktioniert per USB ohne lokale Geräte-Webseite und installiert immer
+die originale Version 1.0.2. **Alle RoonPilot-Einstellungen und Profile werden
+gelöscht.** Dort kein 2.0.0-Backup einspielen und keine Akkukalibrierung
+durchführen. Der vollständige Ablauf steht unter
+[Zurück zu RoonPilot 1.0.2](return-to-1.0.2.md).
+
 ## Setup-AP fehlt oder Seite öffnet nicht
 
 - 45 Sekunden warten.
@@ -135,11 +144,18 @@ Wert `2` ändert bei einem Endpunkt mit nativer 1-dB-Schrittweite vor der
 Beschleunigung beispielsweise 2 dB pro Raster. Die Lautstärkeanzeige muss beim
 aktuellen von Roon gemeldeten Wert beginnen, nicht bei null.
 
-Wird der dB-Wert korrekt angezeigt, aber absoluter Webregler, Prozentbogen oder
+Wird der dB-Wert korrekt angezeigt, aber absoluter Webregler, Pegelbogen oder
 **Maximum volume** fehlen, die Zonendaten prüfen. Diese Funktionen benötigen
 vom Endpunkt gemeldete Minimal- und Maximalwerte. Ohne diese Grenzen erhält
 RoonPilot die relative dB-Regelung und erfindet bewusst keinen Bereich 0 bis
 100. Ein `incremental`-Ausgang besitzt definitionsgemäß keinen absoluten Wert.
+
+## Doppeltipp schaltet das Display nicht aus
+
+Unter **Display & Controls** prüfen, ob die **große Play/Pause-Touchfläche**
+aktiviert ist. In diesem Modus sind zwei kurze Berührungen zwei bewusste
+Play/Pause-Befehle; der Doppeltipp für sofortiges Display-Aus ist deshalb
+deaktiviert. Die große Fläche ausschalten, wenn diese Displaygeste benötigt wird.
 
 ## Uhr erscheint nicht oder wird schwarz
 
@@ -152,9 +168,16 @@ RoonPilot die relative dB-Regelung und erfindet bewusst keinen Bereich 0 bis
 
 ## WLAN-/Akkusymbol wirkt falsch
 
-WLAN nutzt grobe RSSI-Stufen. Das Akkusymbol ist eine hysteresegefilterte
-Systemspannungsanzeige, keine Prozentzahl und keine sichere USB-/Akku-Erkennung.
-Siehe [Akku und Laufzeit](battery-and-runtime.md).
+WLAN nutzt grobe RSSI-Stufen. Die Akkubalken sind eine hysteresegefilterte
+Systemspannungsanzeige und keine Prozentzahl. Der Blitz ist nur eine Schätzung
+für externe Versorgung und beweist nicht, dass der Akku geladen wird.
+
+Besitzt das Gerät keinen internen Akku, **Energie > Eingebauter Akku > Nicht
+eingebaut** wählen. Bei **Automatisch** erscheint die Akkuanzeige erst, nachdem
+RoonPilot zunächst USB erkannt hat und nach dem Abziehen im niedrigeren
+Spannungsbereich weiterlief. Da kein eigener „Akku vorhanden“-Kontakt existiert,
+kann die Automatik einen Akku so bestätigen, sein Fehlen aber nicht beweisen.
+Siehe [Akku und Laufzeit](battery-and-runtime.md) für die vollständige Erklärung.
 
 ## Akku-Kalibrierung unterbrochen
 
@@ -163,16 +186,31 @@ vollständig laden. Den USB-Port eines Computers nicht als Volladungsreferenz
 verwenden: Die Spannung am Board kann dort niedriger sein, sodass das Gerät
 normal läuft, der Akku aber nicht vollständig geladen wird.
 
-Nach erneutem Einschalten Ergebnis prüfen. Nur speichern, wenn der Stromverlust
-das erwartete normale Akkuende des ununterbrochenen Tests war; manuellen Reset,
-Kabelereignis oder Wartung verwerfen.
+Ein Lauf ist nur vollständig, wenn ihn der spannungsbedingte Schutzstopp mit
+gültiger erhaltener RTC-Aufzeichnung beendet hat. Nach manuellem Reset,
+vollständigem Stromverlust, ungültiger Messung oder zu früh angeschlossenem USB
+bleibt **Ergebnis speichern** gesperrt. Ergebnis verwerfen und ab Volladung
+wiederholen. Die bisher gespeicherte Referenz wird dabei nicht ersetzt.
+
+Auch ein vollständiger Lauf muss mindestens fünf Minuten dauern. Vorbereitung
+und Speichern erfordern mindestens 4,28 V Systemspannung für drei Sekunden;
+bei gesperrtem Button Netzteil, Kabel und Spannungsanzeige prüfen.
+
+Nach dem Kalibrierungs-Schutzstopp kann das Display nach Anschluss stabiler USB-Versorgung
+noch etwa 33 Sekunden schwarz bleiben. Die Versorgung wird alle 30 Sekunden
+geprüft; Touch und Drehregler können diesen Stopp nicht übergehen. Das ist
+kein normaler, durch Bedienung weckbarer Ruhezustand. Den entladenen Akku
+zeitnah wieder versorgen, nicht tagelang im Schutz-Deep-Sleep liegen lassen.
+Siehe [Akku und Laufzeit](battery-and-runtime.md).
 
 ## Deep Sleep startet nicht oder wacht nicht
 
 - Zone muss eindeutig pausiert/gestoppt sein.
-- Blockierungsgrund auf Power-Seite prüfen.
+- Blockierungsgrund auf der Energie-Seite prüfen.
 - Setup, Update, Bootvalidierung und Akku-Kalibrierung blockieren Schlaf.
 - Touch und Ring einzeln testen; vollständigen Boot abwarten.
+- Nach einem Kalibrierungs-Schutzstopp stattdessen stabile USB-Versorgung
+  anschließen und den Versorgungscheck abwarten; lokale Bedienung weckt ihn nicht.
 - Netzwerkzugriff weckt Deep Sleep nicht.
 - Bei Fehlschlag serielles Protokoll erfassen, nicht Flash löschen.
 
