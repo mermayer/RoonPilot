@@ -18,7 +18,7 @@
   <main class="installer-wrap page-width">
     <div class="installer-heading"><p class="bridge-kicker">ESP32-S3 · Native USB Web Serial</p><h1>Bridge Factory installer</h1><p>Install the complete signed RoonPilot IR Bridge firmware directly from a desktop Chromium browser. No BIN download or command line is required.</p></div>
 
-    <div class="preview-note"><strong>Official IR Bridge 1.0.0.</strong> Released together with RoonPilot 2.0.0. Use this installer only with the documented ESP32-S3-Zero-compatible Bridge hardware, not the RoonPilot display.</div>
+    <div class="preview-note"><strong>Official IR Bridge 1.0.0.</strong> For use with the current RoonPilot 2.0.1. Use this installer only with the documented ESP32-S3-Zero-compatible Bridge hardware, not the RoonPilot display.</div>
 
     <section class="installer-card danger-card" aria-labelledby="erase-title">
       <div class="card-number">01</div><div><h2 id="erase-title">Factory means a complete erase</h2><p>The installation removes the Bridge identity, BLE pairing, provisioned Wi-Fi fallback and every learned IR profile. Before reinstalling an existing Bridge, create a complete JSON backup under <strong>RoonPilot → System → Configuration backup</strong>. RoonPilot exports its stored profile library even when a Bridge is offline. After Factory installation, pair the new Bridge identity and explicitly select it as a target when restoring the named IR profiles. Signed application updates remain the simpler path for a healthy learned Bridge.</p><p><strong>No separate erase is needed.</strong> The installer requests and performs the required erase as part of this Factory operation.</p></div>

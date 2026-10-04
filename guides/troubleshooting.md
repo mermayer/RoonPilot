@@ -46,12 +46,12 @@ until they match the file.
 4. Capture serial output from the ESP32-S3 side.
 5. If boot validation cannot recover, reflash the verified Factory image.
 
-## Return to 1.0.2 if 2.0.0 does not work
+## Return to 1.0.2 if 2.0.1 does not work
 
 Use the separate **Return to RoonPilot 1.0.2** choice in the Web Installer. It
 works over USB without needing the local device website and always installs
 the original 1.0.2 release. **It erases all RoonPilot settings and profiles.**
-Do not import a 2.0.0 backup or run battery calibration in 1.0.2. Follow
+Do not import a 2.0.x backup or run battery calibration in 1.0.2. Follow
 [Return to RoonPilot 1.0.2](return-to-1.0.2.md) for the complete procedure.
 
 ## Setup AP is missing

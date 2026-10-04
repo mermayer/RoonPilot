@@ -2,12 +2,13 @@
 
 [English documentation](../README.md) · **Deutsche Dokumentation**
 
-> **Aktuelle öffentliche Firmware: 2.0.0.** Diese Anleitungen beschreiben die
-> veröffentlichte RoonPilot-Version und die optionale **IR Bridge 1.0.0**.
-> Beide Webinstaller sind verfügbar. Aktivierte Updateprüfungen laufen automatisch;
-> die Installation wird ausschließlich von dir gestartet.
+> **Aktuelle USB-Firmware: 2.0.1.** Diese Anleitungen beschreiben RoonPilot und die
+> optionale **IR Bridge 1.0.0**. Beide Webinstaller sind verfügbar. RoonPilot-Onlineupdates
+> sind vorübergehend gesperrt; für eine saubere Installation von 2.0.1 den USB-Installer
+> verwenden. Er löscht Einstellungen und Kopplungen. Onlineupdates der separaten
+> IR Bridge bleiben verfügbar.
 
-[Neu in 2.0.0 — ausführliche Release Notes](../../docs/release-notes-2.0.0.de.md)
+[RoonPilot 2.0.1 — Release Notes und aktuelle Installation](../../docs/release-notes-2.0.1.de.md)
 · [Änderungsprotokoll und frühere Versionen](../../CHANGELOG.de.md)
 
 Diese Dokumentation setzt keinerlei Erfahrung mit ESP-Geräten, seriellen
@@ -44,7 +45,7 @@ Prozessoren wechselt.
 | Roon-Gruppen, gemischte Lautstärkewege und Einzelsteuerung | [Roon-Gruppen und Gruppenmixer](roon-groups.md) |
 | Jede lokale Konfigurationsseite | [Weboberfläche](web-interface.md) |
 | Factory-Installation und signierte Online-Updates | [Firmwareupdates und Wiederherstellung](firmware-updates-and-recovery.md) |
-| Sauberer USB-Rückweg von 2.0.0 zur originalen Version 1.0.2 | [Zurück zu RoonPilot 1.0.2](return-to-1.0.2.md) |
+| Sauberer USB-Rückweg von 2.0.1 zur originalen Version 1.0.2 | [Zurück zu RoonPilot 1.0.2](return-to-1.0.2.md) |
 | Optionale Stromspar-Firmware des zweiten ESP | [Companion-Firmware](companion-firmware.md) |
 | RoonPilot unter Windows/macOS installieren | [Windows](installation-windows.md) · [macOS](installation-macos.md) |
 | Companion unter Windows/macOS installieren | [Windows](companion-installation-windows.md) · [macOS](companion-installation-macos.md) |

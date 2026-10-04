@@ -42,7 +42,7 @@
       <p>This choice always installs the original <strong>RoonPilot 1.0.2</strong>, not the latest release or Waveshare's manufacturer firmware. It works over USB without needing RoonPilot's local website.</p>
       <ul>
         <li><strong>All settings and the profile library on RoonPilot are erased.</strong> Erasing is mandatory for this recovery. Set up Wi-Fi and Roon again after installation. The Companion processor and separate IR Bridges are not flashed.</li>
-        <li>Before upgrading from 1.0.2, keep a configuration backup made under 1.0.2. Do not import a 2.0.0 backup into 1.0.2; keep it for a later return to 2.0.0.</li>
+        <li>Before upgrading from 1.0.2, keep a configuration backup made under 1.0.2. Do not import a 2.0.x backup into 1.0.2; keep it for a later return to 2.0.1.</li>
         <li>The IR Bridge functions and extended group controls introduced in 2.0.0 are unavailable in 1.0.2.</li>
         <li><strong>Do not run battery calibration in 1.0.2.</strong> It does not include the calibration safety improvements added in 2.0.0.</li>
       </ul>
@@ -57,7 +57,7 @@
     </div>
     <label class="confirm"><input id="hardwareConfirm" type="checkbox"><span>I selected <strong>USB JTAG/serial debug unit</strong> in the device chooser and verified that an <strong>ESP32-S3</strong> is now connected. I understand that this Factory installation erases its current firmware and settings.</span></label>
     <label class="confirm"><input id="licenseConfirm" type="checkbox"><span>I have read and accept the <a href="../legal/LICENSE.md" target="_blank" rel="noopener">RoonPilot Personal-Use Binary License 1.0</a>. I understand that redistribution, modification, reverse engineering, source recovery, competitive analysis and commercial use of RoonPilot-authored portions are prohibited except where mandatory law provides otherwise.</span></label>
-    <label id="recoveryConfirmation" class="confirm" hidden><input id="recoveryConfirm" type="checkbox"><span>I understand that returning to <strong>1.0.2</strong> completely erases RoonPilot's settings and profiles. I will not restore a 2.0.0 backup or run battery calibration under 1.0.2.</span></label>
+    <label id="recoveryConfirmation" class="confirm" hidden><input id="recoveryConfirm" type="checkbox"><span>I understand that returning to <strong>1.0.2</strong> completely erases RoonPilot's settings and profiles. I will not restore a 2.0.x backup or run battery calibration under 1.0.2.</span></label>
     <esp-web-install-button id="firmwareInstaller" manifest="../manifest.json?v=2.0.1-usb" data-current-version="2.0.1" data-recovery-manifest="../manifest-1.0.2.json">
       <button id="installButton" class="install-button" slot="activate" type="button" disabled>Install RoonPilot 2.0.1</button>
       <span class="inline-warning" slot="unsupported">Use a current desktop Chromium browser with Web Serial, for example Chrome or Edge.</span>

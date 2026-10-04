@@ -44,12 +44,12 @@ beziehungsweise klassischem ESP32 fortfahren.
 4. Serielles Startprotokoll erfassen.
 5. Nicht den zweiten ESP32 auf Verdacht überschreiben.
 
-## Zurück zu 1.0.2 wenn 2.0.0 nicht funktioniert
+## Zurück zu 1.0.2 wenn 2.0.1 nicht funktioniert
 
 Im Webinstaller die getrennte Auswahl **Zurück zu RoonPilot 1.0.2** verwenden.
 Sie funktioniert per USB ohne lokale Geräte-Webseite und installiert immer
 die originale Version 1.0.2. **Alle RoonPilot-Einstellungen und Profile werden
-gelöscht.** Dort kein 2.0.0-Backup einspielen und keine Akkukalibrierung
+gelöscht.** Dort kein 2.0.x-Backup einspielen und keine Akkukalibrierung
 durchführen. Der vollständige Ablauf steht unter
 [Zurück zu RoonPilot 1.0.2](return-to-1.0.2.md).
 

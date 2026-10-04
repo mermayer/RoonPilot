@@ -16,7 +16,7 @@
 | --- | --- | --- | --- |
 | Erstinstallation oder vollstaendige Wiederherstellung | ESP32-S3 | Autorisierter Chromium Web Installer | Vollstaendig geloescht |
 | RoonPilot-Update während der Sperre | ESP32-S3 | Saubere USB-Installation von 2.0.1 per Webinstaller | Vollständig gelöscht |
-| Rückkehr von 2.0.0 auf 1.0.2 | ESP32-S3 | Feste 1.0.2-Auswahl im Webinstaller | Vollständig gelöscht |
+| Rückkehr von 2.0.1 auf 1.0.2 | ESP32-S3 | Feste 1.0.2-Auswahl im Webinstaller | Vollständig gelöscht |
 | Optionale Companion-Stromersparnis | Klassischer ESP32 | Getrennter Companion-Webinstaller | Ersetzt Companion-Flash |
 | Erste IR-Bridge-Installation oder vollständige Bridge-Wiederherstellung | Separater Bridge-ESP32-S3 | Eigener Chromium-Bridge-Installer | Bridge-Kennung, Bond, WLAN und Profile gelöscht |
 | Normales IR-Bridge-Update | Separater Bridge-ESP32-S3 | **IR Bridge → Bridge firmware update** in RoonPilot | Bridge-Kennung, Bond, WLAN und Profile erhalten |
@@ -130,7 +130,7 @@ und Konfiguration des Hauptprozessors.
 
 ## Zurück zu RoonPilot 1.0.2
 
-Wenn 2.0.0 bei dir nicht funktioniert, im
+Wenn 2.0.1 bei dir nicht funktioniert, im
 [Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/?version=1.0.2#web-installer-title)
 **Zurück zu RoonPilot 1.0.2** auswählen. Dieser USB-Rückweg installiert immer
 die originale Version 1.0.2 und enthält einen verbindlichen Löschvorgang. Eine
@@ -138,7 +138,7 @@ funktionierende Geräte-Webseite ist nicht nötig. Der Companion-Prozessor und
 separate IR Bridges werden nicht geflasht.
 
 Alle Einstellungen und die Profilbibliothek auf RoonPilot gehen verloren.
-Vor dem Upgrade ein unter 1.0.2 erstelltes Backup aufbewahren; kein 2.0.0-Backup
+Vor dem Upgrade ein unter 1.0.2 erstelltes Backup aufbewahren; kein 2.0.x-Backup
 in 1.0.2 einspielen. Nach der Installation WLAN und Roon neu einrichten. Die
 Bridge-Funktionen und erweiterten Gruppenbedienungen aus 2.0.0 stehen dort
 nicht zur Verfügung. **Unter 1.0.2 keine Akkukalibrierung durchführen**: Die

@@ -397,7 +397,7 @@ Begleit-ESP32 wird niemals durch diesen Installer beschrieben.
 Der Installer trennt **Aktuelle RoonPilot-Version** und **Zurück zu RoonPilot
 1.0.2**. Die zweite Auswahl installiert immer die originale Version 1.0.2 mit
 verbindlichem Löschen und zusätzlicher Bestätigung des Verlusts von
-Einstellungen und Profilen. Dort kein 2.0.0-Backup einspielen und keine
+Einstellungen und Profilen. Dort kein 2.0.x-Backup einspielen und keine
 Akkukalibrierung durchführen. Beim Sprachwechsel bleibt die ausgewählte
 Wiederherstellung erhalten. Den vollständigen Ablauf erklärt
 [Zurück zu RoonPilot 1.0.2](return-to-1.0.2.md).

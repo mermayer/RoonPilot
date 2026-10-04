@@ -409,7 +409,7 @@ primary image is not offered as a download.
 The installer separates **Current RoonPilot release** from **Return to
 RoonPilot 1.0.2**. The second choice always installs the original 1.0.2 with a
 mandatory erase and an additional confirmation of the loss of settings and
-profiles. Do not restore a 2.0.0 backup or run battery calibration under 1.0.2.
+profiles. Do not restore a 2.0.x backup or run battery calibration under 1.0.2.
 The selected recovery version is preserved when changing language. See
 [Return to RoonPilot 1.0.2](return-to-1.0.2.md) for the full procedure.
 

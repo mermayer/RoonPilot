@@ -3,19 +3,60 @@
 [English](CHANGELOG.md) · **Deutsch**
 
 Dieses Dokument gibt einen anwenderorientierten Überblick über die
-RoonPilot-Versionen. Die ausführliche Beschreibung der Version 2.0.0 steht
-in den [deutschen Release Notes](docs/release-notes-2.0.0.de.md). Entwicklungsinterne
-Änderungen ohne sichtbare Auswirkung sind bewusst nicht aufgeführt.
+RoonPilot-Versionen. Der aktuelle Installationsweg steht in den
+[Release Notes zu 2.0.1](docs/release-notes-2.0.1.de.md). Die
+[Release Notes zu 2.0.0](docs/release-notes-2.0.0.de.md) beschreiben die damals
+eingeführten Funktionen. Entwicklungsinterne Änderungen ohne sichtbare
+Auswirkung sind bewusst nicht aufgeführt.
 
-**Aktuelle öffentliche Firmware: 2.0.0**, veröffentlicht am **4. Oktober 2026**
-zusammen mit der optionalen **IR-Bridge-Firmware 1.0.0**.
+**Aktuelle USB-Firmware: 2.0.1.** RoonPilot-Onlineupdates sind vorübergehend gesperrt.
+Die optionale **IR-Bridge-Firmware 1.0.0** und ihr eigener Updatekanal bleiben unverändert.
 
 ## Inhalt
 
+- [2.0.1 — 5. Oktober 2026](#201)
 - [2.0.0 — 4. Oktober 2026](#200)
 - [Projektrelease 1.0.5 — Firmware 1.0.2](#projektrelease-105--firmware-102)
 - [Projektrelease 1.0.4 — Firmware 1.0.1](#projektrelease-104--firmware-101)
 - [Firmware 1.0.0](#firmware-100)
+
+## 2.0.1
+
+GitHub-Release und aktuelle Installationshinweise: 5. Oktober 2026. Die bereits
+über den USB-Webinstaller bereitgestellte Firmware 2.0.1 wird durch diese
+Dokumentations- und Metadatenaktualisierung nicht verändert. Optionale
+IR-Bridge-Firmware: 1.0.0.
+
+### Firmware und Installation
+
+- Verwendet wieder den ursprünglichen RoonPilot-Signaturschlüssel. Signatur-,
+  SHA-256- und Boot-Rollback-Prüfungen bleiben erhalten. Das belegt keinen
+  zuverlässigen Online-Umstieg für jede vorhandene Installation.
+- Der USB-Webinstaller wählt 2.0.1 mit vollständigem Löschen. Einstellungen,
+  Profile, WLAN und die auf RoonPilot gespeicherten Bridge-Kopplungen müssen
+  anschließend neu eingerichtet werden.
+- Auch eine erneute Installation derselben Version ist eine saubere
+  Neuinstallation. Die Einrichtung erfolgt über RoonPilots temporäres WLAN,
+  nicht über Improv Serial.
+- Konfigurationssicherungen stellen keine Kopplungsschlüssel wieder her.
+  Bridges nach einer Neuinstallation erneut koppeln und Profil- sowie
+  Zonenzuordnungen prüfen.
+
+### Aktuelle Verfügbarkeit
+
+- Der interne RoonPilot-Online-Updater ist vorübergehend gesperrt. Für 2.0.1 den
+  [USB-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/?v=2.0.1-usb)
+  verwenden, nicht einem alten Online-Updateangebot am Gerät folgen.
+- Updates der IR Bridge 1.0.0 und der unveränderte Companion bleiben getrennt.
+- Der originale USB-Rückweg auf 1.0.2 bleibt verfügbar. Sicherungen nach Version
+  getrennt aufbewahren und unter 1.0.2 keine Akkukalibrierung durchführen.
+- GitHubs neuestes Release, allgemeine Release-Metadaten, deutsch-/englische
+  Einstiegsseiten und Dokumentation nennen jetzt einheitlich 2.0.1. Frühere
+  Releases bleiben als Historie erhalten, nicht als aktuelle Installationsempfehlung.
+
+Den vollständigen Installationsweg erklären die
+[Release Notes zu 2.0.1](docs/release-notes-2.0.1.de.md). Die mit 2.0.0 eingeführten
+Funktionen sind weiterhin enthalten.
 
 ## 2.0.0
 

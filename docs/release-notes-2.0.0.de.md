@@ -2,6 +2,12 @@
 
 [English](release-notes-2.0.0.md) · **Deutsch**
 
+> [!WARNING]
+> **Historisches Release. Aktuelle USB-Firmware: 2.0.1.** RoonPilot-Onlineupdates
+> sind vorübergehend gesperrt. Die [Installationshinweise zu 2.0.1](release-notes-2.0.1.de.md)
+> verwenden, nicht die ursprüngliche Online-Updateankündigung weiter unten.
+> Updates der IR Bridge bleiben verfügbar.
+
 Diese Ausgabe ist das bislang größte RoonPilot-Update seit Firmware 1.0.2.
 Sie führt die bisher getrennt entwickelte IR-Bridge-Unterstützung mit dem
 normalen RoonPilot in einer gemeinsamen Firmware zusammen. Eine IR Bridge

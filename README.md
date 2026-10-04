@@ -18,7 +18,7 @@
 
 **[3D stand: guide & STL files →](guides/roonpilot-stand.md)** · **[IR Bridge enclosure: guide & STL files →](guides/ir-bridge-enclosure.md)**
 
-**[2.0.0 Release Notes →](docs/release-notes-2.0.0.md)** · **[Changelog →](CHANGELOG.md)**
+**[2.0.1 Release Notes →](docs/release-notes-2.0.1.md)** · **[Changelog →](CHANGELOG.md)**
 
 </div>
 
@@ -386,11 +386,11 @@ based only on its size.
 
 **Installation guides:** [Windows](guides/installation-windows.md) · [macOS](guides/installation-macos.md) · **Optional Companion:** [Windows](guides/companion-installation-windows.md) · [macOS](guides/companion-installation-macos.md)
 
-**Need to return from 2.0.0 to 1.0.2?** Use the separate
+**Need to return from 2.0.1 to 1.0.2?** Use the separate
 [Return to RoonPilot 1.0.2](guides/return-to-1.0.2.md) instructions and the
 [fixed 1.0.2 Web Installer choice](https://mermayer.github.io/RoonPilot/firmware/?version=1.0.2#web-installer-title).
 This clean USB installation erases RoonPilot's settings and profiles. Keep
-backups from 1.0.2 and 2.0.0 separate, and do not run battery calibration under
+backups from 1.0.2 and 2.0.x separate, and do not run battery calibration under
 1.0.2.
 
 Simple step-by-step paths: [Windows](guides/installation-windows.md) ·
@@ -417,7 +417,7 @@ Information are not required for the normal installation.
 - [All device screens](guides/screen-reference.md)
 - [All web pages](guides/web-interface.md)
 - [Firmware updates and recovery](guides/firmware-updates-and-recovery.md)
-- [Return from 2.0.0 to RoonPilot 1.0.2](guides/return-to-1.0.2.md)
+- [Return from 2.0.1 to RoonPilot 1.0.2](guides/return-to-1.0.2.md)
 - [Configuration export and import](guides/configuration-backup.md)
 - [Battery and runtime](guides/battery-and-runtime.md)
 - [Deep sleep](guides/deep-sleep.md)

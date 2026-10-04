@@ -2,6 +2,11 @@
 
 **English** · [Deutsch](release-notes-2.0.0.de.md)
 
+> [!WARNING]
+> **Historical release. Current USB firmware: 2.0.1.** RoonPilot online updates
+> are temporarily suspended. Use the [2.0.1 installation guidance](release-notes-2.0.1.md),
+> not the original online-update announcement below. IR Bridge updates remain available.
+
 This is the largest RoonPilot update since firmware 1.0.2. It brings the
 previously separate IR Bridge work into one shared RoonPilot firmware while
 keeping the Bridge entirely optional. Display operation, music browsing, zone
