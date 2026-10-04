@@ -12,6 +12,7 @@
   const choices = Array.from(document.querySelectorAll('input[name="firmwareVersion"]'));
   const languageLinks = Array.from(document.querySelectorAll('[data-installer-language]'));
   const german = document.documentElement.lang === 'de';
+  const currentVersion = installer.dataset.currentVersion;
   const manifests = {
     current: installer.getAttribute('manifest'),
     '1.0.2': installer.dataset.recoveryManifest,
@@ -33,9 +34,10 @@
     installer.setAttribute('manifest', manifests[version]);
     if (ready) {
       installer.manifest = manifests[version];
-      // Recovery is always a clean installation, even if Improv identifies
-      // another RoonPilot release or the device already runs version 1.0.2.
-      installer.overrides = recovery ? { checkSameFirmware: () => false } : undefined;
+      // Both choices install complete Factory images. Always erase, including
+      // reinstalls and changes from another RoonPilot version. Do not let an
+      // Improv identity turn this into an in-place, no-erase installation.
+      installer.overrides = { checkSameFirmware: () => false };
     }
     recoveryNotice.hidden = !recovery;
     recoveryConfirmation.hidden = !recovery;
@@ -45,11 +47,11 @@
       : recovery
         ? (german ? 'Gewählt: RoonPilot 1.0.2 · vollständige Wiederherstellung mit Löschen'
           : 'Selected: RoonPilot 1.0.2 · clean recovery with erase')
-        : (german ? 'Gewählt: aktuelle RoonPilot-Version · Version im Installationsdialog prüfen'
-          : 'Selected: current RoonPilot release · check the version in the installation dialog');
+        : (german ? `Gewählt: RoonPilot ${currentVersion} · saubere USB-Installation mit Löschen`
+          : `Selected: RoonPilot ${currentVersion} · clean USB installation with erase`);
     installButton.textContent = recovery
       ? (german ? 'RoonPilot 1.0.2 wiederherstellen' : 'Restore RoonPilot 1.0.2')
-      : (german ? 'RoonPilot installieren' : 'Install RoonPilot');
+      : (german ? `RoonPilot ${currentVersion} installieren` : `Install RoonPilot ${currentVersion}`);
     for (const link of languageLinks) {
       const url = new URL(originalLanguageLinks.get(link));
       if (invalidVersion) url.searchParams.set('version', requestedVersion);
