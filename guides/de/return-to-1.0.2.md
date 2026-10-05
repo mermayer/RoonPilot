@@ -2,7 +2,7 @@
 
 [English](../return-to-1.0.2.md) · **Deutsch**
 
-Wenn RoonPilot 2.0.1 bei dir nicht funktioniert, bietet der Webinstaller eine
+Wenn RoonPilot 2.0.2 bei dir nicht funktioniert, bietet der Webinstaller eine
 getrennte Auswahl **Zurück zu RoonPilot 1.0.2**. Sie installiert über USB die
 originale Version 1.0.2, auch wenn die lokale RoonPilot-Webseite nicht mehr
 erreichbar ist. Python, Kommandozeilenbefehle oder ein manueller
@@ -15,11 +15,11 @@ Roon-Verbindung müssen anschließend neu eingerichtet werden.
 
 ## Vor dem Upgrade oder der Rückkehr
 
-- Vor dem Wechsel von 1.0.2 auf 2.0.1 auf der Seite **System** eine
+- Vor dem Wechsel von 1.0.2 auf 2.0.2 auf der Seite **System** eine
   Konfigurationssicherung erstellen und dieses 1.0.2-Backup getrennt aufbewahren.
 - Falls sich deine 2.0.x-Installation noch öffnen lässt, vor der Rückkehr eine
   Sicherung dieses Stands speichern. Siehe [Konfiguration sichern](configuration-backup.md).
-  Diese Datei für eine spätere Rückkehr zu 2.0.1 aufbewahren, nicht für 1.0.2.
+  Diese Datei für eine spätere Rückkehr zu 2.0.2 aufbewahren, nicht für 1.0.2.
 - **Kein 2.0.x-Backup in 1.0.2 importieren.** Ohne eine unter 1.0.2 erstellte
   Sicherung die ältere Version nach der Installation von Hand konfigurieren.
 - Startet das Gerät nicht mehr oder ist seine Webseite nicht erreichbar, kann
@@ -85,7 +85,7 @@ gelöscht. Die in 2.0.0 eingeführten IR-Bridge-Funktionen und der erweiterte
 Gruppenmixer sind in 1.0.2 jedoch nicht verfügbar. Die zuvor auf RoonPilot
 gespeicherten Bridge-Kopplungen, Routen und die Profilbibliothek werden durch
 die Neuinstallation entfernt. Ein 2.0.x-JSON-Backup bewahrt Einstellungen und
-Profildaten für die spätere Rückkehr zu 2.0.1 auf, aber nicht die kryptografischen
+Profildaten für die spätere Rückkehr zu 2.0.2 auf, aber nicht die kryptografischen
 Bridge-Kopplungsschlüssel. Nach einer Neuinstallation die Bridges erneut koppeln.
 
 **Unter 1.0.2 keine Akkukalibrierung durchführen.** Die originale Version
@@ -96,7 +96,7 @@ Rückkehr zu dieser älteren Version das Gerät ohne Kalibrierung verwenden.
 ## Später wieder die aktuelle Version installieren
 
 Den normalen [RoonPilot-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/)
-verwenden und **RoonPilot 2.0.1** auswählen, nicht die feste
+verwenden und **RoonPilot 2.0.2** auswählen, nicht die feste
 1.0.2-Wiederherstellung. Eine Factory-Installation löscht die Einstellungen
 erneut. Nach der Ersteinrichtung nur die zur installierten Version gehörende
 Konfigurationssicherung wiederherstellen; Sicherungen verschiedener

@@ -3,8 +3,8 @@
 [English](release-notes-2.0.0.md) · **Deutsch**
 
 > [!WARNING]
-> **Historisches Release. Aktuelle USB-Firmware: 2.0.1.** RoonPilot-Onlineupdates
-> sind vorübergehend gesperrt. Die [Installationshinweise zu 2.0.1](release-notes-2.0.1.de.md)
+> **Historisches Release. Aktuelle USB-Firmware: 2.0.2.** RoonPilot-Onlineupdates
+> sind vorübergehend gesperrt. Die [Installationshinweise zu 2.0.2](release-notes-2.0.2.de.md)
 > verwenden, nicht die ursprüngliche Online-Updateankündigung weiter unten.
 > Updates der IR Bridge bleiben verfügbar.
 

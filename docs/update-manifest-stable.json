@@ -5,8 +5,8 @@
     "channel": "stable",
     "status": "paused",
     "available": false,
-    "reason": "Controller online updates are temporarily suspended. Use the USB Web Installer for a clean RoonPilot 2.0.1 installation. IR Bridge updates are unaffected.",
-    "reason_de": "RoonPilot-Onlineupdates sind vorübergehend gesperrt. Für eine saubere Installation von RoonPilot 2.0.1 bitte den USB-Webinstaller verwenden. IR-Bridge-Updates sind nicht betroffen.",
-    "installer_url": "https://mermayer.github.io/RoonPilot/firmware/?v=2.0.1-usb",
-    "installer_url_de": "https://mermayer.github.io/RoonPilot/de/firmware/?v=2.0.1-usb"
+    "reason": "Controller online updates are temporarily suspended. Use the USB Web Installer for a clean RoonPilot 2.0.2 installation. IR Bridge updates are unaffected.",
+    "reason_de": "RoonPilot-Onlineupdates sind vorübergehend gesperrt. Für eine saubere Installation von RoonPilot 2.0.2 bitte den USB-Webinstaller verwenden. IR-Bridge-Updates sind nicht betroffen.",
+    "installer_url": "https://mermayer.github.io/RoonPilot/firmware/?v=2.0.2-usb",
+    "installer_url_de": "https://mermayer.github.io/RoonPilot/de/firmware/?v=2.0.2-usb"
 }

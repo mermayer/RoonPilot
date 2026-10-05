@@ -2,12 +2,12 @@
 
 **English** · [Deutsch](de/README.md)
 
-> **Current USB firmware: 2.0.1.** These guides cover RoonPilot and optional
+> **Current USB firmware: 2.0.2.** These guides cover RoonPilot and optional
 > **IR Bridge 1.0.0**. Both Web Installers are available. RoonPilot online updates
-> are temporarily suspended; use the USB installer for a clean 2.0.1 installation.
+> are temporarily suspended; use the USB installer for a clean 2.0.2 installation.
 > It erases settings and pairings. Separate IR Bridge online updates remain available.
 
-[RoonPilot 2.0.1 — release notes and current installation](../docs/release-notes-2.0.1.md)
+[RoonPilot 2.0.2 — release notes and current installation](../docs/release-notes-2.0.2.md)
 · [Changelog and earlier versions](../CHANGELOG.md)
 
 This documentation assumes that the reader has never flashed an ESP device,
@@ -43,7 +43,7 @@ independent processors.
 | Roon groups, mixed volume routes and individual-member control | [Roon groups and group mixer](roon-groups.md) |
 | Every local configuration page | [Web interface](web-interface.md) |
 | Web Installer, signed online updates and recovery | [Firmware updates and recovery](firmware-updates-and-recovery.md) |
-| Clean USB return from 2.0.1 to the original 1.0.2 release | [Return to RoonPilot 1.0.2](return-to-1.0.2.md) |
+| Clean USB return from 2.0.2 to the original 1.0.2 release | [Return to RoonPilot 1.0.2](return-to-1.0.2.md) |
 | Optional second-ESP low-power image | [Companion firmware](companion-firmware.md) |
 | Install RoonPilot with Windows/macOS | [Windows](installation-windows.md) · [macOS](installation-macos.md) |
 | Install Companion with Windows/macOS | [Windows](companion-installation-windows.md) · [macOS](companion-installation-macos.md) |

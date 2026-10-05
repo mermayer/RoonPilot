@@ -18,19 +18,19 @@
 
 **[3D stand: guide & STL files →](guides/roonpilot-stand.md)** · **[IR Bridge enclosure: guide & STL files →](guides/ir-bridge-enclosure.md)**
 
-**[2.0.1 Release Notes →](docs/release-notes-2.0.1.md)** · **[Changelog →](CHANGELOG.md)**
+**[2.0.2 Release Notes →](docs/release-notes-2.0.2.md)** · **[Changelog →](CHANGELOG.md)**
 
 </div>
 
 > [!NOTE]
-> **Current USB firmware: 2.0.1.**
+> **Current USB firmware: 2.0.2.**
 > The optional IR Bridge firmware **1.0.0** is available with this release.
 > Both USB Web Installers remain available; IR Bridge online updates are unaffected.
 
 > [!WARNING]
 > **RoonPilot online updates are temporarily suspended.** Do not use the internal
-> RoonPilot updater. For a clean 2.0.1 installation, use the
-> [USB Web Installer](https://mermayer.github.io/RoonPilot/firmware/?v=2.0.1-usb).
+> RoonPilot updater. For a clean 2.0.2 installation, use the
+> [USB Web Installer](https://mermayer.github.io/RoonPilot/firmware/?v=2.0.2-usb).
 > This erases RoonPilot settings, profiles, Wi-Fi and Bridge pairings.
 > Existing firmware may still show an old update notice or an update-check error.
 > Separate IR Bridge updates remain available.
@@ -386,7 +386,7 @@ based only on its size.
 
 **Installation guides:** [Windows](guides/installation-windows.md) · [macOS](guides/installation-macos.md) · **Optional Companion:** [Windows](guides/companion-installation-windows.md) · [macOS](guides/companion-installation-macos.md)
 
-**Need to return from 2.0.1 to 1.0.2?** Use the separate
+**Need to return from 2.0.2 to 1.0.2?** Use the separate
 [Return to RoonPilot 1.0.2](guides/return-to-1.0.2.md) instructions and the
 [fixed 1.0.2 Web Installer choice](https://mermayer.github.io/RoonPilot/firmware/?version=1.0.2#web-installer-title).
 This clean USB installation erases RoonPilot's settings and profiles. Keep
@@ -417,7 +417,7 @@ Information are not required for the normal installation.
 - [All device screens](guides/screen-reference.md)
 - [All web pages](guides/web-interface.md)
 - [Firmware updates and recovery](guides/firmware-updates-and-recovery.md)
-- [Return from 2.0.1 to RoonPilot 1.0.2](guides/return-to-1.0.2.md)
+- [Return from 2.0.2 to RoonPilot 1.0.2](guides/return-to-1.0.2.md)
 - [Configuration export and import](guides/configuration-backup.md)
 - [Battery and runtime](guides/battery-and-runtime.md)
 - [Deep sleep](guides/deep-sleep.md)

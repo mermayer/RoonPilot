@@ -4,10 +4,10 @@
     "project":  "roonpilot",
     "board":  "waveshare-esp32-s3-knob-touch-lcd-1.8",
     "channel":  "stable",
-    "version":  "2.0.1",
+    "version":  "2.0.2",
     "published":  "2026-10-05",
     "signed":  true,
-    "manifest":  "manifest.json",
+    "manifest":  "manifest-2.0.2.json",
     "validation_only":  false,
     "distribution":  "authorized-web-installer-only",
     "legal":  {

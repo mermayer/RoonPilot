@@ -13,7 +13,7 @@
   const languageLinks = Array.from(document.querySelectorAll('[data-installer-language]'));
   const german = document.documentElement.lang === 'de';
   // Also tolerate an older HTML page paired with the freshly deployed script.
-  const currentVersion = installer.dataset.currentVersion || '2.0.1';
+  const currentVersion = installer.dataset.currentVersion || '2.0.2';
   const currentManifest = new URL(installer.getAttribute('manifest'), window.location.href);
   currentManifest.searchParams.set('v', `${currentVersion}-usb`);
   const manifests = {

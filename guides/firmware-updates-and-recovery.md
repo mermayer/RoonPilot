@@ -5,7 +5,7 @@
 > [!WARNING]
 > **RoonPilot online updates are temporarily suspended.** Do not use the internal
 > updater until this notice is removed. Use the
-> [USB Web Installer for a clean 2.0.1 installation](https://mermayer.github.io/RoonPilot/firmware/?v=2.0.1-usb).
+> [USB Web Installer for a clean 2.0.2 installation](https://mermayer.github.io/RoonPilot/firmware/?v=2.0.2-usb).
 > This erases RoonPilot settings, profiles, Wi-Fi and Bridge pairings; set them up again afterwards.
 > An existing device may still show an old update offer or an update-check error.
 > IR Bridge online updates are not affected.
@@ -15,8 +15,8 @@
 | Purpose | Processor | Method | Settings |
 | --- | --- | --- | --- |
 | First installation or complete recovery | ESP32-S3 | Authorized Chromium Web Installer | Completely erased |
-| RoonPilot update during the suspension | ESP32-S3 | Clean 2.0.1 USB Web Installer installation | Completely erased |
-| Return from 2.0.1 to 1.0.2 | ESP32-S3 | Fixed 1.0.2 recovery choice in the Web Installer | Completely erased |
+| RoonPilot update during the suspension | ESP32-S3 | Clean 2.0.2 USB Web Installer installation | Completely erased |
+| Return from 2.0.2 to 1.0.2 | ESP32-S3 | Fixed 1.0.2 recovery choice in the Web Installer | Completely erased |
 | Optional Companion power saving | Classic ESP32 | Separate Companion Web Installer | Replaces Companion flash |
 | First IR Bridge installation or complete Bridge recovery | Separate Bridge ESP32-S3 | Dedicated Chromium Bridge installer | Bridge identity, bond, Wi-Fi and profiles erased |
 | Normal IR Bridge update | Separate Bridge ESP32-S3 | **IR Bridge → Bridge firmware update** in RoonPilot | Bridge identity, bond, Wi-Fi and profiles retained |
@@ -123,7 +123,7 @@ erases all primary-processor firmware and configuration.
 
 ## Return to RoonPilot 1.0.2
 
-If 2.0.1 does not work for you, choose **Return to RoonPilot 1.0.2** in the
+If 2.0.2 does not work for you, choose **Return to RoonPilot 1.0.2** in the
 [Web Installer](https://mermayer.github.io/RoonPilot/firmware/?version=1.0.2#web-installer-title).
 This USB option always installs the original 1.0.2 release and includes a
 mandatory erase. It does not need a working device website. The Companion

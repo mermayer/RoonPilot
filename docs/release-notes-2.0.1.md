@@ -2,15 +2,13 @@
 
 **English** · [Deutsch](release-notes-2.0.1.de.md)
 
-GitHub release and installation guidance: **5 October 2026**. This is the
-current **USB firmware release**. The existing 2.0.1 firmware is unchanged by
-this documentation and release-metadata update.
+Historical release: **5 October 2026**. The current USB firmware and installation guidance are in the [2.0.2 release notes](release-notes-2.0.2.md). The 2.0.1 binary remains unchanged.
 
 > [!WARNING]
 > **RoonPilot online updates are temporarily suspended.** Do not use the
 > internal RoonPilot updater, even if an older update offer remains visible.
-> Use the [USB Web Installer](https://mermayer.github.io/RoonPilot/firmware/?v=2.0.1-usb)
-> for a clean 2.0.1 installation. It erases settings and Bridge pairings.
+> Use the [USB Web Installer](https://mermayer.github.io/RoonPilot/firmware/?v=2.0.2-usb)
+> for a clean 2.0.2 installation. It erases settings and Bridge pairings.
 > Separate IR Bridge online updates remain available.
 
 ## Firmware changes
@@ -26,23 +24,9 @@ local configuration pages and diagnostics. The complete feature description
 is in the [historical 2.0.0 release notes](release-notes-2.0.0.md); use the
 installation instructions on this page for the current version.
 
-## Install 2.0.1 over USB
+## Installation status
 
-1. Save a configuration backup if the current RoonPilot website still opens.
-   Keep backups from 1.0.2 and 2.0.x separate.
-2. Connect RoonPilot to a stable computer USB port with a USB data cable.
-3. Open the [RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/?v=2.0.1-usb)
-   in desktop Chrome or Edge and select **RoonPilot 2.0.1**.
-4. Confirm the processor and license. In the USB chooser select **USB
-   JTAG/serial debug unit**, the main ESP32-S3, not the Companion ESP32.
-5. Complete the installation and wait for restart without disconnecting USB.
-   A complete erase is included, also when reinstalling the same version.
-6. Follow [First-time setup](../guides/first-time-setup.md) to enter your Wi-Fi,
-   authorize RoonPilot in Roon and select a zone.
-
-No Python, command-line flashing or separate firmware download is needed.
-See [Windows installation](../guides/installation-windows.md) or
-[macOS installation](../guides/installation-macos.md) for the illustrated steps.
+2.0.1 is no longer the current USB choice. The installer now offers 2.0.2 and the fixed 1.0.2 recovery. For current installation steps, read the [2.0.2 release notes](release-notes-2.0.2.md) and the [firmware guide](../guides/firmware-updates-and-recovery.md).
 
 ## Settings and Bridge pairings
 

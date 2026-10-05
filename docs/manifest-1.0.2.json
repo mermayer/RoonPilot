@@ -2,7 +2,7 @@
   "name": "RoonPilot 1.0.2 recovery",
   "version": "1.0.2",
   "new_install_prompt_erase": false,
-  "new_install_improv_wait_time": 30,
+  "new_install_improv_wait_time": 0,
   "builds": [
     {
       "chipFamily": "ESP32-S3",

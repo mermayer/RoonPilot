@@ -5,7 +5,7 @@
 > [!WARNING]
 > **RoonPilot-Onlineupdates sind vorübergehend gesperrt.** Bitte den internen
 > Updater nicht verwenden, solange dieser Hinweis angezeigt wird. Für eine saubere
-> [Installation von 2.0.1 den USB-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/?v=2.0.1-usb) nutzen.
+> [Installation von 2.0.2 den USB-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/?v=2.0.2-usb) nutzen.
 > Dabei werden RoonPilot-Einstellungen, Profile, WLAN und Bridge-Kopplungen gelöscht; anschließend neu einrichten.
 > Das Gerät kann noch ein altes Update-Angebot oder einen Prüffehler anzeigen.
 > IR-Bridge-Onlineupdates sind nicht betroffen.
@@ -15,8 +15,8 @@
 | Zweck | Prozessor | Methode | Einstellungen |
 | --- | --- | --- | --- |
 | Erstinstallation oder vollstaendige Wiederherstellung | ESP32-S3 | Autorisierter Chromium Web Installer | Vollstaendig geloescht |
-| RoonPilot-Update während der Sperre | ESP32-S3 | Saubere USB-Installation von 2.0.1 per Webinstaller | Vollständig gelöscht |
-| Rückkehr von 2.0.1 auf 1.0.2 | ESP32-S3 | Feste 1.0.2-Auswahl im Webinstaller | Vollständig gelöscht |
+| RoonPilot-Update während der Sperre | ESP32-S3 | Saubere USB-Installation von 2.0.2 per Webinstaller | Vollständig gelöscht |
+| Rückkehr von 2.0.2 auf 1.0.2 | ESP32-S3 | Feste 1.0.2-Auswahl im Webinstaller | Vollständig gelöscht |
 | Optionale Companion-Stromersparnis | Klassischer ESP32 | Getrennter Companion-Webinstaller | Ersetzt Companion-Flash |
 | Erste IR-Bridge-Installation oder vollständige Bridge-Wiederherstellung | Separater Bridge-ESP32-S3 | Eigener Chromium-Bridge-Installer | Bridge-Kennung, Bond, WLAN und Profile gelöscht |
 | Normales IR-Bridge-Update | Separater Bridge-ESP32-S3 | **IR Bridge → Bridge firmware update** in RoonPilot | Bridge-Kennung, Bond, WLAN und Profile erhalten |
@@ -130,7 +130,7 @@ und Konfiguration des Hauptprozessors.
 
 ## Zurück zu RoonPilot 1.0.2
 
-Wenn 2.0.1 bei dir nicht funktioniert, im
+Wenn 2.0.2 bei dir nicht funktioniert, im
 [Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/?version=1.0.2#web-installer-title)
 **Zurück zu RoonPilot 1.0.2** auswählen. Dieser USB-Rückweg installiert immer
 die originale Version 1.0.2 und enthält einen verbindlichen Löschvorgang. Eine

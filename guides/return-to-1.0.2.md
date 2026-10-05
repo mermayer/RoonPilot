@@ -2,7 +2,7 @@
 
 **English** · [Deutsch](de/return-to-1.0.2.md)
 
-If RoonPilot 2.0.1 does not work for you, the Web Installer offers a separate
+If RoonPilot 2.0.2 does not work for you, the Web Installer offers a separate
 **Return to RoonPilot 1.0.2** option. It installs the original 1.0.2 release over
 USB, even when RoonPilot's local website is unavailable. No Python, command line
 or manual firmware download is needed.
@@ -13,11 +13,11 @@ Wi-Fi and the Roon connection must be set up again afterward.
 
 ## Before upgrading or returning
 
-- Before upgrading from 1.0.2 to 2.0.1, create a configuration backup on the
+- Before upgrading from 1.0.2 to 2.0.2, create a configuration backup on the
   **System** page and keep that 1.0.2 backup separately.
 - If your 2.0.x installation still opens, save its own backup before returning to 1.0.2.
   See [Configuration backup](configuration-backup.md). Keep it for a later
-  return to 2.0.1, not for use under 1.0.2.
+  return to 2.0.2, not for use under 1.0.2.
 - **Do not import a 2.0.x backup into 1.0.2.** If you do not have a backup made
   under 1.0.2, configure 1.0.2 manually after installation.
 - If the device no longer starts or its website cannot be reached, you can
@@ -73,7 +73,7 @@ inside the device and separate IR Bridges are not flashed or erased.
 However, the IR Bridge functions and extended group mixer introduced in 2.0.0
 are not available in 1.0.2. The Bridge pairings, routes and profile library
 previously stored on RoonPilot are removed by the clean installation. A 2.0.x
-JSON backup keeps settings and profile data for a later return to 2.0.1,
+JSON backup keeps settings and profile data for a later return to 2.0.2,
 but not the cryptographic Bridge pairing keys. Bridges must be paired again
 after a clean installation.
 
@@ -85,7 +85,7 @@ returning to this older release.
 ## Return to the current version later
 
 Use the normal [RoonPilot Web Installer](https://mermayer.github.io/RoonPilot/firmware/)
-and choose **RoonPilot 2.0.1**, not the fixed 1.0.2 recovery option.
+and choose **RoonPilot 2.0.2**, not the fixed 1.0.2 recovery option.
 A Factory installation erases settings again. After initial setup, restore the
 configuration backup belonging to the installed version; do not mix backups
 from different major versions.

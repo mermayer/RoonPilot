@@ -4,25 +4,36 @@
 
 Dieses Dokument gibt einen anwenderorientierten Überblick über die
 RoonPilot-Versionen. Der aktuelle Installationsweg steht in den
-[Release Notes zu 2.0.1](docs/release-notes-2.0.1.de.md). Die
+[Release Notes zu 2.0.2](docs/release-notes-2.0.2.de.md). Die
 [Release Notes zu 2.0.0](docs/release-notes-2.0.0.de.md) beschreiben die damals
 eingeführten Funktionen. Entwicklungsinterne Änderungen ohne sichtbare
 Auswirkung sind bewusst nicht aufgeführt.
 
-**Aktuelle USB-Firmware: 2.0.1.** RoonPilot-Onlineupdates sind vorübergehend gesperrt.
+**Aktuelle USB-Firmware: 2.0.2.** RoonPilot-Onlineupdates sind vorübergehend gesperrt.
 Die optionale **IR-Bridge-Firmware 1.0.0** und ihr eigener Updatekanal bleiben unverändert.
 
 ## Inhalt
 
+- [2.0.2 — 5. Oktober 2026](#202)
 - [2.0.1 — 5. Oktober 2026](#201)
 - [2.0.0 — 4. Oktober 2026](#200)
 - [Projektrelease 1.0.5 — Firmware 1.0.2](#projektrelease-105--firmware-102)
 - [Projektrelease 1.0.4 — Firmware 1.0.1](#projektrelease-104--firmware-101)
 - [Firmware 1.0.0](#firmware-100)
 
+## 2.0.2
+
+Für eine saubere Installation über den USB-Webinstaller veröffentlicht. Die Brownout-Erkennung des ESP32-S3 bleibt aktiv, verwendet aber wieder die Schwelle aus 1.0.2. Die höhere Schwelle in 2.0.1 konnte bei manchen Boards schon beim Start zu Resets führen, auch mit USB-Versorgung. Die Unterspannungsabschaltung ausschließlich während der Kalibrierung und der getrennte Flash-Schreibschutz bleiben unverändert. Diese Konfigurationskorrektur beweist nicht, dass jeder gemeldete Neustart dieselbe Ursache hatte.
+
+- [RoonPilot 2.0.2 über USB installieren](https://mermayer.github.io/RoonPilot/de/firmware/?v=2.0.2-usb). Das vollständige Löschen entfernt WLAN, Profile und die auf dem Controller gespeicherten Bridge-Kopplungen. Ein JSON-Backup allein stellt die Kopplungsschlüssel nicht wieder her.
+- Der interne RoonPilot-Online-Updater bleibt gesperrt. IR Bridge 1.0.0 und ihr eigener Updatekanal bleiben unverändert.
+- Der originale USB-Rückweg zu 1.0.2 bleibt verfügbar. Sein Installer wartet nicht mehr auf das von RoonPilot nicht unterstützte Improv Serial.
+
+Weitere Einzelheiten und Installationshinweise stehen in den [Release Notes zu 2.0.2](docs/release-notes-2.0.2.de.md).
+
 ## 2.0.1
 
-GitHub-Release und aktuelle Installationshinweise: 5. Oktober 2026. Die bereits
+Historisches GitHub-Release: 5. Oktober 2026. Die bereits
 über den USB-Webinstaller bereitgestellte Firmware 2.0.1 wird durch diese
 Dokumentations- und Metadatenaktualisierung nicht verändert. Optionale
 IR-Bridge-Firmware: 1.0.0.
@@ -32,7 +43,7 @@ IR-Bridge-Firmware: 1.0.0.
 - Verwendet wieder den ursprünglichen RoonPilot-Signaturschlüssel. Signatur-,
   SHA-256- und Boot-Rollback-Prüfungen bleiben erhalten. Das belegt keinen
   zuverlässigen Online-Umstieg für jede vorhandene Installation.
-- Der USB-Webinstaller wählt 2.0.1 mit vollständigem Löschen. Einstellungen,
+- Bei diesem Release wählte der USB-Webinstaller 2.0.1 mit vollständigem Löschen. Einstellungen,
   Profile, WLAN und die auf RoonPilot gespeicherten Bridge-Kopplungen müssen
   anschließend neu eingerichtet werden.
 - Auch eine erneute Installation derselben Version ist eine saubere
@@ -42,17 +53,17 @@ IR-Bridge-Firmware: 1.0.0.
   Bridges nach einer Neuinstallation erneut koppeln und Profil- sowie
   Zonenzuordnungen prüfen.
 
-### Aktuelle Verfügbarkeit
+### Verfügbarkeit zum Release von 2.0.1
 
-- Der interne RoonPilot-Online-Updater ist vorübergehend gesperrt. Für 2.0.1 den
-  [USB-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/?v=2.0.1-usb)
-  verwenden, nicht einem alten Online-Updateangebot am Gerät folgen.
+- Der interne RoonPilot-Online-Updater wurde vorübergehend gesperrt. Der aktuelle
+  [USB-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/?v=2.0.2-usb)
+  wählt jetzt 2.0.2; bitte keinem alten Online-Updateangebot am Gerät folgen.
 - Updates der IR Bridge 1.0.0 und der unveränderte Companion bleiben getrennt.
 - Der originale USB-Rückweg auf 1.0.2 bleibt verfügbar. Sicherungen nach Version
   getrennt aufbewahren und unter 1.0.2 keine Akkukalibrierung durchführen.
-- GitHubs neuestes Release, allgemeine Release-Metadaten, deutsch-/englische
-  Einstiegsseiten und Dokumentation nennen jetzt einheitlich 2.0.1. Frühere
-  Releases bleiben als Historie erhalten, nicht als aktuelle Installationsempfehlung.
+- Damals nannten GitHubs neuestes Release, Metadaten und deutsch-/englische
+  Einstiegsseiten einheitlich 2.0.1. Es bleibt als Historie erhalten, nicht
+  als aktuelle Installationsempfehlung.
 
 Den vollständigen Installationsweg erklären die
 [Release Notes zu 2.0.1](docs/release-notes-2.0.1.de.md). Die mit 2.0.0 eingeführten

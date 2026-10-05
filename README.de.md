@@ -18,19 +18,19 @@
 
 **[3D-Stand: Anleitung & STL-Dateien →](guides/de/roonpilot-stand.md)** · **[IR-Bridge-Gehäuse: Anleitung & STL-Dateien →](guides/de/ir-bridge-enclosure.md)**
 
-**[Release Notes 2.0.1 →](docs/release-notes-2.0.1.de.md)** · **[Änderungsprotokoll →](CHANGELOG.de.md)**
+**[Release Notes 2.0.2 →](docs/release-notes-2.0.2.de.md)** · **[Änderungsprotokoll →](CHANGELOG.de.md)**
 
 </div>
 
 > [!NOTE]
-> **Aktuelle USB-Firmware: 2.0.1.**
+> **Aktuelle USB-Firmware: 2.0.2.**
 > Die optionale IR-Bridge-Firmware **1.0.0** ist mit dieser Ausgabe verfügbar.
 > Beide USB-Webinstaller bleiben verfügbar; IR-Bridge-Onlineupdates sind nicht betroffen.
 
 > [!WARNING]
 > **RoonPilot-Onlineupdates sind vorübergehend gesperrt.** Bitte den internen
-> RoonPilot-Updater nicht verwenden. Für eine saubere Installation von 2.0.1 den
-> [USB-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/?v=2.0.1-usb) verwenden.
+> RoonPilot-Updater nicht verwenden. Für eine saubere Installation von 2.0.2 den
+> [USB-Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/?v=2.0.2-usb) verwenden.
 > Dabei werden RoonPilot-Einstellungen, Profile, WLAN und Bridge-Kopplungen gelöscht.
 > Die vorhandene Firmware kann noch eine alte Update-Meldung oder einen Prüffehler anzeigen.
 > Updates der separaten IR Bridge bleiben verfügbar.
@@ -304,7 +304,7 @@ verwenden getrennte, auf die jeweilige Prozessorfamilie beschränkte Manifeste.
 
 **Installationsanleitungen:** [Windows](guides/de/installation-windows.md) · [macOS](guides/de/installation-macos.md) · **Optionaler Companion:** [Windows](guides/de/companion-installation-windows.md) · [macOS](guides/de/companion-installation-macos.md)
 
-**Von 2.0.1 zurück auf 1.0.2?** Die getrennte Anleitung
+**Von 2.0.2 zurück auf 1.0.2?** Die getrennte Anleitung
 [Zurück zu RoonPilot 1.0.2](guides/de/return-to-1.0.2.md) und die
 [feste 1.0.2-Auswahl im Webinstaller](https://mermayer.github.io/RoonPilot/de/firmware/?version=1.0.2#web-installer-title)
 verwenden. Diese saubere USB-Installation löscht RoonPilot-Einstellungen und
@@ -371,7 +371,7 @@ vollständig zu laden.
 - [Alle Gerätebildschirme](guides/de/screen-reference.md)
 - [Alle Webseiten](guides/de/web-interface.md)
 - [Firmwareupdates und Wiederherstellung](guides/de/firmware-updates-and-recovery.md)
-- [Von 2.0.1 zurück zu RoonPilot 1.0.2](guides/de/return-to-1.0.2.md)
+- [Von 2.0.2 zurück zu RoonPilot 1.0.2](guides/de/return-to-1.0.2.md)
 - [Akku und Laufzeit](guides/de/battery-and-runtime.md)
 - [Deep Sleep](guides/de/deep-sleep.md)
 - [Fehlerbehebung](guides/de/troubleshooting.md)

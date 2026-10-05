@@ -3,25 +3,36 @@
 **English** · [Deutsch](CHANGELOG.de.md)
 
 This document provides a user-facing overview of RoonPilot releases. Current
-installation guidance is in the [2.0.1 release notes](docs/release-notes-2.0.1.md).
+installation guidance is in the [2.0.2 release notes](docs/release-notes-2.0.2.md).
 The [2.0.0 release notes](docs/release-notes-2.0.0.md) describe the functions
 introduced with that release. Development-only changes without a visible user
 impact are intentionally omitted.
 
-**Current USB firmware: 2.0.1.** RoonPilot online updates are temporarily suspended.
+**Current USB firmware: 2.0.2.** RoonPilot online updates are temporarily suspended.
 The optional **IR Bridge firmware 1.0.0** and its separate update channel are unchanged.
 
 ## Contents
 
+- [2.0.2 — 5 October 2026](#202)
 - [2.0.1 — 5 October 2026](#201)
 - [2.0.0 — 4 October 2026](#200)
 - [Project release 1.0.5 — firmware 1.0.2](#project-release-105--firmware-102)
 - [Project release 1.0.4 — firmware 1.0.1](#project-release-104--firmware-101)
 - [Firmware 1.0.0](#firmware-100)
 
+## 2.0.2
+
+Released for clean installation through the USB Web Installer. The ESP32-S3 brownout detector remains enabled but returns to the threshold used by 1.0.2. The higher threshold in 2.0.1 could reset some boards during startup, even on USB. Calibration-only low-voltage shutdown and separate flash-write protection are unchanged. This configuration correction is not proof that every reported restart has the same cause.
+
+- [Install RoonPilot 2.0.2 over USB](https://mermayer.github.io/RoonPilot/firmware/?v=2.0.2-usb); factory erase removes Wi-Fi, profiles and controller-side Bridge pairings. A JSON backup alone does not restore pairing keys.
+- The internal RoonPilot online updater remains suspended. IR Bridge 1.0.0 and its separate update channel are unchanged.
+- The original 1.0.2 USB recovery remains available. Its installer no longer waits for unsupported Improv Serial provisioning.
+
+See the [2.0.2 release notes](docs/release-notes-2.0.2.md) for details and installation guidance.
+
 ## 2.0.1
 
-GitHub release and current installation guidance: 5 October 2026. The existing
+Historical GitHub release: 5 October 2026. The existing
 2.0.1 firmware supplied through the USB Web Installer is unchanged by this
 documentation and release-metadata update. Optional IR Bridge firmware: 1.0.0.
 
@@ -30,24 +41,24 @@ documentation and release-metadata update. Optional IR Bridge firmware: 1.0.0.
 - Uses the original RoonPilot signing key again, while retaining signature,
   SHA-256 and boot-rollback checks. This does not establish a reliable online
   upgrade for every existing installation.
-- The USB Web Installer selects 2.0.1, including a complete erase. Settings,
+- At that release, the USB Web Installer selected 2.0.1, including a complete erase. Settings,
   profiles, Wi-Fi and controller-side Bridge pairings must be set up again.
 - Reinstalling the same version still performs a clean installation. Setup
   continues through RoonPilot's temporary Wi-Fi, not Improv Serial.
 - Configuration backups do not restore pairing keys. Pair Bridges again after
   a clean installation and check profile and zone assignments.
 
-### Current availability
+### Availability at the 2.0.1 release
 
-- RoonPilot's internal online updater is temporarily suspended. Use the
-  [USB Web Installer](https://mermayer.github.io/RoonPilot/firmware/?v=2.0.1-usb)
-  for 2.0.1; do not follow an old on-device online update offer.
+- RoonPilot's internal online updater was suspended. The current
+  [USB Web Installer](https://mermayer.github.io/RoonPilot/firmware/?v=2.0.2-usb)
+  now selects 2.0.2; do not follow an old on-device online update offer.
 - IR Bridge 1.0.0 updates and the unchanged Companion remain separate.
 - The original 1.0.2 USB recovery remains available. Keep version-specific
   backups separate and do not run battery calibration under 1.0.2.
-- GitHub's latest release, general release metadata, EN/DE entry pages and
-  documentation now consistently identify 2.0.1. Historical releases remain
-  available as history, not the current installation recommendation.
+- At the time, GitHub's latest release, metadata and EN/DE entry pages
+  consistently identified 2.0.1. It remains in the release history, not as
+  the current installation recommendation.
 
 See the [2.0.1 release notes](docs/release-notes-2.0.1.md) for the complete
 installation guidance. The feature set introduced in 2.0.0 remains included.
