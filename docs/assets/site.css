@@ -226,6 +226,8 @@ section[id] { scroll-margin-top: 92px; }
 .project-support strong { color: var(--text); }
 .project-origin-action { padding-left: 28px; border-left: 1px solid var(--line); }
 .project-origin-action p { margin: 0 0 15px; color: var(--muted); font-size: 14px; }
+.coffee-links { display: grid; gap: 10px; }
+.coffee-links .button { width: 100%; }
 .button.coffee { border-color: var(--amber); background: var(--amber); color: #171006; }
 .button.coffee:hover { background: #ffc85e; }
 

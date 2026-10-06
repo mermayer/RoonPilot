@@ -56,7 +56,8 @@ Bluetooth and all Bridge background activity stay off after restart.
 > transmit personal, usage or telemetry data to the developer or any third
 > party. Anyone who would voluntarily like to say thank you for the time and
 > effort invested can do so through
-> [Send Me a Coffee](https://buy.stripe.com/6oU3cw0eV0hC5nbdlX2Fa00).
+> [Send Me a Coffee](https://buy.stripe.com/6oU3cw0eV0hC5nbdlX2Fa00) or
+> [Buy Me a Coffee](https://buymeacoffee.com/mermayer).
 >
 > **Support and discussion:** use the
 > [Roon Community Forum thread](https://community.roonlabs.com/t/new-big-thing-roonpilot-the-new-era-of-roon-control)
