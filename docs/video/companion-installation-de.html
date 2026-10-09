@@ -19,6 +19,8 @@
     .chapters time{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums;min-width:36px;padding-top:2px}.chapters button[aria-current=true]{border-color:var(--cyan);background:#193b43}.chapters button[aria-current=true] time{color:var(--cyan)}
     .warning{margin:23px 0;border-left:4px solid #f7bb4f;padding:13px 18px;background:#29251d;border-radius:0 10px 10px 0}.warning p{margin:0}
     a{color:var(--cyan);text-underline-offset:3px}.links{display:flex;gap:22px;flex-wrap:wrap;margin:20px 0}.note{font-size:14px;color:var(--muted)}
+    .return-link{display:inline-flex;align-items:center;min-height:44px;margin:0 0 20px;padding:9px 15px;border:1px solid var(--cyan);border-radius:9px;background:#102b31;color:var(--text);font-weight:650;text-decoration:none}
+    .return-link:hover{background:#193b43;border-color:#8af3f0}.page-footer{margin-top:25px;padding-top:20px;border-top:1px solid var(--line)}.page-footer .return-link{margin-bottom:0}
     details{border-top:1px solid var(--line);margin-top:25px;padding-top:18px}summary{cursor:pointer;font-weight:650;min-height:44px}ol{padding-left:25px;max-width:950px}li{padding:9px 0 15px}li p{color:var(--muted);margin:0}
     #error{padding:16px;border:1px solid #f77e7b;border-radius:10px;margin:15px 0}#error[hidden]{display:none}
     @media(max-width:700px){main{padding:20px 14px 35px}.chapters{grid-template-columns:repeat(2,minmax(0,1fr))}.tools{gap:8px}.tools button{flex:1}.tools .speed{width:100%;margin:0;justify-content:flex-end}video{border-radius:9px}}
@@ -27,6 +29,7 @@
 </head>
 <body><main>
   <header>
+    <a class="return-link" href="https://github.com/mermayer/RoonPilot/blob/main/README.de.md">&larr; Zurück zum GitHub-Projekt</a>
     <p class="eyebrow">ROONPILOT COMPANION · AUSFÜHRLICHE VIDEOANLEITUNG · 8:59 MINUTEN</p>
     <nav class="links" aria-label="Sprache"><a href="companion-installation-de.html" lang="de" aria-current="page">Deutsch</a><a href="companion-installation-en.html" lang="en" >English</a></nav>
     <h1>Companion-Firmware – Zweck und Installation</h1>
@@ -81,6 +84,7 @@
 <li><h3>Keine USB-Liste oder falsche Prozessorfamilie?</h3><p>Ist die Liste leer, prüfe das Datenkabel und schließe andere serielle Programme. Wird ESP zweiunddreißig S drei als nicht unterstützt gemeldet, schließe den Dialog, drehe den Stecker und verbinde erneut die Companion-Seite. Bei einer unterbrochenen Installation kannst du denselben Companion-Installer erneut ausführen. Installiere nicht ersatzweise die Hauptfirmware.</p></li>
 <li><h3>Fertig – optional, getrennt und einfach</h3><p>Geschafft. Der Begleitprozessor schläft, RoonPilot bleibt deine Fernbedienung. Alle Schritte und die Links zur schriftlichen Anleitung findest du unter dem Video. Nimm dir Zeit und wiederhole bei Bedarf ein Kapitel.</p></li></ol></details>
   <noscript><p>Ohne JavaScript kannst du die normalen Videosteuerungen benutzen; die Kapitelknöpfe benötigen JavaScript.</p></noscript>
+  <footer class="page-footer"><a class="return-link" href="https://github.com/mermayer/RoonPilot/blob/main/README.de.md">&larr; Zurück zum GitHub-Projekt</a></footer>
 </main>
 <script>
 const chapters=[{"title": "Einführung", "start": 0.0}, {"title": "Die zwei Prozessoren", "start": 10.625}, {"title": "Die Aufgabe der Firmware", "start": 34.75}, {"title": "Was sie nicht tut", "start": 56.41666666666667}, {"title": "Freiwillig und unabhängig", "start": 78.20833333333334}, {"title": "Vorbereitung", "start": 105.12500000000001}, {"title": "Was erhalten bleibt", "start": 128.625}, {"title": "Den richtigen Installer öffnen", "start": 156.08333333333334}, {"title": "Hinweise bestätigen", "start": 193.75000000000003}, {"title": "Das USB-Gerät auswählen", "start": 213.25000000000003}, {"title": "Den USB-C-Stecker drehen", "start": 238.41666666666669}, {"title": "Die Installation starten", "start": 312.0416666666667}, {"title": "Den Fortschritt abwarten", "start": 364.7083333333333}, {"title": "Installation abgeschlossen", "start": 386.3333333333333}, {"title": "Was danach passiert", "start": 402.41666666666663}, {"title": "Zurück zum Hauptprozessor", "start": 422.54166666666663}, {"title": "RoonPilot weiterverwenden", "start": 471.16666666666663}, {"title": "Wenn etwas nicht klappt", "start": 495.29166666666663}, {"title": "Zum Nachschlagen", "start": 522.5833333333333}];

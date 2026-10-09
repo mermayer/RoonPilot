@@ -19,6 +19,8 @@
     .chapters button[aria-current=true]{border-color:var(--cyan);background:#193b43}.chapters button[aria-current=true] time{color:var(--cyan)}
     .warning{margin:23px 0;border-left:4px solid #f7bb4f;padding:13px 18px;background:#29251d;border-radius:0 10px 10px 0}.warning p{margin:0}
     a{color:var(--cyan);text-underline-offset:3px}.links{display:flex;gap:22px;flex-wrap:wrap;margin:20px 0}.note{font-size:14px;color:var(--muted)}
+    .return-link{display:inline-flex;align-items:center;min-height:44px;margin:0 0 20px;padding:9px 15px;border:1px solid var(--cyan);border-radius:9px;background:#102b31;color:var(--text);font-weight:650;text-decoration:none}
+    .return-link:hover{background:#193b43;border-color:#8af3f0}.page-footer{margin-top:25px;padding-top:20px;border-top:1px solid var(--line)}.page-footer .return-link{margin-bottom:0}
     details{border-top:1px solid var(--line);margin-top:25px;padding-top:18px}summary{cursor:pointer;font-weight:650;min-height:44px}ol{padding-left:25px;max-width:950px}li{padding:9px 0 15px}li p{color:var(--muted);margin:0}
     #error{padding:16px;border:1px solid #f77e7b;border-radius:10px;margin:15px 0}#error[hidden]{display:none}
     @media(max-width:700px){main{padding:20px 14px 35px}.chapters{grid-template-columns:repeat(2,minmax(0,1fr))}.tools{gap:8px}.tools button{flex:1}.tools .speed{width:100%;margin:0;justify-content:flex-end}video{border-radius:9px}}
@@ -28,6 +30,7 @@
 <body>
   <main>
     <header>
+      <a class="return-link" href="https://github.com/mermayer/RoonPilot">&larr; Back to the GitHub project</a>
       <p class="eyebrow">ROONPILOT · STEP-BY-STEP VIDEO GUIDE · 5:00 MINUTES</p>
       <nav class="links" aria-label="Language"><a href="installation-de.html" lang="de" >Deutsch</a><a href="installation-en.html" lang="en" aria-current="page">English</a></nav>
       <h1>USB installation — step by step</h1>
@@ -77,6 +80,7 @@
 <li><h3>No USB device, or the wrong ESP32?</h3><p>If no USB device appears, first check your data cable. If the installer reports that your ESP thirty-two board is not supported, turn the connector over as shown, then start the connection process again.</p></li>
 <li><h3>Enjoy your RoonPilot!</h3><p>You can repeat any step using the chapters. The full written guide is available on the RoonPilot project page.</p></li></ol></details>
     <noscript><p>With JavaScript disabled, you can still use the normal video controls. The chapter buttons require JavaScript.</p></noscript>
+    <footer class="page-footer"><a class="return-link" href="https://github.com/mermayer/RoonPilot">&larr; Back to the GitHub project</a></footer>
   </main>
   <script>
     const chapters = [{"title": "Introduction", "start": 0.0}, {"title": "Before you start", "start": 11.25}, {"title": "Open the installer", "start": 38.41666666666667}, {"title": "Confirm and begin", "start": 63.33333333333334}, {"title": "Select the USB device", "start": 77.04166666666667}, {"title": "Turn the USB-C connector", "start": 93.125}, {"title": "Start the installation", "start": 145.37500000000003}, {"title": "Wait for the progress", "start": 168.25000000000003}, {"title": "Installation complete", "start": 184.25000000000003}, {"title": "Set up Wi-Fi", "start": 199.79166666666669}, {"title": "Enable RoonPilot in Roon", "start": 248.45833333333337}, {"title": "Ready to use", "start": 264.4166666666667}, {"title": "If something goes wrong", "start": 277.0416666666667}, {"title": "Review any step", "start": 291.58333333333337}];
