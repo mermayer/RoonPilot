@@ -2,6 +2,8 @@
 
 **English** · [Deutsch](de/installation-windows.md) · [macOS](installation-macos.md)
 
+[![Watch video guide](../docs/assets/video-button-en.svg)](https://mermayer.github.io/RoonPilot/video/installation-en.html)
+
 The normal installation needs no Device Manager, Python, `esptool` or other
 command-line tool.
 

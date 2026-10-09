@@ -2,6 +2,8 @@
 
 **English** · [Deutsch](de/companion-installation-windows.md) · [macOS](companion-installation-macos.md)
 
+[![Watch video guide](../docs/assets/video-button-en.svg)](https://mermayer.github.io/RoonPilot/video/companion-installation-en.html)
+
 This optional installation runs entirely in Chrome or Edge. It needs no Device
 Manager, Python or `esptool`.
 

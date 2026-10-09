@@ -2,6 +2,8 @@
 
 [English](../installation-macos.md) · **Deutsch** · [Windows](installation-windows.md)
 
+[![Videoanleitung ansehen](../../docs/assets/video-button-de.svg)](https://mermayer.github.io/RoonPilot/video/installation-de.html)
+
 Für die normale Installation werden weder der macOS-Systembericht noch Python,
 Terminalbefehle oder `esptool` benötigt.
 

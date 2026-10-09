@@ -2,6 +2,8 @@
 
 [English](../ir-bridge-installation.md) · **Deutsch** · [Bridge-Übersicht](ir-bridge.md)
 
+[![Videoanleitung ansehen](../../docs/assets/video-button-de.svg)](https://mermayer.github.io/RoonPilot/video/ir-bridge-installation-de.html)
+
 Diese Anleitung betrifft die separate RoonPilot IR Bridge. Sie installiert
 **nicht** das runde RoonPilot-Display und verwendet auch nicht den zweiten ESP
 im Waveshare-Displaymodul.

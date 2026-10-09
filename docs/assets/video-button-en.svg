@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="285" height="52" viewBox="0 0 285 52" role="img" aria-labelledby="title">
+  <title id="title">Watch video guide</title>
+  <rect x="1" y="1" width="283" height="50" rx="9" fill="#161c1d" stroke="#f1ad38" stroke-width="2"/>
+  <circle cx="28" cy="26" r="15" fill="#f1ad38"/>
+  <path d="M24 18.5v15l12-7.5z" fill="#101718"/>
+  <text x="57" y="32" fill="#f2ede5" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="700">Watch video guide</text>
+</svg>

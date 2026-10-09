@@ -66,6 +66,7 @@
         </a>
         <div class="hero-actions">
           <a class="button primary" href="firmware/"><svg><use href="#icon-usb"></use></svg>Open the Web Installer</a>
+          <a class="button video" href="video/installation-en.html"><span aria-hidden="true">▶</span>Watch installation video</a>
           <a class="button secondary" href="#documentation"><svg><use href="#icon-book"></use></svg>Read documentation</a>
         </div>
         <div class="hero-buy"><strong>Need the device?</strong> <a href="#hardware">Find it on Amazon.co.uk, Amazon.com, Amazon.de or at an EU retailer →</a></div>
@@ -80,6 +81,15 @@
       <div class="hero-product">
         <div class="product-aura" aria-hidden="true"></div>
         <img src="assets/roonpilot-hardware-cutout.png" alt="Original blue Waveshare ESP32-S3 Knob Touch LCD 1.8 running RoonPilot">
+      </div>
+    </section>
+
+    <section id="videos" class="video-guides page-width" aria-labelledby="videos-title">
+      <div class="video-guides-heading"><p class="eyebrow">Step-by-step video guides</p><h2 id="videos-title">Choose the installation you want to see.</h2><p>Each guide shows the browser screens, device selection and the steps that follow. Pause the video and continue at your own pace.</p></div>
+      <div class="video-guide-grid">
+        <article class="video-guide-card"><p class="eyebrow">Main device</p><h3>RoonPilot</h3><p>Install the firmware on the round display and complete the first Wi-Fi setup.</p><a class="button video" href="video/installation-en.html"><span aria-hidden="true">▶</span>Watch RoonPilot video</a></article>
+        <article class="video-guide-card"><p class="eyebrow">Optional second processor</p><h3>Companion firmware</h3><p>See what the low-power firmware does and how to select the correct USB processor.</p><a class="button video" href="video/companion-installation-en.html"><span aria-hidden="true">▶</span>Watch Companion video</a></article>
+        <article class="video-guide-card"><p class="eyebrow">Optional external hardware</p><h3>IR Bridge</h3><p>Connect the components, flash the separate board, pair it and learn the remote.</p><a class="button video" href="video/ir-bridge-installation-en.html"><span aria-hidden="true">▶</span>Watch IR Bridge video</a></article>
       </div>
     </section>
 
@@ -208,6 +218,7 @@
         <div class="image-row" role="row"><strong>Later updates</strong><span>RoonPilot → System</span><span>Downloads and installs the approved update</span><span>As offered</span></div>
         <div class="image-row" role="row"><strong>Companion firmware</strong><span>Separate Web Installer with USB</span><span>Puts the unused second processor into deep sleep</span><span>Optional</span></div>
       </div>
+      <div class="installer-video-callout"><p>See the optional Companion installation before selecting its USB processor.</p><a class="button video" href="video/companion-installation-en.html"><span aria-hidden="true">▶</span> Watch Companion video</a></div>
       <div class="companion-note">
         <div><svg><use href="#icon-chip"></use></svg></div>
         <div><h3>The Companion firmware is optional.</h3><p>RoonPilot works fully without it. The separate Companion guide for <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/companion-installation-windows.md">Windows</a> or <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/companion-installation-macos.md">macOS</a> also leads directly to its own Web Installer restricted to the classic companion ESP32.</p></div>
@@ -351,6 +362,7 @@
           <p>Each physical Roon output independently selects native Roon volume, an external IR Bridge/profile or deliberately disabled volume. Up to four Bridge pairings can be saved. <strong>Automatic zone control</strong> follows the selected zone and, for a Roon group, monitors and operates every Bridge required by its members.</p>
           <p>Pairing and all sensitive provisioning start over encrypted Bluetooth LE. Authenticated local Wi-Fi is optional for another room and is preferred for a confirmed firmware transfer. Pairing, profiles, learning, routing, diagnostics, backup and signed A/B updates are all managed by RoonPilot—there is no separate Bridge app, cloud account or everyday web page.</p>
           <p><strong>Example: WiiM Ultra and RME ADI-2 DAC.</strong> Playback continues through Roon and WiiM, while the ring sends learned RME volume commands. The DAC performs its own hardware level change and retains Auto Ref Level instead of substituting Roon digital attenuation.</p>
+          <p><a class="button video" href="video/ir-bridge-installation-en.html"><span aria-hidden="true">▶</span> Watch IR Bridge video</a></p>
           <a class="button secondary" href="ir-bridge/">Explore the complete IR Bridge project</a>
         </div>
         <figure class="ui-figure"><img src="ir-bridge/assets/bridge-connection-auto.png" alt="RoonPilot IR Bridge connection page showing multiple saved Bridges and automatic zone control with fictional data" loading="lazy"><figcaption>Saved does not mean found in the latest BLE scan. The selected zone—or all required members of a Roon group—determines which Bridges RoonPilot monitors and controls.</figcaption></figure>

@@ -2,6 +2,8 @@
 
 [English](../installation.md) · **Deutsch**
 
+[![Videoanleitung ansehen](../../docs/assets/video-button-de.svg)](https://mermayer.github.io/RoonPilot/video/installation-de.html)
+
 Für die normale Installation werden weder Geräte-Manager noch macOS-
 Systembericht, Python, `esptool` oder andere Kommandozeilenwerkzeuge benötigt.
 Der Geräteauswahldialog des Webinstallers zeigt den verbundenen Prozessor

@@ -2,6 +2,8 @@
 
 **English** · [Deutsch](de/installation.md)
 
+[![Watch video guide](../docs/assets/video-button-en.svg)](https://mermayer.github.io/RoonPilot/video/installation-en.html)
+
 No Device Manager, macOS System Information, Python, `esptool` or other
 command-line tool is needed for a normal installation. The Web Installer's
 device chooser shows the connected processor directly.

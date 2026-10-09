@@ -2,6 +2,8 @@
 
 **English** · [Deutsch](de/ir-bridge.md)
 
+[![Watch video guide](../docs/assets/video-button-en.svg)](https://mermayer.github.io/RoonPilot/video/ir-bridge-installation-en.html)
+
 The RoonPilot IR Bridge is an optional ESP32-S3 companion for audio equipment
 that cannot expose every useful control through Roon. RoonPilot remains the
 only control centre: it pairs the Bridge, teaches infrared commands, assigns a

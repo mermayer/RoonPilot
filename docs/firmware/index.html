@@ -15,6 +15,8 @@
     .next-step p{margin-bottom:0}
     .device-note{margin:18px 0;padding:16px 18px;border:1px solid #4fe0e244;border-radius:8px;background:#4fe0e209}.device-note h3{margin:0 0 5px;font-size:17px}.device-note h3:not(:first-child){margin-top:17px}.device-note p{margin:0;font-size:14px}.device-note code{color:var(--text)}
     [hidden]{display:none!important}.version-options{border:0;margin:20px 0 12px;padding:0;min-width:0}.version-options legend{font-weight:700;margin-bottom:10px}.version-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.version-choice{display:flex;gap:12px;padding:15px;border:1px solid var(--line);border-radius:8px;cursor:pointer}.version-choice input{flex:none;margin:5px 0 0;accent-color:var(--cyan)}.version-choice strong,.version-choice small{display:block}.version-choice small{margin-top:6px;color:var(--muted);font-size:14px;line-height:1.45}.version-choice:has(input:checked){border-color:var(--cyan);background:#4fe0e209}.version-choice.recovery:has(input:checked){border-color:var(--amber);background:#f1ad380d}.version-choice:focus-within{outline:2px solid var(--cyan);outline-offset:3px}.selected-firmware{font-size:14px;color:var(--text)}.recovery-notice{margin:18px 0}.recovery-notice h3{margin:0 0 8px;font-size:19px}.recovery-notice p,.recovery-notice li{font-size:14px}.recovery-notice ul{padding-left:21px;color:var(--muted)}.recovery-notice li+li{margin-top:8px}.web-installer a{color:var(--cyan)}@media(max-width:600px){.version-grid{grid-template-columns:1fr}.web-installer{padding:18px}.install-button{line-height:1.3;padding:12px 17px}}
+    .download.video-button{border:1px solid var(--amber);background:#f1ad3810;color:var(--amber)}
+    .download.video-button:hover,.download.video-button:focus-visible{background:var(--amber);color:#171006}
   </style>
 </head>
 <body><main class="wrap">
@@ -22,6 +24,7 @@
   <div class="target">RoonPilot primary firmware</div>
   <h1>Firmware Installer</h1>
   <p>The primary ESP32-S3 firmware is installed only through this authorized browser installer. Factory and OTA images are not offered as standalone downloads.</p>
+  <a class="download video-button" href="../video/installation-en.html">▶ Watch the step-by-step installation video</a>
 
   <div class="warning"><strong>Two independent processors.</strong> Check the name before the parentheses in the device chooser and select <strong>USB JTAG/serial debug unit</strong> for this installer. A Factory installation erases the complete ESP32-S3 and all of its settings. An original-firmware backup is optional and useful only if you may want to restore the exact manufacturer-delivered state later.</div>
 

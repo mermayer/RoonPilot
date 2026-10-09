@@ -2,6 +2,8 @@
 
 [English](../companion-installation-macos.md) · **Deutsch** · [Windows](companion-installation-windows.md)
 
+[![Videoanleitung ansehen](../../docs/assets/video-button-de.svg)](https://mermayer.github.io/RoonPilot/video/companion-installation-de.html)
+
 Diese freiwillige Installation läuft vollständig in Google Chrome. Der
 macOS-Systembericht, Python, Terminalbefehle und `esptool` werden dafür nicht
 benötigt.

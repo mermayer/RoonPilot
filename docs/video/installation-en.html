@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>RoonPilot – USB installation video guide</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0a1219;--panel:#13222c;--text:#eff5f4;--muted:#b2c3c9;--cyan:#4fdee0;--line:#304650}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+    main{max-width:1200px;margin:auto;padding:28px 28px 48px}.eyebrow{margin:0 0 6px;color:var(--cyan);font-size:13px;font-weight:700;letter-spacing:.09em}
+    h1{font-size:clamp(25px,4vw,37px);line-height:1.2;margin:0 0 8px}h2{font-size:21px;margin:0 0 12px}h3{font-size:17px;margin:0 0 5px}p{margin:0 0 15px}.intro{color:var(--muted);max-width:900px}
+    video{display:block;width:100%;aspect-ratio:16/9;background:#061017;border:1px solid var(--line);border-radius:14px;object-fit:contain}
+    .tools{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0}.tools .speed{margin-left:auto;display:flex;align-items:center;gap:9px}
+    button,select{min-height:44px;font:inherit;color:var(--text);border:1px solid var(--line);background:var(--panel);border-radius:9px;padding:9px 14px;cursor:pointer}
+    button:hover,select:hover{border-color:var(--cyan)}button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
+    #now{color:var(--cyan);margin:0 0 19px;font-size:15px;min-height:23px}#stepHint{margin:12px 0 0;padding:12px 15px;background:var(--panel);border-left:3px solid var(--cyan);border-radius:0 8px 8px 0}.chapters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+    .chapters button{text-align:left;display:flex;gap:12px;align-items:flex-start;line-height:1.35}.chapters time{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums;min-width:36px;padding-top:2px}
+    .chapters button[aria-current=true]{border-color:var(--cyan);background:#193b43}.chapters button[aria-current=true] time{color:var(--cyan)}
+    .warning{margin:23px 0;border-left:4px solid #f7bb4f;padding:13px 18px;background:#29251d;border-radius:0 10px 10px 0}.warning p{margin:0}
+    a{color:var(--cyan);text-underline-offset:3px}.links{display:flex;gap:22px;flex-wrap:wrap;margin:20px 0}.note{font-size:14px;color:var(--muted)}
+    details{border-top:1px solid var(--line);margin-top:25px;padding-top:18px}summary{cursor:pointer;font-weight:650;min-height:44px}ol{padding-left:25px;max-width:950px}li{padding:9px 0 15px}li p{color:var(--muted);margin:0}
+    #error{padding:16px;border:1px solid #f77e7b;border-radius:10px;margin:15px 0}#error[hidden]{display:none}
+    @media(max-width:700px){main{padding:20px 14px 35px}.chapters{grid-template-columns:repeat(2,minmax(0,1fr))}.tools{gap:8px}.tools button{flex:1}.tools .speed{width:100%;margin:0;justify-content:flex-end}video{border-radius:9px}}
+    @media(max-width:380px){.chapters{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">ROONPILOT · STEP-BY-STEP VIDEO GUIDE · 5:00 MINUTES</p>
+      <nav class="links" aria-label="Language"><a href="installation-de.html" lang="de" >Deutsch</a><a href="installation-en.html" lang="en" aria-current="page">English</a></nav>
+      <h1>USB installation — step by step</h1>
+      <p class="intro">With narration, animated clicks, and a close-up of turning over the USB-C connector. Pause whenever you need to and try each step at your own pace.</p>
+    </header>
+    <video id="video" controls playsinline preload="metadata" poster="installation-en-poster.jpg" aria-label="RoonPilot USB installation with English narration">
+      <source src="roonpilot-firmware-installation-en.mp4" type="video/mp4">
+      <track id="spoken-captions" kind="captions" srclang="en" label="English">
+      Your browser does not support video playback. <a href="roonpilot-firmware-installation-en.mp4">Download the MP4</a>.
+    </video>
+    <div id="error" role="alert" hidden>The video could not be loaded. The HTML and MP4 files must be in the same folder. <a href="roonpilot-firmware-installation-en.mp4">Open the MP4 directly</a>.</div>
+    <p id="stepHint" aria-live="polite">A step-by-step guide, even if you have never used an ESP32 before.</p>
+    <div class="tools" aria-label="Playback controls">
+      <button type="button" id="back">Back 15 seconds</button>
+      <button type="button" id="next">Next chapter</button>
+      <label class="speed" for="speed">Speed <select id="speed"><option value="0.75">Slower · 0.75×</option><option value="1" selected>Normal · 1×</option><option value="1.25">Faster · 1.25×</option></select></label>
+    </div>
+    <p id="now">Chapter 1 · Introduction</p>
+    <p class="note">For a larger view, choose the full-screen icon at the bottom right of the video. On a phone, landscape orientation is easier to read.</p>
+    <section aria-labelledby="chapter-title">
+      <h2 id="chapter-title">Jump straight to a step</h2>
+      <nav class="chapters" id="chapters" aria-label="Video chapters"></nav>
+    </section>
+    <aside class="warning"><p>Important: a clean USB installation erases Wi-Fi settings, profiles, and Bridge pairings on RoonPilot. If you still need them, save a configuration backup first.</p></aside>
+    <div class="links"><a href="https://mermayer.github.io/RoonPilot/firmware/" target="_blank" rel="noopener">Open the official USB installer</a><a href="https://github.com/mermayer/RoonPilot/blob/main/README.md" target="_blank" rel="noopener">Written guide in English</a><a href="roonpilot-firmware-installation-en.mp4" download>Save the video as an MP4</a></div>
+    <p class="note">This guide shows the USB installer for 2.0.2. Always choose the current USB version on the installation page. Progress is shortened for the video. Device selection, the USB close-up, and Roon authorisation are illustrated examples. The installer dialogs and Wi-Fi form show the actual interface.</p>
+    <details><summary>Read all the steps</summary><ol><li><h3>Install RoonPilot in your browser</h3><p>Here is how to install RoonPilot directly in your browser. We will go through every click together, including how to connect the correct USB device.</p></li>
+<li><h3>What you need</h3><p>You need your RoonPilot, a USB data cable, and Chrome or Edge on a computer. A charging-only cable will not work. Connect the device directly to your computer.</p></li>
+<li><h3>Existing settings will be erased</h3><p>This installation erases the existing settings on RoonPilot. If you still need them, save a configuration backup first. If your device is brand new, you can continue straight away.</p></li>
+<li><h3>Open the official installation page</h3><p>Open Chrome or Edge. Enter the address shown here in the address bar, then press Enter. This takes you to the official RoonPilot installer.</p></li>
+<li><h3>Use the current USB version</h3><p>Scroll down to Choose firmware. Leave the current USB version selected. In this example, it is version two point zero point two. A newer version may be available later.</p></li>
+<li><h3>Read the notices and open the installer</h3><p>Scroll down a little further. Read the notices about the correct processor, erasing the device, and the licence. Tick both boxes. You can now click Install RoonPilot.</p></li>
+<li><h3>How to recognise the correct USB device</h3><p>The device name is what matters, not the number in brackets. The entry highlighted in green is correct. If you already see it, connect directly. The next steps are only needed if USB serial appears instead.</p></li>
+<li><h3>If “USB serial” is listed instead</h3><p>Sometimes the list only shows USB serial. That is the other processor inside the device. Do not select it. You only need to turn over the USB-C connector at the RoonPilot.</p></li>
+<li><h3>1. Unplug the cable at the RoonPilot</h3><p>Leave the device selection window open. Unplug the cable at the RoonPilot. Leave the other end connected to your computer. The old entry disappears from the list.</p></li>
+<li><h3>2. Turn the USB-C connector over by 180°</h3><p>Turn the unplugged connector around its own lengthwise axis, by one hundred and eighty degrees. The side that was facing upwards is now underneath. You do not need a different cable.</p></li>
+<li><h3>3. Plug it back in, select, and connect</h3><p>Plug it back into the same socket. The browser updates the list. The correct device name now appears. Click that entry, then click Connect.</p></li>
+<li><h3>Choose “Install RoonPilot” in the small window</h3><p>After connecting, a small RoonPilot window opens. Click Install RoonPilot. You do not need Logs and Console for a normal installation.</p></li>
+<li><h3>Confirm the erase and installation</h3><p>This window asks you to confirm the installation. The warning means that all data on the device will be erased. When you are ready, click Install.</p></li>
+<li><h3>Watch the progress in your browser</h3><p>First, the installer prepares the device and erases its memory. Then the percentage increases. Keep the window visible and leave the cable connected. The actual installation may take a few minutes.</p></li>
+<li><h3>“Installation complete!” — success</h3><p>Wait until you see Installation complete. Only then is the installation finished. Click Next, then close the small window. RoonPilot restarts. Leave USB connected to keep it powered.</p></li>
+<li><h3>Connect to the setup Wi-Fi network</h3><p>The RoonPilot screen now shows Wi-Fi setup. Open the Wi-Fi list on your phone, tablet, or laptop. Connect to RoonPilot Setup. The last six characters identify your particular device.</p></li>
+<li><h3>Stay connected to the setup network</h3><p>The password is roonpilot, a hyphen, then setup, all in lower case. If your phone reports no internet, stay connected anyway. This network is only used to set up the device.</p></li>
+<li><h3>Enter and save your home Wi-Fi details</h3><p>Open your browser and enter one nine two, dot, one six eight, dot, four, dot, one. If necessary, choose English. Enter your home Wi-Fi name and password. Use a two point four gigahertz network. Click Save and restart.</p></li>
+<li><h3>Enable RoonPilot in Roon</h3><p>Reconnect your phone to your home Wi-Fi. RoonPilot now searches for your running Roon Server. When it is waiting for authorisation, open Settings and Extensions in Roon. Enable RoonPilot by Senior Coder.</p></li>
+<li><h3>Choose a zone — you are ready!</h3><p>Finally, choose the zone you want to control, directly on the RoonPilot screen. Once the player view appears, setup is complete. Enjoy using RoonPilot.</p></li>
+<li><h3>No USB device, or the wrong ESP32?</h3><p>If no USB device appears, first check your data cable. If the installer reports that your ESP thirty-two board is not supported, turn the connector over as shown, then start the connection process again.</p></li>
+<li><h3>Enjoy your RoonPilot!</h3><p>You can repeat any step using the chapters. The full written guide is available on the RoonPilot project page.</p></li></ol></details>
+    <noscript><p>With JavaScript disabled, you can still use the normal video controls. The chapter buttons require JavaScript.</p></noscript>
+  </main>
+  <script>
+    const chapters = [{"title": "Introduction", "start": 0.0}, {"title": "Before you start", "start": 11.25}, {"title": "Open the installer", "start": 38.41666666666667}, {"title": "Confirm and begin", "start": 63.33333333333334}, {"title": "Select the USB device", "start": 77.04166666666667}, {"title": "Turn the USB-C connector", "start": 93.125}, {"title": "Start the installation", "start": 145.37500000000003}, {"title": "Wait for the progress", "start": 168.25000000000003}, {"title": "Installation complete", "start": 184.25000000000003}, {"title": "Set up Wi-Fi", "start": 199.79166666666669}, {"title": "Enable RoonPilot in Roon", "start": 248.45833333333337}, {"title": "Ready to use", "start": 264.4166666666667}, {"title": "If something goes wrong", "start": 277.0416666666667}, {"title": "Review any step", "start": 291.58333333333337}];
+    const steps = [{"start": 0.0, "caption": "A step-by-step guide, even if you have never used an ESP32 before."}, {"start": 11.25, "caption": "RoonPilot, a USB data cable, and Chrome or Edge on a computer."}, {"start": 24.333333333333336, "caption": "A clean USB installation erases Wi-Fi settings, profiles, and Bridge pairings."}, {"start": 38.41666666666667, "caption": "Enter mermayer.github.io/RoonPilot/firmware/ in the address bar."}, {"start": 49.37500000000001, "caption": "Leave the current USB version selected. Do not select the recovery version."}, {"start": 63.33333333333334, "caption": "Read and tick both notices. Then click “Install RoonPilot”."}, {"start": 77.04166666666667, "caption": "Select “USB JTAG/serial debug unit”. If it is already listed, you can connect directly."}, {"start": 93.125, "caption": "“USB serial” is the other ESP32. Only in this case, turn the connector as shown."}, {"start": 107.54166666666667, "caption": "Leave the device selection window open. Unplug only the RoonPilot end of the cable."}, {"start": 120.41666666666667, "caption": "Turn the connector around its own lengthwise axis. The other side now faces upwards."}, {"start": 133.66666666666669, "caption": "Select “USB JTAG/serial debug unit”, then click “Connect”."}, {"start": 145.37500000000003, "caption": "Click “Install RoonPilot”. You do not need “Logs & Console” to install the firmware."}, {"start": 156.83333333333337, "caption": "“All data on the device will be erased” means the existing device settings will be deleted."}, {"start": 168.25000000000003, "caption": "Preparing → Erasing → Installing → Wrapping up. Keep the window visible and USB connected."}, {"start": 184.25000000000003, "caption": "Wait for “Installation complete!”, then click “Next”."}, {"start": 199.79166666666669, "caption": "On your phone, tablet, or laptop, select “RoonPilot-Setup-XXXXXX” in the Wi-Fi list."}, {"start": 215.41666666666669, "caption": "Password: roonpilot-setup. “No internet” is normal for this setup network."}, {"start": 229.37500000000003, "caption": "Open http://192.168.4.1, enter your 2.4 GHz Wi-Fi name and password, then save."}, {"start": 248.45833333333337, "caption": "Return to your home Wi-Fi. In Roon: Settings → Extensions → enable RoonPilot."}, {"start": 264.4166666666667, "caption": "Tap your preferred zone on the RoonPilot screen. The player view then appears."}, {"start": 277.0416666666667, "caption": "No device listed: check your data cable. “Your ESP32 board is not supported”: turn the connector."}, {"start": 291.58333333333337, "caption": "Pause whenever you need to, or use the chapters to repeat a step."}];
+    const subtitleSource = "WEBVTT\n\n00:00:00.638 --> 00:00:04.308\nHere is how to install RoonPilot directly in your browser\n\n00:00:04.588 --> 00:00:07.870\nWe will go through every click together including how to\n\n00:00:07.762 --> 00:00:09.995\nconnect the correct USB device\n\n00:00:11.888 --> 00:00:15.882\nYou need your RoonPilot a USB data cable and Chrome\n\n00:00:15.875 --> 00:00:19.358\nor Edge on a computer A charging-only cable will not\n\n00:00:19.250 --> 00:00:23.033\nwork Connect the device directly to your computer\n\n00:00:24.933 --> 00:00:29.766\nThis installation erases the existing settings on RoonPilot If you\n\n00:00:29.658 --> 00:00:33.828\nstill need them save a configuration backup first If your\n\n00:00:33.721 --> 00:00:37.141\ndevice is brand new you can continue straight away\n\n00:00:39.017 --> 00:00:42.649\nOpen Chrome or Edge Enter the address shown here in\n\n00:00:42.542 --> 00:00:46.087\nthe address bar then press Enter This takes you to\n\n00:00:45.979 --> 00:00:48.112\nthe official RoonPilot installer\n\n00:00:49.975 --> 00:00:54.395\nScroll down to Choose firmware Leave the current USB version\n\n00:00:54.288 --> 00:00:58.470\nselected In this example it is version two point zero\n\n00:00:58.363 --> 00:01:02.070\npoint two A newer version may be available later\n\n00:01:03.946 --> 00:01:07.691\nScroll down a little further Read the notices about the\n\n00:01:07.583 --> 00:01:12.353\ncorrect processor erasing the device and the licence Tick both\n\n00:01:12.246 --> 00:01:15.753\nboxes You can now click Install RoonPilot\n\n00:01:17.679 --> 00:01:20.637\nThe device name is what matters not the number in\n\n00:01:20.529 --> 00:01:25.024\nbrackets The entry highlighted in green is correct If you\n\n00:01:24.917 --> 00:01:29.124\nalready see it connect directly The next steps are only\n\n00:01:29.017 --> 00:01:31.862\nneeded if USB serial appears instead\n\n00:01:33.750 --> 00:01:37.895\nSometimes the list only shows USB serial That is the\n\n00:01:37.788 --> 00:01:42.358\nother processor inside the device Do not select it You\n\n00:01:42.250 --> 00:01:45.395\nonly need to turn over the USB-C connector at the\n\n00:01:45.288 --> 00:01:46.282\nRoonPilot\n\n00:01:48.167 --> 00:01:52.299\nLeave the device selection window open Unplug the cable at\n\n00:01:52.192 --> 00:01:56.312\nthe RoonPilot Leave the other end connected to your computer\n\n00:01:56.567 --> 00:01:59.137\nThe old entry disappears from the list\n\n00:02:01.017 --> 00:02:05.099\nTurn the unplugged connector around its own lengthwise axis by\n\n00:02:04.992 --> 00:02:08.324\none hundred and eighty degrees The side that was facing\n\n00:02:08.217 --> 00:02:11.812\nupwards is now underneath You do not need a different\n\n00:02:11.704 --> 00:02:12.387\ncable\n\n00:02:14.267 --> 00:02:18.099\nPlug it back into the same socket The browser updates\n\n00:02:17.992 --> 00:02:22.212\nthe list The correct device name now appears Click that\n\n00:02:22.104 --> 00:02:24.099\nentry then click Connect\n\n00:02:25.988 --> 00:02:30.783\nAfter connecting a small RoonPilot window opens Click Install\n\n00:02:30.675 --> 00:02:34.320\nRoonPilot You do not need Logs and Console for a\n\n00:02:34.213 --> 00:02:35.558\nnormal installation\n\n00:02:37.471 --> 00:02:41.528\nThis window asks you to confirm the installation The warning\n\n00:02:41.421 --> 00:02:44.491\nmeans that all data on the device will be erased\n\n00:02:44.771 --> 00:02:46.991\nWhen you are ready click Install\n\n00:02:48.875 --> 00:02:52.933\nFirst the installer prepares the device and erases its memory\n\n00:02:53.213 --> 00:02:57.445\nThen the percentage increases Keep the window visible and leave\n\n00:02:57.338 --> 00:03:01.245\nthe cable connected The actual installation may take a few\n\n00:03:01.138 --> 00:03:01.858\nminutes\n\n00:03:04.888 --> 00:03:09.020\nWait until you see Installation complete Only then is the\n\n00:03:08.913 --> 00:03:13.458\ninstallation finished Click Next then close the small window\n\n00:03:13.725 --> 00:03:18.508\nRoonPilot restarts Leave USB connected to keep it powered\n\n00:03:20.429 --> 00:03:24.812\nThe RoonPilot screen now shows Wi-Fi setup Open the Wi-Fi\n\n00:03:24.704 --> 00:03:29.524\nlist on your phone tablet or laptop Connect to RoonPilot\n\n00:03:29.417 --> 00:03:34.162\nSetup The last six characters identify your particular device\n\n00:03:36.054 --> 00:03:40.112\nThe password is roonpilot a hyphen then setup all in\n\n00:03:40.004 --> 00:03:44.249\nlower case If your phone reports no internet stay connected\n\n00:03:44.142 --> 00:03:47.424\nanyway This network is only used to set up the\n\n00:03:47.317 --> 00:03:48.112\ndevice\n\n00:03:49.988 --> 00:03:53.558\nOpen your browser and enter one nine two dot one\n\n00:03:53.450 --> 00:03:59.245\nsix eight dot four dot one If necessary choose English\n\n00:03:59.500 --> 00:04:03.208\nEnter your home Wi-Fi name and password Use a two\n\n00:04:03.100 --> 00:04:07.195\npoint four gigahertz network Click Save and restart\n\n00:04:09.083 --> 00:04:13.678\nReconnect your phone to your home Wi-Fi RoonPilot now searches\n\n00:04:13.571 --> 00:04:16.553\nfor your running Roon Server When it is waiting for\n\n00:04:16.446 --> 00:04:22.003\nauthorisation open Settings and Extensions in Roon Enable RoonPilot\n\n00:04:21.896 --> 00:04:23.141\nby Senior Coder\n\n00:04:25.042 --> 00:04:28.824\nFinally choose the zone you want to control directly on\n\n00:04:28.717 --> 00:04:32.874\nthe RoonPilot screen Once the player view appears setup is\n\n00:04:32.767 --> 00:04:35.774\ncomplete Enjoy using RoonPilot\n\n00:04:37.679 --> 00:04:41.562\nIf no USB device appears first check your data cable\n\n00:04:41.842 --> 00:04:45.262\nIf the installer reports that your ESP thirty-two board is\n\n00:04:45.154 --> 00:04:48.949\nnot supported turn the connector over as shown then start\n\n00:04:48.842 --> 00:04:50.312\nthe connection process again\n\n00:04:52.221 --> 00:04:55.828\nYou can repeat any step using the chapters The full\n\n00:04:55.721 --> 00:04:59.416\nwritten guide is available on the RoonPilot project page\n";
+    const subtitleBlob = URL.createObjectURL(new Blob([subtitleSource],{type:'text/vtt'}));
+    document.getElementById('spoken-captions').src = subtitleBlob;
+    window.addEventListener('pagehide',() => URL.revokeObjectURL(subtitleBlob));
+    const video = document.getElementById('video');
+    const list = document.getElementById('chapters');
+    const now = document.getElementById('now');
+    const clock = seconds => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
+    const selected = () => Math.max(0, chapters.findLastIndex(c => c.start <= video.currentTime + 0.08));
+    let active = -1;
+    let activeStep = -1;
+    const update = () => {
+      const step = Math.max(0, steps.findLastIndex(s => s.start <= video.currentTime + 0.08));
+      if (activeStep !== step) {
+        activeStep = step;
+        document.getElementById('stepHint').textContent = steps[step].caption;
+      }
+      const index = selected();
+      if (active === index) return;
+      active = index;
+      [...list.children].forEach((button, i) => button.setAttribute('aria-current', String(i === index)));
+      now.textContent = `Chapter ${index + 1} · ${chapters[index].title}`;
+    };
+    const jump = async time => {
+      if (video.readyState === 0) {
+        video.load();
+        await new Promise(resolve => video.addEventListener('loadedmetadata', resolve, {once:true}));
+      }
+      video.currentTime = Math.max(0, Math.min(time, video.duration || time));
+      update();
+    };
+    chapters.forEach((chapter, i) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      const time = document.createElement('time');
+      time.textContent = clock(chapter.start);
+      const title = document.createElement('span');
+      title.textContent = chapter.title;
+      button.append(time, title);
+      button.setAttribute('aria-label', `${chapter.title}, from ${time.textContent}`);
+      button.addEventListener('click', () => jump(chapter.start));
+      list.append(button);
+    });
+    document.getElementById('back').addEventListener('click', () => jump(video.currentTime - 15));
+    document.getElementById('next').addEventListener('click', () => jump(chapters[Math.min(selected() + 1, chapters.length - 1)].start));
+    document.getElementById('speed').addEventListener('change', e => {video.playbackRate = Number(e.target.value);});
+    video.addEventListener('timeupdate', update);
+    video.addEventListener('seeked', update);
+    video.addEventListener('loadedmetadata', update);
+    video.addEventListener('error', () => {document.getElementById('error').hidden = false;});
+    update();
+  </script>
+</body>
+</html>

@@ -1,0 +1,445 @@
+WEBVTT
+
+00:00:00.600 --> 00:00:04.932
+Diese Anleitung zeigt dir die optionale Companion-Firmware wofür sie
+
+00:00:04.825 --> 00:00:07.145
+da ist was sie nicht tut und wie du sie
+
+00:00:07.038 --> 00:00:08.858
+sicher im Browser installierst
+
+00:00:11.225 --> 00:00:15.445
+Im runden Waveshare-Gerät sitzen zwei unabhängige Prozessoren
+
+00:00:16.188 --> 00:00:20.332
+Auf dem ESP zweiunddreißig S drei läuft RoonPilot mit Display
+
+00:00:20.425 --> 00:00:23.095
+Touchbedienung Drehring und Netzwerk
+
+00:00:23.838 --> 00:00:28.645
+Der zweite klassische ESP zweiunddreißig ist der Begleitprozessor
+
+00:00:29.388 --> 00:00:32.982
+Er gehört zum selben Gerät und ist keine separate Bridge
+
+00:00:35.350 --> 00:00:38.382
+RoonPilot benötigt den zweiten Prozessor nicht
+
+00:00:39.138 --> 00:00:42.995
+Die kleine Sleep-Firmware schaltet dessen ungenutzten Audioausgang
+
+00:00:42.888 --> 00:00:47.195
+stumm lässt gemeinsame Signalleitungen inaktiv und versetzt den
+
+00:00:47.088 --> 00:00:49.870
+Begleitprozessor in dauerhaften Tiefschlaf
+
+00:00:50.625 --> 00:00:54.620
+Das vermeidet unnötige Aktivität und dient dem Stromsparen
+
+00:00:57.017 --> 00:01:00.337
+Sie macht RoonPilot nicht zum Musikplayer und nicht zu einem
+
+00:01:00.229 --> 00:01:01.699
+Roon-Audio-Endpunkt
+
+00:01:02.442 --> 00:01:06.637
+Sie erweitert keine IR oder RME-Bridge und ersetzt keinen
+
+00:01:06.529 --> 00:01:07.849
+Unterspannungsschutz
+
+00:01:08.592 --> 00:01:12.237
+Mit dem hier gemeinten Audio-DAC ist der kleine Chip auf
+
+00:01:12.129 --> 00:01:16.412
+der Waveshare-Platine gemeint nicht dein externer RME-DAC
+
+00:01:18.808 --> 00:01:20.941
+Die Installation ist freiwillig
+
+00:01:21.683 --> 00:01:24.628
+RoonPilot funktioniert vollständig ohne sie
+
+00:01:25.371 --> 00:01:30.028
+Auch danach bleiben Display Touch Drehring WLAN und Roon-Verbindung
+
+00:01:29.921 --> 00:01:30.878
+verfügbar
+
+00:01:31.633 --> 00:01:35.791
+Der Tiefschlaf betrifft nur den Begleitprozessor nicht RoonPilot
+
+00:01:36.533 --> 00:01:40.378
+Eine bestimmte zusätzliche Akkulaufzeit wird nicht versprochen
+
+00:01:40.533 --> 00:01:43.378
+weitere Bauteile verbrauchen weiterhin Strom
+
+00:01:45.725 --> 00:01:50.195
+Du brauchst einen Computer ein USB-Datenkabel und einen aktuellen
+
+00:01:50.088 --> 00:01:51.895
+Chrome oder Edge-Browser
+
+00:01:52.638 --> 00:01:54.908
+Auf dem Mac kannst du Chrome verwenden
+
+00:01:55.650 --> 00:01:59.745
+Safari und Firefox eignen sich nicht für diesen USB-Installer
+
+00:02:00.488 --> 00:02:04.695
+Schließe andere Programme mit serieller USB-Verbindung und verbinde
+
+00:02:04.588 --> 00:02:06.833
+RoonPilot direkt mit dem Computer
+
+00:02:09.225 --> 00:02:13.058
+Gelöscht und ersetzt wird nur die Firmware des Begleitprozessors
+
+00:02:13.800 --> 00:02:17.770
+Die RoonPilot-Version WLAN-Einstellungen Profile und
+
+00:02:17.662 --> 00:02:20.932
+Bridge-Kopplungen auf dem Hauptprozessor bleiben erhalten
+
+00:02:21.675 --> 00:02:25.570
+Willst du später exakt zur Waveshare-Originalfirmware des
+
+00:02:25.462 --> 00:02:29.508
+Begleitprozessors zurück sichere diese vorher mit der verlinkten
+
+00:02:29.400 --> 00:02:30.258
+Anleitung
+
+00:02:31.000 --> 00:02:34.282
+Für die normale Installation ist das nicht erforderlich
+
+00:02:36.683 --> 00:02:39.228
+Öffne die hier gezeigte Adresse im Browser
+
+00:02:39.971 --> 00:02:42.653
+Wichtig ist Companion am Ende der Adresse
+
+00:02:43.396 --> 00:02:47.016
+Du kannst auch im Hauptinstaller auf Companion-Webinstaller öffnen
+
+00:02:46.908 --> 00:02:47.541
+klicken
+
+00:02:48.283 --> 00:02:51.628
+Die Überschrift muss Companion-Firmware-Installer lauten
+
+00:02:54.017 --> 00:02:57.137
+Scrolle zum Abschnitt Companion Sleep installieren
+
+00:02:57.879 --> 00:03:02.024
+Hier steht die eigene Companion-Version in diesem Beispiel eins
+
+00:03:01.917 --> 00:03:03.537
+Punkt null Punkt eins
+
+00:03:04.279 --> 00:03:06.862
+Das ist keine ältere RoonPilot-Version
+
+00:03:07.604 --> 00:03:11.012
+Beide Prozessoren haben getrennte Firmware und getrennte
+
+00:03:10.904 --> 00:03:11.987
+Versionsnummern
+
+00:03:14.350 --> 00:03:18.008
+Lies den Hinweis zum richtigen Prozessor und zur Ersetzung seiner
+
+00:03:17.900 --> 00:03:18.658
+Firmware
+
+00:03:19.400 --> 00:03:20.783
+Lies auch die Lizenz
+
+00:03:21.525 --> 00:03:22.908
+Setze beide Häkchen
+
+00:03:23.650 --> 00:03:27.470
+Erst jetzt wird der Knopf Companion-Firmware installieren aktiv
+
+00:03:28.213 --> 00:03:31.458
+Klicke darauf um die Geräteauswahl zu öffnen
+
+00:03:33.850 --> 00:03:37.133
+Bei dieser Installation ist USB serial richtig
+
+00:03:37.875 --> 00:03:40.845
+Unter Windows steht dahinter eine COM-Nummer
+
+00:03:41.588 --> 00:03:44.095
+Auf dem Mac kann dort ein Name mit cu Punkt
+
+00:03:43.988 --> 00:03:46.670
+usbserial oder wchusbserial stehen
+
+00:03:47.425 --> 00:03:49.595
+Diese Endungen sind nur Beispiele
+
+00:03:50.338 --> 00:03:52.333
+Entscheidend ist der Gerätename
+
+00:03:53.075 --> 00:03:56.633
+Wenn er bereits erscheint direkt auswählen und verbinden
+
+00:03:59.017 --> 00:04:03.112
+Siehst du stattdessen USB JTAG serial debug unit ist gerade
+
+00:04:03.004 --> 00:04:04.912
+der Hauptprozessor verbunden
+
+00:04:05.654 --> 00:04:08.574
+Für die Companion-Firmware ist das die falsche Seite
+
+00:04:09.317 --> 00:04:10.637
+Wähle sie nicht aus
+
+00:04:11.379 --> 00:04:15.099
+Lass die Geräteauswahl geöffnet und drehe den Stecker wie jetzt
+
+00:04:14.992 --> 00:04:15.787
+gezeigt
+
+00:04:18.142 --> 00:04:21.024
+Ziehe den USB-C-Stecker am RoonPilot ab
+
+00:04:21.767 --> 00:04:24.162
+Das andere Ende bleibt am Computer
+
+00:04:24.904 --> 00:04:27.837
+Der bisherige Eintrag verschwindet aus der Liste
+
+00:04:28.579 --> 00:04:31.812
+Du brauchst keine zweite Buchse und kein anderes Kabel
+
+00:04:34.225 --> 00:04:38.595
+Drehe den Stecker um seine eigene Längsachse genau um hundertachtzig
+
+00:04:38.488 --> 00:04:39.108
+Grad
+
+00:04:39.850 --> 00:04:42.808
+Die bisherige Oberseite wird zur Unterseite
+
+00:04:43.550 --> 00:04:47.332
+Auf dieser Platine bestimmt die Steckerstellung welcher der beiden
+
+00:04:47.225 --> 00:04:49.982
+Prozessoren über USB erreichbar ist
+
+00:04:52.350 --> 00:04:54.982
+Stecke das Kabel wieder in dieselbe Buchse
+
+00:04:55.725 --> 00:04:57.682
+Die Liste aktualisiert sich
+
+00:04:58.425 --> 00:05:01.008
+Jetzt sollte USB serial erscheinen
+
+00:05:01.750 --> 00:05:05.145
+Klicke auf diesen Eintrag und anschließend auf Verbinden
+
+00:05:05.888 --> 00:05:09.208
+Den Drehschritt brauchst du nur wenn zuvor der falsche Name
+
+00:05:09.100 --> 00:05:10.270
+angezeigt wurde
+
+00:05:12.642 --> 00:05:16.287
+Im kleinen Fenster wählst du Install RoonPilot Companion Sleep
+
+00:05:17.029 --> 00:05:20.524
+Die Dialoge können trotz deutscher Webseite englisch sein
+
+00:05:21.267 --> 00:05:24.587
+Logs and Console wird für die Installation nicht benötigt
+
+00:05:26.975 --> 00:05:28.820
+Nun erscheint Erase device
+
+00:05:29.562 --> 00:05:33.670
+Setze das Häkchen damit der Speicher des Begleitprozessors vor der
+
+00:05:33.562 --> 00:05:36.032
+Installation vollständig gelöscht wird
+
+00:05:36.775 --> 00:05:38.270
+Klicke dann auf Next
+
+00:05:39.025 --> 00:05:41.970
+Dieser Hinweis bezieht sich nur auf den ausgewählten
+
+00:05:41.862 --> 00:05:45.570
+Companion-Prozessor nicht auf deine RoonPilot-Einstellungen
+
+00:05:47.933 --> 00:05:52.066
+Prüfe im Bestätigungsfenster den Namen RoonPilot Companion Sleep
+
+00:05:52.821 --> 00:05:56.341
+Die Warnung zum Löschen betrifft weiterhin nur diesen Prozessor
+
+00:05:57.083 --> 00:05:59.616
+Wenn alles stimmt klicke auf Install
+
+00:06:00.358 --> 00:06:02.928
+Jetzt beginnt der eigentliche Schreibvorgang
+
+00:06:05.308 --> 00:06:09.178
+Der Installer bereitet die Installation vor löscht den Speicher und
+
+00:06:09.071 --> 00:06:10.303
+schreibt die Firmware
+
+00:06:11.046 --> 00:06:13.766
+Die Prozentanzeige zeigt den Fortschritt
+
+00:06:14.521 --> 00:06:16.166
+Danach folgt der Abschluss
+
+00:06:16.908 --> 00:06:19.903
+Lass das Fenster sichtbar und trenne USB nicht
+
+00:06:20.646 --> 00:06:23.753
+Im Video ist der Ablauf verkürzt bei dir kann er
+
+00:06:23.646 --> 00:06:24.578
+länger dauern
+
+00:06:26.933 --> 00:06:29.078
+Warte auf Installation complete
+
+00:06:29.821 --> 00:06:32.466
+Erst dann ist die Installation abgeschlossen
+
+00:06:33.208 --> 00:06:36.028
+Klicke auf Next und schließe das kleine Fenster
+
+00:06:36.771 --> 00:06:40.166
+Ziehe das Kabel nicht schon bei hundert Prozent während Wrapping
+
+00:06:40.058 --> 00:06:40.628
+up ab
+
+00:06:43.017 --> 00:06:46.924
+Für die Companion-Firmware gibt es jetzt kein Einrichtungs-WLAN
+
+00:06:47.054 --> 00:06:50.174
+keine eigene Webseite und keine Roon-Freigabe
+
+00:06:50.917 --> 00:06:54.724
+Ihre Aufgabe ist gerade nach dem Start schlafen zu gehen
+
+00:06:55.479 --> 00:06:59.074
+Auch nach einem neuen Einschalten geht der Begleitprozessor wieder
+
+00:06:58.967 --> 00:07:00.787
+in diesen Stromsparzustand
+
+00:07:03.142 --> 00:07:06.199
+Bringe das Kabel anschließend wieder in die Stellung für den
+
+00:07:06.092 --> 00:07:07.249
+Hauptprozessor
+
+00:07:07.992 --> 00:07:11.862
+Ziehe es dazu nach dem erfolgreichen Abschluss am RoonPilot ab
+
+00:07:12.604 --> 00:07:15.687
+Die Companion-Firmware bleibt dauerhaft gespeichert
+
+00:07:18.058 --> 00:07:21.178
+Drehe den Stecker erneut um hundertachtzig Grad
+
+00:07:21.921 --> 00:07:24.428
+Jetzt liegt wieder die andere Seite oben
+
+00:07:25.183 --> 00:07:29.078
+Damit kehrst du zur normalen USB-Verbindung mit dem Hauptprozessor
+
+00:07:28.971 --> 00:07:29.541
+zurück
+
+00:07:31.933 --> 00:07:35.228
+Stecke das Kabel wieder ein und warte auf RoonPilot
+
+00:07:35.971 --> 00:07:40.366
+Die normale USB-Seite heißt jetzt wieder USB JTAG serial debug
+
+00:07:40.258 --> 00:07:40.841
+unit
+
+00:07:41.583 --> 00:07:43.678
+Du musst dort nichts neu installieren
+
+00:07:44.433 --> 00:07:47.953
+Companion Sleep und die Hauptfirmware sind nun unabhängig
+
+00:07:47.846 --> 00:07:49.391
+voneinander vorhanden
+
+00:07:51.767 --> 00:07:55.599
+Wenn RoonPilot schon eingerichtet war nutzt es seine bisherigen
+
+00:07:55.492 --> 00:07:56.824
+Einstellungen weiter
+
+00:07:57.567 --> 00:08:01.299
+WLAN Roon und Bridges musst du wegen Companion Sleep nicht
+
+00:08:01.192 --> 00:08:02.362
+neu einrichten
+
+00:08:03.104 --> 00:08:06.999
+War die Hauptfirmware noch nicht installiert folge zusätzlich
+
+00:08:06.892 --> 00:08:09.649
+unserer normalen RoonPilot-Videoanleitung
+
+00:08:10.392 --> 00:08:13.524
+Diese Companion-Installation ersetzt sie nicht
+
+00:08:15.892 --> 00:08:19.737
+Ist die Liste leer prüfe das Datenkabel und schließe andere
+
+00:08:19.629 --> 00:08:20.999
+serielle Programme
+
+00:08:21.742 --> 00:08:25.887
+Wird ESP zweiunddreißig S drei als nicht unterstützt gemeldet
+
+00:08:25.992 --> 00:08:29.624
+schließe den Dialog drehe den Stecker und verbinde erneut die
+
+00:08:29.517 --> 00:08:30.837
+Companion-Seite
+
+00:08:31.579 --> 00:08:34.862
+Bei einer unterbrochenen Installation kannst du denselben
+
+00:08:34.754 --> 00:08:37.149
+Companion-Installer erneut ausführen
+
+00:08:37.892 --> 00:08:40.824
+Installiere nicht ersatzweise die Hauptfirmware
+
+00:08:43.183 --> 00:08:43.978
+Geschafft
+
+00:08:44.708 --> 00:08:49.003
+Der Begleitprozessor schläft RoonPilot bleibt deine Fernbedienung
+
+00:08:49.746 --> 00:08:53.191
+Alle Schritte und die Links zur schriftlichen Anleitung findest du
+
+00:08:53.083 --> 00:08:54.166
+unter dem Video
+
+00:08:54.908 --> 00:08:58.028
+Nimm dir Zeit und wiederhole bei Bedarf ein Kapitel

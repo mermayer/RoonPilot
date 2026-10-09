@@ -2,6 +2,8 @@
 
 **English** · [Deutsch](de/installation-macos.md) · [Windows](installation-windows.md)
 
+[![Watch video guide](../docs/assets/video-button-en.svg)](https://mermayer.github.io/RoonPilot/video/installation-en.html)
+
 The normal installation needs no macOS System Information lookup, Python,
 Terminal command or `esptool`.
 

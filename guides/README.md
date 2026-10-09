@@ -2,6 +2,12 @@
 
 **English** · [Deutsch](de/README.md)
 
+## Installation videos
+
+- **RoonPilot:** [![Watch video guide](../docs/assets/video-button-en.svg)](https://mermayer.github.io/RoonPilot/video/installation-en.html)
+- **Optional Companion firmware:** [![Watch video guide](../docs/assets/video-button-en.svg)](https://mermayer.github.io/RoonPilot/video/companion-installation-en.html)
+- **Optional IR Bridge:** [![Watch video guide](../docs/assets/video-button-en.svg)](https://mermayer.github.io/RoonPilot/video/ir-bridge-installation-en.html)
+
 > **Current USB firmware: 2.0.2.** These guides cover RoonPilot and optional
 > **IR Bridge 1.0.0**. Both Web Installers are available. RoonPilot online updates
 > are temporarily suspended; use the USB installer for a clean 2.0.2 installation.

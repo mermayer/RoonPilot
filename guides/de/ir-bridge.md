@@ -2,6 +2,8 @@
 
 [English](../ir-bridge.md) · **Deutsch**
 
+[![Videoanleitung ansehen](../../docs/assets/video-button-de.svg)](https://mermayer.github.io/RoonPilot/video/ir-bridge-installation-de.html)
+
 Die RoonPilot IR Bridge ist eine optionale ESP32-S3-Erweiterung für Audiogeräte,
 deren gewünschte Funktionen nicht vollständig über Roon erreichbar sind.
 RoonPilot bleibt die einzige Zentrale: Es koppelt die Bridge, lernt

@@ -2,6 +2,8 @@
 
 **English** · [Deutsch](de/companion-installation-macos.md) · [Windows](companion-installation-windows.md)
 
+[![Watch video guide](../docs/assets/video-button-en.svg)](https://mermayer.github.io/RoonPilot/video/companion-installation-en.html)
+
 This optional installation runs entirely in Google Chrome. It needs no macOS
 System Information lookup, Python, Terminal command or `esptool`.
 

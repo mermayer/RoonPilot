@@ -22,6 +22,12 @@
 
 </div>
 
+## Videoanleitungen zur Installation
+
+- **RoonPilot:** [![Videoanleitung ansehen](docs/assets/video-button-de.svg)](https://mermayer.github.io/RoonPilot/video/installation-de.html)
+- **Optionale Companion-Firmware:** [![Videoanleitung ansehen](docs/assets/video-button-de.svg)](https://mermayer.github.io/RoonPilot/video/companion-installation-de.html)
+- **Optionale IR Bridge:** [![Videoanleitung ansehen](docs/assets/video-button-de.svg)](https://mermayer.github.io/RoonPilot/video/ir-bridge-installation-de.html)
+
 > [!NOTE]
 > **Aktuelle USB-Firmware: 2.0.2.**
 > Die optionale IR-Bridge-Firmware **1.0.0** ist mit dieser Ausgabe verfügbar.

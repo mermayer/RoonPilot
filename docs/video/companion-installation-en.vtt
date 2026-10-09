@@ -1,0 +1,367 @@
+WEBVTT
+
+00:00:00.638 --> 00:00:04.432
+This guide explains the optional Companion firmware what it is
+
+00:00:04.325 --> 00:00:07.058
+for what it does not do and how to install
+
+00:00:06.950 --> 00:00:08.370
+it safely in your browser
+
+00:00:10.262 --> 00:00:14.982
+The round Waveshare device contains two independent processors The E
+
+00:00:14.875 --> 00:00:19.232
+S P thirty-two S three runs RoonPilot including the display
+
+00:00:19.375 --> 00:00:23.808
+touch controls rotary control and network connection The second
+
+00:00:23.938 --> 00:00:27.920
+classic E S P thirty-two is the companion processor It
+
+00:00:27.812 --> 00:00:31.045
+is inside the same device not a separate Bridge
+
+00:00:32.946 --> 00:00:37.141
+RoonPilot does not need the second processor The small Sleep
+
+00:00:37.033 --> 00:00:41.028
+firmware mutes its unused audio output leaves the shared signal
+
+00:00:40.921 --> 00:00:45.078
+lines inactive and puts the companion processor into indefinite deep
+
+00:00:44.971 --> 00:00:49.528
+sleep This avoids unnecessary activity and is intended to save
+
+00:00:49.421 --> 00:00:50.041
+power
+
+00:00:51.904 --> 00:00:55.024
+It does not turn RoonPilot into a music player or
+
+00:00:54.917 --> 00:00:58.312
+a Roon audio endpoint It does not extend an I
+
+00:00:58.204 --> 00:01:00.862
+R or R M E Bridge and it does not
+
+00:01:00.754 --> 00:01:05.287
+replace undervoltage protection The audio D A C mentioned here
+
+00:01:05.179 --> 00:01:07.974
+is the small chip on the Waveshare board not your
+
+00:01:07.867 --> 00:01:10.174
+external R M E D A C
+
+00:01:12.029 --> 00:01:16.899
+This installation is optional RoonPilot works fully without it
+
+00:01:17.167 --> 00:01:22.549
+Afterwards the display touch controls rotary control Wi-Fi and Roon
+
+00:01:22.442 --> 00:01:26.387
+connection still work Deep sleep affects only the companion
+
+00:01:26.279 --> 00:01:31.124
+processor not RoonPilot No particular increase in battery life is
+
+00:01:31.017 --> 00:01:34.412
+promised other parts of the board still consume power
+
+00:01:36.346 --> 00:01:39.378
+You need a computer a U S B data cable
+
+00:01:39.558 --> 00:01:42.728
+and a current Chrome or Edge browser On a Mac
+
+00:01:42.896 --> 00:01:46.791
+you can use Chrome Safari and Firefox cannot run this
+
+00:01:46.683 --> 00:01:50.541
+U S B installer Close other programs using a serial
+
+00:01:50.433 --> 00:01:54.128
+U S B connection and connect RoonPilot directly to the
+
+00:01:54.021 --> 00:01:54.778
+computer
+
+00:01:56.654 --> 00:02:01.124
+Only the companion processor's firmware is erased and replaced The
+
+00:02:01.017 --> 00:02:05.799
+RoonPilot version Wi-Fi settings profiles and Bridge pairings on the
+
+00:02:05.692 --> 00:02:09.562
+main processor remain unchanged If you may want the exact
+
+00:02:09.454 --> 00:02:13.787
+original Waveshare companion firmware back later save it first using
+
+00:02:13.679 --> 00:02:17.362
+the linked guide That backup is not required for normal
+
+00:02:17.254 --> 00:02:18.237
+installation
+
+00:02:20.112 --> 00:02:23.970
+Open the address shown here in your browser Companion at
+
+00:02:23.862 --> 00:02:27.220
+the end of the address is important You can also
+
+00:02:27.112 --> 00:02:30.558
+choose Open the Companion Web Installer on the main installer
+
+00:02:30.450 --> 00:02:34.432
+page The heading should say Companion Firmware Installer
+
+00:02:36.308 --> 00:02:41.053
+Scroll to Install Companion Sleep This shows the separate Companion
+
+00:02:40.946 --> 00:02:44.791
+version one point zero point one in this example It
+
+00:02:44.683 --> 00:02:48.728
+is not an older RoonPilot version Each processor has its
+
+00:02:48.621 --> 00:02:50.603
+own firmware and version number
+
+00:02:52.500 --> 00:02:56.220
+Read the notice about selecting the right processor and replacing
+
+00:02:56.112 --> 00:03:00.695
+its firmware Read the licence as well Tick both boxes
+
+00:03:00.950 --> 00:03:05.358
+Only then does Install Companion firmware become available Click it
+
+00:03:05.250 --> 00:03:07.495
+to open the device selection window
+
+00:03:09.417 --> 00:03:13.574
+For this installation U S B serial is correct On
+
+00:03:13.467 --> 00:03:16.524
+Windows it has a C O M number On a
+
+00:03:16.417 --> 00:03:19.824
+Mac the port name may contain c u dot usbserial
+
+00:03:19.917 --> 00:03:24.949
+or wchusbserial These endings are only examples The device name
+
+00:03:24.842 --> 00:03:28.762
+is what matters If it already appears select it and
+
+00:03:28.654 --> 00:03:29.399
+connect
+
+00:03:31.304 --> 00:03:34.212
+If you see U S B J tag serial debug
+
+00:03:34.104 --> 00:03:37.924
+unit instead you are connected to the main processor This
+
+00:03:37.817 --> 00:03:41.224
+is the wrong side for the Companion firmware Do not
+
+00:03:41.117 --> 00:03:45.024
+select it Leave the device selection window open and turn
+
+00:03:44.917 --> 00:03:46.699
+the connector as shown next
+
+00:03:48.600 --> 00:03:52.820
+Unplug the U S B C connector at RoonPilot Leave
+
+00:03:52.712 --> 00:03:56.758
+the other end connected to your computer The existing entry
+
+00:03:56.650 --> 00:04:00.408
+disappears from the list You do not need another socket
+
+00:04:00.300 --> 00:04:01.432
+or another cable
+
+00:04:03.333 --> 00:04:06.553
+Rotate the connector around its own length by one hundred
+
+00:04:06.446 --> 00:04:09.841
+and eighty degrees The side that was facing up now
+
+00:04:09.733 --> 00:04:14.566
+faces down On this board the connector orientation determines which
+
+00:04:14.458 --> 00:04:17.203
+processor is accessible over U S B
+
+00:04:19.100 --> 00:04:22.545
+Plug the cable back into the same socket The list
+
+00:04:22.438 --> 00:04:26.470
+updates and U S B serial should now appear Select
+
+00:04:26.362 --> 00:04:30.032
+that entry then click Connect You only need to turn
+
+00:04:29.925 --> 00:04:32.558
+the connector if the wrong name was shown before
+
+00:04:34.446 --> 00:04:39.091
+In the small window choose Install RoonPilot Companion Sleep The
+
+00:04:38.983 --> 00:04:42.928
+installer dialogs are in English You do not need Logs
+
+00:04:42.821 --> 00:04:45.166
+and Console for a normal installation
+
+00:04:47.071 --> 00:04:50.803
+The Erase device window now appears Tick the box to
+
+00:04:50.696 --> 00:04:54.016
+erase the companion processor's memory completely before
+
+00:04:53.908 --> 00:04:58.728
+installation Then click Next This warning refers only to the
+
+00:04:58.621 --> 00:05:02.616
+selected companion processor not to your RoonPilot settings
+
+00:05:04.475 --> 00:05:08.708
+Check that the confirmation window names RoonPilot Companion Sleep
+
+00:05:08.988 --> 00:05:12.932
+The erase warning still refers only to this processor If
+
+00:05:12.825 --> 00:05:17.258
+everything is correct click Install The firmware is now written
+
+00:05:17.150 --> 00:05:18.195
+to the device
+
+00:05:20.083 --> 00:05:24.291
+The installer prepares the installation erases the memory and writes
+
+00:05:24.183 --> 00:05:28.891
+the firmware The percentage shows progress It then finishes the
+
+00:05:28.783 --> 00:05:33.103
+process Keep this window visible and do not disconnect U
+
+00:05:32.996 --> 00:05:37.578
+S B The video shortens this sequence your installation may
+
+00:05:37.471 --> 00:05:38.378
+take longer
+
+00:05:40.304 --> 00:05:44.637
+Wait for Installation complete Only then is the installation
+
+00:05:44.529 --> 00:05:48.787
+finished Click Next and close the small window Do not
+
+00:05:48.679 --> 00:05:52.362
+unplug just because the progress reaches one hundred percent while
+
+00:05:52.254 --> 00:05:53.949
+Wrapping up is still displayed
+
+00:05:55.833 --> 00:05:59.353
+There is no setup Wi-Fi no separate website and no
+
+00:05:59.246 --> 00:06:03.128
+Roon authorisation for the Companion firmware Its job is to
+
+00:06:03.021 --> 00:06:06.666
+go to sleep after starting Whenever the device is powered
+
+00:06:06.558 --> 00:06:10.903
+on again the companion processor returns to this power-saving state
+
+00:06:12.779 --> 00:06:15.887
+Now return the cable to the orientation for the main
+
+00:06:15.779 --> 00:06:20.099
+processor After the successful installation unplug it at the
+
+00:06:19.992 --> 00:06:24.724
+RoonPilot end The Companion firmware remains stored permanently
+
+00:06:26.600 --> 00:06:29.707
+Turn the connector over by another one hundred and eighty
+
+00:06:29.600 --> 00:06:34.382
+degrees The opposite side faces up again This returns you
+
+00:06:34.275 --> 00:06:36.857
+to the normal U S B connection with the main
+
+00:06:36.750 --> 00:06:37.557
+processor
+
+00:06:39.446 --> 00:06:42.966
+Plug the cable back in and wait for RoonPilot The
+
+00:06:42.858 --> 00:06:45.566
+normal U S B side is now U S B
+
+00:06:45.458 --> 00:06:48.991
+J tag serial debug unit again You do not need
+
+00:06:48.883 --> 00:06:53.053
+to install anything there Companion Sleep and the main firmware
+
+00:06:52.946 --> 00:06:54.778
+are now present independently
+
+00:06:56.679 --> 00:07:00.987
+If RoonPilot was already configured it continues using its existing
+
+00:07:00.879 --> 00:07:04.499
+settings You do not need to set up Wi-Fi Roon
+
+00:07:04.479 --> 00:07:07.837
+or Bridges again because of Companion Sleep If the main
+
+00:07:07.729 --> 00:07:11.824
+firmware was not installed yet also follow our regular RoonPilot
+
+00:07:11.717 --> 00:07:16.012
+video guide This Companion installation does not replace it
+
+00:07:17.929 --> 00:07:20.862
+If the list is empty check the data cable and
+
+00:07:20.754 --> 00:07:24.762
+close other serial programs If the E S P thirty-two
+
+00:07:24.654 --> 00:07:28.774
+S three is reported as unsupported close the dialog turn
+
+00:07:28.667 --> 00:07:32.462
+the connector and reconnect to the Companion side After an
+
+00:07:32.354 --> 00:07:36.824
+interrupted installation run the same Companion installer again Do
+
+00:07:36.717 --> 00:07:38.899
+not substitute the main firmware
+
+00:07:40.779 --> 00:07:45.562
+All done The companion processor sleeps while RoonPilot remains your
+
+00:07:45.454 --> 00:07:49.149
+remote control All steps and links to the written guide
+
+00:07:49.042 --> 00:07:52.699
+are below this video Take your time and repeat any
+
+00:07:52.592 --> 00:07:53.674
+chapter you need

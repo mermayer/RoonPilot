@@ -1,0 +1,220 @@
+WEBVTT
+
+00:00:00.638 --> 00:00:04.308
+Here is how to install RoonPilot directly in your browser
+
+00:00:04.588 --> 00:00:07.870
+We will go through every click together including how to
+
+00:00:07.762 --> 00:00:09.995
+connect the correct USB device
+
+00:00:11.888 --> 00:00:15.882
+You need your RoonPilot a USB data cable and Chrome
+
+00:00:15.875 --> 00:00:19.358
+or Edge on a computer A charging-only cable will not
+
+00:00:19.250 --> 00:00:23.033
+work Connect the device directly to your computer
+
+00:00:24.933 --> 00:00:29.766
+This installation erases the existing settings on RoonPilot If you
+
+00:00:29.658 --> 00:00:33.828
+still need them save a configuration backup first If your
+
+00:00:33.721 --> 00:00:37.141
+device is brand new you can continue straight away
+
+00:00:39.017 --> 00:00:42.649
+Open Chrome or Edge Enter the address shown here in
+
+00:00:42.542 --> 00:00:46.087
+the address bar then press Enter This takes you to
+
+00:00:45.979 --> 00:00:48.112
+the official RoonPilot installer
+
+00:00:49.975 --> 00:00:54.395
+Scroll down to Choose firmware Leave the current USB version
+
+00:00:54.288 --> 00:00:58.470
+selected In this example it is version two point zero
+
+00:00:58.363 --> 00:01:02.070
+point two A newer version may be available later
+
+00:01:03.946 --> 00:01:07.691
+Scroll down a little further Read the notices about the
+
+00:01:07.583 --> 00:01:12.353
+correct processor erasing the device and the licence Tick both
+
+00:01:12.246 --> 00:01:15.753
+boxes You can now click Install RoonPilot
+
+00:01:17.679 --> 00:01:20.637
+The device name is what matters not the number in
+
+00:01:20.529 --> 00:01:25.024
+brackets The entry highlighted in green is correct If you
+
+00:01:24.917 --> 00:01:29.124
+already see it connect directly The next steps are only
+
+00:01:29.017 --> 00:01:31.862
+needed if USB serial appears instead
+
+00:01:33.750 --> 00:01:37.895
+Sometimes the list only shows USB serial That is the
+
+00:01:37.788 --> 00:01:42.358
+other processor inside the device Do not select it You
+
+00:01:42.250 --> 00:01:45.395
+only need to turn over the USB-C connector at the
+
+00:01:45.288 --> 00:01:46.282
+RoonPilot
+
+00:01:48.167 --> 00:01:52.299
+Leave the device selection window open Unplug the cable at
+
+00:01:52.192 --> 00:01:56.312
+the RoonPilot Leave the other end connected to your computer
+
+00:01:56.567 --> 00:01:59.137
+The old entry disappears from the list
+
+00:02:01.017 --> 00:02:05.099
+Turn the unplugged connector around its own lengthwise axis by
+
+00:02:04.992 --> 00:02:08.324
+one hundred and eighty degrees The side that was facing
+
+00:02:08.217 --> 00:02:11.812
+upwards is now underneath You do not need a different
+
+00:02:11.704 --> 00:02:12.387
+cable
+
+00:02:14.267 --> 00:02:18.099
+Plug it back into the same socket The browser updates
+
+00:02:17.992 --> 00:02:22.212
+the list The correct device name now appears Click that
+
+00:02:22.104 --> 00:02:24.099
+entry then click Connect
+
+00:02:25.988 --> 00:02:30.783
+After connecting a small RoonPilot window opens Click Install
+
+00:02:30.675 --> 00:02:34.320
+RoonPilot You do not need Logs and Console for a
+
+00:02:34.213 --> 00:02:35.558
+normal installation
+
+00:02:37.471 --> 00:02:41.528
+This window asks you to confirm the installation The warning
+
+00:02:41.421 --> 00:02:44.491
+means that all data on the device will be erased
+
+00:02:44.771 --> 00:02:46.991
+When you are ready click Install
+
+00:02:48.875 --> 00:02:52.933
+First the installer prepares the device and erases its memory
+
+00:02:53.213 --> 00:02:57.445
+Then the percentage increases Keep the window visible and leave
+
+00:02:57.338 --> 00:03:01.245
+the cable connected The actual installation may take a few
+
+00:03:01.138 --> 00:03:01.858
+minutes
+
+00:03:04.888 --> 00:03:09.020
+Wait until you see Installation complete Only then is the
+
+00:03:08.913 --> 00:03:13.458
+installation finished Click Next then close the small window
+
+00:03:13.725 --> 00:03:18.508
+RoonPilot restarts Leave USB connected to keep it powered
+
+00:03:20.429 --> 00:03:24.812
+The RoonPilot screen now shows Wi-Fi setup Open the Wi-Fi
+
+00:03:24.704 --> 00:03:29.524
+list on your phone tablet or laptop Connect to RoonPilot
+
+00:03:29.417 --> 00:03:34.162
+Setup The last six characters identify your particular device
+
+00:03:36.054 --> 00:03:40.112
+The password is roonpilot a hyphen then setup all in
+
+00:03:40.004 --> 00:03:44.249
+lower case If your phone reports no internet stay connected
+
+00:03:44.142 --> 00:03:47.424
+anyway This network is only used to set up the
+
+00:03:47.317 --> 00:03:48.112
+device
+
+00:03:49.988 --> 00:03:53.558
+Open your browser and enter one nine two dot one
+
+00:03:53.450 --> 00:03:59.245
+six eight dot four dot one If necessary choose English
+
+00:03:59.500 --> 00:04:03.208
+Enter your home Wi-Fi name and password Use a two
+
+00:04:03.100 --> 00:04:07.195
+point four gigahertz network Click Save and restart
+
+00:04:09.083 --> 00:04:13.678
+Reconnect your phone to your home Wi-Fi RoonPilot now searches
+
+00:04:13.571 --> 00:04:16.553
+for your running Roon Server When it is waiting for
+
+00:04:16.446 --> 00:04:22.003
+authorisation open Settings and Extensions in Roon Enable RoonPilot
+
+00:04:21.896 --> 00:04:23.141
+by Senior Coder
+
+00:04:25.042 --> 00:04:28.824
+Finally choose the zone you want to control directly on
+
+00:04:28.717 --> 00:04:32.874
+the RoonPilot screen Once the player view appears setup is
+
+00:04:32.767 --> 00:04:35.774
+complete Enjoy using RoonPilot
+
+00:04:37.679 --> 00:04:41.562
+If no USB device appears first check your data cable
+
+00:04:41.842 --> 00:04:45.262
+If the installer reports that your ESP thirty-two board is
+
+00:04:45.154 --> 00:04:48.949
+not supported turn the connector over as shown then start
+
+00:04:48.842 --> 00:04:50.312
+the connection process again
+
+00:04:52.221 --> 00:04:55.828
+You can repeat any step using the chapters The full
+
+00:04:55.721 --> 00:04:59.416
+written guide is available on the RoonPilot project page

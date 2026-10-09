@@ -168,8 +168,24 @@ section[id] { scroll-margin-top: 92px; }
 .button.primary:hover { background: #70edef; }
 .button.secondary { border-color: var(--cyan); background: transparent; color: var(--cyan); }
 .button.secondary:hover { background: var(--cyan-soft); }
+.button.video { border-color: var(--amber); background: var(--amber-soft); color: var(--amber); }
+.button.video:hover, .button.video:focus-visible { background: var(--amber); color: #171006; }
 .button.disabled { border-color: var(--line); background: #202526; color: #777; cursor: not-allowed; }
 .button svg { width: 21px; height: 21px; }
+.video-guides { padding-block: 28px 70px; }
+.video-guides-heading { max-width: 760px; margin-bottom: 25px; }
+.video-guides-heading .eyebrow { margin: 0; color: var(--cyan); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.video-guides-heading h2 { margin: 6px 0 9px; font-size: clamp(29px, 3vw, 42px); line-height: 1.12; }
+.video-guides-heading > p:last-child { margin: 0; color: var(--muted-strong); }
+.video-guide-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.video-guide-card { display: flex; flex-direction: column; gap: 11px; min-width: 0; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(150deg, var(--amber-soft), var(--surface) 66%); }
+.video-guide-card .eyebrow { margin: 0; color: var(--amber); }
+.video-guide-card h3 { margin: 0; font-size: 22px; }
+.video-guide-card p:not(.eyebrow) { margin: 0 0 9px; color: var(--muted-strong); flex: 1; }
+.video-guide-card .button { align-self: flex-start; }
+.installer-video-callout { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin: 18px 0 25px; padding: 16px 18px; border: 1px solid rgba(241, 173, 56, .38); border-radius: 9px; background: var(--amber-soft); }
+.installer-video-callout p { flex: 1 1 260px; margin: 0; color: var(--muted-strong); }
+@media (max-width: 850px) { .video-guide-grid { grid-template-columns: 1fr; } .video-guide-card .button { width: 100%; } }
 .hero-facts {
   display: flex;
   flex-wrap: wrap;

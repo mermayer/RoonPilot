@@ -2,6 +2,8 @@
 
 [English](../installation-windows.md) · **Deutsch** · [macOS](installation-macos.md)
 
+[![Videoanleitung ansehen](../../docs/assets/video-button-de.svg)](https://mermayer.github.io/RoonPilot/video/installation-de.html)
+
 Für die normale Installation werden weder Geräte-Manager noch Python,
 `esptool` oder andere Kommandozeilenwerkzeuge benötigt.
 

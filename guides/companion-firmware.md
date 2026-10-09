@@ -2,6 +2,8 @@
 
 **English** · [Deutsch](de/companion-firmware.md)
 
+[![Watch video guide](../docs/assets/video-button-en.svg)](https://mermayer.github.io/RoonPilot/video/companion-installation-en.html)
+
 The Waveshare ESP32-S3-Knob-Touch-LCD-1.8 contains two independent ESP
 processors. RoonPilot runs on the main ESP32-S3. The second processor is a
 classic ESP32-U4WDH and is not needed for RoonPilot.
