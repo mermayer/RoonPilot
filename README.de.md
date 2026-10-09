@@ -67,9 +67,9 @@ Bluetooth und sämtliche Bridge-Hintergrundaufgaben nach dem Neustart aus.
 > keine Werbung, keine Abonnements und keine versteckten Kosten. RoonPilot
 > übermittelt weder persönliche Daten noch Nutzungs- oder Telemetriedaten an
 > den Entwickler oder an Dritte. Wer sich freiwillig für die investierte Zeit
-> und Arbeit bedanken möchte, kann dies über
-> [Send Me a Coffee](https://buy.stripe.com/6oU3cw0eV0hC5nbdlX2Fa00) oder
-> [Buy Me a Coffee](https://buymeacoffee.com/mermayer) tun.
+> und Arbeit bedanken möchte, kann das hier tun:
+>
+> [![Send Me a Coffee](docs/assets/coffee-button-send.svg)](https://buy.stripe.com/6oU3cw0eV0hC5nbdlX2Fa00) [![Buy Me a Coffee](docs/assets/coffee-button-buy.svg)](https://buymeacoffee.com/mermayer)
 >
 > **Support und Austausch:** im
 > [Roon Community Forum](https://community.roonlabs.com/t/new-big-thing-roonpilot-the-new-era-of-roon-control)
