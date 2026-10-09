@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="228" height="84" viewBox="0 -4 228 84" role="img" aria-labelledby="title">
+  <title id="title">Installationsvideo zur Companion-Firmware</title>
+  <defs><linearGradient id="surface" x2="1" y2="1"><stop stop-color="#202d30"/><stop offset="1" stop-color="#121a1c"/></linearGradient></defs>
+  <rect x="1" y="1" width="226" height="74" rx="12" fill="url(#surface)" stroke="#dca13c" stroke-width="2"/>
+  <circle cx="29" cy="38" r="17" fill="#f1ad38"/>
+  <path d="M25 29v18l14-9z" fill="#11191a"/>
+  <text x="57" y="34" fill="#fff9ee" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="700">Companion-Firmware</text>
+  <text x="57" y="54" fill="#f1ad38" font-family="Segoe UI,Arial,sans-serif" font-size="12">Videoanleitung ansehen</text>
+</svg>

@@ -24,9 +24,13 @@
 
 ## Installation videos
 
-- **RoonPilot:** [![Watch video guide](docs/assets/video-button-en.svg)](https://mermayer.github.io/RoonPilot/video/installation-en.html)
-- **Optional Companion firmware:** [![Watch video guide](docs/assets/video-button-en.svg)](https://mermayer.github.io/RoonPilot/video/companion-installation-en.html)
-- **Optional IR Bridge:** [![Watch video guide](docs/assets/video-button-en.svg)](https://mermayer.github.io/RoonPilot/video/ir-bridge-installation-en.html)
+Start with RoonPilot. The Companion firmware and IR Bridge are optional.
+
+<p align="center">
+  <a href="https://mermayer.github.io/RoonPilot/video/installation-en.html"><img src="docs/assets/video-card-roonpilot-en.svg" alt="Watch the RoonPilot installation video" width="228"></a>
+  <a href="https://mermayer.github.io/RoonPilot/video/companion-installation-en.html"><img src="docs/assets/video-card-companion-en.svg" alt="Watch the Companion firmware installation video" width="228"></a>
+  <a href="https://mermayer.github.io/RoonPilot/video/ir-bridge-installation-en.html"><img src="docs/assets/video-card-ir-bridge-en.svg" alt="Watch the IR Bridge installation video" width="228"></a>
+</p>
 
 > [!NOTE]
 > **Current USB firmware: 2.0.2.**
