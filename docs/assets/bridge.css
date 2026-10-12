@@ -401,6 +401,9 @@
 .table-wrap td { color: var(--muted-strong); font-size: 13px; }
 .table-wrap td:first-child { color: var(--cyan); font: 650 13px/1.4 ui-monospace,Consolas,monospace; white-space: nowrap; }
 .table-wrap tr:last-child td { border-bottom: 0; }
+.github-return { padding-top: 13px; font-size: 13px; }
+.github-return a { color: var(--cyan); font-weight: 650; text-decoration: none; }
+.github-return a:hover, .github-return a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
 .terms-table table { min-width: 0; }
 .terms-table td:first-child { width: 32%; white-space: normal; }
 @media (max-width: 700px) {
