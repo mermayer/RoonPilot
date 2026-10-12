@@ -14,6 +14,8 @@
 
 **[Project website →](https://mermayer.github.io/RoonPilot/)** · **[Installation →](#start-here)** · **[Troubleshooting →](guides/troubleshooting.md)**
 
+**[Explore the optional IR Bridge project →](https://mermayer.github.io/RoonPilot/ir-bridge/)**
+
 **Need the hardware?** [Where to buy: Amazon.co.uk, Amazon.com, Amazon.de, EU retailer or Waveshare →](guides/hardware-and-two-processors.md#where-to-buy)
 
 **[3D stand: guide & STL files →](guides/roonpilot-stand.md)** · **[IR Bridge enclosure: guide & STL files →](guides/ir-bridge-enclosure.md)**

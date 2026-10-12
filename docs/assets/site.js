@@ -101,9 +101,11 @@
     chapters.forEach(({ target }, index) => {
       if (target.getBoundingClientRect().top <= marker) active = index;
     });
-    const top = 104;
+    // The rail begins below the header; keep chapter positions viewport-relative.
+    const railTop = 83;
+    const top = 104 - railTop;
     const spacing = 20;
-    const bottom = window.innerHeight - 42;
+    const bottom = window.innerHeight - 42 - railTop;
     let expandedPositions = [];
     if (useRail && railExpanded) {
       expandedPositions = chapters.map(({ target }) => {

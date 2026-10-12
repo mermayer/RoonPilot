@@ -112,20 +112,21 @@ section[id] { scroll-margin-top: 92px; }
 @media (min-width: 1440px) and (min-height: 680px) {
   .has-chapter-rail .page-width {
     /* Keep the original content width and borrow only the outer desktop gutter. */
-    margin-left: max(28px, min(calc((100% - var(--page)) / 2), calc(100% - var(--page) - 168px)));
+    margin-left: max(28px, min(calc((100% - var(--page)) / 2), calc(100% - var(--page) - 172px)));
     margin-right: auto;
   }
   .chapter-rail {
     display: block;
     position: fixed;
     z-index: 35;
-    inset: 0 0 0 auto;
+    inset: 83px 0 0 auto;
     width: 172px;
-    pointer-events: none;
+    /* A continuous hover area prevents moving labels from closing the rail. */
+    pointer-events: auto;
   }
   .chapter-rail-ruler {
     position: absolute;
-    top: 83px;
+    top: 0;
     right: 0;
     bottom: 24px;
     width: 60px;
