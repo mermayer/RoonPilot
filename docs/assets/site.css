@@ -232,6 +232,9 @@ section[id] { scroll-margin-top: 92px; }
     transition: top 260ms ease, color 160ms ease, opacity 160ms ease, font-size 160ms ease;
   }
   .bridge-page .chapter-rail-link { width: 110px; }
+  .guide-page .chapter-rail-link { width: 120px; font-size: 11px; }
+  .guide-page .chapter-rail-link[aria-current],
+  .guide-page .chapter-rail-link.is-long[aria-current] { font-size: 13px; }
   .chapter-rail-link::after {
     content: "";
     position: absolute;
@@ -256,6 +259,8 @@ section[id] { scroll-margin-top: 92px; }
   .chapter-rail-link[aria-current]::after { width: 14px; height: 2px; }
   .chapter-rail.is-expanded .chapter-rail-link { font-size: 13px; opacity: .9; }
   .chapter-rail.is-expanded .chapter-rail-link[aria-current] { color: var(--text); font-size: 14px; opacity: 1; }
+  .guide-page .chapter-rail.is-expanded .chapter-rail-link { font-size: 11px; }
+  .guide-page .chapter-rail.is-expanded .chapter-rail-link[aria-current] { font-size: 13px; }
   .chapter-rail-number { display: none; }
   .chapter-rail-title { min-width: 0; }
   @media (prefers-reduced-motion: reduce) {

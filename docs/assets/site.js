@@ -1,18 +1,36 @@
 (() => {
   const isGuidePage = document.body.classList.contains('guide-page');
   const headerLinks = [...document.querySelectorAll('.site-header nav a[href^="#"]')];
-  const guideStart = isGuidePage ? document.querySelector('.guide-nav a[href="#start"]') : null;
-  const chapterLinks = guideStart ? [guideStart, ...headerLinks] : headerLinks;
+  // The complete guide's "On this page" list is the source for both nav surfaces.
+  const guideLinks = isGuidePage ? [...document.querySelectorAll('.guide-nav a[href^="#"]')] : [];
+  const chapterLinks = guideLinks.length ? guideLinks : headerLinks;
   const chapters = chapterLinks
     .map(link => ({
       link,
       target: document.getElementById(link.hash.slice(1)),
-      railTitle: isGuidePage && link.hash === '#start'
-        ? (document.documentElement.lang === 'de' ? 'Einstieg' : 'Start')
-        : isGuidePage && link.hash === '#factory' ? 'Factory' : link.textContent.trim(),
+      railTitle: link.dataset.railTitle || link.textContent.trim(),
     }))
     .filter(chapter => chapter.target);
   if (!chapters.length) return;
+  const chapterByHash = new Map(chapters.map(chapter => [chapter.link.hash, chapter]));
+
+  const guideMenu = isGuidePage ? document.querySelector('.guide-chapters-menu') : null;
+  let menuLinks = [];
+  if (guideMenu && guideLinks.length) {
+    const list = guideMenu.querySelector('.guide-chapters-list');
+    list.replaceChildren(...chapters.map(({ link }) => link.cloneNode(true)));
+    menuLinks = [...list.querySelectorAll('a')];
+    menuLinks.forEach(link => link.addEventListener('click', () => { guideMenu.open = false; }));
+    document.addEventListener('pointerdown', event => {
+      if (guideMenu.open && !guideMenu.contains(event.target)) guideMenu.open = false;
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && guideMenu.open) {
+        guideMenu.open = false;
+        guideMenu.querySelector('summary').focus();
+      }
+    });
+  }
 
   // Long-form project pages opt in; installers and videos keep their focused layouts.
   const useRail = chapters.length >= 4 && document.body.classList.contains('project-page');
@@ -104,7 +122,7 @@
     // The rail begins below the header; keep chapter positions viewport-relative.
     const railTop = 83;
     const top = 104 - railTop;
-    const spacing = 20;
+    const spacing = isGuidePage ? 30 : 20;
     const bottom = window.innerHeight - 42 - railTop;
     let expandedPositions = [];
     if (useRail && railExpanded) {
@@ -114,12 +132,12 @@
       });
       // Keep nearby chapter names legible without changing their order.
       for (let i = 1; i < expandedPositions.length; i += 1) {
-        expandedPositions[i] = Math.max(expandedPositions[i], expandedPositions[i - 1] + 26);
+        expandedPositions[i] = Math.max(expandedPositions[i], expandedPositions[i - 1] + (isGuidePage ? 34 : 26));
       }
       if (expandedPositions.at(-1) > bottom) {
         expandedPositions[expandedPositions.length - 1] = bottom;
         for (let i = expandedPositions.length - 2; i >= 0; i -= 1) {
-          expandedPositions[i] = Math.min(expandedPositions[i], expandedPositions[i + 1] - 26);
+          expandedPositions[i] = Math.min(expandedPositions[i], expandedPositions[i + 1] - (isGuidePage ? 34 : 26));
         }
       }
     }
@@ -135,6 +153,10 @@
           : index === active ? top + index * spacing + 15
             : bottom - (chapters.length - index - 1) * spacing;
       railLink.style.top = `${position}px`;
+    });
+    menuLinks.forEach(link => {
+      if (link.hash === chapters[active].link.hash) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
     });
     if (ruler) {
       const zoomStart = clamp(Math.floor(percent - 5), 0, 90);
@@ -258,31 +280,41 @@
       scrollToPercent(next);
       root.style.scrollBehavior = previous;
     });
+    const jumpToChapter = ({ link, target }, event) => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      pendingRulerTarget = null;
+      if (window.location.hash !== link.hash) history.pushState(null, '', link.hash);
+      const generation = ++jumpGeneration;
+      const align = () => {
+        if (generation !== jumpGeneration || window.location.hash !== link.hash) return;
+        const headerHeight = document.querySelector('.site-header')?.getBoundingClientRect().height || 72;
+        const delta = target.getBoundingClientRect().top - (headerHeight + 24);
+        if (Math.abs(delta) > 12) {
+          // Lazy images can change section positions after the initial jump.
+          const root = document.documentElement;
+          const previousBehavior = root.style.scrollBehavior;
+          root.style.scrollBehavior = 'auto';
+          window.scrollBy(0, delta);
+          root.style.scrollBehavior = previousBehavior;
+        }
+        schedule();
+      };
+      align();
+      [350, 1200, 2400, 4000].forEach(delay => setTimeout(align, delay));
+    };
     railLinks.forEach((railLink, index) => {
-      const { link, target } = chapters[index];
-      railLink.addEventListener('click', event => {
-        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-        event.preventDefault();
-        pendingRulerTarget = null;
-        if (window.location.hash !== link.hash) history.pushState(null, '', link.hash);
-        const generation = ++jumpGeneration;
-        const align = () => {
-          if (generation !== jumpGeneration || window.location.hash !== link.hash) return;
-          const delta = target.getBoundingClientRect().top - 96;
-          if (Math.abs(delta) > 12) {
-            // Lazy images can change section positions after the initial jump.
-            const root = document.documentElement;
-            const previousBehavior = root.style.scrollBehavior;
-            root.style.scrollBehavior = 'auto';
-            window.scrollBy(0, delta);
-            root.style.scrollBehavior = previousBehavior;
-          }
-          schedule();
-        };
-        align();
-        [350, 1200, 2400].forEach(delay => setTimeout(align, delay));
-      });
+      railLink.addEventListener('click', event => jumpToChapter(chapters[index], event));
     });
+    guideLinks.forEach(guideLink => {
+      const chapter = chapterByHash.get(guideLink.hash);
+      if (chapter) guideLink.addEventListener('click', event => jumpToChapter(chapter, event));
+    });
+    menuLinks.forEach(menuLink => {
+      const chapter = chapterByHash.get(menuLink.hash);
+      if (chapter) menuLink.addEventListener('click', event => jumpToChapter(chapter, event));
+    });
+    window.addEventListener('hashchange', cancelPendingJump);
     window.addEventListener('wheel', cancelPendingJump, { passive: true });
     window.addEventListener('touchstart', cancelPendingJump, { passive: true });
     window.addEventListener('keydown', event => {
