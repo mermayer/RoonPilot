@@ -1,6 +1,10 @@
-# RoonPilot IR Bridge
+# RoonPilot IR Bridge — technische Übersicht
 
 [English](../ir-bridge.md) · **Deutsch**
+
+Beginne auf der [IR-Bridge-Projektseite](https://mermayer.github.io/RoonPilot/de/ir-bridge/);
+dort findest du die vollständige Schritt-für-Schritt-Anleitung.
+Diese Datei ist eine kompakte technische Übersicht mit Links zu den Spezialanleitungen.
 
 [![Videoanleitung ansehen](../../docs/assets/video-button-de.svg)](https://mermayer.github.io/RoonPilot/video/ir-bridge-installation-de.html)
 

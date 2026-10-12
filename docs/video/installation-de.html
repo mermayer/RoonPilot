@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="project-link.css">
   <title>RoonPilot – USB-Installation als Videoanleitung</title>
   <style>
     :root{color-scheme:dark;--bg:#0a1219;--panel:#13222c;--text:#eff5f4;--muted:#b2c3c9;--cyan:#a8b88a;--line:#304650}
@@ -31,11 +32,11 @@
 <body>
   <main>
     <header>
-      <a class="return-link" href="https://github.com/mermayer/RoonPilot/blob/main/README.de.md">&larr; Zurück zum GitHub-Projekt</a>
       <p class="eyebrow">ROONPILOT · AUSFÜHRLICHE VIDEOANLEITUNG · 5:34 MINUTEN</p>
-      <nav class="links" aria-label="Sprache"><a href="installation-de.html" lang="de" aria-current="page">Deutsch</a><a href="installation-en.html" lang="en" >English</a></nav>
+      <nav class="links" aria-label="Sprache"><span aria-current="page">Deutsch</span><a href="installation-en.html" lang="en">English</a></nav>
       <h1>USB-Installation – Schritt für Schritt</h1>
       <p class="intro">Mit Sprecherstimme, animierten Klicks und einer Nahaufnahme zum Drehen des USB-C-Steckers. Drücke jederzeit Pause und mache den gezeigten Schritt in Ruhe nach.</p>
+      <a class="project-cta" href="../de/">Zur RoonPilot-Projektseite</a>
     </header>
     <video id="video" controls playsinline preload="metadata" poster="installation-de-poster.jpg" aria-label="RoonPilot USB-Installation mit deutscher Sprecherstimme">
       <source src="roonpilot-firmware-installation-de.mp4" type="video/mp4">
@@ -56,7 +57,6 @@
       <nav class="chapters" id="chapters" aria-label="Videokapitel"></nav>
     </section>
     <aside class="warning"><p>Wichtig: Die saubere USB-Installation löscht WLAN, Profile und Bridge-Kopplungen auf RoonPilot. Falls du sie noch benötigst, sichere vorher die Konfiguration.</p></aside>
-    <div class="links"><a href="https://mermayer.github.io/RoonPilot/de/firmware/" target="_blank" rel="noopener">Offiziellen USB-Installer öffnen</a><a href="https://github.com/mermayer/RoonPilot/blob/main/README.de.md" target="_blank" rel="noopener">Deutsche Anleitung</a><a href="roonpilot-firmware-installation-de.mp4" download>Video als MP4 speichern</a></div>
     <p class="note">Gezeigt wird der USB-Installer für 2.0.2. Verwende auf der Installationsseite immer die aktuelle USB-Version. Der Fortschritt ist im Video verkürzt; Geräteauswahl, USB-Nahaufnahme und Roon-Freigabe sind verständliche Beispielansichten. Die Installer-Dialoge und das WLAN-Formular zeigen die tatsächliche Oberfläche.</p>
     <details><summary>Alle Schritte nachlesen</summary><ol><li><h3>RoonPilot im Browser installieren</h3><p>So installierst du RoonPilot direkt im Browser. Wir gehen jeden Klick gemeinsam durch, einschließlich der richtigen USB-Verbindung.</p></li>
 <li><h3>Das brauchst du</h3><p>Du brauchst das RoonPilot-Gerät, ein USB-Datenkabel und Chrome oder Edge auf einem Computer. Ein reines Ladekabel reicht nicht. Verbinde das Gerät direkt mit dem Computer.</p></li>
@@ -81,7 +81,6 @@
 <li><h3>Kein USB-Gerät oder falscher ESP32?</h3><p>Falls kein USB-Gerät auftaucht, prüfe zuerst dein Datenkabel. Meldet der Installer, dass das ESP zweiunddreißig Board nicht unterstützt wird, drehe den Stecker wie gezeigt und starte den Verbindungsablauf erneut.</p></li>
 <li><h3>Viel Freude mit RoonPilot!</h3><p>Alle Schritte kannst du jederzeit über die Kapitel wiederholen. Die ausführliche Anleitung findest du auf der RoonPilot-Projektseite.</p></li></ol></details>
     <noscript><p>Mit deaktiviertem JavaScript lässt sich das Video mit den normalen Videosteuerungen abspielen. Die Kapitelknöpfe benötigen JavaScript.</p></noscript>
-    <footer class="page-footer"><a class="return-link" href="https://github.com/mermayer/RoonPilot/blob/main/README.de.md">&larr; Zurück zum GitHub-Projekt</a></footer>
   </main>
   <script>
     const chapters = [{"title": "Einführung", "start": 0.0}, {"title": "Vorbereitung", "start": 10.833333333333334}, {"title": "Installer öffnen", "start": 40.208333333333336}, {"title": "Bestätigen und starten", "start": 69.33333333333334}, {"title": "USB-Gerät auswählen", "start": 84.50000000000001}, {"title": "USB-C-Stecker drehen", "start": 103.75000000000001}, {"title": "Installation starten", "start": 163.5}, {"title": "Fortschritt abwarten", "start": 189.875}, {"title": "Installation abgeschlossen", "start": 206.66666666666666}, {"title": "WLAN einrichten", "start": 223.875}, {"title": "Roon freigeben", "start": 275.5833333333333}, {"title": "Fertig", "start": 293.75}, {"title": "Wenn etwas nicht klappt", "start": 307.0416666666667}, {"title": "Zum Nachschlagen", "start": 324.08333333333337}];

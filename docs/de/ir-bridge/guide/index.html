@@ -32,11 +32,26 @@
 
         <section id="start">
           <h2>1. Aufgabe der Bridge</h2>
+          <p>Wenn die native Lautstärkeregelung des Roon-Endpunkts bereits die gewünschte Hardware korrekt bedient, ist sie der bevorzugte Weg. Die Bridge ergänzt nur Funktionen, die der Endpunkt nicht bereitstellt. Wiedergabe, Playlists und Live-Radio bleiben bei Roon; die Bridge überträgt keine Musik.</p>
+          <p>Beim Abschalten von <strong>Bridge &amp; Bluetooth</strong> bleiben gespeicherte Kopplungen, Routen und Profile erhalten. Bis zum erneuten Einschalten und Neustart verwenden Zonen mit gespeicherter Route External IR oder Disabled vorübergehend das native Roon-Verhalten. Ist die Bridge-Funktion dagegen <em>eingeschaltet</em>, aber eine zugeordnete Bridge fehlt, erfolgt kein stiller Wechsel von Lautstärke- oder Power-Befehlen zu Roon.</p>
           <p>RoonPilot IR Bridge ist eine optionale ESP32-S3-Erweiterung für Geräte, deren Lautstärke oder Stromzustand Roon nicht direkt steuern kann. RoonPilot bleibt die Bedienoberfläche; die Bridge empfängt authentifizierte Lautstärke-, Mute- und Power-Aktionen und sendet die gelernten Befehle der Original-Infrarotfernbedienung.</p>
           <p>Der Steuerweg wird für jede Roon-Zone getrennt gewählt. Eine Zone kann die native Roon-Lautstärke nutzen, eine zweite einen DAC per Infrarot regeln und eine weitere die Lautstärkeregelung bewusst deaktivieren. Wird <strong>Bridge &amp; Bluetooth</strong> abgeschaltet, bleiben nach dem RoonPilot-Neustart Bridge-Scanning, Bluetooth und sämtliche Bridge-Hintergrundaufgaben aus.</p>
           <p>Die vollständige Bridge-Oberfläche folgt der globalen Deutsch/Englisch-Einstellung von RoonPilot. Physische Kennungen sowie selbst vergebene Zonen-, Geräte- und Profilnamen bleiben exakt wie eingegeben.</p>
           <div class="guide-management-note"><h3>Es gibt kein zweites Produkt zu verwalten.</h3><p>RoonPilot übernimmt Bridge-Hauptschalter, verschlüsselten BLE-Scan und Pairing, optionale WLAN-Provisionierung, laufenden Transportstatus, IR-Profile, geführtes Lernen, Befehlstests, Zonenrouting, Power-/Mute-Tasten, die gemeinsame Sicherung und signierte Onlineupdates. Die Bridge selbst benötigt weder Cloudkonto noch eine eigene Alltags-Weboberfläche.</p></div>
-          <div class="fact-grid"><div><span>Profile</span><strong>Bis zu 8</strong></div><div><span>Gespeicherte Bridges</span><strong>Bis zu 4</strong></div><div><span>Aktive Routen</span><strong>Alle benötigten Gruppenmitglieder</strong></div><div><span>Befehle</span><strong>Lautstärke ±, Mute, Power ein/aus</strong></div><div><span>Primärverbindung</span><strong>Verschlüsseltes BLE</strong></div><div><span>Fallback</span><strong>Authentifiziertes lokales WLAN</strong></div></div>
+          <div class="fact-grid"><div><span>Profile pro Bridge</span><strong>Bis zu 8</strong></div><div><span>Gespeicherte Bridges</span><strong>Bis zu 4</strong></div><div><span>Aktive Routen</span><strong>Alle benötigten Gruppenmitglieder</strong></div><div><span>Befehle</span><strong>Lautstärke ±, Mute, Power ein/aus</strong></div><div><span>Primärverbindung</span><strong>Verschlüsseltes BLE</strong></div><div><span>Fallback</span><strong>Authentifiziertes lokales WLAN</strong></div></div>
+          <h3>Begriffe auf einen Blick</h3>
+          <div class="table-wrap terms-table"><table>
+            <thead><tr><th>Begriff</th><th>Bedeutung</th></tr></thead>
+            <tbody>
+              <tr><td>Gekoppelt / gespeichert</td><td>RoonPilot und Bridge haben verschlüsselte Schlüssel ausgetauscht; die gespeicherte Bridge kann gerade ausgeschaltet oder außer Reichweite sein.</td></tr>
+              <tr><td>Verbunden</td><td>Aktuell besteht ein BLE- oder authentifizierter WLAN-Steuerweg.</td></tr>
+              <tr><td>Automatische Zonensteuerung</td><td>Die gewählte Roon-Zone oder jedes physische Gruppenmitglied bestimmt die benötigten Bridge-Routen.</td></tr>
+              <tr><td>Wartungsauswahl</td><td>Manage öffnet vorübergehend eine andere gespeicherte Bridge zum Lernen, für Diagnose oder Updates; die Zonenroute bleibt unverändert.</td></tr>
+              <tr><td>IR-Profil</td><td>Benannter Satz gelernter Befehle in RoonPilots Bibliothek, der auf mehrere Bridges übertragen werden kann.</td></tr>
+              <tr><td>Zonenroute</td><td>Die Wahl zwischen nativer Roon-Lautstärke, Bridge/Profil oder deaktivierter Lautstärke für eine Zone.</td></tr>
+              <tr><td>WLAN-Fallback</td><td>Optionaler lokaler Netzweg, der über verschlüsseltes BLE eingerichtet wird, die Reichweite erweitert und für Firmwareübertragung bevorzugt wird.</td></tr>
+            </tbody>
+          </table></div>
         </section>
 
         <section id="hardware">
@@ -95,6 +110,7 @@
 
         <section id="pairing">
           <h2>4. Bridge mit RoonPilot koppeln</h2>
+          <p>Eine Bridge gehört derzeit genau zu einem RoonPilot. Die Kopplung mit einem anderen Controller ist ein bewusster Besitzerwechsel, keine gleichzeitige gemeinsame Nutzung.</p>
           <ol>
             <li>Die lokale RoonPilot-Weboberfläche öffnen und <strong>IR Bridge</strong> auswählen.</li>
             <li><strong>Bridge &amp; Bluetooth</strong> aktivieren, speichern und RoonPilot neu starten lassen. Bei deaktivierter Funktion wird kein Bridge-Bluetooth-Stack gestartet.</li>
@@ -114,6 +130,7 @@
 
         <section id="wifi">
           <h2>5. Optionaler WLAN-Fallback</h2>
+          <p>Die Bridge hat keinen eigenen Einrichtungs-Access-Point. Aktiver Transport und beide Signalwerte stehen auf der Bridge-Seite von RoonPilot; das Quickmenü am Gerät zeigt ebenfalls den Bridge-Status.</p>
           <p>BLE bleibt die bevorzugte Verbindung. Soll die Bridge in einem anderen Zimmer stehen, bei verbundener und gebondeter BLE-Bridge <strong>Allow Wi-Fi fallback</strong> aktivieren. RoonPilot überträgt dann einmalig seine aktuellen 2,4-GHz-Zugangsdaten und einen neuen 256-Bit-Anwendungsschlüssel durch die verschlüsselte BLE-Verbindung.</p>
           <ol><li>Schalter aktivieren und Provisionierung bestätigen.</li><li>Auf <strong>Connected and verified</strong>, Bridge-IP und Signalstärke warten.</li><li>Mit <strong>Test Wi-Fi path</strong> einen authentifizierten WLAN-Befehl erzwingen, obwohl BLE verfügbar ist.</li></ol>
           <p>Die Befehle nutzen AES-256-GCM-Authentifizierung und Wiederholungsschutz. Ein Retry darf nicht unbemerkt einen zweiten IR-Befehl auslösen. Fehlerhafte Zugangsdaten werden nicht behalten, BLE bleibt der Rettungsweg und bei ausgeschaltetem Fallback startet das WLAN-Funkteil der Bridge nach einem Neustart nicht. RoonPilot und Bridge müssen ohne Client-/AP-Isolation im selben lokalen Netz liegen.</p>
@@ -142,6 +159,7 @@
 
         <section id="zones">
           <h2>7. Jede Zone zuordnen</h2>
+          <p>Ist die Bridge-Steuerung eingeschaltet und eine zugeordnete Bridge nicht erreichbar, bleibt dieser Steuerweg offline. RoonPilot ersetzt den vorgesehenen IR-Lautstärke- oder Power-Befehl nicht unbemerkt durch einen nativen Roon-Befehl.</p>
           <p>In <strong>Zone Management</strong> für jede sichtbare Zone einen Lautstärkeweg auswählen:</p>
           <ul><li><strong>Roon / endpoint volume</strong> sendet die native absolute oder dB-Lautstärke des Endpunkts.</li><li><strong>External IR Bridge</strong> sendet Volume up/down des ausgewählten Profils.</li><li><strong>Disabled</strong> verwirft Lautstärkeaktionen bewusst.</li></ul>
           <p>Die Encoder-Schrittzahl wird pro Zone getrennt eingestellt. <strong>2 Steps</strong> bedeutet zwei vollständige gelernte IR-Tastendrücke pro RoonPilot-Rastung, nicht einen künstlich gehaltenen Befehl. Beim validierten RME-Profil ergeben zwei physische 0,5-dB-Schritte daher exakt eine 1,0-dB-RoonPilot-Rastung.</p>
@@ -164,7 +182,7 @@
           <h2>8. Gesamte Einrichtung sichern und wiederherstellen</h2>
           <p>Nach dem Lernen und Prüfen der IR-Befehle <strong>System → Configuration backup</strong> öffnen und <strong>Sicherung erstellen</strong> wählen. Eine JSON-Datei enthält RoonPilot-Einstellungen, Zonenrouten, HTTP-Power-Aktionen, jedes benannte IR-Profil einmal und getrennte Bridge-Zuordnungen. Die gelernten Impulse tragen Prüfsummen. Die Profile bleiben zusätzlich in einer Bibliothek auf RoonPilot gespeichert.</p>
           <p>Die Sicherung liest die dauerhafte Profilbibliothek auf RoonPilot, nicht die gerade erreichbaren Bridges. Eine ausgeschaltete Bridge verzögert deshalb weder den Download noch macht sie die Datei unvollständig. Noch nicht mit der Bibliothek abgeglichene Änderungen können fehlen. Eine bekannte ältere Profilkopie auf einer Bridge erzeugt einen Warnhinweis; maßgeblich bleibt die Bibliotheksversion.</p>
-          <p>WLAN-Zugangsdaten, Transportschlüssel, BLE-Bonds und weitere Geheimnisse bleiben ausgeschlossen. Nach Factory-Installation oder Boardtausch die Bridge erneut koppeln und im Importdialog auswählen. Dasselbe Profil kann an mehrere Bridges übertragen werden, auf jeder mit neuer lokaler Profil-ID. Zonenrouten erfordern ein ausdrücklich gewähltes Ziel; alte numerische IDs gelten nicht automatisch weiter. Mehr dazu in der <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/configuration-backup.md">Anleitung zu Sicherung und Wiederherstellung</a>.</p>
+          <p>WLAN-Zugangsdaten, Roon-Autorisierung, Transportschlüssel und BLE-Bonds gehören nicht zur Sicherung. Unter Maintenance gibt es keinen zweiten Sicherungsschritt. Eine kompatible Konfigurationssicherung lässt sich auch bei abgeschaltetem Bridge &amp; Bluetooth importieren. Nach Factory-Installation oder Boardtausch die Bridge erneut koppeln und im Importdialog auswählen. Dasselbe Profil kann an mehrere Bridges übertragen werden, auf jeder mit neuer lokaler Profil-ID. Zonenrouten erfordern ein ausdrücklich gewähltes Ziel; alte numerische IDs gelten nicht automatisch weiter. Mehr dazu in der <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/configuration-backup.md">Anleitung zu Sicherung und Wiederherstellung</a>.</p>
           <p><strong>Eine ausgeschaltete Bridge bricht die Wiederherstellung nicht ab.</strong> RoonPilot stellt Einstellungen und Profilbibliothek wieder her, fährt mit erreichbaren Bridges fort und nennt unbestätigte Übertragungen zur späteren Vervollständigung. Eine IR-Route ohne geprüfte aktuelle Zuordnung bleibt unverändert. Ist die Bridge wieder erreichbar, den Import wiederholen oder das wiederhergestellte Bibliotheksprofil übertragen und die betroffene Route speichern.</p>
           <figure class="guide-ui-figure"><img src="../../../ir-bridge/assets/system-backup-de.png" alt="RoonPilot-Systemseite mit gemeinsamer Sicherung und Wiederherstellung" loading="lazy"><figcaption>Eine Datei enthält Geräteeinstellungen, Bibliotheksprofile und Bridge-Zuordnungen. Offline-Ziele werden beim Restore zurückgestellt, nicht als fehlgeschlagene Gerätewiederherstellung behandelt.</figcaption></figure>
           <figure class="guide-ui-figure"><img src="../../../ir-bridge/assets/unified-backup-de.svg" alt="Schaubild einer Sicherung mit eigenständigen Profilen und getrennten Bridge-Zuordnungen" loading="lazy"><figcaption>Bereits abgeglichene Profile bleiben auch bei vorübergehend unerreichbarer Bridge enthalten.</figcaption></figure>
@@ -188,6 +206,7 @@
 
         <section id="troubleshooting">
           <h2>10. Fehlerbehebung</h2>
+          <p>Infrarot benötigt Sichtkontakt oder brauchbare Reflexionen. Reagiert das Audiogerät trotz verbundener Bridge nicht, zuerst Senderposition und gelernten Befehl prüfen, bevor die Schrittzahl der Zone verändert wird.</p>
           <div class="trouble-grid">
             <article><h3>Kein serielles Gerät im Installer</h3><p>Datenfähiges Kabel verwenden, serielle Monitore schließen, ohne Hub verbinden, dann BOOT beim Einstecken halten und nach Erscheinen des Ports loslassen.</p></article>
             <article><h3>Bridge wird nicht gefunden</h3><p>Bridge &amp; Bluetooth muss aktiviert und gespeichert sein. Bei früher gekoppelter Bridge die Dreifach-Strom-Recovery nutzen und im fünfminütigen blauen Pairingfenster scannen.</p></article>
@@ -201,10 +220,10 @@
         <div class="guide-finish"><div><p class="eyebrow">Schritt für Schritt zur eigenen Bridge</p><h2>Erst nach geprüfter Verdrahtung installieren.</h2></div><a class="button primary" href="../install/">Bridge-Webinstaller öffnen</a></div>
       </article>
 
-      <aside class="guide-nav" aria-label="Auf dieser Seite"><strong>Auf dieser Seite</strong><a href="#start">Aufgabe und Umfang</a><a href="#hardware">Hardware und Verdrahtung</a><a href="#gehaeuse">3D-Gehäuse</a><a href="#status-led">Status-LED</a><a href="#factory">Factory-Installation</a><a href="#pairing">Pairing</a><a href="#wifi">WLAN-Fallback</a><a href="#learning">IR-Lernen</a><a href="#zones">Zonenrouting</a><a href="#roon-gruppen">Roon-Gruppen</a><a href="#backup">Sicherung</a><a href="#updates">Onlineupdates</a><a href="#troubleshooting">Fehlerbehebung</a><hr><a href="../">Bridge-Übersicht</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/ir-bridge-installation.md">Flash-Anleitung</a></aside>
+      <aside class="guide-nav" aria-label="Auf dieser Seite"><strong>Auf dieser Seite</strong><a href="#start">Aufgabe und Umfang</a><a href="#hardware">Hardware und Verdrahtung</a><a href="#gehaeuse">3D-Gehäuse</a><a href="#status-led">Status-LED</a><a href="#factory">Factory-Installation</a><a href="#pairing">Pairing</a><a href="#wifi">WLAN-Fallback</a><a href="#learning">IR-Lernen</a><a href="#zones">Zonenrouting</a><a href="#roon-gruppen">Roon-Gruppen</a><a href="#backup">Sicherung</a><a href="#updates">Onlineupdates</a><a href="#troubleshooting">Fehlerbehebung</a><hr><a href="../">Bridge-Übersicht</a></aside>
     </div>
   </main>
 
-  <footer><div class="page-width footer-inner"><div class="footer-brand"><span class="brand-mark" aria-hidden="true"></span><strong>RoonPilot IR Bridge</strong></div><p>Entworfen und entwickelt von <strong>Senior Coder</strong>.</p><nav aria-label="Links im Seitenfuß"><a href="../">Übersicht</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/ir-bridge-installation.md">Flash-Anleitung</a><a href="https://github.com/mermayer/RoonPilot/blob/main/docs/legal/LICENSE.de.md">Lizenz</a><a href="https://github.com/mermayer/RoonPilot/blob/main/docs/legal/THIRD_PARTY_NOTICES.md">Drittanbieterhinweise</a></nav></div></footer>
+  <footer><div class="page-width footer-inner"><div class="footer-brand"><span class="brand-mark" aria-hidden="true"></span><strong>RoonPilot IR Bridge</strong></div><p>Entworfen und entwickelt von <strong>Senior Coder</strong>.</p><nav aria-label="Links im Seitenfuß"><a href="../">Übersicht</a><a href="#factory">Factory-Installation</a><a href="https://github.com/mermayer/RoonPilot/blob/main/docs/legal/LICENSE.de.md">Lizenz</a><a href="https://github.com/mermayer/RoonPilot/blob/main/docs/legal/THIRD_PARTY_NOTICES.md">Drittanbieterhinweise</a></nav></div></footer>
 </body>
 </html>

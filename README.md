@@ -310,10 +310,8 @@ Roon digital attenuation.
 - disabling **Bridge & Bluetooth** preserves pairings and routes but prevents
   Bluetooth, scans, Bridge traffic and Bridge update checks after restart.
 
-Read the [complete IR Bridge guide](guides/ir-bridge.md), then follow the
-[illustrated hardware and Factory-installation procedure](guides/ir-bridge-installation.md).
-The [3D-printable Bridge enclosure](guides/ir-bridge-enclosure.md) includes
-exterior/interior photos and all STL downloads.
+Start at the [IR Bridge project page](https://mermayer.github.io/RoonPilot/ir-bridge/).
+It leads to the complete guide, the Web Installer and the printable enclosure.
 
 ## Optional 3D-printed stand
 
@@ -437,8 +435,7 @@ Information are not required for the normal installation.
 - [Troubleshooting](guides/troubleshooting.md)
 - [Privacy and security](guides/privacy-and-security.md)
 - [Licensing and redistribution](guides/licensing.md)
-- [Optional IR Bridge: overview and documentation path](guides/ir-bridge.md)
-- [IR Bridge hardware and Factory installation](guides/ir-bridge-installation.md)
+- [Optional IR Bridge: project page and complete guide](https://mermayer.github.io/RoonPilot/ir-bridge/)
 - [3D-printable RoonPilot stand](guides/roonpilot-stand.md)
 - [3D-printable IR Bridge enclosure](guides/ir-bridge-enclosure.md)
 - [IR Bridge connectivity and automatic zone control](guides/ir-bridge-connectivity.md)

@@ -401,6 +401,17 @@
 .table-wrap td { color: var(--muted-strong); font-size: 13px; }
 .table-wrap td:first-child { color: var(--cyan); font: 650 13px/1.4 ui-monospace,Consolas,monospace; white-space: nowrap; }
 .table-wrap tr:last-child td { border-bottom: 0; }
+.terms-table table { min-width: 0; }
+.terms-table td:first-child { width: 32%; white-space: normal; }
+@media (max-width: 700px) {
+  .terms-table thead { display: none; }
+  .terms-table table, .terms-table tbody, .terms-table tr, .terms-table td { display: block; }
+  .terms-table tr { border-bottom: 1px solid var(--line-soft); }
+  .terms-table tr:last-child { border-bottom: 0; }
+  .terms-table td { border-bottom: 0; }
+  .terms-table td:first-child { width: auto; padding-bottom: 3px; }
+  .terms-table td:last-child { padding-top: 0; }
+}
 .led-status-table table { min-width: 0; table-layout: fixed; }
 .led-status-table th:first-child,
 .led-status-table td:first-child { width: 40%; }

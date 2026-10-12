@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="project-link.css">
   <title>RoonPilot Companion – Videoanleitung zur Installation</title>
   <style>
     :root{color-scheme:dark;--bg:#0a1219;--panel:#13222c;--text:#eff5f4;--muted:#b2c3c9;--cyan:#a8b88a;--line:#304650}
@@ -30,11 +31,11 @@
 </head>
 <body><main>
   <header>
-    <a class="return-link" href="https://github.com/mermayer/RoonPilot/blob/main/README.de.md">&larr; Zurück zum GitHub-Projekt</a>
     <p class="eyebrow">ROONPILOT COMPANION · AUSFÜHRLICHE VIDEOANLEITUNG · 8:59 MINUTEN</p>
-    <nav class="links" aria-label="Sprache"><a href="companion-installation-de.html" lang="de" aria-current="page">Deutsch</a><a href="companion-installation-en.html" lang="en" >English</a></nav>
+    <nav class="links" aria-label="Sprache"><span aria-current="page">Deutsch</span><a href="companion-installation-en.html" lang="en">English</a></nav>
     <h1>Companion-Firmware – Zweck und Installation</h1>
     <p class="intro">Die freiwillige Stromspar-Firmware für den zweiten ESP32 im RoonPilot-Gerät. Mit derselben Gestaltung und Sprecherstimme wie unsere Hauptfirmware-Anleitung: animierte Klicks, echte Installeransichten und Nahaufnahmen zum Drehen des USB-C-Steckers. Pausiere jederzeit und mache jeden Schritt in Ruhe nach.</p>
+    <a class="project-cta" href="../de/firmware/companion/">Zur Companion-Projektseite</a>
   </header>
   <video id="video" controls playsinline preload="metadata" poster="companion-installation-de-poster.jpg" aria-label="RoonPilot Companion – Videoanleitung zur Installation">
     <source src="roonpilot-companion-installation-de.mp4" type="video/mp4">
@@ -53,9 +54,8 @@
   <section aria-labelledby="chapter-title"><h2 id="chapter-title">Direkt zu einem Schritt springen</h2><nav class="chapters" id="chapters" aria-label="Videokapitel"></nav></section>
   <aside class="warning"><p>Wichtig: Dieser Installer ist nur für den klassischen Companion-ESP32. Wähle „USB serial“, nicht „USB JTAG/serial debug unit“. Er ersetzt die Firmware des zweiten Prozessors; RoonPilot, WLAN, Profile und Bridge-Kopplungen auf dem Hauptprozessor bleiben erhalten. Die Companion-Firmware ist optional.</p></aside>
   <p class="note">Wenn mehrere ESP32-Geräte am Computer angeschlossen sind, trenne die anderen für eine eindeutige USB-Auswahl vorübergehend vom Computer. Installiert wird ausschließlich auf dem runden RoonPilot-Gerät, nicht auf einer separaten Bridge.</p>
-  <div class="links"><a href="https://mermayer.github.io/RoonPilot/de/firmware/companion/" target="_blank" rel="noopener">Offiziellen Companion-Installer öffnen</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/companion-firmware.md" target="_blank" rel="noopener">Aufgabe und schriftliche Anleitung</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/companion-installation-windows.md" target="_blank" rel="noopener">Windows-Anleitung</a><a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/companion-installation-macos.md" target="_blank" rel="noopener">macOS-Anleitung</a><a href="roonpilot-companion-installation-de.mp4" download>Video als MP4 speichern</a></div>
-  <p class="note">Die Hauptfirmware fehlt noch? <a href="installation-de.html">Die separate RoonPilot-Videoanleitung öffnen.</a> Companion Sleep installiert die Hauptfirmware nicht.</p>
-  <p class="note">Die Originalsicherung ist freiwillig und nur für eine spätere exakte Rückkehr zur Waveshare-Firmware nötig. Bei Bedarf vor der Companion-Installation erstellen: <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/factory-backup-windows.md" target="_blank" rel="noopener">Windows</a> · <a href="https://github.com/mermayer/RoonPilot/blob/main/guides/de/factory-backup-macos.md" target="_blank" rel="noopener">macOS</a>.</p>
+  <p class="note">Companion Sleep installiert nicht die RoonPilot-Hauptfirmware. Die Companion-Projektseite oben erklärt die getrennten Installationswege.</p>
+  <p class="note">Die Originalsicherung ist freiwillig und nur für eine spätere exakte Rückkehr zur Waveshare-Firmware nötig. Bei Bedarf vor der Companion-Installation erstellen; die Projektseite erklärt die Wege für Windows und macOS.</p>
   <p class="note">Gezeigt wird der veröffentlichte Companion-Sleep-Installer 1.0.1 mit seinen tatsächlichen Seiten und Dialogen. Seine Versionsnummer ist unabhängig von der RoonPilot-Version. Der Fortschritt ist für das Video verkürzt; USB-Geräteauswahl, Stecker-Nahaufnahme und Prozessorübersicht sind verständliche Beispielansichten. Es sind keine Terminalbefehle oder Programmierkenntnisse für die normale Installation nötig.</p>
   <details><summary>Alle Schritte nachlesen</summary><ol><li><h3>Companion-Firmware: Zweck und Installation</h3><p>Diese Anleitung zeigt dir die optionale Companion-Firmware: wofür sie da ist, was sie nicht tut und wie du sie sicher im Browser installierst.</p></li>
 <li><h3>Ein Gerät – zwei unabhängige Prozessoren</h3><p>Im runden Waveshare-Gerät sitzen zwei unabhängige Prozessoren. Auf dem ESP zweiunddreißig S drei läuft RoonPilot mit Display, Touchbedienung, Drehring und Netzwerk. Der zweite, klassische ESP zweiunddreißig ist der Begleitprozessor. Er gehört zum selben Gerät und ist keine separate Bridge.</p></li>
@@ -85,7 +85,6 @@
 <li><h3>Keine USB-Liste oder falsche Prozessorfamilie?</h3><p>Ist die Liste leer, prüfe das Datenkabel und schließe andere serielle Programme. Wird ESP zweiunddreißig S drei als nicht unterstützt gemeldet, schließe den Dialog, drehe den Stecker und verbinde erneut die Companion-Seite. Bei einer unterbrochenen Installation kannst du denselben Companion-Installer erneut ausführen. Installiere nicht ersatzweise die Hauptfirmware.</p></li>
 <li><h3>Fertig – optional, getrennt und einfach</h3><p>Geschafft. Der Begleitprozessor schläft, RoonPilot bleibt deine Fernbedienung. Alle Schritte und die Links zur schriftlichen Anleitung findest du unter dem Video. Nimm dir Zeit und wiederhole bei Bedarf ein Kapitel.</p></li></ol></details>
   <noscript><p>Ohne JavaScript kannst du die normalen Videosteuerungen benutzen; die Kapitelknöpfe benötigen JavaScript.</p></noscript>
-  <footer class="page-footer"><a class="return-link" href="https://github.com/mermayer/RoonPilot/blob/main/README.de.md">&larr; Zurück zum GitHub-Projekt</a></footer>
 </main>
 <script>
 const chapters=[{"title": "Einführung", "start": 0.0}, {"title": "Die zwei Prozessoren", "start": 10.625}, {"title": "Die Aufgabe der Firmware", "start": 34.75}, {"title": "Was sie nicht tut", "start": 56.41666666666667}, {"title": "Freiwillig und unabhängig", "start": 78.20833333333334}, {"title": "Vorbereitung", "start": 105.12500000000001}, {"title": "Was erhalten bleibt", "start": 128.625}, {"title": "Den richtigen Installer öffnen", "start": 156.08333333333334}, {"title": "Hinweise bestätigen", "start": 193.75000000000003}, {"title": "Das USB-Gerät auswählen", "start": 213.25000000000003}, {"title": "Den USB-C-Stecker drehen", "start": 238.41666666666669}, {"title": "Die Installation starten", "start": 312.0416666666667}, {"title": "Den Fortschritt abwarten", "start": 364.7083333333333}, {"title": "Installation abgeschlossen", "start": 386.3333333333333}, {"title": "Was danach passiert", "start": 402.41666666666663}, {"title": "Zurück zum Hauptprozessor", "start": 422.54166666666663}, {"title": "RoonPilot weiterverwenden", "start": 471.16666666666663}, {"title": "Wenn etwas nicht klappt", "start": 495.29166666666663}, {"title": "Zum Nachschlagen", "start": 522.5833333333333}];

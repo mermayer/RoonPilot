@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="project-link.css">
   <title>RoonPilot – USB installation video guide</title>
   <style>
     :root{color-scheme:dark;--bg:#0a1219;--panel:#13222c;--text:#eff5f4;--muted:#b2c3c9;--cyan:#a8b88a;--line:#304650}
@@ -31,11 +32,11 @@
 <body>
   <main>
     <header>
-      <a class="return-link" href="https://github.com/mermayer/RoonPilot">&larr; Back to the GitHub project</a>
       <p class="eyebrow">ROONPILOT · STEP-BY-STEP VIDEO GUIDE · 5:00 MINUTES</p>
-      <nav class="links" aria-label="Language"><a href="installation-de.html" lang="de" >Deutsch</a><a href="installation-en.html" lang="en" aria-current="page">English</a></nav>
+      <nav class="links" aria-label="Language"><a href="installation-de.html" lang="de">Deutsch</a><span aria-current="page">English</span></nav>
       <h1>USB installation — step by step</h1>
       <p class="intro">With narration, animated clicks, and a close-up of turning over the USB-C connector. Pause whenever you need to and try each step at your own pace.</p>
+      <a class="project-cta" href="../">Open the RoonPilot project page</a>
     </header>
     <video id="video" controls playsinline preload="metadata" poster="installation-en-poster.jpg" aria-label="RoonPilot USB installation with English narration">
       <source src="roonpilot-firmware-installation-en.mp4" type="video/mp4">
@@ -56,7 +57,6 @@
       <nav class="chapters" id="chapters" aria-label="Video chapters"></nav>
     </section>
     <aside class="warning"><p>Important: a clean USB installation erases Wi-Fi settings, profiles, and Bridge pairings on RoonPilot. If you still need them, save a configuration backup first.</p></aside>
-    <div class="links"><a href="https://mermayer.github.io/RoonPilot/firmware/" target="_blank" rel="noopener">Open the official USB installer</a><a href="https://github.com/mermayer/RoonPilot/blob/main/README.md" target="_blank" rel="noopener">Written guide in English</a><a href="roonpilot-firmware-installation-en.mp4" download>Save the video as an MP4</a></div>
     <p class="note">This guide shows the USB installer for 2.0.2. Always choose the current USB version on the installation page. Progress is shortened for the video. Device selection, the USB close-up, and Roon authorisation are illustrated examples. The installer dialogs and Wi-Fi form show the actual interface.</p>
     <details><summary>Read all the steps</summary><ol><li><h3>Install RoonPilot in your browser</h3><p>Here is how to install RoonPilot directly in your browser. We will go through every click together, including how to connect the correct USB device.</p></li>
 <li><h3>What you need</h3><p>You need your RoonPilot, a USB data cable, and Chrome or Edge on a computer. A charging-only cable will not work. Connect the device directly to your computer.</p></li>
@@ -81,7 +81,6 @@
 <li><h3>No USB device, or the wrong ESP32?</h3><p>If no USB device appears, first check your data cable. If the installer reports that your ESP thirty-two board is not supported, turn the connector over as shown, then start the connection process again.</p></li>
 <li><h3>Enjoy your RoonPilot!</h3><p>You can repeat any step using the chapters. The full written guide is available on the RoonPilot project page.</p></li></ol></details>
     <noscript><p>With JavaScript disabled, you can still use the normal video controls. The chapter buttons require JavaScript.</p></noscript>
-    <footer class="page-footer"><a class="return-link" href="https://github.com/mermayer/RoonPilot">&larr; Back to the GitHub project</a></footer>
   </main>
   <script>
     const chapters = [{"title": "Introduction", "start": 0.0}, {"title": "Before you start", "start": 11.25}, {"title": "Open the installer", "start": 38.41666666666667}, {"title": "Confirm and begin", "start": 63.33333333333334}, {"title": "Select the USB device", "start": 77.04166666666667}, {"title": "Turn the USB-C connector", "start": 93.125}, {"title": "Start the installation", "start": 145.37500000000003}, {"title": "Wait for the progress", "start": 168.25000000000003}, {"title": "Installation complete", "start": 184.25000000000003}, {"title": "Set up Wi-Fi", "start": 199.79166666666669}, {"title": "Enable RoonPilot in Roon", "start": 248.45833333333337}, {"title": "Ready to use", "start": 264.4166666666667}, {"title": "If something goes wrong", "start": 277.0416666666667}, {"title": "Review any step", "start": 291.58333333333337}];

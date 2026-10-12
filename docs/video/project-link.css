@@ -1,0 +1,30 @@
+.project-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .7rem;
+  min-height: 54px;
+  margin: 4px 0 22px;
+  padding: 12px 20px;
+  border: 1px solid #a8b88a;
+  border-radius: 12px;
+  background: #a8b88a;
+  color: #0a1219;
+  font-weight: 750;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .24);
+  transition: background .18s ease, transform .18s ease;
+}
+
+.project-cta::after { content: "→"; font-size: 1.25em; line-height: 1; }
+.project-cta:hover { background: #c6d4a7; color: #0a1219; transform: translateY(-1px); }
+.project-cta:focus-visible { outline: 3px solid #f1ad38; outline-offset: 4px; }
+
+@media (max-width: 700px) {
+  .project-cta { display: flex; width: 100%; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-cta { transition: none; }
+  .project-cta:hover { transform: none; }
+}

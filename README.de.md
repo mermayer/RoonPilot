@@ -280,11 +280,8 @@ durch eine digitale Lautstärkeabsenkung in Roon ersetzt zu werden.
 - **Bridge & Bluetooth** aus erhält Kopplungen und Routen, verhindert nach dem
   Neustart aber Bluetooth, Scans, Bridge-Verkehr und Bridge-Updateprüfungen.
 
-Zuerst die [vollständige IR-Bridge-Übersicht](guides/de/ir-bridge.md) lesen und
-danach die [bebilderte Hardware- und Factory-Installation](guides/de/ir-bridge-installation.md)
-durchführen.
-Das [3D-druckbare Bridge-Gehäuse](guides/de/ir-bridge-enclosure.md) enthält
-Außen-/Innenansicht und alle STL-Downloads.
+Der Einstieg ist die [IR-Bridge-Projektseite](https://mermayer.github.io/RoonPilot/de/ir-bridge/).
+Von dort erreichst du die vollständige Anleitung, den Webinstaller und das druckbare Gehäuse.
 
 ## Optionaler 3D-gedruckter Stand
 
@@ -390,8 +387,7 @@ vollständig zu laden.
 - [Fehlerbehebung](guides/de/troubleshooting.md)
 - [Datenschutz und Sicherheit](guides/de/privacy-and-security.md)
 - [Lizenzierung und Weitergabe](guides/de/licensing.md)
-- [Optionale IR Bridge: Übersicht und Dokumentationsweg](guides/de/ir-bridge.md)
-- [IR-Bridge-Hardware und Factory-Installation](guides/de/ir-bridge-installation.md)
+- [Optionale IR Bridge: Projektseite und vollständige Anleitung](https://mermayer.github.io/RoonPilot/de/ir-bridge/)
 - [3D-druckbarer RoonPilot-Stand](guides/de/roonpilot-stand.md)
 - [3D-druckbares IR-Bridge-Gehäuse](guides/de/ir-bridge-enclosure.md)
 - [Verbindungen und automatische Zonensteuerung](guides/de/ir-bridge-connectivity.md)
