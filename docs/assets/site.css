@@ -24,7 +24,7 @@
   --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
 }
 
-body.roonpilot-page {
+body.project-page {
   --cyan: #a8b88a;
   --cyan-rgb: 168, 184, 138;
   --cyan-soft: rgba(var(--cyan-rgb), 0.12);
@@ -240,6 +240,7 @@ section[id] { scroll-margin-top: 92px; }
     transform: translateY(-50%);
     transition: top 260ms ease, color 160ms ease, opacity 160ms ease, font-size 160ms ease;
   }
+  .bridge-page .chapter-rail-link { width: 110px; }
   .chapter-rail-link::after {
     content: "";
     position: absolute;
@@ -260,6 +261,7 @@ section[id] { scroll-margin-top: 92px; }
     letter-spacing: -.015em;
     opacity: 1;
   }
+  .bridge-page .chapter-rail-link.is-long[aria-current] { font-size: 15px; }
   .chapter-rail-link[aria-current]::after { width: 14px; height: 2px; }
   .chapter-rail.is-expanded .chapter-rail-link { font-size: 13px; opacity: .9; }
   .chapter-rail.is-expanded .chapter-rail-link[aria-current] { color: var(--text); font-size: 14px; opacity: 1; }

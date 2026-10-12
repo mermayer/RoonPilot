@@ -1,11 +1,21 @@
 (() => {
-  const chapters = [...document.querySelectorAll('.site-header nav a[href^="#"]')]
-    .map(link => ({ link, target: document.getElementById(link.hash.slice(1)) }))
+  const isGuidePage = document.body.classList.contains('guide-page');
+  const headerLinks = [...document.querySelectorAll('.site-header nav a[href^="#"]')];
+  const guideStart = isGuidePage ? document.querySelector('.guide-nav a[href="#start"]') : null;
+  const chapterLinks = guideStart ? [guideStart, ...headerLinks] : headerLinks;
+  const chapters = chapterLinks
+    .map(link => ({
+      link,
+      target: document.getElementById(link.hash.slice(1)),
+      railTitle: isGuidePage && link.hash === '#start'
+        ? (document.documentElement.lang === 'de' ? 'Einstieg' : 'Start')
+        : isGuidePage && link.hash === '#factory' ? 'Factory' : link.textContent.trim(),
+    }))
     .filter(chapter => chapter.target);
   if (!chapters.length) return;
 
-  // Only the main RoonPilot pages opt in; Bridge pages keep their existing navigation.
-  const useRail = chapters.length >= 4 && document.body.classList.contains('roonpilot-page');
+  // Long-form project pages opt in; installers and videos keep their focused layouts.
+  const useRail = chapters.length >= 4 && document.body.classList.contains('project-page');
   let rail;
   let railLinks = [];
   let ruler;
@@ -61,7 +71,7 @@
     scrubber.append(scrubberValue);
     ruler.append(viewportBand, ticks, scrubber);
     rail.append(ruler);
-    railLinks = chapters.map(({ link }, index) => {
+    railLinks = chapters.map(({ link, railTitle }, index) => {
       const item = document.createElement('a');
       item.className = 'chapter-rail-link';
       item.href = link.hash;
@@ -71,7 +81,8 @@
       number.textContent = String(index + 1).padStart(2, '0');
       const title = document.createElement('span');
       title.className = 'chapter-rail-title';
-      title.textContent = link.textContent.trim();
+      title.textContent = railTitle;
+      item.classList.toggle('is-long', railTitle.length > 11);
       item.append(number, title);
       rail.append(item);
       return item;
