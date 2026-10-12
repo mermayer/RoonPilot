@@ -4,9 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
+  <link rel="icon" href="data:,">
   <title>RoonPilot IR Bridge – Videoanleitung zur Installation</title>
   <style>
-    :root{color-scheme:dark;--bg:#0a1219;--panel:#13222c;--text:#eff5f4;--muted:#b2c3c9;--cyan:#4fdee0;--line:#304650}
+    :root{color-scheme:dark;--bg:#0a1219;--panel:#13222c;--text:#eff5f4;--muted:#b2c3c9;--cyan:#a8b88a;--line:#304650}
     *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
     main{max-width:1200px;margin:auto;padding:28px 28px 48px}.eyebrow{margin:0 0 6px;color:var(--cyan);font-size:13px;font-weight:700;letter-spacing:.09em}
     h1{font-size:clamp(25px,4vw,37px);line-height:1.2;margin:0 0 8px}h2{font-size:21px;margin:0 0 12px}h3{font-size:17px;margin:0 0 5px}p{margin:0 0 15px}.intro{color:var(--muted);max-width:950px}
@@ -16,11 +17,11 @@
     button:hover,select:hover{border-color:var(--cyan)}button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
     #now{color:var(--cyan);margin:0 0 19px;font-size:15px;min-height:23px}#stepHint{margin:12px 0 0;padding:12px 15px;background:var(--panel);border-left:3px solid var(--cyan);border-radius:0 8px 8px 0}
     .chapters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.chapters button{text-align:left;display:flex;gap:12px;align-items:flex-start;line-height:1.35}
-    .chapters time{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums;min-width:36px;padding-top:2px}.chapters button[aria-current=true]{border-color:var(--cyan);background:#193b43}.chapters button[aria-current=true] time{color:var(--cyan)}
+    .chapters time{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums;min-width:36px;padding-top:2px}.chapters button[aria-current=true]{border-color:var(--cyan);background:#263628}.chapters button[aria-current=true] time{color:var(--cyan)}
     .warning{margin:23px 0;border-left:4px solid #f7bb4f;padding:13px 18px;background:#29251d;border-radius:0 10px 10px 0}.warning p{margin:0}
     a{color:var(--cyan);text-underline-offset:3px}.links{display:flex;gap:22px;flex-wrap:wrap;margin:20px 0}.note{font-size:14px;color:var(--muted)}
-    .return-link{display:inline-flex;align-items:center;min-height:44px;margin:0 0 20px;padding:9px 15px;border:1px solid var(--cyan);border-radius:9px;background:#102b31;color:var(--text);font-weight:650;text-decoration:none}
-    .return-link:hover{background:#193b43;border-color:#8af3f0}.page-footer{margin-top:25px;padding-top:20px;border-top:1px solid var(--line)}.page-footer .return-link{margin-bottom:0}
+    .return-link{display:inline-flex;align-items:center;min-height:44px;margin:0 0 20px;padding:9px 15px;border:1px solid var(--cyan);border-radius:9px;background:#1c2b21;color:var(--text);font-weight:650;text-decoration:none}
+    .return-link:hover{background:#263628;border-color:#c6d4a7}.page-footer{margin-top:25px;padding-top:20px;border-top:1px solid var(--line)}.page-footer .return-link{margin-bottom:0}
     details{border-top:1px solid var(--line);margin-top:25px;padding-top:18px}summary{cursor:pointer;font-weight:650;min-height:44px}ol{padding-left:25px;max-width:950px}li{padding:9px 0 15px}li p{color:var(--muted);margin:0}
     #error{padding:16px;border:1px solid #f77e7b;border-radius:10px;margin:15px 0}#error[hidden]{display:none}
     @media(max-width:700px){main{padding:20px 14px 35px}.chapters{grid-template-columns:repeat(2,minmax(0,1fr))}.tools{gap:8px}.tools button{flex:1}.tools .speed{width:100%;margin:0;justify-content:flex-end}video{border-radius:9px}}
