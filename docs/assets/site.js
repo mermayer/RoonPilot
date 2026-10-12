@@ -148,7 +148,12 @@
   };
   if (useRail) {
     let jumpGeneration = 0;
-    const cancelPendingJump = () => { jumpGeneration += 1; };
+    let pendingRulerTarget = null;
+    let lastDragPercent = 0;
+    const cancelPendingJump = () => {
+      jumpGeneration += 1;
+      pendingRulerTarget = null;
+    };
     const setExpanded = value => {
       if (railExpanded === value) return;
       railExpanded = value;
@@ -162,8 +167,31 @@
     };
     const scrollFromPointer = event => {
       const bounds = ruler.getBoundingClientRect();
-      scrollToPercent((event.clientY - bounds.top) / bounds.height * 100);
+      lastDragPercent = clamp((event.clientY - bounds.top) / bounds.height * 100, 0, 100);
+      scrollToPercent(lastDragPercent);
     };
+    const correctRulerTarget = () => {
+      if (!pendingRulerTarget) return;
+      if (performance.now() > pendingRulerTarget.expires) {
+        pendingRulerTarget = null;
+        return;
+      }
+      const root = document.documentElement;
+      const previous = root.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';
+      scrollToPercent(pendingRulerTarget.percent);
+      root.style.scrollBehavior = previous;
+    };
+    // Lazy images may change the page height after a drag; retain its chosen percentage.
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(() => {
+        correctRulerTarget();
+        schedule();
+      }).observe(document.body);
+    }
+    window.addEventListener('pointerdown', event => {
+      if (!ruler.contains(event.target)) pendingRulerTarget = null;
+    }, true);
     rail.addEventListener('pointerenter', () => setExpanded(true));
     rail.addEventListener('pointerleave', () => {
       if (!dragging && document.activeElement !== ruler) setExpanded(false);
@@ -176,7 +204,10 @@
     const stopDragging = event => {
       if (!dragging) return;
       dragging = false;
+      scrollToPercent(lastDragPercent);
       document.documentElement.style.scrollBehavior = previousScrollBehavior;
+      pendingRulerTarget = { percent: lastDragPercent, expires: performance.now() + 2200 };
+      [180, 600, 1400].forEach(delay => setTimeout(correctRulerTarget, delay));
       if (ruler.hasPointerCapture(event.pointerId)) ruler.releasePointerCapture(event.pointerId);
       if (!rail.matches(':hover') && document.activeElement !== ruler) setExpanded(false);
     };
@@ -219,6 +250,7 @@
       railLink.addEventListener('click', event => {
         if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         event.preventDefault();
+        pendingRulerTarget = null;
         if (window.location.hash !== link.hash) history.pushState(null, '', link.hash);
         const generation = ++jumpGeneration;
         const align = () => {
