@@ -336,7 +336,7 @@
 .status-strip span { display: block; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
 .status-strip strong { display: block; margin-top: 5px; color: var(--text); font-size: 17px; }
 
-.guide-body { padding-block: 62px 90px; }
+.guide-body { padding-block: 36px 90px; }
 .guide-layout { display: grid; grid-template-columns: minmax(0,1fr) 290px; gap: 70px; align-items: start; }
 .guide-copy { min-width: 0; }
 .guide-copy h1 { margin: 0 0 22px; font-size: clamp(43px,6vw,70px); line-height: 1; letter-spacing: -.055em; }
@@ -409,6 +409,22 @@
   color: var(--muted-strong);
   font-size: clamp(18px,2vw,22px);
 }
+.guide-install-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin: 0 0 26px;
+  padding: 20px 22px;
+  border: 1px solid rgba(var(--cyan-rgb), .32);
+  border-left: 3px solid var(--cyan);
+  border-radius: 10px;
+  background: rgba(var(--cyan-rgb), .055);
+}
+.guide-install-note > div { flex: 1 1 400px; min-width: 0; }
+.guide-install-note strong { display: block; color: var(--text); font-size: 17px; line-height: 1.4; }
+.guide-install-note p { margin: 7px 0 0; font-size: 15px; line-height: 1.55; }
+.guide-install-note .button { flex: 0 0 auto; white-space: nowrap; }
 .preview-note {
   margin: 27px 0 36px;
   padding: 16px 19px;
@@ -581,7 +597,9 @@
   .status-strip div:nth-child(2) { border-right: 0; }
   .status-strip div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .status-strip div:nth-child(3) { padding-left: 0; }
-  .guide-layout { grid-template-columns: 1fr; }
+  .guide-layout { grid-template-columns: 1fr; gap: 28px; }
+  .guide-install-note { align-items: flex-start; flex-direction: column; gap: 16px; }
+  .guide-install-note .button { width: 100%; white-space: normal; text-align: center; }
   .guide-nav {
     position: static;
     order: -1;
