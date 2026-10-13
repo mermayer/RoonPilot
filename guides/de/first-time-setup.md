@@ -4,7 +4,8 @@
 
 Nach einer sauberen Factory-Installation enthält RoonPilot weder
 WLAN-Zugangsdaten noch Roon-Serveradresse, Freigabe oder ausgewählte Zone. Der
-normale Ablauf wird in vier Schritten direkt am Gerät abgeschlossen:
+normale Ablauf wird mit dem Gerät und einem Handy oder Computer in vier
+Schritten abgeschlossen:
 
 1. RoonPilot mit dem WLAN verbinden;
 2. den Roon Server automatisch finden lassen;
@@ -21,16 +22,25 @@ Zugangspunkts angezeigt.
 
 <img src="../../assets/device-screens/18-wifi-setup-de.png" alt="WLAN-Einrichtungsanzeige" width="360">
 
+Die Abbildung zeigt die öffentliche Version 2.0.2. Ihre kurze Browser-Anweisung
+setzt voraus, dass das Handy oder der Computer **zuerst** mit dem
+RoonPilot-Einrichtungs-WLAN verbunden wurde. Die genaue Reihenfolge steht hier:
+
 1. Auf Telefon, Tablet oder Notebook die WLAN-Liste öffnen.
 2. Mit `RoonPilot-Setup-XXXXXX` verbinden. Die letzten sechs Zeichen
    identifizieren das Gerät.
 3. Das vorläufige Kennwort `roonpilot-setup` eingeben.
-4. Öffnet sich die minimale Einrichtungsseite nicht automatisch,
-   `http://192.168.4.1` im Browser aufrufen.
-5. **Deutsch** oder **English** wählen. Diese Auswahl gilt gemeinsam für
+4. Meldet das Handy **Kein Internet**, **Verbunden bleiben** wählen. Dieses
+   WLAN dient nur zur Verbindung mit RoonPilot.
+5. Auf **demselben Handy, Tablet oder Notebook** einen Browser öffnen. Erscheint
+   die Einrichtungsseite nicht automatisch, `http://192.168.4.1` in die
+   **Adresszeile** eingeben, nicht in ein Suchfeld. Solange Handy oder Computer
+   noch mit dem normalen Heim-WLAN verbunden ist, funktioniert diese Adresse nicht.
+6. **Deutsch** oder **English** wählen. Diese Auswahl gilt gemeinsam für
    Gerätedisplay, Schnelleinstellungen und alle lokalen Webseiten.
-6. Das gewünschte **2,4-GHz-WLAN** auswählen oder den Namen exakt eingeben.
-7. Das WLAN-Kennwort sorgfältig eingeben und **Speichern und verbinden** wählen.
+7. Das gewünschte **2,4-GHz-Heim-WLAN** auswählen oder den Namen exakt eingeben,
+   nicht RoonPilot-Setup.
+8. Das WLAN-Kennwort sorgfältig eingeben und **Speichern und neu starten** wählen.
 
 <img src="../../assets/web-ui/09-wifi-first-setup-de.png" alt="Minimale WLAN-Ersteinrichtung mit Sprachwahl" width="100%">
 
@@ -42,7 +52,8 @@ vollständigen lokalen Oberfläche.
 
 RoonPilot versucht das gespeicherte Netz ungefähr 45 Sekunden lang zu
 erreichen. Gelingt dies nicht, startet der geschützte Einrichtungs-AP erneut.
-Dann wieder mit `RoonPilot-Setup-XXXXXX` verbinden, `192.168.4.1` öffnen, die
+Dann wieder mit `RoonPilot-Setup-XXXXXX` verbinden, `http://192.168.4.1` auf
+demselben Handy oder Computer öffnen, die
 Angaben korrigieren und erneut speichern. Weder Factory Reset noch erneutes
 Flashen sind nötig.
 

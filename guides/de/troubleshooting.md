@@ -58,7 +58,11 @@ durchführen. Der vollständige Ablauf steht unter
 - 45 Sekunden warten.
 - Nach Netz `RoonPilot-Setup-XXXXXX` suchen.
 - Mobile Daten/VPN am Telefon vorübergehend deaktivieren.
-- Nach Verbindung `http://192.168.4.1` direkt öffnen.
+- Mit `RoonPilot-Setup-XXXXXX` verbinden (Passwort: `roonpilot-setup`). Bei
+  **Kein Internet** verbunden bleiben.
+- Erst danach auf demselben Handy oder Computer `http://192.168.4.1` in die
+  Browser-Adresszeile eingeben, nicht in ein Suchfeld. Aus dem Heim-WLAN ist
+  diese Adresse nicht erreichbar.
 - Bereits gespeichertes Heim-WLAN kann bedeuten, dass der AP nicht benötigt
   wird; IP im Quick-Menü **System** oder Router prüfen.
 

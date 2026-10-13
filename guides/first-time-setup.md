@@ -4,7 +4,7 @@
 
 After a clean Factory installation, RoonPilot contains no Wi-Fi credentials,
 Roon Server address, authorization or selected zone. The normal first-time
-flow is completed on the device in four steps:
+flow is completed with the device and a phone or computer in four steps:
 
 1. connect RoonPilot to Wi-Fi;
 2. let it discover the Roon Server automatically;
@@ -19,16 +19,24 @@ The display shows **Wi-Fi setup** and the temporary access-point name.
 
 <img src="../assets/device-screens/18-wifi-setup.png" alt="Wi-Fi setup screen" width="360">
 
+This screenshot shows the public 2.0.2 version. Its short browser instruction
+assumes that the phone or computer has **first** joined RoonPilot's setup Wi-Fi.
+Follow this order:
+
 1. On a phone, tablet or computer, open Wi-Fi settings.
 2. Join `RoonPilot-Setup-XXXXXX`; the final six characters identify the unit.
 3. Enter the temporary password `roonpilot-setup`.
-4. A captive setup page should open. If it does not, browse to
-   `http://192.168.4.1`.
-5. Select **English** or **Deutsch**. This becomes the shared language for the
+4. If your phone says **No Internet**, choose **Stay connected**; this setup
+   Wi-Fi is only for talking to RoonPilot.
+5. On that **same phone, tablet or computer**, open a browser. If the setup
+   page does not appear automatically, type `http://192.168.4.1` into the
+   browser's **address bar**, not a search box. This address will not work
+   while your phone or computer is still on your normal home Wi-Fi.
+6. Select **English** or **Deutsch**. This becomes the shared language for the
    device display, Quick Settings and all local web pages.
-6. Select or type the home **2.4 GHz** Wi-Fi name.
-7. Enter its password carefully. Passwords are case-sensitive.
-8. Press **Save and connect**.
+7. Select or type the home **2.4 GHz** Wi-Fi name, not RoonPilot-Setup.
+8. Enter its password carefully. Passwords are case-sensitive.
+9. Press **Save and restart**.
 
 <img src="../assets/web-ui/09-wifi-first-setup.png" alt="Minimal Wi-Fi first setup page" width="100%">
 
@@ -39,7 +47,8 @@ Roon, zones, display, firmware and system actions are intentionally absent.
 
 RoonPilot tries the saved network for up to approximately 45 seconds. If it
 cannot obtain an address, it automatically returns to the protected setup AP.
-Rejoin `RoonPilot-Setup-XXXXXX`, open `192.168.4.1`, correct the details and
+Rejoin `RoonPilot-Setup-XXXXXX`, then open `http://192.168.4.1` on that same
+phone or computer, correct the details and
 save again. No erase or USB cable is required.
 
 Some phones leave the AP because it has no Internet access. Choose **stay

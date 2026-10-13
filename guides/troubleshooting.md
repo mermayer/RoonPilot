@@ -65,8 +65,12 @@ Do not import a 2.0.x backup or run battery calibration in 1.0.2. Follow
 
 ## Setup page does not open
 
-Browse to `http://192.168.4.1`. Temporarily turn off VPN, private relay or mobile
-data switching. Confirm the client still shows the RoonPilot AP as connected.
+First join `RoonPilot-Setup-XXXXXX` in the phone/computer's Wi-Fi settings
+(password: `roonpilot-setup`). Stay connected even if it reports **No Internet**.
+On that same device, type `http://192.168.4.1` into the browser address bar,
+not a search box. This address is unavailable from your normal home Wi-Fi.
+If necessary, temporarily turn off VPN, private relay or automatic mobile-data
+switching and confirm the RoonPilot setup Wi-Fi is still connected.
 
 ## Wi-Fi setup keeps returning
 
