@@ -38,6 +38,7 @@
   let railLinks = [];
   let ruler;
   let rulerTrack;
+  const rulerNumbers = [];
   let viewportBand;
   let scrubber;
   let scrubberValue;
@@ -65,6 +66,9 @@
     rulerTrack = document.createElement('div');
     rulerTrack.className = 'chapter-rail-ticks';
     rulerTrack.setAttribute('aria-hidden', 'true');
+    const rulerScale = document.createElement('div');
+    rulerScale.className = 'chapter-rail-scale';
+    rulerScale.setAttribute('aria-hidden', 'true');
     const ticks = document.createDocumentFragment();
     for (let value = 0; value <= 100; value += 1) {
       const tick = document.createElement('span');
@@ -76,6 +80,7 @@
         number.className = 'chapter-rail-tick-number';
         number.textContent = String(value);
         tick.append(number);
+        rulerNumbers.push({ value, element: number });
       }
       const line = document.createElement('span');
       line.className = 'chapter-rail-tick-line';
@@ -89,7 +94,8 @@
     scrubberValue.className = 'chapter-rail-scrubber-value';
     scrubber.append(scrubberValue);
     rulerTrack.append(ticks);
-    ruler.append(viewportBand, rulerTrack, scrubber);
+    rulerScale.append(rulerTrack);
+    ruler.append(viewportBand, rulerScale, scrubber);
     rail.append(ruler);
     railLinks = chapters.map(({ link, railTitle }, index) => {
       const item = document.createElement('a');
@@ -207,7 +213,12 @@
       const value = `${String(Math.round(renderedPercent)).padStart(3, '0')}%`;
       if (scrubberValue.textContent !== value) scrubberValue.textContent = value;
       ruler.setAttribute('aria-valuenow', String(Math.round(actualPercent)));
-      rail.classList.toggle('at-endpoint', actualPercent < .5 || actualPercent > 99.5);
+      const endpoint = actualPercent < .5 || actualPercent > 99.5;
+      rail.classList.toggle('at-endpoint', endpoint);
+      rulerNumbers.forEach(({ value, element }) => {
+        const distance = Math.abs(scaleOffset + value / 100 * scaleHeight - markerY);
+        element.style.opacity = String(endpoint ? 1 : clamp((distance - 14) / 12, 0, 1));
+      });
     }
     if (renderedPercent !== actualPercent || expansion !== targetExpansion) schedule();
   };
