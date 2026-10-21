@@ -37,8 +37,7 @@
   let rail;
   let railLinks = [];
   let ruler;
-  let rulerTicks = [];
-  let visibleTickStart = -1;
+  let rulerTrack;
   let viewportBand;
   let scrubber;
   let scrubberValue;
@@ -63,6 +62,9 @@
     viewportBand = document.createElement('span');
     viewportBand.className = 'chapter-rail-window';
     viewportBand.setAttribute('aria-hidden', 'true');
+    rulerTrack = document.createElement('div');
+    rulerTrack.className = 'chapter-rail-ticks';
+    rulerTrack.setAttribute('aria-hidden', 'true');
     const ticks = document.createDocumentFragment();
     for (let value = 0; value <= 100; value += 1) {
       const tick = document.createElement('span');
@@ -79,7 +81,6 @@
       line.className = 'chapter-rail-tick-line';
       tick.append(line);
       ticks.append(tick);
-      rulerTicks.push(tick);
     }
     scrubber = document.createElement('span');
     scrubber.className = 'chapter-rail-scrubber';
@@ -87,7 +88,8 @@
     scrubberValue = document.createElement('span');
     scrubberValue.className = 'chapter-rail-scrubber-value';
     scrubber.append(scrubberValue);
-    ruler.append(viewportBand, ticks, scrubber);
+    rulerTrack.append(ticks);
+    ruler.append(viewportBand, rulerTrack, scrubber);
     rail.append(ruler);
     railLinks = chapters.map(({ link, railTitle }, index) => {
       const item = document.createElement('a');
@@ -109,72 +111,105 @@
     document.body.classList.add('has-chapter-rail');
   }
 
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const railViewport = window.matchMedia('(min-width: 1440px) and (min-height: 680px)');
   let scheduled = false;
-  const update = () => {
+  let geometryDirty = true;
+  let geometry;
+  let activeChapter = -1;
+  let frameTime = 0;
+  let renderedPercent;
+  let expansion = 0;
+  const measure = () => {
+    const scrollY = window.scrollY;
+    const pageHeight = document.documentElement.scrollHeight;
+    geometry = {
+      pageHeight,
+      maxScroll: Math.max(0, pageHeight - window.innerHeight),
+      trackHeight: ruler?.clientHeight || 1,
+      sections: chapters.map(({ target }) => target.getBoundingClientRect().top + scrollY),
+      // Reserve room for the largest title scale without measuring every scroll frame.
+      labelHeights: railLinks.map(link => Math.ceil(link.offsetHeight * 1.18)),
+    };
+    geometryDirty = false;
+  };
+  const packLabels = desired => {
+    const heights = geometry.labelHeights;
+    const top = 18;
+    const bottom = Math.max(top, geometry.trackHeight - 18);
+    const totalHeight = heights.reduce((sum, height) => sum + height, 0);
+    const gap = clamp((bottom - top - totalHeight) / Math.max(1, heights.length - 1), 2, 8);
+    const positions = desired.map((position, index) => clamp(position,
+      top + heights[index] / 2, bottom - heights[index] / 2));
+    for (let i = 1; i < positions.length; i += 1) {
+      positions[i] = Math.max(positions[i], positions[i - 1] + (heights[i - 1] + heights[i]) / 2 + gap);
+    }
+    if (positions.at(-1) > bottom - heights.at(-1) / 2) {
+      positions[positions.length - 1] = bottom - heights.at(-1) / 2;
+      for (let i = positions.length - 2; i >= 0; i -= 1) {
+        positions[i] = Math.min(positions[i], positions[i + 1] - (heights[i] + heights[i + 1]) / 2 - gap);
+      }
+    }
+    return positions;
+  };
+  const update = timestamp => {
     scheduled = false;
-    const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-    const percent = maxScroll ? clamp(window.scrollY / maxScroll * 100, 0, 100) : 0;
+    if (geometryDirty || !geometry) measure();
+    const { maxScroll, trackHeight } = geometry;
+    const actualPercent = maxScroll ? clamp(window.scrollY / maxScroll * 100, 0, 100) : 0;
+    const elapsed = frameTime && timestamp - frameTime < 100 ? clamp(timestamp - frameTime, 1, 50) : 16;
+    frameTime = timestamp;
+    const immediate = !useRail || reducedMotion.matches || dragging || !railViewport.matches || renderedPercent === undefined;
+    renderedPercent = immediate ? actualPercent
+      : renderedPercent + (actualPercent - renderedPercent) * (1 - Math.exp(-elapsed / 65));
+    if (Math.abs(actualPercent - renderedPercent) < .003) renderedPercent = actualPercent;
+    const targetExpansion = railExpanded ? 1 : 0;
+    expansion = immediate ? targetExpansion
+      : expansion + (targetExpansion - expansion) * (1 - Math.exp(-elapsed / 95));
+    if (Math.abs(targetExpansion - expansion) < .001) expansion = targetExpansion;
     const marker = Math.min(230, Math.max(130, window.innerHeight * 0.28));
     let active = 0;
-    chapters.forEach(({ target }, index) => {
-      if (target.getBoundingClientRect().top <= marker) active = index;
+    geometry.sections.forEach((sectionTop, index) => {
+      if (sectionTop - window.scrollY <= marker) active = index;
     });
-    // The rail begins below the header; keep chapter positions viewport-relative.
-    const railTop = 83;
-    const top = 104 - railTop;
-    const spacing = isGuidePage ? 30 : 20;
-    const bottom = window.innerHeight - 42 - railTop;
-    let expandedPositions = [];
-    if (useRail && railExpanded) {
-      expandedPositions = chapters.map(({ target }) => {
-        const sectionTop = target.getBoundingClientRect().top + window.scrollY;
-        return top + clamp(sectionTop / Math.max(1, maxScroll), 0, 1) * (bottom - top);
-      });
-      // Keep nearby chapter names legible without changing their order.
-      for (let i = 1; i < expandedPositions.length; i += 1) {
-        expandedPositions[i] = Math.max(expandedPositions[i], expandedPositions[i - 1] + (isGuidePage ? 34 : 26));
-      }
-      if (expandedPositions.at(-1) > bottom) {
-        expandedPositions[expandedPositions.length - 1] = bottom;
-        for (let i = expandedPositions.length - 2; i >= 0; i -= 1) {
-          expandedPositions[i] = Math.min(expandedPositions[i], expandedPositions[i + 1] - (isGuidePage ? 34 : 26));
-        }
-      }
-    }
-    chapters.forEach(({ link }, index) => {
-      if (index === active) link.setAttribute('aria-current', 'location');
-      else link.removeAttribute('aria-current');
-      if (!useRail) return;
-      const railLink = railLinks[index];
-      if (index === active) railLink.setAttribute('aria-current', 'location');
-      else railLink.removeAttribute('aria-current');
-      const position = railExpanded ? expandedPositions[index]
-        : index < active ? top + index * spacing
-          : index === active ? top + index * spacing + 15
-            : bottom - (chapters.length - index - 1) * spacing;
-      railLink.style.top = `${position}px`;
-    });
-    menuLinks.forEach(link => {
-      if (link.hash === chapters[active].link.hash) link.setAttribute('aria-current', 'location');
-      else link.removeAttribute('aria-current');
-    });
-    if (ruler) {
-      const zoomStart = clamp(Math.floor(percent - 5), 0, 90);
-      if (zoomStart !== visibleTickStart) {
-        visibleTickStart = zoomStart;
-        rulerTicks.forEach((tick, value) => {
-          tick.classList.toggle('in-zoom', value >= zoomStart && value <= zoomStart + 10);
-          if (value >= zoomStart && value <= zoomStart + 10) {
-            tick.style.setProperty('--zoom-position', `${(value - zoomStart) * 10}%`);
-          }
+    if (active !== activeChapter) {
+      activeChapter = active;
+      chapters.forEach(({ link }, index) => {
+        [link, railLinks[index]].filter(Boolean).forEach(item => {
+          if (index === active) item.setAttribute('aria-current', 'location');
+          else item.removeAttribute('aria-current');
         });
-      }
-      viewportBand.style.top = `${zoomStart}%`;
-      scrubber.style.top = `${railExpanded ? percent : (percent - zoomStart) * 10}%`;
-      scrubberValue.textContent = `${String(Math.round(percent)).padStart(3, '0')}%`;
-      ruler.setAttribute('aria-valuenow', String(Math.round(percent)));
-      rail.classList.toggle('at-endpoint', percent < 0.5 || percent > 99.5);
+      });
+      menuLinks.forEach(link => {
+        if (link.hash === chapters[active].link.hash) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
     }
+    if (ruler && railViewport.matches) {
+      const progress = renderedPercent / 100;
+      // The marker always uses the full-page position, even while the scale zooms.
+      // Only the continuous ruler moves behind it; no integer-percent window resets.
+      const markerY = progress * trackHeight;
+      const scaleHeight = geometry.pageHeight + (trackHeight - geometry.pageHeight) * expansion;
+      const scaleOffset = markerY - progress * scaleHeight;
+      rulerTrack.style.height = `${scaleHeight}px`;
+      rulerTrack.style.transform = `translate3d(0, ${scaleOffset}px, 0)`;
+      scrubber.style.transform = `translate3d(0, ${markerY}px, 0)`;
+      const bandHeight = Math.min(trackHeight, Math.max(16, window.innerHeight / Math.max(1, geometry.pageHeight) * trackHeight));
+      viewportBand.style.height = `${bandHeight}px`;
+      viewportBand.style.transform = `translate3d(0, ${progress * (trackHeight - bandHeight)}px, 0)`;
+      viewportBand.style.opacity = String(expansion);
+      const labelPositions = packLabels(geometry.sections.map(sectionTop =>
+        scaleOffset + clamp(sectionTop / Math.max(1, maxScroll), 0, 1) * scaleHeight));
+      railLinks.forEach((link, index) => {
+        link.style.transform = `translate3d(0, ${labelPositions[index]}px, 0) translateY(-50%)`;
+      });
+      const value = `${String(Math.round(renderedPercent)).padStart(3, '0')}%`;
+      if (scrubberValue.textContent !== value) scrubberValue.textContent = value;
+      ruler.setAttribute('aria-valuenow', String(Math.round(actualPercent)));
+      rail.classList.toggle('at-endpoint', actualPercent < .5 || actualPercent > 99.5);
+    }
+    if (renderedPercent !== actualPercent || expansion !== targetExpansion) schedule();
   };
   const schedule = () => {
     if (scheduled) return;
@@ -220,20 +255,20 @@
     // Lazy images may change the page height after a drag; retain its chosen percentage.
     if ('ResizeObserver' in window) {
       new ResizeObserver(() => {
+        geometryDirty = true;
         correctRulerTarget();
         schedule();
       }).observe(document.body);
     }
-    window.addEventListener('pointerdown', event => {
-      if (!ruler.contains(event.target)) pendingRulerTarget = null;
-    }, true);
+    window.addEventListener('pointerdown', cancelPendingJump, true);
+    const keyboardFocusInside = () => rail.contains(document.activeElement) && document.activeElement.matches(':focus-visible');
     rail.addEventListener('pointerenter', () => setExpanded(true));
     rail.addEventListener('pointerleave', () => {
-      if (!dragging && document.activeElement !== ruler) setExpanded(false);
+      if (!dragging && !keyboardFocusInside()) setExpanded(false);
     });
-    ruler.addEventListener('focus', () => setExpanded(true));
-    ruler.addEventListener('blur', () => {
-      if (!dragging && !rail.matches(':hover')) setExpanded(false);
+    rail.addEventListener('focusin', () => setExpanded(true));
+    rail.addEventListener('focusout', event => {
+      if (!rail.contains(event.relatedTarget) && !dragging && !rail.matches(':hover')) setExpanded(false);
     });
     let previousScrollBehavior = '';
     const stopDragging = event => {
@@ -244,7 +279,7 @@
       pendingRulerTarget = { percent: lastDragPercent, expires: performance.now() + 2200 };
       [180, 600, 1400].forEach(delay => setTimeout(correctRulerTarget, delay));
       if (ruler.hasPointerCapture(event.pointerId)) ruler.releasePointerCapture(event.pointerId);
-      if (!rail.matches(':hover') && document.activeElement !== ruler) setExpanded(false);
+      if (!rail.matches(':hover') && !keyboardFocusInside()) setExpanded(false);
     };
     ruler.addEventListener('pointerdown', event => {
       if (event.pointerType === 'mouse' && event.button !== 0) return;
@@ -262,6 +297,7 @@
     });
     ruler.addEventListener('pointerup', stopDragging);
     ruler.addEventListener('pointercancel', stopDragging);
+    ruler.addEventListener('lostpointercapture', stopDragging);
     ruler.addEventListener('keydown', event => {
       const step = event.shiftKey ? 10 : 1;
       const current = Number(ruler.getAttribute('aria-valuenow')) || 0;
@@ -295,13 +331,13 @@
           const root = document.documentElement;
           const previousBehavior = root.style.scrollBehavior;
           root.style.scrollBehavior = 'auto';
-          window.scrollBy(0, delta);
+          window.scrollBy({ top: delta, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
           root.style.scrollBehavior = previousBehavior;
         }
         schedule();
       };
       align();
-      [350, 1200, 2400, 4000].forEach(delay => setTimeout(align, delay));
+      [1200, 2400, 4000].forEach(delay => setTimeout(align, delay));
     };
     railLinks.forEach((railLink, index) => {
       railLink.addEventListener('click', event => jumpToChapter(chapters[index], event));
@@ -322,7 +358,11 @@
     });
   }
   window.addEventListener('scroll', schedule, { passive: true });
-  window.addEventListener('resize', schedule);
-  window.addEventListener('load', schedule, { once: true });
+  const layoutChanged = () => { geometryDirty = true; schedule(); };
+  window.addEventListener('resize', layoutChanged);
+  window.addEventListener('load', layoutChanged, { once: true });
+  document.fonts?.ready.then(layoutChanged);
+  reducedMotion.addEventListener('change', schedule);
+  railViewport.addEventListener('change', layoutChanged);
   schedule();
 })();
