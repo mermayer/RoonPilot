@@ -140,6 +140,16 @@
 .guide-print-gallery .guide-ui-figure { margin: 0; }
 .guide-download-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
+.stand-powerbank { margin-top: 58px; padding-top: 10px; border-top: 1px solid var(--line); }
+.powerbank-figure { margin: 0; padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+.powerbank-figure > a:first-child { display: block; border-radius: 8px; }
+.powerbank-figure img { width: 100%; height: auto; max-height: 620px; object-fit: contain; }
+.powerbank-figure figcaption { margin-top: 17px; }
+.powerbank-figure .button { display: flex; margin-top: 18px; font-size: 13px; }
+.powerbank-copy .download-grid { grid-template-columns: 1fr; }
+.powerbank-copy .download-card { gap: 16px; }
+.powerbank-copy .button { max-width: 100%; }
+
 @media (max-width: 1050px) {
   .management-lead { grid-template-columns: 1fr; }
   .management-lead .ui-figure { width: min(100%, 620px); margin-inline: auto; }

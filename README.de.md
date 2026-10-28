@@ -296,6 +296,10 @@ Der optionale Stand hält RoonPilot schräg und integriert einen USB-C-Halter.
 Die [bebilderte Standanleitung](guides/de/roonpilot-stand.md) bietet alle vier
 STL-Dateien einschließlich der Rückwand zum Herunterladen an.
 
+Zusätzlich gibt es ein [optionales Powerbank-Gehäuse unter dem Stand](https://mermayer.github.io/RoonPilot/de/#stand-powerbank)
+für den **INIU Mini Portable Charger, Small 10000mAh 45W**. Drei weitere
+STL-Dateien und die Explosionszeichnung stehen im Stand-Abschnitt der Projektseite bereit.
+
 ## Installation und Updates
 
 - **Factory-Abbild:** vollständige Erstinstallation oder Wiederherstellung ab

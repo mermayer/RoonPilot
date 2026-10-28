@@ -88,6 +88,22 @@ or rigid plug can touch the stand, transfer cable tension to the magnetic
 coupler and restrict the small amount of movement it needs. The same
 recommendation applies to the RoonPilot IR Bridge.
 
+## Optional power-bank case below the stand
+
+The additional three-part case fits below the existing stand. It is designed for the **INIU Mini Portable Charger, Small 10000mAh 45W**. Use the [linked INIU Amazon listing](https://www.amazon.com/INIU-Portable-10000mAh-Essentials-Powerbank/dp/B0DQD35SQ4) to identify the intended variant: **10,000 mAh, 45 W, ASIN B0DQD35SQ4**.
+
+[Open the illustrated project page](https://mermayer.github.io/RoonPilot/#stand-powerbank)
+
+<a href="../docs/assets/3d/roonpilot-stand/powerbank-case/powerb_case.png"><img src="../docs/assets/3d/roonpilot-stand/powerbank-case/powerb_case.png" alt="Exploded drawing of the RoonPilot stand and optional INIU power-bank case" width="560"></a>
+
+| Preview | Part | Approximate model envelope | Download |
+| --- | --- | --- | --- |
+| <img src="../docs/assets/3d/roonpilot-stand/powerbank-case/01_Oberschale-preview.webp" alt="Upper shell" width="110"> | Upper shell | 93 × 79 × 21 mm | [01_Oberschale.stl](../docs/assets/3d/roonpilot-stand/powerbank-case/01_Oberschale.stl) |
+| <img src="../docs/assets/3d/roonpilot-stand/powerbank-case/02_Bodenwanne-preview.webp" alt="Bottom tray" width="110"> | Bottom tray | 93 × 79 × 16.8 mm | [02_Bodenwanne.stl](../docs/assets/3d/roonpilot-stand/powerbank-case/02_Bodenwanne.stl) |
+| <img src="../docs/assets/3d/roonpilot-stand/powerbank-case/03_Taster-preview.webp" alt="Button" width="110"> | Button | 20.05 × 23.05 × 8 mm | [03_Taster.stl](../docs/assets/3d/roonpilot-stand/powerbank-case/03_Taster.stl) |
+
+These parts supplement the four-part stand. **Print each additional part once.** Dimensions describe the STL models; the finished fit depends on the print. Dry-fit the upper shell, bottom tray and button before fastening. The exploded drawing shows the arrangement of the stand, add-on case, power bank and button.
+
 ## Printing notes
 
 No printer-specific temperature, support, wall, infill or material recipe is

@@ -90,6 +90,22 @@ verwenden. Ein langer oder steifer Stecker kann am Stand anliegen, Zug auf die
 Magnetkupplung übertragen und ihre notwendige Beweglichkeit einschränken. Diese
 Empfehlung gilt ebenso für die RoonPilot IR Bridge.
 
+## Optionales Powerbank-Gehäuse unter dem Stand
+
+Das zusätzliche dreiteilige Gehäuse wird unter den vorhandenen Stand gesetzt. Es ist für den **INIU Mini Portable Charger, Small 10000mAh 45W** konzipiert. Die konkrete Variante ist über das [INIU-Angebot bei Amazon](https://www.amazon.com/INIU-Portable-10000mAh-Essentials-Powerbank/dp/B0DQD35SQ4) erkennbar: **10.000 mAh, 45 W, ASIN B0DQD35SQ4**.
+
+[Zur bebilderten Projektseite](https://mermayer.github.io/RoonPilot/de/#stand-powerbank)
+
+<a href="../../docs/assets/3d/roonpilot-stand/powerbank-case/powerb_case.png"><img src="../../docs/assets/3d/roonpilot-stand/powerbank-case/powerb_case.png" alt="Explosionszeichnung des RoonPilot-Stands mit optionalem INIU-Powerbank-Gehäuse" width="560"></a>
+
+| Vorschau | Teil | Ungefährer Modell-Bauraum | Download |
+| --- | --- | --- | --- |
+| <img src="../../docs/assets/3d/roonpilot-stand/powerbank-case/01_Oberschale-preview.webp" alt="Oberschale" width="110"> | Oberschale | 93 × 79 × 21 mm | [01_Oberschale.stl](../../docs/assets/3d/roonpilot-stand/powerbank-case/01_Oberschale.stl) |
+| <img src="../../docs/assets/3d/roonpilot-stand/powerbank-case/02_Bodenwanne-preview.webp" alt="Bodenwanne" width="110"> | Bodenwanne | 93 × 79 × 16,8 mm | [02_Bodenwanne.stl](../../docs/assets/3d/roonpilot-stand/powerbank-case/02_Bodenwanne.stl) |
+| <img src="../../docs/assets/3d/roonpilot-stand/powerbank-case/03_Taster-preview.webp" alt="Taster" width="110"> | Taster | 20,05 × 23,05 × 8 mm | [03_Taster.stl](../../docs/assets/3d/roonpilot-stand/powerbank-case/03_Taster.stl) |
+
+Die drei Teile ergänzen den vierteiligen Stand. **Jedes Zusatzteil einmal drucken.** Die Maße beschreiben die STL-Modelle; die fertige Passung hängt vom Druck ab. Vor dem Verschrauben Oberschale, Bodenwanne und Taster trocken einpassen. Die Explosionszeichnung zeigt die Anordnung von Stand, Zusatzgehäuse, Powerbank und Taster.
+
 ## Hinweise zum Drucken
 
 Es werden bewusst keine druckerspezifischen Temperaturen, Stützen, Wandstärken,
