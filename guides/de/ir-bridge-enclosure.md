@@ -18,13 +18,23 @@ freihalten und die Senderöffnung auf das zu steuernde Audiogerät ausrichten.
 
 ## STL-Dateien und Stückzahlen
 
-| Vorschau | Datei | Aufgabe | Ungefährer Modell-Bauraum | Anzahl |
-| --- | --- | --- | --- | --- |
-| <img src="../../docs/ir-bridge/assets/3d/enclosure/Bridge_Cube-preview.png?v=stl-preview-2" alt="3D-Vorschau des Bridge-Gehäuses" width="110"> | [`Bridge_Cube.stl`](../../docs/ir-bridge/assets/3d/enclosure/Bridge_Cube.stl) | Hauptgehäuse | 52 × 52 × 49,6 mm | 1 |
-| <img src="../../docs/ir-bridge/assets/3d/enclosure/deckel-preview.png?v=stl-preview-2" alt="3D-Vorschau des Deckels" width="110"> | [`deckel.stl`](../../docs/ir-bridge/assets/3d/enclosure/deckel.stl) | Deckel | 52 × 52 × 7,4 mm | 1 |
-| <img src="../../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x-preview.png?v=stl-preview-2" alt="3D-Vorschau des längeren Bridge-Fußes" width="110"> | [`fuss_1x_drucken_4x.stl`](../../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x.stl) | Längerer Fuß für zusätzliche USB-C-Freiheit | 8,5 × 8,5 × 16 mm | 4 dieser Version |
-| <img src="../../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x_KURZ-preview.png?v=stl-preview-2" alt="3D-Vorschau des kurzen Bridge-Fußes" width="110"> | [`fuss_1x_drucken_4x_KURZ.stl`](../../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x_KURZ.stl) | Kurzer Fuß für ein kompaktes USB-C-Steckergehäuse | 8,5 × 8,5 × 12 mm | 4 dieser Version |
-| <img src="../../docs/ir-bridge/assets/3d/enclosure/ir_sender_kappe-preview.png?v=stl-preview-2" alt="3D-Vorschau der IR-Senderkappe" width="110"> | [`ir_sender_kappe.stl`](../../docs/ir-bridge/assets/3d/enclosure/ir_sender_kappe.stl) | Abdeckung des IR-Senders | 29 × 25,5 × 4,1 mm | 1 |
+Eine Karte anklicken, um die jeweilige STL-Datei herunterzuladen. Der ZIP-Button lädt das vollständige Paket.
+
+<a href="https://mermayer.github.io/RoonPilot/ir-bridge/assets/3d/enclosure/Bridge_Cube.stl"><picture><source media="(max-width: 480px)" srcset="../../docs/assets/3d/download-cards/Bridge_Cube-de-mobile.png"><img src="../../docs/assets/3d/download-cards/Bridge_Cube-de.png" alt="Gehäusekörper · 52 × 52 × 49,6 mm · einmal drucken · Bridge_Cube.stl herunterladen" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/ir-bridge/assets/3d/enclosure/deckel.stl"><picture><source media="(max-width: 480px)" srcset="../../docs/assets/3d/download-cards/deckel-de-mobile.png"><img src="../../docs/assets/3d/download-cards/deckel-de.png" alt="Deckel · 52 × 52 × 7,4 mm · einmal drucken · deckel.stl herunterladen" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/ir-bridge/assets/3d/enclosure/ir_sender_kappe.stl"><picture><source media="(max-width: 480px)" srcset="../../docs/assets/3d/download-cards/ir_sender_kappe-de-mobile.png"><img src="../../docs/assets/3d/download-cards/ir_sender_kappe-de.png" alt="IR-Senderkappe · 29 × 25,5 × 4,1 mm · einmal drucken · ir_sender_kappe.stl herunterladen" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x.stl"><picture><source media="(max-width: 480px)" srcset="../../docs/assets/3d/download-cards/fuss_1x_drucken_4x-de-mobile.png"><img src="../../docs/assets/3d/download-cards/fuss_1x_drucken_4x-de.png" alt="Längerer Fuß · 16 mm hoch · mehr USB-C-Freiraum · viermal drucken · fuss_1x_drucken_4x.stl herunterladen" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x_KURZ.stl"><picture><source media="(max-width: 480px)" srcset="../../docs/assets/3d/download-cards/fuss_1x_drucken_4x_KURZ-de-mobile.png"><img src="../../docs/assets/3d/download-cards/fuss_1x_drucken_4x_KURZ-de.png" alt="Kurzer Fuß · Ca. 12 mm hoch · alternativ viermal drucken · fuss_1x_drucken_4x_KURZ.stl herunterladen" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/ir-bridge/assets/3d/enclosure/RoonPilot-IR-Bridge-enclosure-STL.zip"><img src="../../docs/assets/3d/download-cards/download-all-stl-de.png" alt="Alle STL-Dateien herunterladen" width="300"></a>
+
+ZIP mit allen fünf STL-Dateien. Für den Druck einen Satz aus vier gleichen Füßen wählen: lang oder kurz.
+
+Beide Fußvarianten haben im STL-Modell einen Bauraum von 8,5 × 8,5 mm in der Grundfläche; die Höhe beträgt 16 mm (lang) beziehungsweise ca. 12 mm (kurz).
 
 Möglichst ein USB-C-Kabel mit **kurzem Steckergehäuse** verwenden. Reicht der
 Abstand zum Untergrund wegen eines längeren Kabelsteckers dennoch nicht aus,

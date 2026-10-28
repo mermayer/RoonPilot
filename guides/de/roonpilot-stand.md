@@ -15,14 +15,21 @@ weder Elektronik noch Firmware und ist für RoonPilot nicht erforderlich.
 
 ## STL-Dateien herunterladen
 
+Eine Karte anklicken, um die jeweilige STL-Datei herunterzuladen. Der ZIP-Button lädt das vollständige Paket.
+
 Jedes Teil einmal drucken:
 
-| Vorschau | Teil | Ungefährer Modell-Bauraum | Download |
-| --- | --- | --- | --- |
-| <img src="../../docs/assets/3d/roonpilot-stand/dock_body-preview.png?v=stl-preview-2" alt="3D-Vorschau des Standkörpers" width="110"> | Standkörper | 93 × 79 × 63,4 mm | [`dock_body.stl` herunterladen](../../docs/assets/3d/roonpilot-stand/dock_body.stl) |
-| <img src="../../docs/assets/3d/roonpilot-stand/dock_bottom_cover-preview.png?v=stl-preview-2" alt="3D-Vorschau der Bodenabdeckung" width="110"> | Bodenabdeckung | 83,4 × 73,7 × 7,5 mm | [`dock_bottom_cover.stl` herunterladen](../../docs/assets/3d/roonpilot-stand/dock_bottom_cover.stl) |
-| <img src="../../docs/assets/3d/roonpilot-stand/halter-preview.png?v=stl-preview-2" alt="3D-Vorschau des USB-C-Halters" width="110"> | USB-C-Halter | 25 × 25 × 8,5 mm | [`halter.stl` herunterladen](../../docs/assets/3d/roonpilot-stand/halter.stl) |
-| <img src="../../docs/assets/3d/roonpilot-stand/rueckwand-preview.png?v=stl-preview-2" alt="3D-Vorschau der Rückwand" width="110"> | Rückwand | 66 × 66 × 5 mm | [`rueckwand.stl` herunterladen](../../docs/assets/3d/roonpilot-stand/rueckwand.stl) |
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/dock_body.stl"><picture><source media="(max-width: 480px)" srcset="../../docs/assets/3d/download-cards/dock_body-de-mobile.png"><img src="../../docs/assets/3d/download-cards/dock_body-de.png" alt="Standkörper · 93 × 79 × 63,4 mm · einmal drucken · dock_body.stl herunterladen" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/dock_bottom_cover.stl"><picture><source media="(max-width: 480px)" srcset="../../docs/assets/3d/download-cards/dock_bottom_cover-de-mobile.png"><img src="../../docs/assets/3d/download-cards/dock_bottom_cover-de.png" alt="Bodenabdeckung · 83,4 × 73,7 × 7,5 mm · einmal drucken · dock_bottom_cover.stl herunterladen" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/halter.stl"><picture><source media="(max-width: 480px)" srcset="../../docs/assets/3d/download-cards/halter-de-mobile.png"><img src="../../docs/assets/3d/download-cards/halter-de.png" alt="USB-C-Halter · 25 × 25 × 8,5 mm · einmal drucken · halter.stl herunterladen" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/rueckwand.stl"><picture><source media="(max-width: 480px)" srcset="../../docs/assets/3d/download-cards/rueckwand-de-mobile.png"><img src="../../docs/assets/3d/download-cards/rueckwand-de.png" alt="Rückwand · 66 × 66 × 5 mm · einmal drucken · rueckwand.stl herunterladen" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/RoonPilot-stand-STL.zip"><img src="../../docs/assets/3d/download-cards/download-all-stl-de.png" alt="Alle STL-Dateien herunterladen" width="300"></a>
+
+ZIP mit allen sieben STL-Dateien: vier Standteile und drei Teile für das optionale Powerbank-Gehäuse. Die Dateien selbst im Slicer vorbereiten.
 
 Die Maße stammen aus den Modelldateien und sind keine garantierten Maße des
 fertigen Drucks. Druckerkalibrierung, Materialschrumpfung und Slicer-Toleranzen
@@ -98,11 +105,15 @@ Das zusätzliche dreiteilige Gehäuse wird unter den vorhandenen Stand gesetzt. 
 
 <a href="../../docs/assets/3d/roonpilot-stand/powerbank-case/powerb_case.png"><img src="../../docs/assets/3d/roonpilot-stand/powerbank-case/powerb_case.png" alt="Explosionszeichnung des RoonPilot-Stands mit optionalem INIU-Powerbank-Gehäuse" width="560"></a>
 
-| Vorschau | Teil | Ungefährer Modell-Bauraum | Download |
-| --- | --- | --- | --- |
-| <img src="../../docs/assets/3d/roonpilot-stand/powerbank-case/01_Oberschale-preview.webp" alt="Oberschale" width="110"> | Oberschale | 93 × 79 × 21 mm | [01_Oberschale.stl](../../docs/assets/3d/roonpilot-stand/powerbank-case/01_Oberschale.stl) |
-| <img src="../../docs/assets/3d/roonpilot-stand/powerbank-case/02_Bodenwanne-preview.webp" alt="Bodenwanne" width="110"> | Bodenwanne | 93 × 79 × 16,8 mm | [02_Bodenwanne.stl](../../docs/assets/3d/roonpilot-stand/powerbank-case/02_Bodenwanne.stl) |
-| <img src="../../docs/assets/3d/roonpilot-stand/powerbank-case/03_Taster-preview.webp" alt="Taster" width="110"> | Taster | 20,05 × 23,05 × 8 mm | [03_Taster.stl](../../docs/assets/3d/roonpilot-stand/powerbank-case/03_Taster.stl) |
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/powerbank-case/01_Oberschale.stl"><picture><source media="(max-width: 480px)" srcset="../../docs/assets/3d/download-cards/01_Oberschale-de-mobile.png"><img src="../../docs/assets/3d/download-cards/01_Oberschale-de.png" alt="Oberschale · 93 × 79 × 21 mm · einmal drucken · 01_Oberschale.stl herunterladen" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/powerbank-case/02_Bodenwanne.stl"><picture><source media="(max-width: 480px)" srcset="../../docs/assets/3d/download-cards/02_Bodenwanne-de-mobile.png"><img src="../../docs/assets/3d/download-cards/02_Bodenwanne-de.png" alt="Bodenwanne · 93 × 79 × 16,8 mm · einmal drucken · 02_Bodenwanne.stl herunterladen" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/powerbank-case/03_Taster.stl"><picture><source media="(max-width: 480px)" srcset="../../docs/assets/3d/download-cards/03_Taster-de-mobile.png"><img src="../../docs/assets/3d/download-cards/03_Taster-de.png" alt="Taster · 20,05 × 23,05 × 8 mm · einmal drucken · 03_Taster.stl herunterladen" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/powerbank-case/RoonPilot-powerbank-case-STL.zip"><img src="../../docs/assets/3d/download-cards/download-all-stl-de.png" alt="Alle STL-Dateien herunterladen" width="300"></a>
+
+ZIP mit Oberschale, Bodenwanne und Taster. Jedes Teil einmal drucken und vor der Montage einpassen.
 
 Die drei Teile ergänzen den vierteiligen Stand. **Jedes Zusatzteil einmal drucken.** Die Maße beschreiben die STL-Modelle; die fertige Passung hängt vom Druck ab. Vor dem Verschrauben Oberschale, Bodenwanne und Taster trocken einpassen. Die Explosionszeichnung zeigt die Anordnung von Stand, Zusatzgehäuse, Powerbank und Taster.
 

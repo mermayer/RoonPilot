@@ -144,6 +144,14 @@
 .model-dialog-head p { min-width: 0; margin: 0; color: var(--muted-strong); font-size: 14px; overflow-wrap: anywhere; }
 .model-dialog-head .button { flex-shrink: 0; min-height: 38px; padding: 9px 13px; font-size: 13px; }
 .model-dialog > img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.stl-bundle { display: flex; align-items: center; gap: 22px; margin: 22px 0; padding-top: 20px; border-top: 1px solid var(--line); }
+.stl-bundle .button { flex-shrink: 0; margin: 0; font-size: 14px; }
+.stl-bundle p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+@media (max-width: 760px) {
+  .stl-bundle { display: block; }
+  .stl-bundle .button { width: 100%; }
+  .stl-bundle p { margin-top: 13px; }
+}
 @media (min-width: 1051px) {
   #enclosure .print-gallery, #gehaeuse .print-gallery { grid-template-columns: 1fr; }
 }

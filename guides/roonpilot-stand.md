@@ -15,14 +15,21 @@ electronics or firmware and is not required for RoonPilot.
 
 ## STL downloads
 
+Click a card to download that STL file. The ZIP button downloads the complete bundle.
+
 Print one of every part:
 
-| Preview | Part | Approximate model envelope | Download |
-| --- | --- | --- | --- |
-| <img src="../docs/assets/3d/roonpilot-stand/dock_body-preview.png?v=stl-preview-2" alt="3D preview of the main stand" width="110"> | Main stand | 93 × 79 × 63.4 mm | [Download `dock_body.stl`](../docs/assets/3d/roonpilot-stand/dock_body.stl) |
-| <img src="../docs/assets/3d/roonpilot-stand/dock_bottom_cover-preview.png?v=stl-preview-2" alt="3D preview of the bottom cover" width="110"> | Bottom cover | 83.4 × 73.7 × 7.5 mm | [Download `dock_bottom_cover.stl`](../docs/assets/3d/roonpilot-stand/dock_bottom_cover.stl) |
-| <img src="../docs/assets/3d/roonpilot-stand/halter-preview.png?v=stl-preview-2" alt="3D preview of the USB-C holder" width="110"> | USB-C holder | 25 × 25 × 8.5 mm | [Download `halter.stl`](../docs/assets/3d/roonpilot-stand/halter.stl) |
-| <img src="../docs/assets/3d/roonpilot-stand/rueckwand-preview.png?v=stl-preview-2" alt="3D preview of the rear panel" width="110"> | Rear panel | 66 × 66 × 5 mm | [Download `rueckwand.stl`](../docs/assets/3d/roonpilot-stand/rueckwand.stl) |
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/dock_body.stl"><picture><source media="(max-width: 480px)" srcset="../docs/assets/3d/download-cards/dock_body-en-mobile.png"><img src="../docs/assets/3d/download-cards/dock_body-en.png" alt="Main stand · 93 × 79 × 63.4 mm · print one · dock_body.stl download" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/dock_bottom_cover.stl"><picture><source media="(max-width: 480px)" srcset="../docs/assets/3d/download-cards/dock_bottom_cover-en-mobile.png"><img src="../docs/assets/3d/download-cards/dock_bottom_cover-en.png" alt="Bottom cover · 83.4 × 73.7 × 7.5 mm · print one · dock_bottom_cover.stl download" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/halter.stl"><picture><source media="(max-width: 480px)" srcset="../docs/assets/3d/download-cards/halter-en-mobile.png"><img src="../docs/assets/3d/download-cards/halter-en.png" alt="USB-C holder · 25 × 25 × 8.5 mm · print one · halter.stl download" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/rueckwand.stl"><picture><source media="(max-width: 480px)" srcset="../docs/assets/3d/download-cards/rueckwand-en-mobile.png"><img src="../docs/assets/3d/download-cards/rueckwand-en.png" alt="Rear panel · 66 × 66 × 5 mm · print one · rueckwand.stl download" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/RoonPilot-stand-STL.zip"><img src="../docs/assets/3d/download-cards/download-all-stl-en.png" alt="Download all STL files" width="300"></a>
+
+ZIP with all seven STL files: four stand parts and three optional power-bank case parts. Prepare the files in your own slicer.
 
 These dimensions describe the model files, not guaranteed finished print
 dimensions. Printer calibration, material shrinkage and slicer tolerances can
@@ -96,11 +103,15 @@ The additional three-part case fits below the existing stand. It is designed for
 
 <a href="../docs/assets/3d/roonpilot-stand/powerbank-case/powerb_case.png"><img src="../docs/assets/3d/roonpilot-stand/powerbank-case/powerb_case.png" alt="Exploded drawing of the RoonPilot stand and optional INIU power-bank case" width="560"></a>
 
-| Preview | Part | Approximate model envelope | Download |
-| --- | --- | --- | --- |
-| <img src="../docs/assets/3d/roonpilot-stand/powerbank-case/01_Oberschale-preview.webp" alt="Upper shell" width="110"> | Upper shell | 93 × 79 × 21 mm | [01_Oberschale.stl](../docs/assets/3d/roonpilot-stand/powerbank-case/01_Oberschale.stl) |
-| <img src="../docs/assets/3d/roonpilot-stand/powerbank-case/02_Bodenwanne-preview.webp" alt="Bottom tray" width="110"> | Bottom tray | 93 × 79 × 16.8 mm | [02_Bodenwanne.stl](../docs/assets/3d/roonpilot-stand/powerbank-case/02_Bodenwanne.stl) |
-| <img src="../docs/assets/3d/roonpilot-stand/powerbank-case/03_Taster-preview.webp" alt="Button" width="110"> | Button | 20.05 × 23.05 × 8 mm | [03_Taster.stl](../docs/assets/3d/roonpilot-stand/powerbank-case/03_Taster.stl) |
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/powerbank-case/01_Oberschale.stl"><picture><source media="(max-width: 480px)" srcset="../docs/assets/3d/download-cards/01_Oberschale-en-mobile.png"><img src="../docs/assets/3d/download-cards/01_Oberschale-en.png" alt="Upper shell · 93 × 79 × 21 mm · print one · 01_Oberschale.stl download" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/powerbank-case/02_Bodenwanne.stl"><picture><source media="(max-width: 480px)" srcset="../docs/assets/3d/download-cards/02_Bodenwanne-en-mobile.png"><img src="../docs/assets/3d/download-cards/02_Bodenwanne-en.png" alt="Bottom tray · 93 × 79 × 16.8 mm · print one · 02_Bodenwanne.stl download" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/powerbank-case/03_Taster.stl"><picture><source media="(max-width: 480px)" srcset="../docs/assets/3d/download-cards/03_Taster-en-mobile.png"><img src="../docs/assets/3d/download-cards/03_Taster-en.png" alt="Button · 20.05 × 23.05 × 8 mm · print one · 03_Taster.stl download" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/powerbank-case/RoonPilot-powerbank-case-STL.zip"><img src="../docs/assets/3d/download-cards/download-all-stl-en.png" alt="Download all STL files" width="300"></a>
+
+ZIP with the upper shell, bottom tray and button. Print each part once and check the fit before assembly.
 
 These parts supplement the four-part stand. **Print each additional part once.** Dimensions describe the STL models; the finished fit depends on the print. Dry-fit the upper shell, bottom tray and button before fastening. The exploded drawing shows the arrangement of the stand, add-on case, power bank and button.
 

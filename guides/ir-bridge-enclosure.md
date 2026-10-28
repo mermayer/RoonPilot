@@ -18,13 +18,23 @@ clear and point the transmitter opening toward the controlled equipment.
 
 ## STL downloads and print count
 
-| Preview | File | Purpose | Approximate model envelope | Count |
-| --- | --- | --- | --- | --- |
-| <img src="../docs/ir-bridge/assets/3d/enclosure/Bridge_Cube-preview.png?v=stl-preview-2" alt="3D preview of the Bridge enclosure" width="110"> | [`Bridge_Cube.stl`](../docs/ir-bridge/assets/3d/enclosure/Bridge_Cube.stl) | Main enclosure | 52 × 52 × 49.6 mm | 1 |
-| <img src="../docs/ir-bridge/assets/3d/enclosure/deckel-preview.png?v=stl-preview-2" alt="3D preview of the lid" width="110"> | [`deckel.stl`](../docs/ir-bridge/assets/3d/enclosure/deckel.stl) | Lid | 52 × 52 × 7.4 mm | 1 |
-| <img src="../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x-preview.png?v=stl-preview-2" alt="3D preview of the longer Bridge foot" width="110"> | [`fuss_1x_drucken_4x.stl`](../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x.stl) | Longer foot for additional USB-C clearance | 8.5 × 8.5 × 16 mm | 4 of this version |
-| <img src="../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x_KURZ-preview.png?v=stl-preview-2" alt="3D preview of the short Bridge foot" width="110"> | [`fuss_1x_drucken_4x_KURZ.stl`](../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x_KURZ.stl) | Short foot for a compact USB-C connector housing | 8.5 × 8.5 × 12 mm | 4 of this version |
-| <img src="../docs/ir-bridge/assets/3d/enclosure/ir_sender_kappe-preview.png?v=stl-preview-2" alt="3D preview of the IR-emitter cover" width="110"> | [`ir_sender_kappe.stl`](../docs/ir-bridge/assets/3d/enclosure/ir_sender_kappe.stl) | IR-emitter cover | 29 × 25.5 × 4.1 mm | 1 |
+Click a card to download that STL file. The ZIP button downloads the complete bundle.
+
+<a href="https://mermayer.github.io/RoonPilot/ir-bridge/assets/3d/enclosure/Bridge_Cube.stl"><picture><source media="(max-width: 480px)" srcset="../docs/assets/3d/download-cards/Bridge_Cube-en-mobile.png"><img src="../docs/assets/3d/download-cards/Bridge_Cube-en.png" alt="Main enclosure · 52 × 52 × 49.6 mm · print one · Bridge_Cube.stl download" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/ir-bridge/assets/3d/enclosure/deckel.stl"><picture><source media="(max-width: 480px)" srcset="../docs/assets/3d/download-cards/deckel-en-mobile.png"><img src="../docs/assets/3d/download-cards/deckel-en.png" alt="Lid · 52 × 52 × 7.4 mm · print one · deckel.stl download" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/ir-bridge/assets/3d/enclosure/ir_sender_kappe.stl"><picture><source media="(max-width: 480px)" srcset="../docs/assets/3d/download-cards/ir_sender_kappe-en-mobile.png"><img src="../docs/assets/3d/download-cards/ir_sender_kappe-en.png" alt="IR-emitter cover · 29 × 25.5 × 4.1 mm · print one · ir_sender_kappe.stl download" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x.stl"><picture><source media="(max-width: 480px)" srcset="../docs/assets/3d/download-cards/fuss_1x_drucken_4x-en-mobile.png"><img src="../docs/assets/3d/download-cards/fuss_1x_drucken_4x-en.png" alt="Long foot · 16 mm high · extra USB-C clearance · print four · fuss_1x_drucken_4x.stl download" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x_KURZ.stl"><picture><source media="(max-width: 480px)" srcset="../docs/assets/3d/download-cards/fuss_1x_drucken_4x_KURZ-en-mobile.png"><img src="../docs/assets/3d/download-cards/fuss_1x_drucken_4x_KURZ-en.png" alt="Short foot · About 12 mm high · alternative, print four · fuss_1x_drucken_4x_KURZ.stl download" width="660"></picture></a>
+
+<a href="https://mermayer.github.io/RoonPilot/ir-bridge/assets/3d/enclosure/RoonPilot-IR-Bridge-enclosure-STL.zip"><img src="../docs/assets/3d/download-cards/download-all-stl-en.png" alt="Download all STL files" width="300"></a>
+
+ZIP with all five STL files. For printing, choose one set of four matching feet: long or short.
+
+Both foot variants have an 8.5 × 8.5 mm model envelope across; the heights are 16 mm (long) and about 12 mm (short).
 
 Use a USB-C cable with a **short connector housing** whenever possible. If a
 longer cable plug still lacks clearance below the enclosure, use the longer
