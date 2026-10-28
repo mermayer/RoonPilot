@@ -19,10 +19,10 @@ Jedes Teil einmal drucken:
 
 | Vorschau | Teil | Ungefährer Modell-Bauraum | Download |
 | --- | --- | --- | --- |
-| <img src="../../docs/assets/3d/roonpilot-stand/dock_body-preview.png" alt="3D-Vorschau des Standkörpers" width="110"> | Standkörper | 93 × 79 × 63,4 mm | [`dock_body.stl` herunterladen](../../docs/assets/3d/roonpilot-stand/dock_body.stl) |
-| <img src="../../docs/assets/3d/roonpilot-stand/dock_bottom_cover-preview.png" alt="3D-Vorschau der Bodenabdeckung" width="110"> | Bodenabdeckung | 83,4 × 73,7 × 7,5 mm | [`dock_bottom_cover.stl` herunterladen](../../docs/assets/3d/roonpilot-stand/dock_bottom_cover.stl) |
-| <img src="../../docs/assets/3d/roonpilot-stand/halter-preview.png" alt="3D-Vorschau des USB-C-Halters" width="110"> | USB-C-Halter | 25 × 25 × 8,5 mm | [`halter.stl` herunterladen](../../docs/assets/3d/roonpilot-stand/halter.stl) |
-| <img src="../../docs/assets/3d/roonpilot-stand/rueckwand-preview.png" alt="3D-Vorschau der Rückwand" width="110"> | Rückwand | 66 × 66 × 5 mm | [`rueckwand.stl` herunterladen](../../docs/assets/3d/roonpilot-stand/rueckwand.stl) |
+| <img src="../../docs/assets/3d/roonpilot-stand/dock_body-preview.png?v=stl-preview-2" alt="3D-Vorschau des Standkörpers" width="110"> | Standkörper | 93 × 79 × 63,4 mm | [`dock_body.stl` herunterladen](../../docs/assets/3d/roonpilot-stand/dock_body.stl) |
+| <img src="../../docs/assets/3d/roonpilot-stand/dock_bottom_cover-preview.png?v=stl-preview-2" alt="3D-Vorschau der Bodenabdeckung" width="110"> | Bodenabdeckung | 83,4 × 73,7 × 7,5 mm | [`dock_bottom_cover.stl` herunterladen](../../docs/assets/3d/roonpilot-stand/dock_bottom_cover.stl) |
+| <img src="../../docs/assets/3d/roonpilot-stand/halter-preview.png?v=stl-preview-2" alt="3D-Vorschau des USB-C-Halters" width="110"> | USB-C-Halter | 25 × 25 × 8,5 mm | [`halter.stl` herunterladen](../../docs/assets/3d/roonpilot-stand/halter.stl) |
+| <img src="../../docs/assets/3d/roonpilot-stand/rueckwand-preview.png?v=stl-preview-2" alt="3D-Vorschau der Rückwand" width="110"> | Rückwand | 66 × 66 × 5 mm | [`rueckwand.stl` herunterladen](../../docs/assets/3d/roonpilot-stand/rueckwand.stl) |
 
 Die Maße stammen aus den Modelldateien und sind keine garantierten Maße des
 fertigen Drucks. Druckerkalibrierung, Materialschrumpfung und Slicer-Toleranzen

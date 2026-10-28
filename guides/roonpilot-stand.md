@@ -19,10 +19,10 @@ Print one of every part:
 
 | Preview | Part | Approximate model envelope | Download |
 | --- | --- | --- | --- |
-| <img src="../docs/assets/3d/roonpilot-stand/dock_body-preview.png" alt="3D preview of the main stand" width="110"> | Main stand | 93 × 79 × 63.4 mm | [Download `dock_body.stl`](../docs/assets/3d/roonpilot-stand/dock_body.stl) |
-| <img src="../docs/assets/3d/roonpilot-stand/dock_bottom_cover-preview.png" alt="3D preview of the bottom cover" width="110"> | Bottom cover | 83.4 × 73.7 × 7.5 mm | [Download `dock_bottom_cover.stl`](../docs/assets/3d/roonpilot-stand/dock_bottom_cover.stl) |
-| <img src="../docs/assets/3d/roonpilot-stand/halter-preview.png" alt="3D preview of the USB-C holder" width="110"> | USB-C holder | 25 × 25 × 8.5 mm | [Download `halter.stl`](../docs/assets/3d/roonpilot-stand/halter.stl) |
-| <img src="../docs/assets/3d/roonpilot-stand/rueckwand-preview.png" alt="3D preview of the rear panel" width="110"> | Rear panel | 66 × 66 × 5 mm | [Download `rueckwand.stl`](../docs/assets/3d/roonpilot-stand/rueckwand.stl) |
+| <img src="../docs/assets/3d/roonpilot-stand/dock_body-preview.png?v=stl-preview-2" alt="3D preview of the main stand" width="110"> | Main stand | 93 × 79 × 63.4 mm | [Download `dock_body.stl`](../docs/assets/3d/roonpilot-stand/dock_body.stl) |
+| <img src="../docs/assets/3d/roonpilot-stand/dock_bottom_cover-preview.png?v=stl-preview-2" alt="3D preview of the bottom cover" width="110"> | Bottom cover | 83.4 × 73.7 × 7.5 mm | [Download `dock_bottom_cover.stl`](../docs/assets/3d/roonpilot-stand/dock_bottom_cover.stl) |
+| <img src="../docs/assets/3d/roonpilot-stand/halter-preview.png?v=stl-preview-2" alt="3D preview of the USB-C holder" width="110"> | USB-C holder | 25 × 25 × 8.5 mm | [Download `halter.stl`](../docs/assets/3d/roonpilot-stand/halter.stl) |
+| <img src="../docs/assets/3d/roonpilot-stand/rueckwand-preview.png?v=stl-preview-2" alt="3D preview of the rear panel" width="110"> | Rear panel | 66 × 66 × 5 mm | [Download `rueckwand.stl`](../docs/assets/3d/roonpilot-stand/rueckwand.stl) |
 
 These dimensions describe the model files, not guaranteed finished print
 dimensions. Printer calibration, material shrinkage and slicer tolerances can

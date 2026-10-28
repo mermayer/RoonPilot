@@ -20,11 +20,11 @@ clear and point the transmitter opening toward the controlled equipment.
 
 | Preview | File | Purpose | Approximate model envelope | Count |
 | --- | --- | --- | --- | --- |
-| <img src="../docs/ir-bridge/assets/3d/enclosure/Bridge_Cube-preview.png" alt="3D preview of the Bridge enclosure" width="110"> | [`Bridge_Cube.stl`](../docs/ir-bridge/assets/3d/enclosure/Bridge_Cube.stl) | Main enclosure | 52 × 52 × 49.6 mm | 1 |
-| <img src="../docs/ir-bridge/assets/3d/enclosure/deckel-preview.png" alt="3D preview of the lid" width="110"> | [`deckel.stl`](../docs/ir-bridge/assets/3d/enclosure/deckel.stl) | Lid | 52 × 52 × 7.4 mm | 1 |
-| <img src="../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x-preview.png" alt="3D preview of the longer Bridge foot" width="110"> | [`fuss_1x_drucken_4x.stl`](../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x.stl) | Longer foot for additional USB-C clearance | 8.5 × 8.5 × 16 mm | 4 of this version |
-| <img src="../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x_KURZ-preview.png" alt="3D preview of the short Bridge foot" width="110"> | [`fuss_1x_drucken_4x_KURZ.stl`](../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x_KURZ.stl) | Short foot for a compact USB-C connector housing | 8.5 × 8.5 × 12 mm | 4 of this version |
-| <img src="../docs/ir-bridge/assets/3d/enclosure/ir_sender_kappe-preview.png" alt="3D preview of the IR-emitter cover" width="110"> | [`ir_sender_kappe.stl`](../docs/ir-bridge/assets/3d/enclosure/ir_sender_kappe.stl) | IR-emitter cover | 29 × 25.5 × 4.1 mm | 1 |
+| <img src="../docs/ir-bridge/assets/3d/enclosure/Bridge_Cube-preview.png?v=stl-preview-2" alt="3D preview of the Bridge enclosure" width="110"> | [`Bridge_Cube.stl`](../docs/ir-bridge/assets/3d/enclosure/Bridge_Cube.stl) | Main enclosure | 52 × 52 × 49.6 mm | 1 |
+| <img src="../docs/ir-bridge/assets/3d/enclosure/deckel-preview.png?v=stl-preview-2" alt="3D preview of the lid" width="110"> | [`deckel.stl`](../docs/ir-bridge/assets/3d/enclosure/deckel.stl) | Lid | 52 × 52 × 7.4 mm | 1 |
+| <img src="../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x-preview.png?v=stl-preview-2" alt="3D preview of the longer Bridge foot" width="110"> | [`fuss_1x_drucken_4x.stl`](../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x.stl) | Longer foot for additional USB-C clearance | 8.5 × 8.5 × 16 mm | 4 of this version |
+| <img src="../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x_KURZ-preview.png?v=stl-preview-2" alt="3D preview of the short Bridge foot" width="110"> | [`fuss_1x_drucken_4x_KURZ.stl`](../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x_KURZ.stl) | Short foot for a compact USB-C connector housing | 8.5 × 8.5 × 12 mm | 4 of this version |
+| <img src="../docs/ir-bridge/assets/3d/enclosure/ir_sender_kappe-preview.png?v=stl-preview-2" alt="3D preview of the IR-emitter cover" width="110"> | [`ir_sender_kappe.stl`](../docs/ir-bridge/assets/3d/enclosure/ir_sender_kappe.stl) | IR-emitter cover | 29 × 25.5 × 4.1 mm | 1 |
 
 Use a USB-C cable with a **short connector housing** whenever possible. If a
 longer cable plug still lacks clearance below the enclosure, use the longer

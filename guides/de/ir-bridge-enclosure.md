@@ -20,11 +20,11 @@ freihalten und die Senderöffnung auf das zu steuernde Audiogerät ausrichten.
 
 | Vorschau | Datei | Aufgabe | Ungefährer Modell-Bauraum | Anzahl |
 | --- | --- | --- | --- | --- |
-| <img src="../../docs/ir-bridge/assets/3d/enclosure/Bridge_Cube-preview.png" alt="3D-Vorschau des Bridge-Gehäuses" width="110"> | [`Bridge_Cube.stl`](../../docs/ir-bridge/assets/3d/enclosure/Bridge_Cube.stl) | Hauptgehäuse | 52 × 52 × 49,6 mm | 1 |
-| <img src="../../docs/ir-bridge/assets/3d/enclosure/deckel-preview.png" alt="3D-Vorschau des Deckels" width="110"> | [`deckel.stl`](../../docs/ir-bridge/assets/3d/enclosure/deckel.stl) | Deckel | 52 × 52 × 7,4 mm | 1 |
-| <img src="../../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x-preview.png" alt="3D-Vorschau des längeren Bridge-Fußes" width="110"> | [`fuss_1x_drucken_4x.stl`](../../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x.stl) | Längerer Fuß für zusätzliche USB-C-Freiheit | 8,5 × 8,5 × 16 mm | 4 dieser Version |
-| <img src="../../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x_KURZ-preview.png" alt="3D-Vorschau des kurzen Bridge-Fußes" width="110"> | [`fuss_1x_drucken_4x_KURZ.stl`](../../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x_KURZ.stl) | Kurzer Fuß für ein kompaktes USB-C-Steckergehäuse | 8,5 × 8,5 × 12 mm | 4 dieser Version |
-| <img src="../../docs/ir-bridge/assets/3d/enclosure/ir_sender_kappe-preview.png" alt="3D-Vorschau der IR-Senderkappe" width="110"> | [`ir_sender_kappe.stl`](../../docs/ir-bridge/assets/3d/enclosure/ir_sender_kappe.stl) | Abdeckung des IR-Senders | 29 × 25,5 × 4,1 mm | 1 |
+| <img src="../../docs/ir-bridge/assets/3d/enclosure/Bridge_Cube-preview.png?v=stl-preview-2" alt="3D-Vorschau des Bridge-Gehäuses" width="110"> | [`Bridge_Cube.stl`](../../docs/ir-bridge/assets/3d/enclosure/Bridge_Cube.stl) | Hauptgehäuse | 52 × 52 × 49,6 mm | 1 |
+| <img src="../../docs/ir-bridge/assets/3d/enclosure/deckel-preview.png?v=stl-preview-2" alt="3D-Vorschau des Deckels" width="110"> | [`deckel.stl`](../../docs/ir-bridge/assets/3d/enclosure/deckel.stl) | Deckel | 52 × 52 × 7,4 mm | 1 |
+| <img src="../../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x-preview.png?v=stl-preview-2" alt="3D-Vorschau des längeren Bridge-Fußes" width="110"> | [`fuss_1x_drucken_4x.stl`](../../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x.stl) | Längerer Fuß für zusätzliche USB-C-Freiheit | 8,5 × 8,5 × 16 mm | 4 dieser Version |
+| <img src="../../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x_KURZ-preview.png?v=stl-preview-2" alt="3D-Vorschau des kurzen Bridge-Fußes" width="110"> | [`fuss_1x_drucken_4x_KURZ.stl`](../../docs/ir-bridge/assets/3d/enclosure/fuss_1x_drucken_4x_KURZ.stl) | Kurzer Fuß für ein kompaktes USB-C-Steckergehäuse | 8,5 × 8,5 × 12 mm | 4 dieser Version |
+| <img src="../../docs/ir-bridge/assets/3d/enclosure/ir_sender_kappe-preview.png?v=stl-preview-2" alt="3D-Vorschau der IR-Senderkappe" width="110"> | [`ir_sender_kappe.stl`](../../docs/ir-bridge/assets/3d/enclosure/ir_sender_kappe.stl) | Abdeckung des IR-Senders | 29 × 25,5 × 4,1 mm | 1 |
 
 Möglichst ein USB-C-Kabel mit **kurzem Steckergehäuse** verwenden. Reicht der
 Abstand zum Untergrund wegen eines längeren Kabelsteckers dennoch nicht aus,
