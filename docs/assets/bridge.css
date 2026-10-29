@@ -160,14 +160,24 @@
 .guide-print-gallery .guide-ui-figure { margin: 0; }
 
 .stand-powerbank { margin-top: 58px; padding-top: 10px; border-top: 1px solid var(--line); }
-.powerbank-gallery { display: grid; gap: 18px; min-width: 0; }
-.powerbank-gallery .powerbank-figure img { max-height: 420px; }
+.powerbank-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; min-width: 0; width: 100%; max-width: 640px; justify-self: center; }
+.powerbank-gallery .powerbank-figure { display: flex; flex-direction: column; padding: 14px; }
+.powerbank-gallery .powerbank-figure img { height: 260px; max-height: none; }
+.powerbank-gallery .powerbank-figure figcaption { flex: 1; margin-top: 12px; font-size: 13px; }
+.powerbank-gallery .powerbank-figure .button { margin-top: 12px; padding: 10px 8px; }
 .powerbank-figure { margin: 0; padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
 .powerbank-figure > a:first-child { display: block; border-radius: 8px; }
 .powerbank-figure img { width: 100%; height: auto; max-height: 620px; object-fit: contain; }
 .powerbank-figure figcaption { margin-top: 17px; }
 .powerbank-figure .button { display: flex; margin-top: 18px; font-size: 13px; }
 .powerbank-copy .button { max-width: 100%; }
+@media (max-width: 480px) {
+  .powerbank-gallery { gap: 10px; }
+  .powerbank-gallery .powerbank-figure { padding: 10px; }
+  .powerbank-gallery .powerbank-figure img { height: 180px; }
+  .powerbank-gallery .powerbank-figure figcaption { font-size: 12px; }
+  .powerbank-gallery .powerbank-figure .button { font-size: 12px; }
+}
 
 @media (max-width: 1050px) {
   .model-card { gap: 12px; padding: 10px; }
