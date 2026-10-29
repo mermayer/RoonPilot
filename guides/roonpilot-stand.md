@@ -101,6 +101,10 @@ The additional three-part case fits below the existing stand. It is designed for
 
 [Open the illustrated project page](https://mermayer.github.io/RoonPilot/#stand-powerbank)
 
+<a href="../docs/assets/3d/roonpilot-stand/powerbank-case/powerb_case_bv.png"><img src="../docs/assets/3d/roonpilot-stand/powerbank-case/powerb_case_bv.png" alt="Rear view of the RoonPilot stand with the add-on case, power bank and USB cable." width="560"></a>
+
+Rear view of the RoonPilot stand with the add-on case, power bank and USB cable.
+
 <a href="../docs/assets/3d/roonpilot-stand/powerbank-case/powerb_case.png"><img src="../docs/assets/3d/roonpilot-stand/powerbank-case/powerb_case.png" alt="Exploded drawing of the RoonPilot stand and optional INIU power-bank case" width="560"></a>
 
 <a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/powerbank-case/01_Oberschale.stl"><picture><source media="(max-width: 480px)" srcset="../docs/assets/3d/download-cards/01_Oberschale-en-mobile.png"><img src="../docs/assets/3d/download-cards/01_Oberschale-en.png" alt="Upper shell · 93 × 79 × 21 mm · print one · 01_Oberschale.stl download" width="660"></picture></a>

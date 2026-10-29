@@ -103,6 +103,10 @@ Das zusätzliche dreiteilige Gehäuse wird unter den vorhandenen Stand gesetzt. 
 
 [Zur bebilderten Projektseite](https://mermayer.github.io/RoonPilot/de/#stand-powerbank)
 
+<a href="../../docs/assets/3d/roonpilot-stand/powerbank-case/powerb_case_bv.png"><img src="../../docs/assets/3d/roonpilot-stand/powerbank-case/powerb_case_bv.png" alt="Rückansicht des RoonPilot-Stands mit Zusatzgehäuse, eingesetzter Powerbank und USB-Kabel." width="560"></a>
+
+Rückansicht des RoonPilot-Stands mit Zusatzgehäuse, eingesetzter Powerbank und USB-Kabel.
+
 <a href="../../docs/assets/3d/roonpilot-stand/powerbank-case/powerb_case.png"><img src="../../docs/assets/3d/roonpilot-stand/powerbank-case/powerb_case.png" alt="Explosionszeichnung des RoonPilot-Stands mit optionalem INIU-Powerbank-Gehäuse" width="560"></a>
 
 <a href="https://mermayer.github.io/RoonPilot/assets/3d/roonpilot-stand/powerbank-case/01_Oberschale.stl"><picture><source media="(max-width: 480px)" srcset="../../docs/assets/3d/download-cards/01_Oberschale-de-mobile.png"><img src="../../docs/assets/3d/download-cards/01_Oberschale-de.png" alt="Oberschale · 93 × 79 × 21 mm · einmal drucken · 01_Oberschale.stl herunterladen" width="660"></picture></a>

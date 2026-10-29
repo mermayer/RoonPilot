@@ -160,6 +160,8 @@
 .guide-print-gallery .guide-ui-figure { margin: 0; }
 
 .stand-powerbank { margin-top: 58px; padding-top: 10px; border-top: 1px solid var(--line); }
+.powerbank-gallery { display: grid; gap: 18px; min-width: 0; }
+.powerbank-gallery .powerbank-figure img { max-height: 420px; }
 .powerbank-figure { margin: 0; padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
 .powerbank-figure > a:first-child { display: block; border-radius: 8px; }
 .powerbank-figure img { width: 100%; height: auto; max-height: 620px; object-fit: contain; }
